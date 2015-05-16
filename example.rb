@@ -1,9 +1,8 @@
-require_relative '../cw-0.10.0/lib/cw'
+require_relative 'lib/cw'
 
-# CW.new do
-#   play_book :duration => 0.25
-# end
-#
+CW.new do
+  play_book :duration => 0.25
+end
 
 wpm = 18
 effective_wpm = 15
@@ -14,24 +13,20 @@ CW.new do
   play_book :sentences => 5
 end
 
-# CW.new do
-#   wpm       16
-#   play_book :duration => 0.25
-# end
-
 loop do
 
-  #  test = CW.new
-  #  test.use_ebook2cw
-  #  test.comment         'test ing'
-  #  test.shuffle
-  #  test.wpm             wpm
-  #  test.effective_wpm   effective_wpm
-  #  test.beginning_with ['b']
-  #  test.word_size       4
-  #  test.word_count      10
-  #  test.test_words
-  #
+  test = CW.new
+  test.use_ebook2cw
+  test.comment         'test words beginning with b'
+  test.shuffle
+  test.wpm             wpm
+  test.effective_wpm   effective_wpm
+  test.beginning_with ['b']
+  test.word_size       4
+  test.word_count      10
+  puts test.to_s
+  test.test_words
+  test = nil
 
 #   test = CW.new
 #   test.comment         'test ing'
