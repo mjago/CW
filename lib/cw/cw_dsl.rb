@@ -3,8 +3,9 @@
 class CwDsl
 
   HERE = File.dirname(__FILE__) + '/'
-  COMMON_WORDS = HERE + '../../text/common_words.txt'
-
+  COMMON_WORDS  = HERE + '../../text/common_words.txt'
+  ABBREVIATIONS = HERE + '../../text/abbreviations.txt'
+  Q_CODES       = HERE + '../../text/q_codes.txt'
   def initialize
     @words, @cl, @str =
       Words.new, Cl.new, Str.new
@@ -168,6 +169,14 @@ class CwDsl
 
   def load_common_words
     load_words
+  end
+
+  def load_abbreviations
+    load_words ABBREVIATIONS
+  end
+
+  def load_q_codes
+    load_words Q_CODES
   end
 
   def load_words(filename = COMMON_WORDS)

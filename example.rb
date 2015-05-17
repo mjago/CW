@@ -25,6 +25,20 @@ CW.new do
   numbers
 end
 
+CW.new do
+  wpm  18
+  ewpm 12
+  load_abbreviations
+  shuffle
+end
+
+CW.new do
+  wpm  18
+  ewpm 12
+  load_q_codes
+  shuffle
+end
+
 def cw_settings
   shuffle
   wpm 20
