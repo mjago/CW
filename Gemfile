@@ -1,6 +1,8 @@
-# A sample Gemfile
+# CW Gemfile
+
 source "https://rubygems.org"
+
 gem 'feedjira'
-gem "htmlentities"
+gem 'htmlentities'
 gem 'sanitize'
-gem 'wavefile''
+gem 'wavefile'
