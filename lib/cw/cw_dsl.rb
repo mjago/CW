@@ -29,6 +29,7 @@ class CwDsl
    [:un_pause, :pause, nil],
    [:un_pause, :pause, nil],
    [:print_letters, :print_letters, true],
+   [:mark_words, :print_letters, nil],
    [:noise, :noise, true],
    [:no_noise, :noise, nil],
    [:shuffle, :shuffle, true],

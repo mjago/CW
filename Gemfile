@@ -1,4 +1,6 @@
 # A sample Gemfile
 source "https://rubygems.org"
-
- gem "wavefile"
+gem 'feedjira'
+gem "htmlentities"
+gem 'sanitize'
+gem 'wavefile''

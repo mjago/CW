@@ -30,6 +30,18 @@ class CurrentWord
     push_letter letr
   end
 
+  def cw_chars chr
+    chr.tr('^a-z0-9\.\,+', '')
+  end
+
+  def exclude_non_cw_chars word
+    temp = ''
+    word.split.each do |chr|
+      temp += chr if letter(chr)
+    end
+    temp
+  end
+
 end
 
 #class Words deals with words
@@ -121,24 +133,24 @@ class Words
     @words.reverse!
   end
 
-  def letters
+  def letter_group
     (97..122).to_a
   end
 
-  def numbers
+  def number_group
     (48..57).to_a
   end
 
   def letters_numbers
-    letters.push( * numbers)
+    letter_group.push( * number_group)
   end
 
   def random_letters(options = {})
-    @words = Randomize.new(options, letters).generate
+    @words = Randomize.new(options, letter_group).generate
   end
 
   def random_numbers(options = {})
-    @words = Randomize.new(options, numbers).generate
+    @words = Randomize.new(options, number_group).generate
   end
 
   def random_letters_numbers(options = {})

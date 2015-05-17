@@ -35,6 +35,17 @@ class Sentence
     File.open(book, 'r') { |f| text.replace f.readlines(' ').join}
   end
 
+  def cw_chars chr
+    chr.tr('^a-z0-9\,\=\!\/\?\.', '')
+  end
+
+  def exclude_non_cw_chars word
+    cw_chars(word)
+
+#    puts temp
+
+  end
+
   def find_all
     @sentences = []
     @text.gsub!(/\s+/, ' ').downcase!
@@ -43,7 +54,9 @@ class Sentence
       unless sentence_end
         break
       end
-      @sentences << @text[0..sentence_end]
+      line = @text[0..sentence_end]
+      line = line.split.collect{|word| exclude_non_cw_chars word}.join(' ')
+      @sentences << line
       @text.replace @text[sentence_end + 2..-1]
     end
   end

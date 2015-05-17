@@ -3,7 +3,7 @@ class TestWords < FileDetails
   def initialize
     @print_letters = Params.print_letters
     super()
-    print_test_advice
+#    print_test_advice
   end
 
   def quit?                ; @quit                             ; end

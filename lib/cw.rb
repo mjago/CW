@@ -8,6 +8,7 @@ require_relative 'cw/sentence'
 require_relative 'cw/alphabet'
 require_relative 'cw/numbers'
 require_relative 'cw/str'
+require_relative 'cw/rss'
 require_relative 'cw/words'
 require_relative 'cw/cl'
 require_relative 'cw/cw_params'
@@ -41,8 +42,7 @@ class CW < CwDsl
 
     load_common_words# unless @words.exist?
     instance_eval(&block) if block
-    run unless Params.pause if block
-
+    run unless Params.pause if (block && ! @inhibit_block_run)
   end
 
   def to_s
@@ -55,14 +55,29 @@ class CW < CwDsl
   end
 
   def play_book args = {}
+    @inhibit_block_run = true
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
     book.run
   end
 
-  def run ; ; end
+  def read_rss(source, show_count = 3)
+    @inhibit_block_run = true
+    rss, = Rss.new
+    rss.read_rss(source, show_count)
+    loop do
+      article = rss.next_article
+      return unless article
+      test_words = TestWords.new
+      @words.assign article
+      test_words.run @words
+    end
+  end
 
+  def run ; test_words ; end
+
+  alias_method :ewpm,                  :effective_wpm
   alias_method :word_length,           :word_size
   alias_method :word_shuffle,          :shuffle
   alias_method :having_size_of,        :word_size

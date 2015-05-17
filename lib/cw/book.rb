@@ -1,12 +1,13 @@
 class Book < FileDetails
 
   def initialize book_details
+#    prn.print_advice('Test Words')
     @book_details = book_details
     @print_letters = Params.print_letters
     super()
     read_book book_location
     find_sentences
-    print_book_advice
+#    print_book_advice
   end
 
   def quit?                ; @quit                             ; end
@@ -296,7 +297,6 @@ class Book < FileDetails
       compile_and_play
       await_next_sentence_or_quit
       break if quit?
-      write_book_progress
     end
     print_words_exit unless @print_letters
   end
@@ -322,6 +322,7 @@ class Book < FileDetails
 
   def play_sentences_thread
     play_sentences_until_quit
+    write_book_progress
     #    kill_threads
     print "\n\rplay has quit " if @debug
   end

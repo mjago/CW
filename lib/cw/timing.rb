@@ -111,7 +111,9 @@ class Timing
       '.' => char_timing(:dit, :dah, :dit, :dah, :dit, :dah),
       ',' => char_timing(:dah, :dah, :dit, :dit, :dah, :dah),
       ' ' => space_timing(),
+      '=' => char_timing(:dah, :dit, :dit,:dit, :dah),
       '!' => char_timing(:dit, :dit, :dah, :dah, :dit),
+      '/' => char_timing(:dah, :dit, :dit, :dah, :dit),
       '?' => char_timing(:dit, :dit, :dah, :dah, :dit, :dit)
     }
     return encoding[char]
