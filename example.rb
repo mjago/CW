@@ -1,9 +1,35 @@
 require_relative 'lib/cw'
 
+CW.new do
+  comment 'read book feed (1 sentence)'
+  play_book(sentences: 1)
+end
+
+CW.new do
+  comment 'read book feed (1 minute)'
+  play_book(duration: 1)
+end
+
+CW.new do
+  comment 'read rss feed (1 article)'
+  read_rss(:reuters, 1)
+end
+
+CW.new do
+  name 'test straight alphabet'
+  alphabet
+end
+
+CW.new do
+  comment 'test straight numbers'
+  numbers
+end
+
 def cw_settings
   shuffle
   wpm 20
   ewpm 15
+  #  use_ebook2cw
   use_ruby_tone
   mark_words
   word_count 5
@@ -13,33 +39,7 @@ def cw_settings
 end
 
 CW.new do
-  comment 'test read rss feed'
-  cw_settings
-  play_book(sentences: 1)
-end
-
-CW.new do
-  comment 'test read rss feed'
-  cw_settings
-  read_rss(:reuters, 1)
-end
-
-CW.new do
-  name 'test straight alphabet'
-  cw_settings
-  alphabet
-end
-
-CW.new do
-  comment 'test straight numbers'
-#  use_ebook2cw
-  cw_settings
-  numbers
-end
-
-CW.new do
   comment 'test random letters'
-#  use_ebook2cw
   random_letters(size: 4)
   cw_settings
 end
