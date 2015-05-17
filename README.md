@@ -6,7 +6,7 @@ git clone https://github.com/mjago/CW.git cw
 cd cw
 gem install bundler
 bundle install
-ruby example.rb
+bundle exec ruby example.rb
 ```
 # Usage:
 
