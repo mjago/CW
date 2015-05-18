@@ -22,6 +22,7 @@ require_relative 'cw/cw_threads'
 require_relative 'cw/book_details'
 require_relative 'cw/book'
 require_relative 'cw/test_words'
+require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator.rb'
 
 # class CW provides Morse code generation functionality
