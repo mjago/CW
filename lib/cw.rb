@@ -20,8 +20,10 @@ require_relative 'cw/print'
 require_relative 'cw/audio_player'
 require_relative 'cw/cw_threads'
 require_relative 'cw/book_details'
-require_relative 'cw/book'
+require_relative 'cw/tester'
 require_relative 'cw/test_words'
+require_relative 'cw/test_letters'
+require_relative 'cw/book'
 require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator.rb'
 
@@ -35,6 +37,12 @@ class CW < CwDsl
   def test_words
     test_words = TestWords.new
     test_words.run @words
+  end
+
+  def test_letters
+    @inhibit_block_run = true
+    test_letters = TestLetters.new
+    test_letters.run @words
   end
 
   def initialize(&block)
@@ -60,7 +68,7 @@ class CW < CwDsl
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
-    book.run
+    book.run @words
   end
 
   def read_rss(source, show_count = 3)

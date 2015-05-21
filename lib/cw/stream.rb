@@ -3,7 +3,7 @@ class Stream
   attr_accessor :active_region
 
   def initialize
-    @active_region = 2
+    @active_region = 6
     empty
   end
 
@@ -15,8 +15,15 @@ class Stream
     @last_element - @first_element
   end
 
-  def add word
+  def add_word word
     @stream[@last_element] = word.strip
+    @success[@last_element] = nil
+    inc_last_element
+  end
+
+  def add_char char
+    #puts "adding #{char}"
+    @stream[@last_element] = char
     @success[@last_element] = nil
     inc_last_element
   end
@@ -104,28 +111,74 @@ class Stream
         pop
       end
     end
-#    return_val == {} ? nil : return_val
+    #    return_val == {} ? nil : return_val
   end
 
-  def match_last_active_element(match)
+  def element type
+    return @last_element - 1 if type == :last
+    first = @last_element - @active_region - 1
+    first < 0 ? 0 : first
+  end
+
+  def match_first_active_element match
     #    puts "matching last element"
     if ! stream_empty?
-      first = @last_element - @active_region - 1
-      first = 0 if(first < 0)
+      #puts 'stream not empty'
+      #puts "@last_element = #{@last_element}"
+#      first = @last_element - @active_region - 1
+#      last = @last_element - 1
       found = false
-      (@last_element - 1).downto(first) do |ele|
-        #      puts "@stream[ele] = #{@stream[ele].inspect}\r"
+      first = element(:first)
+      first.upto element(:last) do |ele|
+        #puts "@stream[ele] = #{@stream[ele].inspect}\r"
         #      puts "match = #{match.inspect}\r"
+        #puts "@success[ele] = #{@success[ele].inspect}"
         if found
-          #        puts "found"
-          @success[ele] = false unless @success[ele]
-        elsif @stream[ele] == match && (@success[ele] == nil)
-          @success[ele], found = true, true
-          #        puts @stream.inspect
+          first.upto found - 1 do |failed|
+#            puts "found"
+            @success[failed] = false # unless @success[ele]
+          end
+          break
+        elsif((@stream[ele] == match) && (! @success[ele]))
+          #puts "@stream[ele] = #{@stream[ele]}"
+          @success[ele], found = true, ele
+          #puts "Success: #{@stream.inspect}"
+#          break
         else
           @success[first] = false
         end
       end
+    else
+      #puts 'stream empty'
+    end
+  end
+
+  def match_last_active_element match
+    #    puts "matching last element"
+    if ! stream_empty?
+      #puts 'stream not empty'
+      #puts "@last_element = #{@last_element}"
+      first = @last_element - @active_region - 1
+      first = 0 if(first < 0)
+      last = @last_element - 1
+      found = false
+      last.downto(first) do |ele|
+        #puts "@stream[ele] = #{@stream[ele].inspect}\r"
+        #      puts "match = #{match.inspect}\r"
+        #puts "@success[ele] = #{@success[ele].inspect}"
+        if found
+          #puts "found"
+          @success[ele] = false unless @success[ele]
+        elsif((@stream[ele] == match) && (! @success[ele]))
+          #puts "@stream[ele] = #{@stream[ele]}"
+          @success[ele], found = true, true
+          #puts "Success: #{@stream.inspect}"
+        else
+          @success[first] = false
+        end
+      end
+#    else
+      #puts 'stream empty'
     end
   end
 end

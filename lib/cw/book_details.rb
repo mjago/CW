@@ -1,5 +1,7 @@
 class BookDetails
 
+  attr_reader :args
+
   def initialize
     @book_name      =  'tom_sawyer.txt'
     @book_directory =  'text/'
@@ -11,6 +13,7 @@ class BookDetails
 
   def arguments args
     @args = args
+    @args[:output] = :letter unless @args[:output]
     if @args[:duration]
       @timeout = Time.now + @args[:duration] * 60.0
     end

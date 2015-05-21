@@ -17,6 +17,7 @@ class Print
     if @print_count > 80
       @print_count = 0
       puts "\r"
+      true
     end
   end
 
@@ -30,6 +31,21 @@ class Print
       print Paint["#{value} ", :blue]     if success
       print Paint["#{value} ", :red ] unless success
       return true
+    end
+  end
+
+  def char_result popped
+    if popped
+      value = popped[:value]
+      success = popped[:success]
+
+      unless newline_maybe value
+        #return if @print_count == 0 && value == ' '
+        value = '_' if((value == ' ') && (success != true))
+        print Paint["#{value}", :blue]     if success
+        print Paint["#{value}", :red ] unless success
+        return true
+      end
     end
   end
 
@@ -53,7 +69,7 @@ class Print
   end
 
   def prn_red word
-    print Paint["#{word} ", :red]
+    print Paint["#{word}", :red]
   end
 
   def print_fail(word, attempt)
