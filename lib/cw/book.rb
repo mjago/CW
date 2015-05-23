@@ -78,7 +78,7 @@ class Book < FileDetails
   end
 
   def write_book_progress
-#    sentence.write_progress progress_file
+    sentence.write_progress progress_file
   end
 
   def audio_play_repeat_tone_maybe
