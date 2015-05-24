@@ -1,22 +1,42 @@
 require 'paint'
+require 'io/console'
 
 class Print
 
   def initialize
+    update_console_size
     @print_count = 0
+  end
+
+  def console_size
+    IO.console.winsize
+  rescue LoadError
+    [Integer(`tput li`), Integer(`tput co`)]
+  end
+
+  def update_console_size
+    @rows, @cols = console_size
+#    printf "%d rows by %d columns\n", @rows, @cols
   end
 
   def newline
     @print_count = 0
     puts "\r"
+    update_console_size
+  end
+
+  def force_newline_maybe
+    if @print_count >= (@cols - 1)
+      newline
+      true
+    end
   end
 
   def newline_maybe word
-    @print_count += word.size
+    @print_count += word.size unless force_newline_maybe
     return if((word.size == 1) && (word != ' '))
-    if @print_count > 80
-      @print_count = 0
-      puts "\r"
+    if @print_count > (@cols - 10)
+      newline
       true
     end
   end
