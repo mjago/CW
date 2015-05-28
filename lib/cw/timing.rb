@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Timing
 
   attr_accessor :delay_time

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Sentence
 
   attr_accessor :index #todo
@@ -41,9 +43,6 @@ class Sentence
 
   def exclude_non_cw_chars word
     cw_chars(word)
-
-#    puts temp
-
   end
 
   def find_all

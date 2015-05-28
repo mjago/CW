@@ -1,11 +1,14 @@
+# encoding: utf-8
+
 # class Cw_dsl provides CW's commands
 
 class CwDsl
 
   HERE = File.dirname(__FILE__) + '/'
-  COMMON_WORDS  = HERE + '../../text/common_words.txt'
-  ABBREVIATIONS = HERE + '../../text/abbreviations.txt'
-  Q_CODES       = HERE + '../../text/q_codes.txt'
+  COMMON_WORDS   = HERE + '../../data/text/common_words.txt'
+  ABBREVIATIONS  = HERE + '../../data/text/abbreviations.txt'
+  Q_CODES        = HERE + '../../data/text/q_codes.txt'
+
   def initialize
     @words, @cl, @str =
       Words.new, Cl.new, Str.new
@@ -19,7 +22,8 @@ class CwDsl
    :quality,       :audio_filename,
    :pause,         :noise,
    :shuffle,       :mark_words,
-   :audio_dir
+   :double_words,  :single_words,
+   :audio_dir,     :def_word_count
   ].each do |method|
     define_method method do |arg = nil|
       arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
@@ -28,13 +32,14 @@ class CwDsl
 
   [[:pause, :pause, true],
    [:un_pause, :pause, nil],
-   [:un_pause, :pause, nil],
    [:print_letters, :print_letters, true],
    [:mark_words, :print_letters, nil],
    [:noise, :noise, true],
    [:no_noise, :noise, nil],
    [:shuffle, :shuffle, true],
    [:no_shuffle, :shuffle, nil],
+   [:double_words, :double_words, true],
+   [:single_words, :double_words, nil],
    [:use_ebook2cw, :use_ebook2cw, true],
    [:use_ruby_tone, :use_ebook2cw, nil],
   ].each do |bool|
@@ -47,11 +52,12 @@ class CwDsl
   def init_config
     Params.config do
       param :name, :wpm,
-      :dictionary, :command_line, :audio_filename, :tone, :pause, :print_letters,
+      :dictionary, :command_line, :audio_filename, :tone, :pause,
+      :print_letters, :double_words,
       :word_filename, :author, :title, :quality, :frequency, :shuffle, :effective_wpm,
       :max, :min, :word_spacing, :noise, :begin, :end, :word_count, :including,
       :word_size, :size, :beginning_with, :ending_with, :mark_words, :audio_dir,
-      :use_ebook2cw
+      :use_ebook2cw, :def_word_count
     end
 
     config_defaults
@@ -60,10 +66,11 @@ class CwDsl
 
   def config_defaults
     Params.config {
-      name       'unnamed'
-      wpm        25
-      frequency  500
-      dictionary COMMON_WORDS
+      name           'unnamed'
+      wpm            25
+      frequency      500
+      dictionary     COMMON_WORDS
+      def_word_count 1
     }
   end
 
@@ -110,9 +117,9 @@ class CwDsl
     Params.end = letters
   end
 
-  def word_count(word_count)
-    Params.word_count = word_count
-    @words.count word_count
+  def word_count(wordcount)
+    Params.word_count = wordcount
+    @words.count wordcount
   end
 
   def including(* letters)

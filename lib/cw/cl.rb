@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 #class Cl performs command-line processing
 
 class Cl

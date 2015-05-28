@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'wavefile'
 
 class ToneGenerator
@@ -27,8 +29,7 @@ class ToneGenerator
   def generate words
     create_element_methods
     compile_fundamentals
-    audio_stream = make_words words
-    write_words audio_stream
+    write_words(make_words words)
   end
 
   def play_filename
@@ -150,9 +151,13 @@ class ToneGenerator
   end
 
   def write_words(word)
-    WaveFile::Writer.new(play_filename, WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
+    WaveFile::
+      Writer.new(play_filename,
+                 WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
       word.each do |fta|
-        WaveFile::Reader.new(fta[:filename]).each_buffer(fta[:spb]) do |buffer|
+        filename = fta[:filename]
+        spb = fta[:spb]
+        WaveFile::Reader.new(filename).each_buffer(spb) do |buffer|
           writer.write(buffer)
         end
       end

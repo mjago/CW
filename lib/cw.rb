@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 
 require_relative 'cw/file_details'
 require_relative 'cw/process'
@@ -33,11 +33,6 @@ class CW < CwDsl
   attr_accessor :dry_run
   attr_accessor :quit
 
-  def test_words
-    test_words = TestWords.new
-    test_words.run @words
-  end
-
   def test_letters
     @inhibit_block_run = true
     test_letters = TestLetters.new
@@ -57,9 +52,19 @@ class CW < CwDsl
     @str.to_s
   end
 
-  def test_words
+  def word_count_maybe
+    words = Params.def_word_count unless Params.word_count
+    word_count(words) unless Params.word_count
+  end
+
+  def run_word_test
     test_words = TestWords.new
     test_words.run @words
+  end
+
+  def test_words
+    word_count_maybe
+    run_word_test
   end
 
   def play_book args = {}

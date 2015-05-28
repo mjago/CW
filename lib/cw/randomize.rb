@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 #class Randomize provides character randomising
 
 class Randomize

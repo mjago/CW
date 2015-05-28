@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CWThreads
 
   attr_accessor :threads

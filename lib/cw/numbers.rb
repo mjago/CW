@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 #class Numbers provides the Number Testing functionality
 
 class Numbers

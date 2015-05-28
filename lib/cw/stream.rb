@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Stream
 
   attr_accessor :active_region
@@ -22,7 +24,6 @@ class Stream
   end
 
   def add_char char
-    #puts "adding #{char}"
     @stream[@last_element] = char
     @success[@last_element] = nil
     inc_last_element
@@ -121,64 +122,39 @@ class Stream
   end
 
   def match_first_active_element match
-    #    puts "matching last element"
     if ! stream_empty?
-      #puts 'stream not empty'
-      #puts "@last_element = #{@last_element}"
-#      first = @last_element - @active_region - 1
-#      last = @last_element - 1
       found = false
       first = element(:first)
       first.upto element(:last) do |ele|
-        #puts "@stream[ele] = #{@stream[ele].inspect}\r"
-        #      puts "match = #{match.inspect}\r"
-        #puts "@success[ele] = #{@success[ele].inspect}"
         if found
           first.upto found - 1 do |failed|
-#            puts "found"
             @success[failed] = false # unless @success[ele]
           end
           break
         elsif((@stream[ele] == match) && (! @success[ele]))
-          #puts "@stream[ele] = #{@stream[ele]}"
           @success[ele], found = true, ele
-          #puts "Success: #{@stream.inspect}"
-#          break
         else
           @success[first] = false
         end
       end
-    else
-      #puts 'stream empty'
     end
   end
 
   def match_last_active_element match
-    #    puts "matching last element"
     if ! stream_empty?
-      #puts 'stream not empty'
-      #puts "@last_element = #{@last_element}"
       first = @last_element - @active_region - 1
       first = 0 if(first < 0)
       last = @last_element - 1
       found = false
       last.downto(first) do |ele|
-        #puts "@stream[ele] = #{@stream[ele].inspect}\r"
-        #      puts "match = #{match.inspect}\r"
-        #puts "@success[ele] = #{@success[ele].inspect}"
         if found
-          #puts "found"
           @success[ele] = false unless @success[ele]
         elsif((@stream[ele] == match) && (! @success[ele]))
-          #puts "@stream[ele] = #{@stream[ele]}"
           @success[ele], found = true, true
-          #puts "Success: #{@stream.inspect}"
         else
           @success[first] = false
         end
       end
-#    else
-      #puts 'stream empty'
     end
   end
 end

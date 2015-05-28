@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CurrentWord
 
   def initialize
@@ -52,6 +54,15 @@ class Words
     File.open(filename, 'r') do |file|
       @words = file.read.split
     end
+  end
+
+  def double_words
+    temp = []
+    @words.each do |word|
+      temp.push word
+      temp.push word
+    end
+    @words = temp
   end
 
   def shuffle

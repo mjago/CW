@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Tester
 
   def quit?                ; @quit                             ; end
@@ -197,6 +199,7 @@ module Tester
 
   def run words
     @words = words
+    words.double_words if Params.double_words
     @threads = CWThreads.new(self, thread_processes)
     @threads.run
     reset_stdin
