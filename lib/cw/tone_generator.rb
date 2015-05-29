@@ -42,14 +42,18 @@ class ToneGenerator
     @pid = ! @dry_run ? Process.spawn(cmd) : cmd
   end
   def data
-    { :dot => {:filename => DOT_FILENAME,
-        :spb => (@sample_rate * 1.2 / @wpm).to_i },
-      :dash  => {:filename => DASH_FILENAME,
-        :spb => (@sample_rate * 3.6 / @wpm).to_i },
-      :space => {:filename   => SPACE_FILENAME   ,
-        :spb => (@sample_rate * 1.2 / @wpm).to_i },
-      :e_space => {:filename => E_SPACE_FILENAME ,
-        :spb => (@sample_rate * 1.2 / @effective_wpm).to_i }}
+    { :dot => {:name => :dot,
+               :filename => DOT_FILENAME,
+               :spb => (@sample_rate * 1.2 / @wpm).to_i },
+      :dash  => {:name => :dash,
+                 :filename => DASH_FILENAME,
+                 :spb => (@sample_rate * 3.6 / @wpm).to_i },
+      :space => {:name => :space,
+                 :filename   => SPACE_FILENAME   ,
+                 :spb => (@sample_rate * 1.2 / @wpm).to_i },
+      :e_space => {:name => :e_space,
+                   :filename => E_SPACE_FILENAME ,
+                   :spb => (@sample_rate * 1.2 / @effective_wpm).to_i }}
   end
 
   def generate_space number_of_samples
@@ -79,7 +83,7 @@ class ToneGenerator
     WaveFile::Buffer.new(audio_samples, WaveFile::Format.new(:mono, :float, data[ele][:spb]))
   end
 
-  def write_audio_file ele, buffer
+  def write_element_audio_file ele, buffer
     WaveFile::Writer.new(data[ele][:filename], WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
       writer.write(buffer)
     end
@@ -112,13 +116,13 @@ class ToneGenerator
     elements.each do |ele|
       audio_samples = generate_samples ele
       buffer = generate_buffer(audio_samples, ele)
-      write_audio_file ele, buffer
+      write_element_audio_file ele, buffer
     end
   end
 
   def space_or_espace
     (@effective_wpm == @wpm) ? space : e_space
-    end
+  end
 
   def last_element? idx, chr
     idx == chr.size - 1
@@ -150,18 +154,20 @@ class ToneGenerator
     word
   end
 
-  def write_words(word)
-    WaveFile::
-      Writer.new(play_filename,
-                 WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
-      word.each do |fta|
-        filename = fta[:filename]
-        spb = fta[:spb]
-        WaveFile::Reader.new(filename).each_buffer(spb) do |buffer|
-          writer.write(buffer)
-        end
+  def prepare_buffers
+    @buffers = {}
+    elements.each do |ele|
+      @buffers[ele] = []
+      WaveFile::Reader.new(data[ele][:filename]).
+        each_buffer(data[ele][:spb]) do |buffer|
+        @buffers[ele] = buffer
       end
     end
+  end
+
+  def write_words(wrds)
+    prepare_buffers
+    write_audio_file(wrds)
   end
 
   def char_space
@@ -172,5 +178,11 @@ class ToneGenerator
     @effective_wpm == @wpm ? [space] : [e_space]
   end
 
+  def write_audio_file(wrds)
+    WaveFile::Writer.new(play_filename, WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
+      wrds.each do |fta|
+        writer.write(@buffers[fta[:name]])
+      end
+    end
+  end
 end
-

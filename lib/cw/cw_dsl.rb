@@ -70,7 +70,7 @@ class CwDsl
       wpm            25
       frequency      500
       dictionary     COMMON_WORDS
-      def_word_count 1
+      def_word_count 100
     }
   end
 
