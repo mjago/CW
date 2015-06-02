@@ -9,20 +9,12 @@ class Randomize
     @chars = chars
   end
 
-  def opt_count
-    @options[:count]
-  end
-
   def word_count
-    opt_count ? opt_count : 50
-  end
-
-  def opt_size
-    @options[:size]
+    @options[:count] ? @options[:count] : 50
   end
 
   def size
-    opt_size ? opt_size : 4
+    @options[:size] ? @options[:size] : 4
   end
 
   def lengthen_chars

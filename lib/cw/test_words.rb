@@ -12,11 +12,11 @@ class TestWords < FileDetails
 #    print_test_advice
   end
 
-  def print_test_advice    ; prn.print_advice('Test Words')    ; end
+  def print_test_advice    ; print.print_advice('Test Words')    ; end
 
   def print_failed_exit_words
     until stream.stream_empty?
-      prn.prn_red stream.pop[:value] + ' '
+      print.prn_red stream.pop[:value] + ' '
     end
   end
 
@@ -29,7 +29,7 @@ class TestWords < FileDetails
         process_word_maybe
         break if timing.char_delay_timeout?
       end
-      prn.prn letr if print_letters?
+      print.prn letr if print_letters?
       break if quit?
     end
   end
@@ -54,6 +54,6 @@ class TestWords < FileDetails
 
   def print_marked_maybe
     @popped = stream.pop_next_marked
-    prn.results(@popped) if(@popped && ! print_letters?)
+    print.results(@popped) if(@popped && ! print_letters?)
   end
 end

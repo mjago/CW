@@ -35,28 +35,7 @@ class Book < FileDetails
   def print_letters?       ; @print_letters && ! quit?         ; end
   def reset_sentence_flags ; sentence.reset_flags              ; end
   def audio_play_sentence  ; audio.play                        ; end
-  def print_book_advice    ; prn.print_advice('Play Book')     ; end
-
-# >   def quit?                ; @quit                             ; end
-# >   def quit                 ; @quit = true                      ; end
-# >   def prn                  ; @print ||= Print.new              ; end
-# >   def timing               ; @timing ||= Timing.new            ; end
-# >   def audio                ; @audio ||= AudioPlayer.new        ; end
-# >   def current_word         ; @current_word ||= CurrentWord.new ; end
-# >   def stream               ; @stream ||= Stream.new            ; end
-# >   def key_input            ; @key_input ||= KeyInput.new       ; end
-# >   def get_key_input        ; key_input.read                    ; end
-# >   def key_chr              ; key_input.char                    ; end
-# >   def is_relevant_char?    ; key_input.is_relevant_char?       ; end
-# >   def quit_key_input?      ; key_input.quit_input?             ; end
-# >  def init_char_timer      ; timing.init_char_timer            ; end
-# >   def space                ; ' '                               ; end
-# >   def empty_string         ; ''                                ; end
-# >   def spawn_play(cmd)      ; Process.spawn(cmd)                ; end
-# >   def start_sync           ; @start_sync = true                ; end
-# >   def kill_threads         ; @threads.kill                     ; end
-# >   def audio_still_playing? ; audio.still_playing?              ; end
-# >  def reset_stdin          ; key_input.reset_stdin             ; end
+  def print_book_advice    ; print.print_advice('Play Book')     ; end
 
   def change_or_repeat_sentence?
     sentence.change_or_repeat?
@@ -87,22 +66,6 @@ class Book < FileDetails
     play_repeat_tone if repeat_sentence?
   end
 
-# >   def wait_player_startup_delay
-# >     audio.startup_delay
-# >   end
-
-# >   def sync_with_audio_player
-# >     wait_for_start_sync
-# >     wait_player_startup_delay
-# >   end
-# >
-# >   def check_quit_key_input
-# >     if quit_key_input?
-# >       quit
-# >       audio_stop
-# >     end
-# >   end
-
   def monitor_keys
     loop do
       get_key_input
@@ -112,10 +75,6 @@ class Book < FileDetails
       build_word_maybe
     end
   end
-
-# >   def push_letter_to_current_word letr
-# >     current_word.push_letter letr
-# >   end
 
   def process_input_word_maybe
     if @word_to_process
@@ -128,21 +87,6 @@ class Book < FileDetails
     end
   end
 
-# >   def get_word_last_char
-# >     @input_word.split(//).last(1).first
-# >   end
-
-# >   def wait_for_no_word_process
-# >     while @word_to_process
-# >       sleep 0.1
-# >     end
-# >   end
-
-# >   def move_word_to_process
-# >     wait_for_no_word_process
-# >     @process_input_word, @input_word, @word_to_process = @input_word, '', true
-# >   end
-
   def build_word_maybe
     @input_word ||= empty_string
     @input_word << key_chr if is_relevant_char?
@@ -152,19 +96,6 @@ class Book < FileDetails
       move_word_to_process if complete_word?
     end
   end
-
-# >   def start_sync?
-# >     if @start_sync
-# >       @start_sync = nil
-# >       true
-# >     else
-# >       nil
-# >     end
-# >   end
-
-# >   def sleep_char_delay letr
-# >     timing.append_char_delay letr, Params.wpm, Params.effective_wpm
-# >   end
 
   def add_space sentence
     sentence + space
@@ -206,22 +137,6 @@ class Book < FileDetails
     quit? || @word_to_process
   end
 
-# >   def wait_for_start_sync
-# >     until start_sync?
-# >       sleep 0.001
-# >       break if quit?
-# >     end
-# >   end
-
-# >   def process_space_maybe letr
-# >     if letr == space
-# >       stream.add_word current_word.strip
-# >       current_word.clear
-# >       letr.clear
-# >       prn.prn space if print_letters?
-# >     end
-# >   end
-
   def process_letter letr
     current_word.process_letter letr
     sleep_char_delay letr
@@ -230,16 +145,11 @@ class Book < FileDetails
   def print_marked_maybe
     @popped = stream.pop_next_marked
     if @book_details.args[:output] == :letter
-      prn.char_result(@popped) if(@popped && ! print_letters?) #todo
+      print.char_result(@popped) if(@popped && ! print_letters?) #todo
     else
-      prn.results(@popped) if(@popped && ! print_letters?)
+      print.results(@popped) if(@popped && ! print_letters?)
     end
   end
-
-# >   def process_word_maybe
-# >     print_marked_maybe
-# >     process_input_word_maybe
-# >   end
 
   def print_words words
     timing.init_char_timer
@@ -254,7 +164,7 @@ class Book < FileDetails
         end
         break if timing.char_delay_timeout?
       end
-      prn.prn letr if print_letters?
+      print.prn letr if print_letters?
       break if change_repeat_or_quit?
     end
   end
@@ -263,15 +173,6 @@ class Book < FileDetails
     print_words current_sentence
   end
 
-# >   def sync_with_print
-# >     loop do
-# >       make_sentence_index_current if ! sentence_index_current?
-# >       break if sentence_index_current?
-# >       break if quit?
-# >       sleep 0.015
-# >     end
-# >   end
-
   def make_sentence_index_current
     @current_sentence_index = sentence_index
   end
@@ -279,32 +180,6 @@ class Book < FileDetails
   def sentence_index_current?
     @current_sentence_index && (@current_sentence_index == sentence_index)
   end
-
-# >   def sync_with_play
-# >     loop do
-# >       break if sentence_index_current?
-# >       break if quit?
-# >       sleep 0.015
-# >     end
-# >   end
-
-# >   def print_failed_exit_words
-# >     until stream.stream_empty?
-# >       prn.prn_red stream.pop[:value]
-# >     end
-# >   end
-
-# >   def print_words_exit
-# >     timing.init_print_words_timeout
-# >     loop do
-# >       process_word_maybe
-# >       break if stream.stream_empty?
-# >       break if timing.print_words_timeout?
-# >       break if quit?
-# >       sleep 0.01
-# >     end
-# >     print_failed_exit_words
-# >   end
 
   def play_sentences_until_quit
     get_book_progress
@@ -336,6 +211,8 @@ class Book < FileDetails
       break if quit?
       sync_with_audio_player
       print_words_for_current_sentence
+      print.reset
+      puts
     end
   end
 
@@ -352,21 +229,10 @@ class Book < FileDetails
     print "\n\rprint has quit " if @debug
   end
 
-# >   def monitor_keys_thread
-# >     monitor_keys
-# >     print "\n\rmonitor keys has quit " if @debug
-# >   end
-
   def thread_processes
     [:monitor_keys_thread,
      :play_sentences_thread,
      :print_sentences_thread]
   end
 
-# >   def run
-# >     @threads = CWThreads.new(self, thread_processes)
-# >     @threads.run
-# >     reset_stdin
-# >     puts "\r"
-# >   end
 end

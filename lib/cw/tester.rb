@@ -4,7 +4,7 @@ module Tester
 
   def quit?                ; @quit                             ; end
   def quit                 ; @quit = true                      ; end
-  def prn                  ; @print ||= Print.new              ; end
+  def print                ; @print ||= Print.new              ; end
   def timing               ; @timing ||= Timing.new            ; end
   def audio                ; @audio ||= AudioPlayer.new        ; end
   def kill_threads         ; @threads.kill                     ; end
@@ -22,7 +22,6 @@ module Tester
   def current_word         ; @current_word ||= CurrentWord.new ; end
   def init_char_timer      ; timing.init_char_timer            ; end
   def audio_still_playing? ; audio.still_playing?              ; end
-  def blank_line           ; puts "\r"; puts "\r"              ; end
 
   def add_space words
     str = ''
@@ -75,7 +74,7 @@ module Tester
 
   def print_failed_exit_words
     until stream.stream_empty?
-      prn.prn_red stream.pop[:value]
+      print.prn_red stream.pop[:value]
     end
   end
 
@@ -131,7 +130,6 @@ module Tester
 
   def move_word_to_process
     wait_for_no_word_process
-    #puts "@input_word = #{@input_word}"
     @process_input_word, @input_word = @input_word, ''
     @word_to_process = true
   end
@@ -161,7 +159,7 @@ module Tester
       stream.add_word current_word.strip
       current_word.clear
       letr.clear
-      prn.prn space if print_letters?
+      print.prn space if print_letters?
     end
   end
 
@@ -203,7 +201,7 @@ module Tester
     @threads = CWThreads.new(self, thread_processes)
     @threads.run
     reset_stdin
-    blank_line
+    print.newline
   end
 
   def monitor_keys

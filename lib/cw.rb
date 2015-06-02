@@ -25,6 +25,7 @@ require_relative 'cw/test_letters'
 require_relative 'cw/book'
 require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator.rb'
+require_relative 'cw/progress'
 
 # class CW provides Morse code generation functionality
 
@@ -63,7 +64,7 @@ class CW < CwDsl
   end
 
   def test_words
-    word_count_maybe
+#    word_count_maybe
     run_word_test
   end
 

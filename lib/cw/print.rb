@@ -7,7 +7,7 @@ class Print
 
   def initialize
     update_console_size
-    @print_count = 0
+    reset
   end
 
   def console_size
@@ -21,9 +21,13 @@ class Print
 #    printf "%d rows by %d columns\n", @rows, @cols
   end
 
-  def newline
+  def reset
     @print_count = 0
     puts "\r"
+  end
+
+  def newline
+    reset
     update_console_size
   end
 
@@ -108,4 +112,5 @@ class Print
   def print_advice name
     puts "#{name.to_s}: Press Q 4 times to Exit"
   end
+
 end

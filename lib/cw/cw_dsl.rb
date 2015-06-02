@@ -70,14 +70,14 @@ class CwDsl
       wpm            25
       frequency      500
       dictionary     COMMON_WORDS
-      def_word_count 100
+#      def_word_count 100
     }
   end
 
   def config_files
     Params.config {
       audio_dir      'audio'
-      audio_filename 'audio_output'
+      audio_filename 'audio_output.wav'
       word_filename  'words.txt'
     }
   end
@@ -89,15 +89,6 @@ class CwDsl
   def words= words
     @words.add words
   end
-
-#  def shuffle()
-#    Params.shuffle = true
-#    @words.shuffle if Params.shuffle && @words.exist?
-#  end
-#
-#  def no_shuffle()
-#    Params.shuffle = nil
-#  end
 
   def word_size(size = nil)
     if size

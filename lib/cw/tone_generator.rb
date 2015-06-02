@@ -16,25 +16,31 @@ class ToneGenerator
     @frequency = Params.frequency
     @effective_wpm = Params.effective_wpm ? Params.effective_wpm : @wpm
     @sample_rate = 2400
+    @print = Print.new
   end
 
   def cw_encoding
     @encoding ||= CwEncoding.new
   end
 
-  def convert_words words
-    words.to_array.collect{ |wrd| wrd.gsub("\n","")}
+  def convert_words wrds
+    wrds.to_array.collect{ |wrd| wrd.gsub("\n","")}
   end
 
-  def generate words
+  def progress
+    @progress ||= Progress.new('Compiling')
+  end
+
+  def generate wrds
+    word_parts(wrds)
+    progress.init elements.size * 3 + (wrds.size)
     create_element_methods
     compile_fundamentals
-    write_words(make_words words)
+    write_word_parts
   end
 
   def play_filename
-    return 'audio/output.wav'    unless Params.audio_filename
-    "audio/#{Params.audio_filename}" if Params.audio_filename
+    "audio/#{Params.audio_filename}"
   end
 
   def play
@@ -99,6 +105,7 @@ class ToneGenerator
 
   def create_element_methods
     elements.each do |ele|
+      progress.increment
       create_element_method ele
     end
   end
@@ -114,6 +121,7 @@ class ToneGenerator
 
   def compile_fundamentals
     elements.each do |ele|
+      progress.increment
       audio_samples = generate_samples ele
       buffer = generate_buffer(audio_samples, ele)
       write_element_audio_file ele, buffer
@@ -146,17 +154,27 @@ class ToneGenerator
     push_enc enc
   end
 
-  def make_words str
-    word = []
-    str.split('').each do |c|
-      word += send_char c.downcase
+  def word_parts str = nil
+    return @word_parts if @word_parts
+    @word_parts = []
+    str.split('').each { |part| @word_parts << part}
+    @word_parts
+  end
+
+
+  def make_word_parts words
+    parts = []
+    @word_parts.each do |part|
+      progress.increment
+      parts += send_char part.downcase
     end
-    word
+    parts
   end
 
   def prepare_buffers
     @buffers = {}
     elements.each do |ele|
+      progress.increment
       @buffers[ele] = []
       WaveFile::Reader.new(data[ele][:filename]).
         each_buffer(data[ele][:spb]) do |buffer|
@@ -165,9 +183,9 @@ class ToneGenerator
     end
   end
 
-  def write_words(wrds)
+  def write_word_parts
     prepare_buffers
-    write_audio_file(wrds)
+    write_audio_file
   end
 
   def char_space
@@ -178,11 +196,30 @@ class ToneGenerator
     @effective_wpm == @wpm ? [space] : [e_space]
   end
 
-  def write_audio_file(wrds)
+  def word_composite word
+    send_char word.downcase
+  end
+
+  def write_audio
     WaveFile::Writer.new(play_filename, WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
-      wrds.each do |fta|
-        writer.write(@buffers[fta[:name]])
+      yield.each do |char|
+        progress.increment
+        char.each do |fta|
+          writer.write(@buffers[fta[:name]])
+        end
       end
     end
   end
+
+  def reset
+    @word_parts = @progress = nil
+#    puts "\r"
+  end
+
+  def write_audio_file
+    write_audio { @word_parts.collect {|part| word_composite(part) } }
+    reset
+  end
+
 end
+
