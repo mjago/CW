@@ -19,7 +19,7 @@ ruby example.rb
 
 ```
 
-# Usage:
+ - Note: Currently only tested on OS X (uses afplay by default).
 
 ```ruby
 
@@ -63,8 +63,8 @@ ruby example.rb
 
 # Options:
 
-  Command /             Alias
-  -------               -----
+  Command / Alias
+  ---------------
   -  ewpm                  (effective_wpm)
   -  no_run                (pause)
   -  comment               (name)
