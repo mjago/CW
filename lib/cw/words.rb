@@ -57,10 +57,10 @@ class Words
   end
 
   def double_words
+    puts 'here'
     temp = []
-    @words.each do |word|
-      temp.push word
-      temp.push word
+    @words.each do |wrd|
+      2.times { temp.push wrd }
     end
     @words = temp
   end
@@ -176,4 +176,7 @@ class Words
     @words = [Numbers.new(options).generate]
   end
 
+  def numbers_spoken()
+
+  end
 end

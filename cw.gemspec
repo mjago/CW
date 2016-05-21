@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.files       = ["lib/cw.rb"]
   s.homepage    =
     'http://github.com/mjago/cw'
-  s.license       = 'MIT'
+  s.license     = 'MIT'
 end

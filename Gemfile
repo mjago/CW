@@ -5,6 +5,6 @@ source "https://rubygems.org"
 gem 'wavefile'
 gem 'paint'
 gem 'feedjira'
-gem 'htmlentities'
+na88 dr oncnd adrgem 'htmlentities'
 gem 'sanitize'
 gem 'ruby-progressbar'

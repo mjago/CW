@@ -22,6 +22,7 @@ require_relative 'cw/book_details'
 require_relative 'cw/tester'
 require_relative 'cw/test_words'
 require_relative 'cw/test_letters'
+require_relative 'cw/repeat_word'
 require_relative 'cw/book'
 require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator.rb'
@@ -40,6 +41,12 @@ class CW < CwDsl
     test_letters.run @words
   end
 
+  def repeat_word
+    @inhibit_block_run = true
+    repeat_word = RepeatWord.new
+    repeat_word.run @words
+  end
+
   def initialize(&block)
 
     super
@@ -53,18 +60,12 @@ class CW < CwDsl
     @str.to_s
   end
 
-  def word_count_maybe
-    words = Params.def_word_count unless Params.word_count
-    word_count(words) unless Params.word_count
-  end
-
   def run_word_test
     test_words = TestWords.new
     test_words.run @words
   end
 
   def test_words
-#    word_count_maybe
     run_word_test
   end
 
@@ -92,17 +93,18 @@ class CW < CwDsl
   def run ; test_words ; end
 
   alias_method :ewpm,                  :effective_wpm
+  alias_method :no_run,                :pause
+  alias_method :comment,               :name
+#  alias_method :repeat_word,           :double_words
   alias_method :word_length,           :word_size
   alias_method :word_shuffle,          :shuffle
   alias_method :having_size_of,        :word_size
-  alias_method :words_beginning_with,  :beginning_with
-  alias_method :words_ending_with,     :ending_with
   alias_method :number_of_words,       :word_count
   alias_method :words_including,       :including
+  alias_method :words_ending_with,     :ending_with
+  alias_method :random_alphanumeric,   :random_letters_numbers
+  alias_method :words_beginning_with,  :beginning_with
   alias_method :words_no_longer_than,  :no_longer_than
   alias_method :words_no_shorter_than, :no_shorter_than
-  alias_method :random_alphanumeric,   :random_letters_numbers
-  alias_method :comment,               :name
-  alias_method :no_run,                :pause
 
 end

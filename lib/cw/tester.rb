@@ -4,6 +4,8 @@ module Tester
 
   def quit?                ; @quit                             ; end
   def quit                 ; @quit = true                      ; end
+  def global_quit?         ; @global_quit                      ; end
+  def global_quit          ; @global_quit = true               ; end
   def print                ; @print ||= Print.new              ; end
   def timing               ; @timing ||= Timing.new            ; end
   def audio                ; @audio ||= AudioPlayer.new        ; end
@@ -87,7 +89,8 @@ module Tester
       break if quit?
       sleep 0.01
     end
-    print_failed_exit_words
+    @failed = true unless stream.stream_empty?
+    print_failed_exit_words unless @repeat_word
   end
 
   def audio_stop
@@ -106,6 +109,7 @@ module Tester
   def check_quit_key_input
     if quit_key_input?
       quit
+      global_quit
       audio_stop
     end
   end

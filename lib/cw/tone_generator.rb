@@ -33,7 +33,7 @@ class ToneGenerator
 
   def generate wrds
     word_parts(wrds)
-    progress.init elements.size * 3 + (wrds.size)
+#    progress.init elements.size * 3 + (wrds.size)
     create_element_methods
     compile_fundamentals
     write_word_parts
@@ -105,7 +105,7 @@ class ToneGenerator
 
   def create_element_methods
     elements.each do |ele|
-      progress.increment
+#      progress.increment
       create_element_method ele
     end
   end
@@ -121,7 +121,7 @@ class ToneGenerator
 
   def compile_fundamentals
     elements.each do |ele|
-      progress.increment
+#      progress.increment
       audio_samples = generate_samples ele
       buffer = generate_buffer(audio_samples, ele)
       write_element_audio_file ele, buffer
@@ -165,7 +165,7 @@ class ToneGenerator
   def make_word_parts words
     parts = []
     @word_parts.each do |part|
-      progress.increment
+#      progress.increment
       parts += send_char part.downcase
     end
     parts
@@ -174,7 +174,7 @@ class ToneGenerator
   def prepare_buffers
     @buffers = {}
     elements.each do |ele|
-      progress.increment
+#      progress.increment
       @buffers[ele] = []
       WaveFile::Reader.new(data[ele][:filename]).
         each_buffer(data[ele][:spb]) do |buffer|
@@ -203,7 +203,7 @@ class ToneGenerator
   def write_audio
     WaveFile::Writer.new(play_filename, WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
       yield.each do |char|
-        progress.increment
+#        progress.increment
         char.each do |fta|
           writer.write(@buffers[fta[:name]])
         end

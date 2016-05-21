@@ -5,6 +5,27 @@ require 'io/console'
 
 class Print
 
+  class ProgressPrint
+    def colour
+      :yellow
+    end
+
+    def print x
+      STDOUT.print Paint[x, colour]
+    end
+    def puts x
+      STDOUT.puts  Paint[x, colour]
+    end
+
+    def flush
+      STDOUT.flush
+    end
+
+    def tty?
+      true
+    end
+  end
+
   def initialize
     update_console_size
     reset
@@ -47,15 +68,15 @@ class Print
     end
   end
 
-  def results popped
+  def results popped, type = :pass_and_fail
     if popped
       value = popped[:value]
       success = popped[:success]
 
       newline_maybe value
 
-      print Paint["#{value} ", :blue]     if success
-      print Paint["#{value} ", :red ] unless success
+      print Paint["#{value} ", :blue] if success
+      print Paint["#{value} ", :red ] unless (success || type == :pass_only)
       return true
     end
   end

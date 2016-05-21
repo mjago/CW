@@ -170,6 +170,7 @@ class Book < FileDetails
   end
 
   def print_words_for_current_sentence
+#    puts current_sentence
     print_words current_sentence
   end
 

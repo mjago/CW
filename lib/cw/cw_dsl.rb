@@ -5,9 +5,11 @@
 class CwDsl
 
   HERE = File.dirname(__FILE__) + '/'
-  COMMON_WORDS   = HERE + '../../data/text/common_words.txt'
-  ABBREVIATIONS  = HERE + '../../data/text/abbreviations.txt'
-  Q_CODES        = HERE + '../../data/text/q_codes.txt'
+  TEXT = HERE + '../../data/text/'
+  COMMON_WORDS      = TEXT + 'common_words.txt'
+  MOST_COMMON_WORDS = TEXT + 'most_common_words.txt'
+  ABBREVIATIONS     = TEXT + 'abbreviations.txt'
+  Q_CODES           = TEXT + 'q_codes.txt'
 
   def initialize
     @words, @cl, @str =
@@ -157,6 +159,9 @@ class CwDsl
     @words.numbers(options)
   end
 
+  def numbers_spoken()
+  end
+
 #  def add_noise
 #    Params.noise = true
 #  end
@@ -169,12 +174,26 @@ class CwDsl
     load_words
   end
 
+  def load_most_common_words
+    load_words MOST_COMMON_WORDS
+  end
+
   def load_abbreviations
     load_words ABBREVIATIONS
   end
 
   def load_q_codes
     load_words Q_CODES
+  end
+
+  #todo refactor
+
+  def load_alphabet
+    @words.assign 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
+  end
+
+  def load_numbers
+    @words.assign '1 2 3 4 5 6 7 8 9 0 '
   end
 
   def load_words(filename = COMMON_WORDS)

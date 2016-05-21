@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'ruby-progressbar'
+#require 'paint'
 
 class Progress
 
@@ -15,6 +16,7 @@ class Progress
              title: 'Compiling',
              progress_mark: '.',
              length: 40,
+             output: Print::ProgressPrint.new,
              format: "%t: |%B| %p% ")
   end
 
