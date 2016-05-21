@@ -1,4 +1,4 @@
-require_relative 'lib/cw'
+require 'cw'
 
 CW.new do
   comment 'read book feed (1 sentence)'

@@ -4,10 +4,11 @@ require 'wavefile'
 
 class ToneGenerator
 
-  DOT_FILENAME     = "audio/dot.wav"
-  DASH_FILENAME    = "audio/dash.wav"
-  SPACE_FILENAME   = "audio/space.wav"
-  E_SPACE_FILENAME = "audio/e_space.wav"
+  HERE             = File.dirname(__FILE__) + '/../../'
+  DOT_FILENAME     = HERE + "audio/dot.wav"
+  DASH_FILENAME    = HERE + "audio/dash.wav"
+  SPACE_FILENAME   = HERE + "audio/space.wav"
+  E_SPACE_FILENAME = HERE + "audio/e_space.wav"
   TWO_PI           = 2 * Math::PI
 
   def initialize
@@ -40,7 +41,7 @@ class ToneGenerator
   end
 
   def play_filename
-    "audio/#{Params.audio_filename}"
+    HERE + "audio/#{Params.audio_filename}"
   end
 
   def play
