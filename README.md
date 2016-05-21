@@ -1,22 +1,29 @@
 # CW
 
+CW is a DSL written in Ruby for generating audible morse, allowing for
+real-time learning and testing of Morse Code.
+
+CW can read books, rss feeds, common phrases, QSO codes etc, in
+addition to generating random words that match some required pattern
+(i.e. words_beginning_with 'v')
+
+CW also allows for real-time marking by indicating correct and
+incorrect characters input in real-time.
+
 # Installation:
 
 ```sh
+
 gem install cw
+ruby example.rb
 
 ```
-
-# Description:
-
-CW is a DSL for generating audible morse generating scripts, allowing
-for real-time testing.
 
 # Usage:
 
 ```ruby
 
-  # example.rb
+  # example.rb (example script)
 
   require 'cw'
 
@@ -56,22 +63,22 @@ for real-time testing.
 
 # Options:
 
-  Command               Alias
+  Command /             Alias
   -------               -----
-  ewpm                  (effective_wpm)
-  no_run                (pause)
-  comment               (name)
-  repeat_word           (double_words)
-  word_length           (word_size)
-  word_shuffle          (shuffle)
-  having_size_of        (word_size)
-  number_of_words       (word_count)
-  words_including       (including)
-  words_ending_with     (ending_with)
-  random_alphanumeric   (random_letters_numbers)
-  words_beginning_with  (beginning_with)
-  words_no_longer_than  (no_longer_than)
-  words_no_shorter_than (no_shorter_than)
+  -  ewpm                  (effective_wpm)
+  -  no_run                (pause)
+  -  comment               (name)
+  -  repeat_word           (double_words)
+  -  word_length           (word_size)
+  -  word_shuffle          (shuffle)
+  -  having_size_of        (word_size)
+  -  number_of_words       (word_count)
+  -  words_including       (including)
+  -  words_ending_with     (ending_with)
+  -  random_alphanumeric   (random_letters_numbers)
+  -  words_beginning_with  (beginning_with)
+  -  words_no_longer_than  (no_longer_than)
+  -  words_no_shorter_than (no_shorter_than)
 
 # License
 
