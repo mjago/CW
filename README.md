@@ -8,7 +8,7 @@ addition to generating random words that match some required pattern
 (i.e. words_beginning_with 'v')
 
 CW also allows for real-time marking by indicating correct and
-incorrect characters input in real-time.
+incorrect characters and words typed in real-time.
 
 # Installation:
 
@@ -65,20 +65,20 @@ ruby example.rb
 
   Command / Alias
   ---------------
-  -  ewpm                  (effective_wpm)
-  -  no_run                (pause)
-  -  comment               (name)
-  -  repeat_word           (double_words)
-  -  word_length           (word_size)
-  -  word_shuffle          (shuffle)
-  -  having_size_of        (word_size)
-  -  number_of_words       (word_count)
-  -  words_including       (including)
-  -  words_ending_with     (ending_with)
-  -  random_alphanumeric   (random_letters_numbers)
-  -  words_beginning_with  (beginning_with)
-  -  words_no_longer_than  (no_longer_than)
-  -  words_no_shorter_than (no_shorter_than)
+  -  ewpm                  - effective_wpm
+  -  no_run                - pause
+  -  comment               - name
+  -  repeat_word           - double_words
+  -  word_length           - word_size
+  -  word_shuffle          - shuffle
+  -  having_size_of        - word_size
+  -  number_of_words       - word_count
+  -  words_including       - including
+  -  words_ending_with     - ending_with
+  -  random_alphanumeric   - random_letters_numbers
+  -  words_beginning_with  - beginning_with
+  -  words_no_longer_than  - no_longer_than
+  -  words_no_shorter_than - no_shorter_than
 
 # License
 
