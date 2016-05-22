@@ -35,7 +35,7 @@ class Book < FileDetails
   def print_letters?       ; @print_letters && ! quit?         ; end
   def reset_sentence_flags ; sentence.reset_flags              ; end
   def audio_play_sentence  ; audio.play                        ; end
-  def print_book_advice    ; print.print_advice('Play Book')     ; end
+  def print_book_advice    ; print.print_advice('Play Book')   ; end
 
   def change_or_repeat_sentence?
     sentence.change_or_repeat?
