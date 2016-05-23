@@ -71,6 +71,8 @@ ruby example.rb
   -  repeat_word           / double_words
   -  word_length           / word_size
   -  word_shuffle          / shuffle
+  -  random_letters
+  -  random_numbers
   -  having_size_of        / word_size
   -  number_of_words       / word_count
   -  words_including       / including

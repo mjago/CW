@@ -6,7 +6,7 @@ class BookDetails
 
   HERE = File.dirname(__FILE__) + '/'
   BOOK_DIRECTORY = HERE + '../../data/text/'
-  BOOK_NAME      = 'tom_sawyer.txt'
+  BOOK_NAME      = 'adv_of_sh_holmes.txt'
 
   def initialize
     @book_name      =  BOOK_NAME
