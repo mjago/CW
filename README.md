@@ -28,13 +28,16 @@ ruby example.rb
   require 'cw'
 
   CW.new do
-    comment 'read book feed (1 sentence)'
+    wpm 18
+    comment 'read book (1 sentence)'
     play_book(sentences: 1)
   end
 
   CW.new do
-    comment 'read book feed (1 minute)'
-    play_book(duration: 1)
+    wpm 18
+    ewpm 12
+    comment 'read book (2 minutes)'
+    play_book(duration: 2)
   end
 
   CW.new do
