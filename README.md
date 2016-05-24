@@ -18,8 +18,16 @@ gem install cw
 ruby example.rb
 
 ```
+# Run tests
 
- - Note: Currently only tested on OS X (uses afplay by default).
+```sh
+
+gem install --dev cw
+ruby test/test_cw.rb
+
+```
+
+ - Note: Currently only tested on OS X, and Ruby v2.0.0 and greater.
 
 ```ruby
 
@@ -68,22 +76,22 @@ ruby example.rb
 
   Command / Alias
   ---------------
-  -  ewpm                  / effective_wpm
-  -  no_run                / pause
-  -  comment               / name
-  -  repeat_word           / double_words
-  -  word_length           / word_size
-  -  word_shuffle          / shuffle
-  -  random_letters
-  -  random_numbers
-  -  having_size_of        / word_size
-  -  number_of_words       / word_count
-  -  words_including       / including
-  -  words_ending_with     / ending_with
-  -  random_alphanumeric   / random_letters_numbers
-  -  words_beginning_with  / beginning_with
-  -  words_no_longer_than  / no_longer_than
-  -  words_no_shorter_than / no_shorter_than
+ -  ewpm                  / effective_wpm
+ -  no_run                / pause
+ -  comment               / name
+ -  repeat_word           / double_words
+ -  word_length           / word_size
+ -  word_shuffle          / shuffle
+ -  random_letters
+ -  random_numbers
+ -  having_size_of        / word_size
+ -  number_of_words       / word_count
+ -  words_including       / including
+ -  words_ending_with     / ending_with
+ -  random_alphanumeric   / random_letters_numbers
+ -  words_beginning_with  / beginning_with
+ -  words_no_longer_than  / no_longer_than
+ -  words_no_shorter_than / no_shorter_than
 
 # License
 
