@@ -1,7 +1,7 @@
-lib/cw.rb 30117a5cd8ca9e2d5281f8c08cb0a2de37491d0d
+lib/cw.rb 028740926efd506dda72274477fed69cc51a001a
 lib/cw/cl.rb 5b8288fd93e577aa1251c13174a64066fcb23503
 lib/cw/str.rb bb5d3558c51cc754de6eab7a83a0dbff37285694
-lib/cw/rss.rb 2623f80cbf9b5a9e1ecb706915d7584815c80871
+lib/cw/rss.rb 8c0e55d7d47aeaf6955483834cd79bbc47155cde
 lib/cw/book.rb da54e4f3df96fc45e9076464a8c9aa3a5e5a607c
 lib/cw/speak.rb fed0aaf5384d8dc0ebc4fd1c8cf07b227a168e86
 lib/cw/print.rb dda478b67c0517ac0ac885fb8029a3848803ab00

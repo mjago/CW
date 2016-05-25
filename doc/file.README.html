@@ -80,8 +80,14 @@ characters and words typed in real-time.</p>
 <span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_cw'>cw</span>
 <span class='id identifier rubyid_ruby'>ruby</span> <span class='id identifier rubyid_example'>example</span><span class='period'>.</span><span class='id identifier rubyid_rb'>rb</span>
 </code></pre>
+
+<h1 id="label-Run+tests">Run tests</h1>
+
+<pre class="code ruby"><code class="ruby">
+gem install --dev cw
+ruby test/test_cw.rb</code></pre>
 <ul><li>
-<p>Note: Currently only tested on OS X (uses afplay by default).</p>
+<p>Note: Currently only tested on OS X, and Ruby v2.0.0 and greater.</p>
 </li></ul>
 
 <pre class="code ruby"><code class="ruby">
@@ -90,13 +96,16 @@ characters and words typed in real-time.</p>
   <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cw</span><span class='tstring_end'>&#39;</span></span>
 
   <span class='const'>CW</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_comment'>comment</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>read book feed (1 sentence)</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_wpm'>wpm</span> <span class='int'>18</span>
+    <span class='id identifier rubyid_comment'>comment</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>read book (1 sentence)</span><span class='tstring_end'>&#39;</span></span>
     <span class='id identifier rubyid_play_book'>play_book</span><span class='lparen'>(</span><span class='label'>sentences:</span> <span class='int'>1</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
   <span class='const'>CW</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_comment'>comment</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>read book feed (1 minute)</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_play_book'>play_book</span><span class='lparen'>(</span><span class='label'>duration:</span> <span class='int'>1</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_wpm'>wpm</span> <span class='int'>18</span>
+    <span class='id identifier rubyid_ewpm'>ewpm</span> <span class='int'>12</span>
+    <span class='id identifier rubyid_comment'>comment</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>read book (2 minutes)</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_play_book'>play_book</span><span class='lparen'>(</span><span class='label'>duration:</span> <span class='int'>2</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
   <span class='const'>CW</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
@@ -139,7 +148,7 @@ words_no_shorter_than / no_shorter_than</p>
 </div></div>
 
     <div id="footer">
-  Generated on Mon May 23 21:20:15 2016 by
+  Generated on Wed May 25 15:00:24 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.0).
 </div>

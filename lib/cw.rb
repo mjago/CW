@@ -28,12 +28,15 @@ require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator.rb'
 require_relative 'cw/progress'
 
-# class CW provides Morse code generation functionality
+# CW provides Morse code generation functionality
 
 class CW < CwDsl
 
   attr_accessor :dry_run
   attr_accessor :quit
+
+  # Test user against letters rather than words.
+  #
 
   def test_letters
     @inhibit_block_run = true
@@ -41,11 +44,25 @@ class CW < CwDsl
     test_letters.run @words
   end
 
+  # Test user against complete words rather than letters.
+  #
+
+  def test_words
+    tw = TestWords.new
+    tw.run @words
+  end
+
+  # Repeat word repeats the current word if the word is entered incorrectly (or not entered at all).
+  #
+
   def repeat_word
     @inhibit_block_run = true
     repeat_word = RepeatWord.new
     repeat_word.run @words
   end
+
+  # Initialize CW class. Eval block if passed in.
+
 
   def initialize(&block)
 
@@ -56,18 +73,18 @@ class CW < CwDsl
     run unless Params.pause if (block && ! @inhibit_block_run)
   end
 
+  # Return string containing name or comment of test.
+  # @return [String] comment / name
+
   def to_s
     @str.to_s
   end
 
-  def run_word_test
-    test_words = TestWords.new
-    test_words.run @words
-  end
-
-  def test_words
-    run_word_test
-  end
+  # Play book using provided arguments.
+  # @param [Hash] args the options to play book with.
+  # @option args [Integer] :sentences Number of sentences to play
+  # @option args [Integer] :duration  Number of minutes to play
+  # @option args [Boolean] :letter Mark by letter if true else mark by word
 
   def play_book args = {}
     @inhibit_block_run = true
@@ -77,19 +94,27 @@ class CW < CwDsl
     book.run @words
   end
 
-  def read_rss(source, show_count = 3)
+  # Reads RSS feed (requires an internet connection). Feed can be one of:
+  # - bbc:
+  # - reuters:
+  # - guardian:
+  # - quotation:
+  # @param [Symbol] source The source of the feed.
+  # @param [Integer] article_count Number of articles to play.
+
+  def read_rss(source, article_count = 3)
     @inhibit_block_run = true
     rss, = Rss.new
-    rss.read_rss(source, show_count)
+    rss.read_rss(source, article_count)
     loop do
       article = rss.next_article
       return unless article
-      test_words = TestWords.new
       @words.assign article
-      test_words.run @words
+      run
     end
   end
 
+  # Run word test
   def run ; test_words ; end
 
   alias_method :ewpm,                  :effective_wpm
