@@ -136,7 +136,8 @@ class TestCW < MiniTest::Test
        %q(unnamed
 =======
 WPM:        25
-=======)
+=======
+)
      assert_equal temp, @cw.to_s
    end
 
@@ -150,13 +151,14 @@ Word count: 2
 Word size:  3
 Beginning:  l
 Ending:     x
-=======)
+=======
+)
     @cw.shuffle
     @cw.word_count 2
     @cw.word_size 3
     @cw.ending_with('x')
     @cw.beginning_with('l')
-    assert_equal temp, @cw.to_s.strip()
+    assert_equal temp, @cw.to_s
   end
 
   def test_wpm_defaults_to_25_if_unset

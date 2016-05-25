@@ -4,6 +4,8 @@
 
 class CwDsl
 
+  attr_accessor :cl
+
   HERE = File.dirname(__FILE__) + '/'
   TEXT = HERE + '../../data/text/'
   COMMON_WORDS      = TEXT + 'common_words.txt'

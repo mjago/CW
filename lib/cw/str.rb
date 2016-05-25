@@ -10,16 +10,17 @@ class Str
 
   def to_s
     delim  = delim_std_str
-    ["\n#{Params.name}\r",
-     "\n#{delim}",
-     "#{wpm_str}\n",
-     shuffle_str,
-     word_count_str,
-     word_size_str,
-     beginning_str,
-     ending_str,
-     delim].
-      collect{ |prm| prm.to_s }.join
+    [
+      "#{Params.name}\n",
+      "#{delim}",
+      "#{wpm_str}",
+      shuffle_str,
+      word_count_str,
+      word_size_str,
+      beginning_str,
+      ending_str,
+      delim
+    ].collect{ |prm| prm.to_s }.join
   end
 
   def stringify ary
@@ -27,7 +28,7 @@ class Str
   end
 
   def delim_str size
-    "#{'=' * size}\n\r"
+    "#{'=' * size}\n"
   end
 
   def delim_std_str
@@ -37,31 +38,31 @@ class Str
 
   def shuffle_str
     shuffle =  Params.shuffle
-    shuffle ? "Shuffle:    #{shuffle ? 'yes' : 'no'}\n\r" : nil
+    shuffle ? "Shuffle:    #{shuffle ? 'yes' : 'no'}\n" : nil
   end
 
   def word_count_str
     wc = Params.word_count
-    wc ? "Word count: #{wc}\n\r" : nil
+    wc ? "Word count: #{wc}\n" : nil
   end
 
   def word_size_str
     size = Params.size
-    size ? "Word size:  #{size}\n\r" : nil
+    size ? "Word size:  #{size}\n" : nil
   end
 
   def beginning_str
     beginning = Params.begin
-    beginning ? "Beginning:  #{stringify beginning}\n\r" : nil
+    beginning ? "Beginning:  #{stringify beginning}\n" : nil
   end
 
   def ending_str
     ending = Params.end
-    ending ? "Ending:     #{stringify ending}\n\r" : nil
+    ending ? "Ending:     #{stringify ending}\n" : nil
   end
 
   def wpm_str
-    "WPM:        #{Params.wpm}\n\r"
+    "WPM:        #{Params.wpm}\n"
   end
 
 end
