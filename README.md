@@ -1,14 +1,17 @@
-# CW
+[![Gem Version](https://badge.fury.io/rb/cw.svg)](https://badge.fury.io/rb/cw)
 
-CW is a DSL written in Ruby for generating audible morse, allowing for
-real-time learning and testing of Morse Code.
+## CW
 
-CW can read books, rss feeds, common phrases, QSO codes etc, in
-addition to generating random words that match some required pattern
-(i.e. words_beginning_with 'v')
+CW is a DSL written in the [Ruby](https://www.ruby-lang.org/en/downloads/) language for generating audible morse - allowing for
+real-time learning and testing of Morse Code. Great emphasis is placed on enabling tests to use fresh material each test run, rather than the constant repetition of old material.
 
-CW also allows for real-time marking by indicating correct and
-incorrect characters and words typed in real-time.
+CW can read books (and remember where you are), rss feeds (your daily quotation for instance), common phrases, QSO codes etc, in
+addition to generating random words, letters, and numbers that possibly match some required pattern 
+(i.e. words_beginning_with 'v').
+
+CW also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
+
+Documentation to follow...
 
 # Installation:
 
@@ -27,7 +30,7 @@ ruby test/test_cw.rb
 
 ```
 
- - Note: Currently only tested on OS X, and Ruby v2.0.0 and greater.
+ * Note: Currently only tested on OS X, and Ruby v2.0.0 and greater.
 
 ```ruby
 
