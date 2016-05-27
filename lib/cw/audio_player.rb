@@ -15,7 +15,7 @@ class AudioPlayer
   end
 
   def convert_words_with_ebook2cw words
-    words = words.gsub("\n","")
+    words = words.delete("\n")
     cl = Cl.new.cl_echo(words)
     ! @dry_run ? `#{cl}` : cl
   end
@@ -40,6 +40,8 @@ class AudioPlayer
       Process.kill(:TERM, @pid)
       Process.wait(@pid)
     rescue
+      puts 'Error: Failed to kill pid ' + @pid
+      exit 1
     end
   end
 
