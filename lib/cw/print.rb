@@ -86,15 +86,13 @@ class Print
   end
 
   def char_result popped
-    if popped
-      value, success = popped[:value], popped[:success]
-      unless newline_maybe value
-        #return if @print_count == 0 && value == ' '
-        value = '_' if((value == ' ') && (success != true))
-        print paint(value, :blue) if success
-        print paint(value, :red ) unless success
-        return true
-      end
+    return unless popped
+    value, success = popped[:value], popped[:success]
+    unless newline_maybe value
+      value = '_' if((value == ' ') && (success != true))
+      print paint(value, :blue) if success
+      print paint(value, :red ) unless success
+      return true
     end
   end
 
