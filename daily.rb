@@ -16,7 +16,7 @@ end
 
 CW.new do
   shuffle
-  wpm  speed
+  wpm speed
   word_count 15
   test_letters
 end
@@ -90,7 +90,7 @@ speed -= 10
 
 CW.new do
   load_words 'data/text/cw_conversation.txt'
-  wpm  speed
+  wpm speed
   print_letters
 end
 
