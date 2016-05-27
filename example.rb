@@ -87,7 +87,6 @@ loop do
   test.word_count      4
   puts test.to_s
   test.test_words
-  test = nil
 
   test = CW.new
   test.comment 'test words including ing'
@@ -98,7 +97,6 @@ loop do
   test.including       'ing'
   test.word_count      5
   test.test_words
-  test = nil
 
   #  test = CW.new
   #  test.comment         'test ing'
