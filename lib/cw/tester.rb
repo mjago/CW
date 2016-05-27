@@ -69,7 +69,7 @@ module Tester
 
   def print_words_until_quit
     sync_with_audio_player
-    print_words @words
+    print_test_words @words
     print_words_exit unless @print_letters
     quit
   end

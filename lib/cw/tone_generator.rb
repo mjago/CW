@@ -25,7 +25,7 @@ class ToneGenerator
   end
 
   def convert_words wrds
-    wrds.to_array.collect{ |wrd| wrd.gsub("\n","")}
+    wrds.to_array.collect{ |wrd| wrd.delete("\n")}
   end
 
   def progress
@@ -150,7 +150,7 @@ class ToneGenerator
     if c == ' '
       enc = word_space
     else
-      enc = cw_encoding.fetch(c).map { |enc| send(enc)}
+      enc = cw_encoding.fetch(c).map { |e| send(e)}
     end
     push_enc enc
   end
