@@ -20,20 +20,6 @@ class TestWords < FileDetails
     end
   end
 
-  def print_words words
-    timing.init_char_timer
-    (words.to_s + space).each_char do |letr|
-      process_letter letr
-      loop do
-        process_space_maybe letr
-        process_word_maybe
-        break if timing.char_delay_timeout?
-      end
-      print.prn letr if print_letters?
-      break if quit?
-    end
-  end
-
   def process_input_word_maybe
     if @word_to_process
       stream.match_last_active_element @process_input_word.strip

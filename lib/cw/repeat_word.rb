@@ -67,7 +67,7 @@ class RepeatWord < FileDetails
     words.each do |wrd|
       2.times { temp.push wrd }
     end
-    words = temp
+    temp
   end
 
   def run words
