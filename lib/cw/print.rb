@@ -81,16 +81,18 @@ class Print
     end
   end
 
+  def paint(value, colour)
+    Paint["#{colour}", colour]
+  end
+
   def char_result popped
     if popped
-      value = popped[:value]
-      success = popped[:success]
-
+      value, success = popped[:value], popped[:success]
       unless newline_maybe value
         #return if @print_count == 0 && value == ' '
         value = '_' if((value == ' ') && (success != true))
-        print Paint["#{value}", :blue]     if success
-        print Paint["#{value}", :red ] unless success
+        print paint(value, :blue) if success
+        print paint(value, :red ) unless success
         return true
       end
     end
@@ -101,33 +103,33 @@ class Print
   end
 
   def print_blue(word)
-    print Paint[word, :blue]
+    print paint(word, :blue)
     cursor_pos = word.size
     (12 - cursor_pos).times{print ' '}
   end
 
   def print_green(word)
     print_blue(word)
-    print Paint["#{word} \r\n", :green]
+    print paint("#{word} \r\n", :green)
   end
 
   def print_red word
-    print Paint["#{word }\r\n", :red]
+    print paint("#{word }\r\n", :red)
   end
 
   def prn_red word
-    print Paint["#{word}", :red]
+    print paint("#{word}", :red)
   end
 
   def print_fail(word, attempt)
     print_blue(word)
-    print Paint["#{attempt }\r\n", :red]
+    print paint("#{attempt }\r\n", :red)
   end
 
   def prn(word)
     newline_maybe word
     return if(@print_count == 0 && word == ' ')
-    print Paint["#{word}", :blue]
+    print paint("#{word}", :blue)
   end
 
   def print_advice name
