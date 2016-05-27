@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/cw.svg)](https://badge.fury.io/rb/cw)
+[![Build Status](https://travis-ci.org/mjago/CW.svg?branch=master)](https://travis-ci.org/mjago/CW)
 
 ## CW
 
@@ -6,7 +7,7 @@ CW is a DSL written in the [Ruby](https://www.ruby-lang.org/en/downloads/) langu
 real-time learning and testing of Morse Code. Great emphasis is placed on enabling tests to use fresh material each test run, rather than the constant repetition of old material.
 
 CW can read books (and remember where you are), rss feeds (your daily quotation for instance), common phrases, QSO codes etc, in
-addition to generating random words, letters, and numbers that possibly match some required pattern 
+addition to generating random words, letters, and numbers that possibly match some required pattern
 (i.e. words_beginning_with 'v').
 
 CW also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
