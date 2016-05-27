@@ -85,13 +85,15 @@ class Print
     Paint["#{colour}", colour]
   end
 
+  def paint_success_failure popped
+    print paint(popped[value], :blue) if popped[:success]
+    print paint(popped[value], :red ) unless popped[:success]
+  end
+
   def char_result popped
-    return unless popped
-    value, success = popped[:value], popped[:success]
-    unless newline_maybe value
-      value = '_' if((value == ' ') && (success != true))
-      print paint(value, :blue) if success
-      print paint(value, :red ) unless success
+    unless newline_maybe popped[:value]
+      popped[:value] = '_' if((popped[:value] == ' ') && (popped[:success] != true))
+      paint_success_failure popped
       return true
     end
   end
