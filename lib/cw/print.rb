@@ -82,7 +82,7 @@ class Print
   end
 
   def paint(value, colour)
-    Paint["#{colour}", colour]
+    Paint[value, colour]
   end
 
   def paint_success_failure popped
@@ -133,7 +133,7 @@ class Print
   end
 
   def print_advice name
-    puts "#{name.to_s}: Press Q 4 times to Exit"
+    puts "#{name}: Press Q 4 times to Exit"
   end
 
 end

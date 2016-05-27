@@ -26,10 +26,10 @@ class BookDetails
   end
 
   def session_finished? source
-    sentences_complete?(source) || book_timeout?
+    sentences_complete? || book_timeout?
   end
 
-  def sentences_complete? source
+  def sentences_complete?
     if @args.has_key?(:sentences) &&  @args[:sentences].is_a?(Fixnum)
       if @sentence_count_source
         @sentence_count_source = nil

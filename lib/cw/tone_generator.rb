@@ -75,7 +75,6 @@ class ToneGenerator
   end
 
   def generate_tone(number_of_samples)
-    position_in_period, position_in_period_delta =  0.0, @frequency / @sample_rate
     audio_samples = [].fill(0.0, 0, number_of_samples)
     number_of_samples.times do |sample_number|
       amplitude = filter_maybe(number_of_samples, sample_number)
@@ -147,6 +146,7 @@ class ToneGenerator
   end
 
   def send_char c
+    enc = nil
     if c == ' '
       enc = word_space
     else
@@ -163,7 +163,7 @@ class ToneGenerator
   end
 
 
-  def make_word_parts words
+  def make_word_parts
     parts = []
     @word_parts.each do |part|
 #      progress.increment

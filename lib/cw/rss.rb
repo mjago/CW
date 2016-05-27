@@ -67,6 +67,6 @@ class Rss
     inc_article_index
     quote = ''
     temp.map { |i| quote += i }
-    (quote.split.collect { |article| cw_chars(article.strip.gsub("\"", '').downcase)})
+    (quote.split.collect { |article| cw_chars(article.strip.delete("\"").downcase)})
   end
 end

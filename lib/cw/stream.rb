@@ -103,7 +103,6 @@ class Stream
 #  end
 
   def pop_next_marked
-    return_val = {}
     fail_unmarked_inactive_elements
     unless stream_empty?
       if(@first_element < inactive_region)
@@ -112,7 +111,6 @@ class Stream
         pop
       end
     end
-    #    return_val == {} ? nil : return_val
   end
 
   def element type
