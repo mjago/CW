@@ -75,6 +75,52 @@ ruby test/test_cw.rb
     shuffle
   end
 
+
+# ...or instantiate CW...
+
+wpm = 16
+
+test = CW.new
+test.comment 'test words beginning with b (repeat word)'
+test.shuffle
+test.wpm             wpm
+test.beginning_with  'b'
+test.word_size        4
+test.word_count       2
+puts test.to_s
+test.repeat_word
+
+test = CW.new
+test.comment 'test words beginning with b (test letters)'
+test.shuffle
+test.wpm             wpm
+test.beginning_with  'b'
+test.word_size        4
+test.word_count       2
+puts test.to_s
+test.test_letters
+
+test = CW.new
+test.comment 'test words beginning with b (test words)'
+test.shuffle
+test.wpm             wpm
+test.beginning_with  'b'
+test.word_size        4
+test.word_count       2
+puts test.to_s
+test.test_words
+
+test = CW.new
+test.comment 'test words beginning with b (print letters)'
+test.shuffle
+test.wpm             wpm
+test.beginning_with  'b'
+test.word_size        4
+test.word_count       2
+puts test.to_s
+test.print_letters
+test.test_letters
+
 ```
 
 # Options:
