@@ -150,7 +150,7 @@ class Stream
 
   def check_last_element_success(match, first, last)
     found = false
-    last.downto(first) do |ele|
+    last.downto(first) do |element|
       if found
         @success[element] = false unless @success[element]
       elsif((@stream[element] == match) && (! @success[element]))
