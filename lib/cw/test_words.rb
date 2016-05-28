@@ -33,28 +33,9 @@ class TestWords < FileDetails
     move_word_to_process if complete_word?
   end
 
-  def process_letter letr
-    current_word.process_letter letr
-    sleep_char_delay letr
-  end
-
   def print_marked_maybe
     @popped = stream.pop_next_marked
     print.results(@popped) if(@popped && ! print_letters?)
-  end
-
-  def print_test_words words
-    timing.init_char_timer
-    (words.to_s + space).each_char do |letr|
-      process_letter letr
-      loop do
-        process_space_maybe letr
-        process_word_maybe
-        break if timing.char_delay_timeout?
-      end
-      print.prn letr if print_letters?
-      break if quit?
-    end
   end
 
 end

@@ -69,7 +69,7 @@ module Tester
 
   def print_words_until_quit
     sync_with_audio_player
-    print_test_words @words
+    print_words @words
     print_words_exit unless @print_letters
     quit
   end
@@ -126,6 +126,25 @@ module Tester
     while @word_to_process
       sleep 0.1
     end
+  end
+
+  def print_words words
+    timing.init_char_timer
+    (words.to_s + space).each_char do |letr|
+      process_letter letr
+      loop do
+        process_space_maybe letr
+        process_word_maybe
+        break if timing.char_delay_timeout?
+      end
+      print.prn letr if print_letters?
+      break if quit?
+    end
+  end
+
+def process_letter letr
+    current_word.process_letter letr
+    sleep_char_delay letr
   end
 
   def complete_word?
