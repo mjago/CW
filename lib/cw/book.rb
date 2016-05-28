@@ -193,7 +193,7 @@ class Book < FileDetails
   def play_sentences_until_quit
     get_book_progress
     loop do
-      check_sentence_count :play
+      check_sentence_count
       sync_with_print
       audio_play_repeat_tone_maybe
       reset_sentence_flags
@@ -204,8 +204,8 @@ class Book < FileDetails
     print_words_exit unless @print_letters
   end
 
-  def check_sentence_count source
-    if @book_details.session_finished? source
+  def check_sentence_count
+    if @book_details.session_finished?
       audio_stop
       quit
       reset_stdin
@@ -215,7 +215,7 @@ class Book < FileDetails
 
   def print_sentences_until_quit
     loop do
-      check_sentence_count :print
+      check_sentence_count
       sync_with_play
       break if quit?
       sync_with_audio_player

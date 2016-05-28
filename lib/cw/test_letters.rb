@@ -10,7 +10,7 @@ class TestLetters < FileDetails
 #    print_test_advice
   end
 
-  def print_test_advice    ; print.print_advice('Test Letters')  ; end
+  def print_test_advice ; print.print_advice('Test Letters') ; end
 
   def print_words words
     timing.init_char_timer

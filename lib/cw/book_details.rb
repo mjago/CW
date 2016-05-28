@@ -25,7 +25,7 @@ class BookDetails
     end
   end
 
-  def session_finished? source
+  def session_finished?
     sentences_complete? || book_timeout?
   end
 
