@@ -99,7 +99,10 @@ class Print
   end
 
   def heading
-    puts ("*" * "Current Sentence is     duration:    secs".length) + "\r"
+    "Current Sentence is     duration:    secs".length.times do
+      print '*'
+      puts
+    end
   end
 
   def print_blue(word)
