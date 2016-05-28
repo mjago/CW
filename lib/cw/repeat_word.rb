@@ -18,6 +18,20 @@ class RepeatWord < FileDetails
     end
   end
 
+  def print_words words
+    timing.init_char_timer
+    (words.to_s + space).each_char do |letr|
+      process_letter letr
+      loop do
+        process_space_maybe letr
+        process_word_maybe
+        break if timing.char_delay_timeout?
+      end
+      print.prn letr if print_letters?
+      break if quit?
+    end
+  end
+
   def process_input_word_maybe
     if @word_to_process
       stream.match_last_active_element @process_input_word.strip
@@ -31,17 +45,17 @@ class RepeatWord < FileDetails
     move_word_to_process if complete_word?
   end
 
+  def process_letter letr
+    current_word.process_letter letr
+    sleep_char_delay letr
+  end
+
   def print_marked_maybe
     @popped = stream.pop_next_marked
     print.results(@popped, :pass_only) if(@popped && ! print_letters?)
   end
 
   #overloaded #todo
-
-  def play_words_thread
-    play_words_until_quit
-    print "\n\rplay has quit " if @debug
-  end
 
   def double_words words
     temp = []

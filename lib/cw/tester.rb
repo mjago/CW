@@ -51,6 +51,22 @@ module Tester
     end
   end
 
+  def print_words words
+#    puts "self.class = #{self.class}"
+    timing.init_char_timer
+    (words.to_s + space).each_char do |letr|
+      process_letter letr
+      stream.add_char(letr) if(self.class == TestLetters)
+      loop do
+        process_space_maybe(letr) if(self.class == TestWords)
+        process_word_maybe
+        break if timing.char_delay_timeout?
+      end
+      print.prn letr if print_letters?
+      break if quit?
+    end
+  end
+
   def process_word_maybe
     print_marked_maybe
     process_input_word_maybe
@@ -126,25 +142,6 @@ module Tester
     while @word_to_process
       sleep 0.1
     end
-  end
-
-  def print_words words
-    timing.init_char_timer
-    (words.to_s + space).each_char do |letr|
-      process_letter letr
-      loop do
-        process_space_maybe letr
-        process_word_maybe
-        break if timing.char_delay_timeout?
-      end
-      print.prn letr if print_letters?
-      break if quit?
-    end
-  end
-
-def process_letter letr
-    current_word.process_letter letr
-    sleep_char_delay letr
   end
 
   def complete_word?

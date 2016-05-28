@@ -33,6 +33,11 @@ class TestWords < FileDetails
     move_word_to_process if complete_word?
   end
 
+  def process_letter letr
+    current_word.process_letter letr
+    sleep_char_delay letr
+  end
+
   def print_marked_maybe
     @popped = stream.pop_next_marked
     print.results(@popped) if(@popped && ! print_letters?)

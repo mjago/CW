@@ -12,20 +12,6 @@ class TestLetters < FileDetails
 
   def print_test_advice ; print.print_advice('Test Letters') ; end
 
-  def print_words words
-    timing.init_char_timer
-    (words.to_s + space).each_char do |letr|
-      process_letter letr
-      stream.add_char letr
-      loop do
-        process_word_maybe
-        break if timing.char_delay_timeout?
-      end
-      print.prn letr if print_letters?
-      break if quit?
-    end
-  end
-
   def process_input_word_maybe
     if @word_to_process
       stream.match_first_active_element @process_input_word # .strip
