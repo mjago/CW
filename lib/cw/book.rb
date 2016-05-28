@@ -151,7 +151,7 @@ class Book < FileDetails
     end
   end
 
-  def process_letters
+  def process_letters letr
     loop do
       process_space_maybe(letr) unless @book_details.args[:output] == :letter
       process_word_maybe
