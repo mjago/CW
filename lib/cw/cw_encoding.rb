@@ -6,9 +6,17 @@
       encode(char)
     end
 
+    def encodings
+      @encodings ||= construct_encodings
+    end
+
+    def construct_encodings
+      @encodings = encode_a_n().merge(encode_0_2);
+      @encodings.merge!(encode_3_space)
+    end
+
     def encode char
-      e = encode_a_n().merge!(encode_0_2);
-      (e.merge(encode_3_space))[char]
+      encodings[char]
     end
 
     def encode_a_n
