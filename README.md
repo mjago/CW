@@ -81,7 +81,7 @@ ruby test/test_cw.rb
 wpm = 16
 
 test = CW.new
-test.comment 'test words beginning with b (repeat word)'
+test.comment 'test words beginning with "b" (repeat word)'
 test.shuffle
 test.wpm             wpm
 test.beginning_with  'b'
@@ -91,31 +91,39 @@ puts test.to_s
 test.repeat_word
 
 test = CW.new
-test.comment 'test words beginning with b (test letters)'
+test.comment 'test words ending with "ing" (test letters)'
 test.shuffle
 test.wpm             wpm
-test.beginning_with  'b'
+test.ending_with     'e'
 test.word_size        4
 test.word_count       2
 puts test.to_s
 test.test_letters
 
 test = CW.new
-test.comment 'test words beginning with b (test words)'
+test.comment 'test words including "th" (test words)'
 test.shuffle
 test.wpm             wpm
-test.beginning_with  'b'
+test.including       'th'
 test.word_size        4
 test.word_count       2
 puts test.to_s
 test.test_words
 
 test = CW.new
-test.comment 'test words beginning with b (print letters)'
+test.comment 'test words no longer than "6" letters (test letters)'
 test.shuffle
 test.wpm             wpm
-test.beginning_with  'b'
-test.word_size        4
+test.no_longer_than   6
+test.word_count       2
+puts test.to_s
+test.test_letters
+
+test = CW.new
+test.comment 'test words no shorter than "6" letters (print letters)'
+test.shuffle
+test.wpm             wpm
+test.no_shorter_than  6
 test.word_count       2
 puts test.to_s
 test.print_letters
