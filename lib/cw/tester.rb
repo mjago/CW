@@ -19,7 +19,7 @@ module Tester
   def key_input            ; @key_input ||= KeyInput.new       ; end
   def is_relevant_char?    ; key_input.is_relevant_char?       ; end
   def quit_key_input?      ; key_input.quit_input?             ; end
-  def stream               ; @stream ||= Stream.new            ; end
+  def stream               ; @stream ||= CwStream.new          ; end
   def reset_stdin          ; key_input.reset_stdin             ; end
   def current_word         ; @current_word ||= CurrentWord.new ; end
   def init_char_timer      ; timing.init_char_timer            ; end

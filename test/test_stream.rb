@@ -139,10 +139,10 @@ require_relative '../lib/cw/stream'
 #    end
 #  end
 
-class TestStream < MiniTest::Test
+class TestCwStream < MiniTest::Test
 
   def setup
-    @stream = Stream.new
+    @stream = CwStream.new
   end
 
   def test_assert

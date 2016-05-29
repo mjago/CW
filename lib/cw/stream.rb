@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Stream
+class CwStream
 
   attr_accessor :active_region
 
