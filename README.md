@@ -111,7 +111,7 @@ puts test.to_s
 test.test_words
 
 test = CW.new
-test.comment 'test words no longer than "6" letters (test letters)'
+test.comment 'test words no longer than 6 letters (test letters)'
 test.shuffle
 test.wpm             wpm
 test.no_longer_than   6
@@ -120,7 +120,7 @@ puts test.to_s
 test.test_letters
 
 test = CW.new
-test.comment 'test words no shorter than "6" letters (print letters)'
+test.comment 'test words no shorter than 6 letters (print letters)'
 test.shuffle
 test.wpm             wpm
 test.no_shorter_than  6
