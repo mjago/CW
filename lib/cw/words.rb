@@ -1,54 +1,10 @@
 # encoding: utf-8
 
-class CurrentWord
-
-  def initialize
-    @current_word = ''
-  end
-
-  def current_word
-    @current_word ||= String.new
-  end
-
-  def push_letter letr
-    @current_word += letr
-  end
-
-  def to_s
-    @current_word
-  end
-
-  def clear
-    @current_word.clear
-    @current_word = ''
-  end
-
-  def strip
-    @current_word.strip!
-  end
-
-  def process_letter letr
-    letr.downcase!
-    push_letter letr
-  end
-
-  def cw_chars chr
-    chr.tr('^a-z0-9\.\,+', '')
-  end
-
-  def exclude_non_cw_chars word
-    temp = ''
-    word.split.each do |chr|
-      temp += chr if letter(chr)
-    end
-    temp
-  end
-
-end
-
 #class Words deals with words
 
 class Words
+
+  include TextHelpers
 
   def load(filename)
     File.open(filename, 'r') do |file|
@@ -144,14 +100,6 @@ class Words
     @words.reverse!
   end
 
-  def letter_group
-    (97..122).to_a
-  end
-
-  def number_group
-    (48..57).to_a
-  end
-
   def letters_numbers
     letter_group.push( * number_group)
   end
@@ -176,7 +124,8 @@ class Words
     @words = [Numbers.new(options).generate]
   end
 
+#FIXME
   def numbers_spoken()
-
   end
+
 end

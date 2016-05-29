@@ -4,12 +4,7 @@ require 'wavefile'
 
 class ToneGenerator
 
-  HERE             = File.dirname(__FILE__) + '/../../'
-  DOT_FILENAME     = HERE + "audio/dot.wav"
-  DASH_FILENAME    = HERE + "audio/dash.wav"
-  SPACE_FILENAME   = HERE + "audio/space.wav"
-  E_SPACE_FILENAME = HERE + "audio/e_space.wav"
-  TWO_PI           = 2 * Math::PI
+  include ToneHelpers
 
   def initialize
     @max_amplitude = 0.5
@@ -24,10 +19,6 @@ class ToneGenerator
     @encoding ||= CwEncoding.new
   end
 
-  def convert_words wrds
-    wrds.to_array.collect{ |wrd| wrd.delete("\n")}
-  end
-
   def progress
     @progress ||= Progress.new('Compiling')
   end
@@ -38,10 +29,6 @@ class ToneGenerator
     create_element_methods
     compile_fundamentals
     write_word_parts
-  end
-
-  def play_filename
-    HERE + "audio/#{Params.audio_filename}"
   end
 
   def play
@@ -61,10 +48,6 @@ class ToneGenerator
       :e_space => {:name => :e_space,
                    :filename => E_SPACE_FILENAME ,
                    :spb => (@sample_rate * 1.2 / @effective_wpm).to_i }}
-  end
-
-  def generate_space number_of_samples
-    [].fill(0.0, 0, number_of_samples)
   end
 
   def filter_maybe(size, count)
@@ -110,10 +93,6 @@ class ToneGenerator
     end
   end
 
-  def space_sample? ele
-    ele == :space || ele == :e_space
-  end
-
   def generate_samples ele
     return generate_space(data[ele][:spb]) if space_sample? ele
     generate_tone(data[ele][:spb])  unless    space_sample? ele
@@ -132,27 +111,24 @@ class ToneGenerator
     (@effective_wpm == @wpm) ? space : e_space
   end
 
-  def last_element? idx, chr
-    idx == chr.size - 1
-  end
-
-  def push_enc chr
+  def push_encoding chr
     arry = []
-    chr.each_with_index do |c,idx|
-      arry << c
+    chr.each_with_index do |ch,idx|
+      arry << ch
       arry << ((last_element?(idx, chr)) ? (space_or_espace) : space)
     end
     arry += char_space
   end
 
-  def send_char c
-    enc = nil
-    if c == ' '
-      enc = word_space
+  def send_char char
+    encoding = nil
+    if char == ' '
+      encoding = word_space
     else
-      enc = cw_encoding.fetch(c).map { |e| send(e)}
+      encoding =
+        cw_encoding.fetch(char).map { |enc| send(enc)}
     end
-    push_enc enc
+    push_encoding encoding
   end
 
   def word_parts str = nil
@@ -223,4 +199,3 @@ class ToneGenerator
   end
 
 end
-

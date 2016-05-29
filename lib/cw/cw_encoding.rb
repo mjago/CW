@@ -11,15 +11,16 @@
     end
 
     def construct_encodings
-      @encodings = encode_a_n().merge(encode_0_2);
-      @encodings.merge!(encode_3_space)
+      @encodings = encode_a_thru_n().
+                   merge(encode_o_thru_two);
+      @encodings.merge!(encode_three_thru_space)
     end
 
     def encode char
       encodings[char]
     end
 
-    def encode_a_n
+    def encode_a_thru_n
       {
         'a' => [:dot, :dash],
         'b' => [:dash, :dot, :dot, :dot],
@@ -38,7 +39,7 @@
       }
     end
 
-    def encode_0_2
+    def encode_o_thru_two
       {
         'o' => [:dash, :dash, :dash],
         'p' => [:dot, :dash, :dash, :dot],
@@ -57,7 +58,7 @@
       }
     end
 
-    def encode_3_space
+    def encode_three_thru_space
       {
         '3' => [:dot, :dot, :dot, :dash, :dash],
         '4' => [:dot, :dot, :dot, :dot, :dash],

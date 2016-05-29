@@ -10,11 +10,12 @@ class Print
       :yellow
     end
 
-    def print x
-      STDOUT.print Paint[x, colour]
+    def print text
+      STDOUT.print Paint[text, colour]
     end
-    def puts x
-      STDOUT.puts  Paint[x, colour]
+
+    def puts text
+      STDOUT.puts  Paint[text, colour]
     end
 
     def flush
