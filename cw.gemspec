@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name        = 'cw'
-  spec.version     = '0.1.0'
+  spec.version     = '0.2.0'
   spec.date        = '2016-05-21'
   spec.authors     = ["Martyn Jago"]
   spec.email       = ["martyn.jago@btinternet.com"]
@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
   spec.files       = `git ls-files`.split($/)
   spec.license     = 'MIT'
   spec.require_paths = ["lib", "audio", "data/text", "test"]
+  spec.required_ruby_version = '>= 2.0.0'
 
   spec.add_dependency('wavefile')
   spec.add_dependency('paint')
