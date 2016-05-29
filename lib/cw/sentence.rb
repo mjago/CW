@@ -2,7 +2,7 @@
 
 class Sentence
 
-  attr_reader :index #FIXME
+  attr_accessor :index #todo
 
   def text              ; @text ||= String.new   ; end
   def all               ; @sentences             ; end
@@ -26,21 +26,15 @@ class Sentence
   end
 
   def read_progress progress_file
-    File.open(progress_file, 'r') {|file|
-      @index = file.readline.to_i
-    }
+    File.open(progress_file, 'r') {|f| @index = f.readline.to_i}
   end
 
   def write_progress progress_file
-    File.open(progress_file, 'w') {|file|
-      file.puts @index.to_s
-    }
+    File.open(progress_file, 'w') {|f| f.puts @index.to_s}
   end
 
   def read_book book
-    File.open(book, 'r') {|file|
-      text.replace file.readlines(' ').join
-    }
+    File.open(book, 'r') { |f| text.replace f.readlines(' ').join}
   end
 
   def cw_chars chr
@@ -76,11 +70,9 @@ class Sentence
     @next = @previous = @repeat = nil
   end
 
-#FIXME
-#  def to_array
-#    array = @sentences[@index].split(' ')
-#    array.collect {|ele|
-#      ele + ' '}
-#  end
+  def to_array
+    array = @sentences[@index].split(' ')
+    array.collect {|x| x + ' '}
+  end
 
 end

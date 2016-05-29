@@ -27,7 +27,7 @@ class Book < FileDetails
   def current_sentence_ary ; sentence.current_to_array         ; end
   def sentence_index       ; sentence.index                    ; end
   def play_repeat_tone     ; audio_play_tone @repeat_tone      ; end
-  def audio_play_tone tone ; audio.play_tone(tone)             ; end
+  def audio_play_tone t    ; audio.play_tone(t)                ; end
   def play_r_tone          ; audio_play_tone @r_tone           ; end
   def complete_word?       ; get_word_last_char == space       ; end
   def audio_stop           ; audio.stop if audio_still_playing?; end

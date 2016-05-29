@@ -2,6 +2,9 @@
 
 class Timing
 
+  attr_accessor :delay_time
+  attr_accessor :start_time
+
   def initialize
     @delay_time = 0.0
     @cw_encoding = CwEncoding.new
@@ -11,13 +14,12 @@ class Timing
     @cw_encoding.fetch(enc)
   end
 
-  def dot(src = :wpm)
-    return 1.2 / @effective_wpm if(src == :ewpm)
-    return 1.2 / @wpm
+  def dot wpm
+    1.2 / wpm
   end
 
   def dot_ms
-    dot
+    dot @wpm
   end
 
   def init_print_words_timeout
@@ -37,7 +39,7 @@ class Timing
   end
 
   def effective_dot_ms
-    dot @ewpm
+    dot @effective_wpm
   end
 
   def init_char_timer

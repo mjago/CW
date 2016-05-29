@@ -1,11 +1,6 @@
 # encoding: utf-8
 
-require_relative 'cw/text_helpers'
-require_relative 'cw/tone_helpers'
-require_relative 'cw/current_word'
-require_relative 'cw/tester'
 require_relative 'cw/file_details'
-require_relative 'cw/book_details'
 require_relative 'cw/process'
 require_relative 'cw/cw_dsl'
 require_relative 'cw/randomize'
@@ -23,6 +18,8 @@ require_relative 'cw/timing'
 require_relative 'cw/print'
 require_relative 'cw/audio_player'
 require_relative 'cw/cw_threads'
+require_relative 'cw/book_details'
+require_relative 'cw/tester'
 require_relative 'cw/test_words'
 require_relative 'cw/test_letters'
 require_relative 'cw/repeat_word'
@@ -109,10 +106,6 @@ class CW < CwDsl
     @inhibit_block_run = true
     rss, = Rss.new
     rss.read_rss(source, article_count)
-    rss_loop rss
-  end
-
-  def rss_loop rss
     loop do
       article = rss.next_article
       return unless article

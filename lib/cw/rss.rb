@@ -62,13 +62,11 @@ class Rss
   end
 
   def next_article
-    article = @rss_articles[article_index]
-    return unless article
+    temp = @rss_articles[article_index]
+    return unless temp
     inc_article_index
     quote = ''
-    article.map { |ele|
-      quote += ele }
-    (quote.split.collect {|art|
-       cw_chars(art.strip.delete("\"").downcase)})
+    temp.map { |i| quote += i }
+    (quote.split.collect { |article| cw_chars(article.strip.delete("\"").downcase)})
   end
 end
