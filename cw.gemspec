@@ -13,16 +13,17 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'http://github.com/mjago/cw'
   spec.files       = `git ls-files`.split($/)
   spec.license     = 'MIT'
-  spec.require_paths = ["lib", "audio", "data/text", "test"]
-  spec.required_ruby_version = '>= 2.0.0'
 
-  spec.add_dependency('wavefile')
-  spec.add_dependency('paint')
-  spec.add_dependency('feedjira')
-  spec.add_dependency('htmlentities')
-  spec.add_dependency('sanitize')
-  spec.add_dependency('ruby-progressbar')
-  spec.add_dependency('rake')
+  spec.require_paths = ["lib", "audio", "data/text", "test"]
+
+  spec.required_ruby_version = '>= 1.9.3'
+  spec.add_runtime_dependency 'feedjira', '>= 2.0.0'
+  spec.add_runtime_dependency 'htmlentities', '>= 4.3.4'
+  spec.add_runtime_dependency 'paint', '>= 1.0.1'
+  spec.add_runtime_dependency 'rake', '>= 11.1.2'
+  spec.add_runtime_dependency 'ruby-progressbar', '>= 1.8.1'
+  spec.add_runtime_dependency 'sanitize', '>= 4.0.1'
+  spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
 
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "simplecov"
