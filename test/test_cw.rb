@@ -287,7 +287,9 @@ Ending:     x
 
   def test_random_letters_returns_random_letters
     @cw.random_letters
-    @cw.words.each { |w| assert_match /^(?=.*\D)[-\w]+$/, w }
+    @cw.words.each { |w|
+      assert_match(/^(?=.*\D)[-\w]+$/, w)
+    }
   end
 
   def test_random_numbers_can_take_size_and_count_option
@@ -298,24 +300,30 @@ Ending:     x
 
   def test_random_numbers_returns_random_numbers
     @cw.random_numbers
-    @cw.words.each { |w| assert_match /\A[-+]?\d+\z/ , w }
+    @cw.words.each { |w|
+      assert_match(/\A[-+]?\d+\z/ , w)
+    }
   end
 
   def test_random_letters_numbers_can_take_size_and_count_option
     @cw.random_letters_numbers(count: 3, size: 4)
     assert_equal 3, @cw.words.size
-    @cw.words.each { |w| assert_equal 4, w.length}
+    @cw.words.each { |w|
+      assert_equal 4, w.length
+    }
   end
 
   def test_random_letters_numbers_includes_letter
     @cw.random_letters_numbers
-    @cw.words.each { |w| assert_match /[a-zA-Z]+/, w}
+    @cw.words.each { |w|
+      assert_match( /[a-zA-Z]+/, w)
+    }
   end
 
   def test_random_letters_numbers_includes_number
     @cw.random_letters_numbers
     @cw.words.each do |w|
-      assert_match /[0-9]+/, w
+      assert_match(/[0-9]+/, w)
     end
   end
 
@@ -388,7 +396,7 @@ Ending:     x
     assert @cw.method(:words_no_shorter_than), @cw.method(:no_shorter_than)
     assert @cw.method(:random_alphanumeric),   @cw.method(:random_letters_numbers)
     assert @cw.method(:comment),               @cw.method(:name)
-    assert @cw.method(:no_run),                @cw.method(:pause) 
+    assert @cw.method(:no_run),                @cw.method(:pause)
   end
 
   def test_set_wpm_param

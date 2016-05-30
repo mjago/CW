@@ -146,6 +146,10 @@ class TestCwStream < MiniTest::Test
     @stream = CwStream.new
   end
 
+  def teardown
+    @cw = nil
+  end
+
   def test_assert
     assert true
   end
