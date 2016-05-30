@@ -11,9 +11,8 @@ class TestCW < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @cw = CW.new do
-      pause
-    end
+    @cw = CW.new
+    @cw.pause
   end
 
   def teardown
