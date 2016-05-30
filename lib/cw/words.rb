@@ -4,6 +4,8 @@
 
 class Words
 
+  include TextHelpers
+
   def load(filename)
     File.open(filename, 'r') do |file|
       @words = file.read.split
@@ -96,14 +98,6 @@ class Words
 
   def reverse
     @words.reverse!
-  end
-
-  def letter_group
-    (97..122).to_a
-  end
-
-  def number_group
-    (48..57).to_a
   end
 
   def letters_numbers

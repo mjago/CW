@@ -26,4 +26,25 @@ module Params
   def config( & block)
     instance_eval( & block)
   end
+
+  def shuffle_str
+    shuffle ? "Shuffle:    #{shuffle ? 'yes' : 'no'}\n" : nil
+  end
+
+  def word_count_str
+    word_count ? "Word count: #{word_count}\n" : nil
+  end
+
+  def wpm_str
+    "WPM:        #{wpm}\n"
+  end
+
+  def word_size_str
+    size ? "Word size:  #{size}\n" : nil
+  end
+
+  def delim_str
+    "#{'=' * Params.name.size}\n"
+  end
+
 end

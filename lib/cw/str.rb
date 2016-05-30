@@ -4,19 +4,21 @@
 
 class Str
 
+  include TextHelpers
+
   def initialize
     @seperator = ', '
   end
 
   def to_s
-    delim  = delim_std_str
+    delim  = Params.delim_str
     [
-      "#{Params.name}\n",
-      "#{delim}",
-      "#{wpm_str}",
-      shuffle_str,
-      word_count_str,
-      word_size_str,
+      Params.name + "\n",
+      delim,
+      Params.wpm_str,
+      Params.shuffle_str,
+      Params.word_count_str,
+      Params.word_size_str,
       beginning_str,
       ending_str,
       delim
@@ -27,30 +29,6 @@ class Str
     ary.join(@seperator)
   end
 
-  def delim_str size
-    "#{'=' * size}\n"
-  end
-
-  def delim_std_str
-    tempsize = Params.name.size
-    delim_str tempsize
-  end
-
-  def shuffle_str
-    shuffle =  Params.shuffle
-    shuffle ? "Shuffle:    #{shuffle ? 'yes' : 'no'}\n" : nil
-  end
-
-  def word_count_str
-    wc = Params.word_count
-    wc ? "Word count: #{wc}\n" : nil
-  end
-
-  def word_size_str
-    size = Params.size
-    size ? "Word size:  #{size}\n" : nil
-  end
-
   def beginning_str
     beginning = Params.begin
     beginning ? "Beginning:  #{stringify beginning}\n" : nil
@@ -59,10 +37,6 @@ class Str
   def ending_str
     ending = Params.end
     ending ? "Ending:     #{stringify ending}\n" : nil
-  end
-
-  def wpm_str
-    "WPM:        #{Params.wpm}\n"
   end
 
 end

@@ -22,8 +22,4 @@ module TextHelpers
     temp
   end
 
-  def delim_str size
-    "#{'=' * size}\n"
-  end
-
 end

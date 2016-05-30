@@ -4,6 +4,8 @@
 
 class Rss
 
+  include TextHelpers
+
   def sources
     {
       bbc:        'http://feeds.bbci.co.uk/news/rss.xml',
@@ -47,18 +49,6 @@ class Rss
 
   def article_index
     @article_index || @article_index = 0
-  end
-
-  def cw_chars chr
-    chr.tr('^a-z0-9\.\,+', '')
-  end
-
-  def exclude_non_cw_chars word
-    temp = ''
-    word.split.each do |chr|
-      temp += chr if letter(chr)
-    end
-    temp
   end
 
   def next_article
