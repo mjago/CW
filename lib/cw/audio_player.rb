@@ -14,6 +14,7 @@ class AudioPlayer
     @play_filename ||= "#{Params.audio_dir}/#{Params.audio_filename}0000.mp3"
   end
 
+#FIXME dry_run
   def convert_words_with_ebook2cw words
     words = words.delete("\n")
     cl = Cl.new.cl_echo(words)
@@ -30,6 +31,7 @@ class AudioPlayer
     tone.play_filename
   end
 
+#FIXME dry_run
   def play
     cmd = play_command + ' ' + play_filename
     @pid = ! @dry_run ? Process.spawn(cmd) : cmd

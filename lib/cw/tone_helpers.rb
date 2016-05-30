@@ -1,3 +1,5 @@
+# Module ToneHelpers provides helper methods for ToneGenerator
+
 module ToneHelpers
 
   TWO_PI           = 2 * Math::PI
@@ -7,6 +9,7 @@ module ToneHelpers
   SPACE_FILENAME   = HERE + "audio/space.wav"
   E_SPACE_FILENAME = HERE + "audio/e_space.wav"
 
+# :reek: exclude from UtilityFunction
   def play_filename
     HERE + "audio/#{Params.audio_filename}"
   end

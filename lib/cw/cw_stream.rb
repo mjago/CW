@@ -5,6 +5,7 @@ class CwStream
   include Element
 
   attr_accessor :active_region
+  attr_accessor   :stream
 
   def initialize
     @active_region = 6

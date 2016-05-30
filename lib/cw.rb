@@ -36,8 +36,8 @@ require_relative 'cw/progress'
 
 class CW < CwDsl
 
-  attr_accessor :dry_run
-  attr_accessor :quit
+#FIXME dry_run
+#  attr_accessor :dry_run
 
   # Test user against letters rather than words.
   #

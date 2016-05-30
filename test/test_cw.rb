@@ -1,4 +1,5 @@
 require 'simplecov'
+
 SimpleCov.start
 
 require 'minitest/autorun'
@@ -11,7 +12,6 @@ class TestCW < MiniTest::Test
 
   def setup
     @cw = CW.new do
-      words = 'one two three'
       pause
     end
   end
@@ -341,7 +341,7 @@ Ending:     x
     assert_equal 'tsal neht tsrif', @cw.words
   end
 
-  #todo
+  #FIXME
   #      def test_convert_generates_correct_command_for_default
   #        @cw.dry_run = true
   #        @cw.words = "some words"
