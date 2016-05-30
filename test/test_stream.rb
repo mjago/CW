@@ -206,7 +206,7 @@ class TestCwStream < MiniTest::Test
     @stream.instance_variable_set(:@success, {0 => true, 1 => false})
     @stream.active_region = 2
     @stream.fail_unmarked_inactive_elements
-  assert_equal({0 => true, 1 => false}, @stream.instance_variable_get(:@success))
+    assert_equal({0 => true, 1 => false}, @stream.instance_variable_get(:@success))
   end
 
   def test_mark_inactive_region_fail_doesnt_fail_when_no_stream
@@ -231,17 +231,17 @@ class TestCwStream < MiniTest::Test
     refute(@stream.pop[:success])
     assert_equal({2 => 'c', 3 => 'd'}, @stream.stream)
 
-   @stream.empty
-   @stream.add_word 'a'
-   refute(@stream.pop[:success])
-   @stream.add_word 'b'
-   refute(@stream.pop[:success])
-   @stream.add_word 'c'
-   refute(@stream.pop[:success])
-   @stream.add_word 'd'
-   refute(@stream.pop[:success])
-   assert_nil @stream.pop
-   assert_equal({}, @stream.stream)
+    @stream.empty
+    @stream.add_word 'a'
+    refute(@stream.pop[:success])
+    @stream.add_word 'b'
+    refute(@stream.pop[:success])
+    @stream.add_word 'c'
+    refute(@stream.pop[:success])
+    @stream.add_word 'd'
+    refute(@stream.pop[:success])
+    assert_nil @stream.pop
+    assert_equal({}, @stream.stream)
   end
 
   def test_match_last_active_element_marks_correct_element
@@ -251,7 +251,7 @@ class TestCwStream < MiniTest::Test
     @stream.add_word 'd'
     @stream.match_last_active_element('c')
     assert_equal({0 => false, 1 => false, 2 => true, 3 => nil}, @stream.instance_variable_get(:@success))
-    end
+  end
 
   def test_match_last_active_element_doesnt_unmark_correct_element
     @stream.active_region = 2
@@ -274,66 +274,66 @@ class TestCwStream < MiniTest::Test
     assert_equal({0 => false, 1 => false, 2 => true, 3 => true}, @stream.instance_variable_get(:@success))
   end
 
-#    def test_pop_marked_returns_nil_for_empty_stream
-#      assert_equal(nil, @stream.pop_marked)
-#      assert_equal(nil, @stream.pop_marked)
-#    end
-#
-#    def test_pop_marked_returns_up_to_marked_first_element
-#      @stream.add_word 'a'
-#      @stream.add_word 'b'
-#      @stream.add_word 'c'
-#      @stream.add_word 'd'
-#      @stream.match_last_active_element('a')
-#      assert_equal({0 => {'a' => true}}, @stream.pop_marked)
-#      assert_equal(nil, @stream.pop_marked)
-#    end
-#
-#    def test_pop_marked_returns_up_to_marked_second_element
-#      @stream.add_word 'a'
-#      @stream.add_word 'b'
-#      @stream.add_word 'c'
-#      @stream.add_word 'd'
-#      @stream.match_last_active_element('b')
-#      assert_equal({0 => {'a' => false}, 1 => {'b' => true}}, @stream.pop_marked)
-#      assert_equal(nil, @stream.pop_marked)
-#    end
-#
-#    def test_pop_marked_returns_up_to_marked_first_and_third_element
-#      @stream.add_word 'a'
-#      @stream.add_word 'b'
-#      @stream.add_word 'c'
-#      @stream.add_word 'd'
-#      @stream.match_last_active_element('a')
-#      @stream.match_last_active_element('c')
-#      assert_equal({0 => {'a' => true}, 1 => {'b' => false}, 2 => {'c' => true}}, @stream.pop_marked)
-#      assert_equal(nil, @stream.pop_marked)
-#      @stream.match_last_active_element('d')
-#      assert_equal({3 => {'d' => true}}, @stream.pop_marked)
-#    end
-#
-#    def test_pop_marked_returns_inactive_unmarked_elements
-#      @stream.add_word 'a'
-#      @stream.add_word 'b'
-#      @stream.add_word 'c'
-#      @stream.add_word 'd'
-#      @stream.active_region = 2
-#      assert_equal({0 => {'a' => false}, 1 => {'b' => false}}, @stream.pop_marked)
-#      assert_equal(nil, @stream.pop_marked)
-#      @stream.match_last_active_element('d')
-#      assert_equal({2 => {'c' => false}, 3 => {'d' => true}}, @stream.pop_marked)
-#    end
-#
-#    def test_pop_marked_returns_mix_of_active_and_inactive
-#      @stream.active_region = 2
-#      @stream.add_word 'a'
-#      @stream.add_word 'b'
-#      @stream.add_word 'c'
-#      @stream.add_word 'd'
-#      @stream.match_last_active_element('d')
-#      assert_equal({0 => {'a' => false}, 1 => {'b' => false}, 2 => {'c' => false}, 3 => {'d' => true}}, @stream.pop_marked)
-#      assert_equal(nil, @stream.pop_marked)
-#    end
+  #    def test_pop_marked_returns_nil_for_empty_stream
+  #      assert_equal(nil, @stream.pop_marked)
+  #      assert_equal(nil, @stream.pop_marked)
+  #    end
+  #
+  #    def test_pop_marked_returns_up_to_marked_first_element
+  #      @stream.add_word 'a'
+  #      @stream.add_word 'b'
+  #      @stream.add_word 'c'
+  #      @stream.add_word 'd'
+  #      @stream.match_last_active_element('a')
+  #      assert_equal({0 => {'a' => true}}, @stream.pop_marked)
+  #      assert_equal(nil, @stream.pop_marked)
+  #    end
+  #
+  #    def test_pop_marked_returns_up_to_marked_second_element
+  #      @stream.add_word 'a'
+  #      @stream.add_word 'b'
+  #      @stream.add_word 'c'
+  #      @stream.add_word 'd'
+  #      @stream.match_last_active_element('b')
+  #      assert_equal({0 => {'a' => false}, 1 => {'b' => true}}, @stream.pop_marked)
+  #      assert_equal(nil, @stream.pop_marked)
+  #    end
+  #
+  #    def test_pop_marked_returns_up_to_marked_first_and_third_element
+  #      @stream.add_word 'a'
+  #      @stream.add_word 'b'
+  #      @stream.add_word 'c'
+  #      @stream.add_word 'd'
+  #      @stream.match_last_active_element('a')
+  #      @stream.match_last_active_element('c')
+  #      assert_equal({0 => {'a' => true}, 1 => {'b' => false}, 2 => {'c' => true}}, @stream.pop_marked)
+  #      assert_equal(nil, @stream.pop_marked)
+  #      @stream.match_last_active_element('d')
+  #      assert_equal({3 => {'d' => true}}, @stream.pop_marked)
+  #    end
+  #
+  #    def test_pop_marked_returns_inactive_unmarked_elements
+  #      @stream.add_word 'a'
+  #      @stream.add_word 'b'
+  #      @stream.add_word 'c'
+  #      @stream.add_word 'd'
+  #      @stream.active_region = 2
+  #      assert_equal({0 => {'a' => false}, 1 => {'b' => false}}, @stream.pop_marked)
+  #      assert_equal(nil, @stream.pop_marked)
+  #      @stream.match_last_active_element('d')
+  #      assert_equal({2 => {'c' => false}, 3 => {'d' => true}}, @stream.pop_marked)
+  #    end
+  #
+  #    def test_pop_marked_returns_mix_of_active_and_inactive
+  #      @stream.active_region = 2
+  #      @stream.add_word 'a'
+  #      @stream.add_word 'b'
+  #      @stream.add_word 'c'
+  #      @stream.add_word 'd'
+  #      @stream.match_last_active_element('d')
+  #      assert_equal({0 => {'a' => false}, 1 => {'b' => false}, 2 => {'c' => false}, 3 => {'d' => true}}, @stream.pop_marked)
+  #      assert_equal(nil, @stream.pop_marked)
+  #    end
 
   def test_pop_next_marked_returns_correct_elements_where_last_only_matched
     @stream.add_word 'a'

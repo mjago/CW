@@ -1,5 +1,5 @@
 require 'simplecov'
-
+$VERBOSE = nil #FIXME
 SimpleCov.start
 
 require 'minitest/autorun'
