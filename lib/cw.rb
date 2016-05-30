@@ -2,6 +2,8 @@
 
 require_relative 'cw/file_details'
 require_relative 'cw/process'
+require_relative 'cw/text_helpers'
+require_relative 'cw/current_word'
 require_relative 'cw/cw_dsl'
 require_relative 'cw/randomize'
 require_relative 'cw/sentence'
