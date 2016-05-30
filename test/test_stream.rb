@@ -147,7 +147,7 @@ class TestCwStream < MiniTest::Test
   end
 
   def teardown
-    @cw = nil
+    @stream = nil
   end
 
   def test_assert
