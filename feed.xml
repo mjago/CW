@@ -3,10 +3,10 @@
   <channel>
     <title>CW</title>
     <description></description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jun 2016 19:06:18 +0100</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 19:06:18 +0100</lastBuildDate>
+    <link>/CW/</link>
+    <atom:link href="/CW/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 01 Jun 2016 19:09:43 +0100</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2016 19:09:43 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -61,8 +61,8 @@ ruby five-common-words.rb
 
 </description>
         <pubDate>Thu, 02 Jun 2016 00:00:00 +0100</pubDate>
-        <link>/tut/getting-started.html</link>
-        <guid isPermaLink="true">/tut/getting-started.html</guid>
+        <link>/CW/tut/getting-started.html</link>
+        <guid isPermaLink="true">/CW/tut/getting-started.html</guid>
         
         
         <category>tut</category>
@@ -212,8 +212,8 @@ ruby five-common-words.rb
 
 </description>
         <pubDate>Wed, 01 Jun 2016 23:00:00 +0100</pubDate>
-        <link>/tut/5commonwords.html</link>
-        <guid isPermaLink="true">/tut/5commonwords.html</guid>
+        <link>/CW/tut/5commonwords.html</link>
+        <guid isPermaLink="true">/CW/tut/5commonwords.html</guid>
         
         
         <category>tut</category>
@@ -269,8 +269,8 @@ ruby five-common-words.rb
 
 </description>
         <pubDate>Wed, 01 Jun 2016 22:00:00 +0100</pubDate>
-        <link>/tut/words-of-fixed-length.html</link>
-        <guid isPermaLink="true">/tut/words-of-fixed-length.html</guid>
+        <link>/CW/tut/words-of-fixed-length.html</link>
+        <guid isPermaLink="true">/CW/tut/words-of-fixed-length.html</guid>
         
         
         <category>tut</category>
@@ -326,8 +326,8 @@ ruby five-common-words.rb
 
 </description>
         <pubDate>Wed, 01 Jun 2016 21:00:00 +0100</pubDate>
-        <link>/tut/words-with-length-variation.html</link>
-        <guid isPermaLink="true">/tut/words-with-length-variation.html</guid>
+        <link>/CW/tut/words-with-length-variation.html</link>
+        <guid isPermaLink="true">/CW/tut/words-with-length-variation.html</guid>
         
         
         <category>tut</category>
@@ -359,8 +359,8 @@ ruby five-common-words.rb
 
 </description>
         <pubDate>Wed, 01 Jun 2016 16:39:55 +0100</pubDate>
-        <link>/ref/repeatword.html</link>
-        <guid isPermaLink="true">/ref/repeatword.html</guid>
+        <link>/CW/ref/repeatword.html</link>
+        <guid isPermaLink="true">/CW/ref/repeatword.html</guid>
         
         
         <category>ref</category>
@@ -372,8 +372,8 @@ ruby five-common-words.rb
         <description>
 </description>
         <pubDate>Wed, 01 Jun 2016 16:31:04 +0100</pubDate>
-        <link>/ref/noshorterthan.html</link>
-        <guid isPermaLink="true">/ref/noshorterthan.html</guid>
+        <link>/CW/ref/noshorterthan.html</link>
+        <guid isPermaLink="true">/CW/ref/noshorterthan.html</guid>
         
         
         <category>ref</category>
@@ -385,8 +385,8 @@ ruby five-common-words.rb
         <description>
 </description>
         <pubDate>Wed, 01 Jun 2016 16:30:58 +0100</pubDate>
-        <link>/ref/wordsnoshorterthan.html</link>
-        <guid isPermaLink="true">/ref/wordsnoshorterthan.html</guid>
+        <link>/CW/ref/wordsnoshorterthan.html</link>
+        <guid isPermaLink="true">/CW/ref/wordsnoshorterthan.html</guid>
         
         
         <category>ref</category>
@@ -398,8 +398,8 @@ ruby five-common-words.rb
         <description>
 </description>
         <pubDate>Wed, 01 Jun 2016 16:30:42 +0100</pubDate>
-        <link>/ref/nolongerthan.html</link>
-        <guid isPermaLink="true">/ref/nolongerthan.html</guid>
+        <link>/CW/ref/nolongerthan.html</link>
+        <guid isPermaLink="true">/CW/ref/nolongerthan.html</guid>
         
         
         <category>ref</category>
@@ -411,8 +411,8 @@ ruby five-common-words.rb
         <description>
 </description>
         <pubDate>Wed, 01 Jun 2016 16:30:33 +0100</pubDate>
-        <link>/ref/wordsnolongerthan.html</link>
-        <guid isPermaLink="true">/ref/wordsnolongerthan.html</guid>
+        <link>/CW/ref/wordsnolongerthan.html</link>
+        <guid isPermaLink="true">/CW/ref/wordsnolongerthan.html</guid>
         
         
         <category>ref</category>
@@ -424,8 +424,8 @@ ruby five-common-words.rb
         <description>
 </description>
         <pubDate>Wed, 01 Jun 2016 16:30:20 +0100</pubDate>
-        <link>/ref/beginningwith.html</link>
-        <guid isPermaLink="true">/ref/beginningwith.html</guid>
+        <link>/CW/ref/beginningwith.html</link>
+        <guid isPermaLink="true">/CW/ref/beginningwith.html</guid>
         
         
         <category>ref</category>
