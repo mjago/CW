@@ -5,8 +5,8 @@
     <description></description>
     <link>/CW/</link>
     <atom:link href="/CW/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jun 2016 19:30:18 +0100</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 19:30:18 +0100</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2016 19:42:41 +0100</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2016 19:42:41 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -299,7 +299,7 @@ ruby five-common-words.rb
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/eight-words-five-or-less-letters.rb.rb&quot;&gt;eight-words-five-or-less-letters.rb&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/eight-words-five-or-less-letters.rb&quot;&gt;eight-words-five-or-less-letters.rb&lt;/a&gt;)&lt;/p&gt;
 
 &lt;h3 id=&quot;words-having-size-between-2-and-4-letters-15-wpm&quot;&gt;2) 8 words having size between 2 and 4 letters (15 WPM)&lt;/h3&gt;
 
