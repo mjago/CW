@@ -5,13 +5,15 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jun 2016 18:44:36 +0100</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 18:44:36 +0100</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2016 19:06:18 +0100</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2016 19:06:18 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Getting Started</title>
-        <description>&lt;h4 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h4&gt;
+        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;CW&lt;/strong&gt; will currently only run on &lt;strong&gt;MAC OS X&lt;/strong&gt; or &lt;strong&gt;Linux&lt;/strong&gt; (i.e. &lt;strong&gt;POSIX&lt;/strong&gt;) systems. This means it is currently unavailable for users of &lt;strong&gt;Windows&lt;/strong&gt; Systems. This may change in the future.&lt;/p&gt;
 
@@ -69,7 +71,9 @@ ruby five-common-words.rb
     
       <item>
         <title>5 Common Words</title>
-        <description>&lt;h3 id=&quot;write-a-test-that-generates-5-common-words-test-by-word&quot;&gt;1) Write a test that generates 5 common words (test-by-word)&lt;/h3&gt;
+        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;write-a-test-that-generates-5-common-words-test-by-word&quot;&gt;1) Write a test that generates 5 common words (test-by-word)&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;Enter the following into a text file called five-common-words.rb&lt;/em&gt;&lt;/p&gt;
 
@@ -218,7 +222,9 @@ ruby five-common-words.rb
     
       <item>
         <title>Words of Fixed Length</title>
-        <description>&lt;h3 id=&quot;write-a-test-that-generates-5-words-of-4-characters-test-by-letter&quot;&gt;1) Write a test that generates 5 words of 4 characters (test-by-letter)&lt;/h3&gt;
+        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;write-a-test-that-generates-5-words-of-4-characters-test-by-letter&quot;&gt;1) Write a test that generates 5 words of 4 characters (test-by-letter)&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;c1&quot;&gt;# five-words-five-letters.rb&lt;/span&gt;
@@ -273,7 +279,9 @@ ruby five-common-words.rb
     
       <item>
         <title>Words with Length Variation</title>
-        <description>&lt;h3 id=&quot;write-a-test-that-generates-8-words-of-length-5-or-less-characters&quot;&gt;1) Write a test that generates 8 words of length 5 or less characters&lt;/h3&gt;
+        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;write-a-test-that-generates-8-words-of-length-5-or-less-characters&quot;&gt;1) Write a test that generates 8 words of length 5 or less characters&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;c1&quot;&gt;# eight-words-five-or-less-letters.rb&lt;/span&gt;
@@ -328,7 +336,9 @@ ruby five-common-words.rb
     
       <item>
         <title>repeat_word</title>
-        <description>&lt;p&gt;Repeat currently tested word until the word is entered correctly:&lt;/p&gt;
+        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+
+&lt;p&gt;Repeat currently tested word until the word is entered correctly:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;c1&quot;&gt;# repeat_word.rb&lt;/span&gt;
