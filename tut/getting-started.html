@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
-        <title>CW : Jekyll Docs Template</title>
+        <title>CW : Getting Started</title>
         <meta name="description" content="Morse Code Learning and Practicing">
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -175,21 +175,63 @@
                     </div>
 
                     <div id="content" class="col-sm-10">
-                        <h3 id="get-started">Get Started</h3>
+                        <article class="post">
 
-<p>Start by <a href="http://jekyllrb.com/docs/posts/">creating a new post</a> one of the categories listed in <code class="highlighter-rouge">_config.yml</code>. It will appear in the navigation on the left once recompiled. Or use the supplied script to make creating pages easier:</p>
+  <header class="post-header">
+    <h1 class="post-title">Getting Started</h1>
+  </header>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby bin/jekyll-page <span class="s2">"Some Page Title"</span> ref
+  <div class="post-content">
+    <h4 id="dependencies">Dependencies</h4>
+
+<p><strong>CW</strong> will currently only run on <strong>MAC OS X</strong> or <strong>Linux</strong> (i.e. <strong>POSIX</strong>) systems. This means it is currently unavailable for users of <strong>Windows</strong> Systems. This may change in the future.</p>
+
+<p><a href="https://travis-ci.org/mjago/CW"><img src="https://travis-ci.org/mjago/CW.svg?branch=master" alt="Build Status" /></a></p>
+
+<p><strong>CW</strong> is currently tested on <strong>Ruby</strong> versions <strong>v1.9.3</strong>, <strong>v2.0.0</strong> and <strong>v2.2.3</strong></p>
+
+<h4 id="install-ruby">Install Ruby</h4>
+
+<p>A fairly recent version of the Ruby programming language  (1.8.7 or later) is required to run <strong>CW</strong>. See <a href="https://www.ruby-lang.org/en/downloads/">Ruby Installation</a> for details of downloading the latest version. To check Ruby has installed type the following to check the version:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ruby --version
+
 </code></pre>
 </div>
 
-<h4 id="dont-forget">Don’t Forget</h4>
+<h4 id="install-cw-rubygem">Install CW RubyGem</h4>
 
-<ul>
-  <li>Add your own content to this page (i.e. <code class="highlighter-rouge">index.md</code>) and change the <code class="highlighter-rouge">title</code></li>
-  <li>Change <code class="highlighter-rouge">title</code> and <code class="highlighter-rouge">subtitle</code> defined in <code class="highlighter-rouge">config.yml</code> for your site</li>
-  <li>Set the <code class="highlighter-rouge">baseurl</code> in <code class="highlighter-rouge">_config.yml</code> for your repo if deploying to GitHub pages</li>
-</ul>
+<p><a href="https://badge.fury.io/rb/cw"><img src="https://badge.fury.io/rb/cw.svg" alt="Gem Version" /></a></p>
+
+<p>Enter the following commands to create the directory <strong>cw</strong> (in the <em>home</em> directory) - enter the directory - and install the <strong>CW gem</strong> and its <em>dependencies</em>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+mkdir ~/cw
+<span class="nb">cd</span> ~/cw
+gem install cw
+
+</code></pre>
+</div>
+
+<h4 id="how-to-run-the-examples">How to Run the Examples:</h4>
+
+<p>Download (or create) a test-script in the directory created. Run a test-script by typing ruby followed by the name of the <em>text file</em> or <em>test-script</em> that you wish to run:</p>
+
+<p>download: <a href="/assets/rb/five-common-words.rb">five-common-words.rb</a></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ruby five-common-words.rb
+
+</code></pre>
+</div>
+
+<p><a href="/tut/5commonwords.html">Next - 5 Common Words</a></p>
+
+
+  </div>
+
+</article>
 
                     </div>
                 
