@@ -14,7 +14,6 @@ addition to generating random words, letters, and numbers that possibly match so
 
 CW also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
 
-Documentation to follow...
 
 # Installation:
 
@@ -24,16 +23,14 @@ gem install cw
 ruby example.rb
 
 ```
-# Run tests
-
-```sh
-
-gem install --dev cw
-ruby test/test_cw.rb
-
-```
 
  * Note: Currently only tested on OS X, and Ruby v2.0.0 and greater.
+
+# Documentation:
+
+    http://mjago.github.io/CW/
+
+# Example test-script
 
 ```ruby
 
