@@ -24,11 +24,11 @@ ruby example.rb
 
 ```
 
- * Note: Currently only tested on OS X, and Ruby v2.0.0 and greater.
+ * Note: Currently only tested on OS X, and Ruby v1.9.3 and later.
 
 # Documentation:
 
-    http://mjago.github.io/CW/
+    [CW Documentation](http://mjago.github.io/CW/)
 
 # Example test-script
 
