@@ -28,7 +28,7 @@ ruby example.rb
 
 # Documentation:
 
-    [CW Documentation](http://mjago.github.io/CW/)
+[CW Documentation](http://mjago.github.io/CW/)
 
 # Example test-script
 
@@ -152,4 +152,4 @@ test.test_letters
 
 # License
 
-MIT License
+[MIT License](https://raw.githubusercontent.com/mjago/CW/master/LICENSE)
