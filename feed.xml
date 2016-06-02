@@ -1,436 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>CW</title>
-    <description></description>
-    <link>/CW/</link>
-    <atom:link href="/CW/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jun 2016 21:10:32 +0100</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 21:10:32 +0100</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
-    
-      <item>
-        <title>Getting Started</title>
-        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+    <channel>
+        <title></title>
+        <description>Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.</description>
+        <link>http://idratherbewriting.com/documentation-theme-jekyll/</link>
+        <atom:link href="http://idratherbewriting.com/documentation-theme-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Thu, 02 Jun 2016 14:43:31 +0100</pubDate>
+        <lastBuildDate>Thu, 02 Jun 2016 14:43:31 +0100</lastBuildDate>
+        <generator>Jekyll v3.0.3</generator>
+        
+        <item>
+            <title>Sample post</title>
+            <description>&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
 
-&lt;h4 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h4&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Heading&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;CW&lt;/strong&gt; will currently only run on &lt;strong&gt;MAC OS X&lt;/strong&gt; or &lt;strong&gt;Linux&lt;/strong&gt; (i.e. &lt;strong&gt;POSIX&lt;/strong&gt;) systems. This means it is currently unavailable for users of &lt;strong&gt;Windows&lt;/strong&gt; Systems. This may change in the future.&lt;/p&gt;
+&lt;p&gt;but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/mjago/CW&quot;&gt;&lt;img src=&quot;https://travis-ci.org/mjago/CW.svg?branch=master&quot; alt=&quot;Build Status&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CW&lt;/strong&gt; is currently tested on &lt;strong&gt;Ruby&lt;/strong&gt; versions &lt;strong&gt;v1.9.3&lt;/strong&gt;, &lt;strong&gt;v2.0.0&lt;/strong&gt; and &lt;strong&gt;v2.2.3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;install-ruby&quot;&gt;Install Ruby&lt;/h4&gt;
-
-&lt;p&gt;A fairly recent version of the Ruby programming language  (1.8.7 or later) is required to run &lt;strong&gt;CW&lt;/strong&gt;. See &lt;a href=&quot;https://www.ruby-lang.org/en/downloads/&quot;&gt;Ruby Installation&lt;/a&gt; for details of downloading the latest version. To check Ruby has installed type the following to check the version:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-ruby --version
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;install-cw-rubygem&quot;&gt;Install CW RubyGem&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://badge.fury.io/rb/cw&quot;&gt;&lt;img src=&quot;https://badge.fury.io/rb/cw.svg&quot; alt=&quot;Gem Version&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Enter the following commands to create the directory &lt;strong&gt;cw&lt;/strong&gt; (in the &lt;em&gt;home&lt;/em&gt; directory) - enter the directory - and install the &lt;strong&gt;CW gem&lt;/strong&gt; and its &lt;em&gt;dependencies&lt;/em&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-mkdir ~/cw
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/cw
-gem install cw
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;how-to-run-the-examples&quot;&gt;How to Run the Examples:&lt;/h4&gt;
-
-&lt;p&gt;Download (or create) a test-script in the directory created. Run a test-script by typing ruby followed by the name of the &lt;em&gt;text file&lt;/em&gt; or &lt;em&gt;test-script&lt;/em&gt; that you wish to run:&lt;/p&gt;
-
-&lt;p&gt;download: &lt;a href=&quot;../assets/rb/five-common-words.rb&quot;&gt;five-common-words.rb&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-ruby five-common-words.rb
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;../tut/5commonwords.html&quot;&gt;Next - Five Common Words&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 02 Jun 2016 00:00:00 +0100</pubDate>
-        <link>/CW/tut/getting-started.html</link>
-        <guid isPermaLink="true">/CW/tut/getting-started.html</guid>
+            <pubDate>Fri, 26 Feb 2016 00:00:00 +0000</pubDate>
+            <link>http://idratherbewriting.com/documentation-theme-jekyll/samplepost/</link>
+            <guid isPermaLink="true">http://idratherbewriting.com/documentation-theme-jekyll/samplepost/</guid>
+            
+            <category>news</category>
+            
+            <category>getting_started</category>
+            
+            
+        </item>
         
-        
-        <category>tut</category>
-        
-      </item>
-    
-      <item>
-        <title>Five Common Words</title>
-        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
+        <item>
+            <title>Welcome to Jekyll!</title>
+            <description>&lt;p&gt;Theme updates:&lt;/p&gt;
 
-&lt;h3 id=&quot;write-a-test-that-generates-5-common-words-test-by-word&quot;&gt;1) Write a test that generates 5 common words (test-by-word)&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;Enter the following into a text file called five-common-words.rb&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;You will be tested against the  words on a word-by-word basis (rather than letter-by-letter):&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-common-words.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 common words at 12 words per minute&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/five-common-words.rb&quot;&gt;five-common-words.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h4 id=&quot;output&quot;&gt;Output:&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/images/five-common-words.png&quot; alt=&quot;5 common words&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;The words in red were entered incorrectly!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;write-a-test-that-generates-5-common-words-test-by-letter&quot;&gt;2) Write a test that generates 5 common words (test-by-letter)&lt;/h3&gt;
-
-&lt;p&gt;Instead of  testing &lt;i&gt;word-by-word&lt;/i&gt;, you may  also test &lt;i&gt;letter-by-letter&lt;/i&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;You should find this more informative if you are guessing some letters incorrectly&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-common-words-2.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 common words at 12 words per minute&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;        &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;test_letters&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# notice we have added the command test_letters&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/five-common-words-2.rb&quot;&gt;five-common-words-2.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h4 id=&quot;output-1&quot;&gt;Output:&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;The letters in red are were entered incorrectly!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/images/five-common-words-2.png&quot; alt=&quot;5 common words 2&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;combine-both-examples-into-a-single-test&quot;&gt;3) Combine both examples into a single test&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-common-words-3.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 common words at 12 wpm (test letters)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;        &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;test_letters&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 common words at 12 wpm (test words)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;        &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/five-common-words-3.rb&quot;&gt;five-common-words-3.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;five-common-words-repeat-until-correct&quot;&gt;4) Five common words (repeat until correct)&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;hint:&lt;/strong&gt; &lt;em&gt;using the&lt;/em&gt; &lt;strong&gt;&lt;em&gt;repeat_word&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;command repeats the word until it is entered correctly&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-common-words-4.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 common words at 12 wpm (test letters)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;        &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;repeat_word&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/five-common-words-4.rb&quot;&gt;five-common-words-4.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;create-the-bare-minimum-example-below-and-see-what-happens&quot;&gt;5) Create the bare minimum example below and see what happens:&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;hint:&lt;/strong&gt; &lt;em&gt;to quit any test hit the q key four times successively&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-common-words-5.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/five-common-words-5.rb&quot;&gt;five-common-words-5.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;hint:&lt;/strong&gt; &lt;em&gt;default values are used for word_count and wpm - and since shuffle is not used, the same words will be used on subsequent runs&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../tut/words-of-fixed-length.html&quot;&gt;Next - Words of Fixed Length&lt;/a&gt;&lt;/p&gt;
-
+&lt;ul&gt;
+  &lt;li&gt;Permalinks&lt;/li&gt;
+  &lt;li&gt;Kramdown&lt;/li&gt;
+  &lt;li&gt;URL specified in config file&lt;/li&gt;
+  &lt;li&gt;removed PDF output&lt;/li&gt;
+  &lt;li&gt;removed some of the alternative layouts&lt;/li&gt;
+  &lt;li&gt;added blog feature&lt;/li&gt;
+  &lt;li&gt;sidebars configurable per page&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Wed, 01 Jun 2016 23:00:00 +0100</pubDate>
-        <link>/CW/tut/5commonwords.html</link>
-        <guid isPermaLink="true">/CW/tut/5commonwords.html</guid>
+            <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
+            <link>http://idratherbewriting.com/documentation-theme-jekyll/myupdate/</link>
+            <guid isPermaLink="true">http://idratherbewriting.com/documentation-theme-jekyll/myupdate/</guid>
+            
+            <category>news</category>
+            
+            
+        </item>
         
-        
-        <category>tut</category>
-        
-      </item>
-    
-      <item>
-        <title>Words of Fixed Length</title>
-        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;write-a-test-that-generates-5-words-of-4-characters-test-by-letter&quot;&gt;1) Write a test that generates 5 words of 4 characters (test-by-letter)&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-words-five-letters.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 words having 4 letters (12 WPM)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt;    &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_length&lt;/span&gt;   &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;           &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;test_letters&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/five-words-five-letters.rb&quot;&gt;five-words-five-letters.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;write-a-test-that-generates-4-words-of-6-characters&quot;&gt;2) Write a test that generates 4 words of 6 characters&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# five-words-five-letters.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;4 words having 6 letters (15 WPM)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;                 &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;number_of_words&lt;/span&gt;     &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# you can use number_of_words or word_count&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_having_size_of&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# you can use word_having_size_of or word_length&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/four-words-six-letters.rb&quot;&gt;four-words-six-letters.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../tut/words-with-length-variation.html&quot;&gt;Next - Words with Length Variation&lt;/a&gt;&lt;/p&gt;
-
+        <item>
+            <title>Test post from last year</title>
+            <description>&lt;p&gt;This is just a test post from the previous year.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 01 Jun 2016 22:00:00 +0100</pubDate>
-        <link>/CW/tut/words-of-fixed-length.html</link>
-        <guid isPermaLink="true">/CW/tut/words-of-fixed-length.html</guid>
+            <pubDate>Sun, 12 Apr 2015 00:00:00 +0100</pubDate>
+            <link>http://idratherbewriting.com/documentation-theme-jekyll/test-post-from-last-year/</link>
+            <guid isPermaLink="true">http://idratherbewriting.com/documentation-theme-jekyll/test-post-from-last-year/</guid>
+            
+            <category>news</category>
+            
+            
+        </item>
         
-        
-        <category>tut</category>
-        
-      </item>
-    
-      <item>
-        <title>Words with Length Variation</title>
-        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;write-a-test-that-generates-8-words-of-length-5-or-less-characters&quot;&gt;1) Write a test that generates 8 words of length 5 or less characters&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# eight-words-five-or-less-letters.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Eight words, five or less letters (18 WPM)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;no_longer_than&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt;     &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/eight-words-five-or-less-letters.rb&quot;&gt;eight-words-five-or-less-letters.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;words-having-size-between-2-and-4-letters-15-wpm&quot;&gt;2) 8 words having size between 2 and 4 letters (15 WPM)&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# between-two-and-four.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;8 words having size between 2 and 4 letters (15 WPM)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;                 &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;no_shorter_than&lt;/span&gt;     &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;no_longer_than&lt;/span&gt;      &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;number_of_words&lt;/span&gt;     &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/eight-words-mixed-length.rb&quot;&gt;eight-words-mixed-length.rb&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../tut/words-with-length-variation.html&quot;&gt;Next - Words with Length Variation&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 01 Jun 2016 21:00:00 +0100</pubDate>
-        <link>/CW/tut/words-with-length-variation.html</link>
-        <guid isPermaLink="true">/CW/tut/words-with-length-variation.html</guid>
-        
-        
-        <category>tut</category>
-        
-      </item>
-    
-      <item>
-        <title>repeat_word</title>
-        <description>&lt;p&gt;&lt;!-- _includes/base.html --&gt;&lt;/p&gt;
-
-&lt;p&gt;Repeat currently tested word until the word is entered correctly:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# repeat_word.rb&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;cw&#39;&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;CW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5 common words at 12 wpm (test letters)&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;wpm&lt;/span&gt;        &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;word_count&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;repeat_word&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;(download: &lt;a href=&quot;../assets/rb/repeat_word.rb&quot;&gt;repeat_word.rb&lt;/a&gt;)&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 01 Jun 2016 16:39:55 +0100</pubDate>
-        <link>/CW/ref/repeatword.html</link>
-        <guid isPermaLink="true">/CW/ref/repeatword.html</guid>
-        
-        
-        <category>ref</category>
-        
-      </item>
-    
-      <item>
-        <title>no_shorter_than</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Jun 2016 16:31:04 +0100</pubDate>
-        <link>/CW/ref/noshorterthan.html</link>
-        <guid isPermaLink="true">/CW/ref/noshorterthan.html</guid>
-        
-        
-        <category>ref</category>
-        
-      </item>
-    
-      <item>
-        <title>words_no_shorter_than</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Jun 2016 16:30:58 +0100</pubDate>
-        <link>/CW/ref/wordsnoshorterthan.html</link>
-        <guid isPermaLink="true">/CW/ref/wordsnoshorterthan.html</guid>
-        
-        
-        <category>ref</category>
-        
-      </item>
-    
-      <item>
-        <title>no_longer_than</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Jun 2016 16:30:42 +0100</pubDate>
-        <link>/CW/ref/nolongerthan.html</link>
-        <guid isPermaLink="true">/CW/ref/nolongerthan.html</guid>
-        
-        
-        <category>ref</category>
-        
-      </item>
-    
-      <item>
-        <title>words_no_longer_than</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Jun 2016 16:30:33 +0100</pubDate>
-        <link>/CW/ref/wordsnolongerthan.html</link>
-        <guid isPermaLink="true">/CW/ref/wordsnolongerthan.html</guid>
-        
-        
-        <category>ref</category>
-        
-      </item>
-    
-      <item>
-        <title>beginning_with</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Jun 2016 16:30:20 +0100</pubDate>
-        <link>/CW/ref/beginningwith.html</link>
-        <guid isPermaLink="true">/CW/ref/beginningwith.html</guid>
-        
-        
-        <category>ref</category>
-        
-      </item>
-    
-  </channel>
+    </channel>
 </rss>

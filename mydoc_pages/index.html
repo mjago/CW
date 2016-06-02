@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="getting_started,  ">
-<title>Getting started overview  | Jekyll theme for designers</title>
+<meta name="description" content="This theme primarily uses pages. You need to make sure your pages have the appropriate frontmatter. One frontmatter tag your users might find helpful is the ...">
+<meta name="keywords" content="getting_startedformattingcontent_types,  pages, authoring, exclusion, frontmatter">
+<title>Pages  | Jekyll theme for designers</title>
 <link rel="stylesheet" href="/documentation-theme-jekyll/css/syntax.css">
 
 
@@ -160,7 +160,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Jekyll theme for designers feedback";
-var body = "I have some feedback about the Getting started overview page: ";
+var body = "I have some feedback about the Pages page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:martyn.jago@btinternet.com?subject=";
@@ -187,7 +187,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/documentation-theme-jekyll/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Getting started overview">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Pages">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -234,7 +234,7 @@ window.location.href = uri;
             
             
             
-            <li class="active"><a href="/documentation-theme-jekyll/">Get started</a></li>
+            <li><a href="/documentation-theme-jekyll/">Get started</a></li>
             
             
             
@@ -355,7 +355,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/documentation-theme-jekyll/mydoc_pages/">Pages</a></li>
+            <li class="active"><a href="/documentation-theme-jekyll/mydoc_pages/">Pages</a></li>
             
             
             
@@ -723,13 +723,15 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Getting started overview</h1>
+   <h1 class="post-title-main">Pages</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">This theme primarily uses pages. You need to make sure your pages have the appropriate frontmatter. One frontmatter tag your users might find helpful is the summary tag. This functions similar in purpose to the shortdesc element in DITA.</div>
    
 
     
@@ -759,84 +761,27 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="overview">Overview</h2>
+  <h2 id="where-to-author-content">Where to author content</h2>
+<p>Use a text editor such as Sublime Text, WebStorm, IntelliJ, or Atom to create pages.</p>
 
-<p>These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.</p>
+<p>My preference is IntelliJ/WebStorm, since it will treat all files in your theme as belonging to a project. This allows you to easily search for instances of keywords, do find-and-replace operations, or do other actions that apply across the whole project.</p>
 
-<h2 id="build-this-theme">Build this theme</h2>
+<h2 id="page-names-and-excluding-files-from-outputs">Page names and excluding files from outputs</h2>
 
-<p>If you’re used to running Jekyll sites, you can type the normal jekyll command, <code class="highlighter-rouge">jekyll serve</code>, to build the Jekyll theme. However, if you’re a new Jekyll user or if you run into issues, see the following two topics:</p>
+<p>By default, everything in your project is included in the output. You can exclude all files that don’t belong to that project by specifying the file name, the folder name, or by using wildcards in your configuration file:</p>
+
+<p>exclude:</p>
 
 <ul>
-  <li><a href="/documentation-theme-jekyll/mydoc_install_jekyll_on_mac/">Install Jekyll on Mac</a></li>
-  <li><a href="/documentation-theme-jekyll/mydoc_install_jekyll_on_windows/">Install Jekyll on Windows</a></li>
+  <li>filename.md</li>
+  <li>subfolder_name/</li>
+  <li>mydoc_*</li>
 </ul>
 
-<h2 id="customize-the-gemfile">Customize the Gemfile</h2>
+<p>These wildcards will exclude every match after the <code class="highlighter-rouge">*</code>.</p>
 
-<p>Open the Gemfile (in any text editor) in the Jekyll doc theme project:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>open Gemfile
-</code></pre>
-</div>
-
-<p>The theme’s gemfile looks as follows:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># A sample Gemfile
-source "https://rubygems.org"
-
-# gem "rails"
-gem 'github-pages'
-gem 'jekyll'
-</code></pre>
-</div>
-
-<p>If you’re publishing on Github Pages, leave the <code class="highlighter-rouge">github-pages</code> gem there. But if not, remove <code class="highlighter-rouge">github-pages</code> because Github sometimes has dependencies that conflict with the latest versions of the Jekyll gem and Kramdown, which can be frustrating.</p>
-
-<p>Use Bundler to install all the needed Ruby gems:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>bundle install
-</code></pre>
-</div>
-
-<p>Now run Jekyll serve to build the theme:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>jekyll serve
-</code></pre>
-</div>
-
-<h2 id="configure-the-sidebar">Configure the sidebar</h2>
-
-<p>There are several products in this theme. Each product uses a different sidebar. This is the essence of what makes this theme unique – different sidebars for different product documentation. The idea is that when users are reading documentation for a specific product, the sidebar navigation should be specific to that product. (You can read more of my thoughts on why multiple sidebars are important in this <a href="http://idratherbewriting.com/2016/03/23/release-of-documentation-theme-for-jekyll-50/">blog post</a>.)</p>
-
-<p>The top navigation remains the same, because it allows users to navigate across products. But the sidebar navigation adapts to the product.</p>
-
-<p>Because each product uses a different sidebar, you’ll need to set up your sidebars. There’s a file inside _includes/custom called “sidebarconfigs.html”. This file controls which sidebar gets associated with which product. Open up this file to see its contents.</p>
-
-<p>The sidebarconfigs.html file uses simple <code class="highlighter-rouge">if elsif</code> logic to set a variable that the sidebar.html file uses to read the sidebar data file. The code in sidebarconfigs.html looks like this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"home_sidebar"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">home_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"product1_sidebar"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">product1_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"product2_sidebar"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">product2_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"mydoc_sidebar"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">mydoc_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"tags_sidebar"</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">tags_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sidebar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">sidebars</span><span class="p">.</span><span class="nv">home_sidebar</span><span class="p">.</span><span class="nv">entries</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-</code></pre>
-</div>
-
-<p>In each page’s frontmatter, you must specify the sidebar you want that page to use. Here’s an example of the page frontmatter showing the sidebar property:</p>
+<h2 id="frontmatter">Frontmatter</h2>
+<p>Make sure each page has frontmatter at the top like this:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
 <span class="s">title</span><span class="pi">:</span> <span class="s">Alerts</span>
@@ -847,178 +792,98 @@ gem 'jekyll'
 <span class="s">sidebar</span><span class="pi">:</span> <span class="s">mydoc_sidebar</span>
 <span class="s">permalink</span><span class="pi">:</span> <span class="s">/mydoc_alerts/</span>
 <span class="nn">---</span>
+
+
+<span class="s">Frontmatter is always formatted with three hyphens at the top and bottom. Your frontmatter must have a `title` value. All the other values are optional. If you omit them, the theme won't break.</span>
+
+<span class="s">Note that you cannot use variables in frontmatter.</span>
+
+<span class="s">The following table describes each of the frontmatter that you can use with this theme</span><span class="pi">:</span>
+
+<span class="pi">|</span> <span class="err">Frontmatter</span> <span class="err">|</span> <span class="err">Required?</span> <span class="err">|</span> <span class="err">Description</span> <span class="err">|</span>
+<span class="err">|</span><span class="no">-------------|-------------|-------------|</span>
+<span class="err">|</span><span class="no"> **title** | Required | The title for the page |</span>
+<span class="err">|</span><span class="no"> **tags** | Optional | Tags for the page. Make all tags single words, with underscores if needed (rather than spaces). Separate them with commas. Enclose the whole list within brackets. Also, note that tags must be added to \_data/tags_doc.yml to be allowed entrance into the page. This prevents tags from becoming somewhat random and unstructured. You must create a tag page for each one of your tags following the pattern shown in the tags folder. (Tag pages aren't automatically created.)  |</span>
+<span class="err">|</span><span class="no"> **keywords** | Optional | Synonyms and other keywords for the page. This information gets stuffed into the page's metadata to increase SEO. The user won't see the keywords, but if you search for one of the keywords, it will be picked up by the search engine.  |</span>
+<span class="err">|</span><span class="no"> **last_updated**  | Optional | The date the page was last updated. This information could helpful for readers trying to evaluate how current and authoritative information is. If included, the last_updated date appears in the footer of the page in rather small font.|</span>
+<span class="err">|</span><span class="no"> **summary** | Optional | A 1-2 word sentence summarizing the content on the page. This gets formatted into the summary section in the page layout. Adding summaries is a key way to make your content more scannable by users (check out [Jakob Nielsen's site](http://www.nngroup.com/articles/corporate-blogs-front-page-structure/) for a great example of page summaries.) The only drawback with summaries is that you can't use variables in them. |</span>
+<span class="err">|</span><span class="no"> **permalink**| Required | This theme uses permalinks to facilitate the linking. You specify the permalink want for the page, and the \_site output will put the page into the root directory when you publish. The page will appear inside a folder by the same name, with the actual page being index.html. Browsers will automatically show the index.html file inside of any folder, so permalinks avoid the .html extension with file names. Permalink names don't have to match your file names, but it might be easier to keep them in sync. If you don't use permalinks, Jekyll automatically uses the file name and folder path as the link.|</span>
+<span class="err">|</span><span class="no"> **datatable** | Optional | 'true'. If you add `datatable: true` in the frontmatter, scripts for the [jQuery Datatables plugin](https://www.datatables.net/) get included on the page. You can see the scripts that conditionally appear by looking in the \_layouts/default.html page. |</span>
+<span class="err">|</span><span class="no"> toc | Optional | If you specify `toc: false` in the frontmatter, the page won't have the table of contents that appears below the title. The toc refers to the list of jump links below the page title, not the sidebar navigation. You probably want to hide the TOC on the homepage and product landing pages.|</span>
+
+<span class="err">#</span><span class="no"># Colons in page titles </span>
+
+<span class="err">I</span><span class="no">f you want to use a colon in your page title, you must enclose the title's value in quotation marks.</span>
+
+<span class="err">#</span><span class="no"># Saving pages as drafts</span>
+
+<span class="err">I</span><span class="no">f you add `published: false` in the frontmatter, your page won't be published. You can also move draft pages into the \_drafts folder to exclude them from the build. With posts, you can also keep them as drafts by omitting the date in the title.</span>
+
+<span class="err">&lt;</span><span class="no">div class="alert alert-success" role="alert"&gt;&lt;i class="fa fa-check-square-o"&gt;&lt;/i&gt; &lt;b&gt;Tip: &lt;/b&gt; You can create file templates in WebStorm that have all your common frontmatter, such as all possible tags, prepopulated. See &lt;a href="/documentation-theme-jekyll/mydoc_webstorm_text_editor"&gt;WebStorm Text Editor&lt;/a&gt; for details. &lt;/div&gt;</span>
+
+<span class="err">#</span><span class="no"># Markdown or HTML format</span>
+
+<span class="err">P</span><span class="no">ages can be either Markdown or HTML format (specified through either an .md or .html file extension).</span>
+<span class="no"> </span>
+<span class="err">I</span><span class="no">f you use Markdown, you can also include HTML formatting where needed. But not vice versa &amp;mdash; if you use HTML (as your file extension), you can't insert Markdown content in the file.</span>
+
+<span class="err">A</span><span class="no">lso, if you use HTML inside a Markdown file, you cannot use Markdown inside of HTML. But you can use HTML inside of Markdown.</span>
+
+<span class="err">F</span><span class="no">or your Markdown files, note that a space or two indent will set text off as code or blocks, so avoid spacing indents unless intentional.</span>
+
+<span class="err">I</span><span class="no">f you have a lot of HTML, as long as the top and bottom tags of the HTML are flesh left in a Markdown file, all the tags inside those bookend HTML tags will render as HTML, regardless of their indentation.</span>
+
+<span class="err">#</span><span class="no"># Where to save pages</span>
+
+<span class="err">Y</span><span class="no">ou can store your pages in any folder structures you want, with any level of folder nesting. The site output will pull all of those pages out of their folders and put them into the root directory. Check out the \_site folder, which is where Jekyll is generated, to see the difference between your project's structure and the resulting site output. </span>
+<span class="no"> </span>
+<span class="err">#</span><span class="no"># Page names</span>
+
+<span class="err">I</span><span class="no"> recommend prefixing your page names with the product, such as "mydoc_pages" instead of just "pages." This way if you have other products that also hae topics with generic names such as "pages," there won't be naming conflicts. </span>
+
+<span class="err">A</span><span class="no">dditionally, consider adding the product name in parentheses after the title, such as "Pages (Mydoc)" so that users can clearly navigate different topics for each product.</span>
+
+<span class="err">#</span><span class="no"># Kramdown Markdown</span>
+
+<span class="err">K</span><span class="no">ramdown is the Markdown flavor used in the theme. This mostly aligns with Github-flavored Markdown, but with some differences in the indentation allowed within lists. Basically, Kramdown requires you to line up the indent between list items with the first starting character after the space in your list item numbering. See this [blog post on Kramdown and Rouge](http://idratherbewriting.com/2016/02/21/bug-with-kramdown-and-rouge-with-github-pages/) for more details.</span>
+
+<span class="err">Y</span><span class="no">ou can use standard Multimarkdown syntax for tables. You can also use fenced code blocks with lexers specifying the type of code. The configuration file shows the Markdown processor and extensiosn:</span>
+
+<span class="err">`</span><span class="no">``yaml</span>
+<span class="err">h</span><span class="no">ighlighter: rouge</span>
+<span class="err">m</span><span class="no">arkdown: kramdown</span>
+<span class="err">k</span><span class="no">ramdown:</span>
+ <span class="no">input: GFM</span>
+ <span class="no">auto_ids: true</span>
+ <span class="no">hard_wrap: false</span>
+ <span class="no">syntax_highlighter: rouge</span>
 </code></pre>
 </div>
 
-<p>The <code class="highlighter-rouge">sidebar: mydoc_sidebar</code> refers to the _data/sidebars/mydoc_sidebar.yml file.</p>
+<h2 id="automatic-mini-tocs">Automatic mini-TOCs</h2>
 
-<p>If no sidebar assignment is found in the page frontmatter, the default sidebar (specified by the <code class="highlighter-rouge">else</code> statement) will be shown: <code class="highlighter-rouge">site.data.sidebars.home_sidebar.entries</code>.</p>
+<p>By default, a TOC appears at the top of your pages and posts. If you don’t want the TOC to appear for a specific page, such as for a landing page or other homepage, add <code class="highlighter-rouge">toc: false</code> in the frontmatter of the page.</p>
 
-<p>Note that your sidebar can only have 2 levels. Given that each product has its own sidebar, this depth should be sufficient (it’s really like 3 levels). Deeper nesting goes against usability recommendations.</p>
+<p>The mini-TOC requires you to use the <code class="highlighter-rouge">##</code> Markdown syntax for headings. If you use <code class="highlighter-rouge">&lt;h2&gt;</code> elements, you must add an ID attribute for the heading element in order for it to appear in the mini-TOC (for example, <code class="highlighter-rouge">&lt;h2 id="mysampleid"&gt;Heading&lt;/h2&gt;</code>.</p>
 
-<p>For more detail on the sidebar, see <a href="/documentation-theme-jekyll/mydoc_sidebar_navigation/">Sidebar navigation</a>.</p>
+<h2 id="specify-a-particular-page-layout">Specify a particular page layout</h2>
 
-<h2 id="sidebar-syntax">Sidebar syntax</h2>
+<p>The configuration file sets the default layout for pages as the “page” layout.</p>
 
-<p>The sidebar data file uses a specific YAML syntax that you must follow. Follow the sample pattern shown. For example:</p>
+<p>You can create other layouts inside the layouts folder. If you create a new layout, you can specify that your page use your new layout by adding <code class="highlighter-rouge">layout: mylayout.html</code> in the page’s frontmatter. Whatever layout you specify in the frontmatter of a page will override the layout default set in the configuration file.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">entries</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">sidebar</span>
-  <span class="s">product</span><span class="pi">:</span> <span class="s">Jekyll Doc Theme</span>
-  <span class="s">version</span><span class="pi">:</span> <span class="s">5.0</span>
-  <span class="s">folders</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Overview</span> 
-    <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
-    <span class="s">folderitems</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Some page</span>
-      <span class="s">url</span><span class="pi">:</span> <span class="s">/some-doc-page/</span>
-      <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
-    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Another page</span>
-      <span class="s">url</span><span class="pi">:</span> <span class="s">/another-doc-page/</span>
-      <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
-      
-  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Configuration</span>
-    <span class="s">output</span><span class="pi">:</span> <span class="s">web</span>
-    <span class="s">folderitems</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">How to configure the system</span>
-      <span class="s">url</span><span class="pi">:</span> <span class="s">/configure-system/</span>
-      <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
-      <span class="s">subfolders</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Config process</span>
-        <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
-        <span class="s">subfolderitems</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Creating the config file</span>
-          <span class="s">url</span><span class="pi">:</span> <span class="s">/config-file-how-to/</span>
-          <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
-</code></pre>
-</div>
+<h2 id="comments">Comments</h2>
 
-<p>Each folder or subfolder must contain a title and output property. Each <code class="highlighter-rouge">folderitem</code> or <code class="highlighter-rouge">subfolderitem</code> must contain a <code class="highlighter-rouge">title</code>, <code class="highlighter-rouge">url</code>, and <code class="highlighter-rouge">output</code> property.</p>
+<p>Disqus, a commenting system, is integrated into the theme. In the configuration file, specify the Disqus code for the universal code, and Disqus will appear. If you don’t add a Disqus value, the Disqus form isn’t included.</p>
 
-<p>The two outputs available are <code class="highlighter-rouge">web</code> and <code class="highlighter-rouge">pd</code>f. (Even if you aren’t publishing PDF, you still need to specify <code class="highlighter-rouge">output: web</code>).</p>
+<h2 id="custom-keyboard-shortcuts">Custom keyboard shortcuts</h2>
+<p>Some of the Jekyll syntax can be slow to create. Using a utility such as <a href="https://www.trankynam.com/atext/">aText</a> can make creating content a lot of faster.</p>
 
-<p>The YAML syntax depends on exact spacing, so make sure you follow the pattern shown in the sample sidebars. See my <a href="mydoc_yaml_tutorial">YAML tutorial</a> for more details about how YAML works.</p>
+<p>For example, with my aText configuration, when I type <code class="highlighter-rouge">jlink</code>, aText replaces it with <code class="highlighter-rouge">&lt;a href="{{ "/page" | prepend: site.baseurl }}"&gt;page&lt;/a&gt;</code>.</p>
 
-<p>To accommodate the title page and table of contents in PDF outputs, each product sidebar must list these pages before any other:</p>
+<p>You get aText from the App Store on a Mac for about $5. However, the Mac Store version of aText won’t work on Mac OSX El Capitan due to sandbox security restrictions, so you need to download the app outside of the App Store to make it work.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span>
-    <span class="s">output</span><span class="pi">:</span> <span class="s">pdf</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
-    <span class="s">folderitems</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span>
-      <span class="s">url</span><span class="pi">:</span> <span class="s">/titlepage/</span>
-      <span class="s">output</span><span class="pi">:</span> <span class="s">pdf</span>
-      <span class="s">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
-    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span>
-      <span class="s">url</span><span class="pi">:</span> <span class="s">/tocpage/</span>
-      <span class="s">output</span><span class="pi">:</span> <span class="s">pdf</span>
-      <span class="s">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
-</code></pre>
-</div>
-
-<p>Leave the output as <code class="highlighter-rouge">output: pdf</code> for these frontmatter pages so that they don’t appear in the web output.</p>
-
-<p>For more detail on the sidebar, see <a href="/documentation-theme-jekyll/mydoc_sidebar_navigation/">Sidebar navigation</a> and <a href="/documentation-theme-jekyll/mydoc_yaml_tutorial/">YAML tutorial in the context of Jekyll</a>.</p>
-
-<h2 id="page-frontmatter">Page frontmatter</h2>
-
-<p>When you write pages, include these same frontmatter keys with each page:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
-<span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Some</span><span class="nv"> </span><span class="s">title"</span>
-<span class="s">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">sample1</span><span class="pi">,</span> <span class="nv">sample2</span><span class="pi">]</span>
-<span class="s">keywords</span><span class="pi">:</span> <span class="s">keyword1, keyword2, keyword3</span>
-<span class="s">last_updated</span><span class="pi">:</span> <span class="s">Month day, year</span>
-<span class="s">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">optional</span><span class="nv"> </span><span class="s">summary</span><span class="nv"> </span><span class="s">here"</span>
-<span class="s">sidebar</span><span class="pi">:</span> <span class="s">sidebar name</span>
-<span class="s">permalink</span><span class="pi">:</span> <span class="s">/yoururl/</span>
-<span class="nn">---</span>
-</code></pre>
-</div>
-
-<p>(You will customize the values for each of these keys, of course.)</p>
-
-<p>If you’re using <a href="/documentation-theme-jekyll/mydoc_webstorm_text_editor/">Webstorm</a>, you can set up a template to auto-populate this code when you create a new file.</p>
-
-<p>For titles, surrounding the title in quotes is optional, but if you have a colon in the title, you must surround the title with quotation marks. If you have a quotation mark within the title, escape it first with a backlash <code class="highlighter-rouge">\</code>.</p>
-
-<p>Values for <code class="highlighter-rouge">keywords</code> get populated into the metadata of the page for SEO.</p>
-
-<p>Values for <code class="highlighter-rouge">tags</code> must be defined in your _data/tags.yml list. You also need a corresponding tag file inside the tags folder that follows the same pattern as the other tag files shown in the tags folder. (Jekyll wont auto-create these tag files.)
-```</p>
-
-<p>If you don’t want the mini-TOC to show on a page (such as for the homepage or landing pages), add <code class="highlighter-rouge">toc: false</code> in the frontmatter.</p>
-
-<p>For more detail, see <a href="/documentation-theme-jekyll/mydoc_pages/">Pages</a>.</p>
-
-<h2 id="where-to-store-your-documentation-topics">Where to store your documentation topics</h2>
-
-<p>Store your files for each product inside subfolders following the pattern shown in the theme. For example, product1, product2, etc. You can store your topics inside sub-subfolders or sub-sub-folders to your heart’s content. When Jekyll builds your site, it will pull the topics into the root directory and use the permalink for the URL.</p>
-
-<p>Note that product1, product2, and mydoc are all just sample content to demonstrate how to add multiple products into the theme. You can freely delete that content.</p>
-
-<p>For more information, see <a href="/documentation-theme-jekyll/mydoc_pages/">Pages</a> and <a href="/documentation-theme-jekyll/mydoc_posts/">Posts</a>.</p>
-
-<h2 id="configure-the-top-navigation">Configure the top navigation</h2>
-
-<p>The top navigation bar’s menu items are set through the _data/topnav.yml file. Use the top navigation bar to provide links for navigating from one product to another, or to navigate to external resources.</p>
-
-<p>For external URLs, use <code class="highlighter-rouge">external_url</code> in the item property, as shown in the example topnav.yml file. For internal links, use <code class="highlighter-rouge">url</code> as usual.</p>
-
-<p>Note that the topnav has two sections: topnav and topnav_dropdowns. The topnav section contains single links, while the topnav_dropdowns section contains dropdown menus. The two sections are independent of each other.</p>
-
-<h2 id="generating-pdf">Generating PDF</h2>
-
-<p>If you want to generate PDF, you’ll need a license for <a href="http://www.princexml.com/">Prince XML</a>. You will also need to <a href="http://www.princexml.com/doc/installing/">install Prince</a>.  You can generate PDFs by product (but not for every product on the site combined together into one massive PDF). Prince will work even without a license, but it will imprint a small Prince image on the first page.</p>
-
-<p>Open up the css/printstyles.css file and customize the email address (<code class="highlighter-rouge">youremail@domain.com</code>) that is listed there. This email address appears in the bottom left footer of the PDF output. You’ll also need to create a PDF configuration file following the examples shown in the pdfconfigs folder, and also customize some build scripts following the same pattern shown in the root: pdf-product1.sh</p>
-
-<p>See the section on <a href="/documentation-theme-jekyll/mydoc_generating_pdfs/">Generating PDFs</a> for more details about setting the theme up for this output.</p>
-
-<h2 id="blogs--news">Blogs / News</h2>
-
-<p>For blog posts, create your markdown files in the _posts folder following the sample formats. Post file names always begin with the date (YYYY-MM-DD-title).</p>
-
-<p>The news/news.html file displays the posts, and the news_archive.html file shows a yearly history of posts. In documentation, you might use the news to highlight product features outside of your documentation, or to provide release notes and other updates.</p>
-
-<p>See <a href="/documentation-theme-jekyll/mydoc_posts/">Posts</a> for more information.</p>
-
-<h2 id="markdown">Markdown</h2>
-
-<p>This theme uses Kramdown markdown. Kramdown is similar to Github-flavored Markdown, except that when you have text that intercepts list items, the spacing of the intercepting text must align with the spacing of the first character after the space of a numbered list item. Basically, with your list item numbering, use two spaces after the dot in the number, like this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1.  First item
-2.  Second item
-3.  Third item
-</code></pre>
-</div>
-
-<p>When you want to insert paragraphs, notes, code snippets, or other matter in between the list items, use four spaces to indent. The four spaces will line up with the first letter of the list item (the <strong>F</strong>irst or <strong>S</strong>econd or <strong>T</strong>hird).</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1.  First item
-    
-    ```
-    alert("hello");
-    ```
-    
-2.  Second item
-    
-    Some pig!
-    
-3.  Third item
-</code></pre>
-</div>
-
-<p>See the topics under “Formatting” in the sidebar for more information.</p>
-
-<h2 id="managing-links">Managing links</h2>
-
-<p>If you want to use a simple system for managing links, see the “Managed Links” section in <a href="/documentation-theme-jekyll/mydoc_hyperlinks/">Links</a>#managed-links.</p>
-
-<h2 id="other-instructions">Other instructions</h2>
-
-<p>For other details in working with the theme, see the various sections in the sidebar.</p>
-
+<p>There are alternatives to aText, such as Typeitforme. But aText seems to work the best. You can read more about aText on <a href="http://lifehacker.com/5843903/the-best-text-expansion-app-for-mac">Lifehacker</a>.</p>
 
 
 <div class="tags">
@@ -1028,6 +893,14 @@ gem 'jekyll'
     
     
     <a href="/documentation-theme-jekyll/tag_getting_started" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+    
+    
+    
+    <a href="/documentation-theme-jekyll/tag_formatting" class="btn btn-default navbar-btn cursorNorm" role="button">formatting</a>
+    
+    
+    
+    <a href="/documentation-theme-jekyll/tag_content_types" class="btn btn-default navbar-btn cursorNorm" role="button">content_types</a>
     
     
     
@@ -1043,7 +916,7 @@ gem 'jekyll'
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
- Site last generated: Jun 2, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 2, 2016 <br />
 <p><img src="/documentation-theme-jekyll/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
