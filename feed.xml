@@ -3,10 +3,10 @@
     <channel>
         <title></title>
         <description>Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.</description>
-        <link>http://idratherbewriting.com/CW/</link>
-        <atom:link href="http://idratherbewriting.com/CW/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 02 Jun 2016 14:49:53 +0100</pubDate>
-        <lastBuildDate>Thu, 02 Jun 2016 14:49:53 +0100</lastBuildDate>
+        <link>http://mjago.github.io/CW/CW/</link>
+        <atom:link href="http://mjago.github.io/CW/CW/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Thu, 02 Jun 2016 22:20:36 +0100</pubDate>
+        <lastBuildDate>Thu, 02 Jun 2016 22:20:36 +0100</lastBuildDate>
         <generator>Jekyll v3.0.3</generator>
         
         <item>
@@ -21,8 +21,8 @@
 
 </description>
             <pubDate>Fri, 26 Feb 2016 00:00:00 +0000</pubDate>
-            <link>http://idratherbewriting.com/CW/samplepost/</link>
-            <guid isPermaLink="true">http://idratherbewriting.com/CW/samplepost/</guid>
+            <link>http://mjago.github.io/CW/CW/samplepost/</link>
+            <guid isPermaLink="true">http://mjago.github.io/CW/CW/samplepost/</guid>
             
             <category>news</category>
             
@@ -46,8 +46,8 @@
 &lt;/ul&gt;
 </description>
             <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
-            <link>http://idratherbewriting.com/CW/myupdate/</link>
-            <guid isPermaLink="true">http://idratherbewriting.com/CW/myupdate/</guid>
+            <link>http://mjago.github.io/CW/CW/myupdate/</link>
+            <guid isPermaLink="true">http://mjago.github.io/CW/CW/myupdate/</guid>
             
             <category>news</category>
             
@@ -59,8 +59,8 @@
             <description>&lt;p&gt;This is just a test post from the previous year.&lt;/p&gt;
 </description>
             <pubDate>Sun, 12 Apr 2015 00:00:00 +0100</pubDate>
-            <link>http://idratherbewriting.com/CW/test-post-from-last-year/</link>
-            <guid isPermaLink="true">http://idratherbewriting.com/CW/test-post-from-last-year/</guid>
+            <link>http://mjago.github.io/CW/CW/test-post-from-last-year/</link>
+            <guid isPermaLink="true">http://mjago.github.io/CW/CW/test-post-from-last-year/</guid>
             
             <category>news</category>
             
