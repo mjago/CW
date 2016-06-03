@@ -765,8 +765,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>The command <em>word_length</em> sets the length in characters of the required words. When practicing at a challenging speed it is much easier to interpret shorter words correctly. Longer words may be introduced as comfort with the speed grows.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># fixed_length_words.rb</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -779,16 +778,16 @@ $('#toc').on('click', 'a', function() {
   <span class="n">test_letters</span>
 <span class="k">end</span>
 
-
 </code></pre>
 </div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-download"></i> <b>Download:</b> <a href="../test_scripts/fixed_length_words.rb"> fixed_length_words.rb</a> </div>
+<p><br /></p>
 
 <h2 id="havingsizeof-command">having_size_of command</h2>
 
 <p>If you you prefer you can use the command <em>having_size_of</em> to set word length. Here we set word length to six characters, and require 4 words.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># fixed_length_words_2.rb</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words_2.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -800,16 +799,16 @@ $('#toc').on('click', 'a', function() {
   <span class="n">number_of_words</span>     <span class="mi">4</span>   <span class="c1"># you can use number_of_words or word_count</span>
 <span class="k">end</span>
 
-
 </code></pre>
 </div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-download"></i> <b>Download:</b> <a href="../test_scripts/fixed_length_words_2.rb"> fixed_length_words_2.rb</a> </div>
+<p><br /></p>
 
 <h2 id="most-common-words">Most common words</h2>
 
 <p>As familiarity with receiving CW grows it can be useful to concentrate on the <strong>very common words</strong> in order to become more familiar with the sound of the word itself. To this end a dictionary of the <strong>one-hundred most common words</strong> is available for our use. Most of the most common words are short words. Here we select three letter words from this dictionary.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># fixed_length_words_3.rb</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words_3.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -822,15 +821,17 @@ $('#toc').on('click', 'a', function() {
   <span class="n">number_of_words</span>     <span class="mi">15</span>
 <span class="k">end</span>
 
-
 </code></pre>
 </div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-download"></i> <b>Download:</b> <a href="../test_scripts/fixed_length_words_3.rb"> fixed_length_words_3.rb</a> </div>
+<p><br /></p>
 
 <h2 id="command-order">Command order</h2>
 
 <p>Notice in the previous example we called <strong>number_of_words</strong> after calling <strong>word_size</strong>. Had we called <strong>number_of_words</strong> first, our fifteen words would probably contain several words having a size different from three letters. Thus by the time we had filtered out our three letter words, our fifteen original words would have reduced to a smaller number of test words. Swap <strong>number_of_words</strong> and <strong>word_size</strong> and re-run a couple of times to test this out.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You can quit any test by entering four <strong>“q” keystrokes</strong> in a row.</div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You can quit any test by entering <strong><em>four</em> “q” keystrokes</strong> in a row.</div>
+
 
 
 <div class="tags">
