@@ -788,6 +788,7 @@ $('#toc').on('click', 'a', function() {
   <span class="n">test_letters</span>
 <span class="k">end</span>
 
+
 </code></pre>
 </div>
 
@@ -806,6 +807,7 @@ $('#toc').on('click', 'a', function() {
   <span class="n">wpm</span> <span class="mi">15</span>
   <span class="n">test_letters</span>
 <span class="k">end</span>
+
 
 </code></pre>
 </div>
@@ -826,6 +828,7 @@ $('#toc').on('click', 'a', function() {
   <span class="n">test_letters</span>
 <span class="k">end</span>
 
+
 </code></pre>
 </div>
 
@@ -841,12 +844,12 @@ $('#toc').on('click', 'a', function() {
   <li>the resulting eight groups are then shuffled</li>
 </ul>
 
-<p>This test also introduces the command <strong>print_words</strong>, which prints
-the current letter just after it is played. It was introduced to
-practice code recognition (with no typing), typically at faster
-speeds.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This test introduces the command <strong>print_words</strong>, which prints the current letter just after it has been played by the audio player. It was introduced to practice code recognition (with no typing), typically at faster
+speeds.</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="c1"># letter_number_groups_4.rb</span>
+
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
@@ -863,6 +866,7 @@ speeds.</p>
   <span class="n">wpm</span> <span class="mi">30</span>
   <span class="n">print_letters</span>
 <span class="k">end</span>
+
 
 </code></pre>
 </div>
@@ -898,7 +902,7 @@ speeds.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 2, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 3, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

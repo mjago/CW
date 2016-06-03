@@ -765,8 +765,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>First you will be tested against the five generated words on a word-by-word basis. That is to say the words that you hear as morse will only be displayed on completion of the word (don’t forget to type a space at the end). Create the test-script five-common-words.rb in a text editor as shown below (or download):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># five-common-words.rb</span>
+<p>you can <a href="../test_scripts/five_common_words.rb}">download the test-script</a> here.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1"># five-common-words.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -777,13 +778,12 @@ $('#toc').on('click', 'a', function() {
   <span class="n">wpm</span> <span class="mi">12</span>
 <span class="k">end</span>
 
-
 </code></pre>
 </div>
 
-<p><a href="_includes/five_common_words.rb">download</a></p>
-
-<p><a href="http://mjago.github.io/CW/_includes/five_common_words.rb">five_common_words.rb</a></p>
+<ul>
+  
+</ul>
 
 <p><strong>Result:</strong></p>
 
@@ -793,16 +793,16 @@ $('#toc').on('click', 'a', function() {
 
 <hr />
 
-<p><strong>Hint:</strong> <em>The words in red were entered incorrectly!</em></p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The words in red were entered incorrectly!</div>
 
 <h2 id="test-by-letter">Test by Letter</h2>
 
 <p>Instead of  testing <i>word-by-word</i>, you may  also test <i>letter-by-letter</i>. Simply add the command <strong>test_letters</strong> into the test-script (see below) and now you will be marked letter-by-letter rather than word-by-word.</p>
 
-<p><strong>Hint:</strong> <em>You may find this kind of test more informative if you are frequently guessing some letters incorrectly</em></p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You may find this kind of test more informative if you are frequently guessing some letters incorrectly.</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># five-common-words-2.rb</span>
+<span class="c1"># five_common_words_2.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -814,10 +814,9 @@ $('#toc').on('click', 'a', function() {
   <span class="n">test_letters</span>    <span class="c1"># add the command test_letters here</span>
 <span class="k">end</span>
 
+
 </code></pre>
 </div>
-
-<p>(download: [five-common-words-2.rb][five-common-words-2.rb])</p>
 
 <p><strong>Result:</strong></p>
 
@@ -827,14 +826,14 @@ $('#toc').on('click', 'a', function() {
 
 <hr />
 
-<p><strong>Hint:</strong> <em>The letters in red are were entered incorrectly!</em></p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The letters in red are were entered incorrectly!</div>
 
 <h2 id="combine-both-examples">Combine both examples</h2>
 
 <p>Here we will combine both examples into a single script. In practice you may end up having test-scripts comprising of many tests (perhaps a script called daily.rb or morning.rb). Create or download the combined test-script (or download it) and run it.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># five-common-words-3.rb</span>
+<span class="c1"># five_common_words_3.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -853,6 +852,7 @@ $('#toc').on('click', 'a', function() {
   <span class="n">word_count</span> <span class="mi">5</span>
 <span class="k">end</span>
 
+
 </code></pre>
 </div>
 
@@ -860,7 +860,9 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="repeat-until-correct">Repeat until correct</h2>
 
-<p>Replace the <em>print_letters</em> command with the <em>repeat_word</em> command. This will cause CW the test-scipt to replay the current word if it is entered incorrectly, or not entered at all.</p>
+<p>Replace the <strong>print_letters</strong> command with the <strong>repeat_word</strong> command.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <strong>repeat_word</strong> command will cause <strong>CW</strong> to replay the current word if it has been entered incorrectly, (or hasn’t been entered at all).</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
 <span class="c1"># five-common-words-4.rb</span>
@@ -875,6 +877,7 @@ $('#toc').on('click', 'a', function() {
   <span class="n">repeat_word</span>
 <span class="k">end</span>
 
+
 </code></pre>
 </div>
 
@@ -882,10 +885,10 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="bare-minimum-boilerplate">Bare minimum boilerplate</h2>
 
-<p>Remove all commands apart from the <em>word_count</em> and see what happens.</p>
+<p>Remove all commands apart from <strong>word_count</strong> and see what happens.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c1"># five-common-words-5.rb</span>
+<span class="c1"># five_common_words_5.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -893,17 +896,15 @@ $('#toc').on('click', 'a', function() {
   <span class="n">word_count</span> <span class="mi">5</span>
 <span class="k">end</span>
 
+
 </code></pre>
 </div>
 
-<p>(download: [five-common-words-5.rb][five-common-words-5.rb])</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Default values are used for WPM, and since shuffle is not declared, the word order will be repeated on subsequent runs.</div>
 
-<p><strong>hint:</strong> <em>default values are used for wpm, and since shuffle is not declared, the word order will be repeated on subsequent runs</em></p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Try removing the word_count command to leave the absolute minimum boiler plate possible, and running the test to see what the defaults are.</div>
 
-<p>Perhaps try removing the word_count command to leave the absolute minimum boiler plate test possible and run.</p>
-
-<p><strong>hint:</strong> <em>you can quit any test by entering 4 ‘q’ keystrokes in a row</em></p>
-
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You can quit any test by entering four <strong>“q” keystrokes</strong> in a row.</div>
 
 
 <div class="tags">
@@ -936,7 +937,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 2, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 3, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
