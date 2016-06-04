@@ -102,6 +102,11 @@ class CwDsl
     Params.size
   end
 
+  def word_count(wordcount)
+    Params.word_count = wordcount
+    @words.count wordcount
+  end
+
   def beginning_with(* letters)
     @words.beginning_with letters
     Params.begin = letters
@@ -110,11 +115,6 @@ class CwDsl
   def ending_with(* letters)
     @words.ending_with letters
     Params.end = letters
-  end
-
-  def word_count(wordcount)
-    Params.word_count = wordcount
-    @words.count wordcount
   end
 
   def including(* letters)

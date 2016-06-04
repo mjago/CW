@@ -74,6 +74,7 @@ class CW < CwDsl
 
     load_common_words# unless @words.exist?
     instance_eval(&block) if block
+    word_count(8) unless Params.word_count
     run unless Params.pause if (block && ! @inhibit_block_run)
   end
 
