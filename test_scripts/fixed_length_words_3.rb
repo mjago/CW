@@ -3,10 +3,9 @@
 require 'cw'
 
 CW.new do
-  comment "15 most common words having 3 letters (15 WPM)"
-  load_most_common_words
+  comment "12 common words having 3 letters (15 WPM)"
   shuffle
   wpm                 15
-  word_size            3
-  number_of_words     15
+  having_size_of      3
+  number_of_words     12
 end

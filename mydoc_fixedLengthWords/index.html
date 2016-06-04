@@ -222,7 +222,7 @@ window.location.href = uri;
 
 
 <ul id="mysidebar" class="nav">
-    <li class="sidebarTitle">CW Docs 0.1</li>
+    <li class="sidebarTitle">CW Documentation 0.1</li>
     
     
     
@@ -761,9 +761,9 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="wordlength-command">word_length command</h2>
+  <h2 id="wordsize-command">word_size command</h2>
 
-<p>The command <em>word_length</em> sets the length in characters of the required words. When practicing at a challenging speed it is much easier to interpret shorter words correctly. Longer words may be introduced as comfort with the speed grows.</p>
+<p>The command <em>word_size</em> sets the size in characters of the required words. When practicing at a challenging speed it is much easier to interpret shorter words correctly. Longer words may be introduced as comfort with the speed grows.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words.rb</span>
 
@@ -780,12 +780,27 @@ $('#toc').on('click', 'a', function() {
 
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert"><i class="fa fa-download"></i> <b>Download:</b> <a href="../test_scripts/fixed_length_words.rb"> fixed_length_words.rb</a> </div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn"></i>
+     
+  <audio controls="">
+    <source src="/CW/audio/fixed_length_words.ogg" type="audio/ogg" />
+    <source src="/CW/audio/fixed_length_words.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+    &nbsp; &nbsp;
+  </audio>
+     
+  <i class="fa fa-download"></i>
+     
+<a href="../test_scripts/fixed_length_words.rb"> fixed_length_words</a>
+     
+
+</div>
 <p><br /></p>
 
-<h2 id="havingsizeof-command">having_size_of command</h2>
+<h2 id="wordlength-command">word_length command</h2>
 
-<p>If you you prefer you can use the command <em>having_size_of</em> to set word length. Here we set word length to six characters, and require 4 words.</p>
+<p>If you you prefer you can use the command <em>word_length</em> to set word length (word size). Here we set word length to six characters, and require 4 words.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words_2.rb</span>
 
@@ -795,13 +810,64 @@ $('#toc').on('click', 'a', function() {
   <span class="n">comment</span> <span class="s2">"4 words having 6 letters (15 WPM)"</span>
   <span class="n">shuffle</span>
   <span class="n">wpm</span>                 <span class="mi">15</span>
-  <span class="n">word_having_size_of</span> <span class="mi">6</span>   <span class="c1"># you can use word_having_size_of or word_length</span>
-  <span class="n">number_of_words</span>     <span class="mi">4</span>   <span class="c1"># you can use number_of_words or word_count</span>
+  <span class="n">word_length</span>         <span class="mi">6</span>
+  <span class="n">number_of_words</span>     <span class="mi">4</span> <span class="c1"># you can use number_of_words!</span>
 <span class="k">end</span>
 
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert"><i class="fa fa-download"></i> <b>Download:</b> <a href="../test_scripts/fixed_length_words_2.rb"> fixed_length_words_2.rb</a> </div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn"></i>
+     
+  <audio controls="">
+    <source src="/CW/audio/fixed_length_words_2.ogg" type="audio/ogg" />
+    <source src="/CW/audio/fixed_length_words_2.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+    &nbsp; &nbsp;
+  </audio>
+     
+  <i class="fa fa-download"></i>
+     
+<a href="../test_scripts/fixed_length_words_2.rb"> fixed_length_words_2</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="havingsizeof-command">having_size_of command</h2>
+
+<p>If you you prefer you can use the command <em>having_size_of</em> to set word length. Here we set word length to 3, and require 12 words.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words_3.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s2">"12 common words having 3 letters (15 WPM)"</span>
+  <span class="n">shuffle</span>
+  <span class="n">wpm</span>                 <span class="mi">15</span>
+  <span class="n">having_size_of</span>      <span class="mi">3</span>
+  <span class="n">number_of_words</span>     <span class="mi">12</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn"></i>
+     
+  <audio controls="">
+    <source src="/CW/audio/fixed_length_words_3.ogg" type="audio/ogg" />
+    <source src="/CW/audio/fixed_length_words_3.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+    &nbsp; &nbsp;
+  </audio>
+     
+  <i class="fa fa-download"></i>
+     
+<a href="../test_scripts/fixed_length_words_3.rb"> fixed_length_words_3</a>
+     
+
+</div>
 <p><br /></p>
 
 <h2 id="most-common-words">Most common words</h2>
@@ -823,7 +889,22 @@ $('#toc').on('click', 'a', function() {
 
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert"><i class="fa fa-download"></i> <b>Download:</b> <a href="../test_scripts/fixed_length_words_3.rb"> fixed_length_words_3.rb</a> </div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn"></i>
+     
+  <audio controls="">
+    <source src="/CW/audio/fixed_length_words_4.ogg" type="audio/ogg" />
+    <source src="/CW/audio/fixed_length_words_4.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+    &nbsp; &nbsp;
+  </audio>
+     
+  <i class="fa fa-download"></i>
+     
+<a href="../test_scripts/fixed_length_words_4.rb"> fixed_length_words_4</a>
+     
+
+</div>
 <p><br /></p>
 
 <h2 id="command-order">Command order</h2>
@@ -864,7 +945,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 3, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 4, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
