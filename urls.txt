@@ -120,6 +120,20 @@ mydoc_farnsworthTiming:
 
 
  
+mydoc_bookReading:
+  title: "Book Reading"
+  url: /CW/mydoc_bookReading/
+  link: <a href="/CW/mydoc_bookReading/">Book Reading</a>
+
+
+ 
+mydoc_rssFeed:
+  title: "RSS Feed Reading"
+  url: /CW/mydoc_rssFeed/
+  link: <a href="/CW/mydoc_rssFeed/">RSS Feed Reading</a>
+
+
+ 
 mydoc_pages:
   title: "Pages"
   url: /CW/mydoc_pages/

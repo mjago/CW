@@ -56,6 +56,16 @@
 
 
 {
+"title": "Book Reading",
+"tags": "getting_startedtutorialcommandsbook",
+"keywords": "farnsworth_timing, tutorial",
+"url": "/CW/mydoc_bookReading/",
+"summary": "Here we look at how we can read a book with CW."
+},
+
+
+
+{
 "title": "Build arguments",
 "tags": "publishing",
 "keywords": "building, serving, serve, build",
@@ -381,6 +391,16 @@
 "keywords": "release notes, announcements, what's new, new features",
 "url": "/CW/mydoc_release_notes_50/",
 "summary": "Version 5.0 of the Documentation theme for Jekyll changes some fundamental ways the theme works to provide product-specific sidebars, intended to accommodate a site where multiple products are grouped together on the same site rather than generated out as separate outputs."
+},
+
+
+
+{
+"title": "RSS Feed Reading",
+"tags": "getting_startedtutorialcommandsbook",
+"keywords": "farnsworth_timing, tutorial",
+"url": "/CW/mydoc_rssFeed/",
+"summary": "Here we look at how we can read a book with CW."
 },
 
 

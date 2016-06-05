@@ -362,6 +362,20 @@ window.location.href = uri;
             
             
             
+            <li><a href="/CW/mydoc_bookReading/">Book Reading</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_rssFeed/">RSS Feed Reading</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="/CW/mydoc_pages/">Pages</a></li>
             
             
@@ -1011,6 +1025,22 @@ $('#toc').on('click', 'a', function() {
             
             
             
+            <li>
+                <a href="../mydoc_bookReading/">1.4. Book Reading</a>
+            </li>
+            
+            
+            
+            
+            
+            <li>
+                <a href="../mydoc_rssFeed/">1.6. RSS Feed Reading</a>
+            </li>
+            
+            
+            
+            
+            
             
             
             
@@ -1023,11 +1053,11 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="introduction">Introduction</h2>
 
-<p><a href="../test_scripts/.rb"> .rb</a></p>
-
 <p>For a very thorough explanation of <strong>Farnsworth Timing</strong> check out <a href="http://www.arrl.org/files/file/Technology/x9004008.pdf">A Standard for Morse Timing Using the Farnsworth Technique (pdf)</a> by <strong>Jon Bloom</strong>, courtesy of <a href="http://www.arrl.org">The Americal Radio Relay League</a>.</p>
 
 <p>The compact version follows: The <strong>Farnsworth Timing Method</strong> of learning morse code introduced the concept of listening to letters at a fairly high speed, whilst utilizing larger inter-character spacing (silence) to reduce the <strong>effective words-per-minute</strong>. This enabled the student to learn <strong>the sounds of characters</strong> as the sound at higher speeds, whilst still making progress at much lower speeds. As progress is made, the <strong>effective speed</strong> is slowly increased to provide a greater challenge to the student, whilst retaining the same sounds of the characters. Eventually you can see that the <strong>effective words-per-minute</strong> will be equal to the <strong>words-per-minute</strong> which is the standard timing for Morse Code.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> When we talk about words-per-minute in this context, we are actually talking about how many times we can send the word `Paris’ per minute.</div>
 
 <h2 id="effectivewpm">effective_wpm</h2>
 
@@ -1048,16 +1078,14 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 <div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn"></i>
+  <i class="fa fa-bullhorn fa-2x"></i>
      
-  <audio controls="">
-    <source src="/CW/audio/farnsworth_timing.ogg" type="audio/ogg" />
+  <audio controls="" preload="meta">
     <source src="/CW/audio/farnsworth_timing.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-    &nbsp; &nbsp;
+      <a href="/CW/audio/farnsworth_timing.mp3">/CW/audio/farnsworth_timing.mp3</a>
   </audio>
      
-  <i class="fa fa-download"></i>
+  <i class="fa fa-download fa-2x"></i>
      
 <a href="../test_scripts/farnsworth_timing.rb"> farnsworth_timing.rb</a>
      
@@ -1065,170 +1093,285 @@ $('#toc').on('click', 'a', function() {
 </div>
 <p><br /></p>
 
-<h2 id="test-by-letter">Test by Letter</h2>
+<h2 id="ewpm">ewpm</h2>
 
-<p>Instead of  testing <i>word-by-word</i>, you may  also test <i>letter-by-letter</i>. Simply add the command <strong>test_letters</strong> into the test-script (see below) and now you will be marked letter-by-letter rather than word-by-word.</p>
+<p>To save on the typing the command effective_wpm has an alias called ewpm.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You may find this kind of test more informative if you are frequently guessing some letters incorrectly.</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_2.rb</span>
-
-<span class="nb">require</span> <span class="s1">'cw'</span>
+<span class="c1"># farnsworth_timing_2.rb</span>
 
 <span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s2">"5 common words at 12 words per minute"</span>
   <span class="n">shuffle</span>
-  <span class="n">wpm</span>        <span class="mi">12</span>
-  <span class="n">word_count</span> <span class="mi">5</span>
-  <span class="n">test_letters</span>    <span class="c1"># add the command test_letters here</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+  <span class="n">wpm</span>           <span class="mi">18</span>
+  <span class="n">ewpm</span>          <span class="mi">12</span>
+  <span class="n">word_size</span>     <span class="mi">4</span>
+  <span class="n">word_count</span>    <span class="mi">12</span>
+
+  <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
 </div>
 <div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn"></i>
+  <i class="fa fa-bullhorn fa-2x"></i>
      
-  <audio controls="">
-    <source src="/CW/audio/five_common_words_2.ogg" type="audio/ogg" />
-    <source src="/CW/audio/five_common_words_2.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-    &nbsp; &nbsp;
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_2.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_2.mp3">/CW/audio/farnsworth_timing_2.mp3</a>
   </audio>
      
-  <i class="fa fa-download"></i>
+  <i class="fa fa-download fa-2x"></i>
      
-<a href="../test_scripts/five_common_words_2.rb"> five_common_words_2.rb</a>
+<a href="../test_scripts/farnsworth_timing_2.rb"> farnsworth_timing_2.rb</a>
      
 
 </div>
 <p><br /></p>
 
-<p><strong>Result:</strong></p>
+<h2 id="send-paris-twelve-times-at-twelve-effective-words-per-minute">send paris twelve times at twelve effective words per minute</h2>
 
-<hr />
+<p>To check the timing is working as we think we can send the word paris twelve times at twelve effective words per minute.</p>
 
-<p><img title="letter by letter" src="/CW/images/five-common-words-2.png" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 
-<hr />
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The letters in red were entered incorrectly!</div>
-
-<h2 id="combine-both-examples">Combine both examples</h2>
-
-<p>Here we will combine both examples into a single script. In practice you may end up having test-scripts comprising of many tests (perhaps a script called daily.rb or morning.rb). Create or download the combined test-script (or download it) and run it.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_3.rb</span>
-
-<span class="nb">require</span> <span class="s1">'cw'</span>
+<span class="c1"># farnsworth_timing_3.rb</span>
 
 <span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm (test letters)"</span>
-  <span class="n">shuffle</span>
-  <span class="n">wpm</span>        <span class="mi">12</span>
-  <span class="n">word_count</span> <span class="mi">5</span>
-  <span class="n">test_letters</span>
-<span class="k">end</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+  <span class="n">wpm</span>           <span class="mi">18</span>
+  <span class="n">word_count</span>    <span class="mi">12</span>
 
-<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm (test words)"</span>
-  <span class="n">shuffle</span>
-  <span class="n">wpm</span>        <span class="mi">12</span>
-  <span class="n">word_count</span> <span class="mi">5</span>
+  <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
 </div>
 <div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn"></i>
+  <i class="fa fa-bullhorn fa-2x"></i>
      
-  <audio controls="">
-    <source src="/CW/audio/five_common_words_3.ogg" type="audio/ogg" />
-    <source src="/CW/audio/five_common_words_3.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-    &nbsp; &nbsp;
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_3.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_3.mp3">/CW/audio/farnsworth_timing_3.mp3</a>
   </audio>
      
-  <i class="fa fa-download"></i>
+  <i class="fa fa-download fa-2x"></i>
      
-<a href="../test_scripts/five_common_words_3.rb"> five_common_words_3.rb</a>
+<a href="../test_scripts/farnsworth_timing_3.rb"> farnsworth_timing_3.rb</a>
      
 
 </div>
 <p><br /></p>
 
-<h2 id="repeat-until-correct">Repeat until correct</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 
-<p>Replace the <strong>print_letters</strong> command with the <strong>repeat_word</strong> command.</p>
-
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <strong>repeat_word</strong> command will cause <strong>CW</strong> to replay the current word if it has been entered incorrectly, (or hasn’t been entered at all).</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words-4.rb</span>
-
-<span class="nb">require</span> <span class="s1">'cw'</span>
+<span class="c1"># farnsworth_timing_3.rb</span>
 
 <span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm (test letters)"</span>
-  <span class="n">shuffle</span>
-  <span class="n">wpm</span>        <span class="mi">12</span>
-  <span class="n">word_count</span> <span class="mi">5</span>
-  <span class="n">repeat_word</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+  <span class="n">wpm</span>           <span class="mi">15</span>
+  <span class="n">word_count</span>    <span class="mi">12</span>
+
+  <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
 </div>
 <div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn"></i>
+  <i class="fa fa-bullhorn fa-2x"></i>
      
-  <audio controls="">
-    <source src="/CW/audio/five_common_words_4.ogg" type="audio/ogg" />
-    <source src="/CW/audio/five_common_words_4.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-    &nbsp; &nbsp;
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_4.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_4.mp3">/CW/audio/farnsworth_timing_4.mp3</a>
   </audio>
      
-  <i class="fa fa-download"></i>
+  <i class="fa fa-download fa-2x"></i>
      
-<a href="../test_scripts/five_common_words_4.rb"> five_common_words_4.rb</a>
+<a href="../test_scripts/farnsworth_timing_4.rb"> farnsworth_timing_4.rb</a>
      
 
 </div>
 <p><br /></p>
 
-<h2 id="example-with-just-wordcount">Example with just word_count</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 
-<p>Remove all commands apart from <strong>word_count</strong> and see what happens.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_5.rb</span>
-
-<span class="nb">require</span> <span class="s1">'cw'</span>
+<span class="c1"># farnsworth_timing_5.rb</span>
 
 <span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">word_count</span> <span class="mi">5</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+  <span class="n">wpm</span>           <span class="mi">12</span>
+
+
+  <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
 </div>
 <div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn"></i>
+  <i class="fa fa-bullhorn fa-2x"></i>
      
-  <audio controls="">
-    <source src="/CW/audio/five_common_words_5.ogg" type="audio/ogg" />
-    <source src="/CW/audio/five_common_words_5.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-    &nbsp; &nbsp;
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_5.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_5.mp3">/CW/audio/farnsworth_timing_5.mp3</a>
   </audio>
      
-  <i class="fa fa-download"></i>
+  <i class="fa fa-download fa-2x"></i>
      
-<a href="../test_scripts/five_common_words_5.rb"> five_common_words_5.rb</a>
+<a href="../test_scripts/farnsworth_timing_5.rb"> farnsworth_timing_5.rb</a>
      
 
 </div>
 <p><br /></p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Default values are used for WPM, and since shuffle is not declared, the word order will be repeated on subsequent runs.</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You can quit any test by entering <strong><em>four</em> “q” keystrokes</strong> in a row.</div>
+<span class="c1"># farnsworth_timing_6.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">wpm</span>           <span class="mi">13</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+
+  <span class="n">print_letters</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_6.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_6.mp3">/CW/audio/farnsworth_timing_6.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../test_scripts/farnsworth_timing_6.rb"> farnsworth_timing_6.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># farnsworth_timing_6.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">wpm</span>           <span class="mi">14</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+
+  <span class="n">print_letters</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_7.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_7.mp3">/CW/audio/farnsworth_timing_7.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../test_scripts/farnsworth_timing_7.rb"> farnsworth_timing_7.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># farnsworth_timing_8.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">wpm</span>           <span class="mi">15</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+  <span class="n">word_count</span>    <span class="mi">15</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_8.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_8.mp3">/CW/audio/farnsworth_timing_8.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../test_scripts/farnsworth_timing_8.rb"> farnsworth_timing_8.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># farnsworth_timing_9.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">wpm</span>           <span class="mi">18</span>
+  <span class="n">effective_wpm</span> <span class="mi">12</span>
+  <span class="n">word_count</span>    <span class="mi">15</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_9.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_9.mp3">/CW/audio/farnsworth_timing_9.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../test_scripts/farnsworth_timing_9.rb"> farnsworth_timing_9.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># farnsworth_timing_10.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">'paris'</span><span class="p">)</span>
+  <span class="n">wpm</span>           <span class="mi">30</span>
+<span class="c1">#  effective_wpm 12</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/farnsworth_timing_10.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/farnsworth_timing_10.mp3">/CW/audio/farnsworth_timing_10.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../test_scripts/farnsworth_timing_10.rb"> farnsworth_timing_10.rb</a>
+     
+
+</div>
+<p><br /></p>
 
 <p>
     
@@ -1442,6 +1585,18 @@ $('#toc').on('click', 'a', function() {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <a href="../mydoc_bookReading/"><button type="button" class="btn btn-primary">Next: Book Reading</button></a>
     
     
     
