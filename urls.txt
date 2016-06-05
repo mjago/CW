@@ -113,6 +113,13 @@ mydoc_letterAndNumberGroups:
 
 
  
+mydoc_farnsworthTiming:
+  title: "Farnsworth Timing"
+  url: /CW/mydoc_farnsworthTiming/
+  link: <a href="/CW/mydoc_farnsworthTiming/">Farnsworth Timing</a>
+
+
+ 
 mydoc_pages:
   title: "Pages"
   url: /CW/mydoc_pages/
