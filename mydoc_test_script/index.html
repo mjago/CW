@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Labels are just a simple Bootstrap component that you can include in your pages as needed. They represent one of many Bootstrap options you can include in yo...">
-<meta name="keywords" content="formatting,  labels, buttons, bootstrap, api methods">
-<title>Labels  | Jekyll theme for designers</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Test Script  | Jekyll theme for designers</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
 
 
@@ -158,7 +158,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Jekyll theme for designers feedback";
-var body = "I have some feedback about the Labels page: ";
+var body = "I have some feedback about the Test Script page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:martyn.jago@btinternet.com?subject=";
@@ -185,7 +185,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CW/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Labels">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Test Script">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -253,7 +253,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_test_script/">Test Script</a></li>
+            <li class="active"><a href="/CW/mydoc_test_script/">Test Script</a></li>
             
             
             
@@ -442,15 +442,13 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Labels</h1>
+   <h1 class="post-title-main">Test Script</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary">Labels are just a simple Bootstrap component that you can include in your pages as needed. They represent one of many Bootstrap options you can include in your theme.</div>
    
 
     
@@ -480,37 +478,95 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="about-labels">About labels</h2>
-<p>Labels might come in handy for adding button-like tags next to elements, such as POST, DELETE, UPDATE methods for endpoints. You can use any classes from Bootstrap in your content.</p>
+  <h2 id="test-script">Test Script</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label label-default"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label label-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label label-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label label-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label label-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label label-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/span&gt;</span>
+<p>The <strong>test-script</strong> is a script containing one or multiple tests, and fed to the <strong>CW</strong> software. A very simple test-script containing just a couple of tests is shown below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># test_script.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm (test letters)"</span>
+  <span class="n">shuffle</span>
+  <span class="n">wpm</span>        <span class="mi">12</span>
+  <span class="n">word_count</span> <span class="mi">5</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm (test words)"</span>
+  <span class="n">shuffle</span>
+  <span class="n">wpm</span>        <span class="mi">12</span>
+  <span class="n">word_count</span> <span class="mi">5</span>
+<span class="k">end</span>
+
 </code></pre>
 </div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/test_script.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/test_script.mp3">/CW/audio/test_script.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../test_scripts/test_script.rb"> test_script.rb</a>
+     
 
-<p><span class="label label-default">Default</span>
-<span class="label label-primary">Primary</span>
-<span class="label label-success">Success</span>
-<span class="label label-info">Info</span>
-<span class="label label-warning">Warning</span>
-<span class="label label-danger">Danger</span></p>
+</div>
+<p><br /></p>
 
-<p>You can have a label appear within a heading simply by including the span tag in the heading. However, you can’t mix Markdown syntax with HTML, so you’d have to hard-code the heading ID for the auto-TOC to work.</p>
+<p>This script is run by typing the following into a terminal:</p>
+
+<pre><code class="language-raw">
+ruby name_of_test_script.rb
+
+</code></pre>
+
+<p>The output of the test_script (following the test) is likely to look something like this:</p>
+
+<hr />
+
+<p><img title="word by word" src="/CW/images/five-common-words.png" /></p>
+
+<hr />
+
+<p>Here we can see that the words in <em>red</em> were entered incorrectly, whilst the words in <em>blue</em> were entered correctly.</p>
+
+<p>Another example output is:</p>
+
+<hr />
+
+<p><img title="letter by letter" src="/CW/images/five-common-words-2.png" /></p>
+
+<hr />
+
+<p>Here we are <em>marking-by-letter</em> and the letters in <em>red</em> are letters that were entered incorrectly.</p>
+
+<h2 id="maintenance-of-test-scripts">Maintenance of test-scripts</h2>
+
+<p>The test script (or set of test scripts) is supposed to reflect the progress of the student at the current time. For instance, if we are struggling on certain letters or numbers, extra tests can be included in the script to provide additional exposure to the weakness. Also, the speed of tests can increase as the proficiency of the student increases to the point where no mistakes are (usually) made.</p>
+
+<h2 id="regular-practice">Regular Practice</h2>
+
+<p>By utilizing test scripts in this way, the user can easily run the daily exercise routine, or the morning exercise routine, and benefit from an uninterrupted period of mindful study, without lots of pauses and distractions of button clicking and program operation. We can <em>get in the zone</em> and <em>stay in the zone</em>!</p>
+
+<pre><code class="language-raw">
+ruby daily_script.rb
+
+&lt;test interactions&gt;
+
+done!
+
+</code></pre>
+
+<p>A tutorial on the commands that can be used to prepare test-scripts begins <a href="/CW/mydoc_fiveCommonWords">here</a>.</p>
 
 
 <div class="tags">
-    
-    <b>Tags: </b>
-    
-    
-    
-    <a href="/CW/tag_formatting" class="btn btn-default navbar-btn cursorNorm" role="button">formatting</a>
-    
-    
     
 </div>
 
@@ -524,7 +580,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 6, 2016 <br />
+ Site last generated: Jun 6, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

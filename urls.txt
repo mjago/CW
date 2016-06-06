@@ -25,6 +25,13 @@ mydoc_introduction:
 
 
  
+mydoc_test_script:
+  title: "Test Script"
+  url: /CW/mydoc_test_script/
+  link: <a href="/CW/mydoc_test_script/">Test Script</a>
+
+
+ 
 mydoc_supported_features:
   title: "Supported features"
   url: /CW/mydoc_supported_features/
