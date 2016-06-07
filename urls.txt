@@ -143,178 +143,185 @@ mydoc_rss_feed:
 
 
  
-:
+mydoc_audio_dir:
   title: "audio_dir"
-  url: /CW
-  link: <a href="/CW">audio_dir</a>
+  url: /CW/mydoc_audio_dir/
+  link: <a href="/CW/mydoc_audio_dir/">audio_dir</a>
 
 
  
-:
+mydoc_audio_filename:
   title: "audio_filename"
-  url: /CW
-  link: <a href="/CW">audio_filename</a>
+  url: /CW/mydoc_audio_filename/
+  link: <a href="/CW/mydoc_audio_filename/">audio_filename</a>
 
 
  
-:
+mydoc_author:
   title: "author"
-  url: /CW
-  link: <a href="/CW">author</a>
+  url: /CW/mydoc_author/
+  link: <a href="/CW/mydoc_author/">author</a>
 
 
  
-:
+mydoc_book_dir:
   title: "book_dir"
-  url: /CW
-  link: <a href="/CW">book_dir</a>
+  url: /CW/mydoc_book_dir/
+  link: <a href="/CW/mydoc_book_dir/">book_dir</a>
 
 
  
-:
+mydoc_command_line:
   title: "command_line"
-  url: /CW
-  link: <a href="/CW">command_line</a>
+  url: /CW/mydoc_command_line/
+  link: <a href="/CW/mydoc_command_line/">command_line</a>
 
 
  
-:
+mydoc_config_file:
   title: "config_file"
-  url: /CW
-  link: <a href="/CW">config_file</a>
+  url: /CW/mydoc_config_file/
+  link: <a href="/CW/mydoc_config_file/">config_file</a>
 
 
  
-:
+mydoc_double_words:
   title: "double_words"
-  url: /CW
-  link: <a href="/CW">double_words</a>
+  url: /CW/mydoc_double_words/
+  link: <a href="/CW/mydoc_double_words/">double_words</a>
 
 
  
-:
+mydoc_effective_wpm:
   title: "effective_wpm"
-  url: /CW
-  link: <a href="/CW">effective_wpm</a>
+  url: /CW/mydoc_effective_wpm/
+  link: <a href="/CW/mydoc_effective_wpm/">effective_wpm</a>
 
 
  
-:
+mydoc_ewpm:
+  title: "ewpm"
+  url: /CW/mydoc_ewpm/
+  link: <a href="/CW/mydoc_ewpm/">ewpm</a>
+
+
+ 
+mydoc_frequency:
   title: "frequency"
-  url: /CW
-  link: <a href="/CW">frequency</a>
+  url: /CW/mydoc_frequency/
+  link: <a href="/CW/mydoc_frequency/">frequency</a>
 
 
  
-:
+mydoc_mark_words:
   title: "mark_words"
-  url: /CW
-  link: <a href="/CW">mark_words</a>
+  url: /CW/mydoc_mark_words/
+  link: <a href="/CW/mydoc_mark_words/">mark_words</a>
 
 
  
-:
+mydoc_name:
   title: "name"
-  url: /CW
-  link: <a href="/CW">name</a>
+  url: /CW/mydoc_name/
+  link: <a href="/CW/mydoc_name/">name</a>
 
 
  
-:
+mydoc_no_noise:
   title: "no_noise"
-  url: /CW
-  link: <a href="/CW">no_noise</a>
+  url: /CW/mydoc_no_noise/
+  link: <a href="/CW/mydoc_no_noise/">no_noise</a>
 
 
  
-:
+mydoc_no_shuffle:
   title: "no_shuffle"
-  url: /CW
-  link: <a href="/CW">no_shuffle</a>
+  url: /CW/mydoc_no_shuffle/
+  link: <a href="/CW/mydoc_no_shuffle/">no_shuffle</a>
 
 
  
-:
+mydoc_noise:
   title: "noise"
-  url: /CW
-  link: <a href="/CW">noise</a>
+  url: /CW/mydoc_noise/
+  link: <a href="/CW/mydoc_noise/">noise</a>
 
 
  
-:
+mydoc_pause:
   title: "pause"
-  url: /CW
-  link: <a href="/CW">pause</a>
+  url: /CW/mydoc_pause/
+  link: <a href="/CW/mydoc_pause/">pause</a>
 
 
  
-:
+mydoc_print_letters:
   title: "print_letters"
-  url: /CW
-  link: <a href="/CW">print_letters</a>
+  url: /CW/mydoc_print_letters/
+  link: <a href="/CW/mydoc_print_letters/">print_letters</a>
 
 
  
-:
+mydoc_quality:
   title: "quality"
-  url: /CW
-  link: <a href="/CW">quality</a>
+  url: /CW/mydoc_quality/
+  link: <a href="/CW/mydoc_quality/">quality</a>
 
 
  
-:
+mydoc_shuffle:
   title: "shuffle"
-  url: /CW
-  link: <a href="/CW">shuffle</a>
+  url: /CW/mydoc_shuffle/
+  link: <a href="/CW/mydoc_shuffle/">shuffle</a>
 
 
  
-:
+mydoc_single_words:
   title: "single_words"
-  url: /CW
-  link: <a href="/CW">single_words</a>
+  url: /CW/mydoc_single_words/
+  link: <a href="/CW/mydoc_single_words/">single_words</a>
 
 
  
-:
+mydoc_title:
   title: "title"
-  url: /CW
-  link: <a href="/CW">title</a>
+  url: /CW/mydoc_title/
+  link: <a href="/CW/mydoc_title/">title</a>
 
 
  
-:
+mydoc_un_pause:
   title: "un_pause"
-  url: /CW
-  link: <a href="/CW">un_pause</a>
+  url: /CW/mydoc_un_pause/
+  link: <a href="/CW/mydoc_un_pause/">un_pause</a>
 
 
  
-:
+mydoc_use_ebook2cw:
   title: "use_ebook2cw"
-  url: /CW
-  link: <a href="/CW">use_ebook2cw</a>
+  url: /CW/mydoc_use_ebook2cw/
+  link: <a href="/CW/mydoc_use_ebook2cw/">use_ebook2cw</a>
 
 
  
-:
+mydoc_use_ruby_tone:
   title: "use_ruby_tone"
-  url: /CW
-  link: <a href="/CW">use_ruby_tone</a>
+  url: /CW/mydoc_use_ruby_tone/
+  link: <a href="/CW/mydoc_use_ruby_tone/">use_ruby_tone</a>
 
 
  
-:
+mydoc_word_spacing:
   title: "word_spacing"
-  url: /CW
-  link: <a href="/CW">word_spacing</a>
+  url: /CW/mydoc_word_spacing/
+  link: <a href="/CW/mydoc_word_spacing/">word_spacing</a>
 
 
  
-:
+mydoc_wpm:
   title: "wpm"
-  url: /CW
-  link: <a href="/CW">wpm</a>
+  url: /CW/mydoc_wpm/
+  link: <a href="/CW/mydoc_wpm/">wpm</a>
 
 
 
@@ -556,106 +563,6 @@ mydoc_introduction:
 
 
 
-:
-  title: "Add relevant news"
-  url: ""
-  link: "<a href=''>Add relevant news</a>"
-
-
-
-:
-  title: "Command list"
-  url: ""
-  link: "<a href=''>Command list</a>"
-
-
-
-:
-  title: "Command nav folder"
-  url: ""
-  link: "<a href=''>Command nav folder</a>"
-
-
-
-:
-  title: "User defined Book (default dir)"
-  url: ""
-  link: "<a href=''>User defined Book (default dir)</a>"
-
-
-
-:
-  title: "User book parsing"
-  url: ""
-  link: "<a href=''>User book parsing</a>"
-
-
-
-:
-  title: "Config file (book dir, rss etc)"
-  url: ""
-  link: "<a href=''>Config file (book dir, rss etc)</a>"
-
-
-
-:
-  title: "animated gif for index.md"
-  url: ""
-  link: "<a href=''>animated gif for index.md</a>"
-
-
-
-:
-  title: "Clean unused pages"
-  url: ""
-  link: "<a href=''>Clean unused pages</a>"
-
-
-
-:
-  title: "image include?"
-  url: ""
-  link: "<a href=''>image include?</a>"
-
-
-
-:
-  title: "Script Generator"
-  url: ""
-  link: "<a href=''>Script Generator</a>"
-
-
-
-:
-  title: "Marketing"
-  url: ""
-  link: "<a href=''>Marketing</a>"
-
-
-
-:
-  title: "Gitter?"
-  url: ""
-  link: "<a href=''>Gitter?</a>"
-
-
-
-:
-  title: "URL?"
-  url: ""
-  link: "<a href=''>URL?</a>"
-
-
-
-:
-  title: "Link to repo"
-  url: ""
-  link: "<a href=''>Link to repo</a>"
-
-
-
-
-
 
 
 
@@ -688,106 +595,6 @@ mydoc_introduction:
 
 
 
-
-
-
-
-
-:
-  title: "Add relevant news"
-  url: ""
-  link: "<a href=''>Add relevant news</a>"
-
-
-
-:
-  title: "Command list"
-  url: ""
-  link: "<a href=''>Command list</a>"
-
-
-
-:
-  title: "Command nav folder"
-  url: ""
-  link: "<a href=''>Command nav folder</a>"
-
-
-
-:
-  title: "User defined Book (default dir)"
-  url: ""
-  link: "<a href=''>User defined Book (default dir)</a>"
-
-
-
-:
-  title: "User book parsing"
-  url: ""
-  link: "<a href=''>User book parsing</a>"
-
-
-
-:
-  title: "Config file (book dir, rss etc)"
-  url: ""
-  link: "<a href=''>Config file (book dir, rss etc)</a>"
-
-
-
-:
-  title: "animated gif for index.md"
-  url: ""
-  link: "<a href=''>animated gif for index.md</a>"
-
-
-
-:
-  title: "Clean unused pages"
-  url: ""
-  link: "<a href=''>Clean unused pages</a>"
-
-
-
-:
-  title: "image include?"
-  url: ""
-  link: "<a href=''>image include?</a>"
-
-
-
-:
-  title: "Script Generator"
-  url: ""
-  link: "<a href=''>Script Generator</a>"
-
-
-
-:
-  title: "Marketing"
-  url: ""
-  link: "<a href=''>Marketing</a>"
-
-
-
-:
-  title: "Gitter?"
-  url: ""
-  link: "<a href=''>Gitter?</a>"
-
-
-
-:
-  title: "URL?"
-  url: ""
-  link: "<a href=''>URL?</a>"
-
-
-
-:
-  title: "Link to repo"
-  url: ""
-  link: "<a href=''>Link to repo</a>"
 
 
 

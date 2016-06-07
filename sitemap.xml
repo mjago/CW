@@ -64,6 +64,30 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_audio_dir/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_audio_filename/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_author/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_book_dir/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_book_reading/</loc>
   </url>
   
@@ -88,6 +112,12 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_command_line/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_commenting_on_files/</loc>
   </url>
   
@@ -100,7 +130,31 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_config_file/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_content_reuse/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_double_words/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_effective_wpm/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_ewpm/</loc>
   </url>
   
   
@@ -131,6 +185,12 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_fixed_length_words/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_frequency/</loc>
   </url>
   
   
@@ -220,7 +280,25 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_mark_words/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_name/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_navtabs/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_no_noise/</loc>
   </url>
   
   
@@ -232,13 +310,37 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_no_shuffle/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_noise/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_pages/</loc>
   </url>
   
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_pause/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_posts/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_print_letters/</loc>
   </url>
   
   
@@ -251,6 +353,12 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_push_build_to_server/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_quality/</loc>
   </url>
   
   
@@ -310,7 +418,19 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_shuffle/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_sidebar_navigation/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_single_words/</loc>
   </url>
   
   
@@ -370,7 +490,19 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_title/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_title_checker/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_todo/</loc>
   </url>
   
   
@@ -382,7 +514,37 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_un_pause/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_use_ebook2cw/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_use_ruby_tone/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_webstorm_text_editor/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_word_spacing/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_wpm/</loc>
   </url>
   
   

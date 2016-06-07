@@ -66,6 +66,46 @@
 
 
 {
+"title": "audio_dir command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_audio_dir/",
+"summary": "audio_dir command."
+},
+
+
+
+{
+"title": "audio_filename command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_audio_filename/",
+"summary": "audio_filename command."
+},
+
+
+
+{
+"title": "author command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_author/",
+"summary": "author command."
+},
+
+
+
+{
+"title": "book_dir command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_book_dir/",
+"summary": "book_dir command."
+},
+
+
+
+{
 "title": "Book Reading",
 "tags": "getting_startedtutorialcommandsbook",
 "keywords": "farnsworth_timing, tutorial",
@@ -106,6 +146,16 @@
 
 
 {
+"title": "command_line command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_command_line/",
+"summary": "command_line command."
+},
+
+
+
+{
 "title": "Commenting on files",
 "tags": "navigation",
 "keywords": "annotations, comments, feedback",
@@ -126,11 +176,51 @@
 
 
 {
+"title": "config_file command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_config_file/",
+"summary": "config_file command."
+},
+
+
+
+{
 "title": "Content reuse",
 "tags": "single_sourcing",
 "keywords": "includes, conref, dita, transclusion, transclude, inclusion, reference",
 "url": "/CW/mydoc_content_reuse/",
 "summary": "You can reuse chunks of content by storing these files in the includes folder. You then choose to include the file where you need it. This works similar to conref in DITA, except that you can include the file in any content type."
+},
+
+
+
+{
+"title": "double_words command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_double_words/",
+"summary": "double_words command."
+},
+
+
+
+{
+"title": "effective_wpm command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_effective_wpm/",
+"summary": "effective_wpm command."
+},
+
+
+
+{
+"title": "",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_ewpm/",
+"summary": "ewpm command."
 },
 
 
@@ -181,6 +271,16 @@
 "keywords": "fixed_length_words, tutorial",
 "url": "/CW/mydoc_fixed_length_words/",
 "summary": "In this tutorial we will look at word length in more detail."
+},
+
+
+
+{
+"title": "frequency command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_frequency/",
+"summary": "frequency command."
 },
 
 
@@ -326,11 +426,41 @@
 
 
 {
+"title": "mark_words command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_mark_words/",
+"summary": "mark_words command."
+},
+
+
+
+{
+"title": "name command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_name/",
+"summary": "name command."
+},
+
+
+
+{
 "title": "Navtabs",
 "tags": "formatting",
 "keywords": "navigation tabs, hide sections, tabbers, interface tabs",
 "url": "/CW/mydoc_navtabs/",
 "summary": "Navtabs provide a tab-based navagation directly in your content, allowing users to click from tab to tab to see different panels of content. Navtabs are especially helpful for showing code samples for different programming languages. The only downside to using navtabs is that you must use HTML instead of Markdown."
+},
+
+
+
+{
+"title": "no_noise command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_no_noise/",
+"summary": "no_noise command."
 },
 
 
@@ -346,6 +476,26 @@
 
 
 {
+"title": "no_shuffle command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_no_shuffle/",
+"summary": "no_shuffle command."
+},
+
+
+
+{
+"title": "noise command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_noise/",
+"summary": "noise command."
+},
+
+
+
+{
 "title": "Pages",
 "tags": "getting_startedformattingcontent_types",
 "keywords": "pages, authoring, exclusion, frontmatter",
@@ -356,11 +506,31 @@
 
 
 {
+"title": "pause command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_pause/",
+"summary": "pause command."
+},
+
+
+
+{
 "title": "Posts",
 "tags": "getting_startedformattingcontent_types",
 "keywords": "posts, blog, news, tutorial, exclusion, frontmatter",
 "url": "/CW/mydoc_posts/",
 "summary": "You can use posts when you want to create blogs or news type of content."
+},
+
+
+
+{
+"title": "print_letters command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_print_letters/",
+"summary": "print_letters command."
 },
 
 
@@ -381,6 +551,16 @@
 "keywords": "AWS, Amazon, command line, pushing build",
 "url": "/CW/mydoc_push_build_to_server/",
 "summary": "You can push your build to AWS using commands from the command line. By including your copy commands in commands, you can package all of the build and deploy process into executable scripts."
+},
+
+
+
+{
+"title": "quality command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_quality/",
+"summary": "quality command."
 },
 
 
@@ -476,11 +656,31 @@
 
 
 {
+"title": "shuffle command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_shuffle/",
+"summary": "shuffle command."
+},
+
+
+
+{
 "title": "Sidebar Navigation",
 "tags": "getting_started",
 "keywords": "sidebar, accordion, yaml, iteration, for loop, navigation, attributes, conditional filtering",
 "url": "/CW/mydoc_sidebar_navigation/",
 "summary": "The sidebar navigation uses a jQuery component called Navgoco. The sidebar is a somewhat complex part of the theme that remembers your current page, highlights the active item, stays in a fixed position on the page, and more. This page explains a bit about how the sidebar was put together."
+},
+
+
+
+{
+"title": "single_words command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_single_words/",
+"summary": "single_words command."
 },
 
 
@@ -576,11 +776,31 @@
 
 
 {
+"title": "title command",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_title/",
+"summary": "title command."
+},
+
+
+
+{
 "title": "Check page title consistency",
 "tags": "navigation",
 "keywords": "validation, titles, page titles, inconsistency, errors",
 "url": "/CW/mydoc_title_checker/",
 "summary": "The title checker page helps ensure that the titles in your pages match the titles in your TOC."
+},
+
+
+
+{
+"title": "Todo List",
+"tags": "",
+"keywords": "development",
+"url": "/CW/mydoc_todo/",
+"summary": "Todos"
 },
 
 
@@ -596,11 +816,61 @@
 
 
 {
+"title": "",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_un_pause/",
+"summary": "un_pause command."
+},
+
+
+
+{
+"title": "",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_use_ebook2cw/",
+"summary": "use_ebook2cw command."
+},
+
+
+
+{
+"title": "",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_use_ruby_tone/",
+"summary": "use_ruby_tone command."
+},
+
+
+
+{
 "title": "WebStorm Text Editor",
 "tags": "",
 "keywords": "webstorm, sublime, markdown, atom, gnome, notepad ++, textpad, bbedit",
 "url": "/CW/mydoc_webstorm_text_editor/",
 "summary": "You can use a variety of text editors when working with a Jekyll project. WebStorm from IntelliJ offers a lot of project-specific features, such as find and replace, that make it ideal for working with tech comm projects."
+},
+
+
+
+{
+"title": "",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_word_spacing/",
+"summary": "word_spacing command."
+},
+
+
+
+{
+"title": "",
+"tags": "commands",
+"keywords": "commands",
+"url": "/CW/mydoc_wpm/",
+"summary": "wpm command."
 },
 
 
