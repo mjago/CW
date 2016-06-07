@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  name
+# TODO:  name()
   word_count 4
 end

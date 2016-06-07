@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  no_shuffle
+# TODO:  no_shuffle()
   word_count 4
 end

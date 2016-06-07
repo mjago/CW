@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  wpm
+# TODO:  wpm()
   word_count 4
 end

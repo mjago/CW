@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  noise
+# TODO:  noise()
   word_count 4
 end

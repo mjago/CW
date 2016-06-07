@@ -29,7 +29,7 @@
     file.puts "require \"cw\""
     file.puts ""
     file.puts "CW.new do"
-    file.puts "  #{name}"
+    file.puts "# TODO:  #{name}()"
     file.puts "  word_count 4"
     file.puts "end"
   end

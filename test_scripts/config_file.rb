@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  config_file
+# TODO:  config_file()
   word_count 4
 end

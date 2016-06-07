@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  quality
+# TODO:  quality()
   word_count 4
 end

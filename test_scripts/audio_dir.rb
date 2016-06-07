@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  audio_dir = "~/jekyll/documentation-theme-jekyll/test_scripts/audio"
+# TODO:  audio_dir()
   word_count 4
 end
