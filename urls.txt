@@ -11,10 +11,10 @@
  
 
  
-mydoc_release_notes_50:
+mydoc_release_notes:
   title: "Release notes"
-  url: /CW/mydoc_release_notes_50/
-  link: <a href="/CW/mydoc_release_notes_50/">Release notes</a>
+  url: /CW/mydoc_release_notes/
+  link: <a href="/CW/mydoc_release_notes/">Release notes</a>
 
 
  
@@ -26,9 +26,9 @@ mydoc_introduction:
 
  
 mydoc_test_script:
-  title: "Test Script"
+  title: "Test script"
   url: /CW/mydoc_test_script/
-  link: <a href="/CW/mydoc_test_script/">Test Script</a>
+  link: <a href="/CW/mydoc_test_script/">Test script</a>
 
 
  
@@ -40,9 +40,16 @@ mydoc_supported_features:
 
  
 mydoc_about:
-  title: "About the theme author"
+  title: "About the author"
   url: /CW/mydoc_about/
-  link: <a href="/CW/mydoc_about/">About the theme author</a>
+  link: <a href="/CW/mydoc_about/">About the author</a>
+
+
+ 
+mydoc_about_theme:
+  title: "About the theme author"
+  url: /CW/mydoc_about_theme/
+  link: <a href="/CW/mydoc_about_theme/">About the theme author</a>
 
 
  
@@ -78,59 +85,238 @@ mydoc_install_jekyll_on_windows:
 
 
  
-mydoc_fiveCommonWords:
+mydoc_five_common_words:
   title: "Five Common Words"
-  url: /CW/mydoc_fiveCommonWords/
-  link: <a href="/CW/mydoc_fiveCommonWords/">Five Common Words</a>
+  url: /CW/mydoc_five_common_words/
+  link: <a href="/CW/mydoc_five_common_words/">Five Common Words</a>
 
 
  
-mydoc_fixedLengthWords:
+mydoc_fixed_length_words:
   title: "Fixed Length Words"
-  url: /CW/mydoc_fixedLengthWords/
-  link: <a href="/CW/mydoc_fixedLengthWords/">Fixed Length Words</a>
+  url: /CW/mydoc_fixed_length_words/
+  link: <a href="/CW/mydoc_fixed_length_words/">Fixed Length Words</a>
 
 
  
-mydoc_rangeOfWordLengths:
+mydoc_range_of_word_lengths:
   title: "Range of Word Lengths"
-  url: /CW/mydoc_rangeOfWordLengths/
-  link: <a href="/CW/mydoc_rangeOfWordLengths/">Range of Word Lengths</a>
+  url: /CW/mydoc_range_of_word_lengths/
+  link: <a href="/CW/mydoc_range_of_word_lengths/">Range of Word Lengths</a>
 
 
  
-mydoc_letterFiltering:
+mydoc_letter_filtering:
   title: "Letter Filtering"
-  url: /CW/mydoc_letterFiltering/
-  link: <a href="/CW/mydoc_letterFiltering/">Letter Filtering</a>
+  url: /CW/mydoc_letter_filtering/
+  link: <a href="/CW/mydoc_letter_filtering/">Letter Filtering</a>
 
 
  
-mydoc_letterAndNumberGroups:
+mydoc_letter_and_number_groups:
   title: "Letter and Number Groups"
-  url: /CW/mydoc_letterAndNumberGroups/
-  link: <a href="/CW/mydoc_letterAndNumberGroups/">Letter and Number Groups</a>
+  url: /CW/mydoc_letter_and_number_groups/
+  link: <a href="/CW/mydoc_letter_and_number_groups/">Letter and Number Groups</a>
 
 
  
-mydoc_farnsworthTiming:
+mydoc_farnsworth_timing:
   title: "Farnsworth Timing"
-  url: /CW/mydoc_farnsworthTiming/
-  link: <a href="/CW/mydoc_farnsworthTiming/">Farnsworth Timing</a>
+  url: /CW/mydoc_farnsworth_timing/
+  link: <a href="/CW/mydoc_farnsworth_timing/">Farnsworth Timing</a>
 
 
  
-mydoc_bookReading:
+mydoc_book_reading:
   title: "Book Reading"
-  url: /CW/mydoc_bookReading/
-  link: <a href="/CW/mydoc_bookReading/">Book Reading</a>
+  url: /CW/mydoc_book_reading/
+  link: <a href="/CW/mydoc_book_reading/">Book Reading</a>
 
 
  
-mydoc_rssFeed:
+mydoc_rss_feed:
   title: "RSS Feed Reading"
-  url: /CW/mydoc_rssFeed/
-  link: <a href="/CW/mydoc_rssFeed/">RSS Feed Reading</a>
+  url: /CW/mydoc_rss_feed/
+  link: <a href="/CW/mydoc_rss_feed/">RSS Feed Reading</a>
+
+
+
+
+ 
+:
+  title: "audio_dir"
+  url: /CW
+  link: <a href="/CW">audio_dir</a>
+
+
+ 
+:
+  title: "audio_filename"
+  url: /CW
+  link: <a href="/CW">audio_filename</a>
+
+
+ 
+:
+  title: "author"
+  url: /CW
+  link: <a href="/CW">author</a>
+
+
+ 
+:
+  title: "book_dir"
+  url: /CW
+  link: <a href="/CW">book_dir</a>
+
+
+ 
+:
+  title: "command_line"
+  url: /CW
+  link: <a href="/CW">command_line</a>
+
+
+ 
+:
+  title: "config_file"
+  url: /CW
+  link: <a href="/CW">config_file</a>
+
+
+ 
+:
+  title: "double_words"
+  url: /CW
+  link: <a href="/CW">double_words</a>
+
+
+ 
+:
+  title: "effective_wpm"
+  url: /CW
+  link: <a href="/CW">effective_wpm</a>
+
+
+ 
+:
+  title: "frequency"
+  url: /CW
+  link: <a href="/CW">frequency</a>
+
+
+ 
+:
+  title: "mark_words"
+  url: /CW
+  link: <a href="/CW">mark_words</a>
+
+
+ 
+:
+  title: "name"
+  url: /CW
+  link: <a href="/CW">name</a>
+
+
+ 
+:
+  title: "no_noise"
+  url: /CW
+  link: <a href="/CW">no_noise</a>
+
+
+ 
+:
+  title: "no_shuffle"
+  url: /CW
+  link: <a href="/CW">no_shuffle</a>
+
+
+ 
+:
+  title: "noise"
+  url: /CW
+  link: <a href="/CW">noise</a>
+
+
+ 
+:
+  title: "pause"
+  url: /CW
+  link: <a href="/CW">pause</a>
+
+
+ 
+:
+  title: "print_letters"
+  url: /CW
+  link: <a href="/CW">print_letters</a>
+
+
+ 
+:
+  title: "quality"
+  url: /CW
+  link: <a href="/CW">quality</a>
+
+
+ 
+:
+  title: "shuffle"
+  url: /CW
+  link: <a href="/CW">shuffle</a>
+
+
+ 
+:
+  title: "single_words"
+  url: /CW
+  link: <a href="/CW">single_words</a>
+
+
+ 
+:
+  title: "title"
+  url: /CW
+  link: <a href="/CW">title</a>
+
+
+ 
+:
+  title: "un_pause"
+  url: /CW
+  link: <a href="/CW">un_pause</a>
+
+
+ 
+:
+  title: "use_ebook2cw"
+  url: /CW
+  link: <a href="/CW">use_ebook2cw</a>
+
+
+ 
+:
+  title: "use_ruby_tone"
+  url: /CW
+  link: <a href="/CW">use_ruby_tone</a>
+
+
+ 
+:
+  title: "word_spacing"
+  url: /CW
+  link: <a href="/CW">word_spacing</a>
+
+
+ 
+:
+  title: "wpm"
+  url: /CW
+  link: <a href="/CW">wpm</a>
+
+
 
 
 
@@ -156,15 +342,6 @@ mydoc_troubleshooting:
   title: "Troubleshooting"
   url: /CW/mydoc_troubleshooting/
   link: <a href="/CW/mydoc_troubleshooting/">Troubleshooting</a>
-
-
-
-
- 
-mydoc_tag_archives_overview:
-  title: "Tag archives overview"
-  url: /CW/mydoc_tag_archives_overview/
-  link: <a href="/CW/mydoc_tag_archives_overview/">Tag archives overview</a>
 
 
 
@@ -362,18 +539,6 @@ news:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 mydoc_introduction:
   title: "Jekyll Documentation Theme"
   url: "mydoc_introduction"
@@ -381,17 +546,111 @@ mydoc_introduction:
 
 
 
-p1_landing_page:
-  title: "Product 1"
-  url: "p1_landing_page"
-  link: "<a href='/p1_landing_page/'>Product 1</a>"
 
 
 
-p2_landing_page:
-  title: "Product 2"
-  url: "p2_landing_page"
-  link: "<a href='/p2_landing_page/'>Product 2</a>"
+
+
+
+
+
+
+
+:
+  title: "Add relevant news"
+  url: ""
+  link: "<a href=''>Add relevant news</a>"
+
+
+
+:
+  title: "Command list"
+  url: ""
+  link: "<a href=''>Command list</a>"
+
+
+
+:
+  title: "Command nav folder"
+  url: ""
+  link: "<a href=''>Command nav folder</a>"
+
+
+
+:
+  title: "User defined Book (default dir)"
+  url: ""
+  link: "<a href=''>User defined Book (default dir)</a>"
+
+
+
+:
+  title: "User book parsing"
+  url: ""
+  link: "<a href=''>User book parsing</a>"
+
+
+
+:
+  title: "Config file (book dir, rss etc)"
+  url: ""
+  link: "<a href=''>Config file (book dir, rss etc)</a>"
+
+
+
+:
+  title: "animated gif for index.md"
+  url: ""
+  link: "<a href=''>animated gif for index.md</a>"
+
+
+
+:
+  title: "Clean unused pages"
+  url: ""
+  link: "<a href=''>Clean unused pages</a>"
+
+
+
+:
+  title: "image include?"
+  url: ""
+  link: "<a href=''>image include?</a>"
+
+
+
+:
+  title: "Script Generator"
+  url: ""
+  link: "<a href=''>Script Generator</a>"
+
+
+
+:
+  title: "Marketing"
+  url: ""
+  link: "<a href=''>Marketing</a>"
+
+
+
+:
+  title: "Gitter?"
+  url: ""
+  link: "<a href=''>Gitter?</a>"
+
+
+
+:
+  title: "URL?"
+  url: ""
+  link: "<a href=''>URL?</a>"
+
+
+
+:
+  title: "Link to repo"
+  url: ""
+  link: "<a href=''>Link to repo</a>"
 
 
 
@@ -417,18 +676,6 @@ news:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 mydoc_introduction:
   title: "Jekyll Documentation Theme"
   url: "mydoc_introduction"
@@ -436,17 +683,111 @@ mydoc_introduction:
 
 
 
-p1_landing_page:
-  title: "Product 1"
-  url: "p1_landing_page"
-  link: "<a href='/p1_landing_page/'>Product 1</a>"
 
 
 
-p2_landing_page:
-  title: "Product 2"
-  url: "p2_landing_page"
-  link: "<a href='/p2_landing_page/'>Product 2</a>"
+
+
+
+
+
+
+
+:
+  title: "Add relevant news"
+  url: ""
+  link: "<a href=''>Add relevant news</a>"
+
+
+
+:
+  title: "Command list"
+  url: ""
+  link: "<a href=''>Command list</a>"
+
+
+
+:
+  title: "Command nav folder"
+  url: ""
+  link: "<a href=''>Command nav folder</a>"
+
+
+
+:
+  title: "User defined Book (default dir)"
+  url: ""
+  link: "<a href=''>User defined Book (default dir)</a>"
+
+
+
+:
+  title: "User book parsing"
+  url: ""
+  link: "<a href=''>User book parsing</a>"
+
+
+
+:
+  title: "Config file (book dir, rss etc)"
+  url: ""
+  link: "<a href=''>Config file (book dir, rss etc)</a>"
+
+
+
+:
+  title: "animated gif for index.md"
+  url: ""
+  link: "<a href=''>animated gif for index.md</a>"
+
+
+
+:
+  title: "Clean unused pages"
+  url: ""
+  link: "<a href=''>Clean unused pages</a>"
+
+
+
+:
+  title: "image include?"
+  url: ""
+  link: "<a href=''>image include?</a>"
+
+
+
+:
+  title: "Script Generator"
+  url: ""
+  link: "<a href=''>Script Generator</a>"
+
+
+
+:
+  title: "Marketing"
+  url: ""
+  link: "<a href=''>Marketing</a>"
+
+
+
+:
+  title: "Gitter?"
+  url: ""
+  link: "<a href=''>Gitter?</a>"
+
+
+
+:
+  title: "URL?"
+  url: ""
+  link: "<a href=''>URL?</a>"
+
+
+
+:
+  title: "Link to repo"
+  url: ""
+  link: "<a href=''>Link to repo</a>"
 
 
 

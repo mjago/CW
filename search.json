@@ -6,7 +6,7 @@
 
 
 {
-"title": "Getting started overview",
+"title": "Overview",
 "tags": "getting_started",
 "keywords": "",
 "url": "/CW/",
@@ -16,11 +16,11 @@
 
 
 {
-"title": "About the theme author",
+"title": "About the author",
 "tags": "getting_started",
 "keywords": "documentation theme, jekyll, technical writers, help tutorial tools, hat replacements",
 "url": "/CW/mydoc_about/",
-"summary": "I have used this theme for projects that I've worked on as a professional technical writer."
+"summary": "Hello from M0GZG and the UK."
 },
 
 
@@ -31,6 +31,16 @@
 "keywords": "",
 "url": "/CW/mydoc_about_ruby_gems_etc/",
 "summary": "Ruby is a programming language you must have on your computer in order to build Jekyll locally. Ruby has various gems (or plugins) that provide various functionality. Each Jekyll project usually requires certain gems."
+},
+
+
+
+{
+"title": "About the theme author",
+"tags": "getting_started",
+"keywords": "documentation theme, jekyll, technical writers, help tutorial tools, hat replacements",
+"url": "/CW/mydoc_about_theme/",
+"summary": "documentation-theme-jekyll"
 },
 
 
@@ -59,7 +69,7 @@
 "title": "Book Reading",
 "tags": "getting_startedtutorialcommandsbook",
 "keywords": "farnsworth_timing, tutorial",
-"url": "/CW/mydoc_bookReading/",
+"url": "/CW/mydoc_book_reading/",
 "summary": "Here we look at how we can read a book with CW."
 },
 
@@ -149,7 +159,7 @@
 "title": "Farnsworth Timing",
 "tags": "getting_startedtutorialcommandsfarnsworth",
 "keywords": "farnsworth_timing, tutorial",
-"url": "/CW/mydoc_farnsworthTiming/",
+"url": "/CW/mydoc_farnsworth_timing/",
 "summary": "In this tutorial we check out the use of the extended_wpm command to utilize the ideas of Farnsworth Timing within our tests."
 },
 
@@ -158,8 +168,8 @@
 {
 "title": "Five Common Words",
 "tags": "getting_startedtutorialcommands",
-"keywords": "fiveCommonWords, tutorial",
-"url": "/CW/mydoc_fiveCommonWords/",
+"keywords": "five_common_words, tutorial",
+"url": "/CW/mydoc_five_common_words/",
 "summary": "In this tutorial we will write several morse tests that generate 5 common random words - play them at our desired speed - and test our morse copying accuracy."
 },
 
@@ -168,8 +178,8 @@
 {
 "title": "Fixed Length Words",
 "tags": "getting_startedtutorialcommands",
-"keywords": "fixedLengthWords, tutorial",
-"url": "/CW/mydoc_fixedLengthWords/",
+"keywords": "fixed_length_words, tutorial",
+"url": "/CW/mydoc_fixed_length_words/",
 "summary": "In this tutorial we will look at word length in more detail."
 },
 
@@ -299,7 +309,7 @@
 "title": "Letter and Number Groups",
 "tags": "getting_startedtutorialcommands",
 "keywords": "tutorial",
-"url": "/CW/mydoc_letterAndNumberGroups/",
+"url": "/CW/mydoc_letter_and_number_groups/",
 "summary": "In this tutorial we will generate groups of letters, numbers, and both! The ability to copy groups of letters and numbers is essential for copying callsigns well - especially during CW contests!"
 },
 
@@ -309,7 +319,7 @@
 "title": "Letter Filtering",
 "tags": "getting_startedtutorialcommands",
 "keywords": "tutorial",
-"url": "/CW/mydoc_letterFiltering/",
+"url": "/CW/mydoc_letter_filtering/",
 "summary": "In this tutorial we will look at selecting words with specific letters for practice."
 },
 
@@ -379,18 +389,18 @@
 "title": "Range of Word Lengths",
 "tags": "getting_startedtutorialcommands",
 "keywords": "tutorial",
-"url": "/CW/mydoc_rangeOfWordLengths/",
+"url": "/CW/mydoc_range_of_word_lengths/",
 "summary": "Here we will look at writing a script to test across a range of word lengths."
 },
 
 
 
 {
-"title": "Release notes 5.0",
+"title": "Release notes",
 "tags": "getting_started",
 "keywords": "release notes, announcements, what's new, new features",
-"url": "/CW/mydoc_release_notes_50/",
-"summary": "Version 5.0 of the Documentation theme for Jekyll changes some fundamental ways the theme works to provide product-specific sidebars, intended to accommodate a site where multiple products are grouped together on the same site rather than generated out as separate outputs."
+"url": "/CW/mydoc_release_notes/",
+"summary": "Version 0.1 of the CW documentation."
 },
 
 
@@ -399,7 +409,7 @@
 "title": "RSS Feed Reading",
 "tags": "getting_startedtutorialcommandsbook",
 "keywords": "farnsworth_timing, tutorial",
-"url": "/CW/mydoc_rssFeed/",
+"url": "/CW/mydoc_rss_feed/",
 "summary": "Here we look at how we can read a book with CW."
 },
 
@@ -546,7 +556,7 @@
 
 
 {
-"title": "Test Script",
+"title": "Test script",
 "tags": "",
 "keywords": "",
 "url": "/CW/mydoc_test_script/",

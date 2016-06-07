@@ -46,6 +46,12 @@
   
   
   <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_about_theme/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_adding_tooltips/</loc>
   </url>
   
@@ -58,7 +64,7 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_bookReading/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_book_reading/</loc>
   </url>
   
   
@@ -112,19 +118,19 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_farnsworthTiming/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_farnsworth_timing/</loc>
   </url>
   
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_fiveCommonWords/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_five_common_words/</loc>
   </url>
   
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_fixedLengthWords/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_fixed_length_words/</loc>
   </url>
   
   
@@ -202,13 +208,13 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_letterAndNumberGroups/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_letter_and_number_groups/</loc>
   </url>
   
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_letterFiltering/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_letter_filtering/</loc>
   </url>
   
   
@@ -250,19 +256,19 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_rangeOfWordLengths/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_range_of_word_lengths/</loc>
   </url>
   
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_release_notes_50/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_release_notes/</loc>
   </url>
   
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_rssFeed/</loc>
+    <loc>http://mjago.github.io/CW/CW/mydoc_rss_feed/</loc>
   </url>
   
   
