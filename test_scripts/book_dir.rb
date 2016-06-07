@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-  book_dir
-  word_count 4
+#  book_dir "./books/"
+  read_book(duration: 1)
 end
