@@ -25,10 +25,10 @@ mydoc_introduction:
 
 
  
-mydoc_test_script:
-  title: "Test script"
-  url: /CW/mydoc_test_script/
-  link: <a href="/CW/mydoc_test_script/">Test script</a>
+mydoc_cw_script:
+  title: "CW script"
+  url: /CW/mydoc_cw_script/
+  link: <a href="/CW/mydoc_cw_script/">CW script</a>
 
 
  

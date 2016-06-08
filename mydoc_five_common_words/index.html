@@ -234,7 +234,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_test_script/">Test script</a></li>
+            <li><a href="/CW/mydoc_cw_script/">CW script</a></li>
             
             
             
@@ -651,9 +651,13 @@ $('#toc').on('click', 'a', function() {
 
     
 
+    
+
+    
+
   <h2 id="test-by-word">Test by Word</h2>
 
-<p>First you will be tested against the five generated words on a word-by-word basis. That is to say the words that you hear as morse will only be displayed on completion of the word (don’t forget to type a space at the end). Create the test-script five-common-words.rb in a text editor as shown below (or download):</p>
+<p>First you will be tested against five generated words on a word-by-word basis. The words that you hear as morse will only be displayed on completion of the word (don’t forget to type a space at the end). Create the CW script five-common-words.rb (shown below) in a text editor, or download via the link:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words.rb</span>
 
@@ -692,11 +696,11 @@ $('#toc').on('click', 'a', function() {
 
 <hr />
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The words in red were entered incorrectly!</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The words in <strong>red</strong> were entered incorrectly!</div>
 
 <h2 id="test-by-letter">Test by Letter</h2>
 
-<p>Instead of  testing <i>word-by-word</i>, you may  also test <i>letter-by-letter</i>. Simply add the command <strong>test_letters</strong> into the test-script (see below) and now you will be marked letter-by-letter rather than word-by-word.</p>
+<p>Instead of  testing <i>word-by-word</i>, you may  also test <i>letter-by-letter</i>. Simply add the command <strong>test_letters</strong> into the CW script (see below) and now you will be marked letter-by-letter rather than word-by-word.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You may find this kind of test more informative if you are frequently guessing some letters incorrectly.</div>
 
@@ -738,11 +742,11 @@ $('#toc').on('click', 'a', function() {
 
 <hr />
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The letters in red were entered incorrectly!</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The letters in <strong>red</strong> were entered incorrectly!</div>
 
 <h2 id="combine-both-examples">Combine both examples</h2>
 
-<p>Here we will combine both examples into a single script. In practice you may end up having test-scripts comprising of many tests (perhaps a script called daily.rb or morning.rb). Create or download the combined test-script (or download it) and run it.</p>
+<p>Here we will combine both examples into a single script. In practice you may end up having CW scripts comprising of many tests (perhaps a script called daily.rb or morning.rb). Create or download the combined CW script (or download it) and run it.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_3.rb</span>
 
@@ -1038,6 +1042,16 @@ $('#toc').on('click', 'a', function() {
       
     
       
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
         
       
     
@@ -1055,18 +1069,6 @@ $('#toc').on('click', 'a', function() {
     
       
         
-      
-    
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
       
     
       
@@ -1267,6 +1269,8 @@ $('#toc').on('click', 'a', function() {
       
       
       
+      
+      
       <li>
         <a href="../mydoc_release_notes/">Release notes</a>
       </li>
@@ -1275,21 +1279,13 @@ $('#toc').on('click', 'a', function() {
       
       
       
-      <li>
-        <a href="../mydoc_introduction/">Introduction</a>
-      </li>
-      
-      
-      
       
       
       
       
       <li>
-        <a href="../mydoc_test_script/">Test script</a>
+        <a href="../mydoc_cw_script/">CW script</a>
       </li>
-      
-      
       
       
       
@@ -1313,11 +1309,11 @@ $('#toc').on('click', 'a', function() {
       
       
       
+      
+      
       <li>
         <a href="../mydoc_about_ruby_gems_etc/">About Ruby, Gems, Bundler, and other prerequisites</a>
       </li>
-      
-      
       
       
       

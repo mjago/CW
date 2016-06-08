@@ -17,10 +17,10 @@
 
 {
 "title": "About the author",
-"tags": "getting_started",
-"keywords": "documentation theme, jekyll, technical writers, help tutorial tools, hat replacements",
+"tags": "about the author",
+"keywords": "M0GZG, CW",
 "url": "/CW/mydoc_about/",
-"summary": "Hello from M0GZG and the UK."
+"summary": "Hello from M0GZG in the UK."
 },
 
 
@@ -191,6 +191,16 @@
 "keywords": "includes, conref, dita, transclusion, transclude, inclusion, reference",
 "url": "/CW/mydoc_content_reuse/",
 "summary": "You can reuse chunks of content by storing these files in the includes folder. You then choose to include the file where you need it. This works similar to conref in DITA, except that you can include the file in any content type."
+},
+
+
+
+{
+"title": "CW script",
+"tags": "",
+"keywords": "",
+"url": "/CW/mydoc_cw_script/",
+"summary": ""
 },
 
 
@@ -578,9 +588,9 @@
 {
 "title": "Release notes",
 "tags": "getting_started",
-"keywords": "release notes, announcements, what's new, new features",
+"keywords": "CW, morse code, release notes, announcements",
 "url": "/CW/mydoc_release_notes/",
-"summary": "Version 0.1 of the CW documentation."
+"summary": "Version 0.2 of the CW documentation."
 },
 
 
@@ -710,7 +720,7 @@
 "tags": "getting_started",
 "keywords": "features, capabilities, scalability, multichannel output, dita, hats, comparison, benefits",
 "url": "/CW/mydoc_supported_features/",
-"summary": "If you're not sure whether Jekyll and this theme will support your requirements, this list provides a semi-comprehensive overview of available features."
+"summary": "Todo."
 },
 
 
@@ -751,16 +761,6 @@
 "keywords": "tags, navigation, buttons, links, association",
 "url": "/CW/mydoc_tags/",
 "summary": "Tags provide another means of navigation for your content. Unlike the table of contents, tags can show the content in a variety of arrangements and groupings. Implementing tags in this Jekyll theme is somewhat of a manual process."
-},
-
-
-
-{
-"title": "Test script",
-"tags": "",
-"keywords": "",
-"url": "/CW/mydoc_test_script/",
-"summary": ""
 },
 
 

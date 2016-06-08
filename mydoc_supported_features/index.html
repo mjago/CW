@@ -3,7 +3,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="If you're not sure whether Jekyll and this theme will support your requirements, this list provides a semi-comprehensive overview of available features.">
+<meta name="description" content="Todo.">
 <meta name="keywords" content="getting_started,  features, capabilities, scalability, multichannel output, dita, hats, comparison, benefits">
 <title>Supported features  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
@@ -234,7 +234,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_test_script/">Test script</a></li>
+            <li><a href="/CW/mydoc_cw_script/">CW script</a></li>
             
             
             
@@ -621,7 +621,7 @@ window.location.href = uri;
 <div class="post-content">
 
    
-    <div class="summary">If you're not sure whether Jekyll and this theme will support your requirements, this list provides a semi-comprehensive overview of available features.</div>
+    <div class="summary">Todo.</div>
    
 
     
@@ -651,162 +651,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Before you get into exploring Jekyll as a potential platform for help content, you may be wondering if it supports some basic features needed to fulfill your tech doc requirements. The following table shows what is supported in Jekyll and this theme.</p>
+    
 
-<h2 id="supported-feautres">Supported feautres</h2>
+    
 
-<table>
-  <thead>
-    <tr>
-      <th>Features</th>
-      <th>Supported</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Content re-use</td>
-      <td>Yes</td>
-      <td>Supports re-use through Liquid. You can re-use variables, snippets of code, entire pages, and more. In DITA speak, this includes conref and keyref.</td>
-    </tr>
-    <tr>
-      <td>Markdown</td>
-      <td>Yes</td>
-      <td>You can author content using Markdown syntax. This is a wiki-like syntax for HTML that you can probably pick up in 10 minutes. Where Markdown falls short, you can use HTML. Where HTML falls short, you use Liquid, which is a scripting that allows you to incorporate more advanced logic.</td>
-    </tr>
-    <tr>
-      <td>Responsive design</td>
-      <td>Yes</td>
-      <td>Uses Bootstrap framework for responsive design.</td>
-    </tr>
-    <tr>
-      <td>Translation</td>
-      <td>Yes</td>
-      <td>I haven’t done a translation project yet (just a pilot test). Here’s the basic approach: Export the HTML pages and send them to a translation agency. Then create a new project for that language and insert the translated pages. Everything will be translated.</td>
-    </tr>
-    <tr>
-      <td>Collaboration</td>
-      <td>Yes</td>
-      <td>You collaborate with Jekyll projects the same way that developers collaborate with software projects. (You don’t need a CMS.) Because you’re working with text file formats, you can use any version control software (Git, Mercurial, Perforce, Bitbucket, etc.) as a CMS for your files.</td>
-    </tr>
-    <tr>
-      <td>Scalability</td>
-      <td>Yes</td>
-      <td>Your site can scale to any size. It’s up to you to determine how you will design the information architecture for your thousands of pages. You can choose what you display at first, second, third, fourth, and more levels, etc. Note that when your project has thousands of pages, the build time will be longer (maybe 1 minute per thousand pages?). It really depends on how many for loops you have iterating through the pages.</td>
-    </tr>
-    <tr>
-      <td>Lightweight architecture</td>
-      <td>Yes</td>
-      <td>You don’t need a LAMP stack (Linux, Apache, MySQL, PHP) architecture to get your site running. All of the building is done on your own machine, and you then push the static HTML files onto a server.</td>
-    </tr>
-    <tr>
-      <td>Skinnability</td>
-      <td>Yes</td>
-      <td>You can skin your Jekyll site to look identical to pretty much any other site online. If you have a UX team, they can really skin and design the site using all the tools familiar to the modern designer – JavaScript, HTML5, CSS, jQuery, and more. Jekyll is built on the modern web development stack rather than the XML stack (XSLT, XPath, XQuery).</td>
-    </tr>
-    <tr>
-      <td>Support</td>
-      <td>Yes</td>
-      <td>The community for your Jekyll site isn’t so much other tech writers (as is the case with DITA) but rather the wider web development community. <a href="http://talk.jekyllrb.com">Jekyll Talk</a> is a great resource. So is Stack Overflow.</td>
-    </tr>
-    <tr>
-      <td>Blogging features</td>
-      <td>Yes</td>
-      <td>There is a simple blogging feature. This appears as “news” and is intended to promote news that applies across products.</td>
-    </tr>
-    <tr>
-      <td>Versioning</td>
-      <td>Yes</td>
-      <td>Jekyll doesn’t version your files. You upload your files to a version control system such as Github. Your files are versioned there.</td>
-    </tr>
-    <tr>
-      <td>PC platform</td>
-      <td>Yes</td>
-      <td>Jekyll runs on Windows. Although the experience working on the command line is better on a Mac, Windows also works, especially now that Jekyll 3.0 dropped dependencies on Python, which wasn’t available by default on Windows.</td>
-    </tr>
-    <tr>
-      <td>jQuery plugins</td>
-      <td>Yes</td>
-      <td>You can use any jQuery plugins you and other JavaScript, CMS, or templating tools. However, note that if you use Ruby plugins, you can’t directly host the source files on Github Pages because Github Pages doesn’t allow Ruby plugins. Instead, you can just push your output to any web server. If you’re not planning to use Github Pages, there are no restrictions on any plugins of any sort. Jekyll makes it super easy to integrate every kind of plugin imaginable. This theme doesn’t actually use any plugins, so you can publish on Github if you want.</td>
-    </tr>
-    <tr>
-      <td>Bootstrap integration</td>
-      <td>Yes</td>
-      <td>This theme is built on <a href="http://getbootstrap.com/">Bootstrap</a>. If you don’t know what Bootstrap is, basically this means there are hundreds of pre-built components, styles, and other elements that you can simply drop into your site. For example, the responsive quality of the site comes about from the Bootstrap code base.</td>
-    </tr>
-    <tr>
-      <td>Fast-loading pages</td>
-      <td>Yes</td>
-      <td>This is one of the Jekyll’s strengths. Because the files are static, they loading extremely fast, approximately 0.5 seconds per page. You can’t beat this for performance. (A typically database-driven site like WordPress averages about 2.5 + seconds loading time per page.) Because the pages are all static, it means they are also extremely secure. You won’t get hacked like you might with a WordPress site.</td>
-    </tr>
-    <tr>
-      <td>Themes</td>
-      <td>Yes</td>
-      <td>You can have different themes for different outputs. If you know CSS, theming both the web and print outputs is pretty easy.</td>
-    </tr>
-    <tr>
-      <td>Open source</td>
-      <td>Yes</td>
-      <td>This theme is entirely open source. Every piece of code is open, viewable, and editable. Note that this openness comes at a price — it’s easy to make changes that break the theme or otherwise cause errors.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="features-not-available">Features not available</h2>
-
-<p>The following features are not available.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Features</th>
-      <th>Supported</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CMS interface</td>
-      <td>No</td>
-      <td>Unlike with WordPress, you don’t log into an interface and navigate to your files. You work with text files and preview the site dynamically in your browser. Don’t worry – this is part of the simplicy that makes Jekyll awesome. I recommend using WebStorm as your text editor.</td>
-    </tr>
-    <tr>
-      <td>WYSIWYG interface</td>
-      <td>No</td>
-      <td>I use WebStorm to author content, because I like working in text file formats. But you can use any Markdown editor you want (e.g., Lightpaper for Mac, Marked) to author your content.</td>
-    </tr>
-    <tr>
-      <td>Different outputs</td>
-      <td>No</td>
-      <td>This theme provides a single website output that contains documentation for multiple products. Unlike previous iterations of the theme, it’s not intended to support different outputs from the same content.</td>
-    </tr>
-    <tr>
-      <td>Robust search</td>
-      <td>No</td>
-      <td>The search feature is a simplistic JSON search. For more robust search, you should integrate Swiftype or Algolia. However, those services aren’t currently integrated into the theme.</td>
-    </tr>
-    <tr>
-      <td>Standardized templates</td>
-      <td>No</td>
-      <td>You can create pages with any structure you want. The theme does not enforce topic types such as a task or concept as the DITA specification does.</td>
-    </tr>
-    <tr>
-      <td>Integration with Swagger</td>
-      <td>No</td>
-      <td>You can link to a SwaggerUI output, but there is no built-in integration of SwaggerUI into this documentation theme.</td>
-    </tr>
-    <tr>
-      <td>Templates for endpoints</td>
-      <td>No</td>
-      <td>Although static site generators work well with API documentation, there aren’t any built-in templates specific to endpoints in this theme. You could construct your own, though.</td>
-    </tr>
-    <tr>
-      <td>eBook output</td>
-      <td>No</td>
-      <td>There isn’t an eBook output for the content.</td>
-    </tr>
-  </tbody>
-</table>
+  <h2 id="supported-feautres">Supported feautres</h2>
 
 
 
