@@ -23,6 +23,7 @@ class RepeatWord < FileDetails
     (words.to_s + space).each_char do |letr|
       process_letter letr
       loop do
+        do_events
         process_space_maybe letr
         process_word_maybe
         break if timing.char_delay_timeout?

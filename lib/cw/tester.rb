@@ -55,21 +55,41 @@ module Tester
     sleep 0.005
   end
 
-  def print_words words
-#    puts "self.class = #{self.class}"
-    timing.init_char_timer
-    (words.to_s + space).each_char do |letr|
-      process_letter letr
-      stream.add_char(letr) if(self.class == TestLetters)
-      loop do
-        do_events
+  def process_letters letr
+    loop do
+      do_events
+      if self.class == Book
+        process_space_maybe(letr) unless @book_details.args[:output] == :letter
+        process_word_maybe
+        break if change_repeat_or_quit?
+        break if timing.char_delay_timeout?
+      else
         process_space_maybe(letr) if(self.class == TestWords)
         process_word_maybe
         break if timing.char_delay_timeout?
       end
-      print.prn letr if print_letters?
-      break if quit?
     end
+  end
+
+  def process_words words
+    book_class = (self.class == Book)
+    (words.to_s + space).each_char do |letr|
+      process_letter letr
+      if book_class
+        stream.add_char(letr) if @book_details.args[:output] == :letter
+      else
+      stream.add_char(letr) if(self.class == TestLetters)
+      end
+      process_letters letr
+      print.prn letr if print_letters?
+      break if(book_class && change_repeat_or_quit?)
+      break if ((! book_class) && quit?)
+    end
+  end
+
+  def print_words words
+    timing.init_char_timer
+    process_words words
   end
 
   def process_word_maybe

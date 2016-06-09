@@ -151,31 +151,33 @@ class Book < FileDetails
     end
   end
 
-  def process_letters letr
-    loop do
-      process_space_maybe(letr) unless @book_details.args[:output] == :letter
-      process_word_maybe
-      if change_repeat_or_quit?
-        break
-      end
-      break if timing.char_delay_timeout?
-    end
-  end
-
-  def process_words words
-    (words + space).each_char do |letr|
-      process_letter letr
-      stream.add_char(letr) if @book_details.args[:output] == :letter
-      process_letters letr
-      print.prn letr if print_letters?
-      break if change_repeat_or_quit?
-    end
-  end
-
-  def print_words words
-    timing.init_char_timer
-    process_words words
-  end
+#  def process_letters letr
+#    loop do
+#      do_events
+#      process_space_maybe(letr) unless @book_details.args[:output] == :letter
+#      process_word_maybe
+#      if change_repeat_or_quit?
+#        break
+#      end
+#      break if timing.char_delay_timeout?
+#    end
+#  end
+#
+#  def process_words words
+#    puts "self.class = #{self.class}"
+#    (words + space).each_char do |letr|
+#      process_letter letr
+#      stream.add_char(letr) if @book_details.args[:output] == :letter
+#      process_letters letr
+#      print.prn letr if print_letters?
+#      break if change_repeat_or_quit?
+#    end
+#  end
+#
+#  def print_words words
+#    timing.init_char_timer
+#    process_words words
+#  end
 
   def print_words_for_current_sentence
 #    puts current_sentence
