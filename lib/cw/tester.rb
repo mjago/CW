@@ -51,6 +51,10 @@ module Tester
     end
   end
 
+  def do_events
+    sleep 0.005
+  end
+
   def print_words words
 #    puts "self.class = #{self.class}"
     timing.init_char_timer
@@ -58,6 +62,7 @@ module Tester
       process_letter letr
       stream.add_char(letr) if(self.class == TestLetters)
       loop do
+        do_events
         process_space_maybe(letr) if(self.class == TestWords)
         process_word_maybe
         break if timing.char_delay_timeout?

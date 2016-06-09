@@ -8,9 +8,9 @@ class Rss
 
   def sources
     {
-      bbc:        'http://feeds.bbci.co.uk/news/rss.xml',
-      reuters:    'http://feeds.reuters.com/Reuters/worldNews?format=xml',
-      guardian:   'http://www.theguardian.com/world/rss',
+      bbc:       'http://feeds.bbci.co.uk/news/rss.xml',
+      reuters:   'http://feeds.reuters.com/Reuters/worldNews?format=xml',
+      guardian:  'http://www.theguardian.com/world/rss',
       quotation: 'http://feeds.feedburner.com/quotationspage/qotd'
     }
   end
