@@ -676,10 +676,10 @@
 
 
 {
-"title": "Sidebar Navigation",
+"title": "Sidebar Source",
 "tags": "getting_started",
 "keywords": "sidebar, accordion, yaml, iteration, for loop, navigation, attributes, conditional filtering",
-"url": "/CW/mydoc_sidebar_navigation/",
+"url": "/CW/mydoc_sidebar_source/",
 "summary": "The sidebar navigation uses a jQuery component called Navgoco. The sidebar is a somewhat complex part of the theme that remembers your current page, highlights the active item, stays in a fixed position on the page, and more. This page explains a bit about how the sidebar was put together."
 },
 

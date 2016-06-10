@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="The sidebar navigation uses a jQuery component called Navgoco. The sidebar is a somewhat complex part of the theme that remembers your current page, highligh...">
 <meta name="keywords" content="getting_started,  sidebar, accordion, yaml, iteration, for loop, navigation, attributes, conditional filtering">
-<title>Sidebar Navigation  | CW - learn and develop morse</title>
+<title>Sidebar Source  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
 
 
@@ -139,7 +139,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "CW - learn and develop morse feedback";
-var body = "I have some feedback about the Sidebar Navigation page: ";
+var body = "I have some feedback about the Sidebar Source page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:martyn.jago@btinternet.com?subject=";
@@ -166,7 +166,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CW/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Sidebar Navigation">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Sidebar Source">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -563,12 +563,19 @@ window.location.href = uri;
         
     
     <li>
-        <a href="#">Navigation</a>
+        <a href="#">Source</a>
         <ul>
             
             
             
-            <li class="active"><a href="/CW/mydoc_sidebar_navigation/">Sidebar navigation</a></li>
+            <li><a href="https://github.com/mjago/cw/" target="_blank">Repository</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/doc/index.html">Source Docs</a></li>
             
             
             
@@ -613,7 +620,7 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Sidebar Navigation</h1>
+   <h1 class="post-title-main">Sidebar Source</h1>
 </div>
 
 
@@ -711,7 +718,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>If the <code class="highlighter-rouge">page.url</code> matches the <code class="highlighter-rouge">subfolderitem.url</code>, then an <code class="highlighter-rouge">active</code> class gets applied. If not, the <code class="highlighter-rouge">active</code> class does not get applied.</p>
 
-<p>The <code class="highlighter-rouge">page.url</code> in Jekyll is a site-wide variable. If you insert <code class="highlighter-rouge"><span class="p">{</span><span class="err">{page.url</span><span class="p">}</span><span class="err">}</span></code> on a page, it will render as follows: /mydoc_sidebar_navigation/. The <code class="highlighter-rouge">url</code> attribute in the sidebar item must match the page URL in order to get the <code class="highlighter-rouge">active</code> class applied.</p>
+<p>The <code class="highlighter-rouge">page.url</code> in Jekyll is a site-wide variable. If you insert <code class="highlighter-rouge"><span class="p">{</span><span class="err">{page.url</span><span class="p">}</span><span class="err">}</span></code> on a page, it will render as follows: /mydoc_sidebar_source/. The <code class="highlighter-rouge">url</code> attribute in the sidebar item must match the page URL in order to get the <code class="highlighter-rouge">active</code> class applied.</p>
 
 <p>This is why the <code class="highlighter-rouge">url</code> value in the sidebar data file looks something like this:</p>
 
@@ -748,7 +755,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 8, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 10, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

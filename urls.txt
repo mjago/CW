@@ -329,10 +329,12 @@ mydoc_wpm:
 
 
  
-mydoc_sidebar_navigation:
-  title: "Sidebar navigation"
-  url: /CW/mydoc_sidebar_navigation/
-  link: <a href="/CW/mydoc_sidebar_navigation/">Sidebar navigation</a>
+
+ 
+docindex.html:
+  title: "Source Docs"
+  url: /CW/doc/index.html
+  link: <a href="/CW/doc/index.html">Source Docs</a>
 
 
  
