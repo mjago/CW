@@ -24,7 +24,7 @@
 "use_ruby_tone",
 "word_spacing",
 "wpm"].each do |name|
-  File.open("test_scripts/#{name}.rb", 'w') do |file|
+  File.open("cw_scripts/#{name}.rb", 'w') do |file|
 
     file.puts "require \"cw\""
     file.puts ""

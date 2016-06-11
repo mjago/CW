@@ -665,11 +665,15 @@ $('#toc').on('click', 'a', function() {
   <h2 id="userubytone-command">use_ruby_tone command</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
-
-<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-<span class="c1"># TODO:  use_ruby_tone()</span>
-  <span class="n">word_count</span> <span class="mi">4</span>
-<span class="k">end</span>
+<span class="n">cw</span> <span class="o">=</span> <span class="no">CW</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">wpm</span> <span class="mi">12</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">use_ebook2cw</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">noise</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">word_count</span> <span class="mi">2</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">test_letters</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">use_ruby_tone</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">word_count</span> <span class="mi">2</span>
+<span class="n">cw</span><span class="p">.</span><span class="nf">test_letters</span>
 
 </code></pre>
 </div>
@@ -683,7 +687,7 @@ $('#toc').on('click', 'a', function() {
      
   <i class="fa fa-download fa-2x"></i>
      
-<a href="../test_scripts/use_ruby_tone.rb"> use_ruby_tone.rb</a>
+<a href="../cw_scripts/use_ruby_tone.rb"> use_ruby_tone.rb</a>
      
 
 </div>
@@ -1573,7 +1577,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 10, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 11, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

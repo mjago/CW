@@ -665,10 +665,26 @@ $('#toc').on('click', 'a', function() {
   <h2 id="quality-command">quality command</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+<span class="c1">#require "Dir"</span>
 
 <span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-<span class="c1"># TODO:  quality()</span>
+  <span class="nb">puts</span> <span class="s1">'quality = 9'</span>
+  <span class="nb">puts</span> <span class="kp">__FILE__</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">quality</span>    <span class="mi">9</span> <span class="c1"># worst</span>
   <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">print_letters</span>
+  <span class="c1">#  puts File.size('../audio/audio_output.wav0000.mp3')</span>
+  <span class="n">dir</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span> <span class="sb">`gem which cw`</span>
+  <span class="n">dir</span> <span class="o">+=</span> <span class="s1">'/../'</span>
+  <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span> <span class="s1">'/usr/'</span>
+<span class="k">end</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">quality</span>    <span class="mi">1</span> <span class="c1"># best</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
@@ -683,7 +699,7 @@ $('#toc').on('click', 'a', function() {
      
   <i class="fa fa-download fa-2x"></i>
      
-<a href="../test_scripts/quality.rb"> quality.rb</a>
+<a href="../cw_scripts/quality.rb"> quality.rb</a>
      
 
 </div>
@@ -1549,7 +1565,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 10, 2016 <br />
+<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jun 11, 2016 <br />
 <p><img src="/CW/images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
