@@ -1,6 +1,6 @@
 require "cw"
 
 CW.new do
-# TODO:  mark_words()
   word_count 4
+  mark_words()
 end
