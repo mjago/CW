@@ -70,7 +70,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_audio_dir/",
-"summary": "audio_dir command."
+"summary": ""
 },
 
 
@@ -80,7 +80,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_audio_filename/",
-"summary": "audio_filename command."
+"summary": ""
 },
 
 
@@ -90,7 +90,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_author/",
-"summary": "author command."
+"summary": ""
 },
 
 
@@ -100,7 +100,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_book_dir/",
-"summary": "book_dir command."
+"summary": ""
 },
 
 
@@ -150,7 +150,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_command_line/",
-"summary": "command_line command."
+"summary": ""
 },
 
 
@@ -180,7 +180,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_config_file/",
-"summary": "config_file command."
+"summary": ""
 },
 
 
@@ -210,7 +210,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_double_words/",
-"summary": "double_words command."
+"summary": ""
 },
 
 
@@ -290,7 +290,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_frequency/",
-"summary": "frequency command."
+"summary": ""
 },
 
 
@@ -440,7 +440,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_mark_words/",
-"summary": "mark_words command."
+"summary": ""
 },
 
 
@@ -450,7 +450,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_name/",
-"summary": "name command."
+"summary": ""
 },
 
 
@@ -470,7 +470,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_no_noise/",
-"summary": "no_noise command."
+"summary": ""
 },
 
 
@@ -490,7 +490,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_no_shuffle/",
-"summary": "no_shuffle command."
+"summary": ""
 },
 
 
@@ -500,7 +500,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_noise/",
-"summary": "noise command."
+"summary": ""
 },
 
 
@@ -520,7 +520,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_pause/",
-"summary": "pause command."
+"summary": ""
 },
 
 
@@ -540,7 +540,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_print_letters/",
-"summary": "print_letters command."
+"summary": ""
 },
 
 
@@ -570,7 +570,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_quality/",
-"summary": "quality command."
+"summary": ""
 },
 
 
@@ -670,7 +670,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_shuffle/",
-"summary": "shuffle command."
+"summary": ""
 },
 
 
@@ -690,7 +690,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_single_words/",
-"summary": "single_words command."
+"summary": ""
 },
 
 
@@ -780,7 +780,7 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_title/",
-"summary": "title command."
+"summary": ""
 },
 
 
@@ -816,31 +816,31 @@
 
 
 {
-"title": "",
+"title": "un_pause command",
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_un_pause/",
-"summary": "un_pause command."
+"summary": ""
 },
 
 
 
 {
-"title": "",
+"title": "use_ebook2cw command",
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_use_ebook2cw/",
-"summary": "use_ebook2cw command."
+"summary": ""
 },
 
 
 
 {
-"title": "",
+"title": "use_ruby_tone command",
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_use_ruby_tone/",
-"summary": "use_ruby_tone command."
+"summary": ""
 },
 
 
@@ -856,21 +856,21 @@
 
 
 {
-"title": "",
+"title": "word_spacing command",
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_word_spacing/",
-"summary": "word_spacing command."
+"summary": ""
 },
 
 
 
 {
-"title": "",
+"title": "wpm command",
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_wpm/",
-"summary": "wpm command."
+"summary": ""
 },
 
 
