@@ -29,7 +29,7 @@ class KeyInput
   end
 
   def is_punctuation?
-    [' ', ',', '.', '!', '?'].detect{|letr| letr == @chr}
+    [' ', ',', '.', '=', '?'].detect{|letr| letr == @chr}
   end
 
   def is_relevant_char?

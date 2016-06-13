@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'feedjira', '>= 2.0.0'
   spec.add_runtime_dependency 'htmlentities', '>= 4.3.4'
   spec.add_runtime_dependency 'paint', '>= 1.0.1'
-  spec.add_runtime_dependency 'rake', '>= 11.1.2'
+  spec.add_runtime_dependency 'rake', '>= 11.2.2'
   spec.add_runtime_dependency 'ruby-progressbar', '>= 1.8.1'
   spec.add_runtime_dependency 'sanitize', '>= 4.0.1'
   spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
