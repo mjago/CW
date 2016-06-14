@@ -1,6 +1,6 @@
 require "cw"
 
-# book_reading_3.rb
+# book_reading_4.rb
 
 CW.new do
   book_dir "~/books"
