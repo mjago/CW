@@ -27,7 +27,8 @@ class CwDsl
    :pause,         :noise,
    :shuffle,       :mark_words,
    :double_words,  :single_words,
-   :audio_dir,     :def_word_count
+   :audio_dir,     :def_word_count,
+   :book_name,     :book_dir
   ].each do |method|
     define_method method do |arg = nil|
       arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
@@ -61,7 +62,7 @@ class CwDsl
       :word_filename, :author, :title, :quality, :frequency, :shuffle, :effective_wpm,
       :max, :min, :word_spacing, :noise, :begin, :end, :word_count, :including,
       :word_size, :size, :beginning_with, :ending_with, :mark_words, :audio_dir,
-      :use_ebook2cw, :def_word_count
+      :use_ebook2cw, :def_word_count, :book_dir, :book_name
     end
 
     config_defaults

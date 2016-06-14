@@ -5,16 +5,38 @@ class BookDetails
   attr_reader :args
 
   HERE = File.dirname(__FILE__) + '/'
-  BOOK_DIRECTORY = HERE + '../../data/text/'
-  BOOK_NAME      = 'adv_of_sh_holmes.txt'
+  GEM_BOOK_DIRECTORY     = HERE + '../../data/text/'
+  GEM_BOOK_NAME          = 'adv_of_sh_holmes.txt'
+  DEFAULT_BOOK_DIRECTORY = 'books'
 
   def initialize
-    @book_name      =  BOOK_NAME
-    @book_directory =  BOOK_DIRECTORY
+    book_directory
+    book_name
+  end
+
+  def is_default_book_dir?
+    if File.exist? DEFAULT_BOOK_DIRECTORY
+      if File.directory? DEFAULT_BOOK_DIRECTORY
+        return true
+      end
+    end
+    false
+  end
+
+  def book_name
+    Params.book_name ||= GEM_BOOK_NAME
+  end
+
+  def book_directory
+    book_dir = GEM_BOOK_DIRECTORY
+    if is_default_book_dir?
+      book_dir = DEFAULT_BOOK_DIRECTORY
+    end
+    Params.book_dir ||= book_dir
   end
 
   def book_location
-    @book_directory + @book_name
+    File.expand_path(File.join Params.book_dir, Params.book_name)
   end
 
   def arguments args
