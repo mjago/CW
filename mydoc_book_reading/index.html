@@ -675,6 +675,8 @@ $('#toc').on('click', 'a', function() {
   <li>duration</li>
 </ul>
 
+<p>Even without supplying your own books, <strong>CW</strong> comes pre-loaded with a book to read:</p>
+
 <h2 id="read-two-sentences">Read two sentences</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
@@ -734,6 +736,86 @@ $('#toc').on('click', 'a', function() {
   <i class="fa fa-download fa-2x"></i>
      
 <a href="../cw_scripts/book_reading_2.rb"> book_reading_2.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<p>If you wish to read your own books, create a directory called <strong>books</strong> in your working directory and put your books in there. For instance you could create the small book shown below and place in the books directory:</p>
+
+<pre><code class="language-raw">  This is my book to read.
+The end.
+
+</code></pre>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-book fa-2x"></i>
+     
+<a href="../cw_scripts/book_to_read.txt"> book_to_read.txt</a>
+     
+
+</div>
+<p><br /></p>
+
+<p>You can then read the book as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># book_reading_3.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">book_name</span> <span class="s2">"book_to_read.txt"</span>
+  <span class="n">wpm</span> <span class="mi">18</span>
+  <span class="n">ewpm</span> <span class="mi">12</span>
+  <span class="n">play_book</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/book_reading_3.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/book_reading_3.mp3">/CW/audio/book_reading_3.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/book_reading_3.rb"> book_reading_3.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<p>In addition you can specify a different book directory as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># book_reading_3.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">book_dir</span> <span class="s2">"~/books"</span>
+  <span class="n">book_name</span> <span class="s2">"book_to_read.txt"</span>
+  <span class="n">wpm</span> <span class="mi">18</span>
+  <span class="n">ewpm</span> <span class="mi">12</span>
+  <span class="n">play_book</span><span class="p">(</span><span class="ss">sentences: </span><span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/book_reading_4.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/book_reading_4.mp3">/CW/audio/book_reading_4.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/book_reading_4.rb"> book_reading_4.rb</a>
      
 
 </div>
@@ -1533,7 +1615,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jun 13, 2016 <br />
+<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jun 14, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
