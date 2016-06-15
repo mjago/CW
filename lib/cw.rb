@@ -31,10 +31,18 @@ require_relative 'cw/book'
 require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator.rb'
 require_relative 'cw/progress'
+require_relative 'cw/config'
 
 # CW provides Morse code generation functionality
 
 class CW < CwDsl
+
+  def config cfg
+    puts ARGV[0]
+    puts ARGV[1]
+    puts "cfg = " + cfg.inspect.to_s
+    exit 1
+  end
 
 #FIXME dry_run
 #  attr_accessor :dry_run
@@ -67,12 +75,21 @@ class CW < CwDsl
 
   # Initialize CW class. Eval block if passed in.
 
-
   def initialize(&block)
 
     super
 
     load_common_words# unless @words.exist?
+    cfg = Config.new.read_config_maybe
+    cfg.each_pair do |method, arg|
+#      puts "#{key}-----"
+#      puts array
+      #      method = key; arg = array
+#    method = 'wpm'; arg = '40'
+#    method = 'word_count'; arg = '5'
+    self.send("#{method}", arg)
+    Params.send("#{method}=", arg)
+    end
     instance_eval(&block) if block
     run unless Params.pause if (block && ! @inhibit_block_run)
   end

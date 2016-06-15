@@ -8,9 +8,9 @@ class ToneGenerator
 
   def initialize
     @max_amplitude = 0.5
-    @wpm = Params.wpm
+    @wpm = Params.wpm.to_f
     @frequency = Params.frequency
-    @effective_wpm = Params.effective_wpm ? Params.effective_wpm : @wpm
+    @effective_wpm = Params.effective_wpm ? Params.effective_wpm.to_f : @wpm
     @sample_rate = 2400
     @print = Print.new
   end

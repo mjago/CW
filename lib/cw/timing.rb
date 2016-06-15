@@ -15,7 +15,7 @@ class Timing
   end
 
   def dot wpm
-    1.2 / wpm
+    1.2 / wpm.to_f
   end
 
   def dot_ms
