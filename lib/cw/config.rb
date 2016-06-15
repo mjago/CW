@@ -1,4 +1,4 @@
-class Config
+class ConfigFile
 
   CONFIG       = ".cw_config"
   CONFIGS      = ['book_dir', 'book_name', 'wpm']

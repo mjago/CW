@@ -80,7 +80,7 @@ class CW < CwDsl
     super
 
     load_common_words# unless @words.exist?
-    cfg = Config.new.read_config_maybe
+    cfg = ConfigFile.new.read_config_maybe
     cfg.each_pair do |method, arg|
 #      puts "#{key}-----"
 #      puts array
