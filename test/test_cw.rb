@@ -161,7 +161,7 @@ Ending:     x
   end
 
   def test_wpm_defaults_to_25_if_unset
-    assert_equal '25', @cw.wpm
+    assert_equal '25', @cw.wpm.to_s
   end
 
   def test_effective_wpm_defaults_to_nil
