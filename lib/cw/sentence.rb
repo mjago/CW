@@ -25,7 +25,15 @@ class Sentence
     @index = @index <= 1 ? 0 : @index - 1
   end
 
+  def create_progress_maybe progress_file
+    unless File.exists? progress_file
+      @index = '0'
+      write_progress progress_file
+    end
+  end
+
   def read_progress progress_file
+    create_progress_maybe progress_file
     File.open(progress_file, 'r') {|f| @index = f.readline.to_i}
   end
 
