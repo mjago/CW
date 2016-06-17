@@ -6,7 +6,7 @@ class BookDetails
 
   HERE = File.dirname(__FILE__) + '/'
   GEM_BOOK_DIRECTORY     = HERE + '../../data/text/'
-  GEM_BOOK_NAME          = 'adv_of_sh_holmes.txt'
+  GEM_BOOK_NAME          = 'book.txt'
   DEFAULT_BOOK_DIRECTORY = 'books'
 
   def initialize
