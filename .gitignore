@@ -24,7 +24,7 @@ books/
 _yardoc
 doc/
 /.ruby_version/
-
+/data/text/progress.txt
 audio/audio_output.wav
 /audio/dash.wav
 /audio/audio_output.wav
