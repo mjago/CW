@@ -1,7 +1,7 @@
 class ConfigFile
 
   CONFIG       = ".cw_config"
-  CONFIGS      = ['wpm']
+  CONFIGS      = ['wpm', 'book_name']
   HERE         = File.dirname(__FILE__) + '/'
 
   attr_reader :config
