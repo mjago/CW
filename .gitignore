@@ -8,7 +8,7 @@ Gemfile.lock
 *.gem
 *.rbc
 .bundle
-.config
+.cw_config
 coverage
 InstalledFiles
 lib/bundler/man
@@ -18,7 +18,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-
+books/
 # YARD artifacts
 .yardoc
 _yardoc

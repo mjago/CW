@@ -1,7 +1,7 @@
 class ConfigFile
 
   CONFIG       = ".cw_config"
-  CONFIGS      = ['book_dir', 'book_name', 'wpm']
+  CONFIGS      = ['wpm']
   HERE         = File.dirname(__FILE__) + '/'
 
   attr_reader :config
@@ -50,6 +50,16 @@ class ConfigFile
       puts 'Reading config:'
       read_config
       config
+    end
+  end
+
+  def apply_config(sf)
+    cfg = read_config_maybe
+    if cfg
+      cfg.each_pair do |method, arg|
+        sf.send("#{method}", arg)
+        Params.send("#{method}=", arg)
+      end
     end
   end
 end
