@@ -8,7 +8,8 @@ class Sentence
   def all               ; @sentences             ; end
   def next              ; @next = true           ; end
   def next?             ; @next                  ; end
-  def forward           ; @index += 1            ; end
+#todo  def forward           ; @index += 1            ; end
+  def forward           ; @index                 ; end
   def previous?         ; @previous              ; end
   def repeat?           ; @repeat                ; end
   def change?           ; next? || previous?     ; end
@@ -27,18 +28,29 @@ class Sentence
 
   def create_progress_maybe progress_file
     unless File.exists? progress_file
-      @index = '0'
-      write_progress progress_file
+      reset_progress progress_file
+    end
+  end
+
+  def reset_progress progress_file
+    @index = 0
+    write_progress progress_file
+  end
+
+  def check_end_of_book progress_file
+    if @index >= @sentences.size
+      reset_progress progress_file
     end
   end
 
   def read_progress progress_file
     create_progress_maybe progress_file
     File.open(progress_file, 'r') {|f| @index = f.readline.to_i}
+    check_end_of_book progress_file
   end
 
   def write_progress progress_file
-    File.open(progress_file, 'w') {|f| f.puts @index.to_s}
+     File.open(progress_file, 'w') {|f| f.puts @index.to_s}
   end
 
   def read_book book

@@ -42,7 +42,7 @@ class AudioPlayer
       Process.kill(:TERM, @pid)
       Process.wait(@pid)
     rescue
-      puts 'Error: Failed to kill pid ' + @pid.to_s
+#      puts 'Error: Failed to kill pid ' + @pid.to_s
       exit 1
     end
   end

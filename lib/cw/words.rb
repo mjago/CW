@@ -13,7 +13,6 @@ class Words
   end
 
   def double_words
-    puts 'here'
     temp = []
     @words.each do |wrd|
       2.times { temp.push wrd }

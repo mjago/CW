@@ -42,12 +42,11 @@ class ConfigFile
         extract_config line
       end
     end
-#    puts "config: " + config.to_s
   end
 
   def read_config_maybe
     if File.exist?(CONFIG)
-      puts 'Reading config:'
+      puts 'Reading config...'
       read_config
       config
     end

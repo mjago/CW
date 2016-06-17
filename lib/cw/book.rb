@@ -42,7 +42,12 @@ class Book < FileDetails
   end
 
   def change_repeat_or_quit?
-    change_or_repeat_sentence? || quit?
+    if(change_or_repeat_sentence? || quit?)
+      sentence.index += 1
+      write_book_progress
+      return true
+    end
+    false
   end
 
   def check_sentence_navigation chr
@@ -118,12 +123,12 @@ class Book < FileDetails
 
   def next_sentence_or_quit?
     playing = audio_still_playing?
+    sleep 0.01 if playing
     next_sentence unless playing
-    sleep 0.01         if playing
     if change_repeat_or_quit?
       change_and_kill_audio
 #todo      prn.newline unless quit?
-      true
+      return true
     end
   end
 
@@ -194,13 +199,11 @@ class Book < FileDetails
       sync_with_audio_player
       print_words_for_current_sentence
       print.reset
-      puts
     end
   end
 
   def play_sentences_thread
     play_sentences_until_quit
-    write_book_progress
     #    kill_threads
     print "\n\rplay has quit " if @debug
   end
