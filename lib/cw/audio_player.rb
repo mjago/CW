@@ -2,12 +2,18 @@
 
 class AudioPlayer
 
+  AFPLAY = '/usr/bin/afplay'
+
+  def initialize
+    @play_command = Params.play_command
+  end
+
   def tone
     @tone ||= ToneGenerator.new
   end
 
   def play_command
-    @play_command ||= 'afplay'
+    @play_command ||= AFPLAY
   end
 
   def play_filename_for_ebook2cw

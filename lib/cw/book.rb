@@ -107,7 +107,7 @@ class Book < FileDetails
   end
 
   def compile_sentence
-    audio.convert_words add_space current_sentence
+    audio.convert_words(add_space(current_sentence))
   end
 
   def compile_and_play
