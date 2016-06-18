@@ -1,73 +1,25 @@
 #!/usr/bin/env ruby
 
-ARGV.each do |arg|
-  puts arg
-##  puts Dir.pwd
-  system("ruby #{arg}")
-##  @config[:script] = arg
-##  CW.new do
-##    puts 'here'
-##    config @config
+iterate = nil
+count   = 1
+def number_or_nil(string)
+  Integer(string || '')
+rescue ArgumentError
+  nil
 end
-#end
 
-#require_relative('../lib/cw');
-#
-#CONFIG       = ".cw_config"
-#CONFIGS      = ['book_dir', 'book_name', 'wpm', 'ewpm']
-#HERE         = File.dirname(__FILE__) + '/'
-#
-#$stdout.sync = true
-#@config = {}
-#
-#def readlines f
-#  f.readlines
-#end
-#
-#def config(cfg, line)
-#  @config[cfg.to_sym] = line.gsub(cfg + ':', '').strip
-#end
-#
-#def match_config?(line, cfg)
-#  if line
-#    tmp = line.strip()[0, cfg.length]
-#    return true if(tmp == cfg)
-#  end
-#  false
-#end
-#
-#def extract_config line
-#  CONFIGS.each do |cfg|
-#    if match_config?(line, cfg + ':')
-#      config(cfg, line)
-#      return
-#    end
-#  end
-#end
-#
-#def read_config
-#  File.open(CONFIG,'r') do |f|
-#    lines = readlines(f)
-#    lines.each do |line|
-#      extract_config line
-#    end
-#  end
-#  puts "@config: " + @config.to_s
-#end
-#
-#if File.exist?(CONFIG)
-#  puts 'Reading config:'
-#  read_config
-#end
-#
-#ARGV.each do |arg|
-##  puts ARGV[0]
-##  puts arg
-##  puts Dir.pwd
-#  system("ruby #{arg}")
-##  @config[:script] = arg
-##  CW.new do
-##    puts 'here'
-##    config @config
-##  end
-#end
+def iterate?
+  number_or_nil ARGV[ARGV.size - 1]
+end
+
+if iterate?
+  count = ARGV.pop.to_i
+  iterate = true
+end
+
+count.times do |iter|
+  print "Iteration: #{iter + 1}   " if iterate
+  ARGV.each do |arg|
+    system("ruby #{arg}")
+  end
+end

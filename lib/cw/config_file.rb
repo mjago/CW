@@ -46,7 +46,7 @@ class ConfigFile
 
   def read_config_maybe
     if File.exist?(CONFIG)
-      puts 'Reading config...'
+      puts 'Loading config.'
       read_config
       config
     end
