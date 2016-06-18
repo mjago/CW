@@ -5,36 +5,33 @@
 
 ## CW
 
-CW is a DSL written in the [Ruby](https://www.ruby-lang.org/en/downloads/) language for generating audible morse - allowing for
-real-time learning and testing of Morse Code. Great emphasis is placed on enabling tests to use fresh material each test run, rather than the constant repetition of old material.
+**CW** is a program for learning and practicing Morse Code (CW). It is written in the form of a [DSL](https://en.wikipedia.org/wiki/Domain-specific_language/) in the [Ruby](https://www.ruby-lang.org/en/downloads/) language.
 
-CW can read books (and remember where you are), rss feeds (your daily quotation for instance), common phrases, QSO codes etc, in
-addition to generating random words, letters, and numbers that possibly match some required pattern
-(i.e. words_beginning_with 'v').
+**CW** can read _books_ (and remember where you are), _rss feeds_ (your daily quotation for instance), common _phrases_, _QSO_ codes etc, in
+addition to generating random words, letters, and numbers that possibly match some required pattern (i.e. words_beginning_with 'v').
 
-CW also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
+**CW** also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
 
+**CW** is thoroughly [documented](http://mjago.github.io/CW/), and includes a [hands-on tutorial](http://mjago.github.io/CW/mydoc_five_common_words/).
 
 # Installation:
 
 ```sh
-
 gem install cw
 ruby example.rb
-
 ```
 
  * Note: Currently only tested on OS X, and Ruby v1.9.3 and later.
 
 # Documentation:
 
-[CW Documentation](http://mjago.github.io/CW/)
+**[CW Documentation](http://mjago.github.io/CW/)**
 
 # Example test-script
 
 ```ruby
 
-  # example.rb (example script)
+# example.rb (example script)
 
   require 'cw'
 
@@ -128,27 +125,6 @@ test.print_letters
 test.test_letters
 
 ```
-
-# Options:
-
-  Command / Alias
-  ---------------
- -  ewpm                  / effective_wpm
- -  no_run                / pause
- -  comment               / name
- -  repeat_word           / double_words
- -  word_length           / word_size
- -  word_shuffle          / shuffle
- -  random_letters
- -  random_numbers
- -  having_size_of        / word_size
- -  number_of_words       / word_count
- -  words_including       / including
- -  words_ending_with     / ending_with
- -  random_alphanumeric   / random_letters_numbers
- -  words_beginning_with  / beginning_with
- -  words_no_longer_than  / no_longer_than
- -  words_no_shorter_than / no_shorter_than
 
 # License
 
