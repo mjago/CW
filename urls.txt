@@ -140,6 +140,13 @@ mydoc_rss_feed:
   link: <a href="/CW/mydoc_rss_feed/">RSS Feed Reading</a>
 
 
+ 
+mydoc_cw_executable:
+  title: "The cw executable"
+  url: /CW/mydoc_cw_executable/
+  link: <a href="/CW/mydoc_cw_executable/">The cw executable</a>
+
+
 
 
  
