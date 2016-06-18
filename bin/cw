@@ -17,9 +17,28 @@ if iterate?
   iterate = true
 end
 
+def check_file_exists? file
+  File.exists? file
+end
+
+def check_sans_extension file
+  File.exists?("#{file}.rb")
+end
+
+def get_filename file
+  return_val = nil
+  if check_file_exists?(file)
+    return_val = file
+  elsif check_sans_extension(file)
+    return_val = "#{file}.rb"
+  end
+  return_val
+end
+
 count.times do |iter|
   print "Iteration: #{iter + 1}   " if iterate
   ARGV.each do |arg|
-    system("ruby #{arg}")
+    file = get_filename(arg)
+    system("ruby #{file}") if file
   end
 end
