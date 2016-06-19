@@ -82,7 +82,7 @@ class TestCW < MiniTest::Test
 
   def test_default_mp3_filename_is_mp3_output
     temp = nil
-    cw = CW.new {
+    CW.new {
       no_run
       temp = Params.audio_filename
     }
@@ -365,6 +365,12 @@ Ending:     x
     assert_equal 567, @cw.frequency(567)
     @cw.frequency 456
     assert_equal 456, @cw.frequency
+  end
+
+  def test_play_command_returns_play_command
+    assert_equal 567, @cw.play_command(567)
+    @cw.play_command 456
+    assert_equal 456, @cw.play_command
   end
 
   #todo

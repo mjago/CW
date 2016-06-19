@@ -163,9 +163,20 @@ module Tester
     @input_word.split(//).last(1).first
   end
 
+  def word_proc_timeout(arg = :status)
+    if arg == :init
+      @wp_timeout = Time.now + 5
+    else
+      return true if(Time.now > @wp_timeout)
+    end
+    return false
+  end
+
   def wait_for_no_word_process
+    word_proc_timeout(:init)
     while @word_to_process
-      sleep 0.1
+      sleep 0.01
+      exit(1) if word_proc_timeout
     end
   end
 

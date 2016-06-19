@@ -4,9 +4,11 @@ class AudioPlayer
 
   AFPLAY = '/usr/bin/afplay'
 
-  def initialize
-    @play_command = Params.play_command
-  end
+#todo  def initialize
+#todo    if Params.play_command
+#todo      @play_command = Params.play_command
+#todo    end
+#todo  end
 
   def tone
     @tone ||= ToneGenerator.new
