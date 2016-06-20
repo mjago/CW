@@ -748,7 +748,12 @@ $('#toc').on('click', 'a', function() {
 </div>
 <p><br /></p>
 
-<p>If you wish to read your own books, create a directory called <strong>books</strong> in your working directory and put your books in there. For instance you could create the small book shown below and place in the books directory:</p>
+<h2 id="read-your-own-books">Read your own books</h2>
+
+<p>If you wish to read your own books, create a directory called
+<strong>books</strong> in your working directory, and put your books in there. For
+instance you could create the small book shown below and place in the
+books directory:</p>
 
 <pre><code class="language-raw">  This is my book to read.
 The end.
@@ -795,6 +800,8 @@ The end.
 </div>
 <p><br /></p>
 
+<h2 id="specify-the-book-directory">Specify the book directory</h2>
+
 <p>In addition you can specify a different book directory as follows:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
@@ -827,6 +834,41 @@ The end.
 
 </div>
 <p><br /></p>
+
+<h2 id="test-by-letter-book-reading">Test-by-letter book reading</h2>
+
+<p>By default the book reader tests-by-word. You can however choose to test-by-letter by setting the <strong>output</strong> parameter to <strong>letter</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="c1"># book_reading_5.rb</span>
+
+<span class="no">CW</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">wpm</span> <span class="mi">18</span>
+  <span class="n">ewpm</span> <span class="mi">12</span>
+  <span class="n">comment</span> <span class="s1">'read book (2 sentences, test-by-letter)'</span>
+  <span class="n">play_book</span><span class="p">(</span><span class="ss">sentences: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">output: :letter</span><span class="p">)</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/book_reading_5.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/book_reading_5.mp3">/CW/audio/book_reading_5.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/book_reading_5.rb"> book_reading_5.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You can also pass the output parameter <strong>word</strong> (which is the default).</div>
 
 <div class="seriesContext">
   <a>
@@ -1630,7 +1672,7 @@ The end.
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jun 18, 2016 <br />
+<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jun 20, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
