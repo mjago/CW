@@ -35,6 +35,13 @@ require_relative 'cw/config_file'
 
 # CW provides Morse code generation functionality
 
+def cw &args
+  puts args
+  CW.new do
+    args
+  end
+end
+
 class CW < CwDsl
 
 #FIXME dry_run
