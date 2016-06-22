@@ -2,6 +2,6 @@
 
 require 'cw'
 
-CW.new do
+cw do
   word_count 5
 end

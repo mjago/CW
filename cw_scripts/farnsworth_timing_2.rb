@@ -2,7 +2,7 @@ require "cw"
 
 # farnsworth_timing_2.rb
 
-CW.new do
+cw do
   shuffle
   effective_wpm 12
   wpm           18

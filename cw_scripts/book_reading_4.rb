@@ -2,7 +2,7 @@ require "cw"
 
 # book_reading_4.rb
 
-CW.new do
+cw do
   book_dir "~/books"
   book_name "book_to_read.txt"
   wpm 18

@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "8 words having size between 2 and 4 letters (15 WPM)"
   shuffle
   wpm                 15

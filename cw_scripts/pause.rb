@@ -1,6 +1,6 @@
 require "cw"
 
-CW.new do
+cw do
   word_count 4
   pause
   3.downto 1 do |count|

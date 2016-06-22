@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   name " 4 number groups, 6 characters (30 wpm)"
   random_numbers(:size => 5)
   words_including('5')

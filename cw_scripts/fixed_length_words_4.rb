@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "15 most common words having 3 letters (15 WPM)"
   load_most_common_words
   shuffle

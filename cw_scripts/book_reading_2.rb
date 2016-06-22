@@ -2,7 +2,7 @@ require "cw"
 
 # book_reading_2.rb
 
-CW.new do
+cw do
   comment 'read book for one minute (18 wpm, 12 ewpm)'
   wpm 18
   ewpm 12

@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "4 words containing 'ain' (15 WPM)"
   shuffle
   wpm                 18

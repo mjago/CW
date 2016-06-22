@@ -1,6 +1,6 @@
 require "cw"
 
-CW.new do
+cw do
 # TODO:  shuffle()
   word_count 4
 end

@@ -1,7 +1,7 @@
 require "cw"
 #require "Dir"
 
-CW.new do
+cw do
   puts 'quality = 9'
   puts __FILE__
   use_ebook2cw
@@ -14,7 +14,7 @@ CW.new do
   Dir.entries '/usr/'
 end
 
-CW.new do
+cw do
   use_ebook2cw
   quality    1 # best
   word_count 4

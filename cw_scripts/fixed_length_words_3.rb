@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "12 common words having 3 letters (15 WPM)"
   shuffle
   wpm                 15

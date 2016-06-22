@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "5 common words at 12 wpm (test letters)"
   shuffle
   wpm        12

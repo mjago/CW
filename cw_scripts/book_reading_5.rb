@@ -2,7 +2,7 @@ require "cw"
 
 # book_reading_5.rb
 
-CW.new do
+cw do
   wpm 18
   ewpm 12
   comment 'read book (2 sentences, test-by-letter)'

@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   name " 4 letter groups, of 8 characters (15 wpm)"
   random_letters(:count => 4, :size => 8)
   wpm    15

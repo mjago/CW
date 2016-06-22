@@ -2,7 +2,7 @@ require "cw"
 
 # farnsworth_timing_8.rb
 
-CW.new do
+cw do
   @words.add Array.new(16, 'paris')
   wpm           15
   effective_wpm 12

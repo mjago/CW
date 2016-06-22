@@ -1,6 +1,6 @@
 require "cw"
 
-CW.new do
+cw do
   word_count 4
   mark_words()
 end

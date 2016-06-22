@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "5 words having 4 letters (12 WPM)"
   shuffle
   wpm           12

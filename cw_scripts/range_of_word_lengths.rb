@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "Eight words, five or less letters (18 WPM)"
   shuffle
   no_longer_than 5

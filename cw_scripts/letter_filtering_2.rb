@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   name " 4 words beginning with 'qu' (18 wpm)"
   shuffle
   beginning_with  'qu'

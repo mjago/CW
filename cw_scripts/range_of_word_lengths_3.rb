@@ -2,7 +2,7 @@
 
 require 'cw'
 
-CW.new do
+cw do
   comment "2 words having at least 8 letters (15 WPM)"
   shuffle
   wpm                 15
