@@ -91,6 +91,9 @@ class CW < CwDsl
     @str.to_s
   end
 
+  def list
+    puts self.to_s
+  end
   # Play book using provided arguments.
   # @param [Hash] args the options to play book with.
   # @option args [Integer] :sentences Number of sentences to play
