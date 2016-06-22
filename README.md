@@ -35,35 +35,35 @@ ruby example.rb
 
   require 'cw'
 
-  CW.new do
+  cw do
     wpm 18
     comment 'read book (1 sentence)'
     play_book(sentences: 1)
   end
 
-  CW.new do
+  cw do
     wpm 18
     ewpm 12
     comment 'read book (2 minutes)'
     play_book(duration: 2)
   end
 
-  CW.new do
+  cw do
     comment 'read rss feed (1 article)'
     read_rss(:reuters, 1)
   end
 
-  CW.new do
+  cw do
     name 'test straight alphabet'
     alphabet
   end
 
-  CW.new do
+  cw do
     comment 'test straight numbers'
     numbers
   end
 
-  CW.new do
+  cw do
     wpm  18
     ewpm 12
     load_abbreviations
