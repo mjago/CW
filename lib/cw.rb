@@ -35,10 +35,9 @@ require_relative 'cw/config_file'
 
 # CW provides Morse code generation functionality
 
-def cw &args
-  puts args
+def cw &block
   CW.new do
-    args
+    instance_eval &block
   end
 end
 
