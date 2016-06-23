@@ -16,7 +16,7 @@ class TestWords < FileDetails
 
   def print_failed_exit_words
     until stream.stream_empty?
-      print.prn_red stream.pop[:value] + ' '
+      print.fail stream.pop[:value] + ' '
     end
   end
 

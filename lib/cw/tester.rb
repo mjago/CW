@@ -81,7 +81,7 @@ module Tester
       stream.add_char(letr) if(self.class == TestLetters)
       end
       process_letters letr
-      print.prn letr if print_letters?
+      print.success letr if print_letters?
       break if(book_class && change_repeat_or_quit?)
       break if ((! book_class) && quit?)
     end
@@ -117,7 +117,7 @@ module Tester
 
   def print_failed_exit_words
     until stream.stream_empty?
-      print.prn_red stream.pop[:value]
+      print.fail stream.pop[:value]
     end
   end
 
@@ -215,7 +215,7 @@ module Tester
       stream.add_word current_word.strip
       current_word.clear
       letr.clear
-      print.prn space if print_letters?
+      print.success space if print_letters?
     end
   end
 

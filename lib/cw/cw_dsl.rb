@@ -63,7 +63,8 @@ class CwDsl
       :word_filename, :author, :title, :quality, :frequency, :shuffle, :effective_wpm,
       :max, :min, :word_spacing, :noise, :begin, :end, :word_count, :including,
       :word_size, :size, :beginning_with, :ending_with, :mark_words, :audio_dir,
-      :use_ebook2cw, :def_word_count, :book_dir, :book_name, :play_command
+      :use_ebook2cw, :def_word_count, :book_dir, :book_name, :play_command,
+      :success_colour, :fail_colour
     end
 
     config_defaults
@@ -76,6 +77,8 @@ class CwDsl
       wpm            25
       frequency      500
       dictionary     COMMON_WORDS
+      success_colour :green
+      fail_colour    :yellow
 #      def_word_count 100
     }
   end

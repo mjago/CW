@@ -14,7 +14,7 @@ class RepeatWord < FileDetails
   def print_failed_exit_words
     until stream.stream_empty?
       word = stream.pop[:value]
-      print.prn_red word + ' ' unless @repeat_word
+      print.fail word + ' ' unless @repeat_word
     end
   end
 
@@ -28,7 +28,7 @@ class RepeatWord < FileDetails
         process_word_maybe
         break if timing.char_delay_timeout?
       end
-      print.prn letr if print_letters?
+      print.success letr if print_letters?
       break if quit?
     end
   end
