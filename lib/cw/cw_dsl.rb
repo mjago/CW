@@ -31,8 +31,6 @@ class CwDsl
       wpm            25
       frequency      500
       dictionary     COMMON_WORDS
-      success_colour :green
-      fail_colour    :yellow
     }
   end
 

@@ -14,7 +14,8 @@ module Params
      :double_words,  :single_words,
      :audio_dir,     :def_word_count,
      :book_name,     :book_dir,
-     :play_command
+     :play_command,  :success_colour,
+     :fail_colour
     ].each do |method|
       define_method method do |arg = nil|
         arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
