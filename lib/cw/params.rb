@@ -16,8 +16,8 @@ module Params
      :book_name,     :book_dir,
      :play_command
     ].each do |method|
-      define_method method do |unused|
-        Params.send("#{method}")
+      define_method method do |arg = nil|
+        arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
       end
     end
 
