@@ -147,6 +147,13 @@ mydoc_cw_executable:
   link: <a href="/CW/mydoc_cw_executable/">The cw executable</a>
 
 
+ 
+mydoc_config_file:
+  title: "Config file"
+  url: /CW/mydoc_config_file/
+  link: <a href="/CW/mydoc_config_file/">Config file</a>
+
+
 
 
  

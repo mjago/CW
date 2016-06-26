@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="commands,  commands">
+<meta name="keywords" content="tutorial,  tutorial">
 <title>config_file command  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
 
@@ -367,6 +367,13 @@ window.location.href = uri;
             
             
             
+            
+            
+            <li class="active"><a href="/CW/mydoc_config_file/">Config file</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -637,6 +644,27 @@ window.location.href = uri;
    
 
     
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
 
     
 
@@ -644,30 +672,41 @@ window.location.href = uri;
 
     
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+    
 
-<span class="n">cw</span> <span class="k">do</span>
-<span class="c1"># TODO:  config_file()</span>
-  <span class="n">word_count</span> <span class="mi">4</span>
-<span class="k">end</span>
+  <h2 id="using-a-config-file">Using a config file</h2>
 
+<p>It is possible to set default values for various parameters within a config file.
+The file should be placed in the root directory and given the name <strong>.cw_config</strong>.</p>
+
+<p>The configurable options are:</p>
+
+<ul>
+  <li>wpm:</li>
+  <li>book_name:</li>
+  <li>play_command:</li>
+  <li>success_colour:</li>
+  <li>fail_colour:</li>
+</ul>
+
+<p>An example config file looks as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ <span class="c1"># .cw_config</span>
+
+<span class="s">wpm</span><span class="pi">:</span>             <span class="s">18</span>
+<span class="s">book_name</span><span class="pi">:</span>       <span class="s">book_to_read.txt</span>
+<span class="s">play_command</span><span class="pi">:</span>    <span class="s">/usr/bin/afplay</span>
+<span class="s">success_colour</span><span class="pi">:</span>  <span class="s">green</span>
+<span class="s">fail_colour</span><span class="pi">:</span>     <span class="s">orange</span>
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/config_file.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/config_file.mp3">/CW/audio/config_file.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/config_file.rb"> config_file.rb</a>
-     
 
-</div>
-<p><br /></p>
+<p>By creating this config file the wpm command may be omitted in the
+cw_script. Alternatively this configured value will be overridden if
+the wpm command is used.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There should be no whitespace in front of the command to be configured. In addition the command should be suffixed with a semi-colon.</div>
 
 <div class="seriesContext">
   <a>
@@ -947,7 +986,11 @@ window.location.href = uri;
     
       
         
-          <a href="../mydoc_double_words/"><button type="button" class="btn btn-primary">Next: double_words command</button></a>
+      
+    
+      
+        
+          <a href="../mydoc_effective_wpm/"><button type="button" class="btn btn-primary">Next: effective_wpm command</button></a>
           
   </a>
   &nbsp;
@@ -1301,7 +1344,7 @@ window.location.href = uri;
       
       
       
-      <li class="active"> → 55. config_file command</li>
+      <li class="active"> → 56. config_file command</li>
       
       
       
@@ -1477,7 +1520,7 @@ window.location.href = uri;
     
     
     
-    <a href="/CW/tag_commands" class="btn btn-default navbar-btn cursorNorm" role="button">commands</a>
+    <a href="/CW/tag_tutorial" class="btn btn-default navbar-btn cursorNorm" role="button">tutorial</a>
     
     
     
@@ -1493,7 +1536,7 @@ window.location.href = uri;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 mjago. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jun 22, 2016 <br />
+<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jun 26, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
