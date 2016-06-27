@@ -100,13 +100,17 @@ class Print
 
   def heading
     "Current Sentence is     duration:    secs".length.times do
-      print '*'
+      print paint('*', list_colour)
       puts
     end
   end
 
   def fail word
     print paint("#{word}", fail_colour)
+  end
+
+  def list word
+    print paint("#{word}", list_colour)
   end
 
   def success word
@@ -121,6 +125,10 @@ class Print
 
   def fail_colour
     Params.fail_colour ||= :red
+  end
+
+  def list_colour
+    Params.list_colour ||= :white
   end
 
   def print_advice name

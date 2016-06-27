@@ -92,8 +92,10 @@ class CW < CwDsl
   end
 
   def list
-    puts self.to_s
+    Print.new.list self.to_s
+    puts
   end
+
   # Play book using provided arguments.
   # @param [Hash] args the options to play book with.
   # @option args [Integer] :sentences Number of sentences to play
@@ -105,7 +107,6 @@ class CW < CwDsl
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
-
     book.run @words
   end
 

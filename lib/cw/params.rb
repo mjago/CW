@@ -15,7 +15,7 @@ module Params
      :audio_dir,     :def_word_count,
      :book_name,     :book_dir,
      :play_command,  :success_colour,
-     :fail_colour
+     :fail_colour,   :list_colour
     ].each do |method|
       define_method method do |arg = nil|
         arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
@@ -52,7 +52,8 @@ module Params
             :frequency, :shuffle, :effective_wpm, :max, :min, :word_spacing, :noise,
             :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
             :ending_with, :mark_words, :audio_dir, :use_ebook2cw, :def_word_count,
-            :book_dir, :book_name, :play_command, :success_colour, :fail_colour
+            :book_dir, :book_name, :play_command, :success_colour, :fail_colour,
+            :list_colour
     end
   end
 
