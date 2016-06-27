@@ -3,7 +3,6 @@
 "author",
 "book_dir",
 "command_line",
-"config_file",
 "double_words",
 "effective_wpm",
 "ewpm",

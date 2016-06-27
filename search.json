@@ -176,7 +176,7 @@
 
 
 {
-"title": "config_file command",
+"title": "Config file",
 "tags": "tutorial",
 "keywords": "tutorial",
 "url": "/CW/mydoc_config_file/",
@@ -266,7 +266,7 @@
 
 
 {
-"title": "Farnsworth Timing",
+"title": "Farnsworth timing",
 "tags": "getting_startedtutorialcommandsfarnsworth",
 "keywords": "farnsworth_timing, tutorial",
 "url": "/CW/mydoc_farnsworth_timing/",
@@ -551,6 +551,16 @@
 "keywords": "commands",
 "url": "/CW/mydoc_print_letters/",
 "summary": ""
+},
+
+
+
+{
+"title": "Program output",
+"tags": "getting_startedtutorialcommandsfarnsworth",
+"keywords": "farnsworth_timing, tutorial",
+"url": "/CW/mydoc_program_output/",
+"summary": "Program output is configurable, making it possible to change colours to suit the shell background colour, or user preference."
 },
 
 

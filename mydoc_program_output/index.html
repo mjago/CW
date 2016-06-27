@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="tutorial,  tutorial">
-<title>Config file  | CW - learn and develop morse</title>
+<meta name="description" content="Program output is configurable, making it possible to change colours to suit the shell background colour, or user preference.">
+<meta name="keywords" content="getting_startedtutorialcommandsfarnsworth,  farnsworth_timing, tutorial">
+<title>Program output  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
 
 
@@ -139,7 +139,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "CW - learn and develop morse feedback";
-var body = "I have some feedback about the Config file page: ";
+var body = "I have some feedback about the Program output page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:martyn.jago@btinternet.com?subject=";
@@ -166,7 +166,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CW/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Config file">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Program output">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -348,7 +348,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_program_output/">Program Output</a></li>
+            <li class="active"><a href="/CW/mydoc_program_output/">Program Output</a></li>
             
             
             
@@ -376,7 +376,7 @@ window.location.href = uri;
             
             
             
-            <li class="active"><a href="/CW/mydoc_config_file/">Config file</a></li>
+            <li><a href="/CW/mydoc_config_file/">Config file</a></li>
             
             
             
@@ -634,13 +634,15 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Config file</h1>
+   <h1 class="post-title-main">Program output</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Program output is configurable, making it possible to change colours to suit the shell background colour, or user preference.</div>
    
 
     
@@ -674,45 +676,80 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="configuring-via-a-config-file">Configuring via a config file</h2>
+  <h2 id="output-introduction">Output introduction</h2>
 
-<p>It is possible to set default values for various parameters within a config file.
-The file should be placed in the root directory and given the name <strong>.cw_config</strong>.</p>
+<p>By default <em>CW</em> prints successful words and letters in <em>blue</em> and failed in <em>red</em>.
+However it is very easy to modify the colours used for printing. This is useful to
+tune the colours to work against the shell colour in use.</p>
 
-<h2 id="options">Options</h2>
+<h2 id="colour-commands">Colour commands</h2>
 
-<p>The configurable options are:</p>
+<p>The commands available are:</p>
 
 <ul>
-  <li>wpm:</li>
-  <li>book_name:</li>
-  <li>play_command:</li>
-  <li>success_colour:</li>
-  <li>fail_colour:</li>
-  <li>list_colour:</li>
+  <li><strong>success_colour</strong></li>
+  <li><strong>fail_colour</strong></li>
+  <li><strong>list_colour</strong></li>
 </ul>
 
-<p>An example config file looks as follows:</p>
+<h2 id="command-usage">Command usage</h2>
+
+<p>Here is an example of setting <strong>success</strong>, <strong>fail</strong>, and <strong>list</strong> colours:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
- <span class="c1"># .cw_config</span>
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="nb">name</span> <span class="s1">'abbreviations'</span>
+  <span class="n">success_colour</span> <span class="ss">:green</span>
+  <span class="n">fail_colour</span>    <span class="ss">:yellow</span>
+  <span class="n">list_colour</span>    <span class="ss">:cyan</span>
+  <span class="n">wpm</span>  <span class="mi">18</span>
+  <span class="n">ewpm</span> <span class="mi">12</span>
+  <span class="n">load_abbreviations</span>
+  <span class="n">shuffle</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">list</span>
+<span class="k">end</span>
 
-<span class="s">wpm</span><span class="pi">:</span>             <span class="s">18</span>
-<span class="s">book_name</span><span class="pi">:</span>       <span class="s">book_to_read.txt</span>
-<span class="s">play_command</span><span class="pi">:</span>    <span class="s">/usr/bin/afplay</span>
-<span class="s">success_colour</span><span class="pi">:</span>  <span class="s">green</span>
-<span class="s">fail_colour</span><span class="pi">:</span>     <span class="s">orange</span>
-<span class="s">list_colour</span><span class="pi">:</span>     <span class="s">cyan</span>
 </code></pre>
 </div>
 
-<h2 id="usage">Usage</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> <strong>list_colour</strong> adjusts the colour of the list generated by the list command.</div>
 
-<p>By creating this config file the wpm command may be omitted in the
-<em>cw script</em>. Alternatively this configured value will be overridden if
-the wpm command is used in a <em>cw script</em>.</p>
+<h2 id="configuration-file">Configuration file</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There should be no whitespace in front of the command to be configured. In addition the command should be suffixed with a semi-colon.</div>
+<p>Generally speaking it is more convenient to make colour adjustments to a configuration file <a href="/CW/mydoc_config_file">as explained here</a>.</p>
+
+<h2 id="available-colours">Available colours</h2>
+
+<p>Available colours are as follows:</p>
+
+<ol>
+  <li>:red</li>
+  <li>:green</li>
+  <li>:yellow</li>
+  <li>:blue</li>
+  <li>:magenta</li>
+  <li>:cyan</li>
+  <li>:white</li>
+  <li>:black</li>
+  <li>:default (white)</li>
+</ol>
+
+<p>To see all colours in action run the following script:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="c1"># colours.rb</span>
+<span class="p">[</span><span class="ss">:black</span><span class="p">,</span><span class="ss">:red</span><span class="p">,</span><span class="ss">:green</span><span class="p">,</span><span class="ss">:yellow</span><span class="p">,</span><span class="ss">:blue</span><span class="p">,</span>
+ <span class="ss">:magenta</span><span class="p">,</span><span class="ss">:cyan</span><span class="p">,</span><span class="ss">:white</span><span class="p">,</span><span class="ss">:default</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">colour</span><span class="o">|</span>
+  <span class="n">cw</span> <span class="k">do</span>
+    <span class="n">success_colour</span> <span class="n">colour</span>
+    <span class="n">shuffle</span>
+    <span class="n">word_count</span> <span class="mi">1</span>
+    <span class="n">print_letters</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
 
 <div class="seriesContext">
   <a>
@@ -956,27 +993,7 @@ the wpm command is used in a <em>cw script</em>.</p>
     
       
         
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a href="../mydoc_audio_dir/"><button type="button" class="btn btn-primary">Next: audio_dir command</button></a>
+          <a href="../mydoc_farnsworth_timing/"><button type="button" class="btn btn-primary">Next: Farnsworth timing</button></a>
           
   </a>
   &nbsp;
@@ -1258,9 +1275,7 @@ the wpm command is used in a <em>cw script</em>.</p>
       
       
       
-      <li>
-        <a href="../mydoc_program_output/">Program output</a>
-      </li>
+      <li class="active"> → 24.5. Program output</li>
       
       
       
@@ -1298,7 +1313,9 @@ the wpm command is used in a <em>cw script</em>.</p>
       
       
       
-      <li class="active"> → 29. Config file</li>
+      <li>
+        <a href="../mydoc_config_file/">Config file</a>
+      </li>
       
       
       
@@ -1514,7 +1531,17 @@ the wpm command is used in a <em>cw script</em>.</p>
     
     
     
+    <a href="/CW/tag_getting_started" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+    
+    
+    
     <a href="/CW/tag_tutorial" class="btn btn-default navbar-btn cursorNorm" role="button">tutorial</a>
+    
+    
+    
+    <a href="/CW/tag_commands" class="btn btn-default navbar-btn cursorNorm" role="button">commands</a>
+    
+    
     
     
     

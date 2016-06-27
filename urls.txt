@@ -127,6 +127,13 @@ mydoc_farnsworth_timing:
 
 
  
+mydoc_program_output:
+  title: "Program Output"
+  url: /CW/mydoc_program_output/
+  link: <a href="/CW/mydoc_program_output/">Program Output</a>
+
+
+ 
 mydoc_book_reading:
   title: "Book Reading"
   url: /CW/mydoc_book_reading/
@@ -189,13 +196,6 @@ mydoc_command_line:
   title: "command_line"
   url: /CW/mydoc_command_line/
   link: <a href="/CW/mydoc_command_line/">command_line</a>
-
-
- 
-mydoc_config_file:
-  title: "config_file"
-  url: /CW/mydoc_config_file/
-  link: <a href="/CW/mydoc_config_file/">config_file</a>
 
 
  
