@@ -20,8 +20,22 @@ class Alphabet
     @letters = @letters.split('').shuffle.join if @options[:shuffle]
   end
 
+  def include_letters
+    if @options[:include]
+      @letters = @options[:include]
+    end
+  end
+
+  def exclude_letters
+    if @options[:exclude]
+      @letters.tr!(@options[:exclude],'')
+    end
+  end
+
   def generate
     @letters = alphabet
+    include_letters
+    exclude_letters
     shuffle_alphabet_maybe
     reverse_alphabet_maybe
     @letters.split('').join(' ')
