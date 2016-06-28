@@ -737,17 +737,15 @@ tune the colours to work against the shell colour in use.</p>
 
 <p>To see all colours in action run the following script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> <span class="c1"># colours.rb</span>
-<span class="p">[</span><span class="ss">:black</span><span class="p">,</span><span class="ss">:red</span><span class="p">,</span><span class="ss">:green</span><span class="p">,</span><span class="ss">:yellow</span><span class="p">,</span><span class="ss">:blue</span><span class="p">,</span>
- <span class="ss">:magenta</span><span class="p">,</span><span class="ss">:cyan</span><span class="p">,</span><span class="ss">:white</span><span class="p">,</span><span class="ss">:default</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">colour</span><span class="o">|</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:black</span><span class="p">,</span><span class="ss">:red</span><span class="p">,</span><span class="ss">:green</span><span class="p">,</span><span class="ss">:yellow</span><span class="p">,</span><span class="ss">:blue</span><span class="p">,</span>
+           <span class="ss">:magenta</span><span class="p">,</span><span class="ss">:cyan</span><span class="p">,</span><span class="ss">:white</span><span class="p">,</span><span class="ss">:default</span><span class="p">]</span>
+<span class="n">colours</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">colour</span><span class="o">|</span>
   <span class="n">cw</span> <span class="k">do</span>
+    <span class="n">fail_colour</span>    <span class="n">colour</span>
     <span class="n">success_colour</span> <span class="n">colour</span>
-    <span class="n">shuffle</span>
-    <span class="n">word_count</span> <span class="mi">1</span>
-    <span class="n">print_letters</span>
+    <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="p">[</span><span class="n">colour</span><span class="p">.</span><span class="nf">to_s</span><span class="p">]</span>
   <span class="k">end</span>
 <span class="k">end</span>
-
 </code></pre>
 </div>
 
