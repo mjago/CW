@@ -92,6 +92,13 @@ mydoc_five_common_words:
 
 
  
+mydoc_learning_the_alphabet:
+  title: "Learning the Alphabet"
+  url: /CW/mydoc_learning_the_alphabet/
+  link: <a href="/CW/mydoc_learning_the_alphabet/">Learning the Alphabet</a>
+
+
+ 
 mydoc_fixed_length_words:
   title: "Fixed Length Words"
   url: /CW/mydoc_fixed_length_words/

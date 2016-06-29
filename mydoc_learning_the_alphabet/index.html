@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this tutorial we will see how to write tests aimed at learning the alphabet.">
+<meta name="keywords" content="getting_startedtutorialcommands,  alphabet, tutorial">
+<title>Learning the Alphabet  | CW - learn and develop morse</title>
+<link rel="stylesheet" href="/CW/css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/CW/css/modern-business.css">
+<link rel="stylesheet" href="/CW/css/lavish-bootstrap.css">
+<link rel="stylesheet" href="/CW/css/customstyles.css">
+<link rel="stylesheet" href="/CW/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/CW/js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="/CW/js/toc.js"></script>
+<script src="/CW/js/customscripts.js"></script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/CW/images/favicon.ico?">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://mjago.github.io/CW/CW/feed.xml">
+
+ 
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/CW/">&nbsp;<span class="projectTitle"> CW</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="/CW/news/">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/CW/mydoc_introduction/">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<!-- Send feedback function -->
+<script>
+function SendLinkByMail(href) {
+var subject= "CW - learn and develop morse feedback";
+var body = "I have some feedback about the Learning the Alphabet page: ";
+body += window.location.href;
+body += "";
+var uri = "mailto:martyn.jago@btinternet.com?subject=";
+uri += encodeURIComponent(subject);
+uri += "&body=";
+uri += encodeURIComponent(body);
+window.location.href = uri;
+}
+</script>
+
+<li><a href="javascript:(function()%7BSendLinkByMail()%3B%7D)()%3B" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/CW/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/CW/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Learning the Alphabet">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CW Documentation 0.1</li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="/CW/">CW</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_release_notes/">Release notes</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_introduction/">Introduction</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_cw_script/">CW script</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_supported_features/">Supported features</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_about/">About the author</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_about_theme/">About the theme author</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_support/">Support</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Installation</a>
+        <ul>
+            
+            
+            
+            <li><a href="/CW/mydoc_about_ruby_gems_etc/">About Ruby, Gems, Bundler, etc.</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_install_jekyll_on_mac/">Install Jekyll on Mac</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_install_jekyll_on_windows/">Install Jekyll on Windows</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Tutorial</a>
+        <ul>
+            
+            
+            
+            <li><a href="/CW/mydoc_five_common_words/">Five Common Words</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="/CW/mydoc_learning_the_alphabet/">Learning the Alphabet</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_fixed_length_words/">Fixed Length Words</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_range_of_word_lengths/">Range of Word Lengths</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_letter_filtering/">Letter Filtering</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_letter_and_number_groups/">Letter and Number Groups</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_farnsworth_timing/">Farnsworth Timing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_program_output/">Program Output</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_book_reading/">Book Reading</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_rss_feed/">RSS Feed Reading</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_cw_executable/">The cw executable</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_config_file/">Config file</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Commands</a>
+        <ul>
+            
+            
+            
+            <li><a href="/CW/mydoc_audio_dir/">audio_dir</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_audio_filename/">audio_filename</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_author/">author</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_book_dir/">book_dir</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_command_line/">command_line</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_double_words/">double_words</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_effective_wpm/">effective_wpm</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_ewpm/">ewpm</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_frequency/">frequency</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_mark_words/">mark_words</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_name/">name</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_no_noise/">no_noise</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_no_shuffle/">no_shuffle</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_noise/">noise</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_pause/">pause</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_print_letters/">print_letters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_quality/">quality</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_shuffle/">shuffle</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_single_words/">single_words</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_title/">title</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_un_pause/">un_pause</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_use_ebook2cw/">use_ebook2cw</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_use_ruby_tone/">use_ruby_tone</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_word_spacing/">word_spacing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_wpm/">wpm</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Examples</a>
+        <ul>
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Source</a>
+        <ul>
+            
+            
+            
+            <li><a href="https://github.com/mjago/cw/" target="_blank">Repository</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/doc/index.html">Source Docs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="/CW/mydoc_tags/">Tags</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Troubleshooting</a>
+        <ul>
+            
+            
+            
+            <li><a href="/CW/mydoc_troubleshooting/">Troubleshooting</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+    <!-- Content Column -->
+    <div class="col-md-9">
+        <div class="post-header">
+   <h1 class="post-title-main">Learning the Alphabet</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">In this tutorial we will see how to write tests aimed at learning the alphabet.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    
+
+    
+
+    
+
+  <h2 id="test-straight-alphabet">Test straight alphabet</h2>
+
+<p>To test the full alphabet enter the script below:</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="nb">name</span> <span class="s1">'test straight alphabet'</span>
+  <span class="n">alphabet</span>
+  <span class="n">wpm</span> <span class="mi">12</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet.mp3">/CW/audio/alphabet.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet.rb"> alphabet.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="test-only-certain-letters">Test only certain letters</h2>
+
+<p>To test only certain letters you can pass the <strong>:include parameter</strong> to the alphabet command. Here we are testing just the vowels:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_2.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:include</span> <span class="o">=&gt;</span> <span class="s1">'aeiou'</span><span class="p">)</span>
+  <span class="n">wpm</span> <span class="mi">12</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_2.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_2.mp3">/CW/audio/alphabet_2.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_2.rb"> alphabet_2.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="shuffle-the-letters">Shuffle the letters</h2>
+
+<p>To make the test more difficult you can pass the parameter <strong>:shuffle =&gt; true</strong> to the alphabet command. Here we test the vowels but shuffle the order randomly:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_3.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:include</span> <span class="o">=&gt;</span> <span class="s1">'aeiou'</span><span class="p">,</span> <span class="ss">:shuffle</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+  <span class="n">wpm</span> <span class="mi">12</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_3.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_3.mp3">/CW/audio/alphabet_3.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_3.rb"> alphabet_3.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="test-randomized-alphabet">Test randomized alphabet</h2>
+
+<p>So to test against the whole alphabet but with the order shuffled, at 15 words per minute:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_4.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:shuffle</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_4.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_4.mp3">/CW/audio/alphabet_4.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_4.rb"> alphabet_4.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="exclude-certain-letters">Exclude certain letters</h2>
+
+<p>It is also possible to exclude certain letters from the alphabet under test. Here we
+exclude all letters up to the letter n:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_5.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:exclude</span> <span class="o">=&gt;</span> <span class="s1">'abcdefghijklm'</span><span class="p">)</span>
+  <span class="n">wpm</span> <span class="mi">12</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_5.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_5.mp3">/CW/audio/alphabet_5.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_5.rb"> alphabet_5.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="run-shuffled-alphabet-twice">Run shuffled alphabet twice</h2>
+
+<p>To run the shuffled alphabet test twice, simply add 2:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+cw alphabet_4  2
+
+</code></pre>
+</div>
+
+<div class="seriesContext">
+  <a>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a href="../mydoc_fixed_length_words/"><button type="button" class="btn btn-primary">Next: Fixed Length Words</button></a>
+          
+  </a>
+  &nbsp;
+  <div class="btn-group">
+    <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to: <span class="caret"></span></button>
+    <ol class="dropdown-menu">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_release_notes/">Release notes</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_cw_script/">CW script</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_about/">About the author</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_about_theme/">About the theme author</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_about_ruby_gems_etc/">About Ruby, Gems, Bundler, and other prerequisites</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_five_common_words/">Five Common Words</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="active"> → 20.5. Learning the Alphabet</li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_fixed_length_words/">Fixed Length Words</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_range_of_word_lengths/">Range of Word Lengths</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_letter_filtering/">Letter Filtering</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_letter_and_number_groups/">Letter and Number Groups</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_program_output/">Program output</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_farnsworth_timing/">Farnsworth timing</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_book_reading/">Book Reading</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_rss_feed/">RSS Feed Reading</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_cw_executable/">The cw executable</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_config_file/">Config file</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_audio_dir/">audio_dir command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_audio_filename/">audio_filename command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_author/">author command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_book_dir/">book_dir command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_command_line/">command_line command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_double_words/">double_words command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_effective_wpm/">effective_wpm command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_ewpm/">ewpm command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_frequency/">frequency command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_mark_words/">mark_words command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_name/">name command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_no_noise/">no_noise command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_no_shuffle/">no_shuffle command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_noise/">noise command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_pause/">pause command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_print_letters/">print_letters command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_quality/">quality command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_shuffle/">shuffle command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_single_words/">single_words command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_title/">title command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_un_pause/">un_pause command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_use_ebook2cw/">use_ebook2cw command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_use_ruby_tone/">use_ruby_tone command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_word_spacing/">word_spacing command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_wpm/">wpm command</a>
+      </li>
+      
+      
+      
+    </ol>
+  </div>
+</div>
+
+
+
+<div class="tags">
+    
+    <b>Tags: </b>
+    
+    
+    
+    <a href="/CW/tag_getting_started" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+    
+    
+    
+    <a href="/CW/tag_tutorial" class="btn btn-default navbar-btn cursorNorm" role="button">tutorial</a>
+    
+    
+    
+    <a href="/CW/tag_commands" class="btn btn-default navbar-btn cursorNorm" role="button">commands</a>
+    
+    
+    
+</div>
+
+    
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
+<p>Page last updated:</span> June 29, 2016<br/> Site last generated: Jun 29, 2016 <br />
+<p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
+                </div>
+            </div>
+</footer>
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+    <script>
+    jQuery(function ($) {
+        $('.post-content').annotator()
+                .annotator('setupPlugins', {tokenUrl: 'http://example.com/api/token'})
+    });
+    </script>
+</body>
+
+</html>

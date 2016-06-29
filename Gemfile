@@ -1,5 +1,5 @@
-source "https://rubygems.org"
+source "http://rubygems.org"
 
-# gem "rails"
 gem 'github-pages'
 gem 'jekyll'
+gem 'cw', :git => "git://github.com/mjago/cw.git"
