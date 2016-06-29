@@ -72,6 +72,26 @@ class Words
     @words.select{|wrd| wrd.include?(letr)}
   end
 
+  def containing(* letters)
+    lets = letters.flatten.join('').split("")
+    found, temp, @words = false, @words, []
+    temp.each do |wrd|
+      wrd_lets = wrd.split("")
+      wrd_lets.each do |wrd_let|
+        if lets.include?(wrd_let)
+          found = true
+        else
+          found = false
+          break
+        end
+      end
+      if found
+        @words.push wrd
+      end
+    end
+    @words
+  end
+
   def including(* letters)
     @words = letters.flatten.collect{|letr| including_letter(letr)}.flatten
   end

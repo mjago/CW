@@ -78,6 +78,10 @@ class CwDsl
     @words.including letters
   end
 
+  def containing(* letters)
+    @words.containing letters
+  end
+
   def no_longer_than(max)
     Params.max = max
     @words.no_longer_than max
