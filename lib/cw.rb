@@ -50,7 +50,7 @@ class CW < CwDsl
   #
 
   def test_letters
-    @inhibit_block_run = true
+    Params.pause = true
     test_letters = TestLetters.new
     test_letters.run @words
   end
@@ -59,6 +59,7 @@ class CW < CwDsl
   #
 
   def test_words
+    Params.pause = true
     tw = TestWords.new
     tw.run @words
   end
@@ -67,7 +68,7 @@ class CW < CwDsl
   #
 
   def repeat_word
-    @inhibit_block_run = true
+    Params.pause = true
     repeat_word = RepeatWord.new
     repeat_word.run @words
   end
@@ -81,7 +82,7 @@ class CW < CwDsl
     load_common_words# unless @words.exist?
     ConfigFile.new.apply_config self
     instance_eval(&block) if block
-    run unless Params.pause if (block && ! @inhibit_block_run)
+    run if block
   end
 
   # Return string containing name or comment of test.
@@ -103,11 +104,21 @@ class CW < CwDsl
   # @option args [Boolean] :letter Mark by letter if true else mark by word
 
   def play_book args = {}
-    @inhibit_block_run = true
+    Params.pause = true
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
     book.run @words
+  end
+
+  # Convert book to mp3.
+
+  def convert_book args = {}
+    details = BookDetails.new
+    details.arguments(args)
+    book = Book.new details
+    Params.pause = true
+    book.convert
   end
 
   # Reads RSS feed (requires an internet connection). Feed can be one of:
@@ -119,7 +130,7 @@ class CW < CwDsl
   # @param [Integer] article_count Number of articles to play.
 
   def read_rss(source, article_count = 3)
-    @inhibit_block_run = true
+    Params.pause = true
     rss, = Rss.new
     rss.read_rss(source, article_count)
     loop do
@@ -131,12 +142,14 @@ class CW < CwDsl
   end
 
   # Run word test
-  def run ; test_words ; end
+  def run
+    return if Params.pause
+    test_words
+  end
 
   alias_method :ewpm,                  :effective_wpm
   alias_method :no_run,                :pause
   alias_method :comment,               :name
-#  alias_method :repeat_word,           :double_words
   alias_method :word_length,           :word_size
   alias_method :word_shuffle,          :shuffle
   alias_method :having_size_of,        :word_size

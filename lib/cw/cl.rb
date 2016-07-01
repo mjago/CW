@@ -63,7 +63,7 @@ class Cl
   end
 
   def cl_audio_filename
-    "-o \"#{Params.audio_dir}/#{Params.audio_filename}\" "
+    "-o \"#{File.expand_path(Params.audio_filename, Params.audio_dir)}\" "
   end
 
   def coarse_quality(quality)
@@ -107,6 +107,10 @@ class Cl
 
   def cl_echo words
     "echo #{words} | ebook2cw #{build_command_line}"
+  end
+
+  def cl_full input
+    "ebook2cw #{build_command_line} #{input}"
   end
 
 end

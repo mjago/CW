@@ -11,7 +11,6 @@ class Book < FileDetails
     super()
     read_book book_location
     find_sentences
-
 #    print_book_advice
   end
 
@@ -36,6 +35,11 @@ class Book < FileDetails
   def reset_sentence_flags ; sentence.reset_flags              ; end
   def audio_play_sentence  ; audio.play                        ; end
   def print_book_advice    ; print.print_advice('Play Book')   ; end
+
+  def convert
+    book = @sentence.all.join
+    audio.convert_book(book)
+  end
 
   def change_or_repeat_sentence?
     sentence.change_or_repeat?

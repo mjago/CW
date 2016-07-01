@@ -19,7 +19,22 @@ class AudioPlayer
   end
 
   def play_filename_for_ebook2cw
-    @play_filename ||= "#{Params.audio_dir}/#{Params.audio_filename}0000.mp3"
+    @play_filename ||= File.expand_path(Params.audio_filename, Params.audio_dir)
+  end
+
+  def temp_filename_for_ebook2cw
+    File.expand_path("tempxxxx.txt", Params.audio_dir)
+  end
+
+  def convert_book words
+    words = words.delete("\n")
+    File.open(temp_filename_for_ebook2cw, 'w') do |file|
+      file.print words
+    end
+    cl = Cl.new.cl_full(temp_filename_for_ebook2cw)
+    ! @dry_run ? `#{cl}` : cl
+    File.delete(temp_filename_for_ebook2cw)
+    File.rename(play_filename_for_ebook2cw + '0000.mp3', play_filename_for_ebook2cw)
   end
 
 #FIXME dry_run
@@ -27,6 +42,7 @@ class AudioPlayer
     words = words.delete("\n")
     cl = Cl.new.cl_echo(words)
     ! @dry_run ? `#{cl}` : cl
+    File.rename(play_filename + '0000.mp3', play_filename)
   end
 
   def convert_words words
