@@ -105,12 +105,18 @@ class Cl
     ].collect{|param| param}.join
   end
 
+  def ebook2cw_path
+    Params.ebook2cw_path ||= 'ebook2cw'
+    puts Params.ebook2cw_path
+    Params.ebook2cw_path
+  end
+
   def cl_echo words
-    "echo #{words} | ebook2cw #{build_command_line}"
+    "echo #{words} | #{ebook2cw_path} #{build_command_line}"
   end
 
   def cl_full input
-    "ebook2cw #{build_command_line} #{input}"
+    "#{ebook2cw_path} #{build_command_line} #{input}"
   end
 
 end
