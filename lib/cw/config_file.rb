@@ -1,9 +1,10 @@
 class ConfigFile
 
-  CONFIG       = ".cw_config"
-  CONFIGS      = ['wpm', 'book_name', 'play_command',
-                  'success_colour', 'fail_colour', 'list_colour']
-  HERE         = File.dirname(__FILE__) + '/'
+  CONFIG  = ".cw_config"
+  HERE    = File.dirname(__FILE__) + '/'
+  CONFIGS = ['wpm', 'book_name', 'book_dir',
+            'play_command', 'success_colour', 'fail_colour',
+            'list_colour', 'ebook2cw_path']
 
   attr_reader :config
 
@@ -16,7 +17,6 @@ class ConfigFile
   end
 
   def write_config(cfg, line)
-    puts ("**" + line.gsub(cfg + ':', '').strip)
     config[cfg.to_sym] = line.gsub(cfg + ':', '').strip
   end
 
