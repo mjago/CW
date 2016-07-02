@@ -19,11 +19,15 @@ class AudioPlayer
   end
 
   def play_filename_for_ebook2cw
-    @play_filename ||= File.expand_path(Params.audio_filename, Params.audio_dir)
+    @play_filename ||= File.expand_path(Params.audio_filename, audio_dir)
+  end
+
+  def audio_dir
+    Params.audio_dir ||= './audio'
   end
 
   def temp_filename_for_ebook2cw
-    File.expand_path("tempxxxx.txt", Params.audio_dir)
+    File.expand_path("tempxxxx.txt", audio_dir)
   end
 
   def convert_book words
