@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Hello from M0GZG in the UK.">
-<meta name="keywords" content="about the author,  M0GZG, CW">
-<title>About the author  | CW - learn and develop morse</title>
+<meta name="description" content="Here we look at how we can read a book with CW.">
+<meta name="keywords" content="getting_startedtutorialcommandsbook,  farnsworth_timing, tutorial">
+<title>Book Converting  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
 
 
@@ -139,7 +139,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "CW - learn and develop morse feedback";
-var body = "I have some feedback about the About the author page: ";
+var body = "I have some feedback about the Book Converting page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:martyn.jago@btinternet.com?subject=";
@@ -166,7 +166,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CW/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="About the author">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Book Converting">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -248,7 +248,7 @@ window.location.href = uri;
             
             
             
-            <li class="active"><a href="/CW/mydoc_about/">About the author</a></li>
+            <li><a href="/CW/mydoc_about/">About the author</a></li>
             
             
             
@@ -369,7 +369,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_book_converting/">Book Converting</a></li>
+            <li class="active"><a href="/CW/mydoc_book_converting/">Book Converting</a></li>
             
             
             
@@ -648,7 +648,7 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">About the author</h1>
+   <h1 class="post-title-main">Book Converting</h1>
 </div>
 
 
@@ -656,7 +656,7 @@ window.location.href = uri;
 <div class="post-content">
 
    
-    <div class="summary">Hello from M0GZG in the UK.</div>
+    <div class="summary">Here we look at how we can read a book with CW.</div>
    
 
     
@@ -690,11 +690,36 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>My name is Martyn Jago and my callsign is M0GZG.</p>
+  <h2 id="book-to-mp3-converting">Book to mp3 Converting</h2>
 
-<p>My interests are QRP CW, electronics, and computing, music and windsurfing!</p>
+<p>Books can be converted into a continuous mp3 file to enable book reading via an audio player.</p>
 
-<p>I am a professional engineer living in the UK.</p>
+<p>In order to convert your book to a continuous mp3 file you need to have installed the command line utility <a href="https://fkurz.net/ham/ebook2cw.html">ebook2cw</a> by Fabian Kurz.</p>
+
+<h2 id="relevant-commands">Relevant Commands</h2>
+
+<p>The commands used for converting a text book to a cw audio mp3 file are as follows:</p>
+
+<pre><code class="language-`ruby">
+ cw do
+   book_name 'book.txt'
+   book_dir './books'
+   audio_filename 'book.mp3'
+   audio_dir './audio'
+   wpm 18
+   convert_book
+end
+
+</code></pre>
+
+<ul>
+  <li><strong>book_name</strong> is the name of the text book</li>
+  <li><strong>book_dir</strong> is the directory containing the text book</li>
+  <li><strong>audio_filename</strong> is the name of the target audio book</li>
+  <li><strong>audio_dir</strong> is the directory to contain the target audio book</li>
+</ul>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The conversion process can take several minutes to complete.</div>
 
 <div class="seriesContext">
   <a>
@@ -904,7 +929,57 @@ $('#toc').on('click', 'a', function() {
     
       
         
-          <a href="../mydoc_about_theme/"><button type="button" class="btn btn-primary">Next: About the theme author</button></a>
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a href="../mydoc_rss_feed/"><button type="button" class="btn btn-primary">Next: RSS Feed Reading</button></a>
           
   </a>
   &nbsp;
@@ -1120,7 +1195,9 @@ $('#toc').on('click', 'a', function() {
       
       
       
-      <li class="active"> → 4. About the author</li>
+      <li>
+        <a href="../mydoc_about/">About the author</a>
+      </li>
       
       
       
@@ -1216,9 +1293,7 @@ $('#toc').on('click', 'a', function() {
       
       
       
-      <li>
-        <a href="../mydoc_book_converting/">Book Converting</a>
-      </li>
+      <li class="active"> → 26.5. Book Converting</li>
       
       
       
@@ -1458,6 +1533,18 @@ $('#toc').on('click', 'a', function() {
     
     
     
+    <a href="/CW/tag_getting_started" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+    
+    
+    
+    <a href="/CW/tag_tutorial" class="btn btn-default navbar-btn cursorNorm" role="button">tutorial</a>
+    
+    
+    
+    <a href="/CW/tag_commands" class="btn btn-default navbar-btn cursorNorm" role="button">commands</a>
+    
+    
+    
     
     
 </div>
@@ -1472,7 +1559,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June, 8, 2016<br/> Site last generated: Jul 3, 2016 <br />
+<p>Page last updated:</span> July 3, 2016<br/> Site last generated: Jul 3, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>

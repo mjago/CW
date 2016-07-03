@@ -96,6 +96,16 @@
 
 
 {
+"title": "Book Converting",
+"tags": "getting_startedtutorialcommandsbook",
+"keywords": "farnsworth_timing, tutorial",
+"url": "/CW/mydoc_book_converting/",
+"summary": "Here we look at how we can read a book with CW."
+},
+
+
+
+{
 "title": "book_dir command",
 "tags": "commands",
 "keywords": "commands",

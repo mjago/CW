@@ -148,6 +148,13 @@ mydoc_book_reading:
 
 
  
+mydoc_book_converting:
+  title: "Book Converting"
+  url: /CW/mydoc_book_converting/
+  link: <a href="/CW/mydoc_book_converting/">Book Converting</a>
+
+
+ 
 mydoc_rss_feed:
   title: "RSS Feed Reading"
   url: /CW/mydoc_rss_feed/
