@@ -3,19 +3,7 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/samplepost/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/myupdate/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/test-post-from-last-year/</loc>
   </url>
   
   
@@ -35,24 +23,6 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_about/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_about_ruby_gems_etc/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_about_theme/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_adding_tooltips/</loc>
   </url>
   
   
@@ -100,49 +70,13 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_build_arguments/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_build_scripts/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_collections/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_command_line/</loc>
   </url>
   
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_commenting_on_files/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_conditional_logic/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_config_file/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_content_reuse/</loc>
   </url>
   
   
@@ -184,12 +118,6 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_faq_layout/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_farnsworth_timing/</loc>
   </url>
   
@@ -215,72 +143,6 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_generating_pdfs/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_glossary/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_help_api/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_hyperlinks/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_icons/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_images/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_install_jekyll_on_mac/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_install_jekyll_on_windows/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_introduction/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_iterm_profiles/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_kb_layout/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_labels/</loc>
   </url>
   
   
@@ -328,12 +190,6 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_no_password_prompts_scp/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_no_shuffle/</loc>
   </url>
   
@@ -376,18 +232,6 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_publishing_github_pages/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_push_build_to_server/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_quality/</loc>
   </url>
   
@@ -407,12 +251,6 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_rss_feed/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_search_configuration/</loc>
   </url>
   
   
@@ -472,18 +310,6 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_support/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_supported_features/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_syntax_highlighting/</loc>
   </url>
   
@@ -502,37 +328,7 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_tags/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_themes/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_title/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_title_checker/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_todo/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_troubleshooting/</loc>
   </url>
   
   
@@ -551,12 +347,6 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_use_ruby_tone/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_webstorm_text_editor/</loc>
   </url>
   
   
@@ -588,146 +378,6 @@
   <url>
     <loc>http://mjago.github.io/CW/CW/news_archive/</loc>
   </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_landing_page/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample1/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample2/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample3/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample4/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample5/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample6/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p1_sample7/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_landing_page/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample1/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample10/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample11/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample12/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample13/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample14/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample2/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample3/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample4/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample5/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample6/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample7/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample8/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/p2_sample9/</loc>
-  </url>
-  
-  
   
   
   

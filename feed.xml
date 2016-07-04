@@ -5,62 +5,17 @@
         <description>Morse tutor and developer.</description>
         <link>http://mjago.github.io/CW/CW/</link>
         <atom:link href="http://mjago.github.io/CW/CW/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 03 Jul 2016 21:34:12 +0100</pubDate>
-        <lastBuildDate>Sun, 03 Jul 2016 21:34:12 +0100</lastBuildDate>
+        <pubDate>Mon, 04 Jul 2016 08:39:19 +0100</pubDate>
+        <lastBuildDate>Mon, 04 Jul 2016 08:39:19 +0100</lastBuildDate>
         <generator>Jekyll v3.1.6</generator>
         
         <item>
-            <title>Sample post</title>
-            <description>&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
-
-&lt;h2 id=&quot;heading&quot;&gt;Heading&lt;/h2&gt;
-
-&lt;p&gt;but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;
-
-&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
-
-</description>
-            <pubDate>Fri, 26 Feb 2016 00:00:00 +0000</pubDate>
-            <link>http://mjago.github.io/CW/CW/samplepost/</link>
-            <guid isPermaLink="true">http://mjago.github.io/CW/CW/samplepost/</guid>
-            
-            <category>news</category>
-            
-            <category>getting_started</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Welcome to Jekyll!</title>
-            <description>&lt;p&gt;Theme updates:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Permalinks&lt;/li&gt;
-  &lt;li&gt;Kramdown&lt;/li&gt;
-  &lt;li&gt;URL specified in config file&lt;/li&gt;
-  &lt;li&gt;removed PDF output&lt;/li&gt;
-  &lt;li&gt;removed some of the alternative layouts&lt;/li&gt;
-  &lt;li&gt;added blog feature&lt;/li&gt;
-  &lt;li&gt;sidebars configurable per page&lt;/li&gt;
-&lt;/ul&gt;
+            <title>Welcome to the CW Documentation</title>
+            <description>&lt;p&gt;Welcome - more news to come!&lt;/p&gt;
 </description>
             <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
             <link>http://mjago.github.io/CW/CW/myupdate/</link>
             <guid isPermaLink="true">http://mjago.github.io/CW/CW/myupdate/</guid>
-            
-            <category>news</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Test post from last year</title>
-            <description>&lt;p&gt;This is just a test post from the previous year.&lt;/p&gt;
-</description>
-            <pubDate>Sun, 12 Apr 2015 00:00:00 +0100</pubDate>
-            <link>http://mjago.github.io/CW/CW/test-post-from-last-year/</link>
-            <guid isPermaLink="true">http://mjago.github.io/CW/CW/test-post-from-last-year/</guid>
             
             <category>news</category>
             

@@ -18,13 +18,6 @@ mydoc_release_notes:
 
 
  
-mydoc_introduction:
-  title: "Introduction"
-  url: /CW/mydoc_introduction/
-  link: <a href="/CW/mydoc_introduction/">Introduction</a>
-
-
- 
 mydoc_cw_script:
   title: "CW script"
   url: /CW/mydoc_cw_script/
@@ -32,54 +25,10 @@ mydoc_cw_script:
 
 
  
-mydoc_supported_features:
-  title: "Supported features"
-  url: /CW/mydoc_supported_features/
-  link: <a href="/CW/mydoc_supported_features/">Supported features</a>
-
-
- 
 mydoc_about:
   title: "About the author"
   url: /CW/mydoc_about/
   link: <a href="/CW/mydoc_about/">About the author</a>
-
-
- 
-mydoc_about_theme:
-  title: "About the theme author"
-  url: /CW/mydoc_about_theme/
-  link: <a href="/CW/mydoc_about_theme/">About the theme author</a>
-
-
- 
-mydoc_support:
-  title: "Support"
-  url: /CW/mydoc_support/
-  link: <a href="/CW/mydoc_support/">Support</a>
-
-
-
-
- 
-mydoc_about_ruby_gems_etc:
-  title: "About Ruby, Gems, Bundler, etc."
-  url: /CW/mydoc_about_ruby_gems_etc/
-  link: <a href="/CW/mydoc_about_ruby_gems_etc/">About Ruby, Gems, Bundler, etc.</a>
-
-
- 
-mydoc_install_jekyll_on_mac:
-  title: "Install Jekyll on Mac"
-  url: /CW/mydoc_install_jekyll_on_mac/
-  link: <a href="/CW/mydoc_install_jekyll_on_mac/">Install Jekyll on Mac</a>
-
-
- 
-mydoc_install_jekyll_on_windows:
-  title: "Install Jekyll on Windows"
-  url: /CW/mydoc_install_jekyll_on_windows/
-  link: <a href="/CW/mydoc_install_jekyll_on_windows/">Install Jekyll on Windows</a>
 
 
 
@@ -354,8 +303,6 @@ mydoc_wpm:
 
 
 
-
-
  
 
  
@@ -363,22 +310,6 @@ docindex.html:
   title: "Source Docs"
   url: /CW/doc/index.html
   link: <a href="/CW/doc/index.html">Source Docs</a>
-
-
- 
-mydoc_tags:
-  title: "Tags"
-  url: /CW/mydoc_tags/
-  link: <a href="/CW/mydoc_tags/">Tags</a>
-
-
-
-
- 
-mydoc_troubleshooting:
-  title: "Troubleshooting"
-  url: /CW/mydoc_troubleshooting/
-  link: <a href="/CW/mydoc_troubleshooting/">Troubleshooting</a>
 
 
 
@@ -576,13 +507,6 @@ news:
 
 
 
-mydoc_introduction:
-  title: "Jekyll Documentation Theme"
-  url: "mydoc_introduction"
-  link: "<a href='/mydoc_introduction/'>Jekyll Documentation Theme</a>"
-
-
-
 
 
 
@@ -610,13 +534,6 @@ news:
 
 
 
-
-
-
-mydoc_introduction:
-  title: "Jekyll Documentation Theme"
-  url: "mydoc_introduction"
-  link: "<a href='/mydoc_introduction/'>Jekyll Documentation Theme</a>"
 
 
 
