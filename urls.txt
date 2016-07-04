@@ -34,17 +34,17 @@ mydoc_about:
 
 
  
-mydoc_five_common_words:
-  title: "Five Common Words"
-  url: /CW/mydoc_five_common_words/
-  link: <a href="/CW/mydoc_five_common_words/">Five Common Words</a>
-
-
- 
 mydoc_learning_the_alphabet:
   title: "Learning the Alphabet"
   url: /CW/mydoc_learning_the_alphabet/
   link: <a href="/CW/mydoc_learning_the_alphabet/">Learning the Alphabet</a>
+
+
+ 
+mydoc_five_common_words:
+  title: "Five Common Words"
+  url: /CW/mydoc_five_common_words/
+  link: <a href="/CW/mydoc_five_common_words/">Five Common Words</a>
 
 
  
@@ -523,14 +523,10 @@ news:
 
 
 
-
-
 news:
   title: "News"
   url: "news"
   link: "<a href='/news/'>News</a>"
-
-
 
 
 
