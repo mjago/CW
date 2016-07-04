@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'sanitize', '>= 4.0.1'
   spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
 
-  spec.add_development_dependency "minitest"
-  spec.add_development_dependency "simplecov"
+  spec.add_development_dependency 'minitest',  '>= 5.8.4'
+  spec.add_development_dependency 'simplecov', '>= 0.12.0'
 end
