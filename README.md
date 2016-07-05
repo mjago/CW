@@ -3,6 +3,10 @@
 [![Code Climate](https://codeclimate.com/github/mjago/CW/badges/gpa.svg)](https://codeclimate.com/github/mjago/CW)
 [![Dependency Status](https://gemnasium.com/badges/github.com/mjago/CW.svg)](https://gemnasium.com/github.com/mjago/CW)
 
+# Documentation:
+
+**[CW Documentation](http://mjago.github.io/CW/)**
+
 ## CW
 
 **CW** is a program for learning and practicing Morse Code (CW). It is written in the form of a [DSL](https://en.wikipedia.org/wiki/Domain-specific_language/) in the [Ruby](https://www.ruby-lang.org/en/downloads/) language.
@@ -22,10 +26,6 @@ ruby example.rb
 ```
 
  * Note: Currently only tested on OS X, and Ruby v1.9.3 and later.
-
-# Documentation:
-
-**[CW Documentation](http://mjago.github.io/CW/)**
 
 # Example test-script
 
