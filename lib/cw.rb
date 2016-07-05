@@ -27,6 +27,7 @@ require_relative 'cw/tester'
 require_relative 'cw/test_words'
 require_relative 'cw/test_letters'
 require_relative 'cw/repeat_word'
+require_relative 'cw/reveal'
 require_relative 'cw/book'
 require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator'
@@ -45,6 +46,18 @@ class CW < CwDsl
 
 #FIXME dry_run
 #  attr_accessor :dry_run
+
+  # Initialize CW class. Eval block if passed in.
+
+  def initialize(&block)
+
+    super
+
+    load_common_words# unless @words.exist?
+    ConfigFile.new.apply_config self
+    instance_eval(&block) if block
+    run if block
+  end
 
   # Test user against letters rather than words.
   #
@@ -73,16 +86,13 @@ class CW < CwDsl
     repeat_word.run @words
   end
 
-  # Initialize CW class. Eval block if passed in.
+  # Reveal words only at end of test.
+  # Useful for learning to copy `in the head'
 
-  def initialize(&block)
-
-    super
-
-    load_common_words# unless @words.exist?
-    ConfigFile.new.apply_config self
-    instance_eval(&block) if block
-    run if block
+  def reveal
+    Params.pause = true
+    reveal = Reveal.new
+    reveal.run @words
   end
 
   # Return string containing name or comment of test.

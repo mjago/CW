@@ -65,6 +65,7 @@ module Tester
         break if timing.char_delay_timeout?
       else
         process_space_maybe(letr) if(self.class == TestWords)
+        process_space_maybe(letr) if(self.class == Reveal)
         process_word_maybe
         break if timing.char_delay_timeout?
       end
