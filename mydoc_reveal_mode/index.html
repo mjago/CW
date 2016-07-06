@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Program output is configurable, making it possible to change colours to suit the shell background colour, or user preference.">
-<meta name="keywords" content="getting_startedtutorialcommandsfarnsworth,  farnsworth_timing, tutorial">
-<title>Program output  | CW - learn and develop morse</title>
+<meta name="description" content="Reveal mode can be used to hide output until he end of the test.">
+<meta name="keywords" content="getting_startedtutorialcommandsreveal,  reveal, tutorial">
+<title>Reveal Mode  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
 
 
@@ -131,7 +131,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "CW - learn and develop morse feedback";
-var body = "I have some feedback about the Program output page: ";
+var body = "I have some feedback about the Reveal Mode page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:martyn.jago@btinternet.com?subject=";
@@ -158,7 +158,7 @@ window.location.href = uri;
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/CW/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Program output">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Reveal Mode">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -290,7 +290,7 @@ window.location.href = uri;
             
             
             
-            <li class="active"><a href="/CW/mydoc_program_output/">Program Output</a></li>
+            <li><a href="/CW/mydoc_program_output/">Program Output</a></li>
             
             
             
@@ -318,7 +318,7 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_reveal_mode/">Reveal Mode</a></li>
+            <li class="active"><a href="/CW/mydoc_reveal_mode/">Reveal Mode</a></li>
             
             
             
@@ -560,7 +560,7 @@ window.location.href = uri;
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Program output</h1>
+   <h1 class="post-title-main">Reveal Mode</h1>
 </div>
 
 
@@ -568,7 +568,7 @@ window.location.href = uri;
 <div class="post-content">
 
    
-    <div class="summary">Program output is configurable, making it possible to change colours to suit the shell background colour, or user preference.</div>
+    <div class="summary">Reveal mode can be used to hide output until he end of the test.</div>
    
 
     
@@ -602,76 +602,24 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="output-introduction">Output introduction</h2>
+  <h2 id="reveal-mode">Reveal Mode</h2>
 
-<p>By default <em>CW</em> prints successful words and letters in <em>blue</em> and failed in <em>red</em>.
-However it is very easy to modify the colours used for printing. This is useful to
-tune the colours to work against the shell colour in use.</p>
+<p>Reveal mode hides output during a test and then <em>reveals</em> the words used at the conclusion of the test.</p>
 
-<h2 id="colour-commands">Colour commands</h2>
+<p>Reveal mode can be used to practice <strong>copying in your head</strong>, with no transcription via the keyboard.</p>
 
-<p>The commands available are:</p>
+<h2 id="reveal-command">reveal command</h2>
 
-<ul>
-  <li><strong>success_colour</strong></li>
-  <li><strong>fail_colour</strong></li>
-  <li><strong>list_colour</strong></li>
-</ul>
-
-<h2 id="command-usage">Command usage</h2>
-
-<p>Here is an example of setting <strong>success</strong>, <strong>fail</strong>, and <strong>list</strong> colours:</p>
+<p>An example of using the reveal command follows:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="nb">name</span> <span class="s1">'abbreviations'</span>
-  <span class="n">success_colour</span> <span class="ss">:green</span>
-  <span class="n">fail_colour</span>    <span class="ss">:yellow</span>
-  <span class="n">list_colour</span>    <span class="ss">:cyan</span>
-  <span class="n">wpm</span>  <span class="mi">18</span>
-  <span class="n">ewpm</span> <span class="mi">12</span>
-  <span class="n">load_abbreviations</span>
-  <span class="n">shuffle</span>
-  <span class="n">word_count</span> <span class="mi">4</span>
-  <span class="n">list</span>
+  <span class="n">wpm</span>            <span class="mi">20</span>
+  <span class="n">word_count</span>     <span class="mi">16</span>
+  <span class="n">no_longer_than</span> <span class="mi">5</span>
+  <span class="n">reveal</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> <strong>list_colour</strong> adjusts the colour of the list generated by the list command.</div>
-
-<h2 id="configuration-file">Configuration file</h2>
-
-<p>Generally speaking it is more convenient to make colour adjustments to a configuration file <a href="/CW/mydoc_config_file">as explained here</a>.</p>
-
-<h2 id="available-colours">Available colours</h2>
-
-<p>Available colours are as follows:</p>
-
-<ol>
-  <li>:red</li>
-  <li>:green</li>
-  <li>:yellow</li>
-  <li>:blue</li>
-  <li>:magenta</li>
-  <li>:cyan</li>
-  <li>:white</li>
-  <li>:black</li>
-  <li>:default (white)</li>
-</ol>
-
-<p>To see all colours in action run the following script:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:black</span><span class="p">,</span><span class="ss">:red</span><span class="p">,</span><span class="ss">:green</span><span class="p">,</span><span class="ss">:yellow</span><span class="p">,</span><span class="ss">:blue</span><span class="p">,</span>
-           <span class="ss">:magenta</span><span class="p">,</span><span class="ss">:cyan</span><span class="p">,</span><span class="ss">:white</span><span class="p">,</span><span class="ss">:default</span><span class="p">]</span>
-<span class="n">colours</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">colour</span><span class="o">|</span>
-  <span class="n">cw</span> <span class="k">do</span>
-    <span class="n">fail_colour</span>    <span class="n">colour</span>
-    <span class="n">success_colour</span> <span class="n">colour</span>
-    <span class="vi">@words</span><span class="p">.</span><span class="nf">add</span> <span class="p">[</span><span class="n">colour</span><span class="p">.</span><span class="nf">to_s</span><span class="p">]</span>
-  <span class="k">end</span>
-<span class="k">end</span>
 </code></pre>
 </div>
 
@@ -803,7 +751,27 @@ tune the colours to work against the shell colour in use.</p>
     
       
         
-          <a href="../mydoc_farnsworth_timing/"><button type="button" class="btn btn-primary">Next: Farnsworth timing</button></a>
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a href="../mydoc_cw_executable/"><button type="button" class="btn btn-primary">Next: The cw executable</button></a>
           
   </a>
   &nbsp;
@@ -967,7 +935,9 @@ tune the colours to work against the shell colour in use.</p>
       
       
       
-      <li class="active"> → 24.5. Program output</li>
+      <li>
+        <a href="../mydoc_program_output/">Program output</a>
+      </li>
       
       
       
@@ -1005,9 +975,7 @@ tune the colours to work against the shell colour in use.</p>
       
       
       
-      <li>
-        <a href="../mydoc_reveal_mode/">Reveal Mode</a>
-      </li>
+      <li class="active"> → 27.5. Reveal Mode</li>
       
       
       
@@ -1265,7 +1233,7 @@ tune the colours to work against the shell colour in use.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 27, 2016<br/> Site last generated: Jul 6, 2016 <br />
+<p>Page last updated:</span> July 6, 2016<br/> Site last generated: Jul 6, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>

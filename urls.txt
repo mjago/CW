@@ -111,6 +111,13 @@ mydoc_rss_feed:
 
 
  
+mydoc_reveal_mode:
+  title: "Reveal Mode"
+  url: /CW/mydoc_reveal_mode/
+  link: <a href="/CW/mydoc_reveal_mode/">Reveal Mode</a>
+
+
+ 
 mydoc_cw_executable:
   title: "The cw executable"
   url: /CW/mydoc_cw_executable/
