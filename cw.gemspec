@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'http://martynjago.co.uk/CW/'
   spec.files       = `git ls-files`.split($/)
   spec.executables = "cw"
+  spec.bindir      = 'bin'
   spec.license     = 'MIT'
 
   spec.require_paths = ["lib", "audio", "data/text", "test"]
