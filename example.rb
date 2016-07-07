@@ -2,12 +2,12 @@ require 'cw'
 
 CW.new do
   comment 'read book feed (1 sentence)'
-  play_book(sentences: 1)
+  read_book(sentences: 1)
 end
 
 CW.new do
   comment 'read book feed (1 minute)'
-  play_book(duration: 1)
+  read_book(duration: 1)
 end
 
 CW.new do

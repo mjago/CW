@@ -60,7 +60,7 @@ speed -= 5
 
 CW.new do
   wpm  speed
-  play_book output: :letter, duration: 2
+  read_book output: :letter, duration: 2
 end
 
 CW.new do
@@ -126,7 +126,7 @@ end
 ##  words = "ABC"
 ##  test_words
 ##  test_letters
-##  play_book
+##  read_book
 #  repeat_word
 #  #print_letters
 #end

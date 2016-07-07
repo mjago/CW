@@ -113,7 +113,7 @@ class CW < CwDsl
   # @option args [Integer] :duration  Number of minutes to play
   # @option args [Boolean] :letter Mark by letter if true else mark by word
 
-  def play_book args = {}
+  def read_book args = {}
     Params.pause = true
     details = BookDetails.new
     details.arguments(args)
