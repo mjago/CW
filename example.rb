@@ -1,38 +1,38 @@
 require 'cw'
 
-CW.new do
+cw do
   comment 'read book feed (1 sentence)'
   read_book(sentences: 1)
 end
 
-CW.new do
+cw do
   comment 'read book feed (1 minute)'
   read_book(duration: 1)
 end
 
-CW.new do
+cw do
   comment 'read rss feed (1 article)'
   read_rss(:reuters, 1)
 end
 
-CW.new do
+cw do
   name 'test straight alphabet'
   alphabet
 end
 
-CW.new do
+cw do
   comment 'test straight numbers'
   numbers
 end
 
-CW.new do
+cw do
   wpm  18
   ewpm 12
   load_abbreviations
   shuffle
 end
 
-CW.new do
+cw do
   wpm  18
   ewpm 12
   load_q_codes
@@ -52,20 +52,20 @@ def cw_settings
   puts self.to_s
 end
 
-CW.new do
+cw do
   comment 'test random letters'
   random_letters(size: 4)
   cw_settings
 end
 
-CW.new do
+cw do
   comment 'test random numbers'
 #  use_ebook2cw
   cw_settings
   random_numbers(count: 2, size: 5)
 end
 
-CW.new do
+cw do
   comment 'test random letters numbers'
 #  use_ebook2cw
   cw_settings
@@ -76,7 +76,7 @@ wpm = 15
 ewpm = 12
 loop do
 
-  test = CW.new
+  test = cw
 #  test.use_ebook2cw
   test.comment 'test words beginning with b'
   test.shuffle
@@ -88,7 +88,7 @@ loop do
   puts test.to_s
   test.test_words
 
-  test = CW.new
+  test = cw
   test.comment 'test words including ing'
 #  test.use_ebook2cw
   test.shuffle
@@ -98,7 +98,7 @@ loop do
   test.word_count      5
   test.test_words
 
-  #  test = CW.new
+  #  test = cw
   #  test.comment         'test ing'
   #  test.use_ebook2cw
   ##  test.shuffle
@@ -109,7 +109,7 @@ loop do
   #  test.word_count      5
   #  test.test_words
   #
-  #  test = CW.new
+  #  test = cw
   #  test.comment         'test ing'
   #  test.use_ruby_tone
   ##  test.shuffle
@@ -120,7 +120,7 @@ loop do
   #  test.word_count      5
   #  test.test_words
 
-  #  test = CW.new
+  #  test = cw
   #  test.comment         'test ing'
   #  test.shuffle
   #  test.wpm             wpm
