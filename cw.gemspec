@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.email       = ["martyn.jago@btinternet.com"]
   spec.description = "A ruby library to help learn and practice morse code"
   spec.summary     = "CW tutor / exerciser"
-  spec.homepage    = 'http://github.com/mjago/cw'
+  spec.homepage    = 'http://martynjago.co.uk/CW/'
   spec.files       = `git ls-files`.split($/)
-  spec.executables = ["cw"]
+  spec.executables = "cw"
   spec.license     = 'MIT'
 
   spec.require_paths = ["lib", "audio", "data/text", "test"]
