@@ -153,6 +153,7 @@ module Tester
       quit
       global_quit
       audio_stop
+      true
     end
   end
 

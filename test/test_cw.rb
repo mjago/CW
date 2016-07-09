@@ -80,15 +80,6 @@ class TestCW < MiniTest::Test
     assert (Time.now - time) < 1
   end
 
-  def test_default_mp3_filename_is_mp3_output
-    temp = nil
-    CW.new {
-      no_run
-      temp = Params.audio_filename
-    }
-    assert_equal "audio_output.wav", temp
-  end
-
   def test_reload_reloads_dictionary
     cw = CW.new {
       pause
@@ -466,7 +457,7 @@ Ending:     x
   end
 
   def test_set_default_filename
-    assert @cw.cl.cl_audio_filename.include?('audio_output.wav'), 'default audio output filename invalid'
+    assert @cw.cl.cl_audio_filename.include?('audio_output'), 'default audio output filename invalid'
   end
 
   def test_set_audio_filename_to_given_name
