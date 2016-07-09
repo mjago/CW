@@ -107,7 +107,6 @@ class Cl
 
   def ebook2cw_path
     Params.ebook2cw_path ||= 'ebook2cw'
-    puts Params.ebook2cw_path
     Params.ebook2cw_path
   end
 
