@@ -24,7 +24,7 @@ class MonitorKeys
   def monitor_keys
     loop do
       get_key_input
-      break if check_quit_key_input?
+      break if check_quit_key_input
       if @cw.quit
         key_input.reset
         break
