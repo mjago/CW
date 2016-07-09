@@ -37,7 +37,7 @@ class CwDsl
   def config_files
     Params.config {
       audio_dir      'audio'
-      audio_filename 'audio_output.wav'
+      audio_filename 'audio_output'
       word_filename  'words.txt'
     }
   end
@@ -124,9 +124,9 @@ class CwDsl
   def numbers_spoken()
   end
 
-#  def add_noise
-#    Params.noise = true
-#  end
+  #  def add_noise
+  #    Params.noise = true
+  #  end
 
   def reload
     load_words(Params.dictionary)
