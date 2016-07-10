@@ -150,9 +150,20 @@ class CwDsl
 
   #todo refactor
 
-  def load_alphabet
-    @words.assign 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
+  def alphabet ; 'a'.upto('z').collect{|ch| ch} ; end
+
+  def alphabet_3
+    arry = []
+    'a'.upto 'z' do |let|
+      arry.push let
+    end
+    arry
   end
+
+  def vowels          ; ['a','e','i','o','u']           ; end
+  def load_vowels     ; @words.assign vowels            ; end
+  def load_alphabet   ; @words.assign alphabet          ; end
+  def load_consonants ; @words.assign alphabet - vowels ; end
 
   def load_numbers
     @words.assign '1 2 3 4 5 6 7 8 9 0 '
