@@ -53,15 +53,32 @@ class Words
   end
 
   def beginning_with(* letters)
-    @words = letters.flatten.collect{|letr| beginning_with_letter(letr)}.flatten
+    @words = letters.flatten.collect do |letr|
+      if letr.class == Range
+        letr.collect do |let|
+          beginning_with_letter(let)
+        end
+      else
+        beginning_with_letter(letr)
+      end
+    end.flatten
   end
+
 
   def ending_with_letter(letr)
     @words.select{|wrd| wrd.end_with?(letr)}
   end
 
   def ending_with(* letters)
-    @words = letters.flatten.collect{|letr| ending_with_letter(letr)}.flatten
+    @words = letters.flatten.collect do |letr|
+      if letr.class == Range
+        letr.collect do |let|
+          ending_with_letter(let)
+        end
+      else
+        ending_with_letter(letr)
+      end
+    end.flatten
   end
 
   def count word_count
