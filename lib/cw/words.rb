@@ -93,7 +93,15 @@ class Words
   end
 
   def including(* letters)
-    @words = letters.flatten.collect{|letr| including_letter(letr)}.flatten
+    @words = letters.flatten.collect do |letr|
+      if letr.class == Range
+        letr.collect do |let|
+          including_letter(let)
+        end
+      else
+        including_letter(letr)
+      end
+    end.flatten
   end
 
   def no_longer_than(max)
