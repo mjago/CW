@@ -28,12 +28,6 @@
   
   
   <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_alerts/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_audio_dir/</loc>
   </url>
   
@@ -95,6 +89,12 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_double_words/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://mjago.github.io/CW/CW/mydoc_ebook2cw/</loc>
   </url>
   
   
@@ -251,36 +251,6 @@
   
   <url>
     <loc>http://mjago.github.io/CW/CW/mydoc_rss_feed/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_series/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_seriesdemo1/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_seriesdemo2/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_seriesdemo3/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://mjago.github.io/CW/CW/mydoc_seriesdemo4/</loc>
   </url>
   
   

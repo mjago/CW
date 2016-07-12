@@ -131,6 +131,13 @@ mydoc_config_file:
   link: <a href="/CW/mydoc_config_file/">Config file</a>
 
 
+ 
+mydoc_ebook2cw:
+  title: "Using ebook2cw"
+  url: /CW/mydoc_ebook2cw/
+  link: <a href="/CW/mydoc_ebook2cw/">Using ebook2cw</a>
+
+
 
 
  

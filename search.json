@@ -26,16 +26,6 @@
 
 
 {
-"title": "Alerts",
-"tags": "formatting",
-"keywords": "notes, tips, cautions, warnings, admonitions",
-"url": "/CW/mydoc_alerts/",
-"summary": "You can insert notes, tips, warnings, and important alerts in your content. These notes make use of Bootstrap styling and are available through data references such as site.data.alerts.note."
-},
-
-
-
-{
 "title": "audio_dir command",
 "tags": "commands",
 "keywords": "commands",
@@ -140,6 +130,16 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_double_words/",
+"summary": ""
+},
+
+
+
+{
+"title": "Using ebook2cw",
+"tags": "tutorial",
+"keywords": "tutorial",
+"url": "/CW/mydoc_ebook2cw/",
 "summary": ""
 },
 
@@ -406,56 +406,6 @@
 
 
 {
-"title": "Series",
-"tags": "content_types",
-"keywords": "series, connected articles, tutorials, hello world",
-"url": "/CW/mydoc_series/",
-"summary": "You can automatically link together topics belonging to the same series. This helps users know the context within a particular process."
-},
-
-
-
-{
-"title": "Series demo 1",
-"tags": "",
-"keywords": "",
-"url": "/CW/mydoc_seriesdemo1/",
-"summary": "This is the first post in the series."
-},
-
-
-
-{
-"title": "Series demo 2",
-"tags": "",
-"keywords": "",
-"url": "/CW/mydoc_seriesdemo2/",
-"summary": "This is the second post in the series."
-},
-
-
-
-{
-"title": "Series demo 3",
-"tags": "",
-"keywords": "",
-"url": "/CW/mydoc_seriesdemo3/",
-"summary": "This is the third post in the series."
-},
-
-
-
-{
-"title": "Series demo 4",
-"tags": "",
-"keywords": "",
-"url": "/CW/mydoc_seriesdemo4/",
-"summary": "This is the fourth post in the series."
-},
-
-
-
-{
 "title": "shuffle command",
 "tags": "commands",
 "keywords": "commands",
@@ -546,11 +496,11 @@
 
 
 {
-"title": "use_ebook2cw command",
+"title": "",
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_use_ebook2cw/",
-"summary": ""
+"summary": "use_ebook2cw command."
 },
 
 
