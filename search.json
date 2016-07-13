@@ -60,7 +60,7 @@
 "tags": "getting_startedtutorialcommandsbook",
 "keywords": "farnsworth_timing, tutorial",
 "url": "/CW/mydoc_book_converting/",
-"summary": "Here we look at how we can read a book with CW."
+"summary": "How to convert text to an MP3 sound file for use in an MP3 player."
 },
 
 
@@ -100,7 +100,7 @@
 "tags": "tutorial",
 "keywords": "tutorial",
 "url": "/CW/mydoc_config_file/",
-"summary": ""
+"summary": "How to make use of a config file."
 },
 
 
@@ -140,7 +140,7 @@
 "tags": "tutorial",
 "keywords": "tutorial",
 "url": "/CW/mydoc_ebook2cw/",
-"summary": ""
+"summary": "Making use of the ebook2cw utility."
 },
 
 
@@ -400,7 +400,7 @@
 "tags": "getting_startedtutorialcommandsbook",
 "keywords": "farnsworth_timing, tutorial",
 "url": "/CW/mydoc_rss_feed/",
-"summary": "Here we look at how we can read a book with CW."
+"summary": "Here we look at reading RSS feeds in CW."
 },
 
 
@@ -572,7 +572,7 @@
 "tags": "getting_startedtutorialcommandsreveal",
 "keywords": "reveal, tutorial",
 "url": "/CW/mydoc_reveal_mode/",
-"summary": "Reveal mode can be used to hide output until he end of the test."
+"summary": "Reveal mode can be used to hide output until the test conclusion."
 },
 
 
