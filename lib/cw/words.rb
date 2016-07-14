@@ -13,11 +13,12 @@ class Words
   end
 
   def double_words
-    temp = []
-    @words.each do |wrd|
-      2.times { temp.push wrd }
-    end
-    @words = temp
+    @words.collect! {|wrd| [wrd] * 2}
+    @words.flatten!
+  end
+
+  def repeat multiplier
+    @words *= multiplier + 1
   end
 
   def shuffle
@@ -89,7 +90,18 @@ class Words
     @words.select{|wrd| wrd.include?(letr)}
   end
 
-  def containing(* letters)
+#  if letr.class == Range
+#    letr.collect do |let|
+#      self.send(method_name, let)
+#    end
+  def containing(letters)
+    temp = []
+    letters.flatten.collect do |letr|
+      if letr.class == Range
+        letters = letr.collect { |let| let }
+      end
+    end
+
     lets = letters.flatten.join('').split("")
     found, temp, @words = false, @words, []
     temp.each do |wrd|

@@ -11,7 +11,6 @@ module Params
      :quality,       :audio_filename,
      :pause,         :noise,
      :shuffle,       :mark_words,
-     :double_words,  :single_words,
      :audio_dir,     :def_word_count,
      :book_name,     :book_dir,
      :play_command,  :success_colour,
@@ -31,8 +30,6 @@ module Params
      [:no_noise, :noise, nil],
      [:shuffle, :shuffle, true],
      [:no_shuffle, :shuffle, nil],
-     [:double_words, :double_words, true],
-     [:single_words, :double_words, nil],
      [:use_ebook2cw, :use_ebook2cw, true],
      [:use_ruby_tone, :use_ebook2cw, nil],
     ].each do |bool|
@@ -49,7 +46,7 @@ module Params
   def init_config
     config do
       param :name, :wpm, :dictionary, :command_line, :audio_filename, :tone, :pause,
-            :print_letters, :double_words, :word_filename, :author, :title, :quality,
+            :print_letters, :word_filename, :author, :title, :quality,
             :frequency, :shuffle, :effective_wpm, :max, :min, :word_spacing, :noise,
             :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
             :ending_with, :mark_words, :audio_dir, :use_ebook2cw, :def_word_count,

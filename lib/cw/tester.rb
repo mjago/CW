@@ -255,7 +255,6 @@ module Tester
 
   def run words
     @words = words
-    words.double_words if Params.double_words
     @threads = CWThreads.new(self, thread_processes)
     @threads.run
     reset_stdin
@@ -266,6 +265,7 @@ module Tester
     loop do
       get_key_input
       check_quit_key_input
+#      exit 1 if quit?
       break if quit?
       #      check_sentence_navigation key_chr
       build_word_maybe

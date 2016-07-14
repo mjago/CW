@@ -56,19 +56,8 @@ class RepeatWord < FileDetails
     print.results(@popped, :pass_only) if(@popped && ! print_letters?)
   end
 
-  #overloaded #todo
-
-  def double_words words
-    temp = []
-    words.each do |wrd|
-      2.times { temp.push wrd }
-    end
-    temp
-  end
-
   def run words
     temp_words = words.all
-    temp_words = double_words temp_words if Params.double_words
     temp_words.each do |word|
       loop do
         @input_word, @words = '', Words.new
