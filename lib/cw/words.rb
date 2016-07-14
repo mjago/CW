@@ -52,31 +52,31 @@ class Words
     @words.select{|wrd| wrd.start_with?(letr)}
   end
 
-  def beginning_with(* letters)
-    @words = letters.flatten.collect do |letr|
-      if letr.class == Range
-        letr.collect do |let|
-          beginning_with_letter(let)
-        end
-      else
-        beginning_with_letter(letr)
-      end
-    end.flatten
-  end
-
-
   def ending_with_letter(letr)
     @words.select{|wrd| wrd.end_with?(letr)}
   end
 
+  def beginning_with(* letters)
+    letter_filter(:beginning_with, letters)
+  end
+
   def ending_with(* letters)
+    letter_filter(:ending_with, letters)
+  end
+
+  def including(* letters)
+    letter_filter(:including, letters)
+  end
+
+  def letter_filter(option,letters)
+    method_name = option.to_s + "_letter"
     @words = letters.flatten.collect do |letr|
       if letr.class == Range
         letr.collect do |let|
-          ending_with_letter(let)
+          self.send(method_name, let)
         end
       else
-        ending_with_letter(letr)
+          self.send(method_name, letr)
       end
     end.flatten
   end
@@ -107,18 +107,6 @@ class Words
       end
     end
     @words
-  end
-
-  def including(* letters)
-    @words = letters.flatten.collect do |letr|
-      if letr.class == Range
-        letr.collect do |let|
-          including_letter(let)
-        end
-      else
-        including_letter(letr)
-      end
-    end.flatten
   end
 
   def no_longer_than(max)
