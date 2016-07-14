@@ -82,6 +82,14 @@ class CwDsl
     @words.containing letters
   end
 
+  def double_words
+    @words.double_words
+  end
+
+  def repeat mult
+    @words.repeat mult
+  end
+
   def no_longer_than(max)
     Params.max = max
     @words.no_longer_than max
@@ -122,6 +130,7 @@ class CwDsl
   end
 
   def numbers_spoken()
+    #todo
   end
 
   #  def add_noise
