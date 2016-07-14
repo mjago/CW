@@ -12,7 +12,7 @@ class TestCW < MiniTest::Test
 
   def setup
     @cw = CW.new
-    @cw.pause
+    @cw.no_run
   end
 
   def teardown
@@ -59,6 +59,42 @@ class TestCW < MiniTest::Test
     assert_equal ['able', 'zero'], @cw.words
   end
 
+  def test_words_beginning_with_a
+    @cw.words = ['able', 'zero']
+    @cw.words_beginning_with('a')
+    assert_equal ['able'], @cw.words
+  end
+
+  def test_words_beginning_with_z
+    @cw.words = ['able', 'zero']
+    @cw.words_beginning_with('z')
+    assert_equal ['zero'], @cw.words
+  end
+
+  def test_words_beginning_with_ab
+    @cw.words = ['ardvark', 'able', 'zero']
+    @cw.words_beginning_with('ab')
+    assert_equal ['able'], @cw.words
+  end
+
+  def test_words_beginning_with_range
+    @cw.words = ['able', 'delta', 'zero']
+    @cw.words_beginning_with('a'..'d')
+    assert_equal ['able', 'delta'], @cw.words
+  end
+
+  def test_words_beginning_with_with_no_match
+    @cw.words = ['able', 'zero']
+    @cw.words_beginning_with('b')
+    assert_equal [], @cw.words
+  end
+
+  def test_words_beginning_with_with_empty_string_returns_all
+    @cw.words = ['able', 'zero']
+    @cw.words_beginning_with('')
+    assert_equal ['able', 'zero'], @cw.words
+  end
+
   def test_ending_with_a
     @cw.words = ['else', 'antenna', 'alba', 'zero']
     @cw.ending_with('a')
@@ -92,6 +128,42 @@ class TestCW < MiniTest::Test
   def test_ending_with_with_empty_string_returns_all
     @cw.words = ['able', 'zero']
     @cw.ending_with('')
+    assert_equal ['able', 'zero'], @cw.words
+  end
+
+  def test_words_ending_with_a
+    @cw.words = ['else', 'antenna', 'alba', 'zero']
+    @cw.words_ending_with('a')
+    assert_equal ['antenna', 'alba'], @cw.words
+  end
+
+  def test_words_ending_with_z
+    @cw.words = ['joy', 'pazazz']
+    @cw.words_ending_with('z')
+    assert_equal ['pazazz'], @cw.words
+  end
+
+  def test_words_ending_with_tion
+    @cw.words = ['tiona', 'lion', 'station', 'creation']
+    @cw.words_ending_with('tion')
+    assert_equal ['station', 'creation'], @cw.words
+  end
+
+  def test_words_ending_with_range
+    @cw.words = ['may', 'kay', 'yam', 'eye', 'pizazz']
+    @cw.words_ending_with('y'..'z')
+    assert_equal ['may', 'kay', 'pizazz'], @cw.words
+  end
+
+  def test_words_ending_with_with_no_match
+    @cw.words = ['able', 'zero']
+    @cw.words_ending_with('b')
+    assert_equal [], @cw.words
+  end
+
+  def test_words_ending_with_with_empty_string_returns_all
+    @cw.words = ['able', 'zero']
+    @cw.words_ending_with('')
     assert_equal ['able', 'zero'], @cw.words
   end
 
@@ -131,6 +203,42 @@ class TestCW < MiniTest::Test
     assert_equal ['able', 'zero'], @cw.words
   end
 
+  def test_words_including_a
+    @cw.words = ['else', 'banter', 'alt', 'zero']
+    @cw.words_including('a')
+    assert_equal ['banter', 'alt'], @cw.words
+  end
+
+  def test_words_including_z
+    @cw.words = ['joy', 'amaze', '123']
+    @cw.words_including('z')
+    assert_equal ['amaze'], @cw.words
+  end
+
+  def test_words_including_tion
+    @cw.words = ['tiona', 'lion', 'station', 'creation']
+    @cw.words_including('tion')
+    assert_equal ['tiona', 'station', 'creation'], @cw.words
+  end
+
+  def test_words_including_range
+    @cw.words = ['may', 'kay', 'yam', 'eye', 'pizazz']
+    @cw.words_including('g'..'k')
+    assert_equal ['pizazz', 'kay'], @cw.words
+  end
+
+  def test_words_including_with_no_match
+    @cw.words = ['able', 'zero']
+    @cw.words_including('c')
+    assert_equal [], @cw.words
+  end
+
+  def test_words_including_with_empty_string_returns_all
+    @cw.words = ['able', 'zero']
+    @cw.words_including('')
+    assert_equal ['able', 'zero'], @cw.words
+  end
+
   def test_no_longer_than_1
     @cw.words = ['1', '12', '123']
     @cw.no_longer_than(1)
@@ -149,9 +257,33 @@ class TestCW < MiniTest::Test
     assert_equal [], @cw.words
   end
 
-  def test_no_longer_than_0
+  def test_words_no_longer_than_0
     @cw.words = ['1', '12', '123']
-    @cw.no_longer_than(0)
+    @cw.words_no_longer_than(0)
+    assert_equal [], @cw.words
+  end
+
+  def test_words_no_longer_than_1
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_longer_than(1)
+    assert_equal ['1'], @cw.words
+  end
+
+  def test_words_no_longer_than_2
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_longer_than(2)
+    assert_equal ['1', '12'], @cw.words
+  end
+
+  def test_words_no_longer_than_with_words_no_match
+    @cw.words = ['123', '1234', '12345']
+    @cw.words_no_longer_than(2)
+    assert_equal [], @cw.words
+  end
+
+  def test_words_no_longer_than_0
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_longer_than(0)
     assert_equal [], @cw.words
   end
 
@@ -179,9 +311,39 @@ class TestCW < MiniTest::Test
     assert_equal ['1234', '12345'], @cw.words
   end
 
-  def test_no_shorter_than_0
+  def test_words_no_shorter_than_0
     @cw.words = ['1', '12', '123']
-    @cw.no_shorter_than(0)
+    @cw.words_no_shorter_than(0)
+    assert_equal ['1', '12', '123'], @cw.words
+  end
+
+  def test_words_no_shorter_than_1
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_shorter_than(1)
+    assert_equal ['1', '12', '123'], @cw.words
+  end
+
+  def test_words_no_shorter_than_2
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_shorter_than(2)
+    assert_equal ['12', '123'], @cw.words
+  end
+
+  def test_words_no_shorter_than_3
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_shorter_than(3)
+    assert_equal ['123'], @cw.words
+  end
+
+  def test_words_no_shorter_than_with_words_no_match
+    @cw.words = ['123', '1234', '12345']
+    @cw.words_no_shorter_than(4)
+    assert_equal ['1234', '12345'], @cw.words
+  end
+
+  def test_words_no_shorter_than_0
+    @cw.words = ['1', '12', '123']
+    @cw.words_no_shorter_than(0)
     assert_equal ['1', '12', '123'], @cw.words
   end
 
@@ -223,6 +385,42 @@ class TestCW < MiniTest::Test
   def test_word_size_3
     @cw.words = ['1', '12', '23', '123']
     @cw.word_size 3
+    assert_equal ['123'], @cw.words
+  end
+
+  def test_having_size_of_1
+    @cw.words = ['1', '12', '123']
+    @cw.having_size_of 1
+    assert_equal ['1'], @cw.words
+  end
+
+  def test_having_size_of_2
+    @cw.words = ['1', '12', '23', '123']
+    @cw.having_size_of 2
+    assert_equal ['12','23'], @cw.words
+  end
+
+  def test_having_size_of_3
+    @cw.words = ['1', '12', '23', '123']
+    @cw.having_size_of 3
+    assert_equal ['123'], @cw.words
+  end
+
+  def test_word_length_1
+    @cw.words = ['1', '12', '123']
+    @cw.word_length 1
+    assert_equal ['1'], @cw.words
+  end
+
+  def test_word_length_2
+    @cw.words = ['1', '12', '23', '123']
+    @cw.word_length 2
+    assert_equal ['12','23'], @cw.words
+  end
+
+  def test_word_length_3
+    @cw.words = ['1', '12', '23', '123']
+    @cw.word_length 3
     assert_equal ['123'], @cw.words
   end
 
