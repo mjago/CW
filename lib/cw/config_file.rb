@@ -4,7 +4,7 @@ class ConfigFile
   HERE    = File.dirname(__FILE__) + '/'
   CONFIGS = ['wpm', 'book_name', 'book_dir',
             'play_command', 'success_colour', 'fail_colour',
-            'list_colour', 'ebook2cw_path']
+            'list_colour', 'ebook2cw_path', 'run_default']
 
   attr_reader :config
 

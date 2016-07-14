@@ -15,7 +15,7 @@ module Params
      :book_name,     :book_dir,
      :play_command,  :success_colour,
      :fail_colour,   :list_colour,
-     :ebook2cw_path
+     :ebook2cw_path, :run_default
     ].each do |method|
       define_method method do |arg = nil|
         arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
@@ -51,7 +51,7 @@ module Params
             :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
             :ending_with, :mark_words, :audio_dir, :use_ebook2cw, :def_word_count,
             :book_dir, :book_name, :play_command, :success_colour, :fail_colour,
-            :list_colour, :ebook2cw_path
+            :list_colour, :ebook2cw_path, :run_default
     end
   end
 

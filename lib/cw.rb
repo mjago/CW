@@ -151,10 +151,13 @@ class CW < CwDsl
     end
   end
 
-  # Run word test
+  def run_default
+    Params.run_default ||= :test_letters
+  end
+
   def run
     return if Params.pause
-    test_words
+    self.send run_default
   end
 
   alias_method :ewpm,                  :effective_wpm
