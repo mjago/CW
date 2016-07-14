@@ -122,13 +122,17 @@ module Tester
     end
   end
 
+  def finish?
+    return true if stream.stream_empty?
+    return true if timing.print_words_timeout?
+    return true if quit?
+  end
+
   def print_words_exit
     timing.init_print_words_timeout
     loop do
       process_word_maybe
-      break if stream.stream_empty?
-      break if timing.print_words_timeout?
-      break if quit?
+      break if finish?
       sleep 0.01
     end
     @failed = true unless stream.stream_empty?
