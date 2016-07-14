@@ -150,16 +150,13 @@ class CwDsl
 
   #todo refactor
 
-  def alpha ; 'a'.upto('z').collect{|ch| ch} ; end
-
-  def vowels          ; ['a','e','i','o','u']        ; end
-  def load_vowels     ; @words.assign vowels         ; end
-  def load_alphabet   ; @words.assign alpha          ; end
-  def load_consonants ; @words.assign alpha - vowels ; end
-
-  def load_numbers
-    @words.assign '1 2 3 4 5 6 7 8 9 0 '
-  end
+  def alpha           ; 'a'.upto('z').collect{|ch| ch} ; end
+  def vowels          ; ['a','e','i','o','u']          ; end
+  def load_vowels     ; @words.assign vowels           ; end
+  def load_alphabet   ; @words.assign alpha            ; end
+  def load_consonants ; @words.assign alpha - vowels   ; end
+  def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
+  def load_numbers    ; @words.assign numbers          ; end
 
   def load_words(filename = COMMON_WORDS)
     Params.dictionary = filename
