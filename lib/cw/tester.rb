@@ -98,17 +98,6 @@ module Tester
     process_input_word_maybe
   end
 
-  def play_words_thread
-    play_words_until_quit
-    print "\n\rplay has quit " if @debug
-  end
-
-  def print_words_thread
-    print_words_until_quit
-    kill_threads
-    print "\n\rprint has quit " if @debug
-  end
-
   def print_words_until_quit
     sync_with_audio_player
     print_words @words
@@ -244,6 +233,17 @@ module Tester
       break if quit?
       sleep 0.015
     end
+  end
+
+  def play_words_thread
+    play_words_until_quit
+    print "\n\rplay has quit " if @debug
+  end
+
+  def print_words_thread
+    print_words_until_quit
+    kill_threads
+    print "\n\rprint has quit " if @debug
   end
 
   def monitor_keys_thread

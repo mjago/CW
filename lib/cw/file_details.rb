@@ -8,7 +8,6 @@ class FileDetails
   def initialize
     @repeat_tone     = AUDIO + "rpt.mp3"
     @r_tone          = AUDIO + "r.mp3"
-    @sentence_folder = TEXT + "sentences/"
     @text_folder     = TEXT
     @progress_file   = 'progress.txt'
   end

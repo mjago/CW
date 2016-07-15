@@ -36,7 +36,7 @@ class BookDetails
   end
 
   def book_location
-    File.expand_path(Params.book_name, Params.book_dir)
+    temp = File.expand_path(book_name, book_directory)
   end
 
   def arguments args
