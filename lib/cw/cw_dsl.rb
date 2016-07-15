@@ -129,7 +129,6 @@ class CwDsl
   # @param [Integer] article_count Number of articles to play.
 
   def read_rss(source, article_count = 3)
-    Params.no_run = true
     rss, = Rss.new
     rss.read_rss(source, article_count)
     loop do
