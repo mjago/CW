@@ -46,6 +46,7 @@ class KeyInput
     quit_str = @quit_ary.join.downcase
     if quit_str == 'qqqq'
       reset_stdin
+      Params.exit = true
       return true
     end
   end

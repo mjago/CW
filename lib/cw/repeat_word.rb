@@ -66,9 +66,9 @@ class RepeatWord < FileDetails
         @threads = CWThreads.new(self, thread_processes)
         @threads.run
         break unless @failed
-        break if global_quit?
+        break if Params.exit
       end
-      break if global_quit?
+      break if Params.exit
     end
     reset_stdin
     print.newline

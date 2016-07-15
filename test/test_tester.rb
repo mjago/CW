@@ -34,17 +34,6 @@ class TestTester < MiniTest::Test
     assert @object.quit?
   end
 
-  def test_global_quit?
-    @object.instance_eval('@global_quit = :quit')
-    assert_equal :quit, @object.global_quit?
-  end
-
-  def test_global_quit
-    assert_nil @object.global_quit?
-    @object.global_quit
-    assert @object.global_quit?
-  end
-
   def test_print_instantiates_Print_object
     assert_equal Print, @object.print.class
   end

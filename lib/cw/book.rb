@@ -75,16 +75,6 @@ class Book < FileDetails
     play_repeat_tone if repeat_sentence?
   end
 
-  def monitor_keys
-    loop do
-      get_key_input
-      check_quit_key_input
-      break if quit?
-      check_sentence_navigation key_chr
-      build_word_maybe
-    end
-  end
-
   def process_input_word_maybe
     if @word_to_process
       if @book_details.args[:output] == :letter

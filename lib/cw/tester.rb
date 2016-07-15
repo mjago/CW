@@ -4,8 +4,6 @@ module Tester
 
   def quit?                ; @quit                             ; end
   def quit                 ; @quit = true                      ; end
-  def global_quit?         ; @global_quit                      ; end
-  def global_quit          ; @global_quit = true               ; end
   def print                ; @print ||= Print.new              ; end
   def timing               ; @timing ||= Timing.new            ; end
   def audio                ; @audio ||= AudioPlayer.new        ; end
@@ -47,6 +45,11 @@ module Tester
     loop do
       break if quit?
       break if timing.play_words_timeout?
+      if Params.exit
+        puts 'here'
+        audio.stop
+        break
+      end
       sleep 0.01
     end
   end
@@ -143,8 +146,9 @@ module Tester
 
   def check_quit_key_input
     if quit_key_input?
+      audio.stop
+      Params.exit = true
       quit
-      global_quit
       audio_stop
       true
     end
@@ -232,6 +236,7 @@ module Tester
       break if sentence_index_current?
       break if quit?
       sleep 0.015
+      break
     end
   end
 
@@ -252,15 +257,18 @@ module Tester
   end
 
   def thread_processes
-    [:monitor_keys_thread,
-     :play_words_thread,
-     :print_words_thread]
+    [
+      :monitor_keys_thread,
+      :play_words_thread,
+      :print_words_thread
+    ]
   end
 
   def run words
     @words = words
     @threads = CWThreads.new(self, thread_processes)
     @threads.run
+    puts 'here below threads.run'
     reset_stdin
     print.newline
   end
@@ -271,7 +279,7 @@ module Tester
       check_quit_key_input
 #      exit 1 if quit?
       break if quit?
-      #      check_sentence_navigation key_chr
+      check_sentence_navigation(key_chr) if self.class == Book
       build_word_maybe
     end
   end

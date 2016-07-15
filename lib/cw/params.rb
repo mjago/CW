@@ -15,7 +15,7 @@ module Params
                      [:noise, :no_noise],[:use_ebook2cw, :use_ruby_tone]]
     VARS          = [:dictionary,:containing,:begin,:end,:including,
                      :word_filename,:max,:min,:audio_dir,:book_dir,
-                     :book_name,:play_command, :run_default]
+                     :book_name,:play_command, :run_default, :exit]
 
     (CMDS + PRINT_COLOURS).each do |method_name|
       define_method method_name do |arg = nil|

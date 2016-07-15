@@ -20,7 +20,7 @@ class CWThreads
 
   def start_threads
     @threads = @processes.collect do |th|
-      Thread.new{@context.send th}
+      Thread.new{ @context.send th }
     end
   end
 
