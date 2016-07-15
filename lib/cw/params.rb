@@ -44,8 +44,8 @@ module Params
       param :name, :wpm, :dictionary, :command_line, :audio_filename, :tone, :pause,
             :print_letters, :word_filename, :author, :title, :quality,
             :frequency, :effective_wpm, :max, :min, :word_spacing, :noise,
-            :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
-            :ending_with, :audio_dir, :use_ebook2cw, :book_dir, :book_name,
+            :begin, :end, :including, :containing, :word_count, :word_size, :size,
+            :beginning_with, :ending_with, :audio_dir, :use_ebook2cw, :book_dir, :book_name,
             :play_command, :success_colour, :fail_colour, :list_colour,
             :ebook2cw_path, :run_default, :no_run
     end

@@ -20,6 +20,8 @@ class Str
       Params.word_size_str,
       beginning_str,
       ending_str,
+      including_str,
+      containing_str,
       delim
     ].collect{ |prm| prm.to_s }.join
   end
@@ -36,6 +38,16 @@ class Str
   def ending_str
     ending = Params.end
     ending ? "Ending:     #{stringify ending}\n" : nil
+  end
+
+  def including_str
+    including = Params.including
+    including ? "Including:  #{stringify including}\n" : nil
+  end
+
+  def containing_str
+    containing = Params.containing
+    containing ? "Containing: #{stringify containing}\n" : nil
   end
 
 end

@@ -165,6 +165,7 @@ class CwDsl
   end
 
   def containing(* letters)
+    Params.containing = letters
     @words.containing letters
   end
 
