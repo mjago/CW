@@ -16,7 +16,7 @@ addition to generating random words, letters, and numbers that possibly match so
 
 **CW** also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
 
-**CW** is thoroughly [documented](http://mjago.github.io/CW/), and includes a [hands-on tutorial](http://mjago.github.io/CW/mydoc_five_common_words/).
+**CW** is thoroughly [documented](http://mjago.github.io/CW/), and includes a [hands-on tutorial](http://martynjago.co.uk/CW/mydoc_learning_the_alphabet/).
 
 # Installation:
 
