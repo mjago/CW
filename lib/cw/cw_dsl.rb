@@ -58,6 +58,86 @@ class CwDsl
     Params.size
   end
 
+  # Test user against letters rather than words.
+  #
+
+  def test_letters
+    Params.no_run = true
+    test_letters = TestLetters.new
+    test_letters.run @words
+  end
+
+  # Test user against complete words rather than letters.
+  #
+
+  def test_words
+    Params.no_run = true
+    tw = TestWords.new
+    tw.run @words
+  end
+
+  # Repeat word repeats the current word if the word is entered incorrectly (or not entered at all).
+  #
+
+  def repeat_word
+    Params.no_run = true
+    repeat_word = RepeatWord.new
+    repeat_word.run @words
+  end
+
+  # Reveal words only at end of test.
+  # Useful for learning to copy `in the head'
+
+  def reveal
+    Params.no_run = true
+    reveal = Reveal.new
+    reveal.run @words
+  end
+
+  # Play book using provided arguments.
+  # @param [Hash] args the options to play book with.
+  # @option args [Integer] :sentences Number of sentences to play
+  # @option args [Integer] :duration  Number of minutes to play
+  # @option args [Boolean] :letter Mark by letter if true else mark by word
+
+  def read_book args = {}
+    Params.no_run = true
+    details = BookDetails.new
+    details.arguments(args)
+    book = Book.new details
+    book.run @words
+  end
+
+  # Convert book to mp3.
+
+  def convert_book args = {}
+    details = BookDetails.new
+    details.arguments(args)
+    book = Book.new details
+    Params.no_run = true
+    book.convert
+  end
+
+  # Reads RSS feed (requires an internet connection). Feed can be one of:
+  # - bbc:
+  # - reuters:
+  # - guardian:
+  # - quotation:
+  # @param [Symbol] source The source of the feed.
+  # @param [Integer] article_count Number of articles to play.
+
+  def read_rss(source, article_count = 3)
+    Params.no_run = true
+    rss, = Rss.new
+    rss.read_rss(source, article_count)
+    loop do
+      article = rss.next_article
+      return unless article
+      @words.assign article
+      run
+    end
+  end
+
   def shuffle
     @words.shuffle
   end
@@ -181,6 +261,27 @@ class CwDsl
     when :squarewave, :sawtooth, :sinewave
       Params.tone = type
     end
+  end
+
+  # Return string containing name or comment of test.
+  # @return [String] comment / name
+
+  def to_s
+    @str.to_s
+  end
+
+  def list
+    Print.new.list self.to_s
+    puts
+  end
+
+  def run_default
+    Params.run_default ||= :test_letters
+  end
+
+  def run
+    return if Params.no_run
+    self.send run_default
   end
 
 end
