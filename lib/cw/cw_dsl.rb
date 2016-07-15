@@ -58,6 +58,10 @@ class CwDsl
     Params.size
   end
 
+  def shuffle
+    @words.shuffle
+  end
+
   def word_count(wordcount)
     Params.word_count = wordcount
     @words.count wordcount

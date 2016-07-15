@@ -16,7 +16,6 @@ class Str
       Params.name + "\n",
       delim,
       Params.wpm_str,
-      Params.shuffle_str,
       Params.word_count_str,
       Params.word_size_str,
       beginning_str,

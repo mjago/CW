@@ -136,14 +136,12 @@ WPM:        25
       %q(unnamed
 =======
 WPM:        25
-Shuffle:    yes
 Word count: 2
 Word size:  3
 Beginning:  l
 Ending:     x
 =======
 )
-    @cw.shuffle
     @cw.word_count 2
     @cw.word_size 3
     @cw.ending_with('x')
@@ -180,11 +178,6 @@ Ending:     x
   def test_shuffle_shuffles_words
     @cw.shuffle
     refute_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
-  end
-
-  def test_no_shuffle_doesnt_shuffle
-    @cw.no_shuffle
-    assert_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
   end
 
   def test_word_size_returns_words_of_such_size

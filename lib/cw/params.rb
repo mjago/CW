@@ -10,7 +10,7 @@ module Params
      :author,        :title,
      :quality,       :audio_filename,
      :pause,         :noise,
-     :shuffle,       :audio_dir,
+     :audio_dir,
      :book_name,     :book_dir,
      :play_command,  :success_colour,
      :fail_colour,   :list_colour,
@@ -27,14 +27,11 @@ module Params
      [:print_letters, nil],
      [:noise, :noise, true],
      [:no_noise, :noise, nil],
-     [:shuffle, :shuffle, true],
-     [:no_shuffle, :shuffle, nil],
      [:use_ebook2cw, :use_ebook2cw, true],
      [:use_ruby_tone, :use_ebook2cw, nil],
     ].each do |bool|
       define_method bool[0] do
         Params.send("#{bool[1]}=", bool[2])
-        @words.shuffle if((bool[1] == :shuffle) && (bool[2]))
       end
     end
 
@@ -46,7 +43,7 @@ module Params
     config do
       param :name, :wpm, :dictionary, :command_line, :audio_filename, :tone, :pause,
             :print_letters, :word_filename, :author, :title, :quality,
-            :frequency, :shuffle, :effective_wpm, :max, :min, :word_spacing, :noise,
+            :frequency, :effective_wpm, :max, :min, :word_spacing, :noise,
             :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
             :ending_with, :audio_dir, :use_ebook2cw, :book_dir, :book_name,
             :play_command, :success_colour, :fail_colour, :list_colour,
@@ -75,10 +72,6 @@ module Params
 
   def config( & block)
     instance_eval( & block)
-  end
-
-  def shuffle_str
-    shuffle ? "Shuffle:    #{shuffle ? 'yes' : 'no'}\n" : nil
   end
 
   def word_count_str
