@@ -13,8 +13,6 @@ class TestTester < MiniTest::Test
   def setup
     @object = Object.new
     @object.extend(Tester)
-#''end    @cw = CW.new
-#    @cw.pause
   end
 
   def teardown

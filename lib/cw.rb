@@ -63,7 +63,7 @@ class CW < CwDsl
   #
 
   def test_letters
-    Params.pause = true
+    Params.no_run = true
     test_letters = TestLetters.new
     test_letters.run @words
   end
@@ -72,7 +72,7 @@ class CW < CwDsl
   #
 
   def test_words
-    Params.pause = true
+    Params.no_run = true
     tw = TestWords.new
     tw.run @words
   end
@@ -81,7 +81,7 @@ class CW < CwDsl
   #
 
   def repeat_word
-    Params.pause = true
+    Params.no_run = true
     repeat_word = RepeatWord.new
     repeat_word.run @words
   end
@@ -90,7 +90,7 @@ class CW < CwDsl
   # Useful for learning to copy `in the head'
 
   def reveal
-    Params.pause = true
+    Params.no_run = true
     reveal = Reveal.new
     reveal.run @words
   end
@@ -114,7 +114,7 @@ class CW < CwDsl
   # @option args [Boolean] :letter Mark by letter if true else mark by word
 
   def read_book args = {}
-    Params.pause = true
+    Params.no_run = true
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
@@ -127,7 +127,7 @@ class CW < CwDsl
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
-    Params.pause = true
+    Params.no_run = true
     book.convert
   end
 
@@ -140,7 +140,7 @@ class CW < CwDsl
   # @param [Integer] article_count Number of articles to play.
 
   def read_rss(source, article_count = 3)
-    Params.pause = true
+    Params.no_run = true
     rss, = Rss.new
     rss.read_rss(source, article_count)
     loop do
@@ -156,12 +156,11 @@ class CW < CwDsl
   end
 
   def run
-    return if Params.pause
+    return if Params.no_run
     self.send run_default
   end
 
   alias_method :ewpm,                  :effective_wpm
-  alias_method :no_run,                :pause
   alias_method :comment,               :name
   alias_method :word_length,           :word_size
   alias_method :word_shuffle,          :shuffle

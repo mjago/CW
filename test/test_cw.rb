@@ -12,7 +12,7 @@ class TestCW < MiniTest::Test
 
   def setup
     @cw = CW.new
-    @cw.pause
+    @cw.no_run
   end
 
   def teardown
@@ -43,7 +43,7 @@ class TestCW < MiniTest::Test
   def test_dictionary_defaults_to_COMMON_WORDS
     temp = nil
     CW.new {
-      pause
+      no_run
       temp = Params.dictionary
     }
     assert_equal File.expand_path(ROOT + '/data/text/common_words.txt'), File.expand_path(temp)
@@ -51,13 +51,13 @@ class TestCW < MiniTest::Test
 
   def test_CW_takes_a_block
     CW.new {
-      pause
+      no_run
     }
   end
 
   def test_dont_load_common_words_if_passed_in_block
     cw = CW.new {
-      pause
+      no_run
     }
     cw.words = ["some", "words"]
     assert_equal ["some", "words"], cw.words
@@ -65,13 +65,13 @@ class TestCW < MiniTest::Test
 
   def test_word_filename_defaults_to_words
     cw = CW.new {
-      pause
+      no_run
     }
     cw.words = ["some", "words"]
     assert_equal ["some","words"], cw.words
   end
 
-  def test_no_run_aliases_pause
+  def test_no_run_aliases_no_run
     time = Time.now
     cw = CW.new {
       no_run
@@ -82,7 +82,7 @@ class TestCW < MiniTest::Test
 
   def test_reload_reloads_dictionary
     cw = CW.new {
-      pause
+      no_run
     }
     cw.words = ["some", "words"]
     assert_equal ["some", "words"], cw.words
@@ -92,7 +92,7 @@ class TestCW < MiniTest::Test
 
   def test_load_common_words_loads_common_words
     cw = CW.new {
-      pause
+      no_run
     }
     cw.words = ["some", "words"]
     assert_equal ["some", "words"], cw.words
@@ -121,7 +121,7 @@ class TestCW < MiniTest::Test
     assert_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
   end
 
-   def test_to_s_outputs_test_run_header_if_paused
+   def test_to_s_outputs_test_run_header_if_no_rund
      temp =
        %q(unnamed
 =======
@@ -385,7 +385,6 @@ Ending:     x
     assert @cw.method(:words_no_shorter_than), @cw.method(:no_shorter_than)
     assert @cw.method(:random_alphanumeric),   @cw.method(:random_letters_numbers)
     assert @cw.method(:comment),               @cw.method(:name)
-    assert @cw.method(:no_run),                @cw.method(:pause)
   end
 
   def test_set_wpm_param
@@ -487,7 +486,7 @@ Ending:     x
     str = ''
     CW.new do
       str = @cl.cl_echo('some words')
-      pause
+      no_run
     end
     assert str.include?('echo some words | ebook2cw -w 25')
   end
@@ -497,19 +496,19 @@ Ending:     x
     CW.new do
       words = 'some words added here'
       temp = words
-      pause
+      no_run
     end
     assert_equal(4, temp.split.size)
     CW.new do
       @words.add 'a couple of words'
       temp = words
-      pause
+      no_run
     end
     assert_equal(4, temp.split.size)
     CW.new do
       @words.add nil
       temp = words
-      pause
+      no_run
     end
     assert_nil(temp)
   end

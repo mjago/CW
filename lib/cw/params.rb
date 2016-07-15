@@ -10,19 +10,19 @@ module Params
      :author,        :title,
      :quality,       :audio_filename,
      :pause,         :noise,
-     :audio_dir,
-     :book_name,     :book_dir,
-     :play_command,  :success_colour,
-     :fail_colour,   :list_colour,
-     :ebook2cw_path, :run_default
+     :audio_dir,     :book_name,
+     :book_dir,      :play_command,
+     :success_colour,:fail_colour,
+     :list_colour,   :ebook2cw_path,
+     :run_default,   :no_run
     ].each do |method|
       define_method method do |arg = nil|
         arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
       end
     end
 
-    [[:pause, :pause, true],
-     [:un_pause, :pause, nil],
+    [[:run, :no_run, nil],
+     [:no_run, :no_run, true],
      [:print_letters, :print_letters, true],
      [:print_letters, nil],
      [:noise, :noise, true],
@@ -47,7 +47,7 @@ module Params
             :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
             :ending_with, :audio_dir, :use_ebook2cw, :book_dir, :book_name,
             :play_command, :success_colour, :fail_colour, :list_colour,
-            :ebook2cw_path, :run_default
+            :ebook2cw_path, :run_default, :no_run
     end
   end
 
