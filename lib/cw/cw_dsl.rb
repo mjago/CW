@@ -23,6 +23,8 @@ class CwDsl
     Params.init_config
     config_defaults
     config_files
+    load_common_words# unless @words.exist?
+    ConfigFile.new.apply_config self
   end
 
   def config_defaults

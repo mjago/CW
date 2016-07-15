@@ -42,19 +42,14 @@ def cw &block
   end
 end
 
-class CW < CwDsl
+# Inherit DSL
 
-#FIXME dry_run
-#  attr_accessor :dry_run
+class CW < CwDsl
 
   # Initialize CW class. Eval block if passed in.
 
   def initialize(&block)
-
     super
-
-    load_common_words# unless @words.exist?
-    ConfigFile.new.apply_config self
     instance_eval(&block) if block
     run if block
   end
