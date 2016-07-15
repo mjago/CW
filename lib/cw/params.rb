@@ -15,16 +15,16 @@ module Params
      :success_colour,:fail_colour,
      :list_colour,   :ebook2cw_path,
      :run_default,   :no_run
-    ].each do |method|
-      define_method method do |arg = nil|
-        arg ? Params.send("#{method}=", arg) : Params.send("#{method}")
+    ].each do |method_name|
+      define_method method_name do |arg = nil|
+        arg ? Params.send("#{method_name}=", arg) : Params.send("#{method_name}")
       end
     end
 
     [[:run, :no_run, nil],
      [:no_run, :no_run, true],
      [:print_letters, :print_letters, true],
-     [:print_letters, nil],
+     [:no_print, :print_letters, nil],
      [:noise, :noise, true],
      [:no_noise, :noise, nil],
      [:use_ebook2cw, :use_ebook2cw, true],
