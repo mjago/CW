@@ -2,52 +2,43 @@
 
 module Params
 
-  module ParamsSetup
+  extend self
 
-    [:name,          :wpm,
-     :effective_wpm, :word_spacing,
-     :command_line,  :frequency,
-     :author,        :title,
-     :quality,       :audio_filename,
-     :pause,         :noise,
-     :audio_dir,     :book_name,
-     :book_dir,      :play_command,
-     :success_colour,:fail_colour,
-     :list_colour,   :ebook2cw_path,
-     :run_default,   :no_run
-    ].each do |method_name|
+  module ParamsSetup
+    CMDS          = [:name,:wpm,:effective_wpm,:frequency,:audio_filename,:pause,
+                     :audio_dir, :book_name, :book_dir,:play_command,:size,
+                     :run_default, :word_spacing, :command_line, :author,
+                     :title, :quality, :ebook2cw_path, :noise, :no_noise,
+                     :tone, :word_count]
+    PRINT_COLOURS = [:list_colour, :success_colour, :fail_colour]
+    BOOL_CMDS     = [[:no_run, :run],[:print_letters, :no_print],
+                     [:noise, :no_noise],[:use_ebook2cw, :use_ruby_tone]]
+    VARS          = [:dictionary,:containing,:begin,:end,:including,
+                     :word_filename,:max,:min,:audio_dir,:book_dir,
+                     :book_name,:play_command, :run_default]
+
+    (CMDS + PRINT_COLOURS).each do |method_name|
       define_method method_name do |arg = nil|
         arg ? Params.send("#{method_name}=", arg) : Params.send("#{method_name}")
       end
     end
 
-    [[:run, :no_run, nil],
-     [:no_run, :no_run, true],
-     [:print_letters, :print_letters, true],
-     [:no_print, :print_letters, nil],
-     [:noise, :noise, true],
-     [:no_noise, :noise, nil],
-     [:use_ebook2cw, :use_ebook2cw, true],
-     [:use_ruby_tone, :use_ebook2cw, nil],
-    ].each do |bool|
+    BOOL_CMDS.each do |bool|
       define_method bool[0] do
-        Params.send("#{bool[1]}=", bool[2])
+        Params.send("#{bool[0]}=", true)
+      end
+      define_method bool[1] do
+        Params.send("#{bool[0]}=", nil)
       end
     end
-
   end
-
-  extend self
 
   def init_config
     config do
-      param :name, :wpm, :dictionary, :command_line, :audio_filename, :tone, :pause,
-            :print_letters, :word_filename, :author, :title, :quality,
-            :frequency, :effective_wpm, :max, :min, :word_spacing, :noise,
-            :begin, :end, :including, :containing, :word_count, :word_size, :size,
-            :beginning_with, :ending_with, :audio_dir, :use_ebook2cw, :book_dir, :book_name,
-            :play_command, :success_colour, :fail_colour, :list_colour,
-            :ebook2cw_path, :run_default, :no_run
+      param(ParamsSetup::CMDS  +
+            ParamsSetup::PRINT_COLOURS  +
+            ParamsSetup::VARS +
+            ParamsSetup::BOOL_CMDS.collect {|cmd| cmd[0]})
     end
   end
 
@@ -64,7 +55,7 @@ module Params
     end
   end
 
-  def param( * names)
+  def param(names)
     names.each do |name|
       param_internal name
     end

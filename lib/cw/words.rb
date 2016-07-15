@@ -57,16 +57,16 @@ class Words
     @words.select{|wrd| wrd.end_with?(letr)}
   end
 
-  def beginning_with(* letters)
-    letter_filter(:beginning_with, letters)
+  def beginning_with
+    letter_filter(:beginning_with, Params.begin)
   end
 
-  def ending_with(* letters)
-    letter_filter(:ending_with, letters)
+  def ending_with
+    letter_filter(:ending_with, Params.end)
   end
 
-  def including(* letters)
-    letter_filter(:including, letters)
+  def including
+    letter_filter(:including, Params.including)
   end
 
   def letter_filter(option,letters)
@@ -90,12 +90,8 @@ class Words
     @words.select{|wrd| wrd.include?(letr)}
   end
 
-#  if letr.class == Range
-#    letr.collect do |let|
-#      self.send(method_name, let)
-#    end
-  def containing(letters)
-    temp = []
+  def containing
+    letters = Params.containing
     letters.flatten.collect do |letr|
       if letr.class == Range
         letters = letr.collect { |let| let }

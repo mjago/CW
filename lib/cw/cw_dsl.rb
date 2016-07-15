@@ -150,23 +150,23 @@ class CwDsl
   end
 
   def beginning_with(* letters)
-    @words.beginning_with letters
     Params.begin = letters
+    @words.beginning_with
   end
 
   def ending_with(* letters)
-    @words.ending_with letters
     Params.end = letters
+    @words.ending_with
   end
 
   def including(* letters)
     Params.including = letters
-    @words.including letters
+    @words.including
   end
 
   def containing(* letters)
     Params.containing = letters
-    @words.containing letters
+    @words.containing
   end
 
   def double_words
