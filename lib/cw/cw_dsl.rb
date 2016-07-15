@@ -286,4 +286,17 @@ class CwDsl
     self.send run_default
   end
 
+  alias_method :ewpm,                  :effective_wpm
+  alias_method :comment,               :name
+  alias_method :word_length,           :word_size
+  alias_method :word_shuffle,          :shuffle
+  alias_method :having_size_of,        :word_size
+  alias_method :number_of_words,       :word_count
+  alias_method :words_including,       :including
+  alias_method :words_ending_with,     :ending_with
+  alias_method :random_alphanumeric,   :random_letters_numbers
+  alias_method :words_beginning_with,  :beginning_with
+  alias_method :words_no_longer_than,  :no_longer_than
+  alias_method :words_no_shorter_than, :no_shorter_than
+
 end
