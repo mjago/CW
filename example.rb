@@ -45,7 +45,6 @@ def cw_settings
   ewpm 15
   #  use_ebook2cw
   use_ruby_tone
-  mark_words
   word_count 5
   word_size 4
   print_letters

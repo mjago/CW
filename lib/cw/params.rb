@@ -10,7 +10,7 @@ module Params
      :author,        :title,
      :quality,       :audio_filename,
      :pause,         :noise,
-     :shuffle,       :mark_words,
+     :shuffle,
      :audio_dir,     :def_word_count,
      :book_name,     :book_dir,
      :play_command,  :success_colour,
@@ -25,7 +25,7 @@ module Params
     [[:pause, :pause, true],
      [:un_pause, :pause, nil],
      [:print_letters, :print_letters, true],
-     [:mark_words, :print_letters, nil],
+     [:print_letters, nil],
      [:noise, :noise, true],
      [:no_noise, :noise, nil],
      [:shuffle, :shuffle, true],
@@ -49,7 +49,7 @@ module Params
             :print_letters, :word_filename, :author, :title, :quality,
             :frequency, :shuffle, :effective_wpm, :max, :min, :word_spacing, :noise,
             :begin, :end, :word_count, :including, :word_size, :size, :beginning_with,
-            :ending_with, :mark_words, :audio_dir, :use_ebook2cw, :def_word_count,
+            :ending_with, :audio_dir, :use_ebook2cw, :def_word_count,
             :book_dir, :book_name, :play_command, :success_colour, :fail_colour,
             :list_colour, :ebook2cw_path, :run_default
     end
