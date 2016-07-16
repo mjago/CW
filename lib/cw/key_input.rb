@@ -3,7 +3,7 @@
 class KeyInput
 
   def initialize
-    @quit_ary = Array.new(4)
+    @quit_count = 0
   end
 
   def char
@@ -40,15 +40,28 @@ class KeyInput
     system("stty -raw echo")
   end
 
-  def quit_input?
-    @quit_ary.rotate!
-    @quit_ary[3] = @chr
-    quit_str = @quit_ary.join.downcase
-    if quit_str == 'qqqq'
-      reset_stdin
-      Params.exit = true
-      return true
+
+  def push_to_quit_maybe
+    if @chr == 'q'
+      @quit_count += 1
+    else
+      @quit_count = 0
     end
+  end
+
+  def is_quit?
+    @quit_count >= 4
+  end
+
+  def quit
+    Params.exit = true
+    reset_stdin
+    return true
+  end
+
+  def quit_input?
+    push_to_quit_maybe
+    return quit if is_quit?
   end
 
 end
