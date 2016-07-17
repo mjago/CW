@@ -180,8 +180,8 @@ class Book < FileDetails
     if @book_details.session_finished?
       audio_stop
       quit
-      reset_stdin
-      kill_threads
+#      reset_stdin
+#     kill_threads
     end
   end
 
@@ -204,7 +204,7 @@ class Book < FileDetails
 
   def print_sentences_thread
     print_sentences_until_quit
-    kill_threads
+#    kill_threads
     print "\n\rprint has quit " if @debug
   end
 

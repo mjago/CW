@@ -29,7 +29,7 @@ class MonitorKeys
         key_input.reset
         break
       end
-      check_sentence_navigation key_chr
+      check_sentence_navigation key_chr if self.class == Book
       build_word_maybe
     end
   end

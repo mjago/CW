@@ -62,6 +62,7 @@ class ToneGenerator
     number_of_samples.times do |sample_number|
       amplitude = filter_maybe(number_of_samples, sample_number)
       #      amplitude = 1.0 # @max_amplitude
+      amplitude = 0 if MUTE
       sine_radians = ((@frequency * TWO_PI) / @sample_rate) * sample_number
       audio_samples[sample_number] = amplitude * Math.sin(sine_radians)
     end

@@ -46,7 +46,7 @@ module Tester
       break if quit?
       break if timing.play_words_timeout?
       if Params.exit
-        puts 'here'
+#        puts 'here'
         audio.stop
         break
       end
@@ -144,16 +144,6 @@ module Tester
     wait_player_startup_delay
   end
 
-  def check_quit_key_input
-    if quit_key_input?
-      audio.stop
-      Params.exit = true
-      quit
-      audio_stop
-      true
-    end
-  end
-
   def push_letter_to_current_word letr
     current_word.push_letter letr
   end
@@ -175,7 +165,10 @@ module Tester
     word_proc_timeout(:init)
     while @word_to_process
       sleep 0.01
-      exit(1) if word_proc_timeout
+      if word_proc_timeout
+#        puts "word_proc_timeout"
+        exit(1)
+      end
     end
   end
 
@@ -243,17 +236,21 @@ module Tester
   def play_words_thread
     play_words_until_quit
     print "\n\rplay has quit " if @debug
+    Params.exit = true
   end
 
   def print_words_thread
     print_words_until_quit
-    kill_threads
+#    @threads.kill
     print "\n\rprint has quit " if @debug
+    Params.exit = true
+    puts "\r"
   end
 
   def monitor_keys_thread
     monitor_keys
     print "\n\rmonitor keys has quit " if @debug
+    Params.exit = true
   end
 
   def thread_processes
@@ -266,22 +263,37 @@ module Tester
 
   def run words
     @words = words
-    @threads = CWThreads.new(self, thread_processes)
-    @threads.run
-    puts 'here below threads.run'
+    @cw_threads = CWThreads.new(self, thread_processes)
+    @cw_threads.run
+#    puts 'here below threads.run'
     reset_stdin
     print.newline
   end
 
   def monitor_keys
     loop do
-      get_key_input
+      key_input.read
+#      puts 'post read'
       check_quit_key_input
-#      exit 1 if quit?
+      #      exit 1 if quit?
+ #     puts "quit? = #{quit?}"
+ #     puts "Params.exit = #{Params.exit}"
       break if quit?
+      break if Params.exit
       check_sentence_navigation(key_chr) if self.class == Book
       build_word_maybe
     end
   end
+
+  def check_quit_key_input
+    if key_input.quit_input?
+      audio.stop
+      Params.exit = true
+      quit
+      audio_stop
+      true
+    end
+  end
+
 
 end
