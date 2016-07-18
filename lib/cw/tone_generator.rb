@@ -4,10 +4,12 @@ require 'wavefile'
 
 class ToneGenerator
 
+  MUTE = false
+
   include ToneHelpers
 
   def initialize
-    @max_amplitude = 0.5
+    @max_amplitude = (Params.volume > 1.0 ? 1.0 : Params.volume)
     @wpm = Params.wpm.to_f
     @frequency = Params.frequency
     @effective_wpm = Params.effective_wpm ? Params.effective_wpm.to_f : @wpm
@@ -62,7 +64,7 @@ class ToneGenerator
     number_of_samples.times do |sample_number|
       amplitude = filter_maybe(number_of_samples, sample_number)
       #      amplitude = 1.0 # @max_amplitude
-      amplitude = 0 if MUTE
+      #      amplitude = 0.01 if MUTE
       sine_radians = ((@frequency * TWO_PI) / @sample_rate) * sample_number
       audio_samples[sample_number] = amplitude * Math.sin(sine_radians)
     end
