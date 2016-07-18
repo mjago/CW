@@ -2,7 +2,7 @@
 
 class CWThreads
 
-  attr_accessor :threads
+  attr_reader :threads
 
   def initialize context, processes
     @context = context
