@@ -2,7 +2,7 @@
 
 class CWThreads
 
-  attr_reader :threads
+  attr_accessor :threads
 
   def initialize context, processes
     @context = context
@@ -36,6 +36,7 @@ class CWThreads
           end
         end
       end
+      # print_threads_status
       exiting = true if(Params.exit)
       break if exiting
     end
