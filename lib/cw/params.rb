@@ -9,7 +9,7 @@ module Params
                      :audio_dir, :book_name, :book_dir,:play_command,:size,
                      :run_default, :word_spacing, :command_line, :author,
                      :title, :quality, :ebook2cw_path, :noise, :no_noise,
-                     :tone, :word_count]
+                     :tone, :word_count, :volume]
     PRINT_COLOURS = [:list_colour, :success_colour, :fail_colour]
     BOOL_CMDS     = [[:no_run, :run],[:print_letters, :no_print],
                      [:noise, :no_noise],[:use_ebook2cw, :use_ruby_tone]]
