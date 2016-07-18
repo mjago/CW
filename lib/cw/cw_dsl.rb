@@ -21,6 +21,7 @@ class CwDsl
     @words, @cl, @str =
       Words.new, Cl.new, Str.new
     Params.init_config
+    Params.threads = []
     config_defaults
     config_files
     load_common_words# unless @words.exist?
@@ -32,6 +33,7 @@ class CwDsl
       name           'unnamed'
       wpm            25
       frequency      500
+      volume         1
       dictionary     COMMON_WORDS
     }
   end

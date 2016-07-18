@@ -6,12 +6,6 @@ class AudioPlayer
 
   AFPLAY = '/usr/bin/afplay'
 
-#todo  def initialize
-#todo    if Params.play_command
-#todo      @play_command = Params.play_command
-#todo    end
-#todo  end
-
   def tone
     @tone ||= ToneGenerator.new
   end
@@ -65,41 +59,14 @@ class AudioPlayer
   def play
     cmd = play_command + ' ' + play_filename
     @pid = ! @dry_run ? Process.spawn(cmd) : cmd
-    puts Process.waitpid(@pid)
-    puts "Audio process killed (pid: #{@pid})"
-#    begin
-#      Timeout.timeout(20) do
-#        Process.wait
-#      end
-#    rescue Timeout::Error
-#      Process.kill 9, @pid
-#      # collect status so it doesn't stick around as zombie process
-#      Process.wait @pid
-#    end
-#    puts "child exited, pid = #{@pid}"
+    Process.waitpid(@pid)
   end
 
   def stop
-    #    count = 0
-    #    loop do
-    #      break if $?.exited?
     begin
-      #        p "stopped = #{$?.stopped?}"
-      #        p "exited = #{$?.exited?}"
-
       Process.kill(:TERM, @pid)
       Process.wait(@pid)
-    #        p "to_s = #{$?.to_s}"
-    #        p "exited1 = #{$?.exited?}"
-    #        p "exited2 = #{$?.exited?}"
-    #        p "exited3 = #{$?.exited?}"
     rescue
-      #        puts 'Error: Failed to kill audio (pid ' + @pid.to_s + ' )'
-      #        exit 1
-      #        sleep 1
-      #        count += 1
-      #        break if count >= 5
-      #####      end
     end
   end
 

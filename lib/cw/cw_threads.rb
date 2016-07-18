@@ -2,27 +2,17 @@
 
 class CWThreads
 
-  attr_accessor :threads
+  attr_reader :threads
 
   def initialize context, processes
     @context = context
     @processes = processes
   end
 
-  def kill
-    sleep 0.2
-    if @threads.is_a?(Array)
-      @threads.each do |th|
-        th.exit if th.is_a? Thread
-      end
-    end
-  end
-
   def start_threads
     @threads = @processes.collect do |th|
       {:thread =>
        Thread.new do
-         p th
          @context.send th
        end,
        :name => th
@@ -35,7 +25,7 @@ class CWThreads
     loop do
       sleep 0.5
       @threads.each do |th|
-        if (th[:thread].status == nil) || (th[:thread].status == false)
+        if thread_false_or_nil?(th)
           exiting = true
           unless Params.exit
             print "\r"
@@ -46,62 +36,78 @@ class CWThreads
           end
         end
       end
+      exiting = true if(Params.exit)
       break if exiting
     end
-    if exiting
-      count = 0
-      loop do
-#        puts 'exiting'
-        th0 = @threads[0][:thread].status
-        th1 = @threads[1][:thread].status
-        th2 = @threads[2][:thread].status
-#        puts "\r"
-#        puts "#{@threads[0][:name]} = #{th0}\r"
-#        puts "#{@threads[1][:name]} = #{th1}\r"
-#        puts "#{@threads[2][:name]} = #{th2}\r"
+    close_threads if exiting
+  end
 
-        finished_count = 0
-        @threads.each do |th|
-          unless(th[:thread].status == nil) || (th[:thread].status == false)
-#            puts "killing #{th[:name]}"
-            th[:thread].kill
-          end
-        end
-        #            puts "\r"
-        #            if((th1 == false || th1 == nil) &&
-        #               (th2 == false || th2 == nil))
-        #              Params.exit = true
-        #              puts "@threads[0].exit"
-        sleep 0.1
-        #              puts "killing #{@threads[0][:name]}"
-        #              puts "@threads[0].exit"
-        if((th0 == false || th0 == nil) &&
-           (th1 == false || th1 == nil) &&
-           (th2 == false || th2 == nil))
+  def kill_thread thread
+    thread[:thread].kill
+  end
 
-#          puts 'exiting'
-          system("stty -raw echo")
-          sleep 0.2
-          exit(0)
-          break
-        end
-        sleep 0.2
+  def kill_open_threads
+    @threads.each do |thread|
+      unless thread_false_or_nil?(thread)
+        kill_thread thread
       end
-      sleep 0.5
-      count += 1
-#      puts "count = #{count}"
-      exit(0) if count >= 10
     end
   end
 
-  def wait_for_threads
-    @threads.each { |th| th.join }
+  def thread_false_or_nil? th
+    if(th[:thread].status == false)
+      return true
+    end
+
+    if(th[:thread].nil?)
+      return true
+    end
+  end
+
+  def print_threads_status
+    @threads.each do |thread|
+      puts "\r"
+      print "#{thread[:name]} = #{thread[:thread].status} "
+    end
+  end
+
+  def kill_monitor_keys_thread_maybe thread
+    kill_thread(thread) unless thread_false_or_nil?(thread)
+  end
+
+  def close_threads
+    await_termination_count = 0
+
+    loop do
+      waiting = false
+      sleep 0.1
+      @threads.each do |thread|
+        if(thread[:name] == :monitor_keys_thread)
+          kill_monitor_keys_thread_maybe thread
+        else
+          unless thread_false_or_nil?(thread)
+            waiting = true
+            break
+          end
+        end
+      end
+      # print_threads_status
+      return if(waiting == false)
+      await_termination_count += 1
+      break if(await_termination_count >= 10)
+    end
+
+    kill_open_threads
+    # print_threads_status
+    system("stty -raw echo")
+    sleep 0.2
+    exit(1)
   end
 
   def run
     start_threads
     monitor_threads
-    #todo    wait_for_threads
+    system("stty -raw echo")
   end
 
 end
