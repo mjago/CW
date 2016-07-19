@@ -40,7 +40,6 @@ class Rss
       @rss_articles << (Sanitize.clean coder.decode words).split(',')
       break if entry_count >= article_count
     end
-    @rss_flag = true
   end
 
   def inc_article_index
