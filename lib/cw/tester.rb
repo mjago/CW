@@ -31,13 +31,14 @@ module Tester
 
   def audio_play
     audio.convert_words add_space @words
-    start_sync
+    start_sync()
     audio.play
   end
 
   def play_words_until_quit
+#    puts @words
     audio_play
-    play_words_exit unless @print_letters
+    play_words_exit unless Params.print_letters
   end
 
   def play_words_exit
@@ -104,7 +105,7 @@ module Tester
   def print_words_until_quit
     sync_with_audio_player
     print_words @words
-    print_words_exit unless @print_letters
+    print_words_exit unless Params.print_letters
     quit
   end
 
@@ -128,7 +129,7 @@ module Tester
       sleep 0.01
     end
     @failed = true unless stream.stream_empty?
-    print_failed_exit_words unless @repeat_word
+    print_failed_exit_words unless self.class == RepeatWord
   end
 
   def audio_stop
@@ -166,7 +167,6 @@ module Tester
     while @word_to_process
       sleep 0.01
       if word_proc_timeout
-#        puts "word_proc_timeout"
         exit(1)
       end
     end
@@ -212,7 +212,7 @@ module Tester
   end
 
   def print_letters?
-    @print_letters && ! quit?
+    Params.print_letters && ! quit?
   end
 
   def sync_with_play
@@ -241,7 +241,6 @@ module Tester
 
   def print_words_thread
     print_words_until_quit
-#    @threads.kill
     print "\n\rprint has quit " if @debug
     Params.exit = true
     puts "\r"
@@ -265,7 +264,6 @@ module Tester
     @words = words
     @cw_threads = CWThreads.new(self, thread_processes)
     @cw_threads.run
-#    puts 'here below threads.run'
     reset_stdin
     print.newline
   end
@@ -273,11 +271,7 @@ module Tester
   def monitor_keys
     loop do
       key_input.read
-#      puts 'post read'
       check_quit_key_input
-      #      exit 1 if quit?
- #     puts "quit? = #{quit?}"
- #     puts "Params.exit = #{Params.exit}"
       break if quit?
       break if Params.exit
       check_sentence_navigation(key_chr) if self.class == Book

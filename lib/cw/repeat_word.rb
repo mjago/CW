@@ -6,17 +6,16 @@ class RepeatWord < FileDetails
 
   def initialize
     super
-    @repeat_word = true
   end
 
   #overloaded #todo
 
-  def print_failed_exit_words
-    until stream.stream_empty?
-      word = stream.pop[:value]
-      print.fail word + ' ' unless @repeat_word
-    end
-  end
+#  def print_failed_exit_words
+#    until stream.stream_empty?
+#      word = stream.pop[:value]
+#    end
+#    puts "empty!"
+#  end
 
   def print_words words
     timing.init_char_timer
@@ -29,7 +28,7 @@ class RepeatWord < FileDetails
         break if timing.char_delay_timeout?
       end
       print.success letr if print_letters?
-      break if quit?
+ #     break if quit?
     end
   end
 
@@ -59,16 +58,17 @@ class RepeatWord < FileDetails
   def run words
     temp_words = words.all
     temp_words.each do |word|
+      puts word
       loop do
         @input_word, @words = '', Words.new
         @quit, @failed = nil, nil
         @words.add [word]
         @threads = CWThreads.new(self, thread_processes)
         @threads.run
-        break unless @failed
-        break if Params.exit
+#        break unless @failed
+#        break if Params.exit
       end
-      break if Params.exit
+#      break if Params.exit
     end
     reset_stdin
     print.newline

@@ -5,7 +5,6 @@ class TestLetters < FileDetails
   include Tester
 
   def initialize
-    @print_letters = Params.print_letters
     super()
 #    print_test_advice
   end

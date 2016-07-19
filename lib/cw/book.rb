@@ -7,7 +7,6 @@ class Book < FileDetails
   def initialize book_details
 #    prn.print_advice('Test Words')
     @book_details = book_details
-    @print_letters = Params.print_letters
     super()
     read_book book_location
     find_sentences
@@ -31,9 +30,7 @@ class Book < FileDetails
   def complete_word?       ; get_word_last_char == space       ; end
   def audio_stop           ; audio.stop if audio_still_playing?; end
   def book_location        ; @book_details.book_location       ; end
-  def print_letters?       ; @print_letters && ! quit?         ; end
   def reset_sentence_flags ; sentence.reset_flags              ; end
-  def audio_play_sentence  ; audio.play                        ; end
   def print_book_advice    ; print.print_advice('Play Book')   ; end
 
   def convert
