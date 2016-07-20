@@ -195,14 +195,14 @@ class Book < FileDetails
 
   def play_sentences_thread
     play_sentences_until_quit
-    #    kill_threads
     print "\n\rplay has quit " if @debug
+    Params.exit = true
   end
 
   def print_sentences_thread
     print_sentences_until_quit
-#    kill_threads
     print "\n\rprint has quit " if @debug
+    Params.exit = true
   end
 
   def thread_processes
