@@ -103,8 +103,8 @@ class Book < FileDetails
 
   def compile_and_play
     compile_sentence
-    audio_play_sentence
-    start_sync
+    start_sync()
+    audio.play
   end
 
   def change_and_kill_audio
