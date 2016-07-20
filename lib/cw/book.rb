@@ -170,7 +170,7 @@ class Book < FileDetails
       await_next_sentence_or_quit
       break if quit?
     end
-    print_words_exit unless @print_letters
+    print_words_exit unless Params.print_letters
   end
 
   def check_sentence_count
