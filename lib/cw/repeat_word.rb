@@ -40,7 +40,7 @@ class RepeatWord < FileDetails
   end
 
   def build_word_maybe
-    @input_word ||= empty_string
+    @input_word ||= ''
     @input_word << key_chr if is_relevant_char?
     move_word_to_process if complete_word?
   end
