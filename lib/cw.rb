@@ -42,7 +42,8 @@ def cw &block
   end
 end
 
-# Inherit DSL
+# CW provides Morse code generation functionality
+# Inherits CwDsl
 
 class CW < CwDsl
 

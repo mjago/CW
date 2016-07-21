@@ -85,9 +85,13 @@ class ToneGenerator
     [:dot, :dash, :space, :e_space]
   end
 
+  # create dot, dash, space or e_space method
+
   def create_element_method ele
     define_singleton_method(ele) {data[ele]}
   end
+
+  # create dot, dash, space and e_space methods
 
   def create_element_methods
     elements.each do |ele|

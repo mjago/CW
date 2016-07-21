@@ -19,7 +19,7 @@ class RepeatWord < FileDetails
 
   def print_words words
     timing.init_char_timer
-    (words.to_s + space).each_char do |letr|
+    (words.to_s + ' ').each_char do |letr|
       process_letter letr
       loop do
         do_events

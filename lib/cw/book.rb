@@ -27,7 +27,7 @@ class Book < FileDetails
   def play_repeat_tone     ; audio_play_tone @repeat_tone      ; end
   def audio_play_tone t    ; audio.play_tone(t)                ; end
   def play_r_tone          ; audio_play_tone @r_tone           ; end
-  def complete_word?       ; get_word_last_char == space       ; end
+  def complete_word?       ; get_word_last_char == ' '         ; end
   def audio_stop           ; audio.stop if audio_still_playing?; end
   def book_location        ; @book_details.book_location       ; end
   def reset_sentence_flags ; sentence.reset_flags              ; end
@@ -94,7 +94,7 @@ class Book < FileDetails
   end
 
   def add_space sentence
-    sentence + space
+    sentence + ' '
   end
 
   def compile_sentence

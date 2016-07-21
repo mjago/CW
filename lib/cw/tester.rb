@@ -8,7 +8,6 @@ module Tester
   def timing               ; @timing ||= Timing.new            ; end
   def audio                ; @audio ||= AudioPlayer.new        ; end
   def kill_threads         ; @threads.kill                     ; end
-  def space                ; ' '                               ; end
   def spawn_play(cmd)      ; Process.spawn(cmd)                ; end
   def start_sync           ; @start_sync = true                ; end
   def get_key_input        ; key_input.read                    ; end
@@ -24,7 +23,7 @@ module Tester
 
   def add_space words
     str = ''
-    words.to_array.collect { |word| str << word + space}
+    words.to_array.collect { |word| str << word + ' '}
     str
   end
 
@@ -77,7 +76,7 @@ module Tester
 
   def process_words words
     book_class = (self.class == Book)
-    (words.to_s + space).each_char do |letr|
+    (words.to_s + ' ').each_char do |letr|
       process_letter letr
       if book_class
         stream.add_char(letr) if @book_details.args[:output] == :letter
@@ -172,7 +171,7 @@ module Tester
   end
 
   def complete_word?
-    get_word_last_char == space
+    get_word_last_char == ' '
   end
 
   def move_word_to_process
@@ -202,11 +201,11 @@ module Tester
   end
 
   def process_space_maybe letr
-    if letr == space
+    if letr == ' '
       stream.add_word current_word.strip
       current_word.clear
       letr.clear
-      print.success space if print_letters?
+      print.success ' ' if print_letters?
     end
   end
 
