@@ -17,14 +17,6 @@ class ToneGenerator
     @print = Print.new
   end
 
-  def cw_encoding
-    @encoding ||= CwEncoding.new
-  end
-
-  def progress
-    @progress ||= Progress.new('Compiling')
-  end
-
   def generate wrds
     word_parts(wrds)
 #    progress.init elements.size * 3 + (wrds.size)
@@ -33,10 +25,23 @@ class ToneGenerator
     write_word_parts
   end
 
+  def play_filename
+    HERE + "audio/#{Params.audio_filename}"
+  end
+
   def play
     cmd = play_command + ' ' + play_filename
     @pid = ! @dry_run ? Process.spawn(cmd) : cmd
   end
+
+  def cw_encoding
+    @encoding ||= CwEncoding.new
+  end
+
+  def progress
+    @progress ||= Progress.new('Compiling')
+  end
+
   def data
     { :dot => {:name => :dot,
                :filename => DOT_FILENAME,

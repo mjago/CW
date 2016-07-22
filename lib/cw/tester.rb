@@ -19,7 +19,6 @@ module Tester
   def reset_stdin          ; key_input.reset_stdin             ; end
   def current_word         ; @current_word ||= CurrentWord.new ; end
   def init_char_timer      ; timing.init_char_timer            ; end
-  def audio_still_playing? ; audio.still_playing?              ; end
 
   def add_space words
     str = ''
@@ -131,7 +130,7 @@ module Tester
   end
 
   def audio_stop
-    audio.stop if audio_still_playing?
+    audio.stop if audio.still_playing?
   end
 
   def wait_player_startup_delay

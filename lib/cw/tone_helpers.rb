@@ -9,11 +9,6 @@ module ToneHelpers
   SPACE_FILENAME   = HERE + "audio/space.wav"
   E_SPACE_FILENAME = HERE + "audio/e_space.wav"
 
-# :reek: exclude from UtilityFunction
-  def play_filename
-    HERE + "audio/#{Params.audio_filename}"
-  end
-
   def convert_words wrds
     wrds.to_array.collect{ |wrd| wrd.delete("\n")}
   end
