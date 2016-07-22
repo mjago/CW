@@ -1,11 +1,8 @@
 # encoding: utf-8
 
-class Reveal < FileDetails
-
-  include Tester
+class Reveal < Tester
 
   def initialize
-    super()
     @reveal_buf = ''
     puts 'Reveal mode:'
   end

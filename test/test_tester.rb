@@ -6,13 +6,11 @@ require_relative '../lib/cw'
 
 class TestTester < MiniTest::Test
 
-#  include Tester
-
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @object = Object.new
-    @object.extend(Tester)
+    @object = Tester.new
+
   end
 
   def teardown

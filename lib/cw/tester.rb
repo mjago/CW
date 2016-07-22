@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module Tester
+class Tester
 
   def quit?                ; @quit                             ; end
   def quit                 ; @quit = true                      ; end
@@ -33,7 +33,6 @@ module Tester
   end
 
   def play_words_until_quit
-#    puts @words
     audio_play
     play_words_exit unless Params.print_letters
   end
@@ -44,7 +43,6 @@ module Tester
       break if quit?
       break if timing.play_words_timeout?
       if Params.exit
-#        puts 'here'
         audio.stop
         break
       end
@@ -164,7 +162,7 @@ module Tester
     while @word_to_process
       sleep 0.01
       if word_proc_timeout
-        exit(1)
+#        exit(1)
       end
     end
   end
@@ -240,7 +238,6 @@ module Tester
     print_words_until_quit
     print "\n\rprint has quit " if @debug
     Params.exit = true
-    puts "\r"
   end
 
   def monitor_keys_thread

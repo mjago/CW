@@ -67,6 +67,7 @@ class CwDsl
   def test_letters
     Params.no_run = true
     test_letters = TestLetters.new
+
     test_letters.run @words
   end
 
@@ -97,6 +98,11 @@ class CwDsl
     reveal.run @words
   end
 
+  def sending_practice
+    Params.sending_practice = true
+    print_letters (:print_early)
+  end
+
   # Play book using provided arguments.
   # @param [Hash] args the options to play book with.
   # @option args [Integer] :sentences Number of sentences to play
@@ -108,6 +114,7 @@ class CwDsl
     details = BookDetails.new
     details.arguments(args)
     book = Book.new details
+
     book.run @words
   end
 

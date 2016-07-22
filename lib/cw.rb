@@ -33,8 +33,8 @@ require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/config_file'
+#require_relative 'cw/send_practice'
 
-# CW provides Morse code generation functionality
 
 def cw &block
   CW.new do

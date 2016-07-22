@@ -65,6 +65,27 @@ class CWThreads
     end
   end
 
+  def wait_for_threads
+    Params.exit = false
+    loop do
+      alive = false
+      sleep 0.1
+      @threads.each { |th|
+        if  thread_false_or_nil? th
+        elsif th[:name] != :monitor_keys_thread
+          alive = true
+        end
+      }
+      break unless alive
+    end
+    threads.each {|th|
+      if(th[:name] == :monitor_keys_thread)
+        kill_thread th
+      end
+      sleep 0.1
+    }
+  end
+
   def print_threads_status
     @threads.each do |thread|
       puts "\r"

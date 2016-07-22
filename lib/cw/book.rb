@@ -1,13 +1,12 @@
 # encoding: utf-8
 
-class Book < FileDetails
-
-  include Tester
+class Book < Tester
 
   def initialize book_details
+
+    init_filenames
 #    prn.print_advice('Test Words')
     @book_details = book_details
-    super()
     read_book book_location
     find_sentences
 #    print_book_advice
@@ -28,7 +27,7 @@ class Book < FileDetails
   def audio_play_tone t    ; audio.play_tone(t)                ; end
   def play_r_tone          ; audio_play_tone @r_tone           ; end
   def complete_word?       ; get_word_last_char == ' '         ; end
-  def audio_stop           ; audio.stop if audio_still_playing?; end
+  def audio_stop           ; audio.stop if audio.still_playing?; end
   def book_location        ; @book_details.book_location       ; end
   def reset_sentence_flags ; sentence.reset_flags              ; end
   def print_book_advice    ; print.print_advice('Play Book')   ; end
@@ -113,7 +112,7 @@ class Book < FileDetails
   end
 
   def next_sentence_or_quit?
-    playing = audio_still_playing?
+    playing = audio.still_playing?
     sleep 0.01 if playing
     next_sentence unless playing
     if change_repeat_or_quit?

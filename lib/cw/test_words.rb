@@ -1,15 +1,6 @@
 # encoding: utf-8
 
-class TestWords < FileDetails
-
-  include Tester
-
-  def initialize
-
-    super()
-
-#    print_test_advice
-  end
+class TestWords < Tester
 
   def print_test_advice    ; print.print_advice('Test Words')    ; end
 

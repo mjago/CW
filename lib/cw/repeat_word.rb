@@ -1,12 +1,6 @@
 # encoding: utf-8
 
-class RepeatWord < FileDetails
-
-  include Tester
-
-  def initialize
-    super
-  end
+class RepeatWord < Tester
 
   #overloaded #todo
 
@@ -58,19 +52,18 @@ class RepeatWord < FileDetails
   def run words
     temp_words = words.all
     temp_words.each do |word|
-      puts word
       loop do
         @input_word, @words = '', Words.new
         @quit, @failed = nil, nil
         @words.add [word]
         @threads = CWThreads.new(self, thread_processes)
-        @threads.run
-#        break unless @failed
-#        break if Params.exit
+
+        @threads.start_threads
+        @threads.wait_for_threads
+        system("stty -raw echo")
+        break unless @failed
       end
-#      break if Params.exit
     end
-    reset_stdin
-    print.newline
+#      break if Params.exit
   end
 end

@@ -1,15 +1,6 @@
 # encoding: utf-8
 
-class TestLetters < FileDetails
-
-  include Tester
-
-  def initialize
-    super()
-#    print_test_advice
-  end
-
-  def print_test_advice ; print.print_advice('Test Letters') ; end
+class TestLetters < Tester
 
   def process_input_word_maybe
     if @word_to_process
