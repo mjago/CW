@@ -2,14 +2,14 @@
 
 class Book < Tester
 
+  include FileDetails
+
   def initialize book_details
 
     init_filenames
-#    prn.print_advice('Test Words')
     @book_details = book_details
     read_book book_location
     find_sentences
-#    print_book_advice
   end
 
   def sentence             ; @sentence ||= Sentence.new        ; end
@@ -160,6 +160,7 @@ class Book < Tester
 
   def play_sentences_until_quit
     get_book_progress
+
     loop do
       check_sentence_count
       sync_with_print
@@ -207,7 +208,8 @@ class Book < Tester
   def thread_processes
     [:monitor_keys_thread,
      :play_sentences_thread,
-     :print_sentences_thread]
+     :print_sentences_thread
+    ]
   end
 
 end
