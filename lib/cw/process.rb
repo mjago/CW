@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-module CWG
-
 module Process
   def exist?(pid)
     Process.kill(0, pid)
@@ -10,6 +8,4 @@ module Process
     false
   end
   module_function :exist?
-end
-
 end
