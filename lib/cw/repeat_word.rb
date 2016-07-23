@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class RepeatWord < Tester
 
   #overloaded #todo
@@ -66,4 +68,6 @@ class RepeatWord < Tester
     end
 #      break if Params.exit
   end
+end
+
 end

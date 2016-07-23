@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Cl performs command-line processing
 
 class Cl
@@ -118,4 +120,5 @@ class Cl
     "#{ebook2cw_path} #{build_command_line} #{input}"
   end
 
+end
 end

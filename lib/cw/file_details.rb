@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 module FileDetails
   HERE = File.dirname(__FILE__) + '/'
   TEXT = HERE + '../../data/text/'
@@ -11,5 +13,7 @@ module FileDetails
     @text_folder     = TEXT
     @progress_file   = 'progress.txt'
   end
+
+end
 
 end

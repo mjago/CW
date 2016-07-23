@@ -1,5 +1,7 @@
 # Module ToneHelpers provides helper methods for ToneGenerator
 
+module CWG
+
 module ToneHelpers
 
   TWO_PI           = 2 * Math::PI
@@ -24,5 +26,7 @@ module ToneHelpers
   def last_element? idx, chr
     idx == chr.size - 1
   end
+
+end
 
 end

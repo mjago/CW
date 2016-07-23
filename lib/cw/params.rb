@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 module Params
 
   extend self
@@ -80,5 +82,7 @@ module Params
   def delim_str
     "#{'=' * Params.name.size}\n"
   end
+
+end
 
 end

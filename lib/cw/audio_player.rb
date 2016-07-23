@@ -2,6 +2,8 @@
 
 require 'timeout'
 
+module CWG
+
 class AudioPlayer
 
   AFPLAY = '/usr/bin/afplay'
@@ -87,4 +89,5 @@ class AudioPlayer
   def startup_delay
     0.2
   end
+end
 end

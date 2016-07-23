@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class Tester
 
   def quit?                ; @quit                             ; end
@@ -283,5 +285,6 @@ class Tester
     end
   end
 
+end
 
 end

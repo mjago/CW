@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class CWThreads
 
   attr_reader :threads
@@ -131,5 +133,7 @@ class CWThreads
     monitor_threads
     system("stty -raw echo")
   end
+
+end
 
 end

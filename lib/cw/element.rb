@@ -1,3 +1,5 @@
+module CWG
+
 module Element
 
   def element type
@@ -69,5 +71,7 @@ module Element
   def inc_first_element
     @first_element += 1
   end
+
+end
 
 end

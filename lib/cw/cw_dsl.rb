@@ -4,6 +4,8 @@
 
 require_relative 'params'
 
+module CWG
+
 class CwDsl
 
   include Params::ParamsSetup
@@ -306,5 +308,7 @@ class CwDsl
   alias_method :words_beginning_with,  :beginning_with
   alias_method :words_no_longer_than,  :no_longer_than
   alias_method :words_no_shorter_than, :no_shorter_than
+
+end
 
 end

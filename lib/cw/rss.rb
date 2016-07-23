@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Rss
 
 class Rss
@@ -58,4 +60,6 @@ class Rss
     temp.map { |i| quote += i }
     (quote.split.collect { |article| cw_chars(article.strip.delete("\"").downcase)})
   end
+end
+
 end

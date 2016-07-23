@@ -3,6 +3,8 @@
 require 'paint'
 require 'io/console'
 
+module CWG
+
 class Print
 
   class ProgressPrint
@@ -134,5 +136,7 @@ class Print
   def print_advice name
     puts "#{name}: Press Q 4 times to Exit"
   end
+
+end
 
 end

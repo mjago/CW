@@ -1,3 +1,5 @@
+module CWG
+
 class ConfigFile
 
   CONFIG  = ".cw_config"
@@ -66,4 +68,5 @@ class ConfigFile
       end
     end
   end
+end
 end

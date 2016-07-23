@@ -1,5 +1,7 @@
   # encoding: utf-8
 
+module CWG
+
   class CwEncoding
 
     def fetch char
@@ -78,3 +80,5 @@
     end
 
   end
+
+end

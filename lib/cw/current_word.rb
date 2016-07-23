@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class CurrentWord
 
   include TextHelpers
@@ -33,5 +35,7 @@ class CurrentWord
     letr.downcase!
     push_letter letr
   end
+
+end
 
 end

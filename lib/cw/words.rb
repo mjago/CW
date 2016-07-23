@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Words deals with words
 
 class Words
@@ -167,4 +169,7 @@ class Words
   def numbers_spoken()
 
   end
+
+end
+
 end

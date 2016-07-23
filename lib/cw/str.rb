@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Str
 
 class Str
@@ -49,5 +51,7 @@ class Str
     containing = Params.containing
     containing ? "Containing: #{stringify containing}\n" : nil
   end
+
+end
 
 end

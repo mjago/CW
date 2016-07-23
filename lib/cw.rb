@@ -45,7 +45,7 @@ end
 # CW provides Morse code generation functionality
 # Inherits CwDsl
 
-class CW < CwDsl
+class CW < CWG::CwDsl
 
   # Initialize CW class. Eval block if passed in.
 

@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class BookDetails
 
   attr_reader :args
@@ -66,4 +68,5 @@ class BookDetails
   def book_timeout?
     @timeout && (Time.now > @timeout)
   end
+end
 end

@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class KeyInput
 
   def initialize
@@ -63,5 +65,7 @@ class KeyInput
     push_to_quit_maybe
     return quit if is_quit?
   end
+
+end
 
 end

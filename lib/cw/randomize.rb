@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Randomize provides character randomising
 
 class Randomize
@@ -69,5 +71,7 @@ class Randomize
     end
     @words
   end
+
+end
 
 end

@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class TestLetters < Tester
 
   def process_input_word_maybe
@@ -24,5 +26,7 @@ class TestLetters < Tester
     @popped = stream.pop_next_marked
     print.char_result(@popped) if(@popped && ! print_letters?)
   end
+
+end
 
 end

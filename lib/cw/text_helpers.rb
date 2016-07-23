@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 module TextHelpers
 
   def letter_group
@@ -21,5 +23,7 @@ module TextHelpers
     end
     temp
   end
+
+end
 
 end

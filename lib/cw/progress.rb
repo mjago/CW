@@ -3,6 +3,8 @@
 require 'ruby-progressbar'
 #require 'paint'
 
+module CWG
+
 class Progress
 
   def initialize(title)
@@ -23,5 +25,7 @@ class Progress
   def increment
     @progress.increment
   end
+
+end
 
 end

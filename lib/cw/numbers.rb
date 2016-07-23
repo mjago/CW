@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Numbers provides the Number Testing functionality
 
 class Numbers
@@ -26,4 +28,6 @@ class Numbers
     reverse_numbers_maybe
     @numbers.split('').join(' ')
   end
+end
+
 end

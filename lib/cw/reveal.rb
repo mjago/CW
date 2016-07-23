@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class Reveal < Tester
 
   def initialize
@@ -40,5 +42,7 @@ class Reveal < Tester
       @reveal_buf += @popped[:value] + ' '
     end
   end
+
+end
 
 end

@@ -2,6 +2,8 @@
 
 require 'thread'
 
+module CWG
+
 class MonitorKeys
   def initialize(cw)
     @cw = cw
@@ -33,5 +35,7 @@ class MonitorKeys
       build_word_maybe
     end
   end
+
+end
 
 end

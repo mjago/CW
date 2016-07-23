@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class Sentence
 
   attr_accessor :index #todo
@@ -97,5 +99,7 @@ class Sentence
     array = @sentences[@index].split(' ')
     array.collect {|x| x + ' '}
   end
+
+end
 
 end

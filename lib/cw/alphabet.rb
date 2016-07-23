@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 #class Alphabet provides alphabet generation functionality
 
 class Alphabet
@@ -63,4 +65,5 @@ class Alphabet
     reverse_alphabet_maybe
     @letters.split('').join(' ')
   end
+end
 end

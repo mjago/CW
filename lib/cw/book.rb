@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module CWG
+
 class Book < Tester
 
   include FileDetails
@@ -212,4 +214,5 @@ class Book < Tester
     ]
   end
 
+end
 end

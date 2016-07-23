@@ -2,6 +2,8 @@
 
 require 'wavefile'
 
+module CWG
+
 class ToneGenerator
 
   MUTE = false
@@ -31,6 +33,7 @@ class ToneGenerator
 
   def play
     cmd = play_command + ' ' + play_filename
+    puts "cmd = #{cmd}"
     @pid = ! @dry_run ? Process.spawn(cmd) : cmd
   end
 
@@ -211,3 +214,4 @@ class ToneGenerator
 
 end
 
+end
