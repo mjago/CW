@@ -9,7 +9,7 @@ class TestTester < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @object = Tester.new
+    @object = CWG::Tester.new
 
   end
 
@@ -33,15 +33,15 @@ class TestTester < MiniTest::Test
   end
 
   def test_print_instantiates_Print_object
-    assert_equal Print, @object.print.class
+    assert_equal CWG::Print, @object.print.class
   end
 
   def test_timing_instantiates_Timing_object
-    assert_equal Timing, @object.timing.class
+    assert_equal CWG::Timing, @object.timing.class
   end
 
   def test_audio_instantiates_AudioPlayer_object
-    assert_equal AudioPlayer, @object.audio.class
+    assert_equal CWG::AudioPlayer, @object.audio.class
   end
 
 end

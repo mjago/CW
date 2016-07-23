@@ -44,7 +44,7 @@ class TestCW < MiniTest::Test
     temp = nil
     CW.new {
       no_run
-      temp = Params.dictionary
+      temp = CWG::Params.dictionary
     }
     assert_equal File.expand_path(ROOT + '/data/text/common_words.txt'), File.expand_path(temp)
   end

@@ -20,7 +20,7 @@ class TestCWStream < MiniTest::Test
 
   def setup
     @test_var = 0
-    @threads = CWThreads.new(self, [:a_thread])
+    @threads = CWG::CWThreads.new(self, [:a_thread])
   end
 
   def teardown
@@ -48,7 +48,7 @@ class TestCWStream < MiniTest::Test
   end
 
   def test_kill_thread_kills_thread
-    threads = CWThreads.new(self, [:sleep_thread])
+    threads = CWG::CWThreads.new(self, [:sleep_thread])
     threads.start_threads
     thread = threads.threads[0]
     assert_equal "run", thread[:thread].status
@@ -67,7 +67,7 @@ class TestCWStream < MiniTest::Test
   end
 
   def test_handles_multiple_threads
-    threads = CWThreads.new(self, [:a_thread, :sleep_thread])
+    threads = CWG::CWThreads.new(self, [:a_thread, :sleep_thread])
     threads.start_threads
     assert threads.threads[0][:thread].is_a? Thread
     assert threads.threads[1][:thread].is_a? Thread
