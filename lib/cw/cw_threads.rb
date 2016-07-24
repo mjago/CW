@@ -99,33 +99,37 @@ module CWG
       kill_thread(thread) unless thread_false_or_nil?(thread)
     end
 
-    def close_threads
-      await_termination_count = 0
-
-      loop do
-        waiting = false
-        sleep 0.1
-        @threads.each do |thread|
-          if(thread[:name] == :monitor_keys_thread)
-            kill_monitor_keys_thread_maybe thread
-          else
-            unless thread_false_or_nil?(thread)
-              waiting = true
-              break
-            end
+    def any_thread_open?
+      @threads.each do |thread|
+        if(thread[:name] == :monitor_keys_thread)
+          kill_monitor_keys_thread_maybe thread
+        else
+          unless thread_false_or_nil?(thread)
+            return true
           end
         end
-        # print_threads_status
-        return if(waiting == false)
-        await_termination_count += 1
-        break if(await_termination_count >= 10)
       end
+      nil
+    end
 
+    def force_kill
+      puts 'Forcing kill!'
       kill_open_threads
       # print_threads_status
       system("stty -raw echo")
       sleep 0.2
       exit(1)
+    end
+
+    def close_threads
+      await_termination_count = 0
+      loop do
+        sleep 0.1
+        break unless any_thread_open?()
+        # print_threads_status
+        await_termination_count += 1
+        force_kill if(await_termination_count >= 10)
+      end
     end
 
     def run
