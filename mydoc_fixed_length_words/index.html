@@ -716,7 +716,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="most-common-words">Most common words</h2>
 
-<p>As familiarity with receiving CW grows it can be useful to concentrate on the <strong>very common words</strong> in order to become more familiar with the sound of the word itself. To this end a dictionary of the <strong>one-hundred most common words</strong> is available for our use. Most of the most common words are short words. Here we select three letter words from this dictionary.</p>
+<p>As familiarity with receiving CW grows it can be useful to concentrate on the <strong>very common words</strong> in order to become familiar with the sound of the word itself, as opposed to the individual letters. To this end a dictionary of the <strong>one-hundred most common words</strong> is available for our use. Most of the most common words are short words. Here we select three letter words from this dictionary.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># fixed_length_words_3.rb</span>
 
@@ -753,6 +753,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Notice in the previous example we called <strong>number_of_words</strong> after calling <strong>word_size</strong>. Had we called <strong>number_of_words</strong> first, our fifteen words would probably contain several words having a size different from three letters. Thus by the time we had filtered out our three letter words, our fifteen original words would have reduced to a smaller number of test words. Swap <strong>number_of_words</strong> and <strong>word_size</strong> and re-run a couple of times to test this out.</p>
 
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> In general, word_size should be defined after any filtering has been done.</div>
 <div class="alert alert-danger" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You can quit any test by entering <strong><em>four</em> “q” keystrokes</strong> in a row.</div>
 
 <div class="seriesContext">
@@ -1311,7 +1312,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 13, 2016 <br />
+<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 25, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>

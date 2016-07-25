@@ -3,7 +3,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="In this tutorial we will look at selecting words with specific letters for practice.">
+<meta name="description" content="In this tutorial we will look at filtering out words with specific letters for practice.">
 <meta name="keywords" content="getting_startedtutorialcommands,  tutorial">
 <title>Letter Filtering  | CW - learn and develop morse</title>
 <link rel="stylesheet" href="/CW/css/syntax.css">
@@ -575,7 +575,7 @@ window.location.href = uri;
 <div class="post-content">
 
    
-    <div class="summary">In this tutorial we will look at selecting words with specific letters for practice.</div>
+    <div class="summary">In this tutorial we will look at filtering out words with specific letters for practice.</div>
    
 
     
@@ -611,6 +611,9 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="words-beginning-with-j">Words beginning with ‘j’</h2>
 
+<p>The command <em>words_beginning_with</em> can be passed one or more letters. Here we pass the letter <em>j</em> for words beginning with <em>j</em>.
+<em>beginning_with</em> is an alias for <em>words_beginning_with</em> - either can be used.</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_filtering.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
@@ -643,7 +646,9 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="words-beginning-with-qu">Words beginning with ‘qu’</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We can filter single letter or multiple letter word groups.</div>
+<p>Here we filter words beginning with the letters <em>qu</em> (in that order).</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> We can filter single letter or multiple letter word groups.</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_filtering_2.rb</span>
 
@@ -677,6 +682,8 @@ $('#toc').on('click', 'a', function() {
 <p><br /></p>
 
 <h2 id="words-ending-with-ing-testletters">Words ending with ‘ing’ (test_letters)</h2>
+
+<p>The command <em>ending_with</em> is hopefully self exlanatory. It is an alias for the command <em>words_ending_with</em>.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> It is useful to practice commonly occurring letter groupings such as ‘ing’, since over time you will learn to hear the grouping as a single entity.</div>
 
@@ -712,6 +719,8 @@ $('#toc').on('click', 'a', function() {
 <p><br /></p>
 
 <h2 id="words-including-ain-testletters">Words including ‘ain’ (test_letters)</h2>
+
+<p>The command <em>including</em> can be used to select words that include the letter or letter sequence supplied.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_filtering_4.rb</span>
 
@@ -1308,7 +1317,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 13, 2016 <br />
+<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 25, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
