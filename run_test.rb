@@ -28,7 +28,6 @@ if(ARGV[0].class == String)
 #  system("ffmpeg -i #{@audio_src_file} #{@audio_dest_file}")
 
   puts "copying cw_scripts to _includes"
-
   FileUtils.cp(Dir.glob('./cw_scripts/*.rb'), '_includes')
 else
   puts ("Error: run_test Usage: ruby run_test.rb test_script_name")
