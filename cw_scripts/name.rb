@@ -1,6 +1,8 @@
 require "cw"
 
 cw do
-# TODO:  name()
+  name       'four simple words at 18 wpm'
+  wpm        18
   word_count 4
+  list
 end
