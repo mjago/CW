@@ -579,11 +579,12 @@ window.location.href = uri;
 
   <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 
-<span class="n">cw</span> <span class="o">=</span> <span class="no">CW</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">use_ebook2cw</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">noise</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">word_count</span> <span class="mi">4</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">test_words</span>
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">noise</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
 
 </code></pre>
 </div>

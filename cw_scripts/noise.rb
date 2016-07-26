@@ -1,7 +1,8 @@
 require "cw"
 
-cw = CW.new
-cw.use_ebook2cw
-cw.noise
-cw.word_count 4
-cw.test_words
+cw do
+  use_ebook2cw
+  noise
+  word_count 4
+  test_letters
+end

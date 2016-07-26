@@ -13,7 +13,7 @@ puts "@audio_src_file = #{@audio_src_file}"
 
 if(ARGV[0].class == String)
   @audio_dest_file = HERE + @audio_dest_dir + ARGV[0] + '.wav'
-  puts @audio_dest_file
+  puts "Writing audio file: " + @audio_dest_file
 
   puts "running cw_script..."
   system("cw #{@cw_script_dir + ARGV[0]}.rb")
