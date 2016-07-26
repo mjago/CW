@@ -577,15 +577,21 @@ window.location.href = uri;
 
     
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+  <p>The <strong>no_noise</strong> command can be used to disable the <strong>noise</strong> command.
+Here we play two words with noise, followed by two words without noise.</p>
 
-<span class="n">cw</span> <span class="o">=</span> <span class="no">CW</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">use_ebook2cw</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">noise</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">word_count</span> <span class="mi">2</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">test_letters</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">no_noise</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">test_letters</span>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The command line utility <strong>ebook2cw</strong> by <strong>Fabian Kurz</strong> is required to utilize the noise command</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">noise</span>
+  <span class="n">word_count</span> <span class="mi">2</span>
+  <span class="n">test_letters</span>
+  <span class="n">no_noise</span>
+  <span class="n">test_letters</span>
+<span class="k">end</span>
 
 </code></pre>
 </div>
