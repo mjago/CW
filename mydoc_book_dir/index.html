@@ -584,30 +584,35 @@ window.location.href = uri;
 
     
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+  <p>The <strong>book_dir</strong> command is used to set the path to the
+directory containing the book when book reading or
+book converting.</p>
 
-<span class="n">cw</span> <span class="k">do</span>
-<span class="c1"># TODO:  book_dir()</span>
-  <span class="n">word_count</span> <span class="mi">4</span>
-<span class="k">end</span>
+<pre><code class="language-raws">require "cw"
 
+cw do
+  book_dir "~/books"
+  book_name "book_to_read.txt"
+  wpm 18
+  ewpm 12
+  read_book(sentences: 2)
+end
 </code></pre>
-</div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/book_dir.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/book_dir.mp3">/CW/audio/book_dir.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/book_dir.rb"> book_dir.rb</a>
-     
 
-</div>
-<p><br /></p>
+<p>The <strong>book_dir</strong> command may be used in a <em>.cw_config</em>
+configuration file to set its value globally to all tests.</p>
+
+<pre><code class="language-raw">
+ # .cw_config
+
+wpm:             18
+book_name:       book_to_read.txt
+book_dir:        ./books
+play_command:    /usr/bin/afplay
+success_colour:  green
+fail_colour:     orange
+list_colour:     cyan
+</code></pre>
 
 <div class="seriesContext">
   <a>
@@ -1221,7 +1226,7 @@ window.location.href = uri;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 26, 2016 <br />
+<p>Page last updated:</span> July 26, 2016<br/> Site last generated: Jul 26, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
