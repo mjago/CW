@@ -584,12 +584,10 @@ window.location.href = uri;
 
     
 
-  <p>The <strong>author</strong> command is used to set the author meta field when converting
-a book to <em>mp3</em>.</p>
+  <p>The <strong>audio_filename</strong> command is used for setting the destination book name used for either book reading, or book conversion.</p>
 
 <pre><code class="language-raw">cw do
-   book_name 'Jekyll_and_Hyde.txt'
-   author    'Robert Louis Stevenson'
+   book_name 'book.txt'
    book_dir './books'
    audio_filename 'book.mp3'
    audio_dir './audio'
