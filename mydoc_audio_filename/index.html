@@ -584,30 +584,19 @@ window.location.href = uri;
 
     
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+  <p>The <strong>author</strong> command is used to set the author meta field when converting
+a book to <em>mp3</em>.</p>
 
-<span class="n">cw</span> <span class="k">do</span>
-<span class="c1"># TODO:  audio_filename()</span>
-  <span class="n">word_count</span> <span class="mi">4</span>
-<span class="k">end</span>
-
+<pre><code class="language-raw">cw do
+   book_name 'Jekyll_and_Hyde.txt'
+   author    'Robert Louis Stevenson'
+   book_dir './books'
+   audio_filename 'book.mp3'
+   audio_dir './audio'
+   wpm 18
+   convert_book
+end
 </code></pre>
-</div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/audio_filename.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/audio_filename.mp3">/CW/audio/audio_filename.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/audio_filename.rb"> audio_filename.rb</a>
-     
-
-</div>
-<p><br /></p>
 
 <div class="seriesContext">
   <a>
@@ -1213,7 +1202,7 @@ window.location.href = uri;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 26, 2016 <br />
+<p>Page last updated:</span> July 26, 2016<br/> Site last generated: Jul 26, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
