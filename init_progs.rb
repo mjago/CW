@@ -9,7 +9,6 @@
 "frequency",
 "name",
 "no_noise",
-"no_shuffle",
 "noise",
 "pause",
 "print_letters",

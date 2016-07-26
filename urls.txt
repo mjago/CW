@@ -218,13 +218,6 @@ mydoc_no_noise:
 
 
  
-mydoc_no_shuffle:
-  title: "no_shuffle"
-  url: /CW/mydoc_no_shuffle/
-  link: <a href="/CW/mydoc_no_shuffle/">no_shuffle</a>
-
-
- 
 mydoc_noise:
   title: "noise"
   url: /CW/mydoc_noise/
