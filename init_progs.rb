@@ -7,7 +7,6 @@
 "effective_wpm",
 "ewpm",
 "frequency",
-"mark_words",
 "name",
 "no_noise",
 "no_shuffle",

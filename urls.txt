@@ -204,13 +204,6 @@ mydoc_frequency:
 
 
  
-mydoc_mark_words:
-  title: "mark_words"
-  url: /CW/mydoc_mark_words/
-  link: <a href="/CW/mydoc_mark_words/">mark_words</a>
-
-
- 
 mydoc_name:
   title: "name"
   url: /CW/mydoc_name/
