@@ -438,13 +438,6 @@ window.location.href = uri;
             
             
             
-            <li><a href="/CW/mydoc_pause/">pause</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="/CW/mydoc_print_letters/">print_letters</a></li>
             
             
@@ -474,13 +467,6 @@ window.location.href = uri;
             
             
             <li><a href="/CW/mydoc_title/">title</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="/CW/mydoc_un_pause/">un_pause</a></li>
             
             
             
@@ -595,35 +581,25 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="useebook2cw-command">use_ebook2cw command</h2>
+  <p>The <strong>use_ebook2cw</strong> command instructs <em>CW</em> to use the <strong>ebook2cw</strong>
+tone generator rather than CW’s own internal tone generator.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+<p>Here is a script that shows both generators in action:</p>
 
-<span class="n">cw</span> <span class="o">=</span> <span class="no">CW</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">use_ebook2cw</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">word_count</span> <span class="mi">4</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">test_words</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="nb">require</span> <span class="s2">"cw"</span>
 
-<span class="n">cw</span><span class="p">.</span><span class="nf">use_ruby_tone</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">test_words</span>
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">test_words</span>
+
+  <span class="n">use_ruby_tone</span>
+  <span class="n">test_words</span>
+<span class="k">end</span>
 
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/use_ebook2cw.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/use_ebook2cw.mp3">/CW/audio/use_ebook2cw.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/use_ebook2cw.rb"> use_ebook2cw.rb</a>
-     
-
-</div>
-<p><br /></p>
 
 <div class="seriesContext">
   <a>
@@ -697,14 +673,6 @@ $('#toc').on('click', 'a', function() {
     
       
     
-      
-    
-      
-        
-      
-    
-      
-        
       
     
       
@@ -1174,14 +1142,6 @@ $('#toc').on('click', 'a', function() {
       
       
       <li>
-        <a href="../mydoc_pause/">pause command</a>
-      </li>
-      
-      
-      
-      
-      
-      <li>
         <a href="../mydoc_print_letters/">print_letters command</a>
       </li>
       
@@ -1215,14 +1175,6 @@ $('#toc').on('click', 'a', function() {
       
       <li>
         <a href="../mydoc_title/">title command</a>
-      </li>
-      
-      
-      
-      
-      
-      <li>
-        <a href="../mydoc_un_pause/">un_pause command</a>
       </li>
       
       
@@ -1285,7 +1237,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> March 20, 2016<br/> Site last generated: Jul 27, 2016 <br />
+<p>Page last updated:</span> July 27, 2016<br/> Site last generated: Jul 27, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>

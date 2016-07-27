@@ -306,16 +306,6 @@
 
 
 {
-"title": "pause command",
-"tags": "commands",
-"keywords": "commands",
-"url": "/CW/mydoc_pause/",
-"summary": ""
-},
-
-
-
-{
 "title": "Posts",
 "tags": "getting_startedformattingcontent_types",
 "keywords": "posts, blog, news, tutorial, exclusion, frontmatter",
@@ -460,16 +450,6 @@
 "tags": "commands",
 "keywords": "commands",
 "url": "/CW/mydoc_title/",
-"summary": ""
-},
-
-
-
-{
-"title": "un_pause command",
-"tags": "commands",
-"keywords": "commands",
-"url": "/CW/mydoc_un_pause/",
 "summary": ""
 },
 

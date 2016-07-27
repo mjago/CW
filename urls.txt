@@ -225,13 +225,6 @@ mydoc_noise:
 
 
  
-mydoc_pause:
-  title: "pause"
-  url: /CW/mydoc_pause/
-  link: <a href="/CW/mydoc_pause/">pause</a>
-
-
- 
 mydoc_print_letters:
   title: "print_letters"
   url: /CW/mydoc_print_letters/
@@ -264,13 +257,6 @@ mydoc_title:
   title: "title"
   url: /CW/mydoc_title/
   link: <a href="/CW/mydoc_title/">title</a>
-
-
- 
-mydoc_un_pause:
-  title: "un_pause"
-  url: /CW/mydoc_un_pause/
-  link: <a href="/CW/mydoc_un_pause/">un_pause</a>
 
 
  
