@@ -578,10 +578,6 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="using-ebook2cw">Using ebook2cw</h2>
 
 <p><strong>CW</strong> can utilize the program <strong>ebook2cw</strong> by <strong>Fabian Kurz</strong> for the generation of audio tones. This makes some extra configurations possible with respect to tonal characteristics, including using square and triangle waves, instead of sinewaves, and adding noise to the CW signal to simulate radio interference (QRM).</p>
@@ -596,7 +592,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>If <strong>CW</strong> can’t find <em>ebook2cw</em> it is possible to define the path using the command <strong>ebook2cw_path</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
   <span class="ss">ebook2cw_path: </span><span class="s2">"/usr/bin/ebook2cw"</span>
   <span class="n">wpm</span>            <span class="mi">20</span>
@@ -608,7 +604,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Alternatively, the path may be included in the <em>.cw_config</em> file.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 ebook2cw_path:  /usr/bin/ebook2cw
 
 </code></pre>
@@ -618,7 +614,7 @@ ebook2cw_path:  /usr/bin/ebook2cw
 <p>To add noise to the test (to simulate radio noise) you may use the <strong>noise</strong> command:
 require “cw”</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
   <span class="n">use_ebook2cw</span>
   <span class="n">noise</span>
@@ -633,7 +629,7 @@ require “cw”</p>
 
 <p>To generate squarewave tones, use the set_tone command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
   <span class="n">use_ebook2cw</span>
   <span class="n">set_tone_type</span> <span class="ss">:squarewave</span>
@@ -648,7 +644,7 @@ require “cw”</p>
 
 <p>To generate sawtooth tones:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
   <span class="n">use_ebook2cw</span>
   <span class="n">set_tone_type</span> <span class="ss">:sawtooth</span>
@@ -664,7 +660,7 @@ require “cw”</p>
 
 <p>Space between words may be added seperately (inter-word spacing as opposed to inter-letter spacing) using the <strong>word_spacing</strong> command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
   <span class="n">use_ebook2cw</span>
   <span class="n">wpm</span>          <span class="mi">20</span>

@@ -578,15 +578,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="four-groups-of-random-letters">Four groups of random letters</h2>
 
 <p>We can generate words containing random letters by calling <strong>random_letters</strong>. We can also indicate the size and quantity of words required by passing <strong>random_letters</strong> the parameters as shown below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="c1"># :size is size of group</span>
 <span class="c1"># :count is number of groups to generate</span>
 
@@ -597,7 +593,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>The words produced can then be filtered further in the normal way.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -630,7 +626,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>The <strong>random_numbers</strong> command works in a similar manner to <strong>random_letters</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups_2.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups_2.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -663,7 +659,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>There is also a command called <strong>random_alphanumeric</strong> which will generate groups of mixed numbers and letters. <strong>random_letters_numbers</strong> is an alias for <strong>random_alphanumeric</strong> and may be used if preferred.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups_3.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups_3.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -707,7 +703,7 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This test introduces the command <strong>print_words</strong>, which prints the current letter just after it has been played by the audio player. It was introduced to practice code recognition (with no typing), typically at faster
 speeds.</div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups_4.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># letter_number_groups_4.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 

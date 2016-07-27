@@ -590,10 +590,6 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   
 <script>
 $(document).ready(function(){
@@ -645,7 +641,7 @@ cell 2a | cell 2b
 
 <p>Also, you need to add this script to trigger the jQuery table on your page:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 
     <span class="nx">$</span><span class="p">(</span><span class="s1">'table.display'</span><span class="p">).</span><span class="nx">DataTable</span><span class="p">(</span> <span class="p">{</span>
@@ -665,7 +661,7 @@ cell 2a | cell 2b
 
 <p>Since Markdown doesn’t allow you to add classes to tables, you’ll need to use HTML for any datatables. Here’s an example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"sampleTable"</span> <span class="na">class=</span><span class="s">"display"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"sampleTable"</span> <span class="na">class=</span><span class="s">"display"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;thead&gt;</span>
       <span class="nt">&lt;tr&gt;</span>
          <span class="nt">&lt;th&gt;</span>Parameter<span class="nt">&lt;/th&gt;</span>

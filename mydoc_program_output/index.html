@@ -578,10 +578,6 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="output-introduction">Output introduction</h2>
 
 <p>By default <em>CW</em> prints successful words and letters in <em>blue</em> and failed in <em>red</em>.
@@ -602,7 +598,7 @@ tune the colours to work against the shell colour in use.</p>
 
 <p>Here is an example of setting <strong>success</strong>, <strong>fail</strong>, and <strong>list</strong> colours:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
 <span class="n">cw</span> <span class="k">do</span>
   <span class="nb">name</span> <span class="s1">'abbreviations'</span>
   <span class="n">success_colour</span> <span class="ss">:green</span>
@@ -643,7 +639,7 @@ tune the colours to work against the shell colour in use.</p>
 
 <p>To see all colours in action run the following script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:black</span><span class="p">,</span><span class="ss">:red</span><span class="p">,</span><span class="ss">:green</span><span class="p">,</span><span class="ss">:yellow</span><span class="p">,</span><span class="ss">:blue</span><span class="p">,</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:black</span><span class="p">,</span><span class="ss">:red</span><span class="p">,</span><span class="ss">:green</span><span class="p">,</span><span class="ss">:yellow</span><span class="p">,</span><span class="ss">:blue</span><span class="p">,</span>
            <span class="ss">:magenta</span><span class="p">,</span><span class="ss">:cyan</span><span class="p">,</span><span class="ss">:white</span><span class="p">,</span><span class="ss">:default</span><span class="p">]</span>
 <span class="n">colours</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">colour</span><span class="o">|</span>
   <span class="n">cw</span> <span class="k">do</span>

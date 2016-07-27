@@ -578,15 +578,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="test-by-word">Test by word</h2>
 
 <p>First you will be tested against five generated words on a word-by-word basis. The words that you hear as morse will only be displayed on completion of the word (don’t forget to type a space at the end). Create the CW script five-common-words.rb (shown below) in a text editor, or download via the link and save as <strong>five_common_words.rb</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -619,7 +615,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>To run the test with the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 cw five_common_words
 
 </code></pre>
@@ -643,7 +639,7 @@ cw five_common_words
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You may find this kind of test more informative if you are frequently guessing some letters incorrectly.</div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_2.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_2.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -687,7 +683,7 @@ cw five_common_words
 
 <p>Here we will combine both examples into a single script. In practice you may end up having CW scripts comprising of many tests (perhaps a script called daily.rb or morning.rb). Create or download the combined CW script (or download it) and run it.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_3.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_3.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -730,7 +726,7 @@ cw five_common_words
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <strong>repeat_word</strong> command will cause <strong>CW</strong> to replay the current word if it has been entered incorrectly, (or hasn’t been entered at all).</div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words-4.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words-4.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -764,7 +760,7 @@ cw five_common_words
 
 <p>Remove all commands apart from <strong>word_count</strong> and see what happens.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_5.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_5.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 

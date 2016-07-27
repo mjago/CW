@@ -578,15 +578,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="running-cw">Running cw</h2>
 
 <p>In addition to running your <strong>cw scripts</strong> by typing:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby script.rb
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>ruby script.rb
 </code></pre>
 </div>
 <p><strong>CW</strong> also provides an executable called <strong>cw</strong>, which can be used instead.</p>
@@ -597,13 +593,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>In its simplest form, the <strong>cw</strong> command is used as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cw script_name.rb
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cw script_name.rb
 </code></pre>
 </div>
 
 <p>Alternatively the script extension may be left off altogether (so long as the extension is <strong>.rb</strong>):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cw script_name
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cw script_name
 </code></pre>
 </div>
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Since the <em>cw script</em> is written in <em>Ruby</em> syntax, giving it the extension <strong>.rb</strong> allows many text editors to automatically syntax-highlight the file, in addition to performing static syntax checking. You may however choose to have no extension.</div>
@@ -612,7 +608,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>It is also possible to call multiple scripts to be run one after the other. In this case the scripts to run are seperated by whitespace:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cw script_1 script_2
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cw script_1 script_2
 </code></pre>
 </div>
 
@@ -622,13 +618,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>For example, the following command will run <em>script.rb</em> twice:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cw script.rb 2
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cw script.rb 2
 </code></pre>
 </div>
 
 <p>Here we will run script_1.rb and script_2.rb three times. Notice the extensions aren’t supplied:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cw script_1 script_2 3
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cw script_1 script_2 3
 </code></pre>
 </div>
 

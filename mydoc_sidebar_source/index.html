@@ -578,10 +578,6 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="navgoco-foundation">Navgoco foundation</h2>
 
 <p>The sidebar uses the <a href="https://github.com/tefra/navgoco">Navgoco jQuery plugin</a> as its basis. Why not use Bootstrap? Navgoco provides a few features that I couldn’t find in Bootstrap:</p>
@@ -618,7 +614,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>For example, the sidebar.html file contains the following code:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">external_url</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><pre class="highlight"><code> <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">external_url</span><span class="w"> </span><span class="p">%}</span>
 &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">external_url</span><span class="p">}}</span>" target="_blank"&gt;<span class="p">{{</span><span class="nv">deeplevel</span><span class="p">.</span><span class="nv">title</span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
 </code></pre>
 </div>
@@ -631,7 +627,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>For example, the sidebar.html file contains the following code:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">%}</span>
   &lt;li class="active"&gt;&lt;a href="<span class="p">{{</span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">prepend</span><span class="p">:</span><span class="w"> </span>site.baseurl<span class="p">}}</span>"&gt;<span class="p">{{</span><span class="nv">subfolderitem</span><span class="p">.</span><span class="nv">title</span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
 </code></pre>
 </div>
@@ -642,7 +638,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>This is why the <code class="highlighter-rouge">url</code> value in the sidebar data file looks something like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Understanding how the sidebar works</span>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Understanding how the sidebar works</span>
       <span class="s">url</span><span class="pi">:</span> <span class="s">/mydoc_understand_sidebar/</span> 
       <span class="s">output</span><span class="pi">:</span> <span class="s">web, pdf</span>
 </code></pre>

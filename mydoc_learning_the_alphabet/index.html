@@ -578,17 +578,13 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    
-
-    
-
   <h2 id="test-straight-alphabet">Test straight alphabet</h2>
 
 <p>To test the full alphabet enter the script below:</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -621,7 +617,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>To run the example open a shell and enter the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 cw alphabet
 
 </code></pre>
@@ -629,7 +625,7 @@ cw alphabet
 
 <p>Alternatively, you can run via the Ruby command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 ruby alphabet.rb
 
 </code></pre>
@@ -641,7 +637,7 @@ ruby alphabet.rb
 
 <p>To test only certain letters you can pass the <strong>:include parameter</strong> to the alphabet command. Here we are testing just the vowels:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_2.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_2.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -674,7 +670,7 @@ ruby alphabet.rb
 
 <p>To make the test more difficult you can pass the parameter <strong>:shuffle =&gt; true</strong> to the alphabet command. Here we test the vowels but shuffle the order randomly:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_3.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_3.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -707,7 +703,7 @@ ruby alphabet.rb
 
 <p>So to test against the whole alphabet but with the order shuffled, at 15 words per minute:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_4.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_4.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -741,7 +737,7 @@ ruby alphabet.rb
 <p>It is also possible to exclude certain letters from the alphabet under test. Here we
 exclude all letters up to the letter n:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_5.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_5.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -774,7 +770,7 @@ exclude all letters up to the letter n:</p>
 
 <p>To run the shuffled alphabet test twice, simply add 2:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 cw alphabet_4  2
 
 </code></pre>
