@@ -556,7 +556,643 @@ window.location.href = uri;
 
     
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
+  <p>The <strong>use_ruby_tone</strong> command instructs <em>CW</em> to use CW’s internal tone generator
+rather than the <strong>ebook2cw</strong> tone generator.</p>
+
+<p>Here is a script that shows both generators in action:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="nb">require</span> <span class="s2">"cw"</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">test_words</span>
+
+  <span class="n">use_ruby_tone</span>
+  <span class="n">test_words</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<div class="seriesContext">
+  <a>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a href="../mydoc_word_spacing/"><button type="button" class="btn btn-primary">Next: word_spacing command</button></a>
+          
+  </a>
+  &nbsp;
+  <div class="btn-group">
+    <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to: <span class="caret"></span></button>
+    <ol class="dropdown-menu">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_release_notes/">Release notes</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_cw_script/">CW script</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_about/">About the author</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_learning_the_alphabet/">Learning the Alphabet</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_five_common_words/">Five Common Words</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_fixed_length_words/">Fixed Length Words</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_range_of_word_lengths/">Range of Word Lengths</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_letter_filtering/">Letter Filtering</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_letter_and_number_groups/">Letter and Number Groups</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_program_output/">Program output</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_farnsworth_timing/">Farnsworth timing</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_book_reading/">Book Reading</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_book_converting/">Book Converting</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_rss_feed/">RSS Feed Reading</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_reveal_mode/">Reveal Mode</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_cw_executable/">The cw executable</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_config_file/">Config file</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_ebook2cw/">Using ebook2cw</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_audio_dir/">audio_dir command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_audio_filename/">audio_filename command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_author/">author command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_book_dir/">book_dir command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_command_line/">command_line command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_double_words/">double_words command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_effective_wpm/">effective_wpm command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_ewpm/">ewpm command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_frequency/">frequency command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_name/">name command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_no_noise/">no_noise command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_noise/">noise command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_print_letters/">print_letters command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_quality/">quality command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_shuffle/">shuffle command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_single_words/">single_words command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_title/">title command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_use_ebook2cw/"></a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="active"> → 72. use_ruby_tone command</li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_word_spacing/">word_spacing command</a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a href="../mydoc_wpm/">wpm command</a>
+      </li>
+      
+      
+      
+    </ol>
+  </div>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
 <span class="n">cw</span> <span class="o">=</span> <span class="no">CW</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">cw</span><span class="p">.</span><span class="nf">wpm</span> <span class="mi">12</span>
 <span class="n">cw</span><span class="p">.</span><span class="nf">use_ebook2cw</span>
@@ -1225,7 +1861,7 @@ window.location.href = uri;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 27, 2016 <br />
+<p>Page last updated:</span> July 27, 2016<br/> Site last generated: Jul 27, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
