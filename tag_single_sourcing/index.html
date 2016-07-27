@@ -53,7 +53,7 @@
                     path: '/'
                 },
                 slide: {
-                    duration: 400,
+                    duration: 700,
                     easing: 'swing'
                 }
             });
@@ -308,6 +308,7 @@ window.location.href = uri;
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
@@ -734,12 +735,12 @@ $('#toc').on('click', 'a', function() {
 </div>
 <!-- /.container -->
     </div>
-    <script>
-    jQuery(function ($) {
-        $('.post-content').annotator()
-                .annotator('setupPlugins', {tokenUrl: 'http://example.com/api/token'})
-    });
-    </script>
+    <!-- <script> -->
+    <!-- jQuery(function ($) { -->
+    <!--     $('.post-content').annotator() -->
+    <!--             .annotator('setupPlugins', {tokenUrl: 'http://example.com/api/token'}) -->
+    <!-- }); -->
+    <!-- </script> -->
 </body>
 
 </html>
