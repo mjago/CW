@@ -14,7 +14,6 @@
 "print_letters",
 "quality",
 "shuffle",
-"single_words",
 "title",
 "un_pause",
 "use_ebook2cw",
