@@ -246,13 +246,6 @@ mydoc_shuffle:
 
 
  
-mydoc_single_words:
-  title: "single_words"
-  url: /CW/mydoc_single_words/
-  link: <a href="/CW/mydoc_single_words/">single_words</a>
-
-
- 
 mydoc_title:
   title: "title"
   url: /CW/mydoc_title/
