@@ -1,6 +1,8 @@
 require "cw"
 
 cw do
-# TODO:  print_letters()
+  wpm 22
+  shuffle
   word_count 4
+  print_letters()
 end

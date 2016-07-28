@@ -5,7 +5,7 @@ HERE = File.dirname(__FILE__) + '/'
 
 puts ARGV
 
-@audio_src_file = `bundle show cw`.strip + '/audio/audio_output.wav'
+@audio_src_file = `bundle show cw`.strip + '/audio/audio_output'
 puts "@audio_src_file = #{@audio_src_file}"
 @audio_dest_dir = "audio/"
 @audio_dest_file = nil
