@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require('FileUtils');
 
 GEM_VERSION = '0.2.0'
