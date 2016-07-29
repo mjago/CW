@@ -193,7 +193,7 @@ window.location.href = uri;
 
 
 <ul id="mysidebar" class="nav">
-    <li class="sidebarTitle">Menu (CW v0.2.0)</li>
+    <li class="sidebarTitle">CW v 0.2.0</li>
     
     
     
@@ -546,46 +546,31 @@ window.location.href = uri;
 
     
 
-  <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
-<span class="c1">#require "Dir"</span>
+  <p>The <strong>quality</strong> command becomes available when using <strong>ebook2cw</strong> as a
+tone generator, and allows you to set the MP3 quality of the destination MP3 file.
+<strong>quality</strong> accepts values of integers from <strong>1</strong> (highest quality) through
+to <strong>9</strong> (lowest quality).</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>
+<span class="nb">require</span> <span class="s2">"cw"</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s1">'quality = 9'</span>
-  <span class="nb">puts</span> <span class="kp">__FILE__</span>
+  <span class="nb">puts</span> <span class="s1">'quality = 9 (worst)'</span>
   <span class="n">use_ebook2cw</span>
-  <span class="n">quality</span>    <span class="mi">9</span> <span class="c1"># worst</span>
   <span class="n">word_count</span> <span class="mi">4</span>
   <span class="n">print_letters</span>
-  <span class="c1">#  puts File.size('../audio/audio_output.wav0000.mp3')</span>
-  <span class="n">dir</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span> <span class="sb">`gem which cw`</span>
-  <span class="n">dir</span> <span class="o">+=</span> <span class="s1">'/../'</span>
-  <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span> <span class="s1">'/usr/'</span>
 <span class="k">end</span>
 
 <span class="n">cw</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s1">'quality = 1 (best)'</span>
   <span class="n">use_ebook2cw</span>
-  <span class="n">quality</span>    <span class="mi">1</span> <span class="c1"># best</span>
+  <span class="n">quality</span>    <span class="mi">1</span>
   <span class="n">word_count</span> <span class="mi">4</span>
   <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/quality.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/quality.mp3">/CW/audio/quality.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/quality.rb"> quality.rb</a>
-     
-
-</div>
-<p><br /></p>
 
 <div class="seriesContext">
   <a>
@@ -1199,7 +1184,7 @@ window.location.href = uri;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> June 12, 2016<br/> Site last generated: Jul 28, 2016 <br />
+<p>Page last updated:</span> July 29, 2016<br/> Site last generated: Jul 29, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
