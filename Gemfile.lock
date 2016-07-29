@@ -154,6 +154,7 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     wavefile (0.7.0)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
@@ -162,6 +163,8 @@ DEPENDENCIES
   cw!
   github-pages
   jekyll
+  kramdown
+  yard
 
 BUNDLED WITH
    1.12.5
