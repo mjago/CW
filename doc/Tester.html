@@ -78,12 +78,12 @@
   
   
     <dt class="r1">Included in:</dt>
-    <dd class="r1"><span class='object_link'><a href="Book.html" title="Book (class)">Book</a></span>, <span class='object_link'><a href="RepeatWord.html" title="RepeatWord (class)">RepeatWord</a></span>, <span class='object_link'><a href="TestLetters.html" title="TestLetters (class)">TestLetters</a></span>, <span class='object_link'><a href="TestWords.html" title="TestWords (class)">TestWords</a></span></dd>
+    <dd class="r1"><span class='object_link'><a href="Book.html" title="Book (class)">Book</a></span>, <span class='object_link'><a href="RepeatWord.html" title="RepeatWord (class)">RepeatWord</a></span>, <span class='object_link'><a href="Reveal.html" title="Reveal (class)">Reveal</a></span>, <span class='object_link'><a href="TestLetters.html" title="TestLetters (class)">TestLetters</a></span>, <span class='object_link'><a href="TestWords.html" title="TestWords (class)">TestWords</a></span></dd>
     
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/cw/tester.rb</dd>
+    <dd class="r2 last">/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -1335,6 +1335,28 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#word_proc_timeout-instance_method" title="#word_proc_timeout (instance method)">- (Object) <strong>word_proc_timeout</strong>(arg = :status) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -1366,7 +1388,7 @@
 32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 28</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_space'>add_space</span> <span class='id identifier rubyid_words'>words</span>
   <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -1396,7 +1418,7 @@
 11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 11</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_audio'>audio</span>                <span class='semicolon'>;</span> <span class='ivar'>@audio</span> <span class='op'>||=</span> <span class='const'>AudioPlayer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>        <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1426,7 +1448,7 @@
 38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 34</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_audio_play'>audio_play</span>
   <span class='id identifier rubyid_audio'>audio</span><span class='period'>.</span><span class='id identifier rubyid_convert_words'>convert_words</span> <span class='id identifier rubyid_add_space'>add_space</span> <span class='ivar'>@words</span>
@@ -1478,7 +1500,7 @@
 26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 26</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_audio_still_playing?'>audio_still_playing?</span> <span class='semicolon'>;</span> <span class='id identifier rubyid_audio'>audio</span><span class='period'>.</span><span class='id identifier rubyid_still_playing?'>still_playing?</span>              <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1501,12 +1523,12 @@
       <pre class="lines">
 
 
-137
 138
-139</pre>
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 137</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_audio_stop'>audio_stop</span>
   <span class='id identifier rubyid_audio'>audio</span><span class='period'>.</span><span class='id identifier rubyid_stop'>stop</span> <span class='kw'>if</span> <span class='id identifier rubyid_audio_still_playing?'>audio_still_playing?</span>
@@ -1531,22 +1553,24 @@
       <pre class="lines">
 
 
-150
 151
 152
 153
 154
 155
-156</pre>
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 150</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_check_quit_key_input'>check_quit_key_input</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_quit_key_input?'>quit_key_input?</span>
     <span class='id identifier rubyid_quit'>quit</span>
     <span class='id identifier rubyid_global_quit'>global_quit</span>
     <span class='id identifier rubyid_audio_stop'>audio_stop</span>
+    <span class='kw'>true</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1591,12 +1615,12 @@
       <pre class="lines">
 
 
-172
-173
-174</pre>
+185
+186
+187</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 172</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 185</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_complete_word?'>complete_word?</span>
   <span class='id identifier rubyid_get_word_last_char'>get_word_last_char</span> <span class='op'>==</span> <span class='id identifier rubyid_space'>space</span>
@@ -1624,7 +1648,7 @@
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 24</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_current_word'>current_word</span>         <span class='semicolon'>;</span> <span class='ivar'>@current_word</span> <span class='op'>||=</span> <span class='const'>CurrentWord</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1652,7 +1676,7 @@
 56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 54</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_do_events'>do_events</span>
   <span class='id identifier rubyid_sleep'>sleep</span> <span class='float'>0.005</span>
@@ -1680,7 +1704,7 @@
 14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 14</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_empty_string'>empty_string</span>         <span class='semicolon'>;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>                                <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1706,7 +1730,7 @@
 17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 17</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_key_input'>get_key_input</span>        <span class='semicolon'>;</span> <span class='id identifier rubyid_key_input'>key_input</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span>                    <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1729,12 +1753,12 @@
       <pre class="lines">
 
 
-162
-163
-164</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 162</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 164</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_word_last_char'>get_word_last_char</span>
   <span class='ivar'>@input_word</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -1762,7 +1786,7 @@
 8</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 8</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_quit'>global_quit</span>          <span class='semicolon'>;</span> <span class='ivar'>@global_quit</span> <span class='op'>=</span> <span class='kw'>true</span>               <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1810,7 +1834,7 @@
 7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 7</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_quit?'>global_quit?</span>         <span class='semicolon'>;</span> <span class='ivar'>@global_quit</span>                      <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1836,7 +1860,7 @@
 25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 25</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init_char_timer'>init_char_timer</span>      <span class='semicolon'>;</span> <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_init_char_timer'>init_char_timer</span>            <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1884,7 +1908,7 @@
 20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 20</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_relevant_char?'>is_relevant_char?</span>    <span class='semicolon'>;</span> <span class='id identifier rubyid_key_input'>key_input</span><span class='period'>.</span><span class='id identifier rubyid_is_relevant_char?'>is_relevant_char?</span>       <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1910,7 +1934,7 @@
 18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 18</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_key_chr'>key_chr</span>              <span class='semicolon'>;</span> <span class='id identifier rubyid_key_input'>key_input</span><span class='period'>.</span><span class='id identifier rubyid_char'>char</span>                    <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1936,7 +1960,7 @@
 19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 19</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_key_input'>key_input</span>            <span class='semicolon'>;</span> <span class='ivar'>@key_input</span> <span class='op'>||=</span> <span class='const'>KeyInput</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>       <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1962,7 +1986,7 @@
 12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 12</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_kill_threads'>kill_threads</span>         <span class='semicolon'>;</span> <span class='ivar'>@threads</span><span class='period'>.</span><span class='id identifier rubyid_kill'>kill</span>                     <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1985,18 +2009,18 @@
       <pre class="lines">
 
 
-252
-253
-254
-255
-256
-257
-258
-259
-260</pre>
+265
+266
+267
+268
+269
+270
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 252</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_monitor_keys'>monitor_keys</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
@@ -2027,13 +2051,13 @@
       <pre class="lines">
 
 
-232
-233
-234
-235</pre>
+245
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 232</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 245</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_monitor_keys_thread'>monitor_keys_thread</span>
   <span class='id identifier rubyid_monitor_keys'>monitor_keys</span>
@@ -2059,14 +2083,14 @@
       <pre class="lines">
 
 
-176
-177
-178
-179
-180</pre>
+189
+190
+191
+192
+193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 176</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_move_word_to_process'>move_word_to_process</span>
   <span class='id identifier rubyid_wait_for_no_word_process'>wait_for_no_word_process</span>
@@ -2103,7 +2127,7 @@
 52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 45</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_play_words_exit'>play_words_exit</span>
   <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_init_play_words_timeout'>init_play_words_timeout</span>
@@ -2133,13 +2157,13 @@
       <pre class="lines">
 
 
-100
 101
 102
-103</pre>
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 100</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_play_words_thread'>play_words_thread</span>
   <span class='id identifier rubyid_play_words_until_quit'>play_words_until_quit</span>
@@ -2171,7 +2195,7 @@
 43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 40</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_play_words_until_quit'>play_words_until_quit</span>
   <span class='id identifier rubyid_audio_play'>audio_play</span>
@@ -2200,7 +2224,7 @@
 9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 9</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print'>print</span>                <span class='semicolon'>;</span> <span class='ivar'>@print</span> <span class='op'>||=</span> <span class='const'>Print</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>              <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2223,18 +2247,18 @@
       <pre class="lines">
 
 
-118
 119
 120
 121
-122</pre>
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 118</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_failed_exit_words'>print_failed_exit_words</span>
   <span class='kw'>until</span> <span class='id identifier rubyid_stream'>stream</span><span class='period'>.</span><span class='id identifier rubyid_stream_empty?'>stream_empty?</span>
-    <span class='id identifier rubyid_print'>print</span><span class='period'>.</span><span class='id identifier rubyid_prn_red'>prn_red</span> <span class='id identifier rubyid_stream'>stream</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_print'>print</span><span class='period'>.</span><span class='id identifier rubyid_fail'>fail</span> <span class='id identifier rubyid_stream'>stream</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2279,12 +2303,12 @@
       <pre class="lines">
 
 
-211
-212
-213</pre>
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 211</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_letters?'>print_letters?</span>
   <span class='ivar'>@print_letters</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span> <span class='id identifier rubyid_quit?'>quit?</span>
@@ -2309,13 +2333,13 @@
       <pre class="lines">
 
 
-90
 91
 92
-93</pre>
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 90</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_words'>print_words</span> <span class='id identifier rubyid_words'>words</span>
   <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_init_char_timer'>init_char_timer</span>
@@ -2341,7 +2365,6 @@
       <pre class="lines">
 
 
-124
 125
 126
 127
@@ -2352,10 +2375,11 @@
 132
 133
 134
-135</pre>
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 124</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_words_exit'>print_words_exit</span>
   <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_init_print_words_timeout'>init_print_words_timeout</span>
@@ -2389,14 +2413,14 @@
       <pre class="lines">
 
 
-105
 106
 107
 108
-109</pre>
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 105</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_words_thread'>print_words_thread</span>
   <span class='id identifier rubyid_print_words_until_quit'>print_words_until_quit</span>
@@ -2423,15 +2447,15 @@
       <pre class="lines">
 
 
-111
 112
 113
 114
 115
-116</pre>
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 111</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_words_until_quit'>print_words_until_quit</span>
   <span class='id identifier rubyid_sync_with_audio_player'>sync_with_audio_player</span>
@@ -2473,10 +2497,11 @@
 69
 70
 71
-72</pre>
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 58</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process_letters'>process_letters</span> <span class='id identifier rubyid_letr'>letr</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
@@ -2488,6 +2513,7 @@
       <span class='kw'>break</span> <span class='kw'>if</span> <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_char_delay_timeout?'>char_delay_timeout?</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_process_space_maybe'>process_space_maybe</span><span class='lparen'>(</span><span class='id identifier rubyid_letr'>letr</span><span class='rparen'>)</span> <span class='kw'>if</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>TestWords</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_process_space_maybe'>process_space_maybe</span><span class='lparen'>(</span><span class='id identifier rubyid_letr'>letr</span><span class='rparen'>)</span> <span class='kw'>if</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Reveal</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_process_word_maybe'>process_word_maybe</span>
       <span class='kw'>break</span> <span class='kw'>if</span> <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_char_delay_timeout?'>char_delay_timeout?</span>
     <span class='kw'>end</span>
@@ -2513,24 +2539,24 @@
       <pre class="lines">
 
 
-202
-203
-204
-205
-206
-207
-208
-209</pre>
+215
+216
+217
+218
+219
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 202</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 215</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process_space_maybe'>process_space_maybe</span> <span class='id identifier rubyid_letr'>letr</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_letr'>letr</span> <span class='op'>==</span> <span class='id identifier rubyid_space'>space</span>
     <span class='id identifier rubyid_stream'>stream</span><span class='period'>.</span><span class='id identifier rubyid_add_word'>add_word</span> <span class='id identifier rubyid_current_word'>current_word</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
     <span class='id identifier rubyid_current_word'>current_word</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
     <span class='id identifier rubyid_letr'>letr</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-    <span class='id identifier rubyid_print'>print</span><span class='period'>.</span><span class='id identifier rubyid_prn'>prn</span> <span class='id identifier rubyid_space'>space</span> <span class='kw'>if</span> <span class='id identifier rubyid_print_letters?'>print_letters?</span>
+    <span class='id identifier rubyid_print'>print</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid_space'>space</span> <span class='kw'>if</span> <span class='id identifier rubyid_print_letters?'>print_letters?</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2553,13 +2579,13 @@
       <pre class="lines">
 
 
-95
 96
 97
-98</pre>
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 95</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process_word_maybe'>process_word_maybe</span>
   <span class='id identifier rubyid_print_marked_maybe'>print_marked_maybe</span>
@@ -2585,7 +2611,6 @@
       <pre class="lines">
 
 
-74
 75
 76
 77
@@ -2599,10 +2624,11 @@
 85
 86
 87
-88</pre>
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 74</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process_words'>process_words</span> <span class='id identifier rubyid_words'>words</span>
   <span class='id identifier rubyid_book_class'>book_class</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Book</span><span class='rparen'>)</span>
@@ -2614,7 +2640,7 @@
     <span class='id identifier rubyid_stream'>stream</span><span class='period'>.</span><span class='id identifier rubyid_add_char'>add_char</span><span class='lparen'>(</span><span class='id identifier rubyid_letr'>letr</span><span class='rparen'>)</span> <span class='kw'>if</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>TestLetters</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
     <span class='id identifier rubyid_process_letters'>process_letters</span> <span class='id identifier rubyid_letr'>letr</span>
-    <span class='id identifier rubyid_print'>print</span><span class='period'>.</span><span class='id identifier rubyid_prn'>prn</span> <span class='id identifier rubyid_letr'>letr</span> <span class='kw'>if</span> <span class='id identifier rubyid_print_letters?'>print_letters?</span>
+    <span class='id identifier rubyid_print'>print</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid_letr'>letr</span> <span class='kw'>if</span> <span class='id identifier rubyid_print_letters?'>print_letters?</span>
     <span class='kw'>break</span> <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_book_class'>book_class</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_change_repeat_or_quit?'>change_repeat_or_quit?</span><span class='rparen'>)</span>
     <span class='kw'>break</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='op'>!</span> <span class='id identifier rubyid_book_class'>book_class</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_quit?'>quit?</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
@@ -2639,12 +2665,12 @@
       <pre class="lines">
 
 
-158
-159
-160</pre>
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 158</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_push_letter_to_current_word'>push_letter_to_current_word</span> <span class='id identifier rubyid_letr'>letr</span>
   <span class='id identifier rubyid_current_word'>current_word</span><span class='period'>.</span><span class='id identifier rubyid_push_letter'>push_letter</span> <span class='id identifier rubyid_letr'>letr</span>
@@ -2672,7 +2698,7 @@
 6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 6</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_quit'>quit</span>                 <span class='semicolon'>;</span> <span class='ivar'>@quit</span> <span class='op'>=</span> <span class='kw'>true</span>                      <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2720,7 +2746,7 @@
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 5</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_quit?'>quit?</span>                <span class='semicolon'>;</span> <span class='ivar'>@quit</span>                             <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2768,7 +2794,7 @@
 21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 21</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_quit_key_input?'>quit_key_input?</span>      <span class='semicolon'>;</span> <span class='id identifier rubyid_key_input'>key_input</span><span class='period'>.</span><span class='id identifier rubyid_quit_input?'>quit_input?</span>             <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2794,7 +2820,7 @@
 23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 23</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reset_stdin'>reset_stdin</span>          <span class='semicolon'>;</span> <span class='id identifier rubyid_key_input'>key_input</span><span class='period'>.</span><span class='id identifier rubyid_reset_stdin'>reset_stdin</span>             <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2817,17 +2843,17 @@
       <pre class="lines">
 
 
-243
-244
-245
-246
-247
-248
-249
-250</pre>
+256
+257
+258
+259
+260
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 243</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span> <span class='id identifier rubyid_words'>words</span>
   <span class='ivar'>@words</span> <span class='op'>=</span> <span class='id identifier rubyid_words'>words</span>
@@ -2857,12 +2883,12 @@
       <pre class="lines">
 
 
-191
-192
-193</pre>
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 191</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sleep_char_delay'>sleep_char_delay</span> <span class='id identifier rubyid_letr'>letr</span>
   <span class='id identifier rubyid_timing'>timing</span><span class='period'>.</span><span class='id identifier rubyid_append_char_delay'>append_char_delay</span> <span class='id identifier rubyid_letr'>letr</span><span class='comma'>,</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_wpm'>wpm</span><span class='comma'>,</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_effective_wpm'>effective_wpm</span>
@@ -2890,7 +2916,7 @@
 13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 13</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_space'>space</span>                <span class='semicolon'>;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span>                               <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2916,7 +2942,7 @@
 15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 15</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_spawn_play'>spawn_play</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='rparen'>)</span>      <span class='semicolon'>;</span> <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_spawn'>spawn</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='rparen'>)</span>                <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2942,7 +2968,7 @@
 16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 16</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_sync'>start_sync</span>           <span class='semicolon'>;</span> <span class='ivar'>@start_sync</span> <span class='op'>=</span> <span class='kw'>true</span>                <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2987,17 +3013,17 @@
       <pre class="lines">
 
 
-182
-183
-184
-185
-186
-187
-188
-189</pre>
+195
+196
+197
+198
+199
+200
+201
+202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 182</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 195</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_sync?'>start_sync?</span>
   <span class='kw'>if</span> <span class='ivar'>@start_sync</span>
@@ -3030,7 +3056,7 @@
 22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 22</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stream'>stream</span>               <span class='semicolon'>;</span> <span class='ivar'>@stream</span> <span class='op'>||=</span> <span class='const'>CwStream</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>          <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3053,13 +3079,13 @@
       <pre class="lines">
 
 
-145
 146
 147
-148</pre>
+148
+149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 145</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 146</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_with_audio_player'>sync_with_audio_player</span>
   <span class='id identifier rubyid_wait_for_start_sync'>wait_for_start_sync</span>
@@ -3085,16 +3111,16 @@
       <pre class="lines">
 
 
-215
-216
-217
-218
-219
-220
-221</pre>
+228
+229
+230
+231
+232
+233
+234</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 215</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_with_play'>sync_with_play</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
@@ -3123,17 +3149,17 @@
       <pre class="lines">
 
 
-223
-224
-225
-226
-227
-228
-229
-230</pre>
+236
+237
+238
+239
+240
+241
+242
+243</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 223</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 236</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_with_print'>sync_with_print</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
@@ -3163,14 +3189,14 @@
       <pre class="lines">
 
 
-237
-238
-239
-240
-241</pre>
+250
+251
+252
+253
+254</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 237</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_thread_processes'>thread_processes</span>
   <span class='lbracket'>[</span><span class='symbol'>:monitor_keys_thread</span><span class='comma'>,</span>
@@ -3200,7 +3226,7 @@
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 10</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_timing'>timing</span>               <span class='semicolon'>;</span> <span class='ivar'>@timing</span> <span class='op'>||=</span> <span class='const'>Timing</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>            <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3223,18 +3249,22 @@
       <pre class="lines">
 
 
-166
-167
-168
-169
-170</pre>
+177
+178
+179
+180
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 166</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 177</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wait_for_no_word_process'>wait_for_no_word_process</span>
+  <span class='id identifier rubyid_word_proc_timeout'>word_proc_timeout</span><span class='lparen'>(</span><span class='symbol'>:init</span><span class='rparen'>)</span>
   <span class='kw'>while</span> <span class='ivar'>@word_to_process</span>
-    <span class='id identifier rubyid_sleep'>sleep</span> <span class='float'>0.1</span>
+    <span class='id identifier rubyid_sleep'>sleep</span> <span class='float'>0.01</span>
+    <span class='id identifier rubyid_exit'>exit</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_word_proc_timeout'>word_proc_timeout</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -3257,15 +3287,15 @@
       <pre class="lines">
 
 
-195
-196
-197
-198
-199
-200</pre>
+208
+209
+210
+211
+212
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 195</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 208</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wait_for_start_sync'>wait_for_start_sync</span>
   <span class='kw'>until</span> <span class='id identifier rubyid_start_sync?'>start_sync?</span>
@@ -3293,15 +3323,55 @@
       <pre class="lines">
 
 
-141
 142
-143</pre>
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tester.rb', line 141</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wait_player_startup_delay'>wait_player_startup_delay</span>
   <span class='id identifier rubyid_audio'>audio</span><span class='period'>.</span><span class='id identifier rubyid_startup_delay'>startup_delay</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="word_proc_timeout-instance_method">
+  
+    - (<tt>Object</tt>) <strong>word_proc_timeout</strong>(arg = :status) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tester.rb', line 168</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_word_proc_timeout'>word_proc_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_arg'>arg</span> <span class='op'>=</span> <span class='symbol'>:status</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_arg'>arg</span> <span class='op'>==</span> <span class='symbol'>:init</span>
+    <span class='ivar'>@wp_timeout</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>+</span> <span class='int'>5</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span><span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>&gt;</span> <span class='ivar'>@wp_timeout</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='kw'>false</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3313,7 +3383,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  9 22:16:51 2016 by
+  Generated on Fri Jul 29 08:09:37 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>

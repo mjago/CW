@@ -98,7 +98,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/cw/cw_stream.rb</dd>
+    <dd class="r1 last">/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -524,7 +524,7 @@ return_val  end.</p>
 13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 10</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@active_region</span> <span class='op'>=</span> <span class='int'>6</span>
@@ -573,7 +573,7 @@ return_val  end.</p>
 9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 7</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_active_region'>active_region</span>
   <span class='ivar'>@active_region</span>
@@ -616,7 +616,7 @@ return_val  end.</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 8</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stream'>stream</span>
   <span class='ivar'>@stream</span>
@@ -655,7 +655,7 @@ return_val  end.</p>
 29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 25</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_char'>add_char</span> <span class='id identifier rubyid_char'>char</span>
   <span class='ivar'>@stream</span><span class='lbracket'>[</span><span class='ivar'>@last_element</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_char'>char</span>
@@ -689,7 +689,7 @@ return_val  end.</p>
 23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 19</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_word'>add_word</span> <span class='id identifier rubyid_word'>word</span>
   <span class='ivar'>@stream</span><span class='lbracket'>[</span><span class='ivar'>@last_element</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_word'>word</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
@@ -721,7 +721,7 @@ return_val  end.</p>
 17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 15</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_empty'>empty</span>
   <span class='ivar'>@stream</span><span class='comma'>,</span> <span class='ivar'>@success</span><span class='comma'>,</span> <span class='ivar'>@first_element</span><span class='comma'>,</span> <span class='ivar'>@last_element</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span>
@@ -755,7 +755,7 @@ return_val  end.</p>
 57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 51</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fail_unmarked_inactive_elements'>fail_unmarked_inactive_elements</span>
   <span class='kw'>if</span><span class='lparen'>(</span><span class='lparen'>(</span> <span class='op'>!</span> <span class='id identifier rubyid_stream_empty?'>stream_empty?</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_count'>count</span> <span class='op'>&gt;</span> <span class='ivar'>@active_region</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -789,7 +789,7 @@ return_val  end.</p>
 61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 59</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first'>first</span>
   <span class='ivar'>@stream</span><span class='lbracket'>[</span><span class='ivar'>@first_element</span><span class='rbracket'>]</span>
@@ -819,7 +819,7 @@ return_val  end.</p>
 49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 47</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inactive_region'>inactive_region</span>
   <span class='id identifier rubyid_stream_empty?'>stream_empty?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='ivar'>@last_element</span> <span class='op'>-</span> <span class='ivar'>@active_region</span> <span class='op'>-</span> <span class='int'>1</span>
@@ -849,7 +849,7 @@ return_val  end.</p>
 33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 31</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mark'>mark</span><span class='lparen'>(</span><span class='id identifier rubyid_element'>element</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='ivar'>@success</span><span class='lbracket'>[</span><span class='id identifier rubyid_element'>element</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span>
@@ -879,7 +879,7 @@ return_val  end.</p>
 41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 39</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mark_fail'>mark_fail</span> <span class='id identifier rubyid_element'>element</span>
   <span class='id identifier rubyid_mark'>mark</span> <span class='id identifier rubyid_element'>element</span><span class='comma'>,</span> <span class='kw'>false</span>
@@ -909,7 +909,7 @@ return_val  end.</p>
 37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 35</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mark_success'>mark_success</span> <span class='id identifier rubyid_element'>element</span>
   <span class='id identifier rubyid_mark'>mark</span> <span class='id identifier rubyid_element'>element</span><span class='comma'>,</span> <span class='kw'>true</span>
@@ -949,7 +949,7 @@ return_val  end.</p>
 75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 63</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pop'>pop</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_stream_empty?'>stream_empty?</span>
@@ -1025,7 +1025,7 @@ end</code></pre>
 105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 96</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pop_next_marked'>pop_next_marked</span>
   <span class='id identifier rubyid_fail_unmarked_inactive_elements'>fail_unmarked_inactive_elements</span>
@@ -1084,7 +1084,7 @@ end</code></pre>
 45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/cw_stream.rb', line 43</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/cw_stream.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stream_empty?'>stream_empty?</span>
   <span class='ivar'>@first_element</span> <span class='op'>==</span> <span class='ivar'>@last_element</span>
@@ -1099,7 +1099,7 @@ end</code></pre>
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  9 22:16:53 2016 by
+  Generated on Fri Jul 29 08:09:39 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>

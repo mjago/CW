@@ -1,3 +1,3 @@
-## Jekyll Documentation theme
+## CW Documentation
 
-Build the site to see the instructions for using it. Or just go here: [http://idratherbewriting.com/documentation-theme-jekyll/](http://idratherbewriting.com/documentation-theme-jekyll/)
+Visit: [http://martynjago.co.uk/CW/](http://martynjago.co.uk/CW/) to use the documentation.

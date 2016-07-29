@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require('FileUtils');
+
+lib = File.dirname `gem which cw`
+lib += '/'
+
+puts "Generating yard docs for code at #{lib} ..."
+system("yardoc #{lib}")
+puts "done"
+

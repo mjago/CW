@@ -94,7 +94,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/cw/alphabet.rb</dd>
+    <dd class="r2 last">/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -142,7 +142,33 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>return string containing alphabet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exclude_letters-instance_method" title="#exclude_letters (instance method)">- (Object) <strong>exclude_letters</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>exclude letters passed in as string if :exclude defined.</p>
+</div></span>
   
 </li>
 
@@ -164,7 +190,34 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>generate alphabet with options acted upon == Returns: alphabet or filtered
+alphabet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include_letters-instance_method" title="#include_letters (instance method)">- (Object) <strong>include_letters</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>include letters passed in as string if :include defined.</p>
+</div></span>
   
 </li>
 
@@ -188,8 +241,12 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A new instance of Alphabet.</p>
+    <span class="summary_desc"><div class='inline'><dl class="rdoc-list note-list"><dt>initialize class Alphabet == Parameters: options
+<dd>
+<p>An optional hash containg options: :reverse - reverse alphabet :shuffle -
+shuffle alphabet :include - include only these letters of the alphabet
+:exclude - exclude these letters from the alphabet.</p>
+</dd></dl>
 </div></span>
   
 </li>
@@ -212,7 +269,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>reverse alphabet if :reverse option defined.</p>
+</div></span>
   
 </li>
 
@@ -234,7 +293,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>shuffle alphabet if :shuffle option defined.</p>
+</div></span>
   
 </li>
 
@@ -257,7 +318,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of Alphabet</p>
+<p>initialize class Alphabet</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>options
+<dd>
+<p>An optional hash containg options:</p>
+</dd></dl>
+
+<p>:reverse - reverse alphabet :shuffle - shuffle alphabet :include - include
+only these letters of the alphabet :exclude - exclude these letters from
+the alphabet</p>
 
 
   </div>
@@ -271,12 +342,12 @@
       <pre class="lines">
 
 
-7
-8
-9</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/alphabet.rb', line 7</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span>
@@ -302,21 +373,77 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>return string containing alphabet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-11
-12
-13</pre>
+22
+23
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/alphabet.rb', line 11</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_alphabet'>alphabet</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>abcdefghijklmnopqrstuvwxyz</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exclude_letters-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exclude_letters</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>exclude letters passed in as string if :exclude defined</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exclude_letters'>exclude_letters</span>
+  <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:exclude</span><span class='rbracket'>]</span>
+    <span class='ivar'>@letters</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:exclude</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -332,27 +459,91 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>generate alphabet with options acted upon</p>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>alphabet or filtered alphabet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-23
-24
-25
-26
-27
-28</pre>
+58
+59
+60
+61
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/alphabet.rb', line 23</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate'>generate</span>
   <span class='ivar'>@letters</span> <span class='op'>=</span> <span class='id identifier rubyid_alphabet'>alphabet</span>
+  <span class='id identifier rubyid_include_letters'>include_letters</span>
+  <span class='id identifier rubyid_exclude_letters'>exclude_letters</span>
   <span class='id identifier rubyid_shuffle_alphabet_maybe'>shuffle_alphabet_maybe</span>
   <span class='id identifier rubyid_reverse_alphabet_maybe'>reverse_alphabet_maybe</span>
   <span class='ivar'>@letters</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="include_letters-instance_method">
+  
+    - (<tt>Object</tt>) <strong>include_letters</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>include letters passed in as string if :include defined</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_include_letters'>include_letters</span>
+  <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:include</span><span class='rbracket'>]</span>
+    <span class='ivar'>@letters</span> <span class='op'>=</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:include</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -368,18 +559,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>reverse alphabet if :reverse option defined</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-15
-16
-17</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/alphabet.rb', line 15</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reverse_alphabet_maybe'>reverse_alphabet_maybe</span>
   <span class='ivar'>@letters</span><span class='period'>.</span><span class='id identifier rubyid_reverse!'>reverse!</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:reverse</span><span class='rbracket'>]</span>
@@ -398,18 +600,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>shuffle alphabet if :shuffle option defined</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-19
-20
-21</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/alphabet.rb', line 19</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/alphabet.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shuffle_alphabet_maybe'>shuffle_alphabet_maybe</span>
   <span class='ivar'>@letters</span> <span class='op'>=</span> <span class='ivar'>@letters</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_shuffle'>shuffle</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:shuffle</span><span class='rbracket'>]</span>
@@ -424,7 +637,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  9 22:16:52 2016 by
+  Generated on Fri Jul 29 08:09:38 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>

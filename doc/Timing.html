@@ -94,7 +94,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/cw/timing.rb</dd>
+    <dd class="r2 last">/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -567,7 +567,7 @@
 11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 8</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@delay_time</span> <span class='op'>=</span> <span class='float'>0.0</span>
@@ -616,7 +616,7 @@
 7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 5</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delay_time'>delay_time</span>
   <span class='ivar'>@delay_time</span>
@@ -659,7 +659,7 @@
 8</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 6</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_time'>start_time</span>
   <span class='ivar'>@start_time</span>
@@ -696,7 +696,7 @@
 90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 88</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_append_char_delay'>append_char_delay</span> <span class='id identifier rubyid_letr'>letr</span><span class='comma'>,</span> <span class='id identifier rubyid_wpm'>wpm</span><span class='comma'>,</span> <span class='id identifier rubyid_ewpm'>ewpm</span>
   <span class='ivar'>@delay_time</span> <span class='op'>+=</span> <span class='id identifier rubyid_char_delay'>char_delay</span><span class='lparen'>(</span><span class='id identifier rubyid_letr'>letr</span><span class='comma'>,</span> <span class='id identifier rubyid_wpm'>wpm</span><span class='comma'>,</span> <span class='id identifier rubyid_ewpm'>ewpm</span><span class='rparen'>)</span>
@@ -731,7 +731,7 @@
 86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 79</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_char_delay'>char_delay</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='id identifier rubyid_wpm'>wpm</span><span class='comma'>,</span> <span class='id identifier rubyid_ewpm'>ewpm</span><span class='rparen'>)</span>
   <span class='ivar'>@wpm</span><span class='comma'>,</span> <span class='ivar'>@effective_wpm</span> <span class='op'>=</span> <span class='id identifier rubyid_wpm'>wpm</span><span class='comma'>,</span> <span class='id identifier rubyid_ewpm'>ewpm</span>
@@ -788,7 +788,7 @@
 51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 49</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_char_delay_timeout?'>char_delay_timeout?</span>
   <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='ivar'>@start_time</span><span class='rparen'>)</span> <span class='op'>&gt;</span> <span class='ivar'>@delay_time</span>
@@ -829,7 +829,7 @@
 66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 53</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_char_timing'>char_timing</span><span class='lparen'>(</span><span class='op'>*</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_timing'>timing</span> <span class='op'>=</span> <span class='int'>0</span>
@@ -871,7 +871,7 @@
 71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 68</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_code_space_timing'>code_space_timing</span>
   <span class='ivar'>@effective_wpm</span> <span class='op'>?</span> <span class='float'>3.0</span> <span class='op'>*</span> <span class='id identifier rubyid_effective_dot_ms'>effective_dot_ms</span> <span class='op'>:</span>
@@ -902,7 +902,7 @@
 15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 13</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cw_encoding'>cw_encoding</span> <span class='id identifier rubyid_enc'>enc</span>
   <span class='ivar'>@cw_encoding</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_enc'>enc</span><span class='rparen'>)</span>
@@ -932,10 +932,10 @@
 19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 17</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dot'>dot</span> <span class='id identifier rubyid_wpm'>wpm</span>
-  <span class='float'>1.2</span> <span class='op'>/</span> <span class='id identifier rubyid_wpm'>wpm</span>
+  <span class='float'>1.2</span> <span class='op'>/</span> <span class='id identifier rubyid_wpm'>wpm</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -962,7 +962,7 @@
 23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 21</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dot_ms'>dot_ms</span>
   <span class='id identifier rubyid_dot'>dot</span> <span class='ivar'>@wpm</span>
@@ -992,7 +992,7 @@
 43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 41</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_effective_dot_ms'>effective_dot_ms</span>
   <span class='id identifier rubyid_dot'>dot</span> <span class='ivar'>@effective_wpm</span>
@@ -1022,7 +1022,7 @@
 47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 45</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init_char_timer'>init_char_timer</span>
   <span class='ivar'>@start_time</span><span class='comma'>,</span> <span class='ivar'>@delay_time</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='comma'>,</span> <span class='float'>0.0</span>
@@ -1052,7 +1052,7 @@
 35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 33</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init_play_words_timeout'>init_play_words_timeout</span>
   <span class='ivar'>@start_play_time</span><span class='comma'>,</span> <span class='ivar'>@delay_play_time</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='comma'>,</span> <span class='float'>2.0</span>
@@ -1082,7 +1082,7 @@
 27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 25</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init_print_words_timeout'>init_print_words_timeout</span>
   <span class='ivar'>@start_print_time</span><span class='comma'>,</span> <span class='ivar'>@delay_print_time</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='comma'>,</span> <span class='float'>2.0</span>
@@ -1134,7 +1134,7 @@
 39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 37</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_play_words_timeout?'>play_words_timeout?</span>
   <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='ivar'>@start_play_time</span><span class='rparen'>)</span> <span class='op'>&gt;</span> <span class='ivar'>@delay_play_time</span>
@@ -1186,7 +1186,7 @@
 31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 29</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_words_timeout?'>print_words_timeout?</span>
   <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='ivar'>@start_print_time</span><span class='rparen'>)</span> <span class='op'>&gt;</span> <span class='ivar'>@delay_print_time</span>
@@ -1218,7 +1218,7 @@
 77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/timing.rb', line 73</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/timing.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_space_timing'>space_timing</span>
   <span class='id identifier rubyid_space'>space</span> <span class='op'>=</span> <span class='float'>4.0</span>
@@ -1235,7 +1235,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  9 22:16:52 2016 by
+  Generated on Fri Jul 29 08:09:38 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>

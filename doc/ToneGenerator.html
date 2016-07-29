@@ -98,7 +98,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/cw/tone_generator.rb</dd>
+    <dd class="r1 last">/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -800,13 +800,13 @@
 16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 9</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@max_amplitude</span> <span class='op'>=</span> <span class='float'>0.5</span>
-  <span class='ivar'>@wpm</span> <span class='op'>=</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_wpm'>wpm</span>
+  <span class='ivar'>@wpm</span> <span class='op'>=</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_wpm'>wpm</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
   <span class='ivar'>@frequency</span> <span class='op'>=</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_frequency'>frequency</span>
-  <span class='ivar'>@effective_wpm</span> <span class='op'>=</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_effective_wpm'>effective_wpm</span> <span class='op'>?</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_effective_wpm'>effective_wpm</span> <span class='op'>:</span> <span class='ivar'>@wpm</span>
+  <span class='ivar'>@effective_wpm</span> <span class='op'>=</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_effective_wpm'>effective_wpm</span> <span class='op'>?</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_effective_wpm'>effective_wpm</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>:</span> <span class='ivar'>@wpm</span>
   <span class='ivar'>@sample_rate</span> <span class='op'>=</span> <span class='int'>2400</span>
   <span class='ivar'>@print</span> <span class='op'>=</span> <span class='const'>Print</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 <span class='kw'>end</span></pre>
@@ -842,7 +842,7 @@
 169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 167</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_char_space'>char_space</span>
   <span class='ivar'>@effective_wpm</span> <span class='op'>==</span> <span class='ivar'>@wpm</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id identifier rubyid_space'>space</span><span class='comma'>,</span><span class='id identifier rubyid_space'>space</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_e_space'>e_space</span><span class='comma'>,</span><span class='id identifier rubyid_e_space'>e_space</span><span class='rbracket'>]</span>
@@ -877,7 +877,7 @@
 108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 101</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compile_fundamentals'>compile_fundamentals</span>
   <span class='id identifier rubyid_elements'>elements</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ele'>ele</span><span class='op'>|</span>
@@ -912,7 +912,7 @@
 87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 85</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_element_method'>create_element_method</span> <span class='id identifier rubyid_ele'>ele</span>
   <span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='id identifier rubyid_ele'>ele</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='id identifier rubyid_ele'>ele</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
@@ -945,7 +945,7 @@
 94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 89</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_element_methods'>create_element_methods</span>
   <span class='id identifier rubyid_elements'>elements</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ele'>ele</span><span class='op'>|</span>
@@ -978,7 +978,7 @@
 20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 18</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cw_encoding'>cw_encoding</span>
   <span class='ivar'>@encoding</span> <span class='op'>||=</span> <span class='const'>CwEncoding</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1019,7 +1019,7 @@
 51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 38</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_data'>data</span>
   <span class='lbrace'>{</span> <span class='symbol'>:dot</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:dot</span><span class='comma'>,</span>
@@ -1060,7 +1060,7 @@
 83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 81</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_elements'>elements</span>
   <span class='lbracket'>[</span><span class='symbol'>:dot</span><span class='comma'>,</span> <span class='symbol'>:dash</span><span class='comma'>,</span> <span class='symbol'>:space</span><span class='comma'>,</span> <span class='symbol'>:e_space</span><span class='rbracket'>]</span>
@@ -1093,7 +1093,7 @@
 58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 53</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_filter_maybe'>filter_maybe</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='comma'>,</span> <span class='id identifier rubyid_count'>count</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ramp'>ramp</span> <span class='op'>=</span> <span class='float'>0.05</span>
@@ -1130,7 +1130,7 @@
 32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 26</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate'>generate</span> <span class='id identifier rubyid_wrds'>wrds</span>
   <span class='id identifier rubyid_word_parts'>word_parts</span><span class='lparen'>(</span><span class='id identifier rubyid_wrds'>wrds</span><span class='rparen'>)</span>
@@ -1164,7 +1164,7 @@
 73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 71</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_buffer'>generate_buffer</span> <span class='id identifier rubyid_audio_samples'>audio_samples</span><span class='comma'>,</span> <span class='id identifier rubyid_ele'>ele</span>
   <span class='const'>WaveFile</span><span class='op'>::</span><span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_audio_samples'>audio_samples</span><span class='comma'>,</span> <span class='const'>WaveFile</span><span class='op'>::</span><span class='const'>Format</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:mono</span><span class='comma'>,</span> <span class='symbol'>:float</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='id identifier rubyid_ele'>ele</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:spb</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1195,7 +1195,7 @@
 99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 96</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_samples'>generate_samples</span> <span class='id identifier rubyid_ele'>ele</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_generate_space'>generate_space</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='id identifier rubyid_ele'>ele</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:spb</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_space_sample?'>space_sample?</span> <span class='id identifier rubyid_ele'>ele</span>
@@ -1233,7 +1233,7 @@
 69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 60</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_tone'>generate_tone</span><span class='lparen'>(</span><span class='id identifier rubyid_number_of_samples'>number_of_samples</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_audio_samples'>audio_samples</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_fill'>fill</span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_number_of_samples'>number_of_samples</span><span class='rparen'>)</span>
@@ -1275,7 +1275,7 @@
 148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 141</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_make_word_parts'>make_word_parts</span>
   <span class='id identifier rubyid_parts'>parts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1311,7 +1311,7 @@
 37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 34</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_play'>play</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='id identifier rubyid_play_command'>play_command</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_play_filename'>play_filename</span>
@@ -1350,7 +1350,7 @@
 160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 150</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prepare_buffers'>prepare_buffers</span>
   <span class='ivar'>@buffers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -1388,7 +1388,7 @@
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 22</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_progress'>progress</span>
   <span class='ivar'>@progress</span> <span class='op'>||=</span> <span class='const'>Progress</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Compiling</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1423,7 +1423,7 @@
 121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 114</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_push_enc'>push_enc</span> <span class='id identifier rubyid_chr'>chr</span>
   <span class='id identifier rubyid_arry'>arry</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1459,7 +1459,7 @@
 193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 190</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 190</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reset'>reset</span>
   <span class='ivar'>@word_parts</span> <span class='op'>=</span> <span class='ivar'>@progress</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -1496,7 +1496,7 @@
 131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 123</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 123</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_send_char'>send_char</span> <span class='id identifier rubyid_c'>c</span>
   <span class='id identifier rubyid_enc'>enc</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -1532,7 +1532,7 @@
 112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 110</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 110</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_space_or_espace'>space_or_espace</span>
   <span class='lparen'>(</span><span class='ivar'>@effective_wpm</span> <span class='op'>==</span> <span class='ivar'>@wpm</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_space'>space</span> <span class='op'>:</span> <span class='id identifier rubyid_e_space'>e_space</span>
@@ -1562,7 +1562,7 @@
 177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 175</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 175</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_word_composite'>word_composite</span> <span class='id identifier rubyid_word'>word</span>
   <span class='id identifier rubyid_send_char'>send_char</span> <span class='id identifier rubyid_word'>word</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -1595,7 +1595,7 @@
 138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 133</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_word_parts'>word_parts</span> <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='kw'>return</span> <span class='ivar'>@word_parts</span> <span class='kw'>if</span> <span class='ivar'>@word_parts</span>
@@ -1628,7 +1628,7 @@
 173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 171</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_word_space'>word_space</span>
   <span class='ivar'>@effective_wpm</span> <span class='op'>==</span> <span class='ivar'>@wpm</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id identifier rubyid_space'>space</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_e_space'>e_space</span><span class='rbracket'>]</span>
@@ -1665,7 +1665,7 @@
 188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 179</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 179</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_audio'>write_audio</span>
   <span class='const'>WaveFile</span><span class='op'>::</span><span class='const'>Writer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_play_filename'>play_filename</span><span class='comma'>,</span> <span class='const'>WaveFile</span><span class='op'>::</span><span class='const'>Format</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:mono</span><span class='comma'>,</span> <span class='symbol'>:pcm_16</span><span class='comma'>,</span> <span class='ivar'>@sample_rate</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_writer'>writer</span><span class='op'>|</span>
@@ -1703,7 +1703,7 @@
 198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 195</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 195</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_audio_file'>write_audio_file</span>
   <span class='id identifier rubyid_write_audio'>write_audio</span> <span class='lbrace'>{</span> <span class='ivar'>@word_parts</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_part'>part</span><span class='op'>|</span> <span class='id identifier rubyid_word_composite'>word_composite</span><span class='lparen'>(</span><span class='id identifier rubyid_part'>part</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span>
@@ -1736,7 +1736,7 @@
 79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 75</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_element_audio_file'>write_element_audio_file</span> <span class='id identifier rubyid_ele'>ele</span><span class='comma'>,</span> <span class='id identifier rubyid_buffer'>buffer</span>
   <span class='const'>WaveFile</span><span class='op'>::</span><span class='const'>Writer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='id identifier rubyid_ele'>ele</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:filename</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'>WaveFile</span><span class='op'>::</span><span class='const'>Format</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:mono</span><span class='comma'>,</span> <span class='symbol'>:pcm_16</span><span class='comma'>,</span> <span class='ivar'>@sample_rate</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_writer'>writer</span><span class='op'>|</span>
@@ -1769,7 +1769,7 @@
 165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw/tone_generator.rb', line 162</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw/tone_generator.rb', line 162</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_word_parts'>write_word_parts</span>
   <span class='id identifier rubyid_prepare_buffers'>prepare_buffers</span>
@@ -1785,7 +1785,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  9 22:16:54 2016 by
+  Generated on Fri Jul 29 08:09:40 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>

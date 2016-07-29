@@ -96,23 +96,12 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/cw.rb</dd>
+    <dd class="r2 last">/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-<p>CW provides Morse code generation functionality</p>
 
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
   <h2>Constant Summary</h2>
   
 
@@ -144,6 +133,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#convert_book-instance_method" title="#convert_book (instance method)">- (Object) <strong>convert_book</strong>(args = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Convert book to mp3.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#initialize-instance_method" title="#initialize (instance method)">- (CW) <strong>initialize</strong>(&amp;block) </a>
     
 
@@ -161,7 +174,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>A new instance of CW.</p>
+<p>Initialize CW class.</p>
 </div></span>
   
 </li>
@@ -170,7 +183,29 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#play_book-instance_method" title="#play_book (instance method)">- (Object) <strong>play_book</strong>(args = {}) </a>
+      <a href="#list-instance_method" title="#list (instance method)">- (Object) <strong>list</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_book-instance_method" title="#read_book (instance method)">- (Object) <strong>read_book</strong>(args = {}) </a>
     
 
     
@@ -235,6 +270,30 @@
     <span class="summary_desc"><div class='inline'>
 <p>Repeat word repeats the current word if the word is entered incorrectly (or
 not entered at all).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reveal-instance_method" title="#reveal (instance method)">- (Object) <strong>reveal</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reveal words only at end of test.</p>
 </div></span>
   
 </li>
@@ -349,8 +408,14 @@ not entered at all).</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="CwDsl.html" title="CwDsl (class)">CwDsl</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="CwDsl.html#alphabet-instance_method" title="CwDsl#alphabet (method)">#alphabet</a></span>, <span class='object_link'><a href="CwDsl.html#beginning_with-instance_method" title="CwDsl#beginning_with (method)">#beginning_with</a></span>, <span class='object_link'><a href="CwDsl.html#config_defaults-instance_method" title="CwDsl#config_defaults (method)">#config_defaults</a></span>, <span class='object_link'><a href="CwDsl.html#config_files-instance_method" title="CwDsl#config_files (method)">#config_files</a></span>, <span class='object_link'><a href="CwDsl.html#ending_with-instance_method" title="CwDsl#ending_with (method)">#ending_with</a></span>, <span class='object_link'><a href="CwDsl.html#including-instance_method" title="CwDsl#including (method)">#including</a></span>, <span class='object_link'><a href="CwDsl.html#init_config-instance_method" title="CwDsl#init_config (method)">#init_config</a></span>, <span class='object_link'><a href="CwDsl.html#letters_numbers-instance_method" title="CwDsl#letters_numbers (method)">#letters_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#load_abbreviations-instance_method" title="CwDsl#load_abbreviations (method)">#load_abbreviations</a></span>, <span class='object_link'><a href="CwDsl.html#load_alphabet-instance_method" title="CwDsl#load_alphabet (method)">#load_alphabet</a></span>, <span class='object_link'><a href="CwDsl.html#load_common_words-instance_method" title="CwDsl#load_common_words (method)">#load_common_words</a></span>, <span class='object_link'><a href="CwDsl.html#load_most_common_words-instance_method" title="CwDsl#load_most_common_words (method)">#load_most_common_words</a></span>, <span class='object_link'><a href="CwDsl.html#load_numbers-instance_method" title="CwDsl#load_numbers (method)">#load_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#load_q_codes-instance_method" title="CwDsl#load_q_codes (method)">#load_q_codes</a></span>, <span class='object_link'><a href="CwDsl.html#load_words-instance_method" title="CwDsl#load_words (method)">#load_words</a></span>, <span class='object_link'><a href="CwDsl.html#no_longer_than-instance_method" title="CwDsl#no_longer_than (method)">#no_longer_than</a></span>, <span class='object_link'><a href="CwDsl.html#no_shorter_than-instance_method" title="CwDsl#no_shorter_than (method)">#no_shorter_than</a></span>, <span class='object_link'><a href="CwDsl.html#numbers-instance_method" title="CwDsl#numbers (method)">#numbers</a></span>, <span class='object_link'><a href="CwDsl.html#numbers_spoken-instance_method" title="CwDsl#numbers_spoken (method)">#numbers_spoken</a></span>, <span class='object_link'><a href="CwDsl.html#random_letters-instance_method" title="CwDsl#random_letters (method)">#random_letters</a></span>, <span class='object_link'><a href="CwDsl.html#random_letters_numbers-instance_method" title="CwDsl#random_letters_numbers (method)">#random_letters_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#random_numbers-instance_method" title="CwDsl#random_numbers (method)">#random_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#reload-instance_method" title="CwDsl#reload (method)">#reload</a></span>, <span class='object_link'><a href="CwDsl.html#reverse-instance_method" title="CwDsl#reverse (method)">#reverse</a></span>, <span class='object_link'><a href="CwDsl.html#set_tone_type-instance_method" title="CwDsl#set_tone_type (method)">#set_tone_type</a></span>, <span class='object_link'><a href="CwDsl.html#word_count-instance_method" title="CwDsl#word_count (method)">#word_count</a></span>, <span class='object_link'><a href="CwDsl.html#word_size-instance_method" title="CwDsl#word_size (method)">#word_size</a></span>, <span class='object_link'><a href="CwDsl.html#words-instance_method" title="CwDsl#words (method)">#words</a></span>, <span class='object_link'><a href="CwDsl.html#words%3D-instance_method" title="CwDsl#words= (method)">#words=</a></span></p>
-<div id="constructor_details" class="method_details_list">
+  <p class="inherited"><span class='object_link'><a href="CwDsl.html#alpha-instance_method" title="CwDsl#alpha (method)">#alpha</a></span>, <span class='object_link'><a href="CwDsl.html#alphabet-instance_method" title="CwDsl#alphabet (method)">#alphabet</a></span>, <span class='object_link'><a href="CwDsl.html#beginning_with-instance_method" title="CwDsl#beginning_with (method)">#beginning_with</a></span>, <span class='object_link'><a href="CwDsl.html#config_defaults-instance_method" title="CwDsl#config_defaults (method)">#config_defaults</a></span>, <span class='object_link'><a href="CwDsl.html#config_files-instance_method" title="CwDsl#config_files (method)">#config_files</a></span>, <span class='object_link'><a href="CwDsl.html#containing-instance_method" title="CwDsl#containing (method)">#containing</a></span>, <span class='object_link'><a href="CwDsl.html#ending_with-instance_method" title="CwDsl#ending_with (method)">#ending_with</a></span>, <span class='object_link'><a href="CwDsl.html#including-instance_method" title="CwDsl#including (method)">#including</a></span>, <span class='object_link'><a href="CwDsl.html#letters_numbers-instance_method" title="CwDsl#letters_numbers (method)">#letters_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#load_abbreviations-instance_method" title="CwDsl#load_abbreviations (method)">#load_abbreviations</a></span>, <span class='object_link'><a href="CwDsl.html#load_alphabet-instance_method" title="CwDsl#load_alphabet (method)">#load_alphabet</a></span>, <span class='object_link'><a href="CwDsl.html#load_common_words-instance_method" title="CwDsl#load_common_words (method)">#load_common_words</a></span>, <span class='object_link'><a href="CwDsl.html#load_consonants-instance_method" title="CwDsl#load_consonants (method)">#load_consonants</a></span>, <span class='object_link'><a href="CwDsl.html#load_most_common_words-instance_method" title="CwDsl#load_most_common_words (method)">#load_most_common_words</a></span>, <span class='object_link'><a href="CwDsl.html#load_numbers-instance_method" title="CwDsl#load_numbers (method)">#load_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#load_q_codes-instance_method" title="CwDsl#load_q_codes (method)">#load_q_codes</a></span>, <span class='object_link'><a href="CwDsl.html#load_vowels-instance_method" title="CwDsl#load_vowels (method)">#load_vowels</a></span>, <span class='object_link'><a href="CwDsl.html#load_words-instance_method" title="CwDsl#load_words (method)">#load_words</a></span>, <span class='object_link'><a href="CwDsl.html#no_longer_than-instance_method" title="CwDsl#no_longer_than (method)">#no_longer_than</a></span>, <span class='object_link'><a href="CwDsl.html#no_shorter_than-instance_method" title="CwDsl#no_shorter_than (method)">#no_shorter_than</a></span>, <span class='object_link'><a href="CwDsl.html#numbers-instance_method" title="CwDsl#numbers (method)">#numbers</a></span>, <span class='object_link'><a href="CwDsl.html#numbers_spoken-instance_method" title="CwDsl#numbers_spoken (method)">#numbers_spoken</a></span>, <span class='object_link'><a href="CwDsl.html#random_letters-instance_method" title="CwDsl#random_letters (method)">#random_letters</a></span>, <span class='object_link'><a href="CwDsl.html#random_letters_numbers-instance_method" title="CwDsl#random_letters_numbers (method)">#random_letters_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#random_numbers-instance_method" title="CwDsl#random_numbers (method)">#random_numbers</a></span>, <span class='object_link'><a href="CwDsl.html#reload-instance_method" title="CwDsl#reload (method)">#reload</a></span>, <span class='object_link'><a href="CwDsl.html#reverse-instance_method" title="CwDsl#reverse (method)">#reverse</a></span>, <span class='object_link'><a href="CwDsl.html#set_tone_type-instance_method" title="CwDsl#set_tone_type (method)">#set_tone_type</a></span>, <span class='object_link'><a href="CwDsl.html#vowels-instance_method" title="CwDsl#vowels (method)">#vowels</a></span>, <span class='object_link'><a href="CwDsl.html#word_count-instance_method" title="CwDsl#word_count (method)">#word_count</a></span>, <span class='object_link'><a href="CwDsl.html#word_size-instance_method" title="CwDsl#word_size (method)">#word_size</a></span>, <span class='object_link'><a href="CwDsl.html#words-instance_method" title="CwDsl#words (method)">#words</a></span>, <span class='object_link'><a href="CwDsl.html#words%3D-instance_method" title="CwDsl#words= (method)">#words=</a></span></p>
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -365,7 +430,7 @@ not entered at all).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of CW</p>
+<p>Initialize CW class. Eval block if passed in.</p>
 
 
   </div>
@@ -379,25 +444,27 @@ not entered at all).</p>
       <pre class="lines">
 
 
-71
-72
-73
-74
-75
-76
-77
-78</pre>
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 71</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
 
   <span class='kw'>super</span>
 
   <span class='id identifier rubyid_load_common_words'>load_common_words</span><span class='comment'># unless @words.exist?
-</span>  <span class='id identifier rubyid_instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
-  <span class='id identifier rubyid_run'>run</span> <span class='kw'>unless</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_block'>block</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span> <span class='ivar'>@inhibit_block_run</span><span class='rparen'>)</span>
+</span>  <span class='const'>ConfigFile</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_apply_config'>apply_config</span> <span class='kw'>self</span>
+  <span class='id identifier rubyid_instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='id identifier rubyid_run'>run</span> <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -412,9 +479,90 @@ not entered at all).</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="play_book-instance_method">
+  <h3 class="signature first" id="convert_book-instance_method">
   
-    - (<tt>Object</tt>) <strong>play_book</strong>(args = {}) 
+    - (<tt>Object</tt>) <strong>convert_book</strong>(args = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Convert book to mp3.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_book'>convert_book</span> <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_details'>details</span> <span class='op'>=</span> <span class='const'>BookDetails</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_details'>details</span><span class='period'>.</span><span class='id identifier rubyid_arguments'>arguments</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_book'>book</span> <span class='op'>=</span> <span class='const'>Book</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_details'>details</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_book'>book</span><span class='period'>.</span><span class='id identifier rubyid_convert'>convert</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list-instance_method">
+  
+    - (<tt>Object</tt>) <strong>list</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span>
+  <span class='const'>Print</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_list'>list</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_puts'>puts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_book-instance_method">
+  
+    - (<tt>Object</tt>) <strong>read_book</strong>(args = {}) 
   
 
   
@@ -507,19 +655,19 @@ not entered at all).</p>
       <pre class="lines">
 
 
-93
-94
-95
-96
-97
-98
-99</pre>
+116
+117
+118
+119
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 93</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 116</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_play_book'>play_book</span> <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='ivar'>@inhibit_block_run</span> <span class='op'>=</span> <span class='kw'>true</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_read_book'>read_book</span> <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='id identifier rubyid_details'>details</span> <span class='op'>=</span> <span class='const'>BookDetails</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_details'>details</span><span class='period'>.</span><span class='id identifier rubyid_arguments'>arguments</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_book'>book</span> <span class='op'>=</span> <span class='const'>Book</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_details'>details</span>
@@ -603,23 +751,23 @@ not entered at all).</p>
       <pre class="lines">
 
 
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119</pre>
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 109</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read_rss'>read_rss</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_article_count'>article_count</span> <span class='op'>=</span> <span class='int'>3</span><span class='rparen'>)</span>
-  <span class='ivar'>@inhibit_block_run</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='id identifier rubyid_rss'>rss</span><span class='comma'>,</span> <span class='op'>=</span> <span class='const'>Rss</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_rss'>rss</span><span class='period'>.</span><span class='id identifier rubyid_read_rss'>read_rss</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_article_count'>article_count</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
@@ -661,19 +809,65 @@ not entered at all).</p>
       <pre class="lines">
 
 
-62
-63
-64
-65
-66</pre>
+83
+84
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 62</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_repeat_word'>repeat_word</span>
-  <span class='ivar'>@inhibit_block_run</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='id identifier rubyid_repeat_word'>repeat_word</span> <span class='op'>=</span> <span class='const'>RepeatWord</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_repeat_word'>repeat_word</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span> <span class='ivar'>@words</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reveal-instance_method">
+  
+    - (<tt>Object</tt>) <strong>reveal</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reveal words only at end of test. Useful for learning to copy `in the
+head&#39;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reveal'>reveal</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_reveal'>reveal</span> <span class='op'>=</span> <span class='const'>Reveal</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_reveal'>reveal</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span> <span class='ivar'>@words</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -706,12 +900,18 @@ not entered at all).</p>
       <pre class="lines">
 
 
-122</pre>
+155
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 122</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 155</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span> <span class='semicolon'>;</span> <span class='id identifier rubyid_test_words'>test_words</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span>
+  <span class='id identifier rubyid_test_words'>test_words</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -743,17 +943,17 @@ not entered at all).</p>
       <pre class="lines">
 
 
-45
-46
-47
-48
-49</pre>
+65
+66
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 45</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_letters'>test_letters</span>
-  <span class='ivar'>@inhibit_block_run</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='id identifier rubyid_test_letters'>test_letters</span> <span class='op'>=</span> <span class='const'>TestLetters</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_test_letters'>test_letters</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span> <span class='ivar'>@words</span>
 <span class='kw'>end</span></pre>
@@ -788,15 +988,17 @@ not entered at all).</p>
       <pre class="lines">
 
 
-54
-55
-56
-57</pre>
+74
+75
+76
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 54</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_words'>test_words</span>
+  <span class='const'>Params</span><span class='period'>.</span><span class='id identifier rubyid_pause'>pause</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='id identifier rubyid_tw'>tw</span> <span class='op'>=</span> <span class='const'>TestWords</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span> <span class='ivar'>@words</span>
 <span class='kw'>end</span></pre>
@@ -849,12 +1051,12 @@ not entered at all).</p>
       <pre class="lines">
 
 
-83
-84
-85</pre>
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cw.rb', line 83</span>
+      <pre class="code"><span class="info file"># File '/usr/local/rvm/gems/ruby-2.3.0/gems/cw-0.2.4/lib/cw.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='ivar'>@str</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -869,7 +1071,7 @@ not entered at all).</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  9 22:16:52 2016 by
+  Generated on Fri Jul 29 08:09:37 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>
