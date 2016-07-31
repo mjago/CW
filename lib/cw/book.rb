@@ -16,7 +16,6 @@ module CWG
 
     def sentence             ; @sentence ||= Sentence.new        ; end
     def find_sentences       ; sentence.find_all                 ; end
-    def raw_text             ; sentence.text                     ; end
     def read_book(book)      ; sentence.read_book(book)          ; end
     def next_sentence        ; sentence.next                     ; end
     def change_sentence      ; sentence.change                   ; end
