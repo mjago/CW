@@ -23,7 +23,6 @@ module CWG
     def complete_word?       ; get_word_last_char == ' '         ; end
     def audio_stop           ; audio.stop if audio.still_playing?; end
     def book_location        ; @book_details.book_location       ; end
-    def reset_sentence_flags ; sentence.reset_flags              ; end
     def print_book_advice    ; print.print_advice('Play Book')   ; end
 
     def convert
@@ -155,7 +154,7 @@ module CWG
         check_sentence_count
         sync_with_print
         audio_play_repeat_tone_maybe
-        reset_sentence_flags
+        sentence.reset_flags
         compile_and_play
         await_next_sentence_or_quit
         break if quit?
