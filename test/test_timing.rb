@@ -137,13 +137,87 @@ class TestTiming < MiniTest::Test
     assert_equal 0.18 + (0.06 * 3), @timing.char_timing([:dash])
   end
 
-  #todo
-  def test_code_space_timing
-    @timing.instance_variable_set(:@wpm, 20)
+  def test_char_timing_for_dash_dot
+    @timing.instance_variable_set(:@wpm, 120)
+    assert_equal 0.03 + 0.01 + (0.01 * 3) + (0.01 * 1), @timing.char_timing([:dash, :dot])
   end
 
-  #    def test_space_timing
-  #    def test_char_delay(char, wpm, ewpm)
-  #    def test_append_char_delay letr, wpm, ewpm
+  def test_code_space_timing_with_no_ewpm
+    @timing.instance_variable_set(:@wpm, 20)
+    assert_equal (0.06 * 3), @timing.code_space_timing
+  end
+
+  def test_code_space_timing_with_ewpm
+    @timing.instance_variable_set(:@wpm, 20)
+    @timing.instance_variable_set(:@effective_wpm, 10)
+    assert_equal (0.12 * 3), @timing.code_space_timing
+  end
+
+  def test_space_timing_with_no_wpm
+    @timing.instance_variable_set(:@wpm, 20)
+    assert_equal (0.06 * 4), @timing.space_timing
+  end
+
+  def test_space_timing_with_wpm
+    @timing.instance_variable_set(:@wpm, 20)
+    @timing.instance_variable_set(:@effective_wpm, 10)
+    assert_equal (0.12 * 4), @timing.space_timing
+  end
+
+  def test_char_delay_for_letter_e
+    assert_equal(0.06 + (3 * 0.06), @timing.char_delay('e', 20, nil))
+  end
+
+  def test_char_delay_for_letter_t
+    assert_equal((0.06 * 3) + (3 * 0.06), @timing.char_delay('t', 20, nil))
+  end
+
+  def test_char_delay_for_letter_i
+    assert_equal( (( 2 * 0.06)) + (4 * 0.06), @timing.char_delay('i', 20, nil))
+  end
+
+  def test_char_delay_for_letter_m
+    assert_equal( (( 2 * 0.18)) + (4 * 0.06), @timing.char_delay('m', 20, nil))
+  end
+
+  def test_char_delay_for_number_5
+    assert_equal( (( 5 * 0.06)) + (7 * 0.06), @timing.char_delay('5', 20, nil))
+  end
+
+  def test_char_delay_for_number_0
+    assert_equal( (( 5 * 0.18)) + (7 * 0.06), @timing.char_delay('0', 20, nil))
+  end
+
+  def test_char_delay_for_letter_e_with_ewpm
+    assert_equal(0.06 + (3 * 0.12), @timing.char_delay('e', 20, 10))
+  end
+
+  def test_char_delay_for_letter_t_with_ewpm
+    assert_equal((3 * 0.06) + (3 * 0.12), @timing.char_delay('t', 20, 10))
+  end
+
+  def test_char_delay_for_number_5_with_ewpm
+    assert_equal( ((5 * 0.06) + (4 * 0.06)) + (3 * 0.12), @timing.char_delay('5', 20, 10))
+  end
+
+  def test_char_delay_for_number_0_with_ewpm
+    assert_equal( ((5 * 0.18) + (4 * 0.06)) + (3 * 0.12), @timing.char_delay('0', 20, 10))
+  end
+
+  def test_append_char_delay_no_ewpm
+    assert_equal(0, @timing.delay_time)
+    @timing.append_char_delay('m', 20, nil)
+    assert_equal( (( 2 * 0.18)) + (4 * 0.06), @timing.delay_time)
+  end
+
+  def test_append_char_delay_for_i_with_ewpm
+    @timing.append_char_delay('i', 20, 10)
+    assert_equal(( 2 * 0.06) + (1 * 0.06) + (3 * 0.12), @timing.delay_time)
+  end
+
+  def test_append_char_delay_for_m_with_ewpm
+    @timing.append_char_delay('m', 20, 10)
+    assert_equal((2 * 0.18) + (1 * 0.06) + (3 * 0.12), @timing.delay_time)
+  end
 
 end
