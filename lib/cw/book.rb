@@ -17,7 +17,6 @@ module CWG
     def sentence             ; @sentence ||= Sentence.new        ; end
     def find_sentences       ; sentence.find_all                 ; end
     def read_book(book)      ; sentence.read_book(book)          ; end
-    def next_sentence        ; sentence.next                     ; end
     def change_sentence      ; sentence.change                   ; end
     def change_sentence?     ; sentence.change?                  ; end
     def repeat_sentence?     ; sentence.repeat?                  ; end
@@ -111,7 +110,7 @@ module CWG
     def next_sentence_or_quit?
       playing = audio.still_playing?
       sleep 0.01 if playing
-      next_sentence unless playing
+      sentence.next unless playing
       if change_repeat_or_quit?
         change_and_kill_audio
         #todo      prn.newline unless quit?
