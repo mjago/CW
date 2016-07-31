@@ -154,31 +154,31 @@ class TestCwStream < MiniTest::Test
     assert true
   end
 
-  def test_add_word_adds_to_the_stream
-    @stream.add_word 'a'
+  def test_push_adds_to_the_stream
+    @stream.push 'a'
     assert_equal({0 => 'a'}, @stream.stream)
-    @stream.add_word 'tree'
+    @stream.push 'tree'
     assert_equal({0 => 'a', 1 => 'tree'}, @stream.stream)
   end
 
   def test_count
-    @stream.add_word 'a'
+    @stream.push 'a'
     assert_equal 1, @stream.count
-    @stream.add_word 'tree'
+    @stream.push 'tree'
     assert_equal 2, @stream.count
     assert_equal({0 => 'a', 1 => 'tree'}, @stream.stream)
   end
 
   def test_stream_element_can_be_marked_a_success
-    @stream.add_word 'a'
+    @stream.push 'a'
     @stream.mark_success(0)
     assert_equal({0 => true}, @stream.instance_variable_get(:@success))
   end
 
   def test_stream_element_can_be_marked_a_fail
-    @stream.add_word 'a'
+    @stream.push 'a'
     @stream.mark_success(0)
-    @stream.add_word 'b'
+    @stream.push 'b'
     @stream.mark_fail(1)
     assert_equal({0 => true, 1 => false}, @stream.instance_variable_get(:@success))
   end
@@ -189,20 +189,20 @@ class TestCwStream < MiniTest::Test
   end
 
   def test_mark_inactive_region_fail_fails_unmarked_inactive_elements
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.active_region = 2
     @stream.fail_unmarked_inactive_elements
     assert_equal({0 => false, 1 => false, 2 => nil, 3 => nil}, @stream.instance_variable_get(:@success))
   end
 
   def test_mark_inactive_region_fail_doesnt_fail_successes
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.instance_variable_set(:@success, {0 => true, 1 => false})
     @stream.active_region = 2
     @stream.fail_unmarked_inactive_elements
@@ -215,60 +215,60 @@ class TestCwStream < MiniTest::Test
   end
 
   def test_first_returns_first_element_in_stream
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     assert_equal 'a', @stream.first
   end
 
   def test_pop_returns_first_element_in_stream_and_removes_element
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     assert_equal({:value => 'a', :success => false}, @stream.pop)
     refute(@stream.pop[:success])
     assert_equal({2 => 'c', 3 => 'd'}, @stream.stream)
 
     @stream.empty
-    @stream.add_word 'a'
+    @stream.push 'a'
     refute(@stream.pop[:success])
-    @stream.add_word 'b'
+    @stream.push 'b'
     refute(@stream.pop[:success])
-    @stream.add_word 'c'
+    @stream.push 'c'
     refute(@stream.pop[:success])
-    @stream.add_word 'd'
+    @stream.push 'd'
     refute(@stream.pop[:success])
     assert_nil @stream.pop
     assert_equal({}, @stream.stream)
   end
 
   def test_match_last_active_element_marks_correct_element
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.match_last_active_element('c')
     assert_equal({0 => false, 1 => false, 2 => true, 3 => nil}, @stream.instance_variable_get(:@success))
   end
 
   def test_match_last_active_element_doesnt_unmark_correct_element
     @stream.active_region = 2
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.match_last_active_element('c')
     @stream.match_last_active_element('d')
     assert_equal({0 => nil, 1 => false, 2 => true, 3 => true}, @stream.instance_variable_get(:@success))
   end
 
   def test_match_last_active_element_doesnt_unmark_failed_element
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.match_last_active_element('d')
     @stream.match_last_active_element('c')
     assert_equal({0 => false, 1 => false, 2 => true, 3 => true}, @stream.instance_variable_get(:@success))
@@ -280,30 +280,30 @@ class TestCwStream < MiniTest::Test
   #    end
   #
   #    def test_pop_marked_returns_up_to_marked_first_element
-  #      @stream.add_word 'a'
-  #      @stream.add_word 'b'
-  #      @stream.add_word 'c'
-  #      @stream.add_word 'd'
+  #      @stream.push 'a'
+  #      @stream.push 'b'
+  #      @stream.push 'c'
+  #      @stream.push 'd'
   #      @stream.match_last_active_element('a')
   #      assert_equal({0 => {'a' => true}}, @stream.pop_marked)
   #      assert_equal(nil, @stream.pop_marked)
   #    end
   #
   #    def test_pop_marked_returns_up_to_marked_second_element
-  #      @stream.add_word 'a'
-  #      @stream.add_word 'b'
-  #      @stream.add_word 'c'
-  #      @stream.add_word 'd'
+  #      @stream.push 'a'
+  #      @stream.push 'b'
+  #      @stream.push 'c'
+  #      @stream.push 'd'
   #      @stream.match_last_active_element('b')
   #      assert_equal({0 => {'a' => false}, 1 => {'b' => true}}, @stream.pop_marked)
   #      assert_equal(nil, @stream.pop_marked)
   #    end
   #
   #    def test_pop_marked_returns_up_to_marked_first_and_third_element
-  #      @stream.add_word 'a'
-  #      @stream.add_word 'b'
-  #      @stream.add_word 'c'
-  #      @stream.add_word 'd'
+  #      @stream.push 'a'
+  #      @stream.push 'b'
+  #      @stream.push 'c'
+  #      @stream.push 'd'
   #      @stream.match_last_active_element('a')
   #      @stream.match_last_active_element('c')
   #      assert_equal({0 => {'a' => true}, 1 => {'b' => false}, 2 => {'c' => true}}, @stream.pop_marked)
@@ -313,10 +313,10 @@ class TestCwStream < MiniTest::Test
   #    end
   #
   #    def test_pop_marked_returns_inactive_unmarked_elements
-  #      @stream.add_word 'a'
-  #      @stream.add_word 'b'
-  #      @stream.add_word 'c'
-  #      @stream.add_word 'd'
+  #      @stream.push 'a'
+  #      @stream.push 'b'
+  #      @stream.push 'c'
+  #      @stream.push 'd'
   #      @stream.active_region = 2
   #      assert_equal({0 => {'a' => false}, 1 => {'b' => false}}, @stream.pop_marked)
   #      assert_equal(nil, @stream.pop_marked)
@@ -326,20 +326,20 @@ class TestCwStream < MiniTest::Test
   #
   #    def test_pop_marked_returns_mix_of_active_and_inactive
   #      @stream.active_region = 2
-  #      @stream.add_word 'a'
-  #      @stream.add_word 'b'
-  #      @stream.add_word 'c'
-  #      @stream.add_word 'd'
+  #      @stream.push 'a'
+  #      @stream.push 'b'
+  #      @stream.push 'c'
+  #      @stream.push 'd'
   #      @stream.match_last_active_element('d')
   #      assert_equal({0 => {'a' => false}, 1 => {'b' => false}, 2 => {'c' => false}, 3 => {'d' => true}}, @stream.pop_marked)
   #      assert_equal(nil, @stream.pop_marked)
   #    end
 
   def test_pop_next_marked_returns_correct_elements_where_last_only_matched
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.match_last_active_element('d')
     refute(@stream.pop_next_marked[:success])
     refute(@stream.pop_next_marked[:success])
@@ -349,10 +349,10 @@ class TestCwStream < MiniTest::Test
   end
 
   def test_pop_next_marked_returns_correct_elements_where_penultimate_element_matched
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.match_last_active_element('c')
     assert_equal({:value => 'a', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'b', :success => false}, @stream.pop_next_marked)
@@ -364,10 +364,10 @@ class TestCwStream < MiniTest::Test
   def test_pop_next_marked_considers_active_region
 
     @stream.active_region = 2
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     assert_equal({:value => 'a', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'b', :success => false}, @stream.pop_next_marked)
     assert_equal(nil, @stream.pop_next_marked)
@@ -375,10 +375,10 @@ class TestCwStream < MiniTest::Test
 
     @stream.empty
     @stream.active_region = 1
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     assert_equal({:value => 'a', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'b', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'c', :success => false}, @stream.pop_next_marked)
@@ -387,17 +387,17 @@ class TestCwStream < MiniTest::Test
 
     @stream.empty
     @stream.active_region = 2
-    @stream.add_word 'a'
-    @stream.add_word 'b'
-    @stream.add_word 'c'
-    @stream.add_word 'd'
+    @stream.push 'a'
+    @stream.push 'b'
+    @stream.push 'c'
+    @stream.push 'd'
     @stream.match_last_active_element('c')
     assert_equal({:value => 'a', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'b', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'c', :success => true}, @stream.pop_next_marked)
     assert_equal(nil, @stream.pop_next_marked)
-    @stream.add_word 'e'
-    @stream.add_word 'f'
+    @stream.push 'e'
+    @stream.push 'f'
     @stream.match_last_active_element('e')
     assert_equal({:value => 'd', :success => false}, @stream.pop_next_marked)
     assert_equal({:value => 'e', :success => true}, @stream.pop_next_marked)

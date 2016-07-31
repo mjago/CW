@@ -18,7 +18,7 @@ module CWG
       @stream, @success, @first_element, @last_element = {},{}, 0, 0
     end
 
-    def add_word word
+    def push word
       @stream[@last_element] = word.strip
       @success[@last_element] = nil
       inc_last_element
