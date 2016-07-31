@@ -17,7 +17,6 @@ module CWG
     def sentence             ; @sentence ||= Sentence.new        ; end
     def find_sentences       ; sentence.find_all                 ; end
     def read_book(book)      ; sentence.read_book(book)          ; end
-    def change_sentence      ; sentence.change                   ; end
     def change_sentence?     ; sentence.change?                  ; end
     def repeat_sentence?     ; sentence.repeat?                  ; end
     def current_sentence     ; sentence.current                  ; end
@@ -103,7 +102,7 @@ module CWG
     end
 
     def change_and_kill_audio
-      change_sentence
+      sentence.change
       audio_stop
     end
 
