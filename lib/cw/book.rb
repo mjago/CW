@@ -17,11 +17,8 @@ module CWG
     def sentence             ; @sentence ||= Sentence.new        ; end
     def find_sentences       ; sentence.find_all                 ; end
     def read_book(book)      ; sentence.read_book(book)          ; end
-    def change_sentence?     ; sentence.change?                  ; end
     def repeat_sentence?     ; sentence.repeat?                  ; end
-    def current_sentence     ; sentence.current                  ; end
     def current_sentence_ary ; sentence.current_to_array         ; end
-    def sentence_index       ; sentence.index                    ; end
     def play_repeat_tone     ; audio_play_tone @repeat_tone      ; end
     def audio_play_tone t    ; audio.play_tone(t)                ; end
     def play_r_tone          ; audio_play_tone @r_tone           ; end
@@ -59,7 +56,7 @@ module CWG
 
     def get_book_progress
       sentence.read_progress progress_file
-      @current_sentence_index = sentence_index
+      @current_sentence_index = sentence.index
     end
 
     def write_book_progress
@@ -92,7 +89,7 @@ module CWG
     end
 
     def compile_sentence
-      audio.convert_words(add_space(current_sentence) + ' ')
+      audio.convert_words(add_space(sentence.current) + ' ')
     end
 
     def compile_and_play
@@ -142,15 +139,15 @@ module CWG
     end
 
     def print_words_for_current_sentence
-      print_words current_sentence
+      print_words sentence.current
     end
 
     def make_sentence_index_current
-      @current_sentence_index = sentence_index
+      @current_sentence_index = sentence.index
     end
 
     def sentence_index_current?
-      @current_sentence_index && (@current_sentence_index == sentence_index)
+      @current_sentence_index && (@current_sentence_index == sentence.index)
     end
 
     def play_sentences_until_quit
