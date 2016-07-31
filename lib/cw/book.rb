@@ -17,7 +17,6 @@ module CWG
     def sentence             ; @sentence ||= Sentence.new        ; end
     def find_sentences       ; sentence.find_all                 ; end
     def read_book(book)      ; sentence.read_book(book)          ; end
-    def repeat_sentence?     ; sentence.repeat?                  ; end
     def current_sentence_ary ; sentence.current_to_array         ; end
     def play_repeat_tone     ; audio.play_tone @repeat_tone      ; end
     def complete_word?       ; get_word_last_char == ' '         ; end
@@ -61,7 +60,7 @@ module CWG
     end
 
     def audio_play_repeat_tone_maybe
-      play_repeat_tone if repeat_sentence?
+      play_repeat_tone if sentence.repeat?
     end
 
     def process_input_word_maybe
