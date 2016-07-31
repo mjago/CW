@@ -19,9 +19,8 @@ module CWG
     def read_book(book)      ; sentence.read_book(book)          ; end
     def repeat_sentence?     ; sentence.repeat?                  ; end
     def current_sentence_ary ; sentence.current_to_array         ; end
-    def play_repeat_tone     ; audio_play_tone @repeat_tone      ; end
-    def audio_play_tone t    ; audio.play_tone(t)                ; end
-    def play_r_tone          ; audio_play_tone @r_tone           ; end
+    def play_repeat_tone     ; audio.play_tone @repeat_tone      ; end
+    def play_r_tone          ; audio.play_tone @r_tone           ; end
     def complete_word?       ; get_word_last_char == ' '         ; end
     def audio_stop           ; audio.stop if audio.still_playing?; end
     def book_location        ; @book_details.book_location       ; end
