@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'ruby-progressbar', '>= 1.8.1'
   spec.add_runtime_dependency 'sanitize', '~> 4.1.0'
   spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
-  spec.add_development_dependency 'stackprof', '~> 0.2.9'
+#  spec.add_development_dependency 'stackprof', '~> 0.2.9'
   spec.add_development_dependency 'version', '>= 1.0.0'
   spec.add_development_dependency 'minitest',  '>= 5.8.4'
   spec.add_development_dependency 'simplecov', '>= 0.12.0'
