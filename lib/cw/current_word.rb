@@ -10,10 +10,6 @@ module CWG
       @current_word = ''
     end
 
-    def current_word
-      @current_word ||= String.new
-    end
-
     def push_letter letr
       @current_word += letr
     end
@@ -24,8 +20,7 @@ module CWG
 
     def clear
       @current_word.clear
-      @current_word = ''
-    end
+     end
 
     def strip
       @current_word.strip!
