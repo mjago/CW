@@ -8,7 +8,11 @@ module CWG
 
     include TextHelpers
 
-    def load(filename)
+    def load args
+      @words = CommonWords.new.read(args)
+    end
+
+    def load_text(filename)
       File.open(filename, 'r') do |file|
         @words = file.read.split
       end

@@ -33,7 +33,6 @@ module CWG
 
     def play
       cmd = play_command + ' ' + play_filename
-      puts "cmd = #{cmd}"
       @pid = ! @dry_run ? Process.spawn(cmd) : cmd
     end
 

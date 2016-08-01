@@ -2,7 +2,7 @@
 
 # class Cw_dsl provides CW's commands
 
-require_relative 'params'
+#require_relative 'params'
 
 module CWG
 
@@ -69,9 +69,16 @@ module CWG
     def test_letters
       Params.no_run = true
       test_letters = TestLetters.new
-
       test_letters.run @words
     end
+
+#todo
+#    def tx
+#      @words.add ["abc"]
+#      Params.no_run = true
+#      tx = Tx.new
+#      tx.listen @words
+#    end
 
     # Test user against complete words rather than letters.
     #
@@ -233,24 +240,20 @@ module CWG
     #    Params.noise = true
     #  end
 
-    def reload
-      load_words(Params.dictionary)
-    end
-
     def load_common_words
-      load_words
+      @words.load 1000
     end
 
     def load_most_common_words
-      load_words MOST_COMMON_WORDS
+      load_text MOST_COMMON_WORDS
     end
 
     def load_abbreviations
-      load_words ABBREVIATIONS
+      load_text ABBREVIATIONS
     end
 
-    def load_q_codes
-      load_words Q_CODES
+    def load_codes
+      load_text Q_CODES
     end
 
     #todo refactor
@@ -263,9 +266,18 @@ module CWG
     def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
     def load_numbers    ; @words.assign numbers          ; end
 
-    def load_words(filename = COMMON_WORDS)
+#    def load_words(filename = COMMON_WORDS)
+#      Params.dictionary = filename
+#      @words.load filename
+#    end
+
+    def load_text(filename)
       Params.dictionary = filename
-      @words.load filename
+      @words.load_text filename
+    end
+
+    def load_words(args)
+      @words.load args
     end
 
     def set_tone_type(type)

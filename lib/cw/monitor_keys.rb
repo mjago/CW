@@ -5,6 +5,7 @@ require 'thread'
 module CWG
 
   class MonitorKeys
+
     def initialize(cw)
       @cw = cw
       @key_input = KeyInput.new
@@ -34,7 +35,6 @@ module CWG
         check_sentence_navigation key_chr if self.class == Book
         build_word_maybe
       end
-
     end
 
   end

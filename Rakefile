@@ -5,6 +5,7 @@ require 'rake/version_task'
 Rake::VersionTask.new
 
 Rake::TestTask.new do |t|
+
   t.pattern = "test/test_*.rb"
-#  t.pattern = "test/test_tester.rb"
+#  t.pattern = "test/test_common_words.rb"
 end

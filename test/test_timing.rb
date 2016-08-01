@@ -15,7 +15,7 @@ class TestTiming < MiniTest::Test
   end
 
   def teardown
-    @cw = nil
+    @timing = nil
   end
 
   def test_attr_accessor_delay_time

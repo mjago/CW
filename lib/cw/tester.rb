@@ -201,7 +201,7 @@ module CWG
 
     def process_space_maybe letr
       if letr == ' '
-        stream.add_word current_word.strip
+        stream.push current_word.strip
         current_word.clear
         letr.clear
         print.success ' ' if print_letters?

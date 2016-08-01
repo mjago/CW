@@ -37,7 +37,7 @@ class TestCW < MiniTest::Test
   end
 
   def test_loads_words_by_default
-    assert_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
+    assert_equal ["the", "of", "and", "to", "a"] , @cw.words.first(5)
   end
 
   def test_dictionary_defaults_to_COMMON_WORDS
@@ -55,10 +55,11 @@ class TestCW < MiniTest::Test
     }
   end
 
-  def test_dont_load_common_words_if_passed_in_block
+  def test_words_loads_words
     cw = CW.new {
       no_run
     }
+    assert_equal 1000, cw.words.size
     cw.words = ["some", "words"]
     assert_equal ["some", "words"], cw.words
   end
@@ -80,16 +81,6 @@ class TestCW < MiniTest::Test
     assert (Time.now - time) < 1
   end
 
-  def test_reload_reloads_dictionary
-    cw = CW.new {
-      no_run
-    }
-    cw.words = ["some", "words"]
-    assert_equal ["some", "words"], cw.words
-    cw.reload
-    assert_equal ["the", "of", "and", "a", "to"] , cw.words.first(5)
-  end
-
   def test_load_common_words_loads_common_words
     cw = CW.new {
       no_run
@@ -97,28 +88,15 @@ class TestCW < MiniTest::Test
     cw.words = ["some", "words"]
     assert_equal ["some", "words"], cw.words
     cw.load_common_words
-    assert_equal ["the", "of", "and", "a", "to"] , cw.words.first(5)
+    assert_equal ["the", "of", "and", "to", "a"] , cw.words.first(5)
   end
 
   def test_load_words_loads_passed_filename
     temp = Tempfile.new("words.tmp")
     temp << "some words"
     temp.close
-    @cw.load_words(temp)
+    @cw.load_text temp
     assert_equal ["some", "words"], @cw.words
-  end
-
-  def test_reload_reuploads_new_words_ie_dictionary_updated
-    temp = Tempfile.new("words.tmp")
-    temp << "some more words"
-    temp.close
-    @cw.load_words(temp)
-    assert_equal ["some", "more", "words"], @cw.words
-    @cw.words = ''
-    @cw.reload
-    assert_equal ["some", "more", "words"], @cw.words
-    @cw.load_common_words
-    assert_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
   end
 
    def test_to_s_outputs_test_run_header_if_no_rund
@@ -177,34 +155,36 @@ Ending:     x
 
   def test_shuffle_shuffles_words
     @cw.shuffle
-    refute_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
+    refute_equal ["the", "of", "and", "to", "a"], @cw.words.first(5)
   end
 
   def test_word_size_returns_words_of_such_size
     @cw.word_size 2
-    assert_equal ["of", "to", "in", "is", "it"] , @cw.words.first(5)
+    assert_equal ["of", "to", "in", "is", "on"] , @cw.words.first(5)
   end
   
   def test_beginning_with_returns_words_beginning_with_letter
     @cw.beginning_with 'l'
-    assert_equal ["like", "look", "long", "little", "large"] , @cw.words.first(5)
+    assert_equal ["like", "list", "last", "links", "life"], @cw.words.first(5)
   end
 
   def test_beginning_with_will_take_two_letters
-    @cw.beginning_with 'q','b'
-    assert_equal ["question", "quickly", "quite", "quiet", "be", "by"] ,
+    @cw.load_words(1500)
+    @cw.beginning_with 'x','q'
+    assert_equal ["x", "xml", "quality", "questions", "q", "quote"],
     @cw.words.first(6)
   end
 
   def test_ending_with_returns_words_ending_with_letter
     @cw.ending_with 'l'
-    assert_equal ["all", "will", "call", "oil", "well"] , @cw.words.first(5)
+    assert_equal ["all", "will", "email", "well", "school"], @cw.words.first(5)
   end
 
   def test_ending_with_will_take_two_letters
+    @cw.load_words 200
     @cw.ending_with 'x', 'a'
-    assert_equal ["box", "six", "suffix", "a", "America", "sea"] ,
-    @cw.words.first(6)
+    assert_equal ["x", "sex", "a", "data"],
+    @cw.words
   end
 
   def test_word_count_returns_x_words
@@ -214,22 +194,23 @@ Ending:     x
 
   def test_including_returns_words_including_letter
     @cw.including 'l'
-    assert_equal ["all", "will", "would", "like", "look"] , @cw.words.first(5)
+    assert_equal ["all", "will", "only", "also", "help"], @cw.words.first(5)
   end
 
   def test_including_will_take_two_letters
-    @cw.including 'q', 'a'
-    assert_equal ["question", "quickly", "equation", "square", "quite", "quiet", "equal", "and"] ,@cw.words.first(8)
+    @cw.load_words(100)
+    @cw.including 'p','b'
+    assert_equal ["page", "up", "help", "pm", "by", "be", "about", "but"],@cw.words.first(8)
   end
 
   def test_no_longer_than_will_return_words_no_longer_than_x
     @cw.no_longer_than 4
-    assert_equal ["the", "of", "and", "a", "to"] , @cw.words.first(5)
+    assert_equal ["the", "of", "and", "to", "a"] , @cw.words.first(5)
   end
 
   def test_no_shorter_than_will_return_words_no_shorter_than_x
     @cw.no_shorter_than 4
-    assert_equal ["that", "with", "they", "this", "have"] , @cw.words.first(5)
+    assert_equal ["that", "this", "with", "from", "your"], @cw.words.first(5)
   end
 
   def test_words_fn_adds_words
