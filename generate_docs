@@ -8,19 +8,24 @@ dir = File.dirname `gem which cw`
 dir += '/'
 yard_path = File.dirname `gem which yard`
 yard_path += '/'
-readme_path = File.join(File.dirname(File.expand_path(dir)), 'README.md')
-version_path = File.join(File.dirname(File.expand_path(dir)), 'VERSION')
-example_path = File.join(File.dirname(File.expand_path(dir)), 'example.rb')
+
+dir = '/Users/martyn/cw/cw_clone'
+readme_path = File.join(File.expand_path(dir), 'README.md')
+version_path = File.join(File.expand_path(dir), 'VERSION')
+example_path = File.join(File.expand_path(dir), 'example.rb')
 class_diagram_path = File.join('doc', 'class_diagram.svg')
 
+#puts readme_path
+#exit 1
+
 puts "Generating Documentation database..."
-system("yardoc  -n -o doc -r #{readme_path} --files #{version_path},#{example_path} '#{dir}**/*.rb'")
+system("yardoc  -n -o doc -r #{readme_path} --files #{version_path},#{example_path} '#{dir}/**/*.rb'")
 
 puts "Generating Class Diagram..."
 system("yard graph --dependencies --empty-mixins --full -b.yardoc | dot -T svg -o class_diagram.svg ")
 
 puts "Generating Documentation..."
-system("yardoc --use-cache -o doc -r  #{readme_path} --asset class_diagram.svg:class_diagram.svg --files #{version_path},#{example_path} '#{dir}**/*.rb'")
+system("yardoc --use-cache -o doc -r  #{readme_path} --asset class_diagram.svg:class_diagram.svg --files #{version_path},#{example_path} '#{dir}/**/*.rb'")
 
 puts "Done"
 
