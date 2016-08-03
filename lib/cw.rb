@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+require_relative 'cw/config'
 require_relative 'cw/file_details'
 require_relative 'cw/process'
 require_relative 'cw/text_helpers'
