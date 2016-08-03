@@ -50,7 +50,6 @@ module CWG
 
     def read_config_maybe
       if File.exist?(CONFIG)
-        puts 'Loading config.'
         read_config
         config
       end

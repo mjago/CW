@@ -40,7 +40,7 @@ module CWG
     HERE = File.dirname(__FILE__) + '/'
 
     def self.config
-      @config ||= ParseConfig.new(File.join HERE, '..', '..', 'cw_config')
+      @config ||= ParseConfig.new(File.join HERE, '..', '..', '.cw_config')
     end
   end
 end

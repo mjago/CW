@@ -8,7 +8,7 @@ Gemfile.lock
 *.gem
 *.rbc
 .bundle
-.cw_config
+# .cw_config
 coverage
 InstalledFiles
 lib/bundler/man

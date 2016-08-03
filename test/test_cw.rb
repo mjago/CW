@@ -469,7 +469,7 @@ Ending:     x
       str = @cl.cl_echo('some words')
       no_run
     end
-    assert str.include?('echo some words | ebook2cw -w 25')
+    assert str.include?('some words')
   end
 
   def test_words_exist

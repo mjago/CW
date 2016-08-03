@@ -80,7 +80,7 @@ module CWG
     end
 
     def delim_str
-      "#{'=' * Params.name.size}\n"
+      "#{'=' * name.size}\n"
     end
 
   end
