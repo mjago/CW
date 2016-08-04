@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: CWG::Rss
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!CWG/Rss.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../CWG.html" title="CWG (module)">CWG</a></span></span>
+     &raquo; 
+    <span class="title">Rss</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: CWG::Rss
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">CWG::Rss</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="TextHelpers.html" title="CWG::TextHelpers (module)">TextHelpers</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">/Users/martyn/cw/cw_clone/lib/cw/rss.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>class Rss</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#article_index-instance_method" title="#article_index (instance method)">- (Object) <strong>article_index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inc_article_index-instance_method" title="#inc_article_index (instance method)">- (Object) <strong>inc_article_index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#next_article-instance_method" title="#next_article (instance method)">- (Object) <strong>next_article</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_rss-instance_method" title="#read_rss (instance method)">- (Object) <strong>read_rss</strong>(src, article_count = 3) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#source-instance_method" title="#source (instance method)">- (Object) <strong>source</strong>(src) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sources-instance_method" title="#sources (instance method)">- (Object) <strong>sources</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="TextHelpers.html" title="CWG::TextHelpers (module)">TextHelpers</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="TextHelpers.html#cw_chars-instance_method" title="CWG::TextHelpers#cw_chars (method)">#cw_chars</a></span>, <span class='object_link'><a href="TextHelpers.html#exclude_non_cw_chars-instance_method" title="CWG::TextHelpers#exclude_non_cw_chars (method)">#exclude_non_cw_chars</a></span>, <span class='object_link'><a href="TextHelpers.html#letter_group-instance_method" title="CWG::TextHelpers#letter_group (method)">#letter_group</a></span>, <span class='object_link'><a href="TextHelpers.html#number_group-instance_method" title="CWG::TextHelpers#number_group (method)">#number_group</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="article_index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>article_index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/lib/cw/rss.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_article_index'>article_index</span>
+  <span class='ivar'>@article_index</span> <span class='op'>||</span> <span class='ivar'>@article_index</span> <span class='op'>=</span> <span class='int'>0</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inc_article_index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>inc_article_index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/lib/cw/rss.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inc_article_index'>inc_article_index</span>
+  <span class='ivar'>@article_index</span> <span class='op'>+=</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="next_article-instance_method">
+  
+    - (<tt>Object</tt>) <strong>next_article</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/lib/cw/rss.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_next_article'>next_article</span>
+  <span class='id identifier rubyid_temp'>temp</span> <span class='op'>=</span> <span class='ivar'>@rss_articles</span><span class='lbracket'>[</span><span class='id identifier rubyid_article_index'>article_index</span><span class='rbracket'>]</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_temp'>temp</span>
+  <span class='id identifier rubyid_inc_article_index'>inc_article_index</span>
+  <span class='id identifier rubyid_quote'>quote</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_temp'>temp</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='id identifier rubyid_quote'>quote</span> <span class='op'>+=</span> <span class='id identifier rubyid_i'>i</span> <span class='rbrace'>}</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_quote'>quote</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_article'>article</span><span class='op'>|</span> <span class='id identifier rubyid_cw_chars'>cw_chars</span><span class='lparen'>(</span><span class='id identifier rubyid_article'>article</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_rss-instance_method">
+  
+    - (<tt>Object</tt>) <strong>read_rss</strong>(src, article_count = 3) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/lib/cw/rss.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_read_rss'>read_rss</span><span class='lparen'>(</span><span class='id identifier rubyid_src'>src</span><span class='comma'>,</span> <span class='id identifier rubyid_article_count'>article_count</span> <span class='op'>=</span> <span class='int'>3</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>feedjira</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>htmlentities</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sanitize</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_coder'>coder</span> <span class='op'>=</span> <span class='const'>HTMLEntities</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_url'>url</span>   <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span><span class='lparen'>(</span><span class='id identifier rubyid_src'>src</span><span class='rparen'>)</span>
+  <span class='comment'># return a Hash - each url having a Feedjira::Feed object
+</span>  <span class='id identifier rubyid_feed'>feed</span>  <span class='op'>=</span> <span class='const'>Feedjira</span><span class='op'>::</span><span class='const'>Feed</span><span class='period'>.</span><span class='id identifier rubyid_fetch_and_parse'>fetch_and_parse</span> <span class='id identifier rubyid_url'>url</span>
+  <span class='id identifier rubyid_entry_count'>entry_count</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='ivar'>@rss_articles</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_feed'>feed</span><span class='period'>.</span><span class='id identifier rubyid_entries'>entries</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_entry'>entry</span><span class='op'>|</span>
+    <span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='id identifier rubyid_entry'>entry</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span>
+    <span class='kw'>unless</span><span class='lparen'>(</span><span class='id identifier rubyid_title'>title</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VIDEO:</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>||</span>
+           <span class='id identifier rubyid_title'>title</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>In pictures:</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>||</span>
+           <span class='id identifier rubyid_title'>title</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Morning business round-up</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_words'>words</span> <span class='op'>=</span> <span class='id identifier rubyid_entry'>entry</span><span class='period'>.</span><span class='id identifier rubyid_summary'>summary</span>
+      <span class='id identifier rubyid_entry_count'>entry_count</span> <span class='op'>+=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@rss_articles</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='const'>Sanitize</span><span class='period'>.</span><span class='id identifier rubyid_clean'>clean</span> <span class='id identifier rubyid_coder'>coder</span><span class='period'>.</span><span class='id identifier rubyid_decode'>decode</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='id identifier rubyid_entry_count'>entry_count</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_article_count'>article_count</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="source-instance_method">
+  
+    - (<tt>Object</tt>) <strong>source</strong>(src) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/lib/cw/rss.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_source'>source</span> <span class='id identifier rubyid_src'>src</span>
+  <span class='id identifier rubyid_sources'>sources</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_src'>src</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_sources'>sources</span><span class='lbracket'>[</span><span class='id identifier rubyid_src'>src</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid_sources'>sources</span><span class='lbracket'>[</span><span class='symbol'>:quotation</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sources-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sources</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/lib/cw/rss.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sources'>sources</span>
+  <span class='lbrace'>{</span>
+    <span class='label'>bbc:</span>       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://feeds.bbci.co.uk/news/rss.xml</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+    <span class='label'>reuters:</span>   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://feeds.reuters.com/Reuters/worldNews?format=xml</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+    <span class='label'>guardian:</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://www.theguardian.com/world/rss</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+    <span class='label'>quotation:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://feeds.feedburner.com/quotationspage/qotd</span><span class='tstring_end'>&#39;</span></span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sat Jul 30 04:08:46 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.3.0).
+</div>
+
+  </body>
+</html>

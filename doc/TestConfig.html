@@ -1,0 +1,1062 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TestConfig
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!TestConfig.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TestConfig</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: TestConfig
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">MiniTest::Test</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">MiniTest::Test</li>
+          
+            <li class="next">TestConfig</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">/Users/martyn/cw/cw_clone/test/test_config.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="CONFIG_METHODS-constant" class="">CONFIG_METHODS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='symbol'>:name</span><span class='comma'>,</span><span class='symbol'>:wpm</span><span class='comma'>,</span><span class='symbol'>:effective_wpm</span><span class='comma'>,</span><span class='symbol'>:frequency</span><span class='comma'>,</span><span class='symbol'>:audio_filename</span><span class='comma'>,</span><span class='symbol'>:audio_dir</span><span class='comma'>,</span>
+  <span class='symbol'>:book_name</span><span class='comma'>,</span><span class='symbol'>:book_dir</span><span class='comma'>,</span><span class='symbol'>:play_command</span><span class='comma'>,</span><span class='symbol'>:size</span><span class='comma'>,</span><span class='symbol'>:run_default</span><span class='comma'>,</span><span class='symbol'>:word_spacing</span><span class='comma'>,</span>
+  <span class='symbol'>:command_line</span><span class='comma'>,</span><span class='symbol'>:author</span><span class='comma'>,</span><span class='symbol'>:title</span><span class='comma'>,</span><span class='symbol'>:quality</span><span class='comma'>,</span><span class='symbol'>:ebook2cw_path</span><span class='comma'>,</span><span class='symbol'>:noise</span><span class='comma'>,</span><span class='symbol'>:no_noise</span><span class='comma'>,</span>
+  <span class='symbol'>:tone</span><span class='comma'>,</span><span class='symbol'>:word_count</span><span class='comma'>,</span><span class='symbol'>:volume</span><span class='comma'>,</span><span class='symbol'>:list_colour</span><span class='comma'>,</span><span class='symbol'>:success_colour</span><span class='comma'>,</span><span class='symbol'>:fail_colour</span><span class='comma'>,</span>
+  <span class='symbol'>:no_run</span><span class='comma'>,</span><span class='symbol'>:run</span><span class='comma'>,</span><span class='symbol'>:print_letters</span><span class='comma'>,</span><span class='symbol'>:no_print</span><span class='comma'>,</span><span class='symbol'>:use_ebook2cw</span><span class='comma'>,</span><span class='symbol'>:use_ruby_tone</span><span class='comma'>,</span>
+  <span class='symbol'>:dictionary</span><span class='comma'>,</span><span class='symbol'>:containing</span><span class='comma'>,</span><span class='symbol'>:begin</span><span class='comma'>,</span><span class='symbol'>:end</span><span class='comma'>,</span><span class='symbol'>:including</span><span class='comma'>,</span><span class='symbol'>:word_filename</span><span class='comma'>,</span><span class='symbol'>:max</span><span class='comma'>,</span><span class='symbol'>:min</span><span class='comma'>,</span>
+  <span class='symbol'>:exit</span>
+<span class='rbracket'>]</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setup-instance_method" title="#setup (instance method)">- (Object) <strong>setup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_accessing_unknown_method_returns_nil-instance_method" title="#test_accessing_unknown_method_returns_nil (instance method)">- (Object) <strong>test_accessing_unknown_method_returns_nil</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_an_existing_setting_works-instance_method" title="#test_an_existing_setting_works (instance method)">- (Object) <strong>test_an_existing_setting_works</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_book_dir_default-instance_method" title="#test_book_dir_default (instance method)">- (Object) <strong>test_book_dir_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_book_name_default-instance_method" title="#test_book_name_default (instance method)">- (Object) <strong>test_book_name_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_dictionary_dir_default-instance_method" title="#test_dictionary_dir_default (instance method)">- (Object) <strong>test_dictionary_dir_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_dictionary_name_default-instance_method" title="#test_dictionary_name_default (instance method)">- (Object) <strong>test_dictionary_name_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_ebook2cw_path_default-instance_method" title="#test_ebook2cw_path_default (instance method)">- (Object) <strong>test_ebook2cw_path_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_fail_colour_default-instance_method" title="#test_fail_colour_default (instance method)">- (Object) <strong>test_fail_colour_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_frequency-instance_method" title="#test_frequency (instance method)">- (Object) <strong>test_frequency</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_list_colour_default-instance_method" title="#test_list_colour_default (instance method)">- (Object) <strong>test_list_colour_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_params_rewrite-instance_method" title="#test_params_rewrite (instance method)">- (Object) <strong>test_params_rewrite</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_play_command_default-instance_method" title="#test_play_command_default (instance method)">- (Object) <strong>test_play_command_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_run_default_default-instance_method" title="#test_run_default_default (instance method)">- (Object) <strong>test_run_default_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_setting_unknown_method_returns_nil-instance_method" title="#test_setting_unknown_method_returns_nil (instance method)">- (Object) <strong>test_setting_unknown_method_returns_nil</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_success_colour_default-instance_method" title="#test_success_colour_default (instance method)">- (Object) <strong>test_success_colour_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_wpm_default-instance_method" title="#test_wpm_default (instance method)">- (Object) <strong>test_wpm_default</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="setup-instance_method">
+  
+    - (<tt>Object</tt>) <strong>setup</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_setup'>setup</span>
+  <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_reset'>reset</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_accessing_unknown_method_returns_nil-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_accessing_unknown_method_returns_nil</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_accessing_unknown_method_returns_nil'>test_accessing_unknown_method_returns_nil</span>
+  <span class='id identifier rubyid_refute'>refute</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unknown</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_an_existing_setting_works-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_an_existing_setting_works</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_an_existing_setting_works'>test_an_existing_setting_works</span>
+  <span class='id identifier rubyid_refute'>refute</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exit</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exit</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_assert'>assert</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exit</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_book_dir_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_book_dir_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_book_dir_default'>test_book_dir_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data/text/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>book_dir</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_book_name_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_book_name_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_book_name_default'>test_book_name_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>book.txt</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>book_name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_dictionary_dir_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_dictionary_dir_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_dictionary_dir_default'>test_dictionary_dir_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data/text/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dictionary_dir</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_dictionary_name_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_dictionary_name_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_dictionary_name_default'>test_dictionary_name_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>english.txt</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dictionary_name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_ebook2cw_path_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_ebook2cw_path_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_ebook2cw_path_default'>test_ebook2cw_path_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/bin/ebook2cw</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ebook2cw_path</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_fail_colour_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_fail_colour_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_fail_colour_default'>test_fail_colour_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>red</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>fail_colour</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_frequency-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_frequency</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_frequency'>test_frequency</span>
+  <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frequency</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='int'>400</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>400</span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frequency</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_list_colour_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_list_colour_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_list_colour_default'>test_list_colour_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>default</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>list_colour</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_params_rewrite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_params_rewrite</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_params_rewrite'>test_params_rewrite</span>
+  <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='op'>::</span><span class='const'>CONFIG_METHODS</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_label'>label</span><span class='comma'>,</span><span class='id identifier rubyid_idx'>idx</span><span class='op'>|</span>
+    <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='id identifier rubyid_label'>label</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_idx'>idx</span>
+  <span class='kw'>end</span>
+  <span class='int'>0</span><span class='period'>.</span><span class='id identifier rubyid_upto'>upto</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='op'>::</span><span class='const'>CONFIG_METHODS</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>-</span> <span class='int'>1</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_idx'>idx</span><span class='op'>|</span>
+    <span class='id identifier rubyid_assert_equal'>assert_equal</span><span class='lparen'>(</span><span class='id identifier rubyid_idx'>idx</span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='op'>::</span><span class='const'>CONFIG_METHODS</span><span class='lbracket'>[</span><span class='id identifier rubyid_idx'>idx</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_play_command_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_play_command_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_play_command_default'>test_play_command_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/bin/afplay</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>play_command</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_run_default_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_run_default_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_run_default_default'>test_run_default_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test_letters</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>run_default</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_setting_unknown_method_returns_nil-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_setting_unknown_method_returns_nil</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 82</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_setting_unknown_method_returns_nil'>test_setting_unknown_method_returns_nil</span>
+  <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unknown</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>something</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>something</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unknown</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_success_colour_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_success_colour_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_success_colour_default'>test_success_colour_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>green</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>success_colour</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_wpm_default-instance_method">
+  
+    - (<tt>Object</tt>) <strong>test_wpm_default</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/Users/martyn/cw/cw_clone/test/test_config.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_wpm_default'>test_wpm_default</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>25</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>CWG</span><span class='op'>::</span><span class='const'>Cfg</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wpm</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Aug  4 19:50:50 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.3.0).
+</div>
+
+  </body>
+</html>

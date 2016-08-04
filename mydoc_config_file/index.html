@@ -592,12 +592,13 @@ The file should be placed in the root directory and given the name <strong>.cw_c
 <p>The configurable options are:</p>
 
 <ul>
-  <li>wpm:</li>
-  <li>book_name:</li>
-  <li>play_command:</li>
-  <li>success_colour:</li>
-  <li>fail_colour:</li>
-  <li>list_colour:</li>
+  <li>wpm</li>
+  <li>book_name</li>
+  <li>book_dir</li>
+  <li>play_command</li>
+  <li>success_colour</li>
+  <li>fail_colour</li>
+  <li>list_colour</li>
 </ul>
 
 <p>An example config file looks as follows:</p>
@@ -605,12 +606,12 @@ The file should be placed in the root directory and given the name <strong>.cw_c
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code>
  <span class="c1"># .cw_config</span>
 
-<span class="s">wpm</span><span class="pi">:</span>             <span class="s">18</span>
-<span class="s">book_name</span><span class="pi">:</span>       <span class="s">book_to_read.txt</span>
-<span class="s">play_command</span><span class="pi">:</span>    <span class="s">/usr/bin/afplay</span>
-<span class="s">success_colour</span><span class="pi">:</span>  <span class="s">green</span>
-<span class="s">fail_colour</span><span class="pi">:</span>     <span class="s">orange</span>
-<span class="s">list_colour</span><span class="pi">:</span>     <span class="s">cyan</span>
+<span class="s">wpm             = 18</span>
+<span class="s">book_name       = book_to_read.txt</span>
+<span class="s">play_command    = /usr/bin/afplay</span>
+<span class="s">success_colour  = green</span>
+<span class="s">fail_colour     = orange</span>
+<span class="s">list_colour     = cyan</span>
 </code></pre>
 </div>
 
@@ -619,8 +620,6 @@ The file should be placed in the root directory and given the name <strong>.cw_c
 <p>By creating this config file the wpm command may be omitted in the
 <em>cw script</em>. Alternatively this configured value will be overridden if
 the wpm command is used in a <em>cw script</em>.</p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There should be no whitespace in front of the command to be configured. In addition the command should be suffixed with a semi-colon.</div>
 
 <div class="seriesContext">
   <a>

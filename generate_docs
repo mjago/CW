@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-
-#require('FileUtils');
 require 'yard'
 
 dir = File.dirname `gem which cw`
@@ -10,10 +8,9 @@ yard_path = File.dirname `gem which yard`
 yard_path += '/'
 
 dir = '/Users/martyn/cw/cw_clone'
-readme_path = File.join(File.expand_path(dir), 'README.md')
+readme_path  = File.join(File.expand_path(dir), 'README.md')
 version_path = File.join(File.expand_path(dir), 'VERSION')
 example_path = File.join(File.expand_path(dir), 'example.rb')
-class_diagram_path = File.join('doc', 'class_diagram.svg')
 
 #puts readme_path
 #exit 1
