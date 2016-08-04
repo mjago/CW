@@ -7,34 +7,18 @@ module CWG
     attr_reader :args
 
     HERE = File.dirname(__FILE__) + '/'
-    GEM_BOOK_DIRECTORY     = HERE + '../../data/text/'
-    GEM_BOOK_NAME          = 'book.txt'
-    DEFAULT_BOOK_DIRECTORY = 'books'
 
     def initialize
       book_directory
       book_name
     end
 
-    def is_default_book_dir?
-      if File.exist? DEFAULT_BOOK_DIRECTORY
-        if File.directory? DEFAULT_BOOK_DIRECTORY
-          return true
-        end
-      end
-      false
-    end
-
     def book_name
-      Params.book_name ||= GEM_BOOK_NAME
+      Cfg.config["book_name"]
     end
 
     def book_directory
-      book_dir = GEM_BOOK_DIRECTORY
-      if is_default_book_dir?
-        book_dir = DEFAULT_BOOK_DIRECTORY
-      end
-      Params.book_dir ||= book_dir
+      Cfg.config["book_dir"]
     end
 
     def book_location

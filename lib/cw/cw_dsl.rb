@@ -2,14 +2,11 @@
 
 # class Cw_dsl provides CW's commands
 
-#require_relative 'params'
-
 module CWG
 
   class CwDsl
 
-    include Params::ParamsSetup
-
+    include CWG::Cfg
     attr_accessor :cl
 
     HERE = File.dirname(__FILE__) + '/'
@@ -19,32 +16,24 @@ module CWG
     ABBREVIATIONS     = TEXT + 'abbreviations.txt'
     Q_CODES           = TEXT + 'q_codes.txt'
 
+    [:wpm, :effective_wpm, :frequency, :audio_filename,:audio_dir,
+     :book_name, :play_command, :run_default, :command_line,
+     :author, :title, :quality, :ebook2cw_path, :list_colour,
+     :list_colour, :success_colour, :fail_colour, :name, :tone,
+     :volume
+
+    ].each do |method|
+      define_method method do |arg = nil|
+        arg ? Cfg.config.params[method.to_s] = arg :
+          Cfg.config[method.to_s]
+      end
+    end
+
     def initialize
       @words, @cl, @str =
                    Words.new, Cl.new, Str.new
-      Params.init_config
-      config_defaults
-      config_files
+      Cfg.reset
       load_common_words# unless @words.exist?
-      ConfigFile.new.apply_config self
-    end
-
-    def config_defaults
-      Params.config {
-        name           'unnamed'
-        wpm            25
-        frequency      500
-        volume         1
-        dictionary     COMMON_WORDS
-      }
-    end
-
-    def config_files
-      Params.config {
-        audio_dir      'audio'
-        audio_filename 'audio_output'
-        word_filename  'words.txt'
-      }
     end
 
     def words
@@ -57,43 +46,47 @@ module CWG
 
     def word_size(size = nil)
       if size
-        Params.size = size
+        Cfg.config.params["size"] = size
         @words.word_size size
       end
-      Params.size
+      Cfg.config["size"]
+    end
+
+    def word_spacing(spacing)
+      Cfg.config.params["word_spacing"] = spacing.to_i
     end
 
     # Test user against letters rather than words.
     #
 
     def test_letters
-      Params.no_run = true
+      Cfg.config.params["no_run"] = true
       test_letters = TestLetters.new
       test_letters.run @words
     end
 
-#todo
-#    def tx
-#      @words.add ["abc"]
-#      Params.no_run = true
-#      tx = Tx.new
-#      tx.listen @words
-#    end
+    #todo
+    #    def tx
+    #      @words.add ["abc"]
+    #      Cfg.config.params["no_run"] = true
+    #      tx = Tx.new
+    #      tx.listen @words
+    #    end
 
     # Test user against complete words rather than letters.
     #
 
     def test_words
-      Params.no_run = true
+      Cfg.config.params["no_run"] = true
       tw = TestWords.new
       tw.run @words
     end
 
-    # Repeat word repeats the current word if the word is entered incorrectly (or not entered at all).
-    #
+    # Repeat word repeats the current word if the word is entered incorrectly
+    # (or not entered at all).
 
     def repeat_word
-      Params.no_run = true
+      Cfg.config.params["no_run"] = true
       repeat_word = RepeatWord.new
       repeat_word.run @words
     end
@@ -102,7 +95,7 @@ module CWG
     # Useful for learning to copy `in the head'
 
     def reveal
-      Params.no_run = true
+      Cfg.config.params["no_run"] = true
       reveal = Reveal.new
       reveal.run @words
     end
@@ -119,7 +112,7 @@ module CWG
     # @option args [Boolean] :letter Mark by letter if true else mark by word
 
     def read_book args = {}
-      Params.no_run = true
+      Cfg.config.params["no_run"] = true
       details = BookDetails.new
       details.arguments(args)
       book = Book.new details
@@ -133,7 +126,7 @@ module CWG
       details = BookDetails.new
       details.arguments(args)
       book = Book.new details
-      Params.no_run = true
+      Cfg.config.params["no_run"] = true
       book.convert
     end
 
@@ -161,27 +154,27 @@ module CWG
     end
 
     def word_count(wordcount)
-      Params.word_count = wordcount
+      Cfg.config.params["word_count"] = wordcount
       @words.count wordcount
     end
 
     def beginning_with(* letters)
-      Params.begin = letters
+      Cfg.config.params["begin"] = letters
       @words.beginning_with
     end
 
     def ending_with(* letters)
-      Params.end = letters
+      Cfg.config.params["end"] = letters
       @words.ending_with
     end
 
     def including(* letters)
-      Params.including = letters
+      Cfg.config.params["including"] = letters
       @words.including
     end
 
     def containing(* letters)
-      Params.containing = letters
+      Cfg.config.params["containing"] = letters
       @words.containing
     end
 
@@ -194,12 +187,10 @@ module CWG
     end
 
     def no_longer_than(max)
-      Params.max = max
       @words.no_longer_than max
     end
 
     def no_shorter_than(min)
-      Params.min = min
       @words.no_shorter_than min
     end
 
@@ -236,16 +227,13 @@ module CWG
       #todo
     end
 
-    #  def add_noise
-    #    Params.noise = true
-    #  end
-
     def load_common_words
       @words.load 1000
     end
 
     def load_most_common_words
-      load_text MOST_COMMON_WORDS
+      @words.load 1000
+#      load_text MOST_COMMON_WORDS
     end
 
     def load_abbreviations
@@ -272,19 +260,12 @@ module CWG
 #    end
 
     def load_text(filename)
-      Params.dictionary = filename
+      Cfg.config.params["dictionary"] = filename
       @words.load_text filename
     end
 
     def load_words(args)
       @words.load args
-    end
-
-    def set_tone_type(type)
-      case type
-      when :squarewave, :sawtooth, :sinewave
-        Params.tone = type
-      end
     end
 
     # Return string containing name or comment of test.
@@ -300,12 +281,36 @@ module CWG
     end
 
     def run_default
-      Params.run_default ||= :test_letters
+      Cfg.config["run_default"] || :test_letters
+    end
+
+    def print_letters
+      Cfg.config.params["print_letters"] = true
     end
 
     def run
-      return if Params.no_run
+      return if Cfg.config["no_run"]
       self.send run_default
+    end
+
+    def no_run
+      Cfg.config.params["no_run"] = true
+    end
+
+    def noise
+      Cfg.config.params["noise"] = true
+    end
+
+    def no_noise
+      Cfg.config.params["noise"] = nil
+    end
+
+    def use_ebook2cw
+      Cfg.config.params["use_ebook2cw"] = true
+    end
+
+    def use_ruby_tone
+      Cfg.config.params["use_ebook2cw"] = nil
     end
 
     alias_method :ewpm,                  :effective_wpm

@@ -122,15 +122,15 @@ module CWG
     end
 
     def success_colour
-      Params.success_colour ||= :blue
+      Cfg.config["success_colour"].to_sym || :blue
     end
 
     def fail_colour
-      Params.fail_colour ||= :red
+      Cfg.config["fail_colour"].to_sym || :red
     end
 
     def list_colour
-      Params.list_colour ||= :white
+      Cfg.config["list_colour"].to_sym || :default
     end
 
     def print_advice name

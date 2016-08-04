@@ -66,7 +66,7 @@ module CWG
           break unless @failed
         end
       end
-      #      break if Params.exit
+      #      break if Cfg.config["exit"]
     end
 
   end

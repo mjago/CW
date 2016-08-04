@@ -8,70 +8,91 @@ require_relative '../lib/cw/config'
 
 class TestConfig < MiniTest::Test
 
+  CONFIG_METHODS = [
+    :name,:wpm,:effective_wpm,:frequency,:audio_filename,:audio_dir,
+    :book_name,:book_dir,:play_command,:size,:run_default,:word_spacing,
+    :command_line,:author,:title,:quality,:ebook2cw_path,:noise,:no_noise,
+    :tone,:word_count,:volume,:list_colour,:success_colour,:fail_colour,
+    :no_run,:run,:print_letters,:no_print,:use_ebook2cw,:use_ruby_tone,
+    :dictionary,:containing,:begin,:end,:including,:word_filename,:max,:min,
+    :exit
+  ]
+
   def setup
-    CWG::Params2.reset
+    CWG::Cfg.reset
   end
 
-  class ConfigurationTest < MiniTest::Test
-    def test_configure_block
-      CWG::Params2.configure do |cfg|
-        cfg.name = "TestName"
-        cfg.wpm = 25
-        cfg.effective_wpm = 25
-      end
-
-      assert_equal "TestName", CWG::Params2.config.name
-      assert_equal 25, CWG::Params2.config.wpm
-
-      assert_equal "TestName", CWG::Params2.config[:name]
-      assert_equal 25, CWG::Params2.config[:wpm]
+  def test_params_rewrite
+    CWG::Cfg::CONFIG_METHODS.each_with_index do |label,idx|
+      CWG::Cfg.config.params[label] = idx
     end
-
-    def test_set_not_exists_attribute
-      assert_raises NoMethodError do
-        CWG::Params2.configure do |config|
-          config.unknown_attribute = "TestName"
-        end
-      end
+    0.upto CWG::Cfg::CONFIG_METHODS.size - 1 do |idx|
+      assert_equal(idx, CWG::Cfg.config.params[CWG::Cfg::CONFIG_METHODS[idx]])
     end
+  end
 
-    def test_get_not_exists_attribute
-      assert_raises NoMethodError do
-        CWG::Params2.config.unknown_attribute
-      end
-    end
+  def test_wpm_default
+    assert_equal "25", CWG::Cfg.config["wpm"]
+  end
 
-    def test_default_values
-      CWG::Params2.configure { |cfg| cfg.name = [0.1] }
-      assert_equal [0.1], CWG::Params2.config.name
-    end
+  def test_book_name_default
+    assert_equal "book.txt", CWG::Cfg.config["book_name"]
+  end
 
-    CONFIG_METHODS = [
-      :name,:wpm,:effective_wpm,:frequency,:audio_filename,:pause,:audio_dir,
-      :book_name,:book_dir,:play_command,:size,:run_default,:word_spacing,
-      :command_line,:author,:title,:quality,:ebook2cw_path,:noise,:no_noise,
-      :tone,:word_count,:volume,:list_colour,:success_colour,:fail_colour,
-      :no_run,:run,:print_letters,:no_print,:use_ebook2cw,:use_ruby_tone,
-      :dictionary,:containing,:begin,:end,:including,:word_filename,:max,:min,
-      :exit
-    ]
+  def test_book_dir_default
+    assert_equal "data/text/", CWG::Cfg.config["book_dir"]
+  end
 
-    def test_vars
-      CWG::Params2.configure do |cfg|
-        CONFIG_METHODS.each_with_index do |label,idx|
-          cfg[label] = idx + 1
-        end
-      end
-      0.upto CONFIG_METHODS.size - 1 do |idx|
-        assert_equal(idx + 1, CWG::Params2.config[CONFIG_METHODS[idx].to_s])
-      end
-    end
+  def test_play_command_default
+    assert_equal "/usr/bin/afplay", CWG::Cfg.config["play_command"]
+  end
 
-    def test_params_rewrite
-      CWG::Cfg.config.params[:test] = 'test'
-      assert_equal 'test', CWG::Cfg.config.params[:test]
-      CWG::Cfg.config.params[:test] = 'test2'
-      assert_equal 'test2', CWG::Cfg.config.params[:test]
-    end
+  def test_success_colour_default
+    assert_equal "green", CWG::Cfg.config["success_colour"]
+  end
+
+  def test_fail_colour_default
+    assert_equal "red", CWG::Cfg.config["fail_colour"]
+  end
+
+  def test_list_colour_default
+    assert_equal "default", CWG::Cfg.config["list_colour"]
+  end
+
+  def test_ebook2cw_path_default
+    assert_equal "/usr/bin/ebook2cw", CWG::Cfg.config["ebook2cw_path"]
+  end
+
+  def test_run_default_default
+    assert_equal "test_letters", CWG::Cfg.config["run_default"]
+  end
+
+  def test_dictionary_dir_default
+    assert_equal "data/text/", CWG::Cfg.config["dictionary_dir"]
+  end
+
+  def test_dictionary_name_default
+    assert_equal "english.txt", CWG::Cfg.config["dictionary_name"]
+  end
+
+  def test_accessing_unknown_method_returns_nil
+    refute CWG::Cfg.config["unknown"]
+  end
+
+  def test_setting_unknown_method_returns_nil
+    CWG::Cfg.config.params["unknown"] = "something"
+    assert_equal "something", CWG::Cfg.config["unknown"]
+  end
+
+  def test_an_existing_setting_works
+    refute CWG::Cfg.config["exit"]
+    CWG::Cfg.config.params["exit"] = true
+    assert CWG::Cfg.config["exit"]
+  end
+
+  def test_frequency
+    CWG::Cfg.config.params["frequency"] = 400
+    assert_equal 400, CWG::Cfg.config["frequency"]
   end
 end
+

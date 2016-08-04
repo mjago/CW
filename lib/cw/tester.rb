@@ -36,7 +36,7 @@ module CWG
 
     def play_words_until_quit
       audio_play
-      play_words_exit unless Params.print_letters
+      play_words_exit unless Cfg.config["print_letters"]
     end
 
     def play_words_exit
@@ -44,7 +44,7 @@ module CWG
       loop do
         break if quit?
         break if timing.play_words_timeout?
-        if Params.exit
+        if Cfg.config["exit"]
           audio.stop
           break
         end
@@ -102,7 +102,7 @@ module CWG
     def print_words_until_quit
       sync_with_audio_player
       print_words @words
-      print_words_exit unless Params.print_letters
+      print_words_exit unless Cfg.config["print_letters"]
       quit
     end
 
@@ -189,7 +189,7 @@ module CWG
     end
 
     def sleep_char_delay letr
-      timing.append_char_delay letr, Params.wpm, Params.effective_wpm
+      timing.append_char_delay letr, Cfg.config["wpm"], Cfg.config["effective_wpm"]
     end
 
     def wait_for_start_sync
@@ -209,7 +209,7 @@ module CWG
     end
 
     def print_letters?
-      Params.print_letters && ! quit?
+      Cfg.config["print_letters"] && ! quit?
     end
 
     def sync_with_play
@@ -233,19 +233,19 @@ module CWG
     def play_words_thread
       play_words_until_quit
       print "\n\rplay has quit " if @debug
-      Params.exit = true
+      Cfg.config.params["exit"] = true
     end
 
     def print_words_thread
       print_words_until_quit
       print "\n\rprint has quit " if @debug
-      Params.exit = true
+      Cfg.config.params["exit"] = true
     end
 
     def monitor_keys_thread
       monitor_keys
       print "\n\rmonitor keys has quit " if @debug
-      Params.exit = true
+      Cfg.config.params["exit"] = true
     end
 
     def thread_processes
@@ -269,7 +269,7 @@ module CWG
         key_input.read
         check_quit_key_input
         break if quit?
-        break if Params.exit
+        break if Cfg.config["exit"]
         check_sentence_navigation(key_chr) if self.class == Book
         build_word_maybe
       end
@@ -278,7 +278,7 @@ module CWG
     def check_quit_key_input
       if key_input.quit_input?
         audio.stop
-        Params.exit = true
+        Cfg.config.params["exit"] = true
         quit
         audio_stop
         true

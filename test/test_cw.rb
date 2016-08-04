@@ -27,8 +27,8 @@ class TestCW < MiniTest::Test
     assert_equal CW, @cw.class
   end
 
-  def test_name_is_unnamed_if_unnamed
-    assert_equal 'unnamed', @cw.name
+  def test_name_is_nil_if_unnamed
+    refute @cw.name
   end
 
   def test_name_can_be_set
@@ -40,14 +40,15 @@ class TestCW < MiniTest::Test
     assert_equal ["the", "of", "and", "to", "a"] , @cw.words.first(5)
   end
 
-  def test_dictionary_defaults_to_COMMON_WORDS
-    temp = nil
-    CW.new {
-      no_run
-      temp = CWG::Params.dictionary
-    }
-    assert_equal File.expand_path(ROOT + '/data/text/common_words.txt'), File.expand_path(temp)
-  end
+#  def test_dictionary_defaults_to_COMMON_WORDS
+#    temp = nil
+#    CW.new {
+#      no_run
+#      temp = CWG::Params.dictionary
+#    }
+#    assert_equal File.expand_path(ROOT + '/data/text/common_words.txt'), File.expand_path(temp)
+#  end
+#
 
   def test_CW_takes_a_block
     CW.new {
@@ -62,14 +63,6 @@ class TestCW < MiniTest::Test
     assert_equal 1000, cw.words.size
     cw.words = ["some", "words"]
     assert_equal ["some", "words"], cw.words
-  end
-
-  def test_word_filename_defaults_to_words
-    cw = CW.new {
-      no_run
-    }
-    cw.words = ["some", "words"]
-    assert_equal ["some","words"], cw.words
   end
 
   def test_no_run_aliases_no_run
@@ -99,26 +92,25 @@ class TestCW < MiniTest::Test
     assert_equal ["some", "words"], @cw.words
   end
 
-   def test_to_s_outputs_test_run_header_if_no_rund
+   def test_to_s_outputs_test_run_header_if_no_run
      temp =
-       %q(unnamed
-=======
+       %q(========
 WPM:        25
-=======
+Word count: 16
+========
 )
      assert_equal temp, @cw.to_s
    end
 
   def test_to_s_outputs_relevant_params_if_set
     temp =
-      %q(unnamed
-=======
+      %q(========
 WPM:        25
 Word count: 2
 Word size:  3
 Beginning:  l
 Ending:     x
-=======
+========
 )
     @cw.word_count 2
     @cw.word_size 3
@@ -143,15 +135,15 @@ Ending:     x
 
   def test_effective_wpm_is_settable
     effective_wpm = rand(50)
-    @cw.effective_wpm effective_wpm
-    assert_equal effective_wpm, @cw.effective_wpm
+    @cw.effective_wpm(effective_wpm)
+    assert_equal(effective_wpm, @cw.effective_wpm)
   end
 
-  def test_word_spacing_is_settable_and_readable
-    word_spacing = rand(50)
-    @cw.word_spacing word_spacing
-    assert_equal word_spacing, @cw.word_spacing
-  end
+#todo  def test_word_spacing_is_settable_and_readable
+#    word_spacing = rand(50)
+#    @cw.word_spacing(word_spacing)
+#    assert_equal(word_spacing, @cw.word_spacing)
+#  end
 
   def test_shuffle_shuffles_words
     @cw.shuffle
@@ -330,7 +322,7 @@ Ending:     x
     assert_equal 567, @cw.frequency(567)
     @cw.frequency 456
     assert_equal 456, @cw.frequency
-  end
+    end
 
   def test_play_command_returns_play_command
     assert_equal 567, @cw.play_command(567)
@@ -369,8 +361,9 @@ Ending:     x
   end
 
   def test_set_wpm_param
-    @cw.wpm 33
-    assert @cw.cl.cl_wpm == '-w 33 ', 'wpm param invalid'
+    @cw.wpm 35
+    assert_equal 35, @cw.wpm
+    assert @cw.cl.cl_wpm == '-w 35 ', 'wpm param invalid'
   end
 
   def test_set_ewpm_param
@@ -388,25 +381,24 @@ Ending:     x
     assert @cw.cl.cl_frequency == '-f 800 ', 'frequency param invalid'
   end
 
-  def test_set_squarewave_param
-    @cw.set_tone_type :squarewave
+  def test_tone_squarewave_param
+    @cw.tone :squarewave
     assert @cw.cl.cl_squarewave == '-T 2 ', 'squarewave param invalid'
   end
 
-  def test_set_sawtooth_param
-    @cw.set_tone_type :sawtooth
+  def test_tone_sawtooth_param
+    @cw.tone :sawtooth
     assert @cw.cl.cl_sawtooth == '-T 1 ', 'sawtooth param invalid'
   end
 
-  def test_set_sinewave_param
-    @cw.set_tone_type :sinewave
+  def test_tone_sinewave_param
+    @cw.tone :sinewave
     assert @cw.cl.cl_sinewave == '-T 0 ', 'sinewave param invalid'
   end
 
   def test_build_build_cl_ignores_invalid_tone_type
-    @cw.set_tone_type :sinewave
-    @cw.set_tone_type :invalid
-    assert @cw.cl.cl_sinewave == '-T 0 ', 'not ignoring invalid tone type'
+    @cw.tone :invalid
+    assert @cw.cl.cl_sinewave == '', 'not ignoring invalid tone type'
   end
 
   def test_set_author_param

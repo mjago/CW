@@ -6,22 +6,20 @@ module CWG
 
   class AudioPlayer
 
-    AFPLAY = '/usr/bin/afplay'
-
     def tone
       @tone ||= ToneGenerator.new
     end
 
     def play_command
-      @play_command ||= AFPLAY
+      Cfg.config["play_command"]
     end
 
     def play_filename_for_ebook2cw
-      @play_filename ||= File.expand_path(Params.audio_filename, audio_dir)
+      @play_filename ||= File.expand_path(Cfg.config["audio_filename"], audio_dir)
     end
 
     def audio_dir
-      Params.audio_dir ||= './audio'
+      Cfg.config["audio_dir"]
     end
 
     def temp_filename_for_ebook2cw
@@ -48,12 +46,12 @@ module CWG
     end
 
     def convert_words words
-      tone.generate words           unless Params.use_ebook2cw
-      convert_words_with_ebook2cw words if Params.use_ebook2cw
+      tone.generate words unless Cfg.config["use_ebook2cw"]
+      convert_words_with_ebook2cw words if Cfg.config["use_ebook2cw"]
     end
 
     def play_filename
-      return play_filename_for_ebook2cw if Params.use_ebook2cw
+      return play_filename_for_ebook2cw if Cfg.config["use_ebook2cw"]
       tone.play_filename
     end
 
@@ -82,8 +80,8 @@ module CWG
 
     def still_playing?
       ps = `ps -ewwo pid,args | grep #{play_cmd_for_ps}`
-      return ps.include? "#{play_filename_for_ebook2cw}" if Params.use_ebook2cw
-      return ps.include? tone.play_filename unless Params.use_ebook2cw
+      return ps.include? "#{play_filename_for_ebook2cw}" if Cfg.config["use_ebook2cw"]
+      return ps.include? tone.play_filename unless Cfg.config["use_ebook2cw"]
     end
 
     def startup_delay

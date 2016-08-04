@@ -29,7 +29,7 @@ module CWG
         @threads.each do |th|
           if thread_false_or_nil?(th)
             exiting = true
-            unless Params.exit
+            unless Cfg.config["exit"]
               print "\r"
               puts "** #{th[:name].to_s.gsub('_',' ')} quit unexpectedly!**"
               if th[:thread].backtrace
@@ -39,7 +39,7 @@ module CWG
           end
         end
         # print_threads_status
-        exiting = true if(Params.exit)
+        exiting = true if(Cfg.config["exit"])
         break if exiting
       end
       close_threads if exiting
@@ -68,7 +68,7 @@ module CWG
     end
 
     def wait_for_threads
-      Params.exit = false
+      Cfg.config.params["exit"] = false
       loop do
         alive = false
         sleep 0.1

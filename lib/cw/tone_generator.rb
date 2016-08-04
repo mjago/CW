@@ -11,10 +11,11 @@ module CWG
     include ToneHelpers
 
     def initialize
-      @max_amplitude = (Params.volume > 1.0 ? 1.0 : Params.volume)
-      @wpm = Params.wpm.to_f
-      @frequency = Params.frequency
-      @effective_wpm = Params.effective_wpm ? Params.effective_wpm.to_f : @wpm
+      @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ? 1.0 : Cfg.config["volume"].to_f)
+      @wpm = Cfg.config["wpm"].to_f
+      @frequency = Cfg.config["frequency"].to_i
+      @effective_wpm = Cfg.config["effective_wpm"] ?
+                         Cfg.config["effective_wpm"].to_f : @wpm
       @sample_rate = 2400
       @print = Print.new
     end
@@ -28,7 +29,7 @@ module CWG
     end
 
     def play_filename
-      HERE + "audio/#{Params.audio_filename}"
+      HERE + "audio/#{Cfg.config["audio_filename"]}"
     end
 
     def play

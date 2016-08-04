@@ -15,57 +15,60 @@ module CWG
     end
 
     def cl_wpm
-      wpm = Params.wpm
+      wpm = Cfg.config["wpm"]
       wpm ? "-w #{wpm} " : ''
     end
 
     def cl_effective_wpm
-      ewpm = Params.effective_wpm
+      ewpm = Cfg.config["effective_wpm"]
       ewpm ? "-e #{ewpm} " : ''
     end
 
     def cl_word_spacing
-      ws = Params.word_spacing
+      ws = Cfg.config["word_spacing"]
       ws ? "-W #{ws} " : ''
     end
 
     def cl_frequency
-      freq = Params.frequency
+      freq = Cfg.config["frequency"]
       freq ? "-f #{freq} " : ''
     end
 
     def cl_squarewave
-      sqr = Params.tone == :squarewave
-      sqr ? "-T #{@tone[:squarewave]} " : ''
+      "Cfg.config[\"tone\"] = #{Cfg.config["tone"]}"
+      return '' unless Cfg.config["tone"].to_s == "squarewave"
+      "-T #{@tone[:squarewave]} "
     end
 
     def cl_sawtooth
-      st = Params.tone == :sawtooth
-      st ? "-T #{@tone[:sawtooth]} " : ''
+      "Cfg.config[\"tone\"] = #{Cfg.config["tone"]}"
+      return '' unless Cfg.config["tone"].to_s == "sawtooth"
+      "-T #{@tone[:sawtooth]} "
     end
 
     def cl_sinewave
-      sin = Params.tone == :sinewave
-      sin ? "-T #{@tone[:sinewave]} " : ''
+      "Cfg.config[\"tone\"] = #{Cfg.config["tone"]}"
+      return '' unless Cfg.config["tone"].to_s == "sinewave"
+      "-T #{@tone[:sinewave]} "
     end
 
     def cl_author
-      author = Params.author
+      author = Cfg.config["author"]
       author ? "-a \"#{author}\" " : ''
     end
 
     def cl_title
-      title = Params.title
+      title = Cfg.config["title"]
       title ? "-t \"#{title}\" " : ''
     end
 
     def cl_noise
-      noise = Params.noise
-      noise ? "-N 5 -B 1000 " : ''
+      Cfg.config["noise"] ?
+        "-N 5 -B 1000 " : ''
     end
 
     def cl_audio_filename
-      "-o \"#{File.expand_path(Params.audio_filename, Params.audio_dir)}\" "
+      "-o \"#{File.expand_path(Cfg.config["audio_filename"], Cfg.config["audio_dir"])}\" "
     end
 
     def coarse_quality(quality)
@@ -77,7 +80,7 @@ module CWG
     end
 
     def cl_quality
-      quality = Params.quality
+      quality = Cfg.config["quality"]
       if quality && quality.class == Fixnum
         "-q #{quality} "
       else
@@ -86,7 +89,7 @@ module CWG
     end
 
     def cl_command_line
-      cl = Params.command_line
+      cl = Cfg.config["command_line"]
       cl ? "#{cl}" : ''
     end
 
@@ -108,8 +111,7 @@ module CWG
     end
 
     def ebook2cw_path
-      Params.ebook2cw_path ||= 'ebook2cw'
-      Params.ebook2cw_path
+      Cfg.config["ebook2cw_path"] || 'ebook2cw'
     end
 
     def cl_echo words

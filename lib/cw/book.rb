@@ -157,7 +157,7 @@ module CWG
         await_next_sentence_or_quit
         break if quit?
       end
-      print_words_exit unless Params.print_letters
+      print_words_exit unless Cfg.config["print_letters"]
     end
 
     def check_sentence_count
@@ -183,13 +183,13 @@ module CWG
     def play_sentences_thread
       play_sentences_until_quit
       print "\n\rplay has quit " if @debug
-      Params.exit = true
+      Cfg.config.params["exit"] = true
     end
 
     def print_sentences_thread
       print_sentences_until_quit
       print "\n\rprint has quit " if @debug
-      Params.exit = true
+      Cfg.config.params["exit"] = true
     end
 
     def thread_processes

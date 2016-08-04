@@ -64,15 +64,15 @@ module CWG
     end
 
     def beginning_with
-      letter_filter(:beginning_with, Params.begin)
+      letter_filter(:beginning_with, Cfg.config["begin"])
     end
 
     def ending_with
-      letter_filter(:ending_with, Params.end)
+      letter_filter(:ending_with, Cfg.config["end"])
     end
 
     def including
-      letter_filter(:including, Params.including)
+      letter_filter(:including, Cfg.config["including"])
     end
 
     def letter_filter(option,letters)
@@ -97,7 +97,7 @@ module CWG
     end
 
     def containing
-      letters = Params.containing
+      letters = Cfg.config["containing"]
       letters.flatten.collect do |letr|
         if letr.class == Range
           letters = letr.collect { |let| let }

@@ -56,7 +56,7 @@ module CWG
     end
 
     def quit
-      Params.exit = true
+      Cfg.config.params["exit"] = true
       reset_stdin
       return true
     end
