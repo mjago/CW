@@ -18,7 +18,7 @@ module CWG
 
     def self.config
       unless @config
-        @config = ParseConfig.new(File.join HERE, '..', '..', '.config')
+        @config = ParseConfig.new(File.join HERE, '..', '..', '.cw_config')
         CONFIG_METHODS.each do |method|
           unless @config[method.to_s]
             @config.add method.to_s, nil
