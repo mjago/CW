@@ -84,7 +84,7 @@ module CWG
     end
 
     def compile_sentence
-      audio.convert_words(add_space(sentence.current) + ' ')
+      audio.convert_words(sentence.current + ' ')
     end
 
     def compile_and_play
