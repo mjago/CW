@@ -15,3 +15,9 @@ YARD::Rake::YardocTask.new do |t|
   t.files   = ['lib/**/*.rb']   # optional
   t.options = ['--any', '--extra', '--opts'] # optional
 end
+
+desc "Test cw_scripts and check timings"
+task :test_scripts do
+  system "bundle exec ruby run_script_tests.rb"
+  puts "done"
+end
