@@ -25,7 +25,9 @@ module CWG
           end
         end
       end
-      return @config
+      @config.params["wpm"] = 60 if(ENV["CW_ENV"] == "test")
+      @config.params["effective_wpm"] = 60 if(ENV["CW_ENV"] == "test")
+      @config
     end
 
     def self.reset

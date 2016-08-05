@@ -19,7 +19,9 @@ module CWG
     end
 
     def shuffle_numbers_maybe
-      @numbers = @numbers.split('').shuffle.join if @options[:shuffle]
+      unless(ENV["CW_ENV"] == "test")
+        @numbers = @numbers.split('').shuffle.join if @options[:shuffle]
+      end
     end
 
     def generate

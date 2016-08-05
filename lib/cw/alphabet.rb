@@ -34,7 +34,9 @@ module CWG
     # shuffle alphabet if :shuffle option defined
 
     def shuffle_alphabet_maybe
-      @letters = @letters.split('').shuffle.join if @options[:shuffle]
+      unless(ENV["CW_ENV"] == "test")
+        @letters = @letters.split('').shuffle.join if @options[:shuffle]
+      end
     end
 
     # include letters passed in as string if :include defined
