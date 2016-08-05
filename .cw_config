@@ -1,5 +1,6 @@
 wpm             = 25
 frequency       = 450
+volume          = 1
 book_name       = book.txt
 book_dir        = data/text/
 play_command    = /usr/bin/afplay
