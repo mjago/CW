@@ -9,6 +9,7 @@ Gemfile.lock
 *.rbc
 .bundle
 # .cw_config
+test.sqlite
 coverage
 InstalledFiles
 lib/bundler/man
