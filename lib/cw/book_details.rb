@@ -18,11 +18,11 @@ module CWG
     end
 
     def book_directory
-      Cfg.config["book_dir"]
+      File.join HERE, '..','..', Cfg.config["book_dir"]
     end
 
     def book_location
-      temp = File.expand_path(book_name, book_directory)
+      File.expand_path(book_name, book_directory)
     end
 
     def arguments args

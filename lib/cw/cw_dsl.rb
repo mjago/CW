@@ -17,11 +17,9 @@ module CWG
     Q_CODES           = TEXT + 'q_codes.txt'
 
     [:wpm, :effective_wpm, :frequency, :audio_filename,:audio_dir,
-     :book_name, :play_command, :run_default, :command_line,
-     :author, :title, :quality, :ebook2cw_path, :list_colour,
-     :list_colour, :success_colour, :fail_colour, :name, :tone,
-     :volume
-
+     :book_name, :book_dir, :play_command, :run_default, :command_line,
+     :author, :title, :quality, :ebook2cw_path, :list_colour, :list_colour,
+     :success_colour, :fail_colour, :name, :tone, :volume, :print_words
     ].each do |method|
       define_method method do |arg = nil|
         arg ? Cfg.config.params[method.to_s] = arg :
@@ -150,7 +148,7 @@ module CWG
     end
 
     def shuffle
-      @words.shuffle
+      @words.shuffle unless(ENV["CW_ENV"] == "test")
     end
 
     def word_count(wordcount)

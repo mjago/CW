@@ -1,6 +1,7 @@
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rake/version_task'
+require 'yard'
 
 Rake::VersionTask.new
 
