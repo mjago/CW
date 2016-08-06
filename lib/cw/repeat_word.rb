@@ -64,11 +64,10 @@ module CWG
           @threads.wait_for_threads
           system("stty -raw echo")
           break unless @failed
+          break if(ENV["CW_ENV"] == "test")
         end
       end
       #      break if Cfg.config["exit"]
     end
-
   end
-
 end

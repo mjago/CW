@@ -138,6 +138,12 @@ module CWG
 
     def read_rss(source, article_count = 3)
       rss, = Rss.new
+
+      # don't go online if CW_ENV == test
+      if(ENV["CW_ENV"] == "test")
+        @words.assign ['test', 'rss', 'stub']
+        return
+      end
       rss.read_rss(source, article_count)
       loop do
         article = rss.next_article
