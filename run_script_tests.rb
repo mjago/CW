@@ -3,18 +3,17 @@ require 'sequel'
 DEBUG = false
 
 class RunScriptTests
-  TEST_ON_MEMORY_DATABASE = false unless(DEBUG)
-  TEST_ON_MEMORY_DATABASE = true if(DEBUG)
-  NO_RSS_FEED = false unless(DEBUG)
-  NO_RSS_FEED = true if(DEBUG)
+  NO_RUN = DEBUG ? false : false
+  TEST_ON_MEMORY_DATABASE = DEBUG ? true : false
+  NO_RSS_FEED = DEBUG ? true : false
   PATH_TO_CW_SCRIPTS = '/Users/martyn/jekyll/documentation-theme-jekyll/cw_scripts'
+  ROOT = '/Users/martyn/cw/cw_clone'
   PROGRESS_FILE = "data/text/progress.txt"
-  DB = Sequel.sqlite('test.sqlite')  unless(TEST_ON_MEMORY_DATABASE)
+  DB = Sequel.sqlite(File.join(ROOT, 'test.sqlite'))  unless(TEST_ON_MEMORY_DATABASE)
   DB = Sequel.sqlite if(TEST_ON_MEMORY_DATABASE)
 
   def initialize
     create_tables if(TEST_ON_MEMORY_DATABASE)
-    @ds = init_datasets
     populate_cw_scripts if(TEST_ON_MEMORY_DATABASE)
   end
 
@@ -42,22 +41,16 @@ class RunScriptTests
     end
   end
 
-  def init_datasets
-    {
-      scripts:   DB[:scripts],
-      test_runs: DB[:test_runs],
-      tests:     DB[:tests]
-    }
-  end
-
   def populate_cw_scripts
     scripts = (Dir.glob(PATH_TO_CW_SCRIPTS + '/*.rb'))
     scripts.each do |script|
       script_name = File.basename(script,'.rb')
       # populate the table
-      @ds[:scripts].insert(:script => "#{script_name}",
-                        :path => PATH_TO_CW_SCRIPTS)
+      DB[:scripts].insert(:script => "#{script_name}",
+                          :path => PATH_TO_CW_SCRIPTS)
     end
+    DB[:scripts].insert(:script => "example",
+                        :path => ROOT)
   end
 
   def reset_sentence_count
@@ -90,7 +83,7 @@ class RunScriptTests
   end
 
   def execute_test_env filename
-    if DEBUG
+    if NO_RUN
       sleep 0.05
     else
       run_test(filename, :test)
@@ -120,7 +113,7 @@ class RunScriptTests
   end
 
   def test_runs_insert_dateTime
-    @ds[:test_runs].insert(:date_time => Time.now,
+    DB[:test_runs].insert(:date_time => Time.now,
                            :total_secs => 0,
                            :result    => "fail")
   end
@@ -132,7 +125,7 @@ class RunScriptTests
   end
 
   def print_last_five_results
-    @ds[:test_runs].each do |test_run|
+    DB[:test_runs].each do |test_run|
       if(test_run[:id] > (@test_run_id - 5))
         puts test_run[:date_time].to_s + ': ' +
              "Total secs: " + test_run[:total_secs].to_s
@@ -143,32 +136,30 @@ class RunScriptTests
   def run
     timer = Timer.new
     @test_run_id = test_runs_insert_dateTime
-    @ds[:scripts].each do |test|
+    DB[:scripts].each do |test|
       filename = File.join test[:path], test[:script] + '.rb'
       puts "[#{timer.running_time.to_i}] Running: #{test[:script]}"
       reset_sentence_count_maybe test[:script]
       timer.start
-#      next unless test[:script].include? ("book_reading")
+#      next unless test[:script].include? ("example")
       execute_test_env filename
       timer.finish
       reset_sentence_count_maybe test[:script]
-      @ds[:tests].insert(:script_id    => test[:id],
+      DB[:tests].insert(:script_id    => test[:id],
                          :test_run_id  => @test_run_id,
                          :wpm          => 60,
                          :ewpm         => 60,
                          :duration     => "#{timer.duration}")
-      @ds[:tests].all
+      DB[:tests].all
     end
     update_current_test_run(@test_run_id,timer.total_secs)
-#    puts @ds[:test_runs].all # if DEBUG
     run_test(PATH_TO_CW_SCRIPTS + '/rss_feed.rb') unless(NO_RSS_FEED)
     print_last_five_results
   end
 end
 
 test_scripts = RunScriptTests.new
-10.times do |loop_count|
-  puts "loop_count = #{loop_count}"
+1.times do |loop_count|
   test_scripts.run
   break unless(DEBUG)
 end
