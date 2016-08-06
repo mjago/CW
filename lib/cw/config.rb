@@ -25,8 +25,8 @@ module CWG
           end
         end
       end
-      @config.params["wpm"] = 60 if(ENV["CW_ENV"] == "test")
-      @config.params["effective_wpm"] = 60 if(ENV["CW_ENV"] == "test")
+      @config.params["wpm"] = 50 if(ENV["CW_ENV"] == "test")
+      @config.params["effective_wpm"] = 50 if(ENV["CW_ENV"] == "test")
       @config
     end
 
