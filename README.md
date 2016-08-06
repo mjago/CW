@@ -27,102 +27,150 @@ ruby example.rb
 
  * Note: Currently only tested on OS X, and Ruby v1.9.3 and later.
 
-# Example test-script
+# Example test script
 
 ```ruby
 
-# example.rb (example script)
+# example.rb
 
-  require 'cw'
+require 'cw'
 
-  cw do
-    wpm 18
-    comment 'read book (1 sentence)'
-    play_book(sentences: 1)
-  end
+cw do
+  comment 'test alphabet vowels'
+  wpm 15
+  load_vowels
+  shuffle
+end
 
-  cw do
-    wpm 18
-    ewpm 12
-    comment 'read book (2 minutes)'
-    play_book(duration: 2)
-  end
+cw do
+  comment 'test letters a..m'
+  wpm 18
+  load_alphabet
+  containing('a'..'m')
+  shuffle
+end
 
-  cw do
-    comment 'read rss feed (1 article)'
-    read_rss(:reuters, 1)
-  end
+cw do
+  comment 'test 8 words made with letters a..m - test by letter'
+  wpm 18
+  containing('a'..'m')
+  shuffle
+  word_count 8
+end
 
-  cw do
-    name 'test straight alphabet'
-    alphabet
-  end
+cw do
+  comment 'test letters n..z'
+  wpm 18
+  load_alphabet
+  containing('n'..'z')
+  shuffle
+end
 
-  cw do
-    comment 'test straight numbers'
-    numbers
-  end
+cw do
+  comment 'test 8 words made with letters n..z - test by word'
+  wpm 18
+  containing('n'..'z')
+  shuffle
+  word_count 8
+  test_words
+end
 
-  cw do
-    wpm  18
-    ewpm 12
-    load_abbreviations
-    shuffle
-  end
+cw do
+  comment 'test numbers'
+  wpm 20
+  load_numbers
+  shuffle
+end
 
+cw do
+  comment 'test alphabet - repeat until correct'
+  wpm 25
+  load_alphabet
+  shuffle
+  repeat_word
+end
 
-# ...or instantiate CW...
+cw do
+  comment 'test 8 most common words no longer than 4 letters'
+  wpm 20
+  load_most_common_words
+  shuffle
+  no_longer_than 4
+  word_count 8
+end
 
-wpm = 16
+cw do
+  comment 'test 8 words including letter sequence "ing"'
+  shuffle
+  including('ing')
+  word_size 6
+end
 
-test = CW.new
-test.comment 'test words beginning with "b" (repeat word)'
-test.shuffle
-test.wpm             wpm
-test.beginning_with  'b'
-test.word_size        4
-test.word_count       2
-puts test.to_s
-test.repeat_word
+cw do
+  comment 'test 8 words having 6 letters - play each word twice'
+  shuffle
+  word_size 6
+  word_count 8
+  double_words
+end
 
-test = CW.new
-test.comment 'test words ending with "ing" (test letters)'
-test.shuffle
-test.wpm             wpm
-test.ending_with     'e'
-test.word_size        4
-test.word_count       2
-puts test.to_s
-test.test_letters
+cw do
+  comment 'test 8 words beginning with "qu" - repeat whole sequence once'
+  wpm 20
+  shuffle
+  word_count 8
+  repeat 1
+end
 
-test = CW.new
-test.comment 'test words including "th" (test words)'
-test.shuffle
-test.wpm             wpm
-test.including       'th'
-test.word_size        4
-test.word_count       2
-puts test.to_s
-test.test_words
+cw do
+  comment 'test 8 words ending with "tion" - test by word'
+  wpm 15
+  shuffle
+  ending_with 'tion'
+  word_count 8
+  test_words
+end
 
-test = CW.new
-test.comment 'test words no longer than 6 letters (test letters)'
-test.shuffle
-test.wpm             wpm
-test.no_longer_than   6
-test.word_count       2
-puts test.to_s
-test.test_letters
+cw do
+  comment 'read one sentence of book'
+  wpm 20
+  read_book(sentences: 1)
+end
 
-test = CW.new
-test.comment 'test words no shorter than 6 letters (print letters)'
-test.shuffle
-test.wpm             wpm
-test.no_shorter_than  6
-test.word_count       2
-puts test.to_s
-test.print_letters
-test.test_letters
+cw do
+  comment 'read rss feed (quote of the day)'
+  wpm 18
+  read_rss(:quotation, 1)
+end
+
+cw do
+  comment 'test 6 common cw abbreviations'
+   wpm  15
+   load_abbreviations
+   shuffle
+   word_count 6
+end
+
+cw do
+  comment "test 8 Q codes by ear (no keyboard test)"
+   wpm  20
+   load_codes
+   shuffle
+   word_count 8
+   print_words
+ end
+
+cw do
+  comment "test 8 words by ear - reveal words at end of test"
+   wpm  20
+   shuffle
+   word_count 8
+   reveal
+ end
+
+# See documentation for more details - and more commands!
+
+puts 'done'
 
 ```
 
