@@ -58,13 +58,16 @@ module CWG
           @input_word, @words = '', Words.new
           @quit, @failed = nil, nil
           @words.add [word]
+          if(ENV["CW_ENV"] == "test")
+            @words.assign []
+            break
+          end
           @threads = CWThreads.new(self, thread_processes)
 
           @threads.start_threads
           @threads.wait_for_threads
           system("stty -raw echo")
           break unless @failed
-          break if(ENV["CW_ENV"] == "test")
         end
       end
       #      break if Cfg.config["exit"]
