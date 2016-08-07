@@ -40,16 +40,6 @@ class TestCW < MiniTest::Test
     assert_equal ["the", "of", "and", "to", "a"] , @cw.words.first(5)
   end
 
-#  def test_dictionary_defaults_to_COMMON_WORDS
-#    temp = nil
-#    CW.new {
-#      no_run
-#      temp = CWG::Params.dictionary
-#    }
-#    assert_equal File.expand_path(ROOT + '/data/text/common_words.txt'), File.expand_path(temp)
-#  end
-#
-
   def test_CW_takes_a_block
     CW.new {
       no_run
@@ -363,96 +353,103 @@ Ending:     x
   def test_set_wpm_param
     @cw.wpm 35
     assert_equal 35, @cw.wpm
-    assert @cw.cl.cl_wpm == '-w 35 ', 'wpm param invalid'
+    assert @cw.instance_variable_get('@cl').cl_wpm == '-w 35 ', 'wpm param invalid'
   end
 
   def test_set_ewpm_param
     @cw.effective_wpm 33
-    assert @cw.cl.cl_effective_wpm == '-e 33 ', 'effective_wpm param invalid'
+    assert @cw.instance_variable_get('@cl').cl_effective_wpm == '-e 33 ', 'effective_wpm param invalid'
   end
 
   def test_set_word_spacing_W_param
     @cw.word_spacing 2
-    assert @cw.cl.cl_word_spacing == '-W 2 ', 'word_spacing param invalid'
+    assert @cw.instance_variable_get('@cl').cl_word_spacing == '-W 2 ', 'word_spacing param invalid'
   end
 
   def test_set_freq_f_param
     @cw.frequency 800
-    assert @cw.cl.cl_frequency == '-f 800 ', 'frequency param invalid'
+    assert @cw.instance_variable_get('@cl').cl_frequency == '-f 800 ', 'frequency param invalid'
   end
 
   def test_tone_squarewave_param
     @cw.tone :squarewave
-    assert @cw.cl.cl_squarewave == '-T 2 ', 'squarewave param invalid'
+    assert @cw.instance_variable_get('@cl').cl_squarewave == '-T 2 ', 'squarewave param invalid'
   end
 
   def test_tone_sawtooth_param
     @cw.tone :sawtooth
-    assert @cw.cl.cl_sawtooth == '-T 1 ', 'sawtooth param invalid'
+    assert @cw.instance_variable_get('@cl').cl_sawtooth == '-T 1 ', 'sawtooth param invalid'
   end
 
   def test_tone_sinewave_param
     @cw.tone :sinewave
-    assert @cw.cl.cl_sinewave == '-T 0 ', 'sinewave param invalid'
+    assert @cw.instance_variable_get('@cl').cl_sinewave == '-T 0 ', 'sinewave param invalid'
   end
 
   def test_build_build_cl_ignores_invalid_tone_type
     @cw.tone :invalid
-    assert @cw.cl.cl_sinewave == '', 'not ignoring invalid tone type'
+    assert @cw.instance_variable_get('@cl').cl_sinewave == '', 'not ignoring invalid tone type'
   end
 
   def test_set_author_param
     @cw.author 'some author'
-    assert @cw.cl.cl_author == '-a "some author" ', 'author param invalid'
+    assert @cw.instance_variable_get('@cl').cl_author == '-a "some author" ', 'author param invalid'
   end
 
   def test_set_title_param
     @cw.title 'some title'
-    assert @cw.cl.cl_title == '-t "some title" ', 'title param invalid'
+    assert @cw.instance_variable_get('@cl').cl_title == '-t "some title" ', 'title param invalid'
   end
 
   def test_set_N_param_in_noise_mode
     @cw.noise
-    assert @cw.cl.cl_noise.include?('-N 5 '), 'noise N param invalid'
+    assert @cw.instance_variable_get('@cl').cl_noise.include?('-N 5 '), 'noise N param invalid'
   end
 
   def test_set_B_param_in_noise_mode
     @cw.noise
-    assert @cw.cl.cl_noise.include?('-B 1000 '), 'noise B param invalid'
+    assert @cw.instance_variable_get('@cl').cl_noise.include?('-B 1000 '), 'noise B param invalid'
   end
 
   def test_set_default_filename
-    assert @cw.cl.cl_audio_filename.include?('audio_output'), 'default audio output filename invalid'
+    assert @cw.instance_variable_get('@cl').cl_audio_filename.
+      include?('audio_output'), 'default audio output filename invalid'
   end
 
   def test_set_audio_filename_to_given_name
     @cw.audio_filename('some name')
-    assert @cw.cl.cl_audio_filename.include?("some name"), 'default audio filename invalid'
+    assert @cw.instance_variable_get('@cl').cl_audio_filename.
+      include?("some name"), 'default audio filename invalid'
   end
 
   def test_set_q_param_when_numeric_quality
     @cw.quality 5
-    assert @cw.cl.cl_quality.include?('-q 5 '), 'audio quality invalid'
+    assert @cw.instance_variable_get('@cl').cl_quality.
+      include?('-q 5 '), 'audio quality invalid'
   end
 
   def test_set_low_quality
     @cw.quality :low
-    assert @cw.cl.cl_quality.include?('-q 9 '), 'audio low quality invalid'
+    assert @cw.instance_variable_get('@cl').cl_quality.
+      include?('-q 9 '), 'audio low quality invalid'
   end
 
   def test_set_medium_quality
     @cw.quality :medium
-    assert @cw.cl.cl_quality.include?('-q 5 '), 'audio medium quality invalid'
+    assert @cw.instance_variable_get('@cl').cl_quality.
+      include?('-q 5 '), 'audio medium quality invalid'
   end
 
   def test_set_high_quality
     @cw.quality :high
-    assert @cw.cl.cl_quality.include?('-q 1 '), 'audio high quality invalid'
+    assert @cw.instance_variable_get('@cl').cl_quality.
+      include?('-q 1 '), 'audio high quality invalid'
   end
 
   def test_build_command_includes_custom_commands_via_build_cl
     @cw.command_line '-x "some custom command"'
-    assert @cw.cl.cl_command_line.include?( '-x "some custom command"'), 'custom command invalid'
+    assert @cw.instance_variable_get('@cl').cl_command_line.
+      include?( '-x "some custom command"'), 'custom command invalid'
   end
 
   def test_cl_echo_returns_correct_string
