@@ -7,12 +7,10 @@ module CWG
   class CwDsl
 
     include CWG::Cfg
-    attr_accessor :cl
+#    attr_accessor :cl
 
     HERE = File.dirname(__FILE__) + '/'
-    TEXT = HERE + '../../data/text/'
-    COMMON_WORDS      = TEXT + 'common_words.txt'
-    MOST_COMMON_WORDS = TEXT + 'most_common_words.txt'
+    TEXT = File.join(HERE,'..', '..','data','text')
     ABBREVIATIONS     = TEXT + 'abbreviations.txt'
     Q_CODES           = TEXT + 'q_codes.txt'
 
@@ -257,11 +255,6 @@ module CWG
     def load_consonants ; @words.assign alpha - vowels   ; end
     def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
     def load_numbers    ; @words.assign numbers          ; end
-
-#    def load_words(filename = COMMON_WORDS)
-#      Params.dictionary = filename
-#      @words.load filename
-#    end
 
     def load_text(filename)
       Cfg.config.params["dictionary"] = filename
