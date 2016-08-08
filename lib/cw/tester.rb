@@ -10,7 +10,6 @@ module CWG
     def timing               ; @timing ||= Timing.new            ; end
     def audio                ; @audio ||= AudioPlayer.new        ; end
     def kill_threads         ; @threads.kill                     ; end
-    def spawn_play(cmd)      ; Process.spawn(cmd)                ; end
     def start_sync           ; @start_sync = true                ; end
     def get_key_input        ; key_input.read                    ; end
     def key_chr              ; key_input.char                    ; end
