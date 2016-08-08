@@ -1,0 +1,65 @@
+# encoding: utf-8
+
+module CWG
+
+  class Play
+
+    def initialize words
+      @words = words
+    end
+
+    def audio
+      @audio ||= AudioPlayer.new
+    end
+
+    def init_play_words_timeout
+      @start_play_time, @delay_play_time = Time.now, 2.0
+    end
+
+    def play_words_timeout?
+      (Time.now - @start_play_time) > @delay_play_time
+    end
+
+    def start_sync
+      @start_sync = true
+    end
+
+    def wait_player_startup_delay
+      sleep 0.2
+    end
+
+    def add_space words
+      str = ''
+      words.to_array.collect { |word| str << word + ' '}
+      str
+    end
+
+    def play_audio
+      audio.convert_words add_space @words
+      start_sync()
+      audio.play
+    end
+
+    def play_words_until_quit
+      play_audio
+      play_words_exit unless Cfg.config["print_letters"]
+    end
+  end
+
+  def play_words_exit
+      init_play_words_timeout
+      loop do
+        break if quit?
+        break if timing.play_words_timeout?
+        if Cfg.config["exit"]
+          audio.stop
+          break
+        end
+        sleep 0.01
+      end
+    end
+
+
+
+
+end
