@@ -30,8 +30,7 @@ module CWG
           if thread_false_or_nil?(th)
             exiting = true
             unless Cfg.config["exit"]
-#              print "\r"
-              puts "** #{th[:name].to_s.gsub('_',' ')} quit unexpectedly!**"
+#              puts "** #{th[:name].to_s.gsub('_',' ')} quit unexpectedly!**"
               if th[:thread].backtrace
                 STDERR.puts th[:thread].backtrace.join("\n    \\_ ")
               end

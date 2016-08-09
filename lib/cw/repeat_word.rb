@@ -57,7 +57,7 @@ module CWG
       temp_words.each do |word|
         loop do
           if(ENV["CW_ENV"] == "test")
-            @words.assign []
+            @words = []
             break
           end
           @input_word, @words = '', Words.new
@@ -69,10 +69,7 @@ module CWG
           @threads.wait_for_threads
           @play = nil
           system("stty -raw echo")
-          puts "failed? = "
-          p failed?
           break unless failed?
-          puts "post failed?"
         end
       end
       #      break if Cfg.config["exit"]

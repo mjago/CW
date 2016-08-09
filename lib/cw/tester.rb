@@ -4,7 +4,7 @@ module CWG
 
   class Tester
 
-    def quit?                ; @quit                             ; end
+    def quit?                ; @quit ||= false                   ; end
     def quit                 ; @quit = true                      ; end
     def print                ; @print ||= Print.new              ; end
     def play                 ; @play ||= Play.new(@words)        ; end
@@ -204,7 +204,7 @@ module CWG
     end
 
     def play_words_thread
-      p @words
+#      p @words
       play.play_words_until_quit
       print "\n\rplay has quit " if @debug
       Cfg.config.params["exit"] = true

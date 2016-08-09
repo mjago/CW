@@ -64,6 +64,8 @@ module CWG
         end
         sleep 0.01
       end
+      Cfg.config["exit"] = true
+      sleep 0.1
     end
 
     def play_words_until_quit
