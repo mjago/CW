@@ -27,7 +27,7 @@ class TestTester < MiniTest::Test
   end
 
   def test_quit
-    assert_nil @object.quit?
+    refute @object.quit?
     @object.quit
     assert @object.quit?
   end
