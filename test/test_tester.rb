@@ -40,8 +40,4 @@ class TestTester < MiniTest::Test
     assert_equal CWG::Timing, @object.timing.class
   end
 
-  def test_audio_instantiates_AudioPlayer_object
-    assert_equal CWG::AudioPlayer, @object.audio.class
-  end
-
 end

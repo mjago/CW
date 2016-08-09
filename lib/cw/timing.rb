@@ -32,14 +32,6 @@ module CWG
       (Time.now - @start_print_time) > @delay_print_time
     end
 
-    def init_play_words_timeout
-      @start_play_time, @delay_play_time = Time.now, 2.0
-    end
-
-    def play_words_timeout?
-      (Time.now - @start_play_time) > @delay_play_time
-    end
-
     def effective_dot_ms
       dot @effective_wpm
     end

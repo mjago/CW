@@ -30,7 +30,7 @@ module CWG
           if thread_false_or_nil?(th)
             exiting = true
             unless Cfg.config["exit"]
-              print "\r"
+#              print "\r"
               puts "** #{th[:name].to_s.gsub('_',' ')} quit unexpectedly!**"
               if th[:thread].backtrace
                 STDERR.puts th[:thread].backtrace.join("\n    \\_ ")
@@ -62,7 +62,7 @@ module CWG
         return true
       end
 
-      if(th[:thread].nil?)
+      if(th[:thread].status.nil?)
         return true
       end
     end
@@ -91,7 +91,8 @@ module CWG
     def print_threads_status
       @threads.each do |thread|
         puts "\r"
-        print "#{thread[:name]} = #{thread[:thread].status} "
+        print "#{thread[:name]} = "
+        p thread[:thread].status
       end
     end
 
@@ -101,6 +102,8 @@ module CWG
 
     def any_thread_open?
       @threads.each do |thread|
+#        print "status "
+#            p thread
         if(thread[:name] == :monitor_keys_thread)
           kill_monitor_keys_thread_maybe thread
         else
@@ -126,9 +129,9 @@ module CWG
       loop do
         sleep 0.1
         break unless any_thread_open?()
-        # print_threads_status
+#         print_threads_status
         await_termination_count += 1
-        force_kill if(await_termination_count >= 10)
+        force_kill if(await_termination_count >= 30)
       end
     end
 

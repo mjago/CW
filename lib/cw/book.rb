@@ -17,15 +17,14 @@ module CWG
     def sentence             ; @sentence ||= Sentence.new        ; end
     def find_sentences       ; sentence.find_all                 ; end
     def read_book(book)      ; sentence.read_book(book)          ; end
-    def play_repeat_tone     ; audio.play_tone @repeat_tone      ; end
+    def play_repeat_tone     ; play.audio.play_tone @repeat_tone ; end
     def complete_word?       ; get_word_last_char == ' '         ; end
-    def audio_stop           ; audio.stop if audio.still_playing?; end
     def book_location        ; @book_details.book_location       ; end
     def print_book_advice    ; print.print_advice('Play Book')   ; end
 
     def convert
       book = @sentence.all.join
-      audio.convert_book(book)
+      play.audio.convert_book(book)
     end
 
     def change_or_repeat_sentence?
@@ -84,22 +83,22 @@ module CWG
     end
 
     def compile_sentence
-      audio.convert_words(sentence.current + ' ')
+      play.audio.convert_words(sentence.current + ' ')
     end
 
     def compile_and_play
       compile_sentence
-      start_sync()
-      audio.play
+      play.start_sync()
+      play.audio.play
     end
 
     def change_and_kill_audio
       sentence.change
-      audio_stop
+      play.stop
     end
 
     def next_sentence_or_quit?
-      playing = audio.still_playing?
+      playing = play.still_playing?
       sleep 0.01 if playing
       sentence.next unless playing
       if change_repeat_or_quit?
@@ -162,7 +161,7 @@ module CWG
 
     def check_sentence_count
       if @book_details.session_finished?
-        audio_stop
+        play.stop
         quit
         #      reset_stdin
         #     kill_threads
@@ -181,6 +180,8 @@ module CWG
     end
 
     def play_sentences_thread
+      puts "audio = "
+      p play.audio
       play_sentences_until_quit
       print "\n\rplay has quit " if @debug
       Cfg.config.params["exit"] = true
@@ -198,6 +199,5 @@ module CWG
        :print_sentences_thread
       ]
     end
-
   end
 end

@@ -7,49 +7,19 @@ module CWG
     def quit?                ; @quit                             ; end
     def quit                 ; @quit = true                      ; end
     def print                ; @print ||= Print.new              ; end
+    def play                 ; @play ||= Play.new(@words)        ; end
     def timing               ; @timing ||= Timing.new            ; end
-    def audio                ; @audio ||= AudioPlayer.new        ; end
+#    def audio                ; @audio ||= AudioPlayer.new        ; end
     def kill_threads         ; @threads.kill                     ; end
-    def start_sync           ; @start_sync = true                ; end
+#    def start_sync           ; @start_sync = true                ; end
     def get_key_input        ; key_input.read                    ; end
     def key_chr              ; key_input.char                    ; end
     def key_input            ; @key_input ||= KeyInput.new       ; end
     def is_relevant_char?    ; key_input.is_relevant_char?       ; end
-    def quit_key_input?      ; key_input.quit_input?             ; end
     def stream               ; @stream ||= CwStream.new          ; end
     def reset_stdin          ; key_input.reset_stdin             ; end
     def current_word         ; @current_word ||= CurrentWord.new ; end
     def init_char_timer      ; timing.init_char_timer            ; end
-
-    def add_space words
-      str = ''
-      words.to_array.collect { |word| str << word + ' '}
-      str
-    end
-
-    def audio_play
-      audio.convert_words add_space @words
-      start_sync()
-      audio.play
-    end
-
-    def play_words_until_quit
-      audio_play
-      play_words_exit unless Cfg.config["print_letters"]
-    end
-
-    def play_words_exit
-      timing.init_play_words_timeout
-      loop do
-        break if quit?
-        break if timing.play_words_timeout?
-        if Cfg.config["exit"]
-          audio.stop
-          break
-        end
-        sleep 0.01
-      end
-    end
 
     def do_events
       sleep 0.005
@@ -99,6 +69,7 @@ module CWG
     end
 
     def print_words_until_quit
+      @failed = false
       sync_with_audio_player
       print_words @words
       print_words_exit unless Cfg.config["print_letters"]
@@ -115,30 +86,37 @@ module CWG
       return true if stream.stream_empty?
       return true if timing.print_words_timeout?
       return true if quit?
+      return false
+    end
+
+    def failed?
+      @failed
+    end
+
+    def failed!
+      @failed = true
     end
 
     def print_words_exit
       timing.init_print_words_timeout
       loop do
         process_word_maybe
-        break if finish?
+        if finish?
+          break
+        end
         sleep 0.01
       end
-      @failed = true unless stream.stream_empty?
-      print_failed_exit_words unless self.class == RepeatWord
+      failed! unless stream.stream_empty?
+      print_failed_exit_words #unless self.class == RepeatWord
     end
 
     def audio_stop
-      audio.stop if audio.still_playing?
-    end
-
-    def wait_player_startup_delay
-      audio.startup_delay
+      play.stop if play.still_playing?
     end
 
     def sync_with_audio_player
       wait_for_start_sync
-      wait_player_startup_delay
+      play.wait_player_startup_delay
     end
 
     def push_letter_to_current_word letr
@@ -178,23 +156,19 @@ module CWG
       @word_to_process = true
     end
 
-    def start_sync?
-      if @start_sync
-        @start_sync = nil
-        true
-      else
-        nil
-      end
-    end
-
     def sleep_char_delay letr
       timing.append_char_delay letr, Cfg.config["wpm"], Cfg.config["effective_wpm"]
     end
 
     def wait_for_start_sync
-      until start_sync?
+      timeout = Time.now + 5
+      until play.start_sync?
         sleep 0.001
         break if quit?
+        if timeout < Time.now
+          Cfg.config.params["exit"] = true
+          exit 1
+        end
       end
     end
 
@@ -230,7 +204,8 @@ module CWG
     end
 
     def play_words_thread
-      play_words_until_quit
+      p @words
+      play.play_words_until_quit
       print "\n\rplay has quit " if @debug
       Cfg.config.params["exit"] = true
     end
@@ -259,6 +234,7 @@ module CWG
       @words = words
       @cw_threads = CWThreads.new(self, thread_processes)
       @cw_threads.run
+      @play = nil
       reset_stdin
       print.newline
     end
@@ -276,14 +252,12 @@ module CWG
 
     def check_quit_key_input
       if key_input.quit_input?
-        audio.stop
+        play.stop
         Cfg.config.params["exit"] = true
         quit
-        audio_stop
+        play.stop
         true
       end
     end
-
   end
-
 end

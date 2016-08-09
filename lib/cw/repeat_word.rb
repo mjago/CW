@@ -29,6 +29,7 @@ module CWG
     end
 
     def process_input_word_maybe
+#      puts "process_input_word_maybe"
       if @word_to_process
         stream.match_last_active_element @process_input_word.strip
         @process_input_word = @word_to_process = nil
@@ -55,19 +56,23 @@ module CWG
       temp_words = words.all
       temp_words.each do |word|
         loop do
-          @input_word, @words = '', Words.new
-          @quit, @failed = nil, nil
-          @words.add [word]
           if(ENV["CW_ENV"] == "test")
             @words.assign []
             break
           end
+          @input_word, @words = '', Words.new
+          @quit, @failed = nil, nil
+          puts "word = #{word}"
+          @words.assign word
           @threads = CWThreads.new(self, thread_processes)
-
           @threads.start_threads
           @threads.wait_for_threads
+          @play = nil
           system("stty -raw echo")
-          break unless @failed
+          puts "failed? = "
+          p failed?
+          break unless failed?
+          puts "post failed?"
         end
       end
       #      break if Cfg.config["exit"]

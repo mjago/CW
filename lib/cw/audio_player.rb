@@ -84,10 +84,6 @@ module CWG
       return ps.include? tone.play_filename unless Cfg.config["use_ebook2cw"]
     end
 
-    def startup_delay
-      0.2
-    end
-
   end
 
 end

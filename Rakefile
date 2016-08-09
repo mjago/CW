@@ -8,7 +8,7 @@ Rake::VersionTask.new
 Rake::TestTask.new do |t|
 
   t.pattern = "test/test_*.rb"
-#  t.pattern = "test/test_config.rb"
+#  t.pattern = "test/test_play.rb"
 end
 
 YARD::Rake::YardocTask.new do |t|

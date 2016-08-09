@@ -7,13 +7,12 @@ module CWG
   class CwDsl
 
     include CWG::Cfg
-#    attr_accessor :cl
 
     HERE = File.dirname(__FILE__) + '/'
-    TEXT = File.join(HERE,'..', '..','data','text')
-    ABBREVIATIONS     = TEXT + 'abbreviations.txt'
-    Q_CODES           = TEXT + 'q_codes.txt'
-
+    TEXT = File.expand_path File.join(HERE,'..', '..','data','text')
+    ABBREVIATIONS =  File.expand_path File.join TEXT, 'abbreviations.txt'
+    Q_CODES =  File.expand_path File.join TEXT, 'q_codes.txt'
+    puts Q_CODES
     [:wpm, :effective_wpm, :frequency, :audio_filename,:audio_dir,
      :book_name, :book_dir, :play_command, :run_default, :command_line,
      :author, :title, :quality, :ebook2cw_path, :list_colour, :list_colour,

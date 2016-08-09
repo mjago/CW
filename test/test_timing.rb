@@ -75,26 +75,15 @@ class TestTiming < MiniTest::Test
     assert_equal true, @timing.print_words_timeout?
   end
 
-  def test_init_play_words_timeout_sets_start_play_time
-    time_now = Time.now
-    @timing.init_play_words_timeout
-    start_time = @timing.instance_variable_get(:@start_play_time)
-    assert_in_delta time_now.to_i, start_time.to_i, 1
-  end
-
-  def test_init_play_words_timeout_sets_delay_play_time
-    @timing.init_play_words_timeout
-    assert_equal 2.0, @timing.instance_variable_get(:@delay_play_time)
-  end
-
-  def test_play_words_timeout
-    @timing.instance_variable_set(:@start_play_time, Time.now)
-    @timing.instance_variable_set(:@delay_play_time, 1)
-    assert_equal false, @timing.play_words_timeout?
-    @timing.instance_variable_set(:@start_play_time, Time.now - 2)
-    @timing.instance_variable_set(:@delay_play_time, 1)
-    assert_equal true, @timing.play_words_timeout?
-  end
+  #todo
+#  def test_play_words_timeout
+#    @timing.instance_variable_set(:@start_play_time, Time.now)
+#    @timing.instance_variable_set(:@delay_play_time, 1)
+#    assert_equal false, @timing.play_words_timeout?
+#    @timing.instance_variable_set(:@start_play_time, Time.now - 2)
+#    @timing.instance_variable_set(:@delay_play_time, 1)
+#    assert_equal true, @timing.play_words_timeout?
+#  end
 
   def test_effective_dot_ms
     @timing.instance_variable_set(:@effective_wpm, 20)
