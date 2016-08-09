@@ -62,7 +62,6 @@ module CWG
           end
           @input_word, @words = '', Words.new
           @quit, @failed = nil, nil
-          puts "word = #{word}"
           @words.assign word
           @threads = CWThreads.new(self, thread_processes)
           @threads.start_threads
