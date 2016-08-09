@@ -180,8 +180,6 @@ module CWG
     end
 
     def play_sentences_thread
-      puts "audio = "
-      p play.audio
       play_sentences_until_quit
       print "\n\rplay has quit " if @debug
       Cfg.config.params["exit"] = true
