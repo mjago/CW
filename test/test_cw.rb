@@ -23,6 +23,11 @@ class TestCW < MiniTest::Test
     assert true
   end
 
+  def test_os_play_command
+    obj = CWG::AudioPlayer.new
+    assert ('afplay' == obj.os_play_command) || ('ossplay' == obj.os_play_command)
+  end
+
   def test_cw_class
     assert_equal CW, @cw.class
   end

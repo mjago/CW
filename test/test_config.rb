@@ -43,9 +43,9 @@ class TestConfig < MiniTest::Test
     assert_equal "data/text/", CWG::Cfg.config["book_dir"]
   end
 
-  def test_play_command_default
-    assert_equal "/usr/bin/afplay", CWG::Cfg.config["play_command"]
-  end
+#  def test_play_command_default
+#    assert_equal "/usr/bin/afplay", CWG::Cfg.config["play_command"]
+#  end
 
   def test_success_colour_default
     assert_equal "green", CWG::Cfg.config["success_colour"]

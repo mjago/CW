@@ -34,4 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard', '~> 0.9.5'
   spec.add_development_dependency 'sequel'
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'os', '~> 0.9.6'
 end

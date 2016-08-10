@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'timeout'
+require 'os'
 
 module CWG
 
@@ -10,7 +11,22 @@ module CWG
       @tone ||= ToneGenerator.new
     end
 
+    def os_play_command
+      if OS.mac?
+        'afplay'
+      elsif OS.posix
+        'ossplay'
+      else
+        puts 'Error - play_command required in .cw_config'
+        exit 1
+      end
+    end
+
     def play_command
+      if Cfg.config["play_command"].nil?
+        Cfg.config.params["play_command"] =
+          os_play_command
+      end
       Cfg.config["play_command"]
     end
 

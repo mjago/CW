@@ -3,7 +3,6 @@ frequency       = 450
 volume          = 1
 book_name       = book.txt
 book_dir        = data/text/
-play_command    = /usr/bin/afplay
 success_colour  = green
 fail_colour     = red
 list_colour     = default
