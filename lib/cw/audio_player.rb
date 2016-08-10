@@ -14,7 +14,7 @@ module CWG
     def os_play_command
       if OS.mac?
         'afplay'
-      elsif OS.posix
+      elsif OS.posix?
         'ossplay'
       else
         puts 'Error - play_command required in .cw_config'
