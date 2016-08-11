@@ -7,7 +7,7 @@ module CWG
 
   class AudioPlayer
 
-    require OS_test
+    include CWG::OStest
 
     def tone
       @tone ||= ToneGenerator.new
