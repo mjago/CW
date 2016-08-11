@@ -7,14 +7,16 @@ module CWG
 
   class AudioPlayer
 
+    require OS_test
+
     def tone
       @tone ||= ToneGenerator.new
     end
 
     def os_play_command
-      if OS.mac?
+      if is_mac?
         'afplay'
-      elsif OS.posix?
+      elsif is_posix?
         'ossplay'
       else
         puts 'Error - play_command required in .cw_config'
@@ -95,7 +97,12 @@ module CWG
     end
 
     def still_playing?
-      ps = `ps -ewwo pid,args | grep #{play_cmd_for_ps}`
+      puts play_cmd_for_ps
+      puts play_cmd_for_ps
+      puts 'here'
+      ps = `ps -ewwo pid,args | grep #{play_command_for_ps}`
+      puts 'here2'
+      puts "ps = #{ps}"
       return ps.include? "#{play_filename_for_ebook2cw}" if Cfg.config["use_ebook2cw"]
       return ps.include? tone.play_filename unless Cfg.config["use_ebook2cw"]
     end

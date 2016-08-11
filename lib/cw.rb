@@ -35,6 +35,7 @@ require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/common_words'
+require_relative 'os'
 #require_relative 'cw/send_practice'
 
 
