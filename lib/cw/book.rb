@@ -7,7 +7,6 @@ module CWG
     include FileDetails
 
     def initialize book_details
-
       init_filenames
       @book_details = book_details
       read_book book_location
@@ -92,17 +91,19 @@ module CWG
       play.audio.play
     end
 
-    def change_and_kill_audio
-      sentence.change
-      play.stop
-    end
+#    def change_and_kill_audio
+#      sentence.change
+#      play.stop
+#    end
 
     def next_sentence_or_quit?
-      playing = play.still_playing?
-      sleep 0.01 if playing
-      sentence.next unless playing
+      sleep 0.01 if play.still_playing?
+      sentence.next unless play.still_playing?
       if change_repeat_or_quit?
-        change_and_kill_audio
+        play.stop
+#        quit #todo
+        sentence.change unless quit?
+        #        change_and_kill_audio
         #todo      prn.newline unless quit?
         return true
       end
@@ -111,6 +112,7 @@ module CWG
     def await_next_sentence_or_quit
       loop do
         break if next_sentence_or_quit?
+        sleep 0.01
       end
     end
 
@@ -133,7 +135,7 @@ module CWG
     end
 
     def print_words_for_current_sentence
-      print_words sentence.current
+      print_words(sentence.current)
     end
 
     def make_sentence_index_current
@@ -156,7 +158,7 @@ module CWG
         await_next_sentence_or_quit
         break if quit?
       end
-      print_words_exit unless Cfg.config["print_letters"]
+      print_words_exit
     end
 
     def check_sentence_count
@@ -175,7 +177,6 @@ module CWG
         break if quit?
         sync_with_audio_player
         print_words_for_current_sentence
-        print.reset
       end
     end
 

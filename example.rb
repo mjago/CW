@@ -110,28 +110,28 @@ end
 
 cw do
   comment 'test 6 common cw abbreviations'
-   wpm  15
-   load_abbreviations
-   shuffle
-   word_count 6
+  wpm  15
+  load_abbreviations
+  shuffle
+  word_count 6
 end
 
 cw do
   comment "test 8 Q codes by ear (no keyboard test)"
-   wpm  20
-   load_codes
-   shuffle
-   word_count 8
-   print_words
- end
+  wpm  20
+  load_codes
+  shuffle
+  word_count 8
+  print_words
+end
 
 cw do
   comment "test 8 words by ear - reveal words at end of test"
-   wpm  20
-   shuffle
-   word_count 8
-   reveal
- end
+  wpm  20
+  shuffle
+  word_count 8
+  reveal
+end
 
 # See documentation for more details - and more commands!
 

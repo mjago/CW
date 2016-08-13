@@ -4,8 +4,7 @@ module CWG
 
   class Tester
 
-    def quit?                ; @quit ||= false                   ; end
-    def quit                 ; @quit = true                      ; end
+    def quit                 ; Cfg.config.params["quit"] = true  ; end
     def print                ; @print ||= Print.new              ; end
     def play                 ; @play ||= Play.new(@words)        ; end
     def timing               ; @timing ||= Timing.new            ; end
@@ -23,6 +22,13 @@ module CWG
 
     def do_events
       sleep 0.005
+    end
+
+    def quit?
+      if Cfg.config["quit"].nil?
+        Cfg.config.params["quit"] = false
+      end
+      Cfg.config["quit"]
     end
 
     def process_letters letr
@@ -72,7 +78,7 @@ module CWG
       @failed = false
       sync_with_audio_player
       print_words @words
-      print_words_exit unless Cfg.config["print_letters"]
+      print_words_exit
       quit
     end
 
@@ -80,13 +86,14 @@ module CWG
       until stream.stream_empty?
         print.fail stream.pop[:value]
       end
+      print.reset
     end
 
     def finish?
       return true if stream.stream_empty?
       return true if timing.print_words_timeout?
       return true if quit?
-      return false
+      false
     end
 
     def failed?
@@ -98,6 +105,7 @@ module CWG
     end
 
     def print_words_exit
+      return if Cfg.config["print_letters"]
       timing.init_print_words_timeout
       loop do
         process_word_maybe
@@ -182,7 +190,7 @@ module CWG
     end
 
     def print_letters?
-      Cfg.config["print_letters"] && ! quit?
+      Cfg.config["print_letters"] #&& ! quit?
     end
 
     def sync_with_play
@@ -218,6 +226,7 @@ module CWG
 
     def monitor_keys_thread
       monitor_keys
+      @key_input = nil
       print "\n\rmonitor keys has quit " if @debug
       Cfg.config.params["exit"] = true
     end
@@ -242,7 +251,7 @@ module CWG
     def monitor_keys
       loop do
         key_input.read
-        check_quit_key_input
+        break if quit_key_input?
         break if quit?
         break if Cfg.config["exit"]
         check_sentence_navigation(key_chr) if self.class == Book
@@ -250,7 +259,7 @@ module CWG
       end
     end
 
-    def check_quit_key_input
+    def quit_key_input?
       if key_input.quit_input?
         play.stop
         Cfg.config.params["exit"] = true

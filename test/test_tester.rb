@@ -14,7 +14,7 @@ class TestTester < MiniTest::Test
   end
 
   def teardown
-    @cw = nil
+    @object = nil
   end
 
   def test_whatever
@@ -22,11 +22,12 @@ class TestTester < MiniTest::Test
   end
 #
   def test_quit?
-    @object.instance_eval('@quit = :quit')
-    assert_equal :quit, @object.quit?
+    @object.quit
+    assert_equal true, @object.quit?
   end
 
   def test_quit
+    CWG::Cfg.config.params["quit"] = false
     refute @object.quit?
     @object.quit
     assert @object.quit?

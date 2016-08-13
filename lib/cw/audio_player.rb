@@ -97,16 +97,10 @@ module CWG
     end
 
     def still_playing?
-      puts play_cmd_for_ps
-      puts play_cmd_for_ps
-      puts 'here'
-      ps = `ps -ewwo pid,args | grep #{play_command_for_ps}`
-      puts 'here2'
-      puts "ps = #{ps}"
-      return ps.include? "#{play_filename_for_ebook2cw}" if Cfg.config["use_ebook2cw"]
-      return ps.include? tone.play_filename unless Cfg.config["use_ebook2cw"]
+      cl = "ps -eo  pid,args | grep #{play_cmd_for_ps}"
+      ps = `#{cl}`
+      return ps.include?("#{play_filename_for_ebook2cw}") if Cfg.config["use_ebook2cw"]
+      return ps.include?(tone.play_filename) unless Cfg.config["use_ebook2cw"]
     end
-
   end
-
 end

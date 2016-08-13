@@ -8,6 +8,13 @@ module CWG
       @words = words
     end
 
+    def quit?
+      if Cfg.config["quit"].nil?
+        Cfg.config.params["quit"] = false
+        Cfg.config["quit"]
+      end
+    end
+
     def audio
       @audio ||= AudioPlayer.new
     end
@@ -54,6 +61,7 @@ module CWG
     end
 
     def play_words_exit
+#      puts "play_words_exit"
       init_play_words_timeout
       loop do
         break if quit?

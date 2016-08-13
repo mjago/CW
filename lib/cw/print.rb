@@ -136,7 +136,5 @@ module CWG
     def print_advice name
       puts "#{name}: Press Q 4 times to Exit"
     end
-
   end
-
 end

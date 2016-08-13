@@ -115,7 +115,8 @@ module CWG
     end
 
     def force_kill
-      puts "Forcing kill!\r"
+      puts "exiting"
+#      puts "Forcing kill!\r"
       kill_open_threads
       # print_threads_status
       system("stty -raw echo")
