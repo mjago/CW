@@ -1,5 +1,5 @@
-require_relative 'lib/cw'
-#
+require 'cw'
+
 #cw do
 #  comment 'test alphabet vowels'
 #  wpm 15
@@ -10,8 +10,7 @@ require_relative 'lib/cw'
 #cw do
 #  comment 'test letters a..m'
 #  wpm 18
-#  load_alphabet
-#  containing('a'..'m')
+#  load_alphabet("a".."m")
 #  shuffle
 #end
 #
@@ -26,8 +25,7 @@ require_relative 'lib/cw'
 #cw do
 #  comment 'test letters n..z'
 #  wpm 18
-#  load_alphabet
-#  containing('n'..'z')
+#  load_letters('n'..'z')
 #  shuffle
 #end
 #
@@ -65,6 +63,15 @@ require_relative 'lib/cw'
 #end
 #
 #cw do
+#  comment 'test 4 most common words no shorter than 4 letters'
+#  wpm 20
+#  load_most_common_words
+#  shuffle
+#  no_shorter_than 4
+#  word_count 8
+#end
+#
+#cw do
 #  comment 'test 8 words including letter sequence "ing"'
 #  shuffle
 #  including('ing')
@@ -83,6 +90,7 @@ require_relative 'lib/cw'
 #  comment 'test 8 words beginning with "qu" - repeat whole sequence once'
 #  wpm 20
 #  shuffle
+#  beginning_with 'qu'
 #  word_count 8
 #  repeat 1
 #end
@@ -96,43 +104,52 @@ require_relative 'lib/cw'
 #  test_words
 #end
 #
+#cw do
+#  comment 'read one sentence of book'
+#  wpm 20
+#  read_book(sentences: 1)
+#end
+#
+#cw do
+#  comment 'read rss feed (quote of the day)'
+#  wpm 18
+#  read_rss(:quotation, 1)
+#end
+#
+#cw do
+#  comment 'test 6 common cw abbreviations'
+#  wpm  15
+#  load_abbreviations
+#  shuffle
+#  word_count 6
+#end
+#
+#cw do
+#  comment "test 8 Q codes by ear (no keyboard test)"
+#  wpm  20
+#  load_codes
+#  shuffle
+#  word_count 8
+#  print_words
+#end
+#
+#cw do
+#  comment "test 8 words by ear - reveal words at end of test"
+#  wpm  20
+#  shuffle
+#  word_count 8
+#  reveal
+#end
+#
 cw do
-  comment 'read one sentence of book'
+  comment "load my own word set"
   wpm 20
-  read_book(sentences: 1)
-end
-
-cw do
-  comment 'read rss feed (quote of the day)'
-  wpm 18
-  read_rss(:quotation, 1)
-end
-
-cw do
-  comment 'test 6 common cw abbreviations'
-  wpm  15
-  load_abbreviations
+  load_text("test/my_words.txt")
   shuffle
-  word_count 6
+  word_count 4
 end
 
-cw do
-  comment "test 8 Q codes by ear (no keyboard test)"
-  wpm  20
-  load_codes
-  shuffle
-  word_count 8
-  print_words
-end
 
-cw do
-  comment "test 8 words by ear - reveal words at end of test"
-  wpm  20
-  shuffle
-  word_count 8
-  reveal
-end
-
-# See documentation for more details - and more commands!
+# See documentation for more details - and more commands.
 
 puts 'done'
