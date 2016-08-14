@@ -311,7 +311,9 @@ module CWG
     alias_method :ewpm,                  :effective_wpm
     alias_method :comment,               :name
     alias_method :word_length,           :word_size
+    alias_method :load_letters,          :load_alphabet
     alias_method :word_shuffle,          :shuffle
+    alias_method :repeat_letter,         :repeat_word
     alias_method :having_size_of,        :word_size
     alias_method :number_of_words,       :word_count
     alias_method :words_including,       :including
