@@ -1,101 +1,101 @@
-require 'cw'
-
-cw do
-  comment 'test alphabet vowels'
-  wpm 15
-  load_vowels
-  shuffle
-end
-
-cw do
-  comment 'test letters a..m'
-  wpm 18
-  load_alphabet
-  containing('a'..'m')
-  shuffle
-end
-
-cw do
-  comment 'test 8 words made with letters a..m - test by letter'
-  wpm 18
-  containing('a'..'m')
-  shuffle
-  word_count 8
-end
-
-cw do
-  comment 'test letters n..z'
-  wpm 18
-  load_alphabet
-  containing('n'..'z')
-  shuffle
-end
-
-cw do
-  comment 'test 8 words made with letters n..z - test by word'
-  wpm 18
-  containing('n'..'z')
-  shuffle
-  word_count 8
-  test_words
-end
-
-cw do
-  comment 'test numbers'
-  wpm 20
-  load_numbers
-  shuffle
-end
-
-cw do
-  comment 'test alphabet - repeat until correct'
-  wpm 25
-  load_alphabet
-  shuffle
-  repeat_word
-end
-
-cw do
-  comment 'test 8 most common words no longer than 4 letters'
-  wpm 20
-  load_most_common_words
-  shuffle
-  no_longer_than 4
-  word_count 8
-end
-
-cw do
-  comment 'test 8 words including letter sequence "ing"'
-  shuffle
-  including('ing')
-  word_size 6
-end
-
-cw do
-  comment 'test 8 words having 6 letters - play each word twice'
-  shuffle
-  word_size 6
-  word_count 8
-  double_words
-end
-
-cw do
-  comment 'test 8 words beginning with "qu" - repeat whole sequence once'
-  wpm 20
-  shuffle
-  word_count 8
-  repeat 1
-end
-
-cw do
-  comment 'test 8 words ending with "tion" - test by word'
-  wpm 15
-  shuffle
-  ending_with 'tion'
-  word_count 8
-  test_words
-end
-
+require_relative 'lib/cw'
+#
+#cw do
+#  comment 'test alphabet vowels'
+#  wpm 15
+#  load_vowels
+#  shuffle
+#end
+#
+#cw do
+#  comment 'test letters a..m'
+#  wpm 18
+#  load_alphabet
+#  containing('a'..'m')
+#  shuffle
+#end
+#
+#cw do
+#  comment 'test 8 words made with letters a..m - test by letter'
+#  wpm 18
+#  containing('a'..'m')
+#  shuffle
+#  word_count 8
+#end
+#
+#cw do
+#  comment 'test letters n..z'
+#  wpm 18
+#  load_alphabet
+#  containing('n'..'z')
+#  shuffle
+#end
+#
+#cw do
+#  comment 'test 8 words made with letters n..z - test by word'
+#  wpm 18
+#  containing('n'..'z')
+#  shuffle
+#  word_count 8
+#  test_words
+#end
+#
+#cw do
+#  comment 'test numbers'
+#  wpm 20
+#  load_numbers
+#  shuffle
+#end
+#
+#cw do
+#  comment 'test alphabet - repeat until correct'
+#  wpm 25
+#  load_alphabet
+#  shuffle
+#  repeat_word
+#end
+#
+#cw do
+#  comment 'test 8 most common words no longer than 4 letters'
+#  wpm 20
+#  load_most_common_words
+#  shuffle
+#  no_longer_than 4
+#  word_count 8
+#end
+#
+#cw do
+#  comment 'test 8 words including letter sequence "ing"'
+#  shuffle
+#  including('ing')
+#  word_size 6
+#end
+#
+#cw do
+#  comment 'test 8 words having 6 letters - play each word twice'
+#  shuffle
+#  word_size 6
+#  word_count 8
+#  double_words
+#end
+#
+#cw do
+#  comment 'test 8 words beginning with "qu" - repeat whole sequence once'
+#  wpm 20
+#  shuffle
+#  word_count 8
+#  repeat 1
+#end
+#
+#cw do
+#  comment 'test 8 words ending with "tion" - test by word'
+#  wpm 15
+#  shuffle
+#  ending_with 'tion'
+#  word_count 8
+#  test_words
+#end
+#
 cw do
   comment 'read one sentence of book'
   wpm 20

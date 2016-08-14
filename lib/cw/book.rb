@@ -183,13 +183,13 @@ module CWG
     def play_sentences_thread
       play_sentences_until_quit
       print "\n\rplay has quit " if @debug
-      Cfg.config.params["exit"] = true
+      exit!
     end
 
     def print_sentences_thread
       print_sentences_until_quit
       print "\n\rprint has quit " if @debug
-      Cfg.config.params["exit"] = true
+      exit!
     end
 
     def thread_processes

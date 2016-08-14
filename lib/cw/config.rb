@@ -34,5 +34,17 @@ module CWG
       @config = nil
     end
 
+    def self.reset_param param
+      @config.params[param] = false
+    end
+
+    def self.reset_if_nil param
+      self.reset_param param if @config[param].nil?
+    end
+
+    def self.get_param param
+      self.reset_if_nil param
+      @config[param]
+    end
   end
 end

@@ -24,7 +24,6 @@ module CWG
           break if timing.char_delay_timeout?
         end
         print.success letr if print_letters?
-        #     break if quit?
       end
     end
 
@@ -52,14 +51,18 @@ module CWG
       print.results(@popped, :pass_only) if(@popped && ! print_letters?)
     end
 
+    def test_env
+      if(ENV["CW_ENV"] == "test")
+        @words = []
+        return true
+      end
+    end
+
     def run words
       temp_words = words.all
       temp_words.each do |word|
         loop do
-          if(ENV["CW_ENV"] == "test")
-            @words = []
-            break
-          end
+          break if test_env
           @input_word, @words = '', Words.new
           Cfg.config.params["quit"] = false
           @words.assign word
