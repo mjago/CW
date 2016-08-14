@@ -61,7 +61,7 @@ module CWG
             break
           end
           @input_word, @words = '', Words.new
-          @quit, @failed = nil, nil
+          Cfg.config.params["quit"] = false
           @words.assign word
           @threads = CWThreads.new(self, thread_processes)
           @threads.start_threads

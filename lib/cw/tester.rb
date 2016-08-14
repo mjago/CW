@@ -4,7 +4,7 @@ module CWG
 
   class Tester
 
-    def quit                 ; Cfg.config.params["quit"] = true  ; end
+    def quit(arg = true)     ; Cfg.config.params["quit"] = arg   ; end
     def print                ; @print ||= Print.new              ; end
     def play                 ; @play ||= Play.new(@words)        ; end
     def timing               ; @timing ||= Timing.new            ; end
@@ -115,7 +115,7 @@ module CWG
         sleep 0.01
       end
       failed! unless stream.stream_empty?
-      print_failed_exit_words #unless self.class == RepeatWord
+      print_failed_exit_words unless self.class == RepeatWord
     end
 
     def audio_stop
