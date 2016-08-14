@@ -249,10 +249,15 @@ module CWG
     def alpha           ; 'a'.upto('z').collect{|ch| ch} ; end
     def vowels          ; ['a','e','i','o','u']          ; end
     def load_vowels     ; @words.assign vowels           ; end
-    def load_alphabet   ; @words.assign alpha            ; end
     def load_consonants ; @words.assign alpha - vowels   ; end
     def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
     def load_numbers    ; @words.assign numbers          ; end
+
+    def load_alphabet(* args)
+      @words.assign alpha
+      Cfg.config.params["including"] = args unless args.empty?
+      @words.including unless args.empty?
+    end
 
     def load_text(filename)
       Cfg.config.params["dictionary"] = filename
