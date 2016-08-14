@@ -248,6 +248,8 @@ module CWG
 
     def alpha           ; 'a'.upto('z').collect{|ch| ch} ; end
     def vowels          ; ['a','e','i','o','u']          ; end
+    def dot_letters     ; ['e','i','s','h']              ; end
+    def dash_letters    ; ['t','m','o']                  ; end
     def load_vowels     ; @words.assign vowels           ; end
     def load_consonants ; @words.assign alpha - vowels   ; end
     def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
@@ -257,6 +259,14 @@ module CWG
       @words.assign alpha
       Cfg.config.params["including"] = args unless args.empty?
       @words.including unless args.empty?
+    end
+
+    def load_dots
+      load_letters(dot_letters)
+    end
+
+    def load_dashes
+      load_letters(dash_letters)
     end
 
     def load_text(filename)

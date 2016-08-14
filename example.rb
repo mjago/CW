@@ -8,6 +8,22 @@ cw do
 end
 
 cw do
+  comment "test characters containing only dots, repeat twice"
+  wpm 15
+  load_dots
+  shuffle
+  repeat 2
+end
+
+cw do
+  comment "test characters containing only dashes, repeat 3 times"
+  wpm 15
+  load_dashes
+  shuffle
+  repeat 3
+end
+
+cw do
   comment 'test letters a..m'
   wpm 18
   load_alphabet("a".."m")
