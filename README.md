@@ -22,7 +22,7 @@ addition to generating random words, letters, and numbers that possibly match so
 
 ```sh
 gem install cw
-ruby example.rb
+cw example.rb
 ```
 
  * Note: Currently only tested on OS X, and Ruby v1.9.3 and later.
