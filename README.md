@@ -36,6 +36,80 @@ cw example.rb
 require 'cw'
 
 cw do
+  comment "test characters containing only dots"
+  wpm 15
+  load_dots
+  shuffle
+end
+
+cw do
+  comment "test characters containing only dashes"
+  wpm 15
+  load_dashes
+  shuffle
+end
+
+cw do
+  comment 'test single element letters'
+  wpm 15
+  load_alphabet :size, 1
+  shuffle
+end
+
+cw do
+  comment 'test 2 element letters'
+  wpm 15
+  load_alphabet :size, 2
+  shuffle
+end
+
+cw do
+  comment 'test less than 3 element letters'
+  wpm 15
+  load_alphabet :less_than, 3
+  shuffle
+end
+
+cw do
+  comment 'test 3 element letters'
+  wpm 15
+  load_alphabet :size, 3
+  shuffle
+end
+
+cw do
+  comment 'test less than 4 element letters'
+  wpm 15
+  load_alphabet :less_than, 4
+  shuffle
+end
+
+cw do
+  comment 'test 4 element letters'
+  wpm 15
+  load_alphabet :size, 4
+  shuffle
+end
+
+cw do
+  comment 'test letters a to h'
+  wpm 15
+  load_alphabet "a".."h"
+end
+
+cw do
+  comment 'test letters i to p'
+  wpm 15
+  load_alphabet "i".."p"
+end
+
+cw do
+  comment 'test letters q to z'
+  wpm 15
+  load_alphabet "q".."z"
+end
+
+cw do
   comment 'test alphabet vowels'
   wpm 15
   load_vowels
@@ -45,8 +119,7 @@ end
 cw do
   comment 'test letters a..m'
   wpm 18
-  load_alphabet
-  containing('a'..'m')
+  load_alphabet("a".."m")
   shuffle
 end
 
@@ -61,8 +134,7 @@ end
 cw do
   comment 'test letters n..z'
   wpm 18
-  load_alphabet
-  containing('n'..'z')
+  load_letters('n'..'z')
   shuffle
 end
 
@@ -100,6 +172,15 @@ cw do
 end
 
 cw do
+  comment 'test 4 most common words no shorter than 4 letters'
+  wpm 20
+  load_most_common_words
+  shuffle
+  no_shorter_than 4
+  word_count 8
+end
+
+cw do
   comment 'test 8 words including letter sequence "ing"'
   shuffle
   including('ing')
@@ -118,6 +199,7 @@ cw do
   comment 'test 8 words beginning with "qu" - repeat whole sequence once'
   wpm 20
   shuffle
+  beginning_with 'qu'
   word_count 8
   repeat 1
 end
@@ -145,30 +227,45 @@ end
 
 cw do
   comment 'test 6 common cw abbreviations'
-   wpm  15
-   load_abbreviations
-   shuffle
-   word_count 6
+  wpm  15
+  load_abbreviations
+  shuffle
+  word_count 6
 end
 
 cw do
   comment "test 8 Q codes by ear (no keyboard test)"
-   wpm  20
-   load_codes
-   shuffle
-   word_count 8
-   print_words
- end
+  wpm  20
+  load_codes
+  shuffle
+  word_count 8
+  print_words
+end
 
 cw do
   comment "test 8 words by ear - reveal words at end of test"
-   wpm  20
-   shuffle
-   word_count 8
-   reveal
- end
+  wpm  20
+  shuffle
+  word_count 8
+  reveal
+end
 
-# See documentation for more details - and more commands!
+cw do
+  comment "reverse alphabet"
+  wpm 20
+  load_alphabet
+  reverse
+end
+
+cw do
+  comment "load my own word set"
+  wpm 20
+  load_text("test/my_words.txt")
+  shuffle
+  word_count 4
+end
+
+# See documentation for more details - and more commands.
 
 puts 'done'
 
