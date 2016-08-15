@@ -192,7 +192,12 @@ module CWG
     end
 
     def write_audio
-      WaveFile::Writer.new(play_filename, WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
+      WaveFile::Writer.
+        new(play_filename,
+            WaveFile::Format.
+              new(:mono,
+                  :pcm_16,
+                  @sample_rate)) do |writer|
         yield.each do |char|
           #        progress.increment
           char.each do |fta|
@@ -208,10 +213,10 @@ module CWG
     end
 
     def write_audio_file
-      write_audio { @word_parts.collect {|part| word_composite(part) } }
+      write_audio do
+        @word_parts.collect {|part| word_composite(part) }
+      end
       reset
     end
-
   end
-
 end

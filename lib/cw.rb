@@ -8,6 +8,7 @@ require_relative 'cw/text_helpers'
 require_relative 'cw/tone_helpers'
 require_relative 'cw/element'
 require_relative 'cw/current_word'
+require_relative 'cw/cw_encoding'
 require_relative 'cw/cw_dsl'
 require_relative 'cw/randomize'
 require_relative 'cw/sentence'
@@ -32,12 +33,10 @@ require_relative 'cw/repeat_word'
 require_relative 'cw/reveal'
 require_relative 'cw/book'
 #require_relative 'cw/tx'
-require_relative 'cw/cw_encoding'
 require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/common_words'
 #require_relative 'cw/send_practice'
-
 
 def cw &block
   CW.new do

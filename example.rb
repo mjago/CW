@@ -1,26 +1,84 @@
 require 'cw'
 
 cw do
+  comment "test characters containing only dots"
+  wpm 15
+  load_dots
+  shuffle
+end
+
+cw do
+  comment "test characters containing only dashes"
+  wpm 15
+  load_dashes
+  shuffle
+end
+
+cw do
+  comment 'test single element letters'
+  wpm 15
+  load_alphabet :size, 1
+  shuffle
+end
+
+cw do
+  comment 'test 2 element letters'
+  wpm 15
+  load_alphabet :size, 2
+  shuffle
+end
+
+cw do
+  comment 'test less than 3 element letters'
+  wpm 15
+  load_alphabet :less_than, 3
+  shuffle
+end
+
+cw do
+  comment 'test 3 element letters'
+  wpm 15
+  load_alphabet :size, 3
+  shuffle
+end
+
+cw do
+  comment 'test less than 4 element letters'
+  wpm 15
+  load_alphabet :less_than, 4
+  shuffle
+end
+
+cw do
+  comment 'test 4 element letters'
+  wpm 15
+  load_alphabet :size, 4
+  shuffle
+end
+
+cw do
+  comment 'test letters a to h'
+  wpm 15
+  load_alphabet "a".."h"
+end
+
+cw do
+  comment 'test letters i to p'
+  wpm 15
+  load_alphabet "i".."p"
+end
+
+cw do
+  comment 'test letters q to z'
+  wpm 15
+  load_alphabet "q".."z"
+end
+
+cw do
   comment 'test alphabet vowels'
   wpm 15
   load_vowels
   shuffle
-end
-
-cw do
-  comment "test characters containing only dots, repeat twice"
-  wpm 15
-  load_dots
-  shuffle
-  repeat 2
-end
-
-cw do
-  comment "test characters containing only dashes, repeat 3 times"
-  wpm 15
-  load_dashes
-  shuffle
-  repeat 3
 end
 
 cw do

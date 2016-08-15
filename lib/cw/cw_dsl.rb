@@ -254,19 +254,28 @@ module CWG
     def load_consonants ; @words.assign alpha - vowels   ; end
     def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
     def load_numbers    ; @words.assign numbers          ; end
+    def load_dots       ; load_letters(dot_letters)      ; end
+    def load_dashes     ; load_letters(dash_letters)     ; end
+
+    def cw_element_match arg
+      encs = CWG::CwEncoding.new
+      encs.match_elements arg
+    end
+
+    def letter_range args
+      @words.assign alpha
+      Cfg.config.params["including"] = args
+      @words.including
+    end
 
     def load_alphabet(* args)
-      @words.assign alpha
-      Cfg.config.params["including"] = args unless args.empty?
-      @words.including unless args.empty?
-    end
-
-    def load_dots
-      load_letters(dot_letters)
-    end
-
-    def load_dashes
-      load_letters(dash_letters)
+      @words.assign alpha if args.empty?
+      return if args.empty?
+      if args[0].class == Range
+        @words.assign letter_range(args)
+        return
+      end
+      @words.assign cw_element_match(args)
     end
 
     def load_text(filename)
