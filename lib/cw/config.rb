@@ -4,7 +4,7 @@ module CWG
 
   module Cfg
 
-    HERE = File.dirname(__FILE__) + '/'
+    include CWG::FileDetails
 
     CONFIG_METHODS = [
       :name,:wpm,:effective_wpm,:frequency,:audio_filename,:audio_dir,
@@ -18,7 +18,7 @@ module CWG
 
     def self.config
       unless @config
-        @config = ParseConfig.new(File.join HERE, '..', '..', '.cw_config')
+        @config = ParseConfig.new(CONFIG_FILENAME)
         CONFIG_METHODS.each do |method|
           unless @config[method.to_s]
             @config.add method.to_s, nil

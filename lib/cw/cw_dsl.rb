@@ -7,11 +7,7 @@ module CWG
   class CwDsl
 
     include CWG::Cfg
-
-    HERE = File.dirname(__FILE__) + '/'
-    TEXT = File.expand_path File.join(HERE,'..', '..','data','text')
-    ABBREVIATIONS =  File.expand_path File.join TEXT, 'abbreviations.txt'
-    Q_CODES =  File.expand_path File.join TEXT, 'q_codes.txt'
+    include CWG::FileDetails
     [:wpm, :effective_wpm, :frequency, :audio_filename,:audio_dir,
      :book_name, :book_dir, :play_command, :run_default, :command_line,
      :author, :title, :quality, :ebook2cw_path, :list_colour, :list_colour,
@@ -28,10 +24,6 @@ module CWG
                    Words.new, Cl.new, Str.new
       Cfg.reset
       load_common_words# unless @words.exist?
-    end
-
-    def words
-      @words.all
     end
 
     def words= words
@@ -178,10 +170,6 @@ module CWG
       @words.containing
     end
 
-    def double_words
-      @words.double_words
-    end
-
     def repeat mult
       @words.repeat mult
     end
@@ -192,14 +180,6 @@ module CWG
 
     def no_shorter_than(min)
       @words.no_shorter_than min
-    end
-
-    def reverse
-      @words.reverse
-    end
-
-    def letters_numbers
-      @words.letters_numbers
     end
 
     def random_letters_numbers(options = {})
@@ -226,36 +206,6 @@ module CWG
     def numbers_spoken()
       #todo
     end
-
-    def load_common_words
-      @words.load 1000
-    end
-
-    def load_most_common_words
-      @words.load 1000
-#      load_text MOST_COMMON_WORDS
-    end
-
-    def load_abbreviations
-      load_text ABBREVIATIONS
-    end
-
-    def load_codes
-      load_text Q_CODES
-    end
-
-    #todo refactor
-
-    def alpha           ; 'a'.upto('z').collect{|ch| ch} ; end
-    def vowels          ; ['a','e','i','o','u']          ; end
-    def dot_letters     ; ['e','i','s','h']              ; end
-    def dash_letters    ; ['t','m','o']                  ; end
-    def load_vowels     ; @words.assign vowels           ; end
-    def load_consonants ; @words.assign alpha - vowels   ; end
-    def numbers         ; '0'.upto('9').collect{|ch| ch} ; end
-    def load_numbers    ; @words.assign numbers          ; end
-    def load_dots       ; load_letters(dot_letters)      ; end
-    def load_dashes     ; load_letters(dash_letters)     ; end
 
     def cw_element_match arg
       encs = CWG::CwEncoding.new
@@ -285,18 +235,6 @@ module CWG
 
     def load_words(args)
       @words.load args
-    end
-
-    # Return string containing name or comment of test.
-    # @return [String] comment / name
-
-    def to_s
-      @str.to_s
-    end
-
-    def list
-      Print.new.list self.to_s
-      puts
     end
 
     def run_default
@@ -332,6 +270,27 @@ module CWG
       Cfg.config.params["use_ebook2cw"] = nil
     end
 
+    def words                  ; @words.all                     ; end
+    def load_common_words      ; @words.load 1000               ; end
+    def load_most_common_words ; @words.load 1000               ; end
+    def load_abbreviations     ; load_text ABBREVIATIONS        ; end
+    def reverse                ;  @words.reverse                ; end
+    def double_words           ; @words.double_words            ; end
+    def letters_numbers        ;      @words.letters_numbers    ; end
+    def load_codes             ; load_text Q_CODES              ; end
+    def alpha                  ; 'a'.upto('z').collect{|ch| ch} ; end
+    def vowels                 ; ['a','e','i','o','u']          ; end
+    def dot_letters            ; ['e','i','s','h']              ; end
+    def dash_letters           ; ['t','m','o']                  ; end
+    def load_vowels            ; @words.assign vowels           ; end
+    def load_consonants        ; @words.assign alpha - vowels   ; end
+    def numbers                ; '0'.upto('9').collect{|ch| ch} ; end
+    def load_numbers           ; @words.assign numbers          ; end
+    def load_dots              ; load_letters(dot_letters)      ; end
+    def load_dashes            ; load_letters(dash_letters)     ; end
+    def to_s                   ; @str.to_s                      ; end
+    def list                   ; Print.new.list self.to_s; puts ; end
+
     alias_method :ewpm,                  :effective_wpm
     alias_method :comment,               :name
     alias_method :word_length,           :word_size
@@ -346,7 +305,5 @@ module CWG
     alias_method :words_beginning_with,  :beginning_with
     alias_method :words_no_longer_than,  :no_longer_than
     alias_method :words_no_shorter_than, :no_shorter_than
-
   end
-
 end

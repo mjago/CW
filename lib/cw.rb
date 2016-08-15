@@ -1,8 +1,8 @@
 # encoding: utf-8
 
+require_relative 'cw/file_details'
 require_relative 'cw/config'
 require_relative 'cw/os'
-require_relative 'cw/file_details'
 require_relative 'cw/process'
 require_relative 'cw/text_helpers'
 require_relative 'cw/tone_helpers'
@@ -36,11 +36,10 @@ require_relative 'cw/book'
 require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/common_words'
-#require_relative 'cw/send_practice'
 
 def cw &block
   CW.new do
-    instance_eval &block
+    instance_eval(&block)
   end
 end
 
@@ -56,5 +55,4 @@ class CW < CWG::CwDsl
     instance_eval(&block) if block
     run if block
   end
-
 end

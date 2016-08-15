@@ -9,9 +9,11 @@ module CWG
     MUTE = false
 
     include ToneHelpers
+    include FileDetails
 
     def initialize
-      @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ? 1.0 : Cfg.config["volume"].to_f)
+      @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ?
+                          1.0 : Cfg.config["volume"].to_f)
       @wpm = Cfg.config["wpm"].to_f
       @frequency = Cfg.config["frequency"].to_i
       @effective_wpm = Cfg.config["effective_wpm"] ?
@@ -29,7 +31,7 @@ module CWG
     end
 
     def play_filename
-      HERE + "audio/#{Cfg.config["audio_filename"]}"
+      File.join(AUDIO,Cfg.config["audio_filename"])
     end
 
     def play

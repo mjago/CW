@@ -2,17 +2,14 @@ module CWG
 
   class CommonWords
 
-    CONFIG  = ".cw_config"
-    HERE    = File.dirname(__FILE__) + '/'
+    include FileDetails
 
     def initialize
       @words = []
-      path = File.join(HERE,'..','..','data','text')
-      @file = File.join path, "english.txt"
     end
 
     def all
-      File.foreach(@file).collect do |line|
+      File.foreach(ENGLISH_DICT).collect do |line|
       line.chomp
       end
     end
@@ -20,7 +17,7 @@ module CWG
     def low last
       results = []
       count = 0
-      File.foreach(@file).collect do |line|
+      File.foreach(ENGLISH_DICT).collect do |line|
         if count <= last
           results << line.chomp
         end
@@ -33,7 +30,7 @@ module CWG
     def mid first, last
       results = []
       count = 0
-      File.foreach(@file).collect do |line|
+      File.foreach(ENGLISH_DICT).collect do |line|
         if (count >= first) && (count <= last)
           results << line.chomp
         end

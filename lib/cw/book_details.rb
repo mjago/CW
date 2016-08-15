@@ -6,7 +6,7 @@ module CWG
 
     attr_reader :args
 
-    HERE = File.dirname(__FILE__) + '/'
+    include FileDetails
 
     def initialize
       book_directory
@@ -18,7 +18,7 @@ module CWG
     end
 
     def book_directory
-      File.join HERE, '..','..', Cfg.config["book_dir"]
+      File.join ROOT, Cfg.config["book_dir"]
     end
 
     def book_location

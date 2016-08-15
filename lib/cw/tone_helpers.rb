@@ -5,11 +5,6 @@ module CWG
   module ToneHelpers
 
     TWO_PI           = 2 * Math::PI
-    HERE             = File.dirname(__FILE__) + '/../../'
-    DOT_FILENAME     = HERE + "audio/dot.wav"
-    DASH_FILENAME    = HERE + "audio/dash.wav"
-    SPACE_FILENAME   = HERE + "audio/space.wav"
-    E_SPACE_FILENAME = HERE + "audio/e_space.wav"
 
     def convert_words wrds
       wrds.to_array.collect{ |wrd| wrd.delete("\n")}
@@ -26,7 +21,5 @@ module CWG
     def last_element? idx, chr
       idx == chr.size - 1
     end
-
   end
-
 end
