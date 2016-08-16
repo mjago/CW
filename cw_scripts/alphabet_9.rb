@@ -1,4 +1,4 @@
-# alphabet_8.rb
+# alphabet_9.rb
 
 require 'cw'
 

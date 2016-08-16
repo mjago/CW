@@ -877,7 +877,7 @@ whole alphabet:</p>
 
 <h3 id="test-entire-alphabet-scramble-the-order">Test entire alphabet (scramble the order)</h3>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_8.rb</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_9.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
@@ -908,6 +908,124 @@ whole alphabet:</p>
 <p><br /></p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
+
+<h2 id="add-all-above-tests-to-a-single-script">Add all above tests to a single script</h2>
+
+<p><strong>CW</strong> is designed to make it easy for you to generate cw scripts consisting of several defferent tests, which are run one after the other.
+As an example, below is a script which includes all the tests shown so far. We’ve included a vowel test, and a couple of simple word tests.</p>
+
+<h3 id="alphabet-test-medley">Alphabet test medley</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_10.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test single element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">1</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test 2 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test less than 3 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:less_than</span><span class="p">,</span> <span class="mi">3</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test 3 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">3</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test less than 4 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:less_than</span><span class="p">,</span> <span class="mi">4</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test 4 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">4</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test alphabet vowels'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_vowels</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test letters a..m'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span><span class="p">(</span><span class="s2">"a"</span><span class="p">.</span><span class="nf">.</span><span class="s2">"m"</span><span class="p">)</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test 4 small words made with letters a..m'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">containing</span><span class="p">(</span><span class="s1">'a'</span><span class="p">.</span><span class="nf">.</span><span class="s1">'m'</span><span class="p">)</span>
+  <span class="n">shuffle</span>
+  <span class="n">word_size</span> <span class="mi">2</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test letters n..z'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_letters</span><span class="p">(</span><span class="s1">'n'</span><span class="p">.</span><span class="nf">.</span><span class="s1">'z'</span><span class="p">)</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test 4 small words made with letters n..z'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">containing</span><span class="p">(</span><span class="s1">'n'</span><span class="p">.</span><span class="nf">.</span><span class="s1">'z'</span><span class="p">)</span>
+  <span class="n">shuffle</span>
+  <span class="n">word_size</span> <span class="mi">2</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+<span class="k">end</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test entire alphabet'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_10.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_10.mp3">/CW/audio/alphabet_10.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_10.rb"> alphabet_10.rb</a>
+     
+
+</div>
+<p><br /></p>
 
 <h2 id="running-the-script">Running the script</h2>
 
