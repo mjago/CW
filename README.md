@@ -25,7 +25,10 @@ gem install cw
 cw example.rb
 ```
 
- * Note: Currently only tested on OS X, and Ruby v1.9.3 and later.
+*** Note:
+
+ - Requires Ruby 2+
+ - Tested on OS X, and Linux.
 
 # Example test script
 
