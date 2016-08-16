@@ -7,5 +7,5 @@ cw do
   shuffle
   wpm        12
   word_count 5
-  test_letters    # add the command test_letters here
+  test_words    # add the command test_words here
 end

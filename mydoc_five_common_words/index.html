@@ -584,14 +584,14 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="test-by-word">Test by word</h2>
 
-<p>First you will be tested against five generated words on a word-by-word basis. The words that you hear as morse will only be displayed on completion of the word (don’t forget to type a space at the end). Create the CW script five-common-words.rb (shown below) in a text editor, or download via the link and save as <strong>five_common_words.rb</strong>:</p>
+<p>First you will be tested against five generated words on a <em>letter-by-letter</em> basis. (don’t forget to type a space at the end of the word). Create the CW script five-common-words.rb (shown below) in a text editor, or download via the link and save as <strong>five_common_words.rb</strong>:</p>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five-common-words.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s2">"5 common words at 12 words per minute"</span>
+  <span class="n">comment</span> <span class="s2">"5 very common words at 12 words per minute"</span>
   <span class="n">shuffle</span>
   <span class="n">word_count</span> <span class="mi">5</span>
   <span class="n">wpm</span> <span class="mi">12</span>
@@ -625,23 +625,13 @@ cw five_common_words
 </code></pre>
 </div>
 
-<h2 id="test-output">Test output</h2>
-
-<hr />
-
-<p><img title="word by word" src="/CW/images/five-common-words.png" /></p>
-
-<hr />
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The words in <strong>red</strong> were entered incorrectly!</div>
-
 <p>Details of how to adjust colours are  <a href="/CW/mydoc_program_output">available here</a>.</p>
 
-<h2 id="test-by-letter">Test by letter</h2>
+<h2 id="test-word-by-word">Test word-by-word</h2>
 
-<p>Instead of  testing <i>word-by-word</i>, you may  also test <i>letter-by-letter</i>. Simply add the command <strong>test_letters</strong> into the CW script (see below) and now you will be marked letter-by-letter rather than word-by-word.</p>
+<p>Instead of  testing <em>letter_by_letter</em>, you may  also test <em>word_by_word</em>. Simply add the command <strong>test_words</strong> to the end of the test and you will be marked against completed words. In <em>word_by_word</em> mode any incorrect letter within the word will mean the whole word is marked wrong!</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You may find this kind of test more informative if you are frequently guessing some letters incorrectly.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Testing word_by_word may help prevent you from wrongly guessing letters before you actually hear them - which can form into a bad habit.</div>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># five_common_words_2.rb</span>
 
@@ -652,7 +642,7 @@ cw five_common_words
   <span class="n">shuffle</span>
   <span class="n">wpm</span>        <span class="mi">12</span>
   <span class="n">word_count</span> <span class="mi">5</span>
-  <span class="n">test_letters</span>    <span class="c1"># add the command test_letters here</span>
+  <span class="n">test_words</span>    <span class="c1"># add the command test_words here</span>
 <span class="k">end</span>
 
 </code></pre>
@@ -673,16 +663,6 @@ cw five_common_words
 </div>
 <p><br /></p>
 
-<p><strong>Result:</strong></p>
-
-<hr />
-
-<p><img title="letter by letter" src="/CW/images/five-common-words-2.png" /></p>
-
-<hr />
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The letters in <strong>red</strong> were entered incorrectly!</div>
-
 <h2 id="combine-both-examples">Combine both examples</h2>
 
 <p>Here we will combine both examples into a single script. In practice you may end up having CW scripts comprising of many tests (perhaps a script called daily.rb or morning.rb). Create or download the combined CW script (or download it) and run it.</p>
@@ -696,7 +676,6 @@ cw five_common_words
   <span class="n">shuffle</span>
   <span class="n">wpm</span>        <span class="mi">12</span>
   <span class="n">word_count</span> <span class="mi">5</span>
-  <span class="n">test_letters</span>
 <span class="k">end</span>
 
 <span class="n">cw</span> <span class="k">do</span>
@@ -704,6 +683,7 @@ cw five_common_words
   <span class="n">shuffle</span>
   <span class="n">wpm</span>        <span class="mi">12</span>
   <span class="n">word_count</span> <span class="mi">5</span>
+  <span class="n">test_words</span>
 <span class="k">end</span>
 
 </code></pre>
@@ -726,7 +706,7 @@ cw five_common_words
 
 <h2 id="repeat-until-correct">Repeat until correct</h2>
 
-<p>Replace the <strong>print_letters</strong> command with the <strong>repeat_word</strong> command.</p>
+<p>The <strong>repeat_word</strong> command causes the test to be repeated until the word is entered correctly. This is useful when trying higher speed recognition of words.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <strong>repeat_word</strong> command will cause <strong>CW</strong> to replay the current word if it has been entered incorrectly, (or hasn’t been entered at all).</div>
 
@@ -735,7 +715,7 @@ cw five_common_words
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm (test letters)"</span>
+  <span class="n">comment</span> <span class="s2">"5 common words at 12 wpm"</span>
   <span class="n">shuffle</span>
   <span class="n">wpm</span>        <span class="mi">12</span>
   <span class="n">word_count</span> <span class="mi">5</span>

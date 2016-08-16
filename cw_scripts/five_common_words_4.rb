@@ -3,7 +3,7 @@
 require 'cw'
 
 cw do
-  comment "5 common words at 12 wpm (test letters)"
+  comment "5 common words at 12 wpm"
   shuffle
   wpm        12
   word_count 5

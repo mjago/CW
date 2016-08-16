@@ -7,7 +7,6 @@ cw do
   shuffle
   wpm        12
   word_count 5
-  test_letters
 end
 
 cw do
@@ -15,4 +14,5 @@ cw do
   shuffle
   wpm        12
   word_count 5
+  test_words
 end
