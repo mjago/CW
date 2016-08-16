@@ -30,7 +30,7 @@ cw example.rb
  - Requires Ruby 2+
  - Tested on OS X, and Linux.
 
-# Example test script
+# Example CW Script
 
 ```ruby
 
