@@ -1,11 +1,14 @@
 GIT
   remote: git://github.com/mjago/cw.git
-  revision: 8e89934de7a695b5fafa4952e29057f08d7cca01
+  revision: a22fd15cbaf3297c30b8460681b969dbf30136c4
+  branch: master
   specs:
     cw (0.2.4)
       feedjira (>= 2.0.0)
       htmlentities (>= 4.3.4)
+      os (~> 0.9.6)
       paint (>= 1.0.1)
+      parseconfig (~> 1.0.8)
       rake (>= 11.2.2)
       ruby-progressbar (>= 1.8.1)
       sanitize (~> 4.1.0)
@@ -26,6 +29,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     colorator (0.1)
+    colored (1.2)
     crass (1.0.2)
     ethon (0.9.0)
       ffi (>= 1.3.0)
@@ -41,9 +45,9 @@ GEM
       sax-machine (~> 1.0)
     ffi (1.9.14)
     gemoji (2.1.0)
-    github-pages (89)
+    github-pages (91)
       activesupport (= 4.2.7)
-      github-pages-health-check (= 1.1.0)
+      github-pages-health-check (= 1.2.0)
       jekyll (= 3.1.6)
       jekyll-coffeescript (= 1.0.1)
       jekyll-feed (= 0.5.1)
@@ -62,7 +66,7 @@ GEM
       mercenary (~> 0.3)
       rouge (= 1.11.1)
       terminal-table (~> 1.4)
-    github-pages-health-check (1.1.0)
+    github-pages-health-check (1.2.0)
       addressable (~> 2.3)
       net-dns (~> 0.8)
       octokit (~> 4.0)
@@ -71,6 +75,15 @@ GEM
     html-pipeline (2.4.2)
       activesupport (>= 2)
       nokogiri (>= 1.4)
+    html-proofer (3.0.6)
+      activesupport (~> 4.2)
+      addressable (~> 2.3)
+      colored (~> 1.2)
+      mercenary (~> 0.3.2)
+      nokogiri (~> 1.5)
+      parallel (~> 1.3)
+      typhoeus (~> 0.7)
+      yell (~> 2.0)
     htmlentities (4.3.4)
     i18n (0.7.0)
     jekyll (3.1.6)
@@ -124,11 +137,14 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    nokogumbo (1.4.7)
+    nokogumbo (1.4.9)
       nokogiri
     octokit (4.3.0)
       sawyer (~> 0.7.0, >= 0.5.3)
+    os (0.9.6)
     paint (1.0.1)
+    parallel (1.9.0)
+    parseconfig (1.0.8)
     pkg-config (1.1.7)
     public_suffix (1.5.3)
     rake (11.2.2)
@@ -154,7 +170,8 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     wavefile (0.7.0)
-    yard (0.8.7.6)
+    yard (0.9.5)
+    yell (2.0.6)
 
 PLATFORMS
   ruby
@@ -162,6 +179,7 @@ PLATFORMS
 DEPENDENCIES
   cw!
   github-pages
+  html-proofer
   jekyll
   kramdown
   yard

@@ -3,8 +3,9 @@
 require 'cw'
 
 cw do
-  name 'test straight alphabet'
-  alphabet
-  wpm 12
-  test_letters
+  comment 'test single element letters'
+  wpm 15
+  load_alphabet :size, 1
+  shuffle
+  print_letters
 end

@@ -2,12 +2,12 @@
 
 require 'yard'
 
-dir = File.dirname `gem which cw`
+dir = '/Users/martyn/cw/cw_clone/' #File.dirname `gem which cw`
 dir += '/'
 yard_path = File.dirname `gem which yard`
 yard_path += '/'
 
-dir = '/Users/martyn/cw/cw_clone'
+dir = '/Users/martyn/cw/cw_clone/lib'
 readme_path  = File.join(File.expand_path(dir), 'README.md')
 version_path = File.join(File.expand_path(dir), 'VERSION')
 example_path = File.join(File.expand_path(dir), 'example.rb')

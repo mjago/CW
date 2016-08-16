@@ -4,4 +4,5 @@ gem 'github-pages'
 gem 'jekyll'
 gem 'yard'
 gem 'kramdown'
-gem 'cw', :git => "git://github.com/mjago/cw.git"
+gem 'html-proofer'
+gem 'cw', :git => "git://github.com/mjago/cw.git", :branch => "master"

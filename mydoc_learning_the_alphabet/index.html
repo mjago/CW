@@ -582,21 +582,23 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="test-straight-alphabet">Test straight alphabet</h2>
+  <h2 id="learning-your-first-letters">Learning your first letters</h2>
 
-<p>To test the full alphabet enter the script below:</p>
+<p>The alphabet is represented by a combinations of dots and dashes. So as a first step lets learn the letters consisting of a
+single dot or dash. The example below plays these characters. Copy or download the script and name it <strong>alphabet.rb</strong>.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
+<h3 id="print-and-play-single-element-letters">Print and play single element letters</h3>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="nb">name</span> <span class="s1">'test straight alphabet'</span>
-  <span class="n">alphabet</span>
-  <span class="n">wpm</span> <span class="mi">12</span>
-  <span class="n">test_letters</span>
+  <span class="n">comment</span> <span class="s1">'test single element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">1</span>
+  <span class="n">shuffle</span>
+  <span class="n">print_letters</span>
 <span class="k">end</span>
 
 </code></pre>
@@ -617,20 +619,70 @@ $('#toc').on('click', 'a', function() {
 </div>
 <p><br /></p>
 
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The script includes the command <strong>print_letters</strong> to print the letters after they have been played. Once you have learned them remove the command <strong>print_letters</strong> and try typing the characters as you hear them.</div>
+
 <h2 id="running-the-script">Running the script</h2>
+
+<p>To run the example open a shell and enter the following at the command line:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
+cw alphabet.rb
+
+</code></pre>
+</div>
+
+<p>To run the example several times, simply add a number to the command:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
+cw alphabet.rb 5
+
+</code></pre>
+</div>
+
+<p>More details on running the <em>cw</em> executable are <a href="/CW/mydoc_cw_executable">available here</a>.</p>
+
+<h2 id="test-straight-alphabet">Test straight alphabet</h2>
+
+<p>To test the full alphabet enter the script below:</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test single element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">1</span>
+  <span class="n">shuffle</span>
+  <span class="n">print_letters</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet.mp3">/CW/audio/alphabet.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet.rb"> alphabet.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="running-the-script-1">Running the script</h2>
 
 <p>To run the example open a shell and enter the following:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 cw alphabet
-
-</code></pre>
-</div>
-
-<p>Alternatively, you can run via the Ruby command:</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
-ruby alphabet.rb
 
 </code></pre>
 </div>
@@ -1288,7 +1340,7 @@ cw alphabet_4  2
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> July 13, 2016<br/> Site last generated: Aug 4, 2016 <br />
+<p>Page last updated:</span> July 13, 2016<br/> Site last generated: Aug 16, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
