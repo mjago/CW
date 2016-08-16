@@ -34,22 +34,21 @@ module CWG
       freq ? "-f #{freq} " : ''
     end
 
+    def wave type
+      return '' unless(Cfg.config["tone"].to_s == type)
+      "-T #{@tone[type.to_sym]} "
+    end
+
     def cl_squarewave
-      "Cfg.config[\"tone\"] = #{Cfg.config["tone"]}"
-      return '' unless Cfg.config["tone"].to_s == "squarewave"
-      "-T #{@tone[:squarewave]} "
+      wave 'squarewave'
     end
 
     def cl_sawtooth
-      "Cfg.config[\"tone\"] = #{Cfg.config["tone"]}"
-      return '' unless Cfg.config["tone"].to_s == "sawtooth"
-      "-T #{@tone[:sawtooth]} "
+      wave "sawtooth"
     end
 
     def cl_sinewave
-      "Cfg.config[\"tone\"] = #{Cfg.config["tone"]}"
-      return '' unless Cfg.config["tone"].to_s == "sinewave"
-      "-T #{@tone[:sinewave]} "
+      wave "sinewave"
     end
 
     def cl_author
