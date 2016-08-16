@@ -562,17 +562,20 @@ a book to <em>mp3</em>.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> the command line utility <strong>ebook2cw</strong> by <strong>Fabian Kurz</strong> is required to convert books to mp3 format</div>
 
-<pre><code class="language-raw">cw do
-   use_ebook2cw
-   book_name 'Jekyll_and_Hyde.txt'
-   author    'Robert Louis Stevenson'
-   book_dir './books'
-   audio_filename 'book.mp3'
-   audio_dir './audio'
-   wpm 18
-   convert_book
-end
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+   <span class="n">use_ebook2cw</span>
+   <span class="n">book_name</span> <span class="s1">'Jekyll_and_Hyde.txt'</span>
+   <span class="n">author</span>    <span class="s1">'Robert Louis Stevenson'</span>
+   <span class="n">book_dir</span> <span class="s1">'./books'</span>
+   <span class="n">audio_filename</span> <span class="s1">'book.mp3'</span>
+   <span class="n">audio_dir</span> <span class="s1">'./audio'</span>
+   <span class="n">wpm</span> <span class="mi">18</span>
+   <span class="n">convert_book</span>
+<span class="k">end</span>
 </code></pre>
+</div>
 
 <div class="seriesContext">
   <a>

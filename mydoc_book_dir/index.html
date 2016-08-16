@@ -561,30 +561,30 @@ window.location.href = uri;
 directory containing the book when book reading or
 book converting.</p>
 
-<pre><code class="language-raws">require "cw"
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"cw"</span>
 
-cw do
-  book_dir "~/books"
-  book_name "book_to_read.txt"
-  wpm 18
-  ewpm 12
-  read_book(sentences: 2)
-end
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">book_dir</span> <span class="s2">"~/books"</span>
+  <span class="n">book_name</span> <span class="s2">"book_to_read.txt"</span>
+  <span class="n">wpm</span> <span class="mi">18</span>
+  <span class="n">ewpm</span> <span class="mi">12</span>
+  <span class="n">read_book</span><span class="p">(</span><span class="ss">sentences: </span><span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
 </code></pre>
+</div>
 
 <p>The <strong>book_dir</strong> command may be used in a <em>.cw_config</em>
 configuration file to set its value globally to all tests.</p>
 
-<pre><code class="language-raw">
- # .cw_config
+<pre><code class="language-raw"># .cw_config
 
-wpm:             18
-book_name:       book_to_read.txt
-book_dir:        ./books
-play_command:    /usr/bin/afplay
-success_colour:  green
-fail_colour:     orange
-list_colour:     cyan
+wpm            = 18
+book_name      = book_to_read.txt
+book_dir       = ./books
+play_command   = /usr/bin/afplay
+success_colour = green
+fail_colour    = orange
+list_colour    = cyan
 </code></pre>
 
 <div class="seriesContext">

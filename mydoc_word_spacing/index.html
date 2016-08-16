@@ -557,32 +557,16 @@ window.location.href = uri;
 
     
 
-  <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s2">"cw"</span>
-
-<span class="n">cw</span> <span class="o">=</span> <span class="no">CW</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">use_ebook2cw</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">wpm</span> <span class="mi">25</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">word_spacing</span> <span class="mi">6</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">word_count</span> <span class="mi">4</span>
-<span class="n">cw</span><span class="p">.</span><span class="nf">test_words</span>
-
+  <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"cw"</span>
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">use_ebook2cw</span>
+  <span class="n">wpm</span> <span class="mi">25</span>
+  <span class="n">word_spacing</span> <span class="mi">6</span>
+  <span class="n">word_count</span> <span class="mi">4</span>
+  <span class="n">reveal</span>
+<span class="k">end</span>
 </code></pre>
 </div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/word_spacing.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/word_spacing.mp3">/CW/audio/word_spacing.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/word_spacing.rb"> word_spacing.rb</a>
-     
-
-</div>
-<p><br /></p>
 
 <div class="seriesContext">
   <a>
