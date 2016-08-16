@@ -39,20 +39,6 @@ cw example.rb
 require 'cw'
 
 cw do
-  comment "test characters containing only dots"
-  wpm 15
-  load_dots
-  shuffle
-end
-
-cw do
-  comment "test characters containing only dashes"
-  wpm 15
-  load_dashes
-  shuffle
-end
-
-cw do
   comment 'test single element letters'
   wpm 15
   load_alphabet :size, 1
@@ -92,24 +78,6 @@ cw do
   wpm 15
   load_alphabet :size, 4
   shuffle
-end
-
-cw do
-  comment 'test letters a to h'
-  wpm 15
-  load_alphabet "a".."h"
-end
-
-cw do
-  comment 'test letters i to p'
-  wpm 15
-  load_alphabet "i".."p"
-end
-
-cw do
-  comment 'test letters q to z'
-  wpm 15
-  load_alphabet "q".."z"
 end
 
 cw do

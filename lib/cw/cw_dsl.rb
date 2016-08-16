@@ -272,7 +272,7 @@ module CWG
 
     def words                  ; @words.all                     ; end
     def load_common_words      ; @words.load 1000               ; end
-    def load_most_common_words ; @words.load 1000               ; end
+    def load_most_common_words ; @words.load 500                ; end
     def load_abbreviations     ; load_text ABBREVIATIONS        ; end
     def reverse                ;  @words.reverse                ; end
     def double_words           ; @words.double_words            ; end
