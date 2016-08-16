@@ -3,8 +3,10 @@
 require 'cw'
 
 cw do
-  alphabet(:exclude => 'abcdefghijklm')
-  wpm 12
-  test_letters
+  comment 'test less than 4 element letters'
+  wpm 15
+  load_alphabet :less_than, 4
+  shuffle
 end
+
 

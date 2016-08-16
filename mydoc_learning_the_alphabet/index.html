@@ -582,7 +582,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="learning-your-first-letters">Learning your first letters</h2>
+  <h2 id="learning-the-letters">Learning the letters</h2>
 
 <p>The alphabet is represented by a combinations of dots and dashes. So as a first step lets learn the letters consisting of a
 single dot or dash. The example below plays these characters. Copy or download the script and name it <strong>alphabet.rb</strong>.</p>
@@ -619,90 +619,31 @@ single dot or dash. The example below plays these characters. Copy or download t
 </div>
 <p><br /></p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The script includes the command <strong>print_letters</strong> to print the letters after they have been played. Once you have learned them remove the command <strong>print_letters</strong> and try typing the characters as you hear them.</div>
-
-<h2 id="running-the-script">Running the script</h2>
-
-<p>To run the example open a shell and enter the following at the command line:</p>
+<p>To run the script enter the following on the command line:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code>
 cw alphabet.rb
 
 </code></pre>
 </div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The script includes the command <strong>print_letters</strong> to print the letters after they have been played. Once you have learned them remove the command <strong>print_letters</strong> and try typing the characters as you hear them.</div>
 
-<p>To run the example several times, simply add a number to the command:</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> To run the same script multiple times in a row add a number to the command: <strong>cw alphabet.rb 5</strong></div>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
-cw alphabet.rb 5
+<p>Next, we will learn letters consisting of two elements:</p>
 
-</code></pre>
-</div>
-
-<p>More details on running the <em>cw</em> executable are <a href="/CW/mydoc_cw_executable">available here</a>.</p>
-
-<h2 id="test-straight-alphabet">Test straight alphabet</h2>
-
-<p>To test the full alphabet enter the script below:</p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
-
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet.rb</span>
-
-<span class="nb">require</span> <span class="s1">'cw'</span>
-
-<span class="n">cw</span> <span class="k">do</span>
-  <span class="n">comment</span> <span class="s1">'test single element letters'</span>
-  <span class="n">wpm</span> <span class="mi">15</span>
-  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">1</span>
-  <span class="n">shuffle</span>
-  <span class="n">print_letters</span>
-<span class="k">end</span>
-
-</code></pre>
-</div>
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-bullhorn fa-2x"></i>
-     
-  <audio controls="" preload="meta">
-    <source src="/CW/audio/alphabet.mp3" type="audio/mpeg" />
-      <a href="/CW/audio/alphabet.mp3">/CW/audio/alphabet.mp3</a>
-  </audio>
-     
-  <i class="fa fa-download fa-2x"></i>
-     
-<a href="../cw_scripts/alphabet.rb"> alphabet.rb</a>
-     
-
-</div>
-<p><br /></p>
-
-<h2 id="running-the-script-1">Running the script</h2>
-
-<p>To run the example open a shell and enter the following:</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
-cw alphabet
-
-</code></pre>
-</div>
-
-<p>More details on running the <em>cw</em> executable are <a href="/CW/mydoc_cw_executable">available here</a>.</p>
-
-<h2 id="test-only-certain-letters">Test only certain letters</h2>
-
-<p>To test only certain letters you can pass the <strong>:include parameter</strong> to the alphabet command. Here we are testing just the vowels:</p>
+<h3 id="two-element-letters">Two element letters</h3>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_2.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:include</span> <span class="o">=&gt;</span> <span class="s1">'aeiou'</span><span class="p">)</span>
-  <span class="n">wpm</span> <span class="mi">12</span>
-  <span class="n">test_letters</span>
+  <span class="n">comment</span> <span class="s1">'test 2 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="n">shuffle</span>
 <span class="k">end</span>
-
 
 </code></pre>
 </div>
@@ -722,19 +663,21 @@ cw alphabet
 </div>
 <p><br /></p>
 
-<h2 id="shuffle-the-letters">Shuffle the letters</h2>
+<p>Now we can test all the letters we have learned so far:</p>
 
-<p>To make the test more difficult you can pass the parameter <strong>:shuffle =&gt; true</strong> to the alphabet command. Here we test the vowels but shuffle the order randomly:</p>
+<h3 id="letters-having-less-than-3-elements">Letters having less than 3 elements</h3>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_3.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:include</span> <span class="o">=&gt;</span> <span class="s1">'aeiou'</span><span class="p">,</span> <span class="ss">:shuffle</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
-  <span class="n">wpm</span> <span class="mi">12</span>
-  <span class="n">test_letters</span>
+  <span class="n">comment</span> <span class="s1">'test less than 3 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:less_than</span><span class="p">,</span> <span class="mi">3</span>
+  <span class="n">shuffle</span>
 <span class="k">end</span>
+
 
 
 </code></pre>
@@ -755,19 +698,21 @@ cw alphabet
 </div>
 <p><br /></p>
 
-<h2 id="test-randomized-alphabet">Test randomized alphabet</h2>
+<p>Now the three element letters:</p>
 
-<p>So to test against the whole alphabet but with the order shuffled, at 15 words per minute:</p>
+<h3 id="three-element-letters">Three element letters</h3>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_4.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:shuffle</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+  <span class="n">comment</span> <span class="s1">'test 3 element letters'</span>
   <span class="n">wpm</span> <span class="mi">15</span>
-  <span class="n">test_letters</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">3</span>
+  <span class="n">shuffle</span>
 <span class="k">end</span>
+
 
 
 </code></pre>
@@ -788,20 +733,21 @@ cw alphabet
 </div>
 <p><br /></p>
 
-<h2 id="exclude-certain-letters">Exclude certain letters</h2>
+<p>Now we can test all letters learned so far (letters having less than 4 elements)</p>
 
-<p>It is also possible to exclude certain letters from the alphabet under test. Here we
-exclude all letters up to the letter n:</p>
+<h3 id="letters-having-less-than-4-elements">Letters having less than 4 elements</h3>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_5.rb</span>
 
 <span class="nb">require</span> <span class="s1">'cw'</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">alphabet</span><span class="p">(</span><span class="ss">:exclude</span> <span class="o">=&gt;</span> <span class="s1">'abcdefghijklm'</span><span class="p">)</span>
-  <span class="n">wpm</span> <span class="mi">12</span>
-  <span class="n">test_letters</span>
+  <span class="n">comment</span> <span class="s1">'test less than 4 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:less_than</span><span class="p">,</span> <span class="mi">4</span>
+  <span class="n">shuffle</span>
 <span class="k">end</span>
+
 
 
 </code></pre>
@@ -822,15 +768,173 @@ exclude all letters up to the letter n:</p>
 </div>
 <p><br /></p>
 
-<h2 id="run-shuffled-alphabet-twice">Run shuffled alphabet twice</h2>
+<p>Now to learn the remaining letters - the 4 element letters:</p>
 
-<p>To run the shuffled alphabet test twice, simply add 2:</p>
+<h3 id="four-element-letters">Four element letters</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
-cw alphabet_4  2
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_6.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test 4 element letters'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="ss">:size</span><span class="p">,</span> <span class="mi">4</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
 
 </code></pre>
 </div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_6.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_6.mp3">/CW/audio/alphabet_6.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_6.rb"> alphabet_6.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<p>Now lets test just the first half of the alphabet:</p>
+
+<h3 id="test-letters-a-to-m">Test letters a to m</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_7.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test letters a to m'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="s2">"a"</span><span class="p">.</span><span class="nf">.</span><span class="s2">"m"</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_7.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_7.mp3">/CW/audio/alphabet_7.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_7.rb"> alphabet_7.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<p>Next, the second half of the alphabet:</p>
+
+<h3 id="test-letters-n-to-z">Test letters n to z</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_8.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test letters n to z'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span> <span class="s2">"n"</span><span class="p">.</span><span class="nf">.</span><span class="s2">"z"</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_8.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_8.mp3">/CW/audio/alphabet_8.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_8.rb"> alphabet_8.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<h2 id="test-alphabet">Test alphabet</h2>
+
+<p>Finally We can now test the entire alphabet.
+Notice we don’t need to provide any arguments to the <strong>load_alphabet</strong> command to load the
+whole alphabet:</p>
+
+<h3 id="test-entire-alphabet-scramble-the-order">Test entire alphabet (scramble the order)</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># alphabet_8.rb</span>
+
+<span class="nb">require</span> <span class="s1">'cw'</span>
+
+<span class="n">cw</span> <span class="k">do</span>
+  <span class="n">comment</span> <span class="s1">'test entire alphabet'</span>
+  <span class="n">wpm</span> <span class="mi">15</span>
+  <span class="n">load_alphabet</span>
+  <span class="n">shuffle</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-bullhorn fa-2x"></i>
+     
+  <audio controls="" preload="meta">
+    <source src="/CW/audio/alphabet_9.mp3" type="audio/mpeg" />
+      <a href="/CW/audio/alphabet_9.mp3">/CW/audio/alphabet_9.mp3</a>
+  </audio>
+     
+  <i class="fa fa-download fa-2x"></i>
+     
+<a href="../cw_scripts/alphabet_9.rb"> alphabet_9.rb</a>
+     
+
+</div>
+<p><br /></p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Each letter is seperated by a space. Ideally you should type the space as well as the letter.</div>
+
+<h2 id="running-the-script">Running the script</h2>
+
+<p>To run the scripts open a shell and enter the following on the command line:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
+cw alphabet.rb
+
+</code></pre>
+</div>
+
+<p>The .rb extension can also be omitted:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
+cw alphabet
+
+</code></pre>
+</div>
+
+<p>If you wish to run the script multiple times, add a number after the script name:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
+cw alphabet 10
+
+</code></pre>
+</div>
+<p>More details on running the <em>cw</em> executable are <a href="/CW/mydoc_cw_executable">available here</a>.</p>
 
 <div class="seriesContext">
   <a>

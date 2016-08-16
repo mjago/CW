@@ -3,8 +3,10 @@
 require 'cw'
 
 cw do
-  alphabet(:shuffle => true)
+  comment 'test 3 element letters'
   wpm 15
-  test_letters
+  load_alphabet :size, 3
+  shuffle
 end
+
 

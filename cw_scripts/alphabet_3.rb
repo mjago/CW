@@ -3,8 +3,10 @@
 require 'cw'
 
 cw do
-  alphabet(:include => 'aeiou', :shuffle => true)
-  wpm 12
-  test_letters
+  comment 'test less than 3 element letters'
+  wpm 15
+  load_alphabet :less_than, 3
+  shuffle
 end
+
 
