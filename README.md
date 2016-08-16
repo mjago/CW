@@ -1,3 +1,4 @@
+[![Gitter](https://badges.gitter.im/mjago/Lobby.svg)](https://gitter.im/mjago/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Gem Version](https://badge.fury.io/rb/cw.svg)](https://badge.fury.io/rb/cw)
 [![Build Status](https://travis-ci.org/mjago/CW.svg?branch=master)](https://travis-ci.org/mjago/CW)
 [![Code Climate](https://codeclimate.com/github/mjago/CW/badges/gpa.svg)](https://codeclimate.com/github/mjago/CW)
