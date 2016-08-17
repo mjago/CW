@@ -36,6 +36,7 @@ require_relative 'cw/book'
 require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/common_words'
+require_relative 'cw/callsign'
 
 def cw &block
   CW.new do

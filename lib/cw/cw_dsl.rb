@@ -270,6 +270,11 @@ module CWG
       Cfg.config.params["use_ebook2cw"] = nil
     end
 
+    def callsign count = 1
+      callsign = Callsign.new
+      @words.assign callsign * count
+    end
+
     def words                  ; @words.all                     ; end
     def load_common_words      ; @words.load 1000               ; end
     def load_most_common_words ; @words.load 500                ; end
