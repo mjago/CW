@@ -9,6 +9,7 @@ module CWG
     AUDIO = File.join(ROOT,'audio')
     TEXT  = File.join(DATA,'text')
     CODE  = File.join(DATA,'code')
+    CALLS = File.join(DATA,'callsign')
 
     ENGLISH_DICT     = File.join TEXT, "english.txt"
     ABBREVIATIONS    = File.join TEXT, "abbreviations.txt"
@@ -19,6 +20,7 @@ module CWG
     E_SPACE_FILENAME = File.join AUDIO, "e_space.wav"
     CONFIG_FILENAME  = File.join ROOT, ".cw_config"
     CODE_FILENAME    = File.join CODE, "code.yaml"
+    CALLS_FILENAME   = File.join CALLS, "callsign.yaml"
 
     def init_filenames
       @repeat_tone   = File.join(AUDIO, "rpt.mp3")

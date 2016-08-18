@@ -198,6 +198,24 @@ cw do
   word_count 4
 end
 
+cw do
+  comment "test 5 callsigns"
+  wpm 20
+  callsign * 5
+end
+
+puts "cq de callsign k 5 times"
+5.times do
+  cw do
+    comment 'random frequency, random wpm callsign with pre and postamble'
+    frequency 500 + rand(400)
+    wpm 25 + rand(10)
+    callsign
+    (words.unshift "cqde") << 'k'
+    print_letters
+  end
+end
+
 # See documentation for more details - and more commands.
 
 puts 'done'
