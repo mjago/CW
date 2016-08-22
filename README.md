@@ -34,7 +34,7 @@ cw example.rb
 ### Note:
 
  - Requires Ruby 2+
- - Tested on OS X, and Linux.
+ - Tested on OS X, and Linux. A Vagrantfile is available in the root directory.
 
 # Example CW Script
 
