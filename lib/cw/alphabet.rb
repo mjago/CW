@@ -19,19 +19,29 @@ module CWG
       @options = options
     end
 
-    # return string containing alphabet
+    # alphabet()
+    # Returns alphabet as string
+    # == Parameters:
+    # none
 
     def alphabet
       'abcdefghijklmnopqrstuvwxyz'
     end
 
-    # reverse alphabet if :reverse option defined
+    # reverse_alphabet_maybe()
+    # reverse letters if reverse option set
+    # == Parameters:
+    # none
 
     def reverse_alphabet_maybe
       @letters.reverse! if @options[:reverse]
     end
 
+    # shuffle_alphabet_maybe()
     # shuffle alphabet if :shuffle option defined
+    # don't shuffle if in test environment
+    # == Parameters:
+    # none
 
     def shuffle_alphabet_maybe
       unless(ENV["CW_ENV"] == "test")
@@ -39,7 +49,10 @@ module CWG
       end
     end
 
-    # include letters passed in as string if :include defined
+    # include_letters()
+    # include letters if :include option defined
+    # == Parameters:
+    # none
 
     def include_letters
       if @options[:include]
@@ -47,7 +60,10 @@ module CWG
       end
     end
 
-    # exclude letters passed in as string if :exclude defined
+    # exclude_letters()
+    # exclude letters if :exclude option defined
+    # == Parameters:
+    # none
 
     def exclude_letters
       if @options[:exclude]
@@ -55,6 +71,7 @@ module CWG
       end
     end
 
+    # generate()
     # generate alphabet with options acted upon
     # == Returns:
     # alphabet or filtered alphabet
@@ -67,7 +84,5 @@ module CWG
       reverse_alphabet_maybe
       @letters.split('').join(' ')
     end
-
   end
-
 end
