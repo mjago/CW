@@ -76,6 +76,13 @@ mydoc_letter_and_number_groups:
 
 
  
+mydoc_callsigns:
+  title: "Callsigns"
+  url: /CW/mydoc_callsigns/
+  link: <a href="/CW/mydoc_callsigns/">Callsigns</a>
+
+
+ 
 mydoc_farnsworth_timing:
   title: "Farnsworth Timing"
   url: /CW/mydoc_farnsworth_timing/
