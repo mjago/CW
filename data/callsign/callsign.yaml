@@ -1,0 +1,78 @@
+---
+:uk:
+  :partial_0:
+    :option:
+    - g
+    - m
+    - 2e
+    - gm
+    - mm
+    - gw
+    - mw
+    - ei
+    - mi
+    - gb
+    :weight:
+    - 40
+    - 20
+    - 10
+    - 4
+    - 2
+    - 4
+    - 2
+    - 5
+    - 9
+    - 4
+  :partial_1:
+    :option:
+    - '0'
+    - '4'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    :weight:
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+  :partial_2:
+    :option:
+    - !ruby/range
+      begin: a
+      end: z
+      excl: false
+    :weight:
+    - 100
+  :partial_3:
+    :option:
+    - !ruby/range
+      begin: a
+      end: z
+      excl: false
+    :weight:
+    - 100
+  :partial_4:
+    :option:
+    - !ruby/range
+      begin: a
+      end: z
+      excl: false
+    - ''
+    :weight:
+    - 99
+    - 1
