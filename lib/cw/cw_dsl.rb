@@ -272,7 +272,7 @@ module CWG
 
     def callsign count = 1
       callsign = Callsign.new
-      @words.assign callsign * count
+      @words.assign callsign.* count
     end
 
     def words                  ; @words.all                     ; end
