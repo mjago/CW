@@ -275,6 +275,10 @@ module CWG
       @words.assign callsign.* count
     end
 
+    def read
+      Read.new
+    end
+
     def words                  ; @words.all                     ; end
     def load_common_words      ; @words.load 1000               ; end
     def load_most_common_words ; @words.load 500                ; end

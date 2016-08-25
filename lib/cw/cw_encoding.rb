@@ -23,6 +23,12 @@ module CWG
       encodings[char]
     end
 
+    def fetch_char pattern
+      encodings.each_pair do |key, value|
+        return key if(value == pattern)
+      end
+    end
+
     def match_elements arg
       chars = []
       encodings.each_pair do |key, value|
