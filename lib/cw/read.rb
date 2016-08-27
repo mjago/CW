@@ -1,35 +1,72 @@
 # encoding: utf-8
 
+# abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?
+
+###############################################################################################################################################################
+###############################################################################################################################################################
+
+
 require 'wavefile'
+require 'coreaudio'
 
 module CWG
 
   class Read
+    SOUND_CARD_RATE = 44100
+    SAMPLING_DIVISOR = 3
+    TONE_WIDTH    = 12
+    SAMPLING_FREQ = SOUND_CARD_RATE / SAMPLING_DIVISOR
+    DATA = [
+      {tone: 400, bin_width: 40},
+      {tone: 400, bin_width: 80},
+      {tone: 450, bin_width: 45},
+      {tone: 450, bin_width: 90},
+      {tone: 500, bin_width: 50},
+      {tone: 500, bin_width: 100},
+      {tone: 550, bin_width: 55},
+      {tone: 550, bin_width: 110},
+      {tone: 600, bin_width: 60},
+      {tone: 600, bin_width: 120},
+      {tone: 700, bin_width: 70},
+      {tone: 700, bin_width: 140},
+      {tone: 800, bin_width: 80},
+      {tone: 800, bin_width: 160},
+      {tone: 900, bin_width: 90},
+      {tone: 900, bin_width: 180},
+      {tone: 1000, bin_width: 50},
+      {tone: 1000, bin_width: 100},
+]
+    def n ; @sample_rate/ @bin_width ; end
+    def k ; (0.5 + ((n * @tone) / @sample_rate)).to_i ; end
+    def w ; ((2 * Math::PI) / n) * k ; end
+    def cosine ; Math.cos(w) ; end
+    def coeff ; 2 * cosine ; end
+    def millis ; @millisecs; end
+    def n_delay_ms ; ((1.0/@sample_rate) * @n_val * 1000); end
 
-    SAMPLE_FRAMES_PER_BUFFER = 2400
-    TARGET_FREQ = 480
-    N = 24
-    SAMPLING_FREQ = 2400
-
-    def initialize
+    def initialize(filename)
+      @sample_rate = SAMPLING_FREQ
+      @tone = DATA[TONE_WIDTH][:tone]
+      @bin_width = DATA[TONE_WIDTH][:bin_width]
+      @n_val = n
+      @coeff = coeff
+      @n_delay_ms = n_delay_ms
+      @filename = filename
       @code = []
       @cw_encoding = CwEncoding.new
-      k = (0.5 + ((N * TARGET_FREQ) / SAMPLING_FREQ)).to_i
-      omega = (2.0 * Math::PI * k) / N
-      @sine = Math.sin(omega)
-      @cosine = Math.cos(omega)
-      @coeff = 2.0 * @cosine
-      @q1 = 0.0
-      @q2 = 0.0
-      @magnitudelimit = 100
-      @magnitudelimit_low = 100
+      @q1 = 0
+      @q2 = 0
+#      @magnitudelimit = 500000
+      @magnitudelimit_low = 50000
+      @magnitudelimit = 20000
+      @magnitudelimit_low = @magnitudelimit
       @wpm = 25
       @real_state = false
       @filtered_state = false
       @real_state_store = false
       @filtered_state_store = false
       @start_time = Time.now
-      @noise_blanking_period = 6
+      @noise_blanking_period = 50
       @start_time_high = 0
       @high_period = 0
       @high_period_store = 0
@@ -38,27 +75,75 @@ module CWG
       @low_period = 0
       @last_start_time = 0
       @millisecs = 0.0
-      sample()
+      @last = Time.now.to_i
+
+      puts "@n_val  #{@n_val}"
+      input()
     end
 
-    def millis
-      @millisecs
+    def dbg_print message
+      @latest = Time.now.to_i
+      if @latest > @last + 2
+        @last = @latest
+        puts
+        puts "  " + message
+      end
+    end
+
+    def process_frame buffer
+      bufs = buffer.read(@n_val)
+      count = @n_val / SAMPLING_DIVISOR
+      idx_multiplier = 2 * SAMPLING_DIVISOR
+      count.times do |idx|
+        update_coeffs_per_sample bufs[(idx * idx_multiplier)]
+        #      bufs[0 ,0..-1].each do |x|
+        #        update_coeffs_per_sample x
+      end
+    end
+
+    def input
+      soundflower = nil
+      CoreAudio.devices.each do |device|
+        if device.name == 'Soundflower (2ch)'
+          soundflower = device
+        end
+      end
+#      soundflower = CoreAudio.default_input_device
+      puts "device: #{soundflower}"
+      buffer = soundflower.input_buffer(44100)
+      $stdout.print "Listening...\n"
+      $stdout.flush
+      buffer.start
+      loop do
+        process_frame buffer
+        @millisecs += @n_delay_ms
+        per_block_processing
+        magnitude_filter
+        calc_real_state
+        calc_filtered_state
+        decode_signal
+      end
     end
 
     def sample
-      @testData = Array.new(N)
+      loop_count = 0
+      @testData = Array.new(@n_val)
       count_N = 0
-      WaveFile::Reader.new("audio/audio_output").each_buffer(SAMPLE_FRAMES_PER_BUFFER) do |buffer|
+      WaveFile::Reader.new(@filename).each_buffer(SAMPLE_FRAMES_PER_BUFFER) do |buffer|
+#        p buffer
+#        exit
         loop do
           done = false
           count = 0
-          N.times do
+          @n_val.times do
             length = buffer.samples.length
             done = true unless(length > 0)
             #@millisecs += 0.43405
             @millisecs += 1
             @testData[count] = (buffer.samples.shift) unless done # + 32768
             @testData[count] = 0 if done
+            #      print @testData[count]
+            #      print ','
             update_coeffs_per_sample(count)
             count += 1
           end
@@ -69,30 +154,35 @@ module CWG
           decode_signal
           break if done
         end
+#        break if loop_count > 10000
+        loop_count += 1
       end
       print_char
       puts
     end
 
-    def update_coeffs_per_sample(count)
-      q0 = @coeff * @q1 - @q2 + @testData[count].to_f
-      @q2 = @q1
-      @q1 = q0
+    def update_coeffs_per_sample(data)
+      q0 = @coeff * @q1 - @q2 + data
+#      dbg_print "  @k: #{@k}\n  @cosine: #{@cosine}\n  @coeff: #{@coeff}\n  q0: #{q0}\n"
+      @q2, @q1 = @q1, q0
     end
 
     def per_block_processing
       magnitude_squared = (@q1 * @q1) + (@q2 * @q2) - (@q1 * @q2 * @coeff)
-      @magnitude = Math.sqrt(magnitude_squared);
-      @q2 = 0;
-      @q1 = 0;
+      @magnitude = magnitude_squared.to_i
+#      @magnitude = Math.sqrt(magnitude_squared).to_i;
+      @q1, @q2 = 0, 0;
+#      p @magnitude
     end
 
     def magnitude_filter
       if(@magnitude > @magnitudelimit_low)
         @magnitudelimit = (@magnitudelimit + ((@magnitude - @magnitudelimit) / 6))  # moving average filter
-      elsif(@magnitudelimit < @magnitudelimit_low)
+      else
         @magnitudelimit = @magnitudelimit_low
       end
+#      dbg_print "@magnitude: #{@magnitude.to_s}\n  @magnitudelimit: #{@magnitudelimit.to_s}\n  @magnitudelimit_low = #{@magnitudelimit_low}"
+#      dbg_print "@magnitude: #{@magnitude.to_s}"
     end
 
     def calc_real_state
@@ -110,6 +200,10 @@ module CWG
     end
 
     def filtered_state_change?
+#      if @filtered_state != @filtered_state_store
+#        print 'hi' if @filtered_state == true
+#        print 'low' if @filtered_state == false
+#      end
       @filtered_state != @filtered_state_store
     end
 
@@ -123,22 +217,20 @@ module CWG
       end
 
       if filtered_state_change?
-         if(@filtered_state == true)
-           @start_time_high = millis()
-           @low_period = (millis() - @start_time_low)
-         end
+        if(@filtered_state == true)
+          @start_time_high = millis()
+          @low_period = (millis() - @start_time_low)
+        else
+          @start_time_low = millis();
+          @high_period = (millis() - @start_time_high);
+          if((@high_period < (2 * @high_times_avg)) || (@high_times_avg == 0))
+            @high_times_avg = (@high_period + @high_times_avg + @high_times_avg) / 3  # now we know avg dit time ( rolling 3 avg)
+          end
 
-         if (@filtered_state == false)
-           @start_time_low = millis();
-           @high_period = (millis() - @start_time_high);
-           if((@high_period < (2 * @high_times_avg)) || (@high_times_avg == 0))
-             @high_times_avg = (@high_period + @high_times_avg + @high_times_avg) / 3  # now we know avg dit time ( rolling 3 avg)
-           end
-
-           if(@high_period > (5 * @high_times_avg))
-             @high_times_avg = @high_period + @high_times_avg;     # if speed decrease fast ..
-           end
-         end
+          if(@high_period > (5 * @high_times_avg))
+            @high_times_avg = @high_period + @high_times_avg;     # if speed decrease fast ..
+          end
+        end
       end
       store_real_state
     end
@@ -192,6 +284,7 @@ module CWG
     end
 
     def print_char
+#      puts @code
       print matched_char
     end
   end

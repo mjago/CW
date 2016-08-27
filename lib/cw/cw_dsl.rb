@@ -275,8 +275,8 @@ module CWG
       @words.assign callsign.* count
     end
 
-    def read
-      Read.new
+    def read filename = :default
+      Read.new(filename)
     end
 
     def words                  ; @words.all                     ; end

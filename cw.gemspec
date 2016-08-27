@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'sanitize', '~> 4.2.0'
   spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0.8'
+  spec.add_runtime_dependency 'coreaudio', '~> 0.0.11'
   spec.add_dependency         'os', '~> 0.9.6'
 
   spec.add_development_dependency 'version', '>= 1.0.0'

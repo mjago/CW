@@ -27,6 +27,7 @@ module CWG
       encodings.each_pair do |key, value|
         return key if(value == pattern)
       end
+      return ''
     end
 
     def match_elements arg
