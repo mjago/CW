@@ -111,6 +111,16 @@ module CWG
       print paint("#{word}", fail_colour)
     end
 
+    def speculative word
+      print paint("#{word}", fail_colour)
+    end
+    def stable word
+      print paint("#{word}", :yellow)
+    end
+    def optimum word
+      print paint("#{word}", success_colour)
+    end
+
     def list word
       print paint("#{word}", list_colour)
     end

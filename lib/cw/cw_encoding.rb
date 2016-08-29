@@ -24,10 +24,11 @@ module CWG
     end
 
     def fetch_char pattern
+      return ' ' if pattern == [:space]
       encodings.each_pair do |key, value|
         return key if(value == pattern)
       end
-      return ''
+      return '*'
     end
 
     def match_elements arg

@@ -1,12 +1,6 @@
 # encoding: utf-8
 
-# abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?  abc def ghi jkl mno pqr stu vwx yz1 234 567 890 .=?
-
-###############################################################################################################################################################
-###############################################################################################################################################################
-
-
-require 'wavefile'
+#require 'wavefile'
 require 'coreaudio'
 
 module CWG
@@ -42,8 +36,8 @@ module CWG
       {tone: 400, bin_width: 80},
       {tone: 450, bin_width: 45},
       {tone: 450, bin_width: 90},
-      {tone: 500, bin_width: 50},
-      {tone: 500, bin_width: 100},
+      {tone: 500, bin_width: 200},
+      {tone: 500, bin_width: 400},
       {tone: 550, bin_width: 55},
       {tone: 550, bin_width: 110},
       {tone: 600, bin_width: 60},
@@ -56,28 +50,31 @@ module CWG
       {tone: 900, bin_width: 180},
       {tone: 1000, bin_width: 100},
       {tone: 1000, bin_width: 200},
-      {tone: 500, bin_width: 25},
+      {tone: 500, bin_width: 100},
     ]
-    def n ; @sample_rate / @bin_width ; end
-    def k ; (0.5 + ((n * @tone) / @sample_rate)).to_i ; end
-    def w ; ((2 * Math::PI) / n) * k ; end
-    def cosine ; Math.cos(w) ; end
-    def coeff ; 2 * cosine ; end
+    def n(x) ; @sample_rate / DATA[x][:bin_width] * SAMPLING_DIVISOR ; end
+    def k(x) ; (0.5 + ((n(x) * DATA[x][:tone] / @sample_rate))).to_i ; end
+    def w(x) ; ((2 * Math::PI) / n(x)) * k(x) ; end
+    def cosine(x) ; Math.cos(w(x)) ; end
+    def coeff(x) ; 2 * cosine(x) ; end
     def millis ; @millisecs; end
-    def n_delay_ms ; ((1.0/SOUND_CARD_RATE) * n * 1000); end
+    def n_delay_ms(x) ; ((1.0/SOUND_CARD_RATE) * n(x) * 1000); end
+    def print ; @print ||= Print.new ; end
 
     def initialize(filename)
-      @out_file = File.new("timing.txt",'w+')
-#      @out_file.close
       @mag_max = 0
       @mag_min = 999999999
       @sample_rate = SAMPLING_FREQ
-      @tone_config = TONE_500_BIN_WIDE
-      @tone = DATA[@tone_config][:tone]
-      @bin_width = DATA[@tone_config][:bin_width] * SAMPLING_DIVISOR
-      @n_val = n
-      @coeff = coeff
-      @n_delay_ms = n_delay_ms
+      @n_val, @coeff, @n_delay_ms = [], [], []
+      [TONE_500_BIN_WIDE,
+       TONE_500_BIN_NARROW,
+       TONE_500_BIN_V_NARROW,
+      ].each_with_index do |width,idx|
+        @n_val[idx] = n(width)
+        @coeff[idx] = coeff(width)
+        @n_delay_ms[idx] = n_delay_ms(width)
+      end
+      reset_width
       @filename = filename
       @code = []
       @cw_encoding = CwEncoding.new
@@ -86,65 +83,68 @@ module CWG
       #      @magnitudelimit = 500000
       @magnitudelimit = 1000
       @magnitudelimit_low = @magnitudelimit
-      @wpm = 25
+      @wpm = 15
       @real_state = false
       @filtered_state = false
       @real_state_store = false
       @filtered_state_store = false
+      @awaiting_space = false
       @start_time = 0.0
-      @noise_blanking_period = 0
+      @noise_blanking_period = 6
       @start_time_high = 0
       @high_period = 0
       @high_period_store = 0
-      @high_time_period = 0
+      @high_period_avg = 0
       @start_time_low = 0
       @low_period = 0
       @last_start_time = 0
       @millisecs = 0
+      @last_print = 0
       @last = 0
-
-      puts "@n_val  #{@n_val}"
-      input()
+      @queue = Queue.new
+      puts "@n_val  #{@n_val[@width]}"
+      input
     end
 
-    def input
+    def open_sound_device
       soundflower = nil
       CoreAudio.devices.each do |device|
         if device.name == 'Soundflower (2ch)'
           soundflower = device
         end
       end
-
       @buf_in = soundflower.input_buffer(44100)
+      @buf_in.start
+    end
 
-      #      soundflower = CoreAudio.default_input_device
-      #      puts "device: #{soundflower}"
-      #      $stdout.print "Listening...\n"
-      #      $stdout.flush
-
-      thr_in = Thread.fork do
-        loop do
-          @buf_in.start
-          loop do
-            process_frame
-            @millisecs += @n_delay_ms
-            #          dbg_print "  @n_val: #{@n_val}\n  " +
-            #                    "@sample_rate: #{@sample_rate}\n  " +
-            #                    "@millisecs: #{@millisecs}\n  @n_delay_ms: #{@n_delay_ms}"
-            per_block_processing
-            magnitude_filter
-            calc_real_state
-            calc_filtered_state
-            decode_signal
-            store_high_period
-            store_filtered_state
+    def input
+      startup = 0
+      open_sound_device
+      nval = @n_val[@width]
+      nval8 = nval * 8
+      loop do
+        bufs = @buf_in.read(nval8)
+        count = 0
+        8.times do
+          nval.times do
+            update_coeffs_per_sample(bufs[count] + bufs[count + 1])
+            count += 2
           end
+          @millisecs += @n_delay_ms[@width]
+
+          per_block_processing
+          magnitude_filter
+          calc_real_state
+          calc_filtered_state
+          if startup > 64
+            decode_signal
+          end
+          startup += 1
+          store_high_period
+          store_filtered_state
+          reset_width if @millisecs > (@last_print + 5000)
         end
       end
-      thr_in.join
-      thr_in.kill.join
-#      @buf_out.stop
-#      puts "#{@buf_out.dropped_frame} frame dropped."
       @buf_in.stop
       $stdout.puts "done."
     end
@@ -170,7 +170,7 @@ module CWG
         @buf_in.start
         loop do
           process_frame
-          @millisecs += @n_delay_ms
+          @millisecs += @n_delay_ms[@width]
           #          dbg_print "  @n_val: #{@n_val}\n  " +
           #                    "@sample_rate: #{@sample_rate}\n  " +
           #                    "@millisecs: #{@millisecs}\n  @n_delay_ms: #{@n_delay_ms}"
@@ -186,7 +186,7 @@ module CWG
 
       @dev_out = CoreAudio.default_output_device
       @buf_out = @dev_out.output_buffer(1024)
-      @out_file = File.new("high_res_v_narrow.txt",'w+')
+#      @out_file = File.new("high_res_v_narrow.txt",'w+')
       (0..1000).step(2) do |x|
         puts "Freq: #{x}"
         thr_out = Thread.fork do
@@ -195,7 +195,7 @@ module CWG
         end
         thr_out.join
       end
-      @out_file.close
+#      @out_file.close
       thr_in.kill.join
       @buf_out.stop
       puts "#{@buf_out.dropped_frame} frame dropped."
@@ -216,13 +216,13 @@ module CWG
         @buf_out << @wav
       end
       puts "  Max: #{(@mag_max / 1000000.0).round(3)}"
-      @out_file.print "#{(@mag_max / 1000000.0).round(3)},"
+#      @out_file.print "#{(@mag_max / 1000000.0).round(3)},"
       @mag_max = 0
     end
 
     def dbg_print message
       if @millisecs > @last
-        @last = @millisecs + 1000
+        @last = @millisecs + 5000
         puts
         puts "  " + message
         @mag_min = 999999999
@@ -230,19 +230,15 @@ module CWG
       end
     end
 
-    def process_frame
-      bufs = @buf_in.read(@n_val)
-      count = @n_val / SAMPLING_DIVISOR
-      idx_multiplier = 2 * SAMPLING_DIVISOR
-      count.times do |idx|
-        update_coeffs_per_sample bufs[(idx * idx_multiplier)]
-        #      bufs[0 ,0..-1].each do |x|
-        #        update_coeffs_per_sample x
-      end
+    def calc_magnitude q1, q2
+      magnitude_squared = (q1 * q1) + (q2 * q2) - (q1 * q2 * @coeff[@width])
+      @magnitude = magnitude_squared.to_i
+      @magnitude = Math.sqrt(magnitude_squared).to_i;
+#            p @magnitude
     end
 
     def per_block_processing
-      magnitude_squared = (@q1 * @q1) + (@q2 * @q2) - (@q1 * @q2 * @coeff)
+      magnitude_squared = (@q1 * @q1) + (@q2 * @q2) - (@q1 * @q2 * @coeff[@width])
       @magnitude = magnitude_squared.to_i
       @magnitude = Math.sqrt(magnitude_squared).to_i;
       @q1, @q2 = 0, 0;
@@ -260,9 +256,9 @@ module CWG
       @mag_max = @magnitude if @magnitude > @mag_max
       @mag_min = @magnitude if @magnitude < @mag_min
 
-#      dbg_print "@magnitude: #{@magnitude.to_s}\n" +
-#                "  @mag_max: #{@mag_max.to_s}\n" +
-#                "  @mag_min: #{@mag_min.to_s}\n"
+      #      dbg_print "@magnitude: #{@magnitude.to_s}\n" +
+      #                "  @mag_max: #{@mag_max.to_s}\n" +
+      #                "  @mag_min: #{@mag_min.to_s}\n"
     end
 
     def calc_real_state
@@ -276,6 +272,7 @@ module CWG
         reset_last_start_time
       end
 
+#        puts @millisecs
       if((millis() - @last_start_time) > @noise_blanking_period)
         @filtered_state = @real_state
       end
@@ -285,14 +282,15 @@ module CWG
           @start_time_high = millis()
           @low_period = (millis() - @start_time_low)
         else
+#          $stdout.print '-'
           @start_time_low = millis();
           @high_period = (millis() - @start_time_high);
-          if((@high_period < (2 * @high_time_period)) || (@high_time_period == 0))
-            @high_time_period = (@high_period + @high_time_period + @high_time_period) / 3  # now we know avg dit time ( rolling 3 avg)
+          if((@high_period < (2 * @high_period_avg)) || (@high_period_avg == 0))
+            @high_period_avg = (@high_period + @high_period_avg + @high_period_avg) / 3  # now we know avg dit time ( rolling 3 avg)
           end
 
-          if(@high_period > (5 * @high_time_period))
-            @high_time_period = @high_period + @high_time_period;     # if speed decrease fast ..
+          if(@high_period > (5 * @high_period_avg))
+            @high_period_avg = @high_period + @high_period_avg;     # if speed decrease fast ..
           end
         end
       end
@@ -302,30 +300,49 @@ module CWG
     def decode_signal
       if(filtered_state_change?)
         if(@filtered_state == false) #  we did end a HIGH
-          if matched_timings?(@high_period, @high_time_period, 2.0, 0.6)
+          @awaiting_space = true
+          if timing_match?(@high_period, 0.6, 2)
             #  0.6 filter out false dits
             @code << :dot
-            @out_file.print "#{@high_time_period},"
+#            $stdout.print '.'
+
+#            @out_file.print "#{@high_period_avg},"
           end
-          if matched_timings?(@high_period, @high_time_period, 6.0, 2.0)
+          if timing_match?(@high_period, 2, 6)
             @code << :dash
+#            $stdout.print '_'
+            #           puts 'dash'
+            @wpm = (@wpm + (1200/((@high_period)/3)))/2;  # the most precise we can do ;o)
+            # dbg_print "wpm #{@wpm.round(1)}"
           end
         else # we did end a LOW
-          if matched_timings?(@low_period, @high_time_period, 5.0, 2.0) # letter space
+          if timing_match?(@low_period, 2.0, 5) # letter space
+            @low_period = @millisecs - @low_period
             print_char
-            @code.clear
-          end
-          if(@low_period >= (@high_time_period * 5.0)) # word space
-            print_char
-            @code.clear
-            print ' '
           end
         end
       end
+      return unless @awaiting_space
+      if timing_match?((@millisecs - @start_time_low), 6.0, 7.0)
+#      if((millis() - @start_time_low) >= (@high_period_avg * 5.8)) # word space
+        print_char unless @code == []
+        print_space
+        @awaiting_space = false
+      end
+    end
+
+    def timing_match?(period, avg_x_low, avg_x_high)
+      ((period < (@high_period_avg * avg_x_high)) &&
+       (period > (@high_period_avg * avg_x_low)))
+    end
+
+    def print_space
+      @code = [:space]
+      print_char
     end
 
     def update_coeffs_per_sample(data)
-      q0 = @coeff * @q1 - @q2 + data
+      q0 = @coeff[@width] * @q1 - @q2 + data
       #      dbg_print "  @k: #{@k}\n  @cosine: #{@cosine}\n  @coeff: #{@coeff}\n  q0: #{q0}\n"
       @q2, @q1 = @q1, q0
     end
@@ -335,24 +352,15 @@ module CWG
     end
 
     def real_state_change?
-      #      if @real_state != @real_state_store
-      #        print 'hi' if @real_state == true
-      #        print 'low' if @real_state == false
-      #      end
+#      if @real_state != @real_state_store
+#        $stdout.print 'hi' if @real_state == true
+#        $stdout.print 'low' if @real_state == false
+#      end
       @real_state != @real_state_store
     end
 
     def filtered_state_change?
-      #      if @filtered_state != @filtered_state_store
-      #        print 'hi' if @filtered_state == true
-      #        print 'low' if @filtered_state == false
-      #      end
       @filtered_state != @filtered_state_store
-    end
-
-    def matched_timings?(period, avg, avg_x_high, avg_x_low)
-      ((period < (avg * avg_x_high)) &&
-       (period > (avg * avg_x_low)))
     end
 
     def store_high_period
@@ -371,21 +379,59 @@ module CWG
       @cw_encoding.fetch_char @code
     end
 
+    def reset_width
+      @print_success = 0
+      @width = 0
+      @last_print = @millisecs
+    end
+
     def print_char
-#            puts @code
-      print matched_char
+      char = matched_char
+      if char == ''
+        reset_width
+        #        @wpm -= 5
+        @low_period = 0
+        @high_period = 0
+        @real_state = false
+        @filtered_state = false
+        @real_state_store = false
+        @filtered_state_store = false
+        @awaiting_space = false
+        @start_time = 0.0
+        @noise_blanking_period = 0
+        @start_time_high = 0
+        @high_period = 0
+        @high_period_store = 0
+        @high_period_avg = 0
+        @start_time_low = 0
+        @low_period = 0
+        @last_start_time = 0
+        @millisecs = 0
+        @last = 0
+      else
+        @last_print = @millisecs
+        @print_success += 1
+        @width = 1 if @print_success == 20
+        @high_period_avg *= 2 if @print_success == 20
+        @width = 2 if @print_success == 40
+        @high_period_avg *= 2 if @print_success == 40
+        print.speculative char if @print_success <= 20
+        print.stable char if @print_success > 20 && @print_success <= 40
+        print.optimum char if @print_success > 40
+      end
+      @code = []
     end
 
     def sample
       loop_count = 0
-      @testData = Array.new(@n_val)
+      @testData = Array.new(@n_val[@width])
       WaveFile::Reader.new(@filename).each_buffer(SAMPLE_FRAMES_PER_BUFFER) do |buffer|
         #        p buffer
         #        exit
         loop do
           done = false
           count = 0
-          @n_val.times do
+          @n_val[@width].times do
             length = buffer.samples.length
             done = true unless(length > 0)
             #@millisecs += 0.43405
