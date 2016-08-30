@@ -5,8 +5,17 @@ require 'coreaudio'
 
 module CWG
 
+  MAGNITUDE_CUTOFF = 100 #  200000
+  N = 220
+#  N = 110
+#  N = 80
+
   class Read
 
+    TONE_900_0 =  0
+    TONE_900_1 =  1
+    TONE_900_2 =  2
+    TONE_900_3 =  3
     TONE_400_BIN_NARROW =  0
     TONE_400_BIN_WIDE =  1
     TONE_450_BIN_NARROW =  2
@@ -21,8 +30,6 @@ module CWG
     TONE_700_BIN_WIDE =  11
     TONE_800_BIN_NARROW =  12
     TONE_800_BIN_WIDE =  13
-    TONE_900_BIN_NARROW =  14
-    TONE_900_BIN_WIDE =  15
     TONE_1000_BIN_NARROW =  16
     TONE_1000_BIN_WIDE =  17
     TONE_500_BIN_V_NARROW =  18
@@ -32,7 +39,11 @@ module CWG
     TONE_WIDTH    = 12
     SAMPLING_FREQ = SOUND_CARD_RATE / SAMPLING_DIVISOR
     DATA = [
-      {tone: 400, bin_width: 40},
+      {tone: 882, bin_width: 360},
+      {tone: 882, bin_width: 180},
+      {tone: 882, bin_width: 90},
+      {tone: 882, bin_width: 45},
+      {tone: 400, bin_width: 112},
       {tone: 400, bin_width: 80},
       {tone: 450, bin_width: 45},
       {tone: 450, bin_width: 90},
@@ -52,7 +63,8 @@ module CWG
       {tone: 1000, bin_width: 200},
       {tone: 500, bin_width: 100},
     ]
-    def n(x) ; @sample_rate / DATA[x][:bin_width] * SAMPLING_DIVISOR ; end
+#    def n(x) ; @sample_rate / DATA[x][:bin_width] * SAMPLING_DIVISOR ; end
+    def n(x) ; N ; end
     def k(x) ; (0.5 + ((n(x) * DATA[x][:tone] / @sample_rate))).to_i ; end
     def w(x) ; ((2 * Math::PI) / n(x)) * k(x) ; end
     def cosine(x) ; Math.cos(w(x)) ; end
@@ -66,9 +78,10 @@ module CWG
       @mag_min = 999999999
       @sample_rate = SAMPLING_FREQ
       @n_val, @coeff, @n_delay_ms = [], [], []
-      [TONE_500_BIN_WIDE,
-       TONE_500_BIN_NARROW,
-       TONE_500_BIN_V_NARROW,
+      [ TONE_900_0,
+        TONE_900_1,
+        TONE_900_2,
+        TONE_900_3,
       ].each_with_index do |width,idx|
         @n_val[idx] = n(width)
         @coeff[idx] = coeff(width)
@@ -80,9 +93,9 @@ module CWG
       @cw_encoding = CwEncoding.new
       @q1 = 0
       @q2 = 0
-      #      @magnitudelimit = 500000
-      @magnitudelimit = 1000
-      @magnitudelimit_low = @magnitudelimit
+      #      @magnitude_set_point = 500000
+      @magnitude_set_point = 10000
+      @magnitude_set_point_low = @magnitude_set_point
       @wpm = 15
       @real_state = false
       @filtered_state = false
@@ -103,6 +116,7 @@ module CWG
       @last = 0
       @queue = Queue.new
       puts "@n_val  #{@n_val[@width]}"
+      puts "@coeff  #{@coeff[@width]}"
       input
     end
 
@@ -118,7 +132,7 @@ module CWG
     end
 
     def input
-      startup = 0
+#      startup = 0
       open_sound_device
       nval = @n_val[@width]
       nval8 = nval * 8
@@ -133,13 +147,13 @@ module CWG
           @millisecs += @n_delay_ms[@width]
 
           per_block_processing
-          magnitude_filter
+#          magnitude_filter
           calc_real_state
           calc_filtered_state
-          if startup > 64
+#          if startup > 64
             decode_signal
-          end
-          startup += 1
+#          end
+#          startup += 1
           store_high_period
           store_filtered_state
           reset_width if @millisecs > (@last_print + 5000)
@@ -215,7 +229,7 @@ module CWG
         i += (int_freq)
         @buf_out << @wav
       end
-      puts "  Max: #{(@mag_max / 1000000.0).round(3)}"
+#      puts "  Max: #{(@mag_max / 1000000.0).round(3)}"
 #      @out_file.print "#{(@mag_max / 1000000.0).round(3)},"
       @mag_max = 0
     end
@@ -238,20 +252,25 @@ module CWG
     end
 
     def per_block_processing
-      magnitude_squared = (@q1 * @q1) + (@q2 * @q2) - (@q1 * @q2 * @coeff[@width])
-      @magnitude = magnitude_squared.to_i
-      @magnitude = Math.sqrt(magnitude_squared).to_i;
+      @magnitude = (@q1 * @q1) + (@q2 * @q2) - @q1 * @q2 * @coeff[@width]
+      @magnitude = @magnitude.to_i / 1000000
+      @magnitude = 0 if @magnitude < MAGNITUDE_CUTOFF
+#      if @magnitude >= 1000000000000.0
+#        @magnitude = Math.sqrt(magnitude_squared).to_i
+#      else
+#        @magnitude = 0
+#      end
       @q1, @q2 = 0, 0;
-      #      p @magnitude
+#      p @magnitude
     end
 
     def magnitude_filter
-      if(@magnitude > @magnitudelimit_low)
-        @magnitudelimit = (@magnitudelimit + ((@magnitude - @magnitudelimit) / 6))  # moving average filter
+      if(@magnitude > @magnitude_set_point_low)
+        @magnitude_set_point = (@magnitude_set_point + ((@magnitude - @magnitude_set_point) / 6))  # moving average filter
       else
-        @magnitudelimit = @magnitudelimit_low
+        @magnitude_set_point = @magnitude_set_point_low
       end
-      #      dbg_print "@magnitude: #{@magnitude.to_s}\n  @magnitudelimit: #{@magnitudelimit.to_s}\n  @magnitudelimit_low = #{@magnitudelimit_low}"
+      #      dbg_print "@magnitude: #{@magnitude.to_s}\n  @magnitude_set_point: #{@magnitude_set_point.to_s}\n  @magnitude_set_point_low = #{@magnitude_set_point_low}"
 
       @mag_max = @magnitude if @magnitude > @mag_max
       @mag_min = @magnitude if @magnitude < @mag_min
@@ -263,7 +282,7 @@ module CWG
 
     def calc_real_state
       @real_state =
-        (@magnitude > (@magnitudelimit * 0.6)) ?
+        (@magnitude > (@magnitude_set_point * 0.6)) ?
           true : false
     end
 
@@ -280,10 +299,13 @@ module CWG
       if filtered_state_change?
         if(@filtered_state == true)
           @start_time_high = millis()
+          @high_mag = @magnitude
+          #          dbg_print "high: #{@high_mag}\n  low: #{@low_mag}\n  set point: #{@magnitude_set_point}"
           @low_period = (millis() - @start_time_low)
         else
 #          $stdout.print '-'
           @start_time_low = millis();
+          @low_mag = @magnitude
           @high_period = (millis() - @start_time_high);
           if((@high_period < (2 * @high_period_avg)) || (@high_period_avg == 0))
             @high_period_avg = (@high_period + @high_period_avg + @high_period_avg) / 3  # now we know avg dit time ( rolling 3 avg)
@@ -300,17 +322,16 @@ module CWG
     def decode_signal
       if(filtered_state_change?)
         if(@filtered_state == false) #  we did end a HIGH
-          @awaiting_space = true
           if timing_match?(@high_period, 0.6, 2)
             #  0.6 filter out false dits
             @code << :dot
-#            $stdout.print '.'
+            $stdout.print '.'
 
 #            @out_file.print "#{@high_period_avg},"
           end
           if timing_match?(@high_period, 2, 6)
             @code << :dash
-#            $stdout.print '_'
+            $stdout.print '_'
             #           puts 'dash'
             @wpm = (@wpm + (1200/((@high_period)/3)))/2;  # the most precise we can do ;o)
             # dbg_print "wpm #{@wpm.round(1)}"
@@ -319,6 +340,7 @@ module CWG
           if timing_match?(@low_period, 2.0, 5) # letter space
             @low_period = @millisecs - @low_period
             print_char
+            @awaiting_space = true
           end
         end
       end
@@ -387,6 +409,10 @@ module CWG
 
     def print_char
       char = matched_char
+#      if char == ' '
+#        puts "\n  high: #{@high_mag}\n"
+#      end
+
       if char == ''
         reset_width
         #        @wpm -= 5
@@ -398,7 +424,7 @@ module CWG
         @filtered_state_store = false
         @awaiting_space = false
         @start_time = 0.0
-        @noise_blanking_period = 0
+        @noise_blanking_period = 6
         @start_time_high = 0
         @high_period = 0
         @high_period_store = 0
@@ -411,10 +437,10 @@ module CWG
       else
         @last_print = @millisecs
         @print_success += 1
-        @width = 1 if @print_success == 20
-        @high_period_avg *= 2 if @print_success == 20
-        @width = 2 if @print_success == 40
-        @high_period_avg *= 2 if @print_success == 40
+#        @width = 1 if @print_success == 20
+#        @high_period_avg *= 2 if @print_success == 20
+#        @width = 2 if @print_success == 40
+#        @high_period_avg *= 2 if @print_success == 40
         print.speculative char if @print_success <= 20
         print.stable char if @print_success > 20 && @print_success <= 40
         print.optimum char if @print_success > 40
