@@ -23,14 +23,6 @@ module CWG
       encodings[char]
     end
 
-    def fetch_char pattern
-      return ' ' if pattern == [:space]
-      encodings.each_pair do |key, value|
-        return key if(value == pattern)
-      end
-      return '*'
-    end
-
     def match_elements arg
       chars = []
       encodings.each_pair do |key, value|
@@ -44,5 +36,78 @@ module CWG
       chars
     end
 
+    def match_1 code
+      code[0] == :dot ? 'e' : 't'
+    end
+
+    def match_2 code
+      if code[0] == :dot
+        if code[1] == :dot
+          'i'
+        elsif code[1] == :dash
+          'a'
+        end
+      else
+        if code[1] == :dot
+          'n'
+        elsif code[1] == :dash
+          'm'
+        end
+      end
+    end
+
+    def match_3 code
+      if code[0] == :dot
+        if code[1] == :dot
+          if code[2] == :dot
+            's'
+          else
+            'u'
+          end
+        else
+          if code[2] == :dot
+            'r'
+          else
+            'w'
+          end
+        end
+      else
+        if code[1] == :dot
+          if code[2] == :dot
+            'd'
+          else
+            'k'
+          end
+        else
+          if code[2] == :dot
+            'g'
+          else
+            'o'
+          end
+        end
+      end
+    end
+
+    def match_char code
+      length = code.length
+      case length
+      when 1
+        return match_1 code
+      when 2
+        return match_2 code
+      when 3
+        return match_3 code
+      end
+    end
+
+    def fetch_char pattern
+      return ' ' if pattern == [:space]
+      temp = match_char pattern
+      return temp if temp
+      encodings.each_pair do |key, value|
+        return key if(value == pattern)
+      end
+      return '*'
+    end
   end
 end
