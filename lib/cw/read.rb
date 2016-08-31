@@ -5,118 +5,66 @@ require 'coreaudio'
 
 module CWG
 
+  SAMPLE_RATE = 44100
   MAGNITUDE_CUTOFF = 100 #  200000
-  N = 220
-#  N = 110
-#  N = 80
+  N = 441
+  START = 0
+  VALUE = 1
+  BLANKING = 2
+  FILTERED = 3
+  PREV = 4
+  PERIOD = 1
+  AVG = 2
 
   class Read
 
-    TONE_900_0 =  0
-    TONE_900_1 =  1
-    TONE_900_2 =  2
-    TONE_900_3 =  3
-    TONE_400_BIN_NARROW =  0
-    TONE_400_BIN_WIDE =  1
-    TONE_450_BIN_NARROW =  2
-    TONE_450_BIN_WIDE =  3
-    TONE_500_BIN_NARROW =  4
-    TONE_500_BIN_WIDE =  5
-    TONE_550_BIN_NARROW =  6
-    TONE_550_BIN_WIDE =  7
-    TONE_600_BIN_NARROW =  8
-    TONE_600_BIN_WIDE =  9
-    TONE_700_BIN_NARROW =  10
-    TONE_700_BIN_WIDE =  11
-    TONE_800_BIN_NARROW =  12
-    TONE_800_BIN_WIDE =  13
-    TONE_1000_BIN_NARROW =  16
-    TONE_1000_BIN_WIDE =  17
-    TONE_500_BIN_V_NARROW =  18
-
-    SOUND_CARD_RATE = 44100
-    SAMPLING_DIVISOR = 1
-    TONE_WIDTH    = 12
-    SAMPLING_FREQ = SOUND_CARD_RATE / SAMPLING_DIVISOR
-    DATA = [
-      {tone: 882, bin_width: 360},
-      {tone: 882, bin_width: 180},
-      {tone: 882, bin_width: 90},
-      {tone: 882, bin_width: 45},
-      {tone: 400, bin_width: 112},
-      {tone: 400, bin_width: 80},
-      {tone: 450, bin_width: 45},
-      {tone: 450, bin_width: 90},
-      {tone: 500, bin_width: 200},
-      {tone: 500, bin_width: 400},
-      {tone: 550, bin_width: 55},
-      {tone: 550, bin_width: 110},
-      {tone: 600, bin_width: 60},
-      {tone: 600, bin_width: 120},
-      {tone: 700, bin_width: 70},
-      {tone: 700, bin_width: 140},
-      {tone: 800, bin_width: 80},
-      {tone: 800, bin_width: 160},
-      {tone: 900, bin_width: 90},
-      {tone: 900, bin_width: 180},
-      {tone: 1000, bin_width: 100},
-      {tone: 1000, bin_width: 200},
-      {tone: 500, bin_width: 100},
-    ]
-#    def n(x) ; @sample_rate / DATA[x][:bin_width] * SAMPLING_DIVISOR ; end
-    def n(x) ; N ; end
-    def k(x) ; (0.5 + ((n(x) * DATA[x][:tone] / @sample_rate))).to_i ; end
-    def w(x) ; ((2 * Math::PI) / n(x)) * k(x) ; end
-    def cosine(x) ; Math.cos(w(x)) ; end
-    def coeff(x) ; 2 * cosine(x) ; end
-    def millis ; @millisecs; end
-    def n_delay_ms(x) ; ((1.0/SOUND_CARD_RATE) * n(x) * 1000); end
-    def print ; @print ||= Print.new ; end
+    def n ; N ; end
+    def k ; (0.5 + ((n * @tone / @sample_rate))).to_i ; end
+    def w ; ((2 * Math::PI) / n) * k ; end
+    def cosine ; Math.cos(w) ; end
+    def coeff ; 2 * cosine ; end
+    def n_delay_ms ;  n * 10000/SAMPLE_RATE; end
+    def print ; @print ; end
 
     def initialize(filename)
+      @tone = 882
       @mag_max = 0
       @mag_min = 999999999
-      @sample_rate = SAMPLING_FREQ
-      @n_val, @coeff, @n_delay_ms = [], [], []
-      [ TONE_900_0,
-        TONE_900_1,
-        TONE_900_2,
-        TONE_900_3,
-      ].each_with_index do |width,idx|
-        @n_val[idx] = n(width)
-        @coeff[idx] = coeff(width)
-        @n_delay_ms[idx] = n_delay_ms(width)
-      end
-      reset_width
+      @sample_rate = SAMPLE_RATE
+      @n_val = n
+      @coeff = coeff
+      @n_delay_ms = n_delay_ms
       @filename = filename
       @code = []
-      @cw_encoding = CwEncoding.new
       @q1 = 0
       @q2 = 0
-      #      @magnitude_set_point = 500000
       @magnitude_set_point = 10000
       @magnitude_set_point_low = @magnitude_set_point
       @wpm = 15
-      @real_state = false
-      @filtered_state = false
-      @real_state_store = false
-      @filtered_state_store = false
-      @awaiting_space = false
-      @start_time = 0.0
-      @noise_blanking_period = 6
-      @start_time_high = 0
-      @high_period = 0
-      @high_period_store = 0
-      @high_period_avg = 0
-      @start_time_low = 0
-      @low_period = 0
+      @noise_blanking_ms = 4
       @last_start_time = 0
-      @millisecs = 0
-      @last_print = 0
-      @last = 0
+      @state = Array.new(5)
+      @high = Array.new(3)
+      @low = Array.new(2)
       @queue = Queue.new
-      puts "@n_val  #{@n_val[@width]}"
-      puts "@coeff  #{@coeff[@width]}"
+      @cw_encoding = CwEncoding.new
+      @print = Print.new
+      @state[START] = 0
+      @state[VALUE] = :low
+      @state[BLANKING] = false
+      @state[FILTERED] = false
+      @state[PREV] = false
+      @high[START] = 0
+      @high[PERIOD] = 0
+      @high[AVG] = 0
+      @low[START] = 0
+      @low[PERIOD] = 0
+      @millisecs = 0
+      @last = 0
+      @need_space = false
+      puts "@n_val  #{@n_val}"
+      puts "@coeff  #{@coeff}"
+      puts "@n_delay_ms #{@n_delay_ms}"
       input
     end
 
@@ -132,111 +80,43 @@ module CWG
     end
 
     def input
-#      startup = 0
+      dly = @n_delay_ms
+      #      startup = 0
       open_sound_device
-      nval = @n_val[@width]
+      nval = @n_val
       nval8 = nval * 8
+      buf = @buf_in
+      bufs = nil
+      thr = Thread.fork do
+        loop do
+          @queue.push buf.read(nval8)
+        end
+      end
       loop do
-        bufs = @buf_in.read(nval8)
+        loop do
+          bufs = @queue.pop
+          break if @queue.empty?
+        end
         count = 0
         8.times do
           nval.times do
-            update_coeffs_per_sample(bufs[count] + bufs[count + 1])
+            calc_coeff(bufs[count] + bufs[count + 1])
             count += 2
           end
-          @millisecs += @n_delay_ms[@width]
-
+          @millisecs += dly
           per_block_processing
-#          magnitude_filter
-          calc_real_state
-          calc_filtered_state
-#          if startup > 64
-            decode_signal
-#          end
-#          startup += 1
-          store_high_period
-          store_filtered_state
-          reset_width if @millisecs > (@last_print + 5000)
-        end
-      end
-      @buf_in.stop
-      $stdout.puts "done."
-    end
-
-    def magnitude_test
-      soundflower = nil
-      CoreAudio.devices.each do |device|
-        if device.name == 'Soundflower (2ch)'
-          soundflower = device
-        end
-      end
-
-      @buf_in = soundflower.input_buffer(44100)
-
-      #      soundflower = CoreAudio.default_input_device
-      #      puts "device: #{soundflower}"
-      #      $stdout.print "Listening...\n"
-      #      $stdout.flush
-      #      @dev_out = CoreAudio.default_output_device
-      #      @buf = @dev_out.output_buffer(1024)
-
-      thr_in = Thread.fork do
-        @buf_in.start
-        loop do
-          process_frame
-          @millisecs += @n_delay_ms[@width]
-          #          dbg_print "  @n_val: #{@n_val}\n  " +
-          #                    "@sample_rate: #{@sample_rate}\n  " +
-          #                    "@millisecs: #{@millisecs}\n  @n_delay_ms: #{@n_delay_ms}"
-          per_block_processing
-          magnitude_filter
           calc_real_state
           calc_filtered_state
           decode_signal
-          store_high_period
-          store_filtered_state
         end
       end
-
-      @dev_out = CoreAudio.default_output_device
-      @buf_out = @dev_out.output_buffer(1024)
-#      @out_file = File.new("high_res_v_narrow.txt",'w+')
-      (0..1000).step(2) do |x|
-        puts "Freq: #{x}"
-        thr_out = Thread.fork do
-          generate_sinewave x.to_f
-          thr_out.kill
-        end
-        thr_out.join
-      end
-#      @out_file.close
-      thr_in.kill.join
-      @buf_out.stop
-      puts "#{@buf_out.dropped_frame} frame dropped."
       @buf_in.stop
       $stdout.puts "done."
-    end
-
-    def generate_sinewave freq
-
-      @phase = Math::PI * 2.0 * freq / @dev_out.nominal_rate
-      int_freq = freq.to_i
-      i = 0
-      @wav = NArray.sint(int_freq)
-      @buf_out.start
-      (int_freq/4).times do
-        (int_freq).times {|j| @wav[j] = (0.4 * Math.sin(@phase*(i+j)) * 0x7FFF).round }
-        i += (int_freq)
-        @buf_out << @wav
-      end
-#      puts "  Max: #{(@mag_max / 1000000.0).round(3)}"
-#      @out_file.print "#{(@mag_max / 1000000.0).round(3)},"
-      @mag_max = 0
     end
 
     def dbg_print message
       if @millisecs > @last
-        @last = @millisecs + 5000
+        @last = @millisecs + 1000
         puts
         puts "  " + message
         @mag_min = 999999999
@@ -244,24 +124,17 @@ module CWG
       end
     end
 
-    def calc_magnitude q1, q2
-      magnitude_squared = (q1 * q1) + (q2 * q2) - (q1 * q2 * @coeff[@width])
-      @magnitude = magnitude_squared.to_i
-      @magnitude = Math.sqrt(magnitude_squared).to_i;
-#            p @magnitude
-    end
-
     def per_block_processing
-      @magnitude = (@q1 * @q1) + (@q2 * @q2) - @q1 * @q2 * @coeff[@width]
+      @magnitude = (@q1 * @q1) + (@q2 * @q2) - @q1 * @q2 * @coeff
       @magnitude = @magnitude.to_i / 1000000
       @magnitude = 0 if @magnitude < MAGNITUDE_CUTOFF
-#      if @magnitude >= 1000000000000.0
-#        @magnitude = Math.sqrt(magnitude_squared).to_i
-#      else
-#        @magnitude = 0
-#      end
+      #      if @magnitude >= 1000000000000.0
+      #        @magnitude = Math.sqrt(magnitude_squared).to_i
+      #      else
+      #        @magnitude = 0
+      #      end
       @q1, @q2 = 0, 0;
-#      p @magnitude
+      #      p @magnitude
     end
 
     def magnitude_filter
@@ -281,81 +154,92 @@ module CWG
     end
 
     def calc_real_state
-      @real_state =
+      @state[VALUE] =
         (@magnitude > (@magnitude_set_point * 0.6)) ?
-          true : false
+          :high : :low
     end
 
     def calc_filtered_state
       if real_state_change?
-        reset_last_start_time
+        reset_noise_blanker
       end
 
-#        puts @millisecs
-      if((millis() - @last_start_time) > @noise_blanking_period)
-        @filtered_state = @real_state
-      end
+      store_real_state
 
-      if filtered_state_change?
-        if(@filtered_state == true)
-          @start_time_high = millis()
-          @high_mag = @magnitude
-          #          dbg_print "high: #{@high_mag}\n  low: #{@low_mag}\n  set point: #{@magnitude_set_point}"
-          @low_period = (millis() - @start_time_low)
-        else
-#          $stdout.print '-'
-          @start_time_low = millis();
-          @low_mag = @magnitude
-          @high_period = (millis() - @start_time_high);
-          if((@high_period < (2 * @high_period_avg)) || (@high_period_avg == 0))
-            @high_period_avg = (@high_period + @high_period_avg + @high_period_avg) / 3  # now we know avg dit time ( rolling 3 avg)
-          end
-
-          if(@high_period > (5 * @high_period_avg))
-            @high_period_avg = @high_period + @high_period_avg;     # if speed decrease fast ..
+      if @state[BLANKING]
+        if noise_blanked
+          @state[FILTERED] = true
+          if(@state[VALUE] == :high)
+            @high[START] = @millisecs
+            @high_mag = @magnitude
+            #          dbg_print "high: #{@high_mag}\n  low: #{@low_mag}\n  set point: #{@magnitude_set_point}"
+            @low[PERIOD] = (@millisecs - @low[START])
+          else
+            @low[START] = @millisecs;
+            @low_mag = @magnitude
+           @high[PERIOD] = (@millisecs -  @high[START]);
+            if((@high[PERIOD] < (2 * @high[AVG])) || (@high[AVG] == 0))
+              @high[AVG] = ((@high[PERIOD] + @high[AVG] + @high[AVG]) / 3)  # now we know avg dit time ( rolling 3 avg)
+            elsif(@high[PERIOD] > (5 * @high[AVG]))
+              @high[AVG] = @high[PERIOD] + @high[AVG];     # if speed decrease fast ..
+            end
           end
         end
       end
-      store_real_state
     end
 
     def decode_signal
-      if(filtered_state_change?)
-        if(@filtered_state == false) #  we did end a HIGH
-          if timing_match?(@high_period, 0.6, 2)
+      if(@state[FILTERED])
+        @state[FILTERED] = false
+        @need_space = true
+        if(@state[VALUE] == :low) #  we did end a HIGH
+          if high_avg_compare?(@high[PERIOD], 0.6, 2.0)
             #  0.6 filter out false dits
             @code << :dot
-            $stdout.print '.'
-
-#            @out_file.print "#{@high_period_avg},"
+#            $stdout.print '.'
           end
-          if timing_match?(@high_period, 2, 6)
+          if high_avg_compare?(@high[PERIOD], 2.0, 6.0)
             @code << :dash
-            $stdout.print '_'
-            #           puts 'dash'
-            @wpm = (@wpm + (1200/((@high_period)/3)))/2;  # the most precise we can do ;o)
-            # dbg_print "wpm #{@wpm.round(1)}"
+#            $stdout.print '_'
+            if @millisecs % 10 == 0
+              @wpm = (@wpm + (1200 / ((@high[PERIOD]) / 3))) / 2;  # the most precise we can do ;o)
+              # dbg_print "high #{@high[PERIOD]}"
+            end
+            # dbg_print @wpm
           end
         else # we did end a LOW
-          if timing_match?(@low_period, 2.0, 5) # letter space
-            @low_period = @millisecs - @low_period
+          @need_space = false
+          if high_avg_compare?(@low[PERIOD], 2.0, 4.8) # letter space
             print_char
-            @awaiting_space = true
+          elsif(high_avg_compare?(@low[PERIOD], 4.8, 6.0)) # word space
+            print_char
+            $stdout.print ' '
           end
         end
       end
-      return unless @awaiting_space
-      if timing_match?((@millisecs - @start_time_low), 6.0, 7.0)
-#      if((millis() - @start_time_low) >= (@high_period_avg * 5.8)) # word space
-        print_char unless @code == []
-        print_space
-        @awaiting_space = false
+#      dbg_print "millisecs #{@millisecs}"
+      if @need_space
+        #        puts 'here'
+        if high_avg_compare?(@millisecs - @low[START], 6.0, 10)
+          @need_space = false
+          if @state[BLANKING] = false
+          end
+          print_char
+          $stdout.print ' '
+        end
       end
     end
 
-    def timing_match?(period, avg_x_low, avg_x_high)
-      ((period < (@high_period_avg * avg_x_high)) &&
-       (period > (@high_period_avg * avg_x_low)))
+    def high_avg_compare?(period, avg_x_low, avg_x_high)
+      (period <= (@high[AVG] * avg_x_high).to_i) &&
+        (period >= (@high[AVG] * avg_x_low).to_i)
+    end
+
+    def noise_blanked
+      if((@millisecs - @state[START]) > @noise_blanking_ms)
+        @state[BLANKING] = false
+        return true
+      end
     end
 
     def print_space
@@ -363,126 +247,55 @@ module CWG
       print_char
     end
 
-    def update_coeffs_per_sample(data)
-      q0 = @coeff[@width] * @q1 - @q2 + data
-      #      dbg_print "  @k: #{@k}\n  @cosine: #{@cosine}\n  @coeff: #{@coeff}\n  q0: #{q0}\n"
+    def calc_coeff(data)
+      q0 = @coeff * @q1 - @q2 + data
       @q2, @q1 = @q1, q0
     end
 
-    def reset_last_start_time
-      @last_start_time = millis()
+    def reset_noise_blanker
+      @state[BLANKING] = true
+      @state[START] = @millisecs
     end
 
     def real_state_change?
-#      if @real_state != @real_state_store
-#        $stdout.print 'hi' if @real_state == true
-#        $stdout.print 'low' if @real_state == false
-#      end
-      @real_state != @real_state_store
-    end
-
-    def filtered_state_change?
-      @filtered_state != @filtered_state_store
-    end
-
-    def store_high_period
-      @high_period_store = @high_period
+      #      if @real_state != @real_state_prev
+      #        $stdout.print 'hi' if @real_state == true
+      #        $stdout.print 'low' if @real_state == false
+      #      end
+      @state[VALUE] != @state[PREV]
     end
 
     def store_real_state
-      @real_state_store = @real_state
-    end
-
-    def store_filtered_state
-      @filtered_state_store = @filtered_state
+      @state[PREV] = @state[VALUE]
     end
 
     def matched_char
       @cw_encoding.fetch_char @code
     end
 
-    def reset_width
-      @print_success = 0
-      @width = 0
-      @last_print = @millisecs
-    end
-
     def print_char
-      char = matched_char
-#      if char == ' '
-#        puts "\n  high: #{@high_mag}\n"
-#      end
+      char = @cw_encoding.fetch_char @code
+      #      if char == ' '
+      #        puts "\n  high: #{@high_mag}\n"
+      #      end
 
-      if char == ''
-        reset_width
+      if false # char == '*'
         #        @wpm -= 5
-        @low_period = 0
-        @high_period = 0
-        @real_state = false
-        @filtered_state = false
-        @real_state_store = false
-        @filtered_state_store = false
-        @awaiting_space = false
-        @start_time = 0.0
-        @noise_blanking_period = 6
-        @start_time_high = 0
-        @high_period = 0
-        @high_period_store = 0
-        @high_period_avg = 0
-        @start_time_low = 0
-        @low_period = 0
-        @last_start_time = 0
+        @state[VALUE] = false
+        @state[FILTERED] = false
+        @state[PREV] = false
+        #        @awaiting_space = false
+        @low[PERIOD] = 0
+
+       @high[PERIOD] = 0
+        @high[PREV] = 0
+        @high[AVG] = 0
+        @low[START] = 0
         @millisecs = 0
         @last = 0
-      else
-        @last_print = @millisecs
-        @print_success += 1
-#        @width = 1 if @print_success == 20
-#        @high_period_avg *= 2 if @print_success == 20
-#        @width = 2 if @print_success == 40
-#        @high_period_avg *= 2 if @print_success == 40
-        print.speculative char if @print_success <= 20
-        print.stable char if @print_success > 20 && @print_success <= 40
-        print.optimum char if @print_success > 40
       end
+      print.optimum char
       @code = []
-    end
-
-    def sample
-      loop_count = 0
-      @testData = Array.new(@n_val[@width])
-      WaveFile::Reader.new(@filename).each_buffer(SAMPLE_FRAMES_PER_BUFFER) do |buffer|
-        #        p buffer
-        #        exit
-        loop do
-          done = false
-          count = 0
-          @n_val[@width].times do
-            length = buffer.samples.length
-            done = true unless(length > 0)
-            #@millisecs += 0.43405
-            @millisecs += 1
-            @testData[count] = (buffer.samples.shift) unless done # + 32768
-            @testData[count] = 0 if done
-            #      print @testData[count]
-            #      print ','
-            update_coeffs_per_sample(count)
-            count += 1
-          end
-          per_block_processing
-          magnitude_filter
-          calc_real_state
-          calc_filtered_state
-          decode_signal
-          store_high_period
-          store_filtered_state
-          break if done
-        end
-        #        break if loop_count > 10000
-        loop_count += 1
-      end
-      print_char
-      puts
     end
   end
 end
