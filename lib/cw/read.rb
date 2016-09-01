@@ -6,8 +6,9 @@ require 'coreaudio'
 module CWG
 
   SAMPLE_RATE = 44100
-  MAGNITUDE_CUTOFF = 100 #  200000
+  MAGNITUDE_CUTOFF = 50000 #  200000
   N = 441
+  TONE = 882
   START = 0
   VALUE = 1
   BLANKING = 2
@@ -15,7 +16,6 @@ module CWG
   PREV = 4
   PERIOD = 1
   AVG = 2
-
   class Read
 
     def n ; N ; end
@@ -23,11 +23,11 @@ module CWG
     def w ; ((2 * Math::PI) / n) * k ; end
     def cosine ; Math.cos(w) ; end
     def coeff ; 2 * cosine ; end
-    def n_delay_ms ;  n * 10000/SAMPLE_RATE; end
+    def n_delay_ms ;  n * 1000/SAMPLE_RATE; end
     def print ; @print ; end
 
     def initialize(filename)
-      @tone = 882
+      @tone = TONE
       @mag_max = 0
       @mag_min = 999999999
       @sample_rate = SAMPLE_RATE
@@ -40,8 +40,8 @@ module CWG
       @q2 = 0
       @magnitude_set_point = 10000
       @magnitude_set_point_low = @magnitude_set_point
-      @wpm = 15
-      @noise_blanking_ms = 4
+      @wpm = 40
+      @noise_blanking_ms = 6
       @last_start_time = 0
       @state = Array.new(5)
       @high = Array.new(3)
@@ -56,9 +56,10 @@ module CWG
       @state[PREV] = false
       @high[START] = 0
       @high[PERIOD] = 0
-      @high[AVG] = 0
+      @high[AVG] = 120
       @low[START] = 0
       @low[PERIOD] = 0
+      @low[AVG] = 0
       @millisecs = 0
       @last = 0
       @need_space = false
@@ -177,8 +178,8 @@ module CWG
           else
             @low[START] = @millisecs;
             @low_mag = @magnitude
-           @high[PERIOD] = (@millisecs -  @high[START]);
-            if((@high[PERIOD] < (2 * @high[AVG])) || (@high[AVG] == 0))
+            @high[PERIOD] = @millisecs -  @high[START]
+            if @high[PERIOD] < (2 * @high[AVG])
               @high[AVG] = ((@high[PERIOD] + @high[AVG] + @high[AVG]) / 3)  # now we know avg dit time ( rolling 3 avg)
             elsif(@high[PERIOD] > (5 * @high[AVG]))
               @high[AVG] = @high[PERIOD] + @high[AVG];     # if speed decrease fast ..
@@ -192,6 +193,7 @@ module CWG
       if(@state[FILTERED])
         @state[FILTERED] = false
         @need_space = true
+        #dbg_print "wpm #{@wpm.to_s}\nhigh period: #{@high[PERIOD]}\nhigh avg: #{@high[AVG]}"
         if(@state[VALUE] == :low) #  we did end a HIGH
           if high_avg_compare?(@high[PERIOD], 0.6, 2.0)
             #  0.6 filter out false dits
@@ -205,7 +207,6 @@ module CWG
               @wpm = (@wpm + (1200 / ((@high[PERIOD]) / 3))) / 2;  # the most precise we can do ;o)
               # dbg_print "high #{@high[PERIOD]}"
             end
-            # dbg_print @wpm
           end
         else # we did end a LOW
           @need_space = false
@@ -269,12 +270,14 @@ module CWG
       @state[PREV] = @state[VALUE]
     end
 
-    def matched_char
-      @cw_encoding.fetch_char @code
-    end
+#    def matched_char
+#      @cw_encoding.fetch_char @code
+#    end
 
     def print_char
       char = @cw_encoding.fetch_char @code
+      @code = []
+      print.optimum char
       #      if char == ' '
       #        puts "\n  high: #{@high_mag}\n"
       #      end
@@ -287,15 +290,50 @@ module CWG
         #        @awaiting_space = false
         @low[PERIOD] = 0
 
-       @high[PERIOD] = 0
+        @high[PERIOD] = 0
         @high[PREV] = 0
         @high[AVG] = 0
         @low[START] = 0
         @millisecs = 0
         @last = 0
       end
-      print.optimum char
-      @code = []
     end
+
+#    def print_char
+      #      index = 0
+      #      dash_jump = 64
+      #      if @code.length < 6
+      #        @code.each do |ele|
+      ##          puts "ele: #{ele}"
+      #          dash_jump = dash_jump / 2
+      #          index = index + ((ele == :dot) ? 1 : dash_jump)
+      #        end
+      #        char = @char_lookup[index].to_s
+      ##        char = @cw_encoding.fetch_char(@code) if char == '*'
+      #      #      if char == ' '
+      #      #        puts "\n  high: #{@high_mag}\n"
+      #      #      end
+      #      else
+#      char = @cw_encoding.fetch_char(@code)
+#    end
+
+#      if false # char == '*'
+#        #        @wpm -= 5
+#        @state[VALUE] = false
+#        @state[FILTERED] = false
+#        @state[PREV] = false
+#        #        @awaiting_space = false
+#        @low[PERIOD] = 0
+#
+#        @high[PERIOD] = 0
+#        @high[PREV] = 0
+#        @high[AVG] = 0
+#        @low[START] = 0
+#        @millisecs = 0
+#        @last = 0
+#      end
+#      print.optimum char
+#      @code = []
+#    end
   end
 end

@@ -6,6 +6,10 @@ module CWG
 
     include FileDetails
 
+    def initialize
+      @char_lookup = "*eish54v*3uf***!2arl***+*wp**j*1tndb6=x/*kc**y**mgz7*q**o*8**90*".split('').map(&:to_sym)
+    end
+
     def encodings
       if @encodings.nil?
         @encodings = load_code
@@ -26,88 +30,41 @@ module CWG
     def match_elements arg
       chars = []
       encodings.each_pair do |key, value|
-        chars << key unless value.include?(:dot) if arg[0]  == :dashes
+        chars << key unless value.include?(:dot)  if arg[0] == :dashes
         chars << key unless value.include?(:dash) if arg[0] == :dots
-        chars << key if (value.size < arg[1] )if arg[0]     == :less_than
-        chars << key if (value.size > arg[1] )if arg[0]     == :greater_than
-        chars << key if (value.size == arg[1] )if arg[0]    == :size
+        chars << key if ( value.size < arg[1] )   if arg[0] == :less_than
+        chars << key if ( value.size > arg[1] )   if arg[0] == :greater_than
+        chars << key if ( value.size == arg[1] )  if arg[0] == :size
         chars.delete(' ')
       end
       chars
     end
 
-    def match_1 code
-      code[0] == :dot ? 'e' : 't'
-    end
-
-    def match_2 code
-      if code[0] == :dot
-        if code[1] == :dot
-          'i'
-        elsif code[1] == :dash
-          'a'
-        end
-      else
-        if code[1] == :dot
-          'n'
-        elsif code[1] == :dash
-          'm'
-        end
+    def fast_match code
+      index = 0
+      dash_jump = 64
+      code.each do |ele|
+        #          puts "ele: #{ele}"
+        dash_jump = dash_jump / 2
+        index = index + ((ele == :dot) ? 1 : dash_jump)
       end
+      return @char_lookup[index].to_s
     end
 
-    def match_3 code
-      if code[0] == :dot
-        if code[1] == :dot
-          if code[2] == :dot
-            's'
-          else
-            'u'
-          end
-        else
-          if code[2] == :dot
-            'r'
-          else
-            'w'
-          end
-        end
-      else
-        if code[1] == :dot
-          if code[2] == :dot
-            'd'
-          else
-            'k'
-          end
-        else
-          if code[2] == :dot
-            'g'
-          else
-            'o'
-          end
-        end
-      end
-    end
-
-    def match_char code
+    def fetch_char code
       length = code.length
       case length
-      when 1
-        return match_1 code
-      when 2
-        return match_2 code
-      when 3
-        return match_3 code
+      when 1..5
+        return ' ' if code == [:space]
+      #        return fast_match code
+        return encodings.key(code)
+      when 0
+        return '*'
+      else
+        temp = encodings.key(code)
+        return temp if temp
+        return '*' unless temp
       end
-    end
-
-    def fetch_char pattern
-      return ' ' if pattern == [:space]
-      temp = match_char pattern
-      return temp if temp
-      encodings.each_pair do |key, value|
-        return key if(value == pattern)
-      end
-      return '*'
     end
   end
 end
