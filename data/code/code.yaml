@@ -167,6 +167,12 @@ z:
 - :dash
 - :dash
 - :dash
+"+":
+- :dot
+- :dash
+- :dot
+- :dash
+- :dot
 ".":
 - :dot
 - :dash
