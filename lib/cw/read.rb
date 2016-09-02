@@ -82,29 +82,32 @@ module CWG
 
     def input
       dly = @n_delay_ms
-      #      startup = 0
       open_sound_device
       nval = @n_val
-      nval8 = nval * 8
       buf = @buf_in
       bufs = nil
+      block_size = nval * 28
       thr = Thread.fork do
         loop do
-          @queue.push buf.read(nval8)
+          @queue.push buf.read(block_size)
         end
       end
       loop do
         loop do
           bufs = @queue.pop
           break if @queue.empty?
+          sleep 0.001
         end
         count = 0
-        8.times do
+        28.times do
           nval.times do
-            calc_coeff(bufs[count] + bufs[count + 1])
+            temp = bufs[count] + bufs[count + 1]
+#            puts temp
+            calc_coeff temp
             count += 2
           end
           @millisecs += dly
+#          @millisecs += dly
           per_block_processing
           calc_real_state
           calc_filtered_state
