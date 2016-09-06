@@ -6,6 +6,8 @@
 
 # Documentation:
 
+[![Join the chat at https://gitter.im/mjago/CW](https://badges.gitter.im/mjago/CW.svg)](https://gitter.im/mjago/CW?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **[CW Documentation](http://mjago.github.io/CW/)**
 
 ## CW
