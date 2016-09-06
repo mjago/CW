@@ -35,6 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest',  '>= 5.8.4'
   spec.add_development_dependency 'simplecov', '>= 0.12.0'
   spec.add_development_dependency 'yard', '~> 0.9.5'
-  spec.add_development_dependency 'sequel', '~> 4.3.8'
+  spec.add_development_dependency 'sequel', '~> 4.38.0'
   spec.add_development_dependency 'sqlite3',  '~> 1.3.11'
 end
