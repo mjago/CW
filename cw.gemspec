@@ -27,13 +27,14 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'sanitize', '~> 4.2.0'
   spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0.8'
-#  spec.add_runtime_dependency 'coreaudio', '~> 0.0.11'
   spec.add_dependency         'os', '~> 0.9.6'
+
+  spec.add_runtime_dependency 'coreaudio', '~> 0.0.11'
 
   spec.add_development_dependency 'version', '>= 1.0.0'
   spec.add_development_dependency 'minitest',  '>= 5.8.4'
   spec.add_development_dependency 'simplecov', '>= 0.12.0'
   spec.add_development_dependency 'yard', '~> 0.9.5'
-  spec.add_development_dependency 'sequel'
-  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'sequel', '~> 4.3.8'
+  spec.add_development_dependency 'sqlite3',  '~> 1.3.11'
 end
