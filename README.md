@@ -1,3 +1,4 @@
+[![Gitter](https://badges.gitter.im/mjago/Lobby.svg)](https://gitter.im/mjago/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Gem Version](https://badge.fury.io/rb/cw.svg)](https://badge.fury.io/rb/cw)
 [![Build Status](https://travis-ci.org/mjago/CW.svg?branch=master)](https://travis-ci.org/mjago/CW)
 [![Code Climate](https://codeclimate.com/github/mjago/CW/badges/gpa.svg)](https://codeclimate.com/github/mjago/CW)
@@ -5,16 +6,23 @@
 
 # Documentation:
 
+[![Join the chat at https://gitter.im/mjago/CW](https://badges.gitter.im/mjago/CW.svg)](https://gitter.im/mjago/CW?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **[CW Documentation](http://mjago.github.io/CW/)**
 
 ## CW
 
 **CW** is a program for learning and practicing Morse Code (CW). It is written in the form of a [DSL](https://en.wikipedia.org/wiki/Domain-specific_language/) in the [Ruby](https://www.ruby-lang.org/en/downloads/) language.
 
-**CW** can read _books_ (and remember where you are), _rss feeds_ (your daily quotation for instance), common _phrases_, _QSO_ codes etc, in
-addition to generating random words, letters, and numbers that possibly match some required pattern (i.e. words_beginning_with 'v').
+**CW** can read _books_ (and remember where you are), _rss feeds_
+(your daily quotation for instance), common _phrases_, _QSO_ codes
+etc, in addition to generating random words, letters, and numbers that
+possibly match some required pattern (i.e. words_beginning_with 'v').
 
-**CW** also allows for real-time progress marking by indicating correct and incorrect characters and words copied in real-time. A follow mode also exists which prints the output just after it has played it (for `in head' practice).
+**CW** also allows for real-time progress marking by indicating
+  correct and incorrect characters and words copied in real-time. A
+  follow mode also exists which prints the output just after it has
+  played it (for `in head' practice).
 
 **CW** is thoroughly [documented](http://mjago.github.io/CW/), and includes a [hands-on tutorial](http://martynjago.co.uk/CW/mydoc_learning_the_alphabet/).
 
@@ -28,7 +36,7 @@ cw example.rb
 ### Note:
 
  - Requires Ruby 2+
- - Tested on OS X, and Linux.
+ - Tested on OS X, and Linux. A Vagrantfile is available in the root directory.
 
 # Example CW Script
 
