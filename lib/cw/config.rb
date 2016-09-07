@@ -18,16 +18,25 @@ module CWG
 
     def self.config
       unless @config
-        @config = ParseConfig.new(CONFIG_FILENAME)
+        @config = ParseConfig.new(CONFIG_PATH)
         CONFIG_METHODS.each do |method|
           unless @config[method.to_s]
             @config.add method.to_s, nil
           end
         end
+        self.user_config
+        @config.params["wpm"] = 50 if(ENV["CW_ENV"] == "test")
+        @config.params["effective_wpm"] = 50 if(ENV["CW_ENV"] == "test")
       end
-      @config.params["wpm"] = 50 if(ENV["CW_ENV"] == "test")
-      @config.params["effective_wpm"] = 50 if(ENV["CW_ENV"] == "test")
       @config
+    end
+
+    def self.user_config
+      user_cfg = File.join(WORK_DIR, CONFIG_FILENAME)
+      if File.exist? user_cfg
+        temp = ParseConfig.new(user_cfg);
+        @config.params = @config.params.merge(temp.params)
+      end
     end
 
     def self.reset

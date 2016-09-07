@@ -37,6 +37,7 @@ require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/common_words'
 require_relative 'cw/callsign'
+
 #require_relative 'cw/read.rb'
 
 def cw &block

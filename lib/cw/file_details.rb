@@ -3,13 +3,14 @@
 module CWG
 
   module FileDetails
-    HERE  = File.dirname(__FILE__)
-    ROOT  = File.expand_path File.join(HERE,'..','..')
-    DATA  = File.join(ROOT,'data')
-    AUDIO = File.join(ROOT,'audio')
-    TEXT  = File.join(DATA,'text')
-    CODE  = File.join(DATA,'code')
-    CALLS = File.join(DATA,'callsign')
+    HERE     = File.dirname(__FILE__)
+    ROOT     = File.expand_path File.join(HERE,'..','..')
+    DATA     = File.join(ROOT,'data')
+    AUDIO    = File.join(ROOT,'audio')
+    TEXT     = File.join(DATA,'text')
+    CODE     = File.join(DATA,'code')
+    CALLS    = File.join(DATA,'callsign')
+    WORK_DIR = Dir.pwd
 
     ENGLISH_DICT     = File.join TEXT, "english.txt"
     ABBREVIATIONS    = File.join TEXT, "abbreviations.txt"
@@ -18,7 +19,9 @@ module CWG
     DASH_FILENAME    = File.join AUDIO, "dash.wav"
     SPACE_FILENAME   = File.join AUDIO, "space.wav"
     E_SPACE_FILENAME = File.join AUDIO, "e_space.wav"
-    CONFIG_FILENAME  = File.join ROOT, ".cw_config"
+    CONFIG_FILENAME  = ".cw_config"
+    CONFIG_PATH      = File.join ROOT, CONFIG_FILENAME
+    USER_CONFIG_PATH = File.join WORK_DIR, CONFIG_FILENAME
     CODE_FILENAME    = File.join CODE, "code.yaml"
     CALLS_FILENAME   = File.join CALLS, "callsign.yaml"
 
