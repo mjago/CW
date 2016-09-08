@@ -8,21 +8,25 @@ module CWG
 
     include FileDetails
 
-    def initialize
-      book_directory
-      book_name
-    end
+    BOOK_NAME = "book.txt"
+    BOOK_DIR = TEXT
 
     def book_name
-      Cfg.config["book_name"]
+      @book_name ||=
+        Cfg.config["book_name"] ?
+          Cfg.config["book_name"] :
+          BOOK_NAME
     end
 
-    def book_directory
-      File.join ROOT, Cfg.config["book_dir"]
+    def book_dir
+      @book_dir ||=
+        Cfg.config["book_dir"] ?
+          File.join(WORK_DIR, Cfg.config["book_dir"]) :
+          BOOK_DIR
     end
 
     def book_location
-      File.expand_path(book_name, book_directory)
+      File.expand_path(book_name, book_dir)
     end
 
     def arguments args

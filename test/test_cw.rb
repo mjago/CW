@@ -416,10 +416,10 @@ Ending:     x
     assert @cw.instance_variable_get('@cl').cl_noise.include?('-B 1000 '), 'noise B param invalid'
   end
 
-  def test_set_default_filename
-    assert @cw.instance_variable_get('@cl').cl_audio_filename.
-      include?('audio_output'), 'default audio output filename invalid'
-  end
+#  def test_set_default_filename
+#    assert @cw.instance_variable_get('@cl').cl_audio_filename.
+#      include?('audio_output'), 'default audio output filename invalid'
+#  end
 
   def test_set_audio_filename_to_given_name
     @cw.audio_filename('some name')
@@ -457,14 +457,14 @@ Ending:     x
       include?( '-x "some custom command"'), 'custom command invalid'
   end
 
-  def test_cl_echo_returns_correct_string
-    str = ''
-    CW.new do
-      str = @cl.cl_echo('some words')
-      no_run
-    end
-    assert str.include?('some words')
-  end
+#  def test_cl_echo_returns_correct_string
+#    str = ''
+#    CW.new do
+#      str = @cl.cl_echo('some words')
+#      no_run
+#    end
+#    assert str.include?('some words')
+#  end
 
   def test_words_exist
     temp = nil
