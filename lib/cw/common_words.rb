@@ -8,8 +8,31 @@ module CWG
       @words = []
     end
 
+    def custom_dict_dir
+      File.join(WORK_DIR, Cfg.config["dictionary_dir"])
+    end
+
+    def dictionary_dir
+      @dictionary_dir ||=
+        Cfg.config["dictionary_dir"] ?
+          custom_dict_dir :
+          DICT_DIR
+    end
+
+    def dict_filename
+      @dict_filename ||=
+        Cfg.config["dictionary_name"] ?
+          Cfg.config["dictionary_name"] :
+          DICT_FILENAME
+    end
+
+    def dictionary
+      @dictionary ||=
+        File.join(dictionary_dir, dict_filename)
+    end
+
     def all
-      File.foreach(ENGLISH_DICT).collect do |line|
+      File.foreach(dictionary).collect do |line|
       line.chomp
       end
     end
@@ -17,7 +40,7 @@ module CWG
     def low last
       results = []
       count = 0
-      File.foreach(ENGLISH_DICT).collect do |line|
+      File.foreach(dictionary).collect do |line|
         if count <= last
           results << line.chomp
         end
@@ -30,7 +53,7 @@ module CWG
     def mid first, last
       results = []
       count = 0
-      File.foreach(ENGLISH_DICT).collect do |line|
+      File.foreach(dictionary).collect do |line|
         if (count >= first) && (count <= last)
           results << line.chomp
         end

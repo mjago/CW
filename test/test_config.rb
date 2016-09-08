@@ -67,14 +67,6 @@ class TestConfig < MiniTest::Test
     assert_equal "test_letters", CWG::Cfg.config["run_default"]
   end
 
-  def test_dictionary_dir_default
-    assert_equal "data/text/", CWG::Cfg.config["dictionary_dir"]
-  end
-
-  def test_dictionary_name_default
-    assert_equal "english.txt", CWG::Cfg.config["dictionary_name"]
-  end
-
   def test_accessing_unknown_method_returns_nil
     refute CWG::Cfg.config["unknown"]
   end
