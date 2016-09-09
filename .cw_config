@@ -6,5 +6,4 @@ fail_colour    = red
 list_colour    = default
 ebook2cw_path  = /usr/bin/ebook2cw
 run_default    = test_letters
-run_default    = test_letters
 word_count     = 16
