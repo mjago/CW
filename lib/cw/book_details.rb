@@ -10,6 +10,7 @@ module CWG
 
     BOOK_NAME = "book.txt"
     BOOK_DIR = TEXT
+    USER_BOOK_DEFAULT_DIR = "books"
 
     def book_name
       @book_name ||=
@@ -18,11 +19,17 @@ module CWG
           BOOK_NAME
     end
 
+    def is_user_book_default_dir?
+      File.exists? USER_BOOK_DEFAULT_DIR
+    end
+
     def book_dir
       @book_dir ||=
         Cfg.config["book_dir"] ?
           File.join(WORK_DIR, Cfg.config["book_dir"]) :
-          BOOK_DIR
+          is_user_book_default_dir? ?
+            USER_BOOK_DEFAULT_DIR :
+            BOOK_DIR
     end
 
     def book_location
