@@ -148,6 +148,7 @@ module CWG
     def word_count(wordcount)
       Cfg.config.params["word_count"] = wordcount
       @words.count wordcount
+      Cfg.config.params["words_counted"] = true
     end
 
     def beginning_with(* letters)
@@ -247,6 +248,7 @@ module CWG
 
     def run
       return if Cfg.config["no_run"]
+      word_count(Cfg.config["word_count"])unless Cfg.config.params["words_counted"]
       self.send run_default
     end
 
