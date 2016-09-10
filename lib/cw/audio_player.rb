@@ -36,10 +36,6 @@ module CWG
       @play_filename ||= File.expand_path(Cfg.config["audio_filename"], audio_dir)
     end
 
-    def audio_dir
-      Cfg.config["audio_dir"]
-    end
-
     def temp_filename_for_ebook2cw
       File.expand_path("tempxxxx.txt", audio_dir)
     end
@@ -64,7 +60,7 @@ module CWG
     end
 
     def convert_words words
-      tone.generate words unless Cfg.config["use_ebook2cw"]
+      tone.generate words if Cfg.config["use_ebook2cw"].nil?
       convert_words_with_ebook2cw words if Cfg.config["use_ebook2cw"]
     end
 

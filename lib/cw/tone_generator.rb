@@ -23,6 +23,7 @@ module CWG
     end
 
     def generate wrds
+
       word_parts(wrds)
       #    progress.init elements.size * 3 + (wrds.size)
       create_element_methods
@@ -30,22 +31,9 @@ module CWG
       write_word_parts
     end
 
-    def user_audio_dir
-      @user_audio_dir ||=
-        unless File.exist? Cfg.config['audio_dir']
-          Dir.mkdir Cfg.config['audio_dir']
-        end
-      Cfg.config['audio_dir']
-    end
-
-    def audio_dir
-      @audio_dir ||=
-        Cfg.config['audio_dir'] ? user_audio_dir : AUDIO
-    end
-
     def play_filename
-      @play_filename ||= File.expand_path(File.join audio_dir,
-                                                    Cfg.config["audio_filename"])
+      @play_filename ||= File.expand_path(File.join(audio_dir,
+                                                    audio_filename))
     end
 
     def play

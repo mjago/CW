@@ -223,7 +223,6 @@ module CWG
       end
 #      dbg_print "millisecs #{@millisecs}"
       if @need_space
-        #        puts 'here'
         if high_avg_compare?(@millisecs - @low[START], 6.0, 10)
           @need_space = false
           if @state[BLANKING] = false
