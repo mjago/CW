@@ -27,7 +27,9 @@ module CWG
         self.user_config
         @config.params["wpm"] = 50 if(ENV["CW_ENV"] == "test")
         @config.params["effective_wpm"] = 50 if(ENV["CW_ENV"] == "test")
+#        puts " @config[wpm] = #{@config['wpm']}"
       end
+#      puts "@config = #{@config.params}"
       @config
     end
 

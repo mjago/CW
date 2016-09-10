@@ -7,7 +7,7 @@ module CWG
     WORK_DIR      = Dir.pwd
     ROOT          = File.expand_path File.join(HERE,'..','..')
     DATA          = File.join(ROOT,'data')
-    AUDIO         = File.join(WORK_DIR,'audio')
+    AUDIO_DIR     = File.join(WORK_DIR,'audio')
     TEXT          = File.join(DATA,'text')
     CODE          = File.join(DATA,'code')
     CALLS         = File.join(DATA,'callsign')
@@ -29,33 +29,28 @@ module CWG
     USER_CONFIG_PATH   = File.join WORK_DIR, CONFIG_FILENAME
 
     def init_filenames
-      @repeat_tone     = File.join(AUDIO, "rpt.mp3")
-      @r_tone          = File.join(AUDIO, "r.mp3")
+      @repeat_tone     = File.join(AUDIO_DIR, "rpt.mp3")
+      @r_tone          = File.join(AUDIO_DIR, "r.mp3")
       @text_folder     = TEXT
       @progress_file   = 'progress.txt'
     end
 
-    def create_dot_cw
-      Dir.mkdir DOT_CW_DIR
-       DOT_CW_DIR
+    def process_dot_cw
+      Dir.mkdir(DOT_CW_DIR) unless File.exists? DOT_CW_DIR
+      DOT_CW_DIR
     end
 
     def dot_cw_dir
-      @dot_cw_dir ||=
-        File.exists? DOT_CW_DIR ?
-                       DOT_CW_DIR : create_dot_cw
+      @dot_cw_dir ||= process_dot_cw
     end
 
-    def process_dot_audio_dir
-      unless(dot_cw_dir && File.exists?(DOT_AUDIO_DIR))
-        Dir.mkdir(DOT_AUDIO_DIR)
-      end
+    def process_dot_audio
+      Dir.mkdir(DOT_AUDIO_DIR) unless(dot_cw_dir && File.exists?(DOT_AUDIO_DIR))
       DOT_AUDIO_DIR
     end
 
     def dot_audio_dir
-      @dot_audio_dir ||=
-        process_dot_audio_dir
+      @dot_audio_dir ||= process_dot_audio
     end
 
     def dot_path
@@ -74,17 +69,25 @@ module CWG
       File.join dot_audio_dir, E_SPACE_FILENAME
     end
 
+    def default_audio_dir
+      Dir.mkdir(AUDIO_DIR) unless File.exists? AUDIO_DIR
+      AUDIO_DIR
+    end
+
+    def process_audio_dir
+      Cfg.config['audio_dir'] ? user_audio_dir : default_audio_dir
+    end
+
     def user_audio_dir
       @user_audio_dir ||=
-        unless File.exist? Cfg.config['audio_dir']
+        unless File.exists? Cfg.config['audio_dir']
           Dir.mkdir Cfg.config['audio_dir']
         end
       Cfg.config['audio_dir']
     end
 
     def audio_dir
-      @audio_dir ||=
-        Cfg.config['audio_dir'] ? user_audio_dir : AUDIO
+      @audio_dir ||= process_audio_dir
     end
 
     def audio_filename
