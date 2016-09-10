@@ -35,12 +35,27 @@ module CWG
       @progress_file   = 'progress.txt'
     end
 
+    def create_dot_cw
+      Dir.mkdir DOT_CW_DIR
+       DOT_CW_DIR
+    end
+
+    def dot_cw_dir
+      @dot_cw_dir ||=
+        File.exists? DOT_CW_DIR ?
+                       DOT_CW_DIR : create_dot_cw
+    end
+
+    def process_dot_audio_dir
+      unless(dot_cw_dir && File.exists?(DOT_AUDIO_DIR))
+        Dir.mkdir(DOT_AUDIO_DIR)
+      end
+      DOT_AUDIO_DIR
+    end
+
     def dot_audio_dir
       @dot_audio_dir ||=
-        unless File.exist? DOT_AUDIO_DIR
-          Dir.mkdir DOT_AUDIO_DIR
-        end
-      DOT_AUDIO_DIR
+        process_dot_audio_dir
     end
 
     def dot_path
@@ -78,16 +93,5 @@ module CWG
           Cfg.config["audio_filename"] :
           DEF_AUDIO_FILENAME
     end
-
-    def create_dot_cw
-      Dir.mkdir DOT_CW_DIR
-    end
-
-    def dot_cw_dir
-      @dot_cw_dir ||=
-        File.exists? DOT_CW_DIR ?
-                       create_dot_cw : DOT_CW_DIR
-    end
-
   end
 end
