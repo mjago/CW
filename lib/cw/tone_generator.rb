@@ -32,8 +32,7 @@ module CWG
     end
 
     def play_filename
-      @play_filename ||= File.expand_path(File.join(audio_dir,
-                                                    audio_filename))
+      @play_filename ||= File.join(audio_dir, audio_filename)
     end
 
     def play

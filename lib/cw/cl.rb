@@ -6,6 +6,8 @@ module CWG
 
   class Cl
 
+    include FileDetails
+
     def initialize
       @tone = {
         sinewave: 0,
@@ -63,11 +65,11 @@ module CWG
 
     def cl_noise
       Cfg.config["noise"] ?
-        "-N 5 -B 1000 " : ''
+        "-N 10 -B 800 " : ''
     end
 
     def cl_audio_filename
-      "-o \"#{File.expand_path(Cfg.config["audio_filename"], Cfg.config["audio_dir"])}\" "
+      "-o \"#{File.join(audio_dir, audio_filename)}\" "
     end
 
     def coarse_quality(quality)

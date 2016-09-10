@@ -7,6 +7,7 @@ module CWG
 
   class AudioPlayer
 
+    include FileDetails
     include CWG::OStest
 
     def tone
@@ -33,7 +34,9 @@ module CWG
     end
 
     def play_filename_for_ebook2cw
-      @play_filename ||= File.expand_path(Cfg.config["audio_filename"], audio_dir)
+      @play_filename ||= File.join(audio_dir, audio_filename)
+      puts "@play_filename = #{@play_filename}"
+      @play_filename
     end
 
     def temp_filename_for_ebook2cw
@@ -51,7 +54,6 @@ module CWG
       File.rename(play_filename_for_ebook2cw + '0000.mp3', play_filename_for_ebook2cw)
     end
 
-    #FIXME dry_run
     def convert_words_with_ebook2cw words
       words = words.delete("\n")
       cl = Cl.new.cl_echo(words)
@@ -69,7 +71,6 @@ module CWG
       tone.play_filename
     end
 
-    #FIXME dry_run
     def play
       cmd = play_command + ' ' + play_filename
       @pid = ! @dry_run ? Process.spawn(cmd) : cmd
