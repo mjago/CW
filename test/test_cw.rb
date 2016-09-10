@@ -408,12 +408,12 @@ Ending:     x
 
   def test_set_N_param_in_noise_mode
     @cw.noise
-    assert @cw.instance_variable_get('@cl').cl_noise.include?('-N 5 '), 'noise N param invalid'
+    assert @cw.instance_variable_get('@cl').cl_noise.include?('-N 10 '), 'noise N param invalid'
   end
 
   def test_set_B_param_in_noise_mode
     @cw.noise
-    assert @cw.instance_variable_get('@cl').cl_noise.include?('-B 1000 '), 'noise B param invalid'
+    assert @cw.instance_variable_get('@cl').cl_noise.include?('-B 800 '), 'noise B param invalid'
   end
 
 #  def test_set_default_filename
