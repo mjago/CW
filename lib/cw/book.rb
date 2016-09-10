@@ -43,10 +43,6 @@ module CWG
       sentence.check_sentence_navigation chr
     end
 
-    def progress_file
-      File.expand_path(@progress_file, @text_folder)
-    end
-
     def get_book_progress
       sentence.read_progress progress_file
       @current_sentence_index = sentence.index

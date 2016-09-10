@@ -22,6 +22,7 @@ module CWG
     DASH_FILENAME      = "dash.wav"
     SPACE_FILENAME     = "space.wav"
     E_SPACE_FILENAME   = "e_space.wav"
+    BOOKMARK_FILE      = "bookmark.txt"
     DICT_DIR           = TEXT
     ABBREVIATIONS      = File.join TEXT, "abbreviations.txt"
     Q_CODES            = File.join TEXT, "q_codes.txt"
@@ -31,8 +32,6 @@ module CWG
     def init_filenames
       @repeat_tone     = File.join(AUDIO_DIR, "rpt.mp3")
       @r_tone          = File.join(AUDIO_DIR, "r.mp3")
-      @text_folder     = TEXT
-      @progress_file   = 'progress.txt'
     end
 
     def process_dot_cw
@@ -96,5 +95,10 @@ module CWG
           Cfg.config["audio_filename"] :
           DEF_AUDIO_FILENAME
     end
+
+    def progress_file
+      File.join(dot_cw_dir, BOOKMARK_FILE)
+    end
+
   end
 end

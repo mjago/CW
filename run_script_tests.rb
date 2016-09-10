@@ -8,7 +8,7 @@ class RunScriptTests
   NO_RSS_FEED = DEBUG ? true : false
   PATH_TO_CW_SCRIPTS = '/Users/martyn/jekyll/documentation-theme-jekyll/cw_scripts'
   ROOT = '/Users/martyn/cw/cw_clone'
-  PROGRESS_FILE = "data/text/progress.txt"
+  PROGRESS_FILE = ".cw/bookmark.txt"
   DB = Sequel.sqlite(File.join(ROOT, 'test.sqlite'))  unless(TEST_ON_MEMORY_DATABASE)
   DB = Sequel.sqlite if(TEST_ON_MEMORY_DATABASE)
 
