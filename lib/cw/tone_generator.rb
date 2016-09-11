@@ -106,7 +106,6 @@ module CWG
 
     def create_element_methods
       elements.each do |ele|
-        #      progress.increment
         create_element_method ele
       end
     end
@@ -118,7 +117,6 @@ module CWG
 
     def compile_fundamentals
       elements.each do |ele|
-        #      progress.increment
         audio_samples = generate_samples ele
         buffer = generate_buffer(audio_samples, ele)
         write_element_audio_file ele, buffer
@@ -155,11 +153,9 @@ module CWG
       @word_parts
     end
 
-
     def make_word_parts
       parts = []
       @word_parts.each do |part|
-        #      progress.increment
         parts += send_char part.downcase
       end
       parts
@@ -168,7 +164,6 @@ module CWG
     def prepare_buffers
       @buffers = {}
       elements.each do |ele|
-        #      progress.increment
         @buffers[ele] = []
         WaveFile::Reader.new(data[ele][:filename]).
           each_buffer(data[ele][:spb]) do |buffer|
@@ -202,7 +197,6 @@ module CWG
                   :pcm_16,
                   @sample_rate)) do |writer|
         yield.each do |char|
-          #        progress.increment
           char.each do |fta|
             writer.write(@buffers[fta[:name]])
           end
