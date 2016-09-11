@@ -564,14 +564,14 @@ window.location.href = uri;
 
     
 
-  <p>The <strong>book_dir</strong> command is used to set the path to the
-directory containing the book when book reading or
-book converting.</p>
+  <p>The <strong>book_dir</strong> command is used to set the path to the directory
+containing the book when book reading or book converting. The book
+directory should be relative to the working directory.</p>
 
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"cw"</span>
 
 <span class="n">cw</span> <span class="k">do</span>
-  <span class="n">book_dir</span> <span class="s2">"~/books"</span>
+  <span class="n">book_dir</span> <span class="s2">"books"</span>
   <span class="n">book_name</span> <span class="s2">"book_to_read.txt"</span>
   <span class="n">wpm</span> <span class="mi">18</span>
   <span class="n">ewpm</span> <span class="mi">12</span>
@@ -587,7 +587,7 @@ configuration file to set its value globally to all tests.</p>
 
 wpm            = 18
 book_name      = book_to_read.txt
-book_dir       = ./books
+book_dir       = books
 play_command   = /usr/bin/afplay
 success_colour = green
 fail_colour    = orange
@@ -1178,7 +1178,7 @@ list_colour    = cyan
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 <a href="http://martynjago.co.uk" target="_blank">Martyn Jago</a>. All rights reserved. <br />
-<p>Page last updated:</span> July 26, 2016<br/> Site last generated: Sep 9, 2016 <br />
+<p>Page last updated:</span> September 11, 2016<br/> Site last generated: Sep 11, 2016 <br />
 <p><img src="/CW/images/key.jpg" alt="key.jpg" style="width: 150px;" /></p>
                 </div>
             </div>
