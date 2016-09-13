@@ -32,13 +32,17 @@ require_relative 'cw/test_letters'
 require_relative 'cw/repeat_word'
 require_relative 'cw/reveal'
 require_relative 'cw/book'
-#require_relative 'cw/tx'
 require_relative 'cw/tone_generator'
 require_relative 'cw/progress'
 require_relative 'cw/common_words'
 require_relative 'cw/callsign'
-
 #require_relative 'cw/read.rb'
+
+require 'rbconfig'
+
+if RbConfig::CONFIG['target_os'].include?('darwin')
+  require_relative 'cw/tx'
+end
 
 def cw &block
   CW.new do

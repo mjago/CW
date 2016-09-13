@@ -143,8 +143,8 @@ module CWG
     end
 
     def filter_maybe(size, count)
-      @max_amplitude = 1.0
-      ramp = 0.05
+      @max_amplitude = 1
+      ramp = 1
       ramp_point =  @max_amplitude / ramp
       ampl = (count < ramp_point) ? (ramp * count) : @max_amplitude
       (count > (size - ramp_point)) ? (ramp * (size - count)) : ampl
@@ -153,40 +153,105 @@ module CWG
     include ToneHelpers
 
     def generate_tone(number_of_samples)
-      @sample_rate = 44100
-      @frequency = 440
-      w = (@frequency * TWO_PI) / @sample_rate
+    @sample_rate = 44100
+    @frequency = 1000
+    @w = (@frequency * TWO_PI) / @sample_rate
       ary = []
-      number_of_samples.times do |sample_number|
+      number_of_samples.round.times do |sample_number|
         amplitude = filter_maybe(number_of_samples, sample_number)
-        sine_radians = w * sample_number
+        sine_radians = @w * sample_number
         temp = (amplitude * Math.sin(sine_radians) * 0x7FFF).round
-        puts temp
+#        puts temp
         ary << temp
+      end
+      ary
+    end
+
+    def generate_silence(number_of_samples)
+      ary = []
+      number_of_samples.round.times do |sample_number|
+        ary << 0.0
       end
       ary
     end
 
     def play_tone
       dev = CoreAudio.default_output_device
-      buf = dev.output_buffer(1024)
+      buf = dev.output_buffer(8192)
       #      phase = Math::PI * 2.0 * 440.0 / dev.nominal_rate
       th = Thread.start do
         #        i = 0
         #        loop do
-        wav = NArray.sint(1024)
-        buf << generate_tone(20000)
-        buf << generate_tone(10000)
-        buf << generate_tone(20000)
-        buf << generate_tone(20000)
-        buf << generate_tone(10000)
-        buf << generate_tone(20000)
-        buf << generate_tone(20000)
-        buf << generate_tone(10000)
-        buf << generate_tone(20000)
+        #        wav = NArray.sint(1024)
+        wpm = 3.5
+        17.times do
+          wpm -= 0.2
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm * 3)
+
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm * 3)
+
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm * 3)
+
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm * 3)
+
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm * 3)
+
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm * 3)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm * 3)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm)
+          buf << generate_tone(1024 * wpm)
+          buf<< generate_silence(1024 * wpm * 3)
+        end
       end
       buf.start
-      sleep 6
+      th.join
+#      sleep 6
       buf.stop
       puts "#{buf.dropped_frame} frame dropped."
       th.kill.join
