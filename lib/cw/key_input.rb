@@ -17,25 +17,32 @@ module CWG
       begin
         system("stty raw -echo")
         @chr = STDIN.getc
+        @chr = @chr.downcase unless(@chr.include? 'Q')
+        #        puts "@chr = #{@chr}"
+        @chr
       ensure
         system("stty raw -echo")
       end
     end
 
-    def is_letter?
-      @chr >= 'a' && @chr <= 'z'
+    def is_letter? char = nil
+      char = char ? char : @chr
+      char >= 'a' && char <= 'z'
     end
 
-    def is_number?
-      @chr >= '0' && @chr <= '9'
+    def is_number? char = nil
+      char = char ? char : @chr
+      char >= '0' && char <= '9'
     end
 
-    def is_punctuation?
-      [' ', ',', '.', '=', '?'].detect{|letr| letr == @chr}
+    def is_punctuation? char = nil
+      char = char ? char : @chr
+      [' ', ',', '.', '=', '?','/','+'].detect{|letr| letr == char}
     end
 
-    def is_relevant_char?
-      is_letter? || is_number? || is_punctuation? ? true : false
+    def is_relevant_char? char = nil
+      char = char ? char : @chr
+      is_letter?(char) || is_number?(char) || is_punctuation?(char) ? true : false
     end
 
     def reset_stdin

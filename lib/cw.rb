@@ -41,6 +41,7 @@ require_relative 'cw/callsign'
 require 'rbconfig'
 
 if RbConfig::CONFIG['target_os'].include?('darwin')
+  require_relative 'cw/coreaudio'
   require_relative 'cw/tx'
 end
 
