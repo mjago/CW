@@ -17,7 +17,7 @@ module CWG
       begin
         system("stty raw -echo")
         @chr = STDIN.getc
-        @chr = @chr.downcase unless(@chr.include? 'Q')
+#        @chr = @chr.downcase unless(@chr.include? 'Q')
         #        puts "@chr = #{@chr}"
         @chr
       ensure

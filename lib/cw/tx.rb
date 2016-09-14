@@ -16,23 +16,8 @@ module CWG
       @sample_rate = 2400
       @print = Print.new
       @words = []
+      @recording = []
     end
-
-    def data
-      { :dot => {:name => :dot,
-                 :filename => dot_path,
-                 :spb => (@sample_rate * 1.2 / @wpm).to_i },
-        :dash  => {:name => :dash,
-                   :filename => dash_path,
-                   :spb => (@sample_rate * 3.6 / @wpm).to_i },
-        :space => {:name => :space,
-                   :filename   => space_path,
-                   :spb => (@sample_rate * 1.2 / @wpm).to_i },
-        :e_space => {:name => :e_space,
-                     :filename => e_space_path,
-                     :spb => (@sample_rate * 1.2 / @effective_wpm).to_i }}
-    end
-
 
     def core_audio
       @core_audio ||= Coreaudio.new
@@ -117,46 +102,76 @@ module CWG
       end
     end
 
+    def receive_mode
+      STDOUT.puts "Receive Mode:\r"
+      loop do
+        char = key_input.read
+        case char
+        when '#'
+          puts "\n\rTransmit Mode:\n\r"
+          return
+        when '|'
+          capture
+        when '\\'
+          info
+        when '>'
+          return '>'
+        when 'Q'
+          puts "Quitting..."
+          quit!
+        else
+          if @recording.include? ' '
+            @recording = [char]
+          else
+            @recording << char
+          end
+
+          STDOUT.print char
+        end
+        sleep 0.001
+      end
+    end
+
     def capture
       puts "\n\r"
-      puts "\rCapture [C]allsign,"
+      puts "\r Menu:  [C]allsign,"
       puts "\r        [N]ame,"
       puts "\r        [L]ocation,"
       puts "\r        [R]st,"
       puts "\r        [T]emperature,"
       puts "\r        [S]tore,"
       puts "\r        [I]nfo,"
+      puts "\r        [W]PM,"
       puts "\r        [Q]uit capture!"
-      puts "\rEnter letter followed by SPACE"
-      temp = []
+      puts "\r        Use capital to capture"
+      puts "\r"
+
       loop do
         char = key_input.read
-        if key_input.is_letter?(char)
-          STDOUT.print char
-          temp << char
-          case char
-          when 'c'
-            return capture_their :callsign
-          when 'n'
-            return capture_their :name
-          when 'l'
-            return capture_their :qth
-          when 'r'
-            return capture_their :rst
-          when 't'
-            return capture_their :temperature
-          when 'i'
-            return info
-          when 's'
-            return store
-          when 'q'
-            puts "\rCancelled!"
-            return
-          else
-            puts "\nInvalid letter - try again!"
-          end
-          sleep 0.001
+        STDOUT.print char
+        upcase = /[[:upper:]]/.match(char)
+        case char.downcase
+        when 'c'
+          return capture_attribute :callsign, upcase
+        when 'n'
+          return capture_attribute :name, upcase
+        when 'l'
+          return capture_attribute :qth, upcase
+        when 'r'
+          return capture_attribute :rst, upcase
+        when 't'
+          return capture_attribute :temperature, upcase
+        when 'i'
+          return info
+        when 's'
+          return store
+        when 'q'
+          puts "\rCancelled!"
+          return
+        else
+          puts "\nInvalid letter - try again!"
         end
+        sleep 0.001
       end
     end
 
@@ -172,25 +187,29 @@ module CWG
       puts "\r"
     end
 
-    def capture_their(attr)
+    def capture_attribute(attr, use_recording = false)
       puts "\n\r"
       puts "Enter their #{attr.to_s} followed by SPACE"
-      temp = []
+      temp = use_recording ? @recording : []
+      STDOUT.print temp.join('').delete(' ') if @recording
+      @recording = []
       loop do
         char = key_input.read
         if key_input.is_relevant_char?(char)
-          STDOUT.print char
           temp << char
-          if char == ' '
-            @their_callsign = temp.join('') if :callsign == attr
-            @their_name = temp.join('') if :name == attr
-            @their_rst = temp.join('') if :rst == attr
-            @their_qth = temp.join('') if :qth == attr
-            @temperature = temp.join('') if :temperature == attr
+          STDOUT.print char
+          if ' ' == char
+            temp << char
+            clip = temp.join('').delete(' ')
+            @their_callsign = clip if :callsign == attr
+            @their_name  = clip if :name == attr
+            @their_rst   = clip if :rst == attr
+            @their_qth   = clip if :qth == attr
+            @temperature = clip if :temperature == attr
             puts "\n\n\rTheir #{attr.to_s}: #{@their_callsign.upcase}\n\n\r" if :callsign == attr
             unless :callsign == attr
               puts "\n\n\rTemp: #{@temperature}°C\n\n\r" if :temperature == attr
-              puts "\n\n\rTheir #{attr.to_s}: #{temp.join('')}\n\n\r" unless :temperature == attr
+              puts "\n\n\rTheir #{attr.to_s}: #{clip}\n\n\r" unless :temperature == attr
             end
             return
           end
@@ -275,7 +294,7 @@ module CWG
       now = Time.now.utc
       time = now.strftime("%H:%M:%S Z")
       date = now.strftime("%d/%m/%y")
-      puts "\r--------------------------------\r"
+      puts "\r----------------------------\r"
       puts "Time:       #{time}\r"
       puts "Date:       #{date}\r"
       puts "Temp:       #{@temperature}°C\r"
@@ -285,25 +304,33 @@ module CWG
       puts "Their Name: #{@their_name}\r"
       puts "Their RST:  #{@their_rst}\r"
       puts "Their qth:  #{@their_qth}\r"
-      puts "\r--------------------------------\r"
+      puts "\r----------------------------\r"
       puts "\n\r"
     end
 
     def build_word_maybe
       @input_word ||= ''
       case @char
+      when '#'
+        if '>' == receive_mode
+          return_with_k
+        end
       when '.'
         stop
+      when 'F'
+        @wpm += 1
+        @effective_wpm = @wpm
+      when 'S'
+        @wpm -= 1
+        @effective_wpm = @wpm
       when '='
         morsify '= '
       when ','
         morsify ', '
       when '\\'
-        capture
+        info
       when '|'
         capture
-      when '/'
-        info
       when '?'
         morsify '? '
       when '@'
@@ -337,26 +364,13 @@ module CWG
       when 'Q'
         puts "Quitting..."
         quit!
-      #      when true == key_input.is_relevant_char?(@char)
-      #        @words << @char
       else
         if key_input.is_relevant_char?(@char)
           @words << @char
         end
       end
-      #true # is_relevant_char? @char
       @char = ''
-      #        p "@words"
-      # move_word_to_process if is_relevant_char?
-      #        @words.add @input_word.shift
-      #        @input_word = ''
     end
-
-    #    play_words_exit unless Cfg.config["print_letters"]
-    #    play.play_words_until_quit
-    #    print "\n\rplay has quit " if @debug
-    #    Cfg.config.params["exit"] = true
-    #  end
 
     def print_words_until_quit
       #      sync_with_audio_player
@@ -388,7 +402,6 @@ module CWG
     end
 
     def print_words_thread
-      #      puts 'here2'
       print_words_until_quit
       print "\n\rprint has quit " if @debug
       Cfg.config.params["exit"] = true
@@ -400,14 +413,6 @@ module CWG
         :tx_words_thread,
         #        :print_words_thread
       ]
-    end
-
-    def compile_fundamentals
-      elements.each do |ele|
-        #        generate_samples ele
-        #        buffer = generate_buffer(audio_samples, ele)
-        #        write_element_audio_file ele, buffer
-      end
     end
 
     def word_composite word
@@ -460,10 +465,10 @@ module CWG
         temp.each do |letr|
           letr.each do |ele|
             if (:space == ele[:name]) || (:e_space == ele[:name])
-              core_audio.generate_silence(data[
+              core_audio.generate_silence(tone.data[
                                             ele[:name]][:spb] * 20)
             else
-              core_audio.generate_tone( data[
+              core_audio.generate_tone( tone.data[
                                           ele[:name]][:spb] * 20)
             end
           end
@@ -484,7 +489,7 @@ module CWG
     end
 
     def create_element_method ele
-      define_singleton_method(ele) {data[ele]}
+      define_singleton_method(ele) {tone.data[ele]}
     end
 
     def create_element_methods
