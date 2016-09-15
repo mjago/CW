@@ -142,6 +142,8 @@ module CWG
         enc = word_space
       else
         enc = cw_encoding.fetch(c).map { |e| send(e)}
+#              puts 'here'
+
       end
       push_enc enc
     end
