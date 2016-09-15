@@ -11,9 +11,9 @@ module CWG
       :book_name,:book_dir,:play_command,:size,:run_default,:word_spacing,
       :command_line,:author,:title,:quality,:ebook2cw_path,:noise,:tone,
       :word_count,:volume,:list_colour,:success_colour,:fail_colour,
-      :no_run,:run,:print_letters,:no_print,:use_ebook2cw,
-      :dictionary,:containing,:begin,:end,:including,:word_filename,:max,:min,
-      :exit, :quit
+      :tx_colour,:rx_colour,:menu_colour,:no_run,:run,:print_letters,:no_print,
+      :use_ebook2cw,:dictionary,:containing,:begin,:end,:including,
+      :word_filename,:max,:min,:exit, :quit
     ]
 
     def self.config

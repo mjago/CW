@@ -17,34 +17,13 @@ module CWG
       @print = Print.new
       @words = []
       @recording = []
+      print.rx "\n"
+      print.tx "\n"
+      print.menu "\n"
     end
 
     def core_audio
       @core_audio ||= Coreaudio.new
-    end
-
-    def process_input_word_maybe
-      if @word_to_process
-        puts "@process_input_word = #{@process_input_word}"
-        play.audio.convert_words(@process_input_word)
-        play.audio.play
-        #        stream.match_first_active_element @process_input_word # .strip
-        @process_input_word = @word_to_process = nil
-      end
-    end
-
-    def process_letter letr
-      letr.downcase!
-      sleep_char_delay letr
-    end
-
-    def print_marked_maybe
-      @popped = stream.pop_next_marked
-      print.char_result(@popped) if(@popped && ! print.print_letters?)
-    end
-
-    def audio
-      @audio ||= AudioPlayer.new
     end
 
     def add_space words
@@ -53,62 +32,43 @@ module CWG
       str
     end
 
-    def play_words_thread
-      @words = []
-      ary = []
-      loop do
-        unless(@words == [])
-          temp = @words.split('')
-          @words = []
-          temp.each do |i|
-            ary << i
-          end
-        end
-        unless ary == []
-          substr = ''
-          if ary.include?(' ')
-            idx = ary.index(' ')
-            0.upto(idx - 1) do
-              temp = ary.shift
-              $stdout.print temp
-              substr << temp
-            end
-            ary.shift
-            $stdout.print(' ')
-            audio.convert_words(substr)
-            audio.play
-          end
-        end
-      end
-      exit
-    end
-
     def monitor_keys
+      @char = '#'
+      process_letter
+
       loop do
         @char = key_input.read
-        #        puts "@char = #{@char}"
         break if quit_key_input?
         break if quit?
         break if exit?
         check_sentence_navigation(@char) if self.class == Book
-        check_clear
-        build_word_maybe
+        check_clear @char
+        process_letter
       end
     end
 
-    def check_clear
-      if @char == "\e"
+    def check_clear char
+      if char == "\e"
         @words = []
       end
     end
 
+    def print_mode(mode)
+      msg = "\n\r" + (mode == :rx ?
+                        "Receive Mode:" :
+                        "Transmit Mode:") + "\n\r"
+      print.tx msg if :tx == mode
+      print.rx msg if :rx == mode
+    end
+
     def receive_mode
-      STDOUT.puts "Receive Mode:\r"
+      print_mode :rx
       loop do
         char = key_input.read
+        check_clear char
         case char
         when '#'
-          puts "\n\rTransmit Mode:\n\r"
+          print_mode :tx
           return
         when '|'
           capture
@@ -116,17 +76,21 @@ module CWG
           info
         when '>'
           return '>'
+        when "\n"
+          puts "\n"
+        when "\r"
+          puts "\r"
         when 'Q'
           puts "Quitting..."
           quit!
         else
-          if @recording.include? ' '
+          if(@recording.include? ' ')
             @recording = [char]
           else
             @recording << char
           end
 
-          STDOUT.print char
+          print.rx char
         end
         sleep 0.001
       end
@@ -134,21 +98,17 @@ module CWG
 
     def capture
       puts "\n\r"
-      puts "\r Menu:  [C]allsign,"
-      puts "\r        [N]ame,"
-      puts "\r        [L]ocation,"
-      puts "\r        [R]st,"
-      puts "\r        [T]emperature,"
-      puts "\r        [S]tore,"
-      puts "\r        [I]nfo,"
-      puts "\r        [W]PM,"
-      puts "\r        [Q]uit capture!"
-      puts "\r        Use capital to capture"
+      puts "\r Menu: [C]allsign,    [N]ame, "
+      puts "\r       [L]ocation,    [R]st,  "
+      puts "\r       [T]emperature, [S]tore,"
+      puts "\r       [I]nfo,        [W]PM,  "
+      puts "\r       [Q]uit capture!"
       puts "\r"
+      puts "\r        Use CAPITAL to capture"
 
       loop do
         char = key_input.read
-        STDOUT.print char
+#        print.menu char
         upcase = /[[:upper:]]/.match(char)
         case char.downcase
         when 'c'
@@ -169,7 +129,7 @@ module CWG
           puts "\rCancelled!"
           return
         else
-          puts "\nInvalid letter - try again!"
+          puts "\nInvalid letter(#{char}) - try again!"
         end
         sleep 0.001
       end
@@ -187,36 +147,44 @@ module CWG
       puts "\r"
     end
 
-    def capture_attribute(attr, use_recording = false)
+    def capture_attribute(attr_type, use_recording = false)
       puts "\n\r"
-      puts "Enter their #{attr.to_s} followed by SPACE"
+      puts "Enter their #{attr_type.to_s} followed by SPACE" unless use_recording
       temp = use_recording ? @recording : []
-      STDOUT.print temp.join('').delete(' ') if @recording
+      print.menu temp.join('').delete(' ') if(@recording && ! use_recording)
       @recording = []
+      if use_recording
+        write_attribute temp, attr_type
+        return
+      end
       loop do
         char = key_input.read
         if key_input.is_relevant_char?(char)
           temp << char
-          STDOUT.print char
+          print.menu char unless use_recording
           if ' ' == char
             temp << char
-            clip = temp.join('').delete(' ')
-            @their_callsign = clip if :callsign == attr
-            @their_name  = clip if :name == attr
-            @their_rst   = clip if :rst == attr
-            @their_qth   = clip if :qth == attr
-            @temperature = clip if :temperature == attr
-            puts "\n\n\rTheir #{attr.to_s}: #{@their_callsign.upcase}\n\n\r" if :callsign == attr
-            unless :callsign == attr
-              puts "\n\n\rTemp: #{@temperature}°C\n\n\r" if :temperature == attr
-              puts "\n\n\rTheir #{attr.to_s}: #{clip}\n\n\r" unless :temperature == attr
-            end
+            write_attribute temp, attr_type
             return
           end
         elsif char == 'Q'
           puts "\n\n\rCancelled!\n\n\r"
           return
         end
+      end
+    end
+
+    def write_attribute attr, type
+      clip = attr.join('').delete(' ')
+      @their_callsign = clip if :callsign == type
+      @their_name  = clip    if :name == type
+      @their_rst   = clip    if :rst == type
+      @their_qth   = clip    if :qth == type
+      @temperature = clip    if :temperature == type
+      puts "\n\n\r#{type.to_s}: #{@their_callsign.upcase}\n\n\r" if :callsign == type
+      unless :callsign == type
+        puts "\n\n\rAttr: #{@temperature}°C\n\n\r" if :temperature == type
+        puts "\n\n\rTheir #{type.to_s}: #{clip}\n\n\r" unless :temperature == type
       end
     end
 
@@ -241,7 +209,7 @@ module CWG
 
     def acknowledge
       their_callsign
-      morsify 'de '
+      morsify ' de '
       my_callsign
     end
 
@@ -253,9 +221,9 @@ module CWG
     def sign_off
       morsify "ok om #{@their_name} 73 es tnx fer nice qso = hpe 2cuagn sn + "
       their_callsign
-      morsify 'de '
+      morsify ' de '
       my_callsign
-      morsify 'sk '
+      morsify ' sk '
     end
 
     def stop
@@ -267,7 +235,7 @@ module CWG
     end
 
     def morsify sentence
-      sentence.split('').collect{|letr| @words << letr}
+      sentence.split('').collect{ |letr| char_to_tx letr }
     end
 
     def rst
@@ -308,12 +276,15 @@ module CWG
       puts "\n\r"
     end
 
-    def build_word_maybe
+    def process_letter
       @input_word ||= ''
       case @char
       when '#'
-        if '>' == receive_mode
+        return_val = receive_mode
+        if '>' == return_val
           return_with_k
+        else
+          @char = ''
         end
       when '.'
         stop
@@ -358,7 +329,7 @@ module CWG
       when 'E'
         dit_dit
       when "\n"
-        puts "\r"
+        puts "\n"
       when "\r"
         puts "\r"
       when 'Q'
@@ -366,51 +337,21 @@ module CWG
         quit!
       else
         if key_input.is_relevant_char?(@char)
-          @words << @char
+          char_to_tx @char
         end
       end
       @char = ''
     end
 
-    def print_words_until_quit
-      #      sync_with_audio_player
-      print_words @words
-      print_words_exit
-      quit
-    end
-
-    def print_words words
-      timing.init_char_timer
-      #      p words
-      process_words words
-    end
-
-    def process_words words
-      book_class = (self.class == Book)
-      (words.to_s + ' ').each_char do |letr|
-        process_letter letr
-        if book_class
-          stream.add_char(letr) if @book_details.args[:output] == :letter
-        else
-          stream.add_char(letr) if(self.class == TestLetters)
-        end
-        process_letters letr
-        print.success letr if print.print_letters?
-        break if(book_class && change_repeat_or_quit?)
-        break if ((! book_class) && quit?)
-      end
-    end
-
-    def print_words_thread
-      print_words_until_quit
-      print "\n\rprint has quit " if @debug
-      Cfg.config.params["exit"] = true
+    def char_to_tx char
+      @words << char
+#      print.tx char
     end
 
     def thread_processes
       [
-        :monitor_keys_thread,
         :tx_words_thread,
+        :monitor_keys_thread,
         #        :print_words_thread
       ]
     end
@@ -506,23 +447,18 @@ module CWG
       @tone ||= ToneGenerator.new
     end
 
-    def listen words
+    def tx
       cw_threads = CWThreads.new(self, thread_processes)
       cw_threads.run
-      #      core_audio.play_tone(2)
-      #      core_audio.play_tone(1)
-      #      core_audio.play_tone(3)
     end
 
     def tx_words_thread
       loop do
         unless @words == []
-          #          p @words
           temp = @words.shift
-          STDOUT.print temp
           generate temp
+          print.tx temp
         end
-        #        puts 'here'
         sleep 0.01
       end
     end

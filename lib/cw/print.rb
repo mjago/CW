@@ -125,6 +125,18 @@ module CWG
       print paint("#{word}", list_colour)
     end
 
+    def tx word
+      print paint("#{word}", tx_colour)
+    end
+
+    def rx word
+      print paint("#{word}", rx_colour)
+    end
+
+    def menu word
+      print paint("#{word}", menu_colour)
+    end
+
     def success word
       newline_maybe word
       return if(@print_count == 0 && word == ' ')
@@ -141,6 +153,18 @@ module CWG
 
     def list_colour
       Cfg.config["list_colour"].to_sym || :default
+    end
+
+    def tx_colour
+      Cfg.config["tx_colour"].to_sym || :red
+    end
+
+    def rx_colour
+      Cfg.config["rx_colour"].to_sym || :blue
+    end
+
+    def menu_colour
+      Cfg.config["menu_colour"].to_sym || :yellow
     end
 
     def print_advice name
