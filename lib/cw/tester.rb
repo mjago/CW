@@ -227,6 +227,11 @@ module CWG
       exit!
     end
 
+    def cw_threads
+      @cw_threads ||= CWThreads.new(self, thread_processes)
+    end
+
+
     def thread_processes
       [
         :monitor_keys_thread,
@@ -237,8 +242,7 @@ module CWG
 
     def run words
       @words = words
-      @cw_threads = CWThreads.new(self, thread_processes)
-      @cw_threads.run
+      cw_threads.run
       @play = nil
       reset_stdin
       print.newline

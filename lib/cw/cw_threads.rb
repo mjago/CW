@@ -9,43 +9,72 @@ module CWG
     def initialize context, processes
       @context = context
       @processes = processes
+      @threads = []
     end
 
     def start_threads
-      @threads = @processes.collect do |th|
-        {:thread =>
-         Thread.new do
-           @context.send th
-         end,
-         :name => th
-        }
+      @processes.collect do |th|
+        @threads << start_thread(@context, th)
       end
+    end
+
+    def start_thread context, th
+      {
+        :thread => Thread.new do
+          context.send th
+        end,
+        :name => th
+      }
+    end
+
+    def kill_thread thread
+      thread[:thread].kill
+    end
+
+    def kill_thread_x x
+      @threads.each_with_index do |th,idx|
+        if th[:name] == x
+          kill_thread th
+          @threads.delete_at idx
+        end
+      end
+    end
+
+    def join x
+      @threads.each do |th|
+        if th[:name] == x
+          th[:thread].join
+        end
+      end
+    end
+
+    def add context, th
+      @threads << start_thread(context, th)
     end
 
     def monitor_threads
       exiting = false
       loop do
         sleep 0.5
-        @threads.each do |th|
-          if thread_false_or_nil?(th)
-            exiting = true
-            unless Cfg.config["exit"]
-#              puts "** #{th[:name].to_s.gsub('_',' ')} quit unexpectedly!**"
-              if th[:thread].backtrace
-                STDERR.puts th[:thread].backtrace.join("\n    \\_ ")
-              end
-            end
-          end
-        end
+#        @threads.each do |th|
+#          if thread_false_or_nil?(th)
+##todo            exiting = true
+#            unless Cfg.config["exit"]
+##              puts "** #{th[:name].to_s.gsub('_',' ')} quit unexpectedly!**"
+#              if th[:thread].backtrace
+#                STDERR.puts th[:thread].backtrace.join("\n    \\_ ")
+#              end
+#            end
+#          end
         # print_threads_status
         exiting = true if(Cfg.config["exit"])
         break if exiting
       end
-      close_threads if exiting
-    end
-
-    def kill_thread thread
-      thread[:thread].kill
+      @threads.each do |th|
+        th[:thread].kill.join
+        puts 'here'
+      end
+      #close_threads if exiting
     end
 
     def kill_open_threads
@@ -91,7 +120,7 @@ module CWG
       @threads.each do |thread|
         puts "\r"
         print "#{thread[:name]} = "
-        p thread[:thread].status
+        #        p thread[:thread].status
       end
     end
 

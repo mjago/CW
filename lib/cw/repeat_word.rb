@@ -58,23 +58,29 @@ module CWG
       end
     end
 
+    def threads
+      threads ||= CWThreads.new(self, thread_processes)
+    end
+
     def run words
       temp_words = words.all
       temp_words.each do |word|
         loop do
+          Cfg.config.params["exit"] = false
           break if test_env
           @input_word, @words = '', Words.new
           Cfg.config.params["quit"] = false
           @words.assign word
-          @threads = CWThreads.new(self, thread_processes)
-          @threads.start_threads
-          @threads.wait_for_threads
+          threads.run
+          #          threads.start_threads
+          #          threads.wait_for_threads
           @play = nil
           system("stty -raw echo")
           break unless failed?
+          puts 'here2'
         end
       end
-      #      break if Cfg.config["exit"]
+      Cfg.config.params["exit"] = true
     end
   end
 end

@@ -96,6 +96,10 @@ module CWG
       end
     end
 
+    def quit!
+      Cfg.config.params["exit"] = true
+    end
+
     def capture
       puts "\n\r"
       puts "\r Menu: [C]allsign,    [N]ame, "
@@ -395,30 +399,33 @@ module CWG
       push_enc enc
     end
 
-    def generate wrds
-      word_parts(wrds)
-      create_element_methods
+    def audio_thread
       temp = @word_parts.collect {|part| word_composite(part) }
       @word_parts = nil
       wpm = 1.5
-      core_audio.start
-      th = Thread.start do
-        temp.each do |letr|
-          letr.each do |ele|
-            if (:space == ele[:name]) || (:e_space == ele[:name])
-              core_audio.generate_silence(tone.data[
-                                            ele[:name]][:spb] * 20)
-            else
-              core_audio.generate_tone( tone.data[
-                                          ele[:name]][:spb] * 20)
-            end
+      temp.each do |letr|
+        letr.each do |ele|
+          if (:space == ele[:name]) || (:e_space == ele[:name])
+            core_audio.generate_silence(tone.data[
+                                         ele[:name]][:spb] * 20)
+          else
+            core_audio.generate_tone( tone.data[
+                                      ele[:name]][:spb] * 20)
           end
         end
       end
-      th.join
+    end
+
+    def generate wrds
+      word_parts(wrds)
+      create_element_methods
+      core_audio.start
+      cw_threads.add self, :audio_thread
+      #      th = Thread.start do
+      cw_threads.join :audio_thread
       sleep 0.1
       core_audio.stop
-      th.kill.join
+      cw_threads.kill_thread_x :audio_thread
       #      puts 'end thread'
     end
 
@@ -447,8 +454,11 @@ module CWG
       @tone ||= ToneGenerator.new
     end
 
+    def cw_threads
+      @cw_threads ||= CWThreads.new(self, thread_processes)
+    end
+
     def tx
-      cw_threads = CWThreads.new(self, thread_processes)
       cw_threads.run
     end
 
