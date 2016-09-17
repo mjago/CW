@@ -43,6 +43,7 @@ require 'rbconfig'
 if RbConfig::CONFIG['target_os'].include?('darwin')
   require_relative 'cw/coreaudio'
   require_relative 'cw/tx'
+  require_relative 'cw/winkey'
 end
 
 def cw &block

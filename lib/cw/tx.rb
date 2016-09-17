@@ -458,7 +458,109 @@ module CWG
       @cw_threads ||= CWThreads.new(self, thread_processes)
     end
 
+    def check_status byte
+      status = byte & 192
+      if status == 192
+        puts "status"
+      elsif status == 96
+        puts "wpm"
+      else
+        puts "byte #{byte}"
+      end
+    end
+
+    def send_char char
+      loop_delay = 0.1
+      puts char
+      @winkey.write char
+      char.split('').each do |ip|
+        puts "ip = #{ip}"
+        15.times do
+          byte = @winkey.getbyte
+          unless byte.nil?
+            check_status byte
+            if byte == ip.ord
+              puts "sent and received #{byte.chr}"
+              break
+            end
+          end
+          sleep loop_delay
+        end
+      end
+    end
+
     def tx
+      loop_delay = 0.1
+      byte = 0
+      delay = 1
+      loop_delay = 0.1
+      puts "\x41".ord
+      puts "\x41".class
+      p "\x41"
+
+      @winkey = Winkey.new
+
+      sleep delay
+      #turn host on
+      puts 'turn on'
+      @winkey.write "\x00"
+      @winkey.write "\x02"
+      15.times do
+        byte = @winkey.getbyte
+        unless byte.nil?
+          check_status byte
+          if byte == 23
+            puts 'found version 23'
+#            break
+          end
+        end
+        sleep loop_delay
+      end
+
+      #echo test
+      puts 'echo'
+      @winkey.write "\x00"
+      @winkey.write "\x04"
+      @winkey.write "\x40"
+      15.times do
+        byte = @winkey.getbyte
+        unless byte.nil?
+          check_status byte
+          if byte == 64
+            puts 'echoed char correctly'
+            break
+          end
+        end
+        sleep loop_delay
+      end
+
+      sleep delay
+      #set wpm to 18
+      puts 'wpm'
+      @winkey.write "\x02"
+      @winkey.write "\x12"
+      15.times do
+        byte = @winkey.getbyte
+        unless byte.nil?
+          check_status byte
+        end
+        sleep loop_delay
+      end
+
+      200.times do
+        send_char "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
+        15.times do
+          byte = @winkey.getbyte
+          unless byte.nil?
+            check_status byte
+          end
+        end
+        sleep 0.2
+
+      end
+
+      @winkey.close
+      exit 1
       cw_threads.run
     end
 
