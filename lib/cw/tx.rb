@@ -7,6 +7,7 @@ module CWG
     include FileDetails
 
     def initialize
+      @loop_delay = 0.1
       @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ?
                           1.0 : Cfg.config["volume"].to_f)
       @wpm = Cfg.config["wpm"].to_f
@@ -458,105 +459,95 @@ module CWG
       @cw_threads ||= CWThreads.new(self, thread_processes)
     end
 
+    def read_wpm
+      @loop_delay = 0.1
+      15.times do
+        byte = @winkey.getbyte
+        unless byte.nil?
+          puts "wpm #{byte.chr}"
+          break
+        end
+        sleep @loop_delay
+      end
+    end
+
     def check_status byte
       status = byte & 192
       if status == 192
         puts "status"
-      elsif status == 96
+        true
+      elsif status == 128
         puts "wpm"
+        true
       else
-        puts "byte #{byte}"
+        puts "byte 0x#{byte.to_s()}"
+        false
       end
     end
 
-    def send_char char
-      loop_delay = 0.1
-      puts char
-      @winkey.write char
-      char.split('').each do |ip|
+    def winkey_string str
+      @loop_delay = 0.1
+      puts str
+      @winkey.write str
+      str.split('').each do |ip|
         puts "ip = #{ip}"
-        15.times do
-          byte = @winkey.getbyte
-          unless byte.nil?
-            check_status byte
-            if byte == ip.ord
-              puts "sent and received #{byte.chr}"
-              break
+        winkey_read ip.ord, "sent and received #{ip.chr}"
+      end
+    end
+
+    def winkey_read match, match_msg
+      25.times do
+        byte = @winkey.getbyte
+        unless byte.nil?
+          unless check_status(byte)
+            puts "byte is #{byte.inspect}, match is #{match.inspect}"
+            if byte == match
+              puts match_msg
+              return
             end
           end
-          sleep loop_delay
         end
+        sleep @loop_delay
       end
+    end
+
+    def winkey_command cmd
+      {
+        on: "\x00\x02",
+        echo: "\x00\x04\x5A"
+      }[cmd]
+    end
+
+    def winkey_on
+      puts 'host on'
+      @winkey.write winkey_command :on
+      winkey_read 23, "on ack"
+    end
+
+    def winkey_echo
+      puts 'echo test'
+      @winkey.write winkey_command :echo
+      winkey_read 'Z'.ord, "echo success"
+    end
+
+    def winkey_wpm wpm
+      puts "set wpm to #{wpm}"
+      @winkey.write "\x02"
+      @winkey.write wpm
+      winkey_read (wpm * 1.6).round, "wpm is set to #{wpm}"
     end
 
     def tx
-      loop_delay = 0.1
       byte = 0
       delay = 1
-      loop_delay = 0.1
-      puts "\x41".ord
-      puts "\x41".class
-      p "\x41"
-
+      @loop_delay = 0.1
       @winkey = Winkey.new
 
-      sleep delay
-      #turn host on
-      puts 'turn on'
-      @winkey.write "\x00"
-      @winkey.write "\x02"
-      15.times do
-        byte = @winkey.getbyte
-        unless byte.nil?
-          check_status byte
-          if byte == 23
-            puts 'found version 23'
-#            break
-          end
-        end
-        sleep loop_delay
-      end
-
-      #echo test
-      puts 'echo'
-      @winkey.write "\x00"
-      @winkey.write "\x04"
-      @winkey.write "\x40"
-      15.times do
-        byte = @winkey.getbyte
-        unless byte.nil?
-          check_status byte
-          if byte == 64
-            puts 'echoed char correctly'
-            break
-          end
-        end
-        sleep loop_delay
-      end
-
-      sleep delay
-      #set wpm to 18
-      puts 'wpm'
-      @winkey.write "\x02"
-      @winkey.write "\x12"
-      15.times do
-        byte = @winkey.getbyte
-        unless byte.nil?
-          check_status byte
-        end
-        sleep loop_delay
-      end
-
+      winkey_on
+      winkey_echo
+      winkey_wpm 30
       200.times do
-        send_char "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
-        15.times do
-          byte = @winkey.getbyte
-          unless byte.nil?
-            check_status byte
-          end
-        end
-        sleep 0.2
-
+        winkey_string "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
       end
 
       @winkey.close
