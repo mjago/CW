@@ -460,7 +460,6 @@ module CWG
     end
 
     def read_wpm
-      @loop_delay = 0.1
       15.times do
         byte = @winkey.getbyte
         unless byte.nil?
@@ -486,7 +485,6 @@ module CWG
     end
 
     def winkey_string str
-      @loop_delay = 0.1
       puts str
       @winkey.write str
       str.split('').each do |ip|
@@ -496,17 +494,19 @@ module CWG
     end
 
     def winkey_read match, match_msg
+      count = 1
       25.times do
         byte = @winkey.getbyte
         unless byte.nil?
           unless check_status(byte)
-            puts "byte is #{byte.inspect}, match is #{match.inspect}"
+            puts "count is, #{count}, byte is #{byte.inspect}, match is #{match.inspect}"
             if byte == match
               puts match_msg
               return
             end
           end
         end
+        count += 1
         sleep @loop_delay
       end
     end
@@ -514,6 +514,7 @@ module CWG
     def winkey_command cmd
       {
         on: "\x00\x02",
+        no_weighting: "\x03\x32",
         echo: "\x00\x04\x5A"
       }[cmd]
     end
@@ -522,6 +523,11 @@ module CWG
       puts 'host on'
       @winkey.write winkey_command :on
       winkey_read 23, "on ack"
+    end
+
+    def winkey_no_weighting
+      puts 'no weighting'
+      @winkey.write winkey_command :no_weighting
     end
 
     def winkey_echo
@@ -533,20 +539,18 @@ module CWG
     def winkey_wpm wpm
       puts "set wpm to #{wpm}"
       @winkey.write "\x02"
-      @winkey.write wpm
-      winkey_read (wpm * 1.6).round, "wpm is set to #{wpm}"
+      @winkey.write [wpm].pack('U')
     end
 
     def tx
       byte = 0
-      delay = 1
-      @loop_delay = 0.1
       @winkey = Winkey.new
 
       winkey_on
       winkey_echo
-      winkey_wpm 30
-      200.times do
+      winkey_no_weighting
+      winkey_wpm 18
+      1000.times do
         winkey_string "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
       end
 
