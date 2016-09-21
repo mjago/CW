@@ -51,9 +51,9 @@ module CWG
       test_letters.run @words
     end
 
-    def tx
+    def tx str
       Cfg.config.params["no_run"] = true
-      tx = Tx.new.tx
+      Tx.new.tx(str)
     end
 
     # Test user against complete words rather than letters.
