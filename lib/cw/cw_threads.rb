@@ -72,7 +72,6 @@ module CWG
       end
       @threads.each do |th|
         th[:thread].kill.join
-        puts 'here'
       end
       #close_threads if exiting
     end

@@ -77,7 +77,6 @@ module CWG
           @play = nil
           system("stty -raw echo")
           break unless failed?
-          puts 'here2'
         end
       end
       Cfg.config.params["exit"] = true
