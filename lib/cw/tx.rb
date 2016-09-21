@@ -7,7 +7,6 @@ module CWG
     include FileDetails
 
     def initialize
-      @loop_delay = 0.1
       @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ?
                           1.0 : Cfg.config["volume"].to_f)
       @wpm = Cfg.config["wpm"].to_f
@@ -459,104 +458,17 @@ module CWG
       @cw_threads ||= CWThreads.new(self, thread_processes)
     end
 
-    def read_wpm
-      15.times do
-        byte = @winkey.getbyte
-        unless byte.nil?
-          puts "wpm #{byte.chr}"
-          break
-        end
-        sleep @loop_delay
-      end
-    end
-
-    def check_status byte
-      status = byte & 192
-      if status == 192
-        puts "status"
-        true
-      elsif status == 128
-        puts "wpm"
-        true
-      else
-        puts "byte 0x#{byte.to_s()}"
-        false
-      end
-    end
-
-    def winkey_string str
-      puts str
-      @winkey.write str
-      str.split('').each do |ip|
-        puts "ip = #{ip}"
-        winkey_read ip.ord, "sent and received #{ip.chr}"
-      end
-    end
-
-    def winkey_read match, match_msg
-      count = 1
-      25.times do
-        byte = @winkey.getbyte
-        unless byte.nil?
-          unless check_status(byte)
-            puts "count is, #{count}, byte is #{byte.inspect}, match is #{match.inspect}"
-            if byte == match
-              puts match_msg
-              return
-            end
-          end
-        end
-        count += 1
-        sleep @loop_delay
-      end
-    end
-
-    def winkey_command cmd
-      {
-        on: "\x00\x02",
-        no_weighting: "\x03\x32",
-        echo: "\x00\x04\x5A"
-      }[cmd]
-    end
-
-    def winkey_on
-      puts 'host on'
-      @winkey.write winkey_command :on
-      winkey_read 23, "on ack"
-    end
-
-    def winkey_no_weighting
-      puts 'no weighting'
-      @winkey.write winkey_command :no_weighting
-    end
-
-    def winkey_echo
-      puts 'echo test'
-      @winkey.write winkey_command :echo
-      winkey_read 'Z'.ord, "echo success"
-    end
-
-    def winkey_wpm wpm
-      puts "set wpm to #{wpm}"
-      @winkey.write "\x02"
-      @winkey.write [wpm].pack('U')
-    end
-
-    def tx
-      byte = 0
+    def tx string
       @winkey = Winkey.new
-
-      winkey_on
-      winkey_echo
-      winkey_no_weighting
-      winkey_wpm 18
-      1000.times do
-        winkey_string "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
-      end
-
+      @winkey.on
+      @winkey.echo
+      @winkey.no_weighting
+      @winkey.wpm @wpm
+      #        @winkey.string "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
+      @winkey.string string
+      @winkey.wait_while_sending
       @winkey.close
-      exit 1
-      cw_threads.run
+#      cw_threads.run
     end
 
     def tx_words_thread
