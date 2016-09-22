@@ -89,7 +89,7 @@ module CWG
           else
             @recording << char
           end
-
+          puts 'here'
           print.rx char
         end
         sleep 0.001
@@ -423,7 +423,7 @@ module CWG
       cw_threads.add self, :audio_thread
       #      th = Thread.start do
       cw_threads.join :audio_thread
-      sleep 0.1
+      sleep 0.001
       core_audio.stop
       cw_threads.kill_thread_x :audio_thread
       #      puts 'end thread'
@@ -464,18 +464,20 @@ module CWG
       @winkey.echo
       @winkey.no_weighting
       @winkey.wpm @wpm
-      #        @winkey.string "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
-      @winkey.string string
+#      @winkey.string "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890/=+?>(:;"
+      @winkey.string ' fb '
       @winkey.wait_while_sending
-      @winkey.close
-#      cw_threads.run
+      cw_threads.run
+#      @winkey.close
     end
 
     def tx_words_thread
       loop do
         unless @words == []
           temp = @words.shift
-          generate temp
+          #          generate temp
+#          p temp
+          @winkey.stringtemp.to_s.upcase
           print.tx temp
         end
         sleep 0.01

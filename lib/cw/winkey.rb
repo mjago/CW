@@ -5,6 +5,7 @@ module CWG
   class Winkey
 
     def initialize
+      @print = Print.new
       STDERR.puts "Attempting to open winkey connection"
       port_str = "/dev/cu.usbserial-AD01XY9H"  #may be different for you
       baud_rate = 1200
@@ -36,36 +37,37 @@ module CWG
     def check_status byte
       status = byte & 192
       if status == 192
-        puts "status"
+#        puts "status"
         true
       elsif status == 128
-        puts "wpm"
+#        puts "wpm"
         true
       else
-        puts "byte 0x#{byte.to_s()}"
+#        puts "byte 0x#{byte.to_s()}"
         false
       end
     end
 
     def string str
-      puts str
+#      puts str
       write str
       str.split('').each do |ip|
-        puts "ip = #{ip}"
+#        puts "ip = #{ip}"
         read ip.ord, "sent and received #{ip.chr}"
       end
     end
 
     def read match, match_msg
-      loop_delay = 0.1
+      loop_delay = 0.05
       count = 1
       25.times do
         byte = getbyte
         unless byte.nil?
           unless check_status(byte)
-            puts "count is, #{count}, byte is #{byte.inspect}, match is #{match.inspect}"
+#            puts "count is, #{count}, byte is #{byte.inspect}, match is #{match.inspect}"
             if byte == match
-              puts match_msg
+#              print byte.ord
+#              puts match_msg
               return
             end
           end
