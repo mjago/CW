@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/powered%20by-jekyll-red.svg)
+![https://jekyllrb.com/](https://img.shields.io/badge/powered%20by-jekyll-red.svg)
 
 ## CW Documentation
 
