@@ -11,22 +11,63 @@ module CWG
     include ToneHelpers
     include FileDetails
 
+    class Code
+
+      include FileDetails
+
+      def initialize sample_rate, wpm
+        @sample_rate = sample_rate
+        @wpm = wpm
+        @spb_short = @sample_rate * 1.2 / @wpm
+        @spb_long = @sample_rate * 3.6 / @wpm
+      end
+
+      def filename element
+        self.send "#{element}_path"
+      end
+
+      def spb element
+        spb = element == :dash ?
+                @spb_long    :
+                @spb_short
+        spb.to_i
+      end
+    end
+
+    def data
+      { dot:     {name: :dot,
+                  filename: dot_path,
+                  spb: (@sample_rate * 1.2 / @wpm).to_i },
+        dash:    {name:  :dash,
+                  filename: dash_path,
+                  spb: (@sample_rate * 3.6 / @wpm).to_i },
+        space:   {name:  :space,
+                  filename: space_path,
+                  spb: (@sample_rate * 1.2 / @wpm).to_i },
+        e_space: {name:  :e_space,
+                  filename: e_space_path,
+                  spb: (@sample_rate * 1.2 / @effective_wpm).to_i }
+      }
+    end
+
     def initialize
+      @sample_rate = 2400
       @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ?
                           1.0 : Cfg.config["volume"].to_f)
       @wpm = Cfg.config["wpm"].to_f
       @frequency = Cfg.config["frequency"].to_i
       @effective_wpm = Cfg.config["effective_wpm"] ?
                          Cfg.config["effective_wpm"].to_f : @wpm
-      @sample_rate = 2400
       @print = Print.new
+      create_element_methods
+    end
+
+    def code
+      @code ||= Code.new(@sample_rate, @wpm)
     end
 
     def generate wrds
-
       word_parts(wrds)
-      #    progress.init elements.size * 3 + (wrds.size)
-      create_element_methods
       compile_fundamentals
       write_word_parts
     end
@@ -35,32 +76,12 @@ module CWG
       @play_filename ||= File.join(audio_dir, audio_filename)
     end
 
-    def play
-      cmd = play_command + ' ' + play_filename
-      @pid = ! @dry_run ? Process.spawn(cmd) : cmd
-    end
-
     def cw_encoding
       @encoding ||= CwEncoding.new
     end
 
     def progress
       @progress ||= Progress.new('Compiling')
-    end
-
-    def data
-      { :dot => {:name => :dot,
-                 :filename => dot_path,
-                 :spb => (@sample_rate * 1.2 / @wpm).to_i },
-        :dash  => {:name => :dash,
-                   :filename => dash_path,
-                   :spb => (@sample_rate * 3.6 / @wpm).to_i },
-        :space => {:name => :space,
-                   :filename   => space_path,
-                   :spb => (@sample_rate * 1.2 / @wpm).to_i },
-        :e_space => {:name => :e_space,
-                     :filename => e_space_path,
-                     :spb => (@sample_rate * 1.2 / @effective_wpm).to_i }}
     end
 
     def filter_maybe(size, count)
@@ -83,11 +104,13 @@ module CWG
     end
 
     def generate_buffer audio_samples, ele
-      WaveFile::Buffer.new(audio_samples, WaveFile::Format.new(:mono, :float, data[ele][:spb]))
+      WaveFile::Buffer.new(audio_samples,
+                           WaveFile::Format.new(:mono, :float, code.spb(ele)))
     end
 
     def write_element_audio_file ele, buffer
-      WaveFile::Writer.new(data[ele][:filename], WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
+      WaveFile::Writer.new(code.filename(ele),
+                           WaveFile::Format.new(:mono, :pcm_16, @sample_rate)) do |writer|
         writer.write(buffer)
       end
     end
@@ -99,10 +122,12 @@ module CWG
     # create dot, dash, space or e_space method
 
     def create_element_method ele
-      define_singleton_method(ele) {data[ele]}
+      define_singleton_method(ele) {
+        {
+          name: ele,
+        }
+      }
     end
-
-    # create dot, dash, space and e_space methods
 
     def create_element_methods
       elements.each do |ele|
@@ -111,8 +136,8 @@ module CWG
     end
 
     def generate_samples ele
-      return generate_space(data[ele][:spb]) if space_sample? ele
-      generate_tone(data[ele][:spb])  unless    space_sample? ele
+      return generate_space(code.spb(ele)) if space_sample? ele
+      generate_tone(code.spb(ele))     unless space_sample? ele
     end
 
     def compile_fundamentals
@@ -123,52 +148,41 @@ module CWG
       end
     end
 
+    def ewpm?
+      @effective_wpm != @wpm
+    end
+
     def space_or_espace
-      (@effective_wpm == @wpm) ? space : e_space
+      ewpm? ? e_space : space
     end
 
     def push_enc chr
       arry = []
       chr.each_with_index do |c,idx|
         arry << c
-        arry << ((last_element?(idx, chr)) ? (space_or_espace) : space)
+        arry << (last_element?(idx, chr) ? space_or_espace : space)
       end
       arry += char_space
     end
 
-    def send_char c
-      enc = nil
-      if c == ' '
-        enc = word_space
-      else
-        enc = cw_encoding.fetch(c).map { |e| send(e)}
-#              puts 'here'
-
-      end
+    def send_char(c)
+      enc = c == ' ' ? [word_space] : cw_encoding.fetch(c).map { |e| send(e) }
       push_enc enc
     end
 
-    def word_parts str = nil
+    def word_parts(str = nil)
       return @word_parts if @word_parts
       @word_parts = []
-      str.split('').each { |part| @word_parts << part}
+      str.split('').each { |part| @word_parts << part }
       @word_parts
-    end
-
-    def make_word_parts
-      parts = []
-      @word_parts.each do |part|
-        parts += send_char part.downcase
-      end
-      parts
     end
 
     def prepare_buffers
       @buffers = {}
       elements.each do |ele|
         @buffers[ele] = []
-        WaveFile::Reader.new(data[ele][:filename]).
-          each_buffer(data[ele][:spb]) do |buffer|
+        WaveFile::Reader.new(code.filename(ele))
+                        .each_buffer(code.spb(ele)) do |buffer|
           @buffers[ele] = buffer
         end
       end
@@ -180,42 +194,40 @@ module CWG
     end
 
     def char_space
-      @effective_wpm == @wpm ? [space,space] : [e_space,e_space]
+      Array.new(2, word_space)
     end
 
     def word_space
-      @effective_wpm == @wpm ? [space] : [e_space]
+      ewpm? ? e_space : space
     end
 
-    def word_composite word
+    def word_composite(word)
       send_char word.downcase
     end
 
-    def write_audio
-      WaveFile::Writer.
-        new(play_filename,
-            WaveFile::Format.
-              new(:mono,
-                  :pcm_16,
-                  @sample_rate)) do |writer|
-        yield.each do |char|
-          char.each do |fta|
-            writer.write(@buffers[fta[:name]])
-          end
-        end
-      end
+    def format
+      WaveFile::Format.new(:mono, :pcm_16, @sample_rate)
     end
 
-    def reset
-      @word_parts = @progress = nil
-      #    puts "\r"
+    def write_buffer(writer, fta)
+      writer.write(@buffers[fta[:name]])
+    end
+
+    def write_audio
+      WaveFile::Writer.new(play_filename, format) do |writer|
+        yield.map { |ch| ch.map { |fta| write_buffer(writer, fta) } }
+      end
     end
 
     def write_audio_file
       write_audio do
-        @word_parts.collect {|part| word_composite(part) }
+        @word_parts.collect { |part| word_composite(part) }
       end
       reset
+    end
+
+    def reset
+      @word_parts = @progress = nil
     end
   end
 end

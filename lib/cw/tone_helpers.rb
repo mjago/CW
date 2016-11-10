@@ -4,7 +4,7 @@ module CWG
 
   module ToneHelpers
 
-    TWO_PI           = 2 * Math::PI
+    TWO_PI = 2 * Math::PI
 
     def convert_words wrds
       wrds.to_array.collect{ |wrd| wrd.delete("\n")}
