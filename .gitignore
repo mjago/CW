@@ -43,3 +43,4 @@ audio/audio_output.wav
 /.yardoc/
 /.cw/
 /dev/
+/.ruby-version
