@@ -34,22 +34,6 @@ module CWG
       end
     end
 
-    def data
-      { dot:     {name: :dot,
-                  filename: dot_path,
-                  spb: (@sample_rate * 1.2 / @wpm).to_i },
-        dash:    {name:  :dash,
-                  filename: dash_path,
-                  spb: (@sample_rate * 3.6 / @wpm).to_i },
-        space:   {name:  :space,
-                  filename: space_path,
-                  spb: (@sample_rate * 1.2 / @wpm).to_i },
-        e_space: {name:  :e_space,
-                  filename: e_space_path,
-                  spb: (@sample_rate * 1.2 / @effective_wpm).to_i }
-      }
-    end
-
     def initialize
       @sample_rate = 2400
       @max_amplitude = (Cfg.config["volume"].to_f > 1.0 ?
