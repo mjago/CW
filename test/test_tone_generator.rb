@@ -27,58 +27,51 @@ class TestToneGenerator < MiniTest::Test
     refute nil
   end
 
-  def test_data_name
-    assert_equal :dot, @tg.data[:dot][:name]
-    assert_equal :dash, @tg.data[:dash][:name]
-    assert_equal :space, @tg.data[:space][:name]
-    assert_equal :e_space, @tg.data[:e_space][:name]
+  def test_code_filename
+    assert_equal File.join(ROOT, '.cw', 'audio', 'dot.wav'), @tg.code.filename(:dot)
+    assert_equal File.join(ROOT, '.cw', 'audio', 'dash.wav'), @tg.code.filename(:dash)
+    assert_equal File.join(ROOT, '.cw', 'audio', 'space.wav'), @tg.code.filename(:space)
+    assert_equal File.join(ROOT, '.cw', 'audio', 'e_space.wav'), @tg.code.filename(:e_space)
   end
 
-  def test_data_filename
-    assert_equal File.join(ROOT, '.cw', 'audio', 'dot.wav'), @tg.data[:dot][:filename]
-    assert_equal File.join(ROOT, '.cw', 'audio', 'dash.wav'), @tg.data[:dash][:filename]
-    assert_equal File.join(ROOT, '.cw', 'audio', 'space.wav'), @tg.data[:space][:filename]
-    assert_equal File.join(ROOT, '.cw', 'audio', 'e_space.wav'), @tg.data[:e_space][:filename]
-  end
-
-  def test_data_spp_for_15_wpm
+  def test_code_spb_for_15_wpm
     CWG::Cfg.config.params['wpm'] = 15
     tg = CWG::ToneGenerator.new
     element = 192
-    assert_equal element * 1, tg.data[:dot][:spb]
-    assert_equal element * 3, tg.data[:dash][:spb]
-    assert_equal element * 1, tg.data[:space][:spb]
-    assert_equal element * 1, tg.data[:e_space][:spb]
+    assert_equal element * 1, tg.code.spb(:dot)
+    assert_equal element * 3, tg.code.spb(:dash)
+    assert_equal element * 1, tg.code.spb(:space)
+    assert_equal element * 1, tg.code.spb(:e_space)
   end
 
-  def test_data_spp_for_25_wpm
+  def test_code_spb_for_25_wpm
     CWG::Cfg.config.params['wpm'] = 25
     tg = CWG::ToneGenerator.new
     element = 115
-    assert_equal element * 1, tg.data[:dot][:spb]
-    assert_equal element * 3, tg.data[:dash][:spb]
-    assert_equal element * 1, tg.data[:space][:spb]
-    assert_equal element * 1, tg.data[:e_space][:spb]
+    assert_equal element * 1, tg.code.spb(:dot)
+    assert_equal element * 3, tg.code.spb(:dash)
+    assert_equal element * 1, tg.code.spb(:space)
+    assert_equal element * 1, tg.code.spb(:e_space)
   end
 
-  def test_data_spp_for_40_wpm
+  def test_code_spb_for_40_wpm
     CWG::Cfg.config.params['wpm'] = 40
     tg = CWG::ToneGenerator.new
     element = 72
-    assert_equal element * 1, tg.data[:dot][:spb]
-    assert_equal element * 3, tg.data[:dash][:spb]
-    assert_equal element * 1, tg.data[:space][:spb]
-    assert_equal element * 1, tg.data[:e_space][:spb]
+    assert_equal element * 1, tg.code.spb(:dot)
+    assert_equal element * 3, tg.code.spb(:dash)
+    assert_equal element * 1, tg.code.spb(:space)
+    assert_equal element * 1, tg.code.spb(:e_space)
   end
 
-  def test_data_spp_for_20_wpm
+  def test_code_spb_for_20_wpm
     CWG::Cfg.config.params['wpm'] = 20
     tg = CWG::ToneGenerator.new
     element = 144
-    assert_equal element * 3, tg.data[:dash][:spb]
-    assert_equal element * 1, tg.data[:dot][:spb]
-    assert_equal element * 1, tg.data[:space][:spb]
-    assert_equal element * 1, tg.data[:e_space][:spb]
+    assert_equal element * 1, tg.code.spb(:dot)
+    assert_equal element * 3, tg.code.spb(:dash)
+    assert_equal element * 1, tg.code.spb(:space)
+    assert_equal element * 1, tg.code.spb(:e_space)
   end
 
   def test_elements
@@ -89,14 +82,6 @@ class TestToneGenerator < MiniTest::Test
     assert_equal 4,        @tg.elements.size
   end
 
-  def test_element_method_generation_dot
-    CWG::Cfg.config.params['wpm'] = 20
-    tg = CWG::ToneGenerator.new
-    element = 144
-    assert_equal tg.elements.sort, tg.singleton_methods.sort
-    assert_equal :dot, tg.dot[:name]
-  end
-
   def test_generate_samples
     CWG::Cfg.config.params['wpm'] = 40
     tg = CWG::ToneGenerator.new
@@ -105,15 +90,15 @@ class TestToneGenerator < MiniTest::Test
     assert_equal 72, samples.size
     assert_equal samples.size, tg.generate_samples(:space).size
     assert_equal samples.size * 3, tg.generate_samples(:dash).size
-    end
+  end
 
   def test_space_or_espace_method_when_no_wpm_equals_ewpm
-    assert_equal @tg.space, @tg.space_or_espace
+    assert_equal({ name: :space }, @tg.space_or_espace)
   end
 
   def test_space_or_espace_method_when_ewpm_active
     @tg.instance_variable_set :@effective_wpm, 10
-    assert_equal @tg.e_space, @tg.space_or_espace
+    assert_equal({ name: :e_space }, @tg.space_or_espace)
   end
 
   def test_play_filename

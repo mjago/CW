@@ -11,6 +11,8 @@ module CWG
     include ToneHelpers
     include FileDetails
 
+    attr_reader :code
+
     class Code
 
       include FileDetails
