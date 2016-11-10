@@ -59,7 +59,6 @@ module CWG
       @effective_wpm = Cfg.config["effective_wpm"] ?
                          Cfg.config["effective_wpm"].to_f : @wpm
       @print = Print.new
-      create_element_methods
     end
 
     def code
@@ -119,22 +118,6 @@ module CWG
       [:dot, :dash, :space, :e_space]
     end
 
-    # create dot, dash, space or e_space method
-
-    def create_element_method ele
-      define_singleton_method(ele) {
-        {
-          name: ele,
-        }
-      }
-    end
-
-    def create_element_methods
-      elements.each do |ele|
-        create_element_method ele
-      end
-    end
-
     def generate_samples ele
       return generate_space(code.spb(ele)) if space_sample? ele
       generate_tone(code.spb(ele))     unless space_sample? ele
@@ -153,20 +136,22 @@ module CWG
     end
 
     def space_or_espace
-      ewpm? ? e_space : space
+      { name: (ewpm? ? :e_space : :space) }
     end
 
     def push_enc chr
       arry = []
       chr.each_with_index do |c,idx|
         arry << c
-        arry << (last_element?(idx, chr) ? space_or_espace : space)
+        arry << (last_element?(idx, chr) ? space_or_espace : { name: :space })
       end
       arry += char_space
     end
 
     def send_char(c)
-      enc = c == ' ' ? [word_space] : cw_encoding.fetch(c).map { |e| send(e) }
+      enc = c == ' ' ? [word_space] : cw_encoding.fetch(c).map { |e|
+        { :name => e }
+      }
       push_enc enc
     end
 
@@ -198,7 +183,7 @@ module CWG
     end
 
     def word_space
-      ewpm? ? e_space : space
+      { name: (ewpm? ? :e_space : :space) }
     end
 
     def word_composite(word)
