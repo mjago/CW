@@ -46,7 +46,6 @@ module CWG
 
     def reset
       @print_count = 0
-      puts "\r"
     end
 
     def newline

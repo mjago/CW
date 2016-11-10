@@ -167,6 +167,7 @@ module CWG
       start_threads
       monitor_threads
       system("stty -raw echo")
+      puts "\r"
     end
 
   end
