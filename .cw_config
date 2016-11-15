@@ -9,4 +9,4 @@ rx_colour      = blue
 menu_colour    = default
 ebook2cw_path  = /usr/bin/ebook2cw
 run_default    = test_letters
-word_count     = 16
+word_count     = 9999
