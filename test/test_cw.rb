@@ -42,7 +42,7 @@ class TestCW < MiniTest::Test
   end
 
   def test_loads_words_by_default
-    assert_equal ["the", "of", "and", "to", "a"] , @cw.words.first(5)
+    assert_equal %w(the of and to a), @cw.words.first(5)
   end
 
   def test_CW_takes_a_block
@@ -56,8 +56,8 @@ class TestCW < MiniTest::Test
       no_run
     }
     assert_equal 1000, cw.words.size
-    cw.words = ["some", "words"]
-    assert_equal ["some", "words"], cw.words
+    cw.words = %w(some words)
+    assert_equal %w(some words), cw.words
   end
 
   def test_no_run_aliases_no_run
@@ -65,7 +65,7 @@ class TestCW < MiniTest::Test
     cw = CW.new {
       no_run
     }
-    cw.words = ["some", " words"]
+    cw.words = %w(some words)
     assert (Time.now - time) < 1
   end
 
@@ -73,10 +73,10 @@ class TestCW < MiniTest::Test
     cw = CW.new {
       no_run
     }
-    cw.words = ["some", "words"]
-    assert_equal ["some", "words"], cw.words
+    cw.words =  %w(some words)
+    assert_equal  %w(some words), cw.words
     cw.load_common_words
-    assert_equal ["the", "of", "and", "to", "a"] , cw.words.first(5)
+    assert_equal  %w(the of and to a), cw.words.first(5)
   end
 
   def test_load_words_loads_passed_filename
@@ -84,14 +84,14 @@ class TestCW < MiniTest::Test
     temp << "some words"
     temp.close
     @cw.load_text temp
-    assert_equal ["some", "words"], @cw.words
+    assert_equal %w(some words), @cw.words
   end
 
    def test_to_s_outputs_test_run_header_if_no_run
      temp =
        %q(========
 WPM:        25
-Word count: 16
+Word count: 9999
 ========
 )
      assert_equal temp, @cw.to_s
@@ -142,35 +142,35 @@ Ending:     x
 
   def test_shuffle_shuffles_words
     @cw.shuffle
-    refute_equal ["the", "of", "and", "to", "a"], @cw.words.first(5)
+    refute_equal  %w(the of and to a), @cw.words.first(5)
   end
 
   def test_word_size_returns_words_of_such_size
     @cw.word_size 2
-    assert_equal ["of", "to", "in", "is", "on"] , @cw.words.first(5)
+    assert_equal  %w(of to in is on), @cw.words.first(5)
   end
   
   def test_beginning_with_returns_words_beginning_with_letter
     @cw.beginning_with 'l'
-    assert_equal ["like", "list", "last", "links", "life"], @cw.words.first(5)
+    assert_equal %w(like list last links life), @cw.words.first(5)
   end
 
   def test_beginning_with_will_take_two_letters
     @cw.load_words(1500)
     @cw.beginning_with 'x','q'
-    assert_equal ["x", "xml", "quality", "questions", "q", "quote"],
+    assert_equal  %w(x xml quality questions q quote),
     @cw.words.first(6)
   end
 
   def test_ending_with_returns_words_ending_with_letter
     @cw.ending_with 'l'
-    assert_equal ["all", "will", "email", "well", "school"], @cw.words.first(5)
+    assert_equal %w(all will email well school), @cw.words.first(5)
   end
 
   def test_ending_with_will_take_two_letters
     @cw.load_words 200
     @cw.ending_with 'x', 'a'
-    assert_equal ["x", "sex", "a", "data"],
+    assert_equal %w(x sex a data),
     @cw.words
   end
 
@@ -181,23 +181,23 @@ Ending:     x
 
   def test_including_returns_words_including_letter
     @cw.including 'l'
-    assert_equal ["all", "will", "only", "also", "help"], @cw.words.first(5)
+    assert_equal %w(all will only also help), @cw.words.first(5)
   end
 
   def test_including_will_take_two_letters
     @cw.load_words(100)
     @cw.including 'p','b'
-    assert_equal ["page", "up", "help", "pm", "by", "be", "about", "but"],@cw.words.first(8)
+    assert_equal %w(page up help pm by be about but),@cw.words.first(8)
   end
 
   def test_no_longer_than_will_return_words_no_longer_than_x
     @cw.no_longer_than 4
-    assert_equal ["the", "of", "and", "to", "a"] , @cw.words.first(5)
+    assert_equal %w(the of and to a), @cw.words.first(5)
   end
 
   def test_no_shorter_than_will_return_words_no_shorter_than_x
     @cw.no_shorter_than 4
-    assert_equal ["that", "this", "with", "from", "your"], @cw.words.first(5)
+    assert_equal %w(that this with from your), @cw.words.first(5)
   end
 
   def test_words_fn_adds_words
@@ -206,13 +206,13 @@ Ending:     x
   end
 
   def test_words_fn_passes_in_an_array_of_words_as_is
-    @cw.words = ["one", "two", "three", "four"]
-    assert_equal ["one", "two", "three", "four"] , @cw.words
+    @cw.words = %w(one two three four)
+    assert_equal  %w(one two three four), @cw.words
   end
 
   def test_random_letters_returns_words_of_size_4_by_default
     @cw.random_letters
-    @cw.words.each { |w| assert_equal 4, w.length}
+    @cw.words.each { |w| assert_equal 4, w.length }
   end
 
   def test_random_letters_returns_word_count_of_50_by_default
@@ -222,7 +222,7 @@ Ending:     x
 
   def test_random_letters_can_take_size_option
     @cw.random_letters(size: 5)
-    @cw.words.each { |w| assert_equal 5, w.length}
+    @cw.words.each { |w| assert_equal 5, w.length }
   end
 
   def test_random_letters_can_take_count_option
@@ -233,7 +233,7 @@ Ending:     x
   def test_random_letters_can_take_size_and_count_option
     @cw.random_letters(count: 3, size: 4)
     assert_equal 3, @cw.words.size
-    @cw.words.each { |w| assert_equal 4, w.length}
+    @cw.words.each { |w| assert_equal 4, w.length }
   end
 
   def test_random_letters_returns_random_letters
@@ -246,7 +246,7 @@ Ending:     x
   def test_random_numbers_can_take_size_and_count_option
     @cw.random_numbers(count: 3, size: 4)
     assert_equal 3, @cw.words.size
-    @cw.words.each { |w| assert_equal 4, w.length}
+    @cw.words.each { |w| assert_equal 4, w.length }
   end
 
   def test_random_numbers_returns_random_numbers
@@ -280,7 +280,7 @@ Ending:     x
 
   def test_alphabet_generates_alphabet
     @cw.alphabet
-    assert_equal ["a b c d e f g h i j k l m n o p q r s t u v w x y z"], @cw.words
+    assert_equal ['a b c d e f g h i j k l m n o p q r s t u v w x y z'], @cw.words
   end
 
   def test_alphabet_generates_reversed_alphabet
@@ -290,7 +290,7 @@ Ending:     x
 
   def test_alphabet_shuffles_alphabet
     @cw.alphabet(shuffle: true)
-    refute_equal ["a b c d e f g h i j k l m n o p q r s t u v w x y z"], @cw.words
+    refute_equal ['a b c d e f g h i j k l m n o p q r s t u v w x y z'], @cw.words
     assert_equal "abcdefghijklmnopqrstuvwxyz", @cw.words.first.chars.sort.join.strip
   end
 
@@ -352,6 +352,7 @@ Ending:     x
     assert @cw.method(:words_no_longer_than),  @cw.method(:no_longer_than)
     assert @cw.method(:words_no_shorter_than), @cw.method(:no_shorter_than)
     assert @cw.method(:random_alphanumeric),   @cw.method(:random_letters_numbers)
+    assert @cw.method(:comment),               @cw.method(:name)
     assert @cw.method(:comment),               @cw.method(:name)
   end
 
