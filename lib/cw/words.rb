@@ -88,7 +88,7 @@ module CWG
       end.flatten
     end
 
-    def count word_count
+    def count(word_count)
       @words = @words.take(word_count.to_i)
     end
 

@@ -123,7 +123,6 @@ module CWG
 
     def read_rss(source, article_count = 3)
       rss, = Rss.new
-
       # don't go online if CW_ENV == test
       if(ENV["CW_ENV"] == "test")
         @words.assign ['test', 'rss', 'stub']
@@ -133,6 +132,9 @@ module CWG
       loop do
         article = rss.next_article
         return unless article
+        Cfg.config.params["no_run"] = false
+        Cfg.config.params["exit"] = false
+        Cfg.config.params["quit"] = false
         @words.assign article
         run
       end
@@ -287,12 +289,12 @@ module CWG
     def letters_numbers        ;      @words.letters_numbers    ; end
     def load_codes             ; load_text Q_CODES              ; end
     def alpha                  ; 'a'.upto('z').collect{|ch| ch} ; end
-    def vowels                 ; ['a','e','i','o','u']          ; end
-    def dot_letters            ; ['e','i','s','h']              ; end
-    def dash_letters           ; ['t','m','o']                  ; end
+    def vowels                 ; %w(a e i o u)                  ; end
+    def dot_letters            ; %w(e i s h)                    ; end
+    def dash_letters           ; %w(t m o)                      ; end
     def load_vowels            ; @words.assign vowels           ; end
     def load_consonants        ; @words.assign alpha - vowels   ; end
-    def numbers                ; '0'.upto('9').collect{|ch| ch} ; end
+    def numbers                ; '0'.upto('9').collect          ; end
     def load_numbers           ; @words.assign numbers          ; end
     def load_dots              ; load_letters(dot_letters)      ; end
     def load_dashes            ; load_letters(dash_letters)     ; end
@@ -301,6 +303,7 @@ module CWG
 
     alias_method :ewpm,                  :effective_wpm
     alias_method :comment,               :name
+    alias_method :read_feed,             :read_rss
     alias_method :word_length,           :word_size
     alias_method :load_letters,          :load_alphabet
     alias_method :word_shuffle,          :shuffle

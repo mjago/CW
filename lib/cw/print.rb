@@ -51,6 +51,7 @@ module CWG
     def newline
       reset
       update_console_size
+      puts "\r"
     end
 
     def force_newline_maybe

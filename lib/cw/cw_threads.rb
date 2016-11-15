@@ -7,6 +7,7 @@ module CWG
     attr_reader :threads
 
     def initialize context, processes
+      Thread.abort_on_exception = true
       @context = context
       @processes = processes
       @threads = []

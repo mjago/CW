@@ -1,5 +1,8 @@
 # encoding: utf-8
 
+require 'oga'
+require 'httpclient'
+
 module CWG
 
   #class Rss
@@ -25,22 +28,25 @@ module CWG
       require 'feedjira'
       require "htmlentities"
       require 'sanitize'
+
+      Cfg.config.params["words_counted"] = true
+      @rss_articles = []
+      count = 0
       coder = HTMLEntities.new
       url   = source(src)
-      # return a Hash - each url having a Feedjira::Feed object
-      feed  = Feedjira::Feed.fetch_and_parse url
-      entry_count = 0
-      @rss_articles = []
-      feed.entries.each do |entry|
-        title = entry.title
+      content = HTTPClient.new.get_content(url)
+      document = Oga.parse_xml(content)
+      document.xpath('rss/channel/item').each do |item|
+        title = item.at_xpath('title').text
+        description = item.at_xpath('description').text
         unless(title.include?('VIDEO:') ||
                title.include?('In pictures:') ||
                title.include?('Morning business round-up'))
-          words = entry.summary
-          entry_count += 1
+          @rss_articles << Sanitize.clean(coder.decode(title)) + '. ' +
+                           Sanitize.clean(coder.decode(description))
+          count += 1
+          break if count >= article_count
         end
-        @rss_articles << (Sanitize.clean coder.decode words).split(',')
-        break if entry_count >= article_count
       end
     end
 
@@ -53,14 +59,12 @@ module CWG
     end
 
     def next_article
-      temp = @rss_articles[article_index]
-      return unless temp
+      article = @rss_articles[article_index]
+      return unless article
       inc_article_index
-      quote = ''
-      temp.map { |i| quote += i }
-      (quote.split.collect { |article| cw_chars(article.strip.delete("\"").downcase)})
+      article.split.collect do |chars|
+        cw_chars(chars.strip.delete("\"").downcase)
+      end
     end
-
   end
-
 end
