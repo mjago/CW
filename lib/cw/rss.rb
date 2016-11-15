@@ -2,6 +2,8 @@
 
 require 'oga'
 require 'httpclient'
+require "htmlentities"
+require 'sanitize'
 
 module CWG
 
@@ -25,9 +27,6 @@ module CWG
     end
 
     def read_rss(src, article_count = 3)
-      require 'feedjira'
-      require "htmlentities"
-      require 'sanitize'
 
       Cfg.config.params["words_counted"] = true
       @rss_articles = []
