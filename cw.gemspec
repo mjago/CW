@@ -32,9 +32,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency         'os', '~> 0.9.6'
 
   spec.add_development_dependency 'version', '>= 1.0.0'
-  spec.add_development_dependency 'minitest',  '>= 5.8.4'
+  spec.add_development_dependency 'minitest',  '>= 5.10.1'
   spec.add_development_dependency 'simplecov', '>= 0.12.0'
   spec.add_development_dependency 'yard', '~> 0.9.5'
-  spec.add_development_dependency 'sequel', '~> 4.39.0'
+  spec.add_development_dependency 'sequel', '~> 4.41.0'
   spec.add_development_dependency 'sqlite3',  '~> 1.3.11'
 end
