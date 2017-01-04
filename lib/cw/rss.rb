@@ -3,7 +3,6 @@
 require 'oga'
 require 'httpclient'
 require "htmlentities"
-require 'sanitize'
 
 module CWG
 
@@ -41,8 +40,11 @@ module CWG
         unless(title.include?('VIDEO:') ||
                title.include?('In pictures:') ||
                title.include?('Morning business round-up'))
-          @rss_articles << Sanitize.clean(coder.decode(title)) + '. ' +
-                           Sanitize.clean(coder.decode(description))
+          clean_title = CWG::RSSClean.new(title).scrub
+          clean_desc = CWG::RSSClean.new(description).scrub
+#          @rss_articles << Sanitize.clean(coder.decode(title)) + '. ' +
+          #                           Sanitize.clean(coder.decode(description))
+          @rss_articles << clean_title + '. ' + clean_desc
           count += 1
           break if count >= article_count
         end

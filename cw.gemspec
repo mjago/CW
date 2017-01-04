@@ -19,16 +19,16 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib", "audio", "data/text", "test"]
 
   spec.required_ruby_version = '>= 2.0.0'
-  spec.add_runtime_dependency 'oga', '~>2.7'
+  spec.add_runtime_dependency 'oga', '~> 2.8'
   spec.add_runtime_dependency 'httpclient'
   spec.add_runtime_dependency 'htmlentities', '>= 4.3.4'
   spec.add_runtime_dependency 'paint', '>= 1.0.1'
   spec.add_runtime_dependency 'rake', '>= 11.2.2'
   spec.add_runtime_dependency 'ruby-progressbar', '>= 1.8.1'
-  spec.add_runtime_dependency 'sanitize', '~> 4.4.0'
   spec.add_runtime_dependency 'wavefile', '>= 0.7.0'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0.8'
   spec.add_runtime_dependency 'rubyserial', '~> 0.4.0'
+
   spec.add_dependency         'os', '~> 0.9.6'
 
   spec.add_development_dependency 'version', '>= 1.0.0'
