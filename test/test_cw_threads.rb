@@ -6,9 +6,18 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/cw/threads.rb'
 
-class TestCWStream < MiniTest::Test
+class TestThreads < MiniTest::Test
 
   ROOT = File.expand_path File.dirname(__FILE__) + '/../../'
+
+  def setup
+    @test_var = 0
+    @threads = CWG::Threads.new(self, [:a_thread])
+  end
+
+  def teardown
+    @threads = nil
+  end
 
   def a_thread
     @test_var = 2 + 3
@@ -18,17 +27,8 @@ class TestCWStream < MiniTest::Test
     sleep 100
   end
 
-  def setup
-    @test_var = 0
-    @threads = CWG::Threads.new(self, [:a_thread])
-  end
-
-  def teardown
-    @cw = nil
-  end
-
-  def test_threads
-    assert true
+  def test_threads_class
+    assert_equal CWG::Threads, @threads.class
   end
 
   def test_threads_exposes_name

@@ -20,7 +20,7 @@ class TestStr < MiniTest::Test
   end
 
 #  def test_beginning_str
-#    cw = CW.new {
+#    cw = Core.new {
 #      no_run
 #      assert_equal '', @str.beginning_str
 #    }

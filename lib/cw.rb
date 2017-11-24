@@ -48,17 +48,17 @@ if RbConfig::CONFIG['target_os'].include?('darwin')
 end
 
 def cw &block
-  CW.new do
+  Core.new do
     instance_eval(&block)
   end
 end
 
-# CW provides Morse code generation functionality
+# Core provides Morse code generation functionality
 # Inherits Dsl
 
-class CW < CWG::Dsl
+class Core < CWG::Dsl
 
-  # Initialize CW class. Eval block if passed in.
+  # Initialize Core class. Eval block if passed in.
 
   def initialize(&block)
     super

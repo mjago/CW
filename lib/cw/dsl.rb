@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# class Cw_dsl provides CW's commands
+# class Dsl provides CW's commands
 
 module CWG
 

@@ -6,12 +6,12 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/cw'
 
-class TestCW < MiniTest::Test
+class TestCore < MiniTest::Test
 
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @cw = CW.new
+    @cw = Core.new
     @cw.no_run
   end
 
@@ -29,7 +29,7 @@ class TestCW < MiniTest::Test
   end
 
   def test_cw_class
-    assert_equal CW, @cw.class
+    assert_equal Core, @cw.class
   end
 
   def test_name_is_nil_if_unnamed
@@ -45,14 +45,14 @@ class TestCW < MiniTest::Test
     assert_equal %w(the of and to a), @cw.words.first(5)
   end
 
-  def test_CW_takes_a_block
-    CW.new {
+  def test_Core_takes_a_block
+    Core.new {
       no_run
     }
   end
 
   def test_words_loads_words
-    cw = CW.new {
+    cw = Core.new {
       no_run
     }
     assert_equal 1000, cw.words.size
@@ -62,7 +62,7 @@ class TestCW < MiniTest::Test
 
   def test_no_run_aliases_no_run
     time = Time.now
-    cw = CW.new {
+    cw = Core.new {
       no_run
     }
     cw.words = %w(some words)
@@ -70,7 +70,7 @@ class TestCW < MiniTest::Test
   end
 
   def test_load_common_words_loads_common_words
-    cw = CW.new {
+    cw = Core.new {
       no_run
     }
     cw.words =  %w(some words)
@@ -460,7 +460,7 @@ Ending:     x
 
 #  def test_cl_echo_returns_correct_string
 #    str = ''
-#    CW.new do
+#    Core.new do
 #      str = @cl.cl_echo('some words')
 #      no_run
 #    end
@@ -469,19 +469,19 @@ Ending:     x
 
   def test_words_exist
     temp = nil
-    CW.new do
+    Core.new do
       words = 'some words added here'
       temp = words
       no_run
     end
     assert_equal(4, temp.split.size)
-    CW.new do
+    Core.new do
       @words.add 'a couple of words'
       temp = words
       no_run
     end
     assert_equal(4, temp.split.size)
-    CW.new do
+    Core.new do
       @words.add nil
       temp = words
       no_run

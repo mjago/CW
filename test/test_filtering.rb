@@ -6,12 +6,12 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/cw'
 
-class TestCW < MiniTest::Test
+class TestFiltering < MiniTest::Test
 
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @cw = CW.new
+    @cw = Core.new
     @cw.no_run
   end
 
