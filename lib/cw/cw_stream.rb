@@ -2,7 +2,7 @@
 
 module CWG
 
-  class CwStream
+  class Stream
 
     include Element
 

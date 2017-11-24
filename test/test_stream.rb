@@ -140,10 +140,10 @@ require_relative '../lib/cw/cw_stream'
 #    end
 #  end
 
-class TestCwStream < MiniTest::Test
+class TestStream < MiniTest::Test
 
   def setup
-    @stream = CWG::CwStream.new
+    @stream = CWG::Stream.new
   end
 
   def teardown
