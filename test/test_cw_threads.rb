@@ -4,7 +4,7 @@ $VERBOSE = nil #FIXME
 
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/cw/cw_threads.rb'
+require_relative '../lib/cw/threads.rb'
 
 class TestCWStream < MiniTest::Test
 
@@ -27,7 +27,7 @@ class TestCWStream < MiniTest::Test
     @cw = nil
   end
 
-  def test_cw_threads
+  def test_threads
     assert true
   end
 
