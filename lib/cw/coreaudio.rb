@@ -131,7 +131,7 @@ module CWG
 #      #       play_tone
 #      # #      @words = words
 #      # #      p @words
-#      # #      @cw_threads = CWThreads.new(self, thread_processes)
+#      # #      @cw_threads = Threads.new(self, thread_processes)
 #      # #      @cw_threads.run
 #      # #      reset_stdin
 #      # #      print.newline

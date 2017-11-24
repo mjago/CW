@@ -228,7 +228,7 @@ module CWG
     end
 
     def cw_threads
-      @cw_threads ||= CWThreads.new(self, thread_processes)
+      @cw_threads ||= Threads.new(self, thread_processes)
     end
 
 

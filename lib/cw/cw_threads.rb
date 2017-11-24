@@ -2,7 +2,7 @@
 
 module CWG
 
-  class CWThreads
+  class Threads
 
     attr_reader :threads
 

@@ -59,7 +59,7 @@ module CWG
     end
 
     def threads
-      threads ||= CWThreads.new(self, thread_processes)
+      threads ||= Threads.new(self, thread_processes)
     end
 
     def run words
