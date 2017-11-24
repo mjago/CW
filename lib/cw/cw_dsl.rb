@@ -4,7 +4,7 @@
 
 module CWG
 
-  class CwDsl
+  class Dsl
 
     include CWG::Cfg
     include CWG::FileDetails

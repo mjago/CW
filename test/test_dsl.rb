@@ -11,7 +11,7 @@ class TestNumbers < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @dsl = CWG::CwDsl.new
+    @dsl = CWG::Dsl.new
   end
 
   def teardown
@@ -48,7 +48,7 @@ class TestNumbers < MiniTest::Test
 
   def test_reverse
     @dsl.words = %w[a b c]
-    assert_equal CWG::CwDsl, @dsl.class
+    assert_equal CWG::Dsl, @dsl.class
     @dsl.reverse
     assert_equal 'c', @dsl.words.first
   end

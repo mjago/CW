@@ -11,7 +11,7 @@ class TestNumbers < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @dsl = CWG::CwDsl.new
+    @dsl = CWG::Dsl.new
   end
 
   def teardown
@@ -21,6 +21,4 @@ class TestNumbers < MiniTest::Test
   def test_numbers
     assert_equal ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], @dsl.numbers
   end
-
-
 end

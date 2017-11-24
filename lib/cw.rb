@@ -54,9 +54,9 @@ def cw &block
 end
 
 # CW provides Morse code generation functionality
-# Inherits CwDsl
+# Inherits Dsl
 
-class CW < CWG::CwDsl
+class CW < CWG::Dsl
 
   # Initialize CW class. Eval block if passed in.
 
