@@ -48,7 +48,7 @@ module CWG
     def read_progress progress_file
       create_progress_maybe progress_file
       File.open(progress_file, 'r') {|f| @index = f.readline.to_i}
-      unless(@index && @index.class == Fixnum)
+      unless(@index && @index.class == 1.class)
         reset_progress progress_file
       end
       check_end_of_book progress_file

@@ -82,7 +82,7 @@ module CWG
 
     def cl_quality
       quality = Cfg.config["quality"]
-      if quality && quality.class == Fixnum
+      if quality && quality.class == 1.class
         "-q #{quality} "
       else
         coarse_quality quality

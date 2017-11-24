@@ -66,7 +66,7 @@ module CWG
     def parse_quantity(quantity = :default)
       if quantity == :default
         return [0, 999]
-      elsif quantity.class == Fixnum
+      elsif quantity.class == 1.class
         [0, quantity - 1]
         (0...quantity).collect {|q| q}
       elsif quantity.class == Range

@@ -27,16 +27,16 @@ class RunScriptTests
     DB.create_table :test_runs do
       primary_key :id
       DateTime :date_time
-      Fixnum :total_secs
+      Integer :total_secs
       String :result
     end
 
     DB.create_table :tests do
       primary_key :id
-      Fixnum :test_run_id, :null => false
-      Fixnum :script_id, :null => false
-      Fixnum :wpm, :null => false
-      Fixnum :ewpm, :null => false
+      Integer :test_run_id, :null => false
+      Integer :script_id, :null => false
+      Integer :wpm, :null => false
+      Integer :ewpm, :null => false
       String :duration
     end
   end

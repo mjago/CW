@@ -75,7 +75,7 @@ module CWG
       cmd = play_command + ' ' + play_filename
       @pid = ! @dry_run ? Process.spawn(cmd) : cmd
       begin
-        Process.waitpid(@pid) if @pid.is_a?(Fixnum)
+        Process.waitpid(@pid) if @pid.is_a?(1.class)
       rescue Errno::ECHILD
       end
     end

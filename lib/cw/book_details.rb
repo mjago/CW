@@ -49,7 +49,7 @@ module CWG
     end
 
     def sentences_complete?
-      if @args.has_key?(:sentences) &&  @args[:sentences].is_a?(Fixnum)
+      if @args.has_key?(:sentences) &&  @args[:sentences].is_a?(1.class)
         if @sentence_count_source
           @sentence_count_source = nil
         else
