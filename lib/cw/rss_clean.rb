@@ -1,6 +1,6 @@
 require 'oga'
 
-module CWG
+module CW
   class RSSClean
     def initialize(html_fragment)
       @html_fragment = html_fragment

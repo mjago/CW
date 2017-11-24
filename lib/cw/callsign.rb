@@ -1,5 +1,4 @@
-module CWG
-
+module CW
   class Callsign
 
     include FileDetails

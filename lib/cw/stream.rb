@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class Stream
 
     include Element
@@ -105,7 +104,5 @@ module CWG
         end
       end
     end
-
   end
-
 end

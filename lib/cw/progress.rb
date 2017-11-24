@@ -2,8 +2,7 @@
 
 require 'ruby-progressbar'
 
-module CWG
-
+module CW
   class Progress
 
     def initialize(title)
@@ -24,7 +23,5 @@ module CWG
     def increment
       @progress.increment
     end
-
   end
-
 end

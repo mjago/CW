@@ -2,8 +2,7 @@
 
 require 'wavefile'
 
-module CWG
-
+module CW
   class ToneGenerator
 
     MUTE = false

@@ -1,6 +1,6 @@
 # coding: utf-8
-module CWG
 
+module CW
   class Tx < Tester
 
     include ToneHelpers

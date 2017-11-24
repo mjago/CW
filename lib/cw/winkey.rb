@@ -1,7 +1,6 @@
 require 'rubyserial'
 
-module CWG
-
+module CW
   class Winkey
 
     def initialize

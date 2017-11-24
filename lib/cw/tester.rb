@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class Tester
 
     def quit                 ; Cfg.config.params["quit"] = true  ; end

@@ -11,8 +11,8 @@ class TestToneGenerator < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    CWG::Cfg.reset
-    @tg = CWG::ToneGenerator.new
+    CW::Cfg.reset
+    @tg = CW::ToneGenerator.new
   end
 
   def teardown
@@ -35,8 +35,8 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_code_spb_for_15_wpm
-    CWG::Cfg.config.params['wpm'] = 15
-    tg = CWG::ToneGenerator.new
+    CW::Cfg.config.params['wpm'] = 15
+    tg = CW::ToneGenerator.new
     element = 192
     assert_equal element * 1, tg.code.spb(:dot)
     assert_equal element * 3, tg.code.spb(:dash)
@@ -45,8 +45,8 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_code_spb_for_25_wpm
-    CWG::Cfg.config.params['wpm'] = 25
-    tg = CWG::ToneGenerator.new
+    CW::Cfg.config.params['wpm'] = 25
+    tg = CW::ToneGenerator.new
     element = 115
     assert_equal element * 1, tg.code.spb(:dot)
     assert_equal element * 3, tg.code.spb(:dash)
@@ -55,8 +55,8 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_code_spb_for_40_wpm
-    CWG::Cfg.config.params['wpm'] = 40
-    tg = CWG::ToneGenerator.new
+    CW::Cfg.config.params['wpm'] = 40
+    tg = CW::ToneGenerator.new
     element = 72
     assert_equal element * 1, tg.code.spb(:dot)
     assert_equal element * 3, tg.code.spb(:dash)
@@ -65,8 +65,8 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_code_spb_for_20_wpm
-    CWG::Cfg.config.params['wpm'] = 20
-    tg = CWG::ToneGenerator.new
+    CW::Cfg.config.params['wpm'] = 20
+    tg = CW::ToneGenerator.new
     element = 144
     assert_equal element * 1, tg.code.spb(:dot)
     assert_equal element * 3, tg.code.spb(:dash)
@@ -83,8 +83,8 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_generate_samples
-    CWG::Cfg.config.params['wpm'] = 40
-    tg = CWG::ToneGenerator.new
+    CW::Cfg.config.params['wpm'] = 40
+    tg = CW::ToneGenerator.new
     samples = tg.generate_samples(:dot)
     assert_equal Array, samples.class
     assert_equal 72, samples.size
@@ -106,7 +106,7 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_cw_encoding_returns_a_cw_encoding_object
-    assert_equal CWG::Encoding, @tg.cw_encoding.class
+    assert_equal CW::Encoding, @tg.cw_encoding.class
   end
 
   def test_cw_encoding_responds_to_fetch

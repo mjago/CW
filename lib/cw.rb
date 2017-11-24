@@ -56,7 +56,7 @@ end
 # Core provides Morse code generation functionality
 # Inherits Dsl
 
-class Core < CWG::Dsl
+class Core < CW::Dsl
 
   # Initialize Core class. Eval block if passed in.
 

@@ -1,10 +1,10 @@
 require 'parseconfig.rb'
 
-module CWG
+module CW
 
   module Cfg
 
-    include CWG::FileDetails
+    include CW::FileDetails
 
     CONFIG_METHODS = [
       :name,:wpm,:effective_wpm,:frequency,:audio_filename,:audio_dir,

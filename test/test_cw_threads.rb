@@ -12,7 +12,7 @@ class TestThreads < MiniTest::Test
 
   def setup
     @test_var = 0
-    @threads = CWG::Threads.new(self, [:a_thread])
+    @threads = CW::Threads.new(self, [:a_thread])
   end
 
   def teardown
@@ -28,7 +28,7 @@ class TestThreads < MiniTest::Test
   end
 
   def test_threads_class
-    assert_equal CWG::Threads, @threads.class
+    assert_equal CW::Threads, @threads.class
   end
 
   def test_threads_exposes_name
@@ -49,7 +49,7 @@ class TestThreads < MiniTest::Test
 
 # failed on one build
 #  def test_kill_thread_kills_thread
-#    threads = CWG::Threads.new(self, [:sleep_thread])
+#    threads = CW::Threads.new(self, [:sleep_thread])
 #    threads.start_threads
 #    thread = threads.threads[0]
 #    assert_equal "run", thread[:thread].status
@@ -68,7 +68,7 @@ class TestThreads < MiniTest::Test
 #  end
 #
   def test_handles_multiple_threads
-    threads = CWG::Threads.new(self, [:a_thread, :sleep_thread])
+    threads = CW::Threads.new(self, [:a_thread, :sleep_thread])
     threads.start_threads
     assert threads.threads[0][:thread].is_a? Thread
     assert threads.threads[1][:thread].is_a? Thread

@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class Threads
 
     attr_reader :threads
@@ -170,7 +169,5 @@ module CWG
       system("stty -raw echo")
       puts "\r"
     end
-
   end
-
 end

@@ -3,8 +3,7 @@
 require 'paint'
 require 'io/console'
 
-module CWG
-
+module CW
   class Print
 
     class ProgressPrint

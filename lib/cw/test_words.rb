@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class TestWords < Tester
 
     def print_test_advice    ; print.print_advice('Test Words')    ; end
@@ -34,7 +33,5 @@ module CWG
       @popped = stream.pop_next_marked
       print.results(@popped) if(@popped && ! print_letters?)
     end
-
   end
-
 end

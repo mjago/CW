@@ -12,7 +12,7 @@ class TestStr < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @str = CWG::Str.new
+    @str = CW::Str.new
   end
 
   def test_stringify

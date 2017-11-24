@@ -11,7 +11,7 @@ class TestNumbers < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @dsl = CWG::Dsl.new
+    @dsl = CW::Dsl.new
   end
 
   def teardown

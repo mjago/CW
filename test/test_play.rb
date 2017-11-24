@@ -9,7 +9,7 @@ class TestPlay < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @p = CWG::Play.new('words')
+    @p = CW::Play.new('words')
   end
 
   def teardown
@@ -17,12 +17,12 @@ class TestPlay < MiniTest::Test
   end
 
   def test_play_object_takes_a_word_parameter
-    play = CWG::Play.new('words object')
+    play = CW::Play.new('words object')
     assert_equal 'words object', play.instance_variable_get('@words')
   end
 
   def test_audio_instantiates_AudioPlayer_object
-    assert_equal CWG::AudioPlayer, @p.audio.class
+    assert_equal CW::AudioPlayer, @p.audio.class
   end
 
   def test_init_play_words_timeout_sets_start_play_time
@@ -42,7 +42,7 @@ class TestPlay < MiniTest::Test
   end
 
   def test_add_space
-    words = CWG::Words.new
+    words = CW::Words.new
     words.assign ['some','words']
 
     assert_equal 'some words ',  @p.add_space(words)

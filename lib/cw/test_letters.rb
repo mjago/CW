@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class TestLetters < Tester
 
     def process_input_word_maybe

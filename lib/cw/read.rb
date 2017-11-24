@@ -3,7 +3,7 @@
 #require 'wavefile'
 require 'coreaudio'
 
-module CWG
+module CW
 
   SAMPLE_RATE = 44100
   MAGNITUDE_CUTOFF = 50000 #  200000

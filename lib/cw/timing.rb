@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class Timing
 
     attr_accessor :delay_time
@@ -82,7 +81,5 @@ module CWG
     def append_char_delay letr, wpm, ewpm
       @delay_time += char_delay(letr, wpm, ewpm)
     end
-
   end
-
 end

@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   module Element
 
     def element type

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module CWG
+module CW
 
   #class Numbers provides the Number Testing functionality
 

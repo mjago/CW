@@ -11,7 +11,7 @@ class TestTiming < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @timing = CWG::Timing.new
+    @timing = CW::Timing.new
   end
 
   def teardown
@@ -37,7 +37,7 @@ class TestTiming < MiniTest::Test
   end
 
   def test_initialize_initializes_instance_of_Encoding
-    assert_equal CWG::Encoding, @timing.instance_variable_get(:@cw_encoding).class
+    assert_equal CW::Encoding, @timing.instance_variable_get(:@cw_encoding).class
   end
 
   def test_cw_encoding_returns_an_encoding

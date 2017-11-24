@@ -1,6 +1,6 @@
 require 'os'
 
-module CWG
+module CW
   module OStest
     def is_mac?
       OS.mac?

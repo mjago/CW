@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   class RepeatWord < Tester
 
     #overloaded #todo

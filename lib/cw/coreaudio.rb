@@ -1,6 +1,6 @@
 require 'coreaudio'
 
-module CWG
+module CW
 
   class Coreaudio
 

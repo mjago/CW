@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module CWG
+module CW
 
   #class Str
 
@@ -68,7 +68,5 @@ module CWG
       containing = Cfg.config["containing"]
       containing ? "Containing: #{stringify containing}\n" : nil
     end
-
   end
-
 end

@@ -9,7 +9,7 @@ class TestTester < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @object = CWG::Tester.new
+    @object = CW::Tester.new
 
   end
 
@@ -27,18 +27,17 @@ class TestTester < MiniTest::Test
   end
 
   def test_quit
-    CWG::Cfg.config.params["quit"] = false
+    CW::Cfg.config.params["quit"] = false
     refute @object.quit?
     @object.quit
     assert @object.quit?
   end
 
   def test_print_instantiates_Print_object
-    assert_equal CWG::Print, @object.print.class
+    assert_equal CW::Print, @object.print.class
   end
 
   def test_timing_instantiates_Timing_object
-    assert_equal CWG::Timing, @object.timing.class
+    assert_equal CW::Timing, @object.timing.class
   end
-
 end

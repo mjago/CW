@@ -24,7 +24,7 @@ class TestCore < MiniTest::Test
   end
 
   def test_os_play_command
-    obj = CWG::AudioPlayer.new
+    obj = CW::AudioPlayer.new
     assert ('afplay' == obj.os_play_command) || ('ossplay' == obj.os_play_command)
   end
 

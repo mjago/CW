@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-module CWG
-
+module CW
   module FileDetails
     HERE          = File.dirname(__FILE__)
     WORK_DIR      = Dir.pwd

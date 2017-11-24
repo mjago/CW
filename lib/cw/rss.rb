@@ -4,7 +4,7 @@ require 'oga'
 require 'httpclient'
 require "htmlentities"
 
-module CWG
+module CW
 
   #class Rss
 
@@ -40,8 +40,8 @@ module CWG
         unless(title.include?('VIDEO:') ||
                title.include?('In pictures:') ||
                title.include?('Morning business round-up'))
-          clean_title = CWG::RSSClean.new(title).scrub
-          clean_desc = CWG::RSSClean.new(description).scrub
+          clean_title = CW::RSSClean.new(title).scrub
+          clean_desc = CW::RSSClean.new(description).scrub
 #          @rss_articles << Sanitize.clean(coder.decode(title)) + '. ' +
           #                           Sanitize.clean(coder.decode(description))
           @rss_articles << clean_title + '. ' + clean_desc

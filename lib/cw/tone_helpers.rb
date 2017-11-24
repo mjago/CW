@@ -1,7 +1,6 @@
 # Module ToneHelpers provides helper methods for ToneGenerator
 
-module CWG
-
+module CW
   module ToneHelpers
 
     TWO_PI = 2 * Math::PI

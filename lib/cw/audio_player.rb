@@ -3,12 +3,12 @@
 require 'timeout'
 require 'os'
 
-module CWG
+module CW
 
   class AudioPlayer
 
     include FileDetails
-    include CWG::OStest
+    include CW::OStest
 
     def tone
       @tone ||= ToneGenerator.new

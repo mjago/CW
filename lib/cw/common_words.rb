@@ -1,4 +1,4 @@
-module CWG
+module CW
 
   class CommonWords
 

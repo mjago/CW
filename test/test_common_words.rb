@@ -11,7 +11,7 @@ class TestCommonWords < MiniTest::Test
   ROOT = File.expand_path File.dirname(__FILE__) + '/../'
 
   def setup
-    @words = CWG::CommonWords.new
+    @words = CW::CommonWords.new
   end
 
   def teardown

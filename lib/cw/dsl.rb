@@ -2,12 +2,12 @@
 
 # class Dsl provides CW's commands
 
-module CWG
+module CW
 
   class Dsl
 
-    include CWG::Cfg
-    include CWG::FileDetails
+    include CW::Cfg
+    include CW::FileDetails
     [:wpm, :effective_wpm, :frequency, :audio_filename,:audio_dir,
      :book_name, :book_dir, :play_command, :run_default, :command_line,
      :author, :title, :quality, :ebook2cw_path, :list_colour, :list_colour,
@@ -208,7 +208,7 @@ module CWG
     end
 
     def cw_element_match arg
-      encs = CWG::Encoding.new
+      encs = CW::Encoding.new
       encs.match_elements arg
     end
 
