@@ -374,7 +374,7 @@ module CWG
     end
 
     def cw_encoding
-      @encoding ||= CwEncoding.new
+      @encoding ||= Encoding.new
     end
 
     def space_or_espace

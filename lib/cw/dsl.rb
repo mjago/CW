@@ -208,7 +208,7 @@ module CWG
     end
 
     def cw_element_match arg
-      encs = CWG::CwEncoding.new
+      encs = CWG::Encoding.new
       encs.match_elements arg
     end
 

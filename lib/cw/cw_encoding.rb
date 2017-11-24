@@ -2,7 +2,7 @@
 
 module CWG
 
-  class CwEncoding
+  class Encoding
 
     include FileDetails
 

@@ -106,7 +106,7 @@ class TestToneGenerator < MiniTest::Test
   end
 
   def test_cw_encoding_returns_a_cw_encoding_object
-    assert_equal CWG::CwEncoding, @tg.cw_encoding.class
+    assert_equal CWG::Encoding, @tg.cw_encoding.class
   end
 
   def test_cw_encoding_responds_to_fetch

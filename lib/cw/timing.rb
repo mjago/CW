@@ -9,7 +9,7 @@ module CWG
 
     def initialize
       @delay_time = 0.0
-      @cw_encoding = CwEncoding.new
+      @cw_encoding = Encoding.new
     end
 
     def cw_encoding enc

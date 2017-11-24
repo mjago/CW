@@ -47,7 +47,7 @@ module CWG
       @high = Array.new(3)
       @low = Array.new(2)
       @queue = Queue.new
-      @cw_encoding = CwEncoding.new
+      @cw_encoding = Encoding.new
       @print = Print.new
       @state[START] = 0
       @state[VALUE] = :low

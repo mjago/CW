@@ -36,8 +36,8 @@ class TestTiming < MiniTest::Test
     assert_equal 0.0, @timing.delay_time
   end
 
-  def test_initialize_initializes_instance_of_CwEncoding
-    assert_equal CWG::CwEncoding, @timing.instance_variable_get(:@cw_encoding).class
+  def test_initialize_initializes_instance_of_Encoding
+    assert_equal CWG::Encoding, @timing.instance_variable_get(:@cw_encoding).class
   end
 
   def test_cw_encoding_returns_an_encoding
