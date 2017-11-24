@@ -4,7 +4,7 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/cw/element'
-require_relative '../lib/cw/cw_stream'
+require_relative '../lib/cw/stream'
 
 #  class TestStreamMatching < MiniTest::Test
 #    def setup
