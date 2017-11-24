@@ -286,7 +286,7 @@ module CWG
     def load_abbreviations     ; load_text ABBREVIATIONS        ; end
     def reverse                ;  @words.reverse                ; end
     def double_words           ; @words.double_words            ; end
-    def letters_numbers        ;      @words.letters_numbers    ; end
+    def letters_numbers        ; @words.letters_numbers         ; end
     def load_codes             ; load_text Q_CODES              ; end
     def alpha                  ; 'a'.upto('z').collect{|ch| ch} ; end
     def vowels                 ; %w(a e i o u)                  ; end
@@ -294,7 +294,7 @@ module CWG
     def dash_letters           ; %w(t m o)                      ; end
     def load_vowels            ; @words.assign vowels           ; end
     def load_consonants        ; @words.assign alpha - vowels   ; end
-    def numbers                ; '0'.upto('9').collect          ; end
+    def numbers                ; %w(0 1 2 3 4 5 6 7 8 9)        ; end
     def load_numbers           ; @words.assign numbers          ; end
     def load_dots              ; load_letters(dot_letters)      ; end
     def load_dashes            ; load_letters(dash_letters)     ; end

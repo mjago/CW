@@ -5,11 +5,11 @@ module CWG
   module TextHelpers
 
     def letter_group
-      (97..122).to_a
+      (97..122).collect {|e| e.chr}
     end
 
     def number_group
-      (48..57).to_a
+      (48..57).collect {|e| e.chr}
     end
 
     def cw_chars chr

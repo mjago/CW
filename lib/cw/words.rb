@@ -139,7 +139,7 @@ module CWG
 
     def collect_words
       @words.each{ |word| ' ' + word }.
-        collect{|wrd| wrd}.join(' ')
+        collect{ |wrd| wrd }.join(' ')
     end
 
     def reverse
@@ -147,7 +147,7 @@ module CWG
     end
 
     def letters_numbers
-      letter_group.push( * number_group)
+      @words = letter_group.push( * number_group)
     end
 
     def random_letters(options = {})
