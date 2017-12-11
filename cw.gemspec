@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'ruby-progressbar'
   spec.add_runtime_dependency 'wavefile', '~> 0.8.1'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0.8'
-  spec.add_runtime_dependency 'rubyserial', '~> 0.4.0'
+  spec.add_runtime_dependency 'rubyserial', '~> 0.5.0'
 
   spec.add_dependency         'os', '~> 1.0.0'
 
