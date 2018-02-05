@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib", "audio", "data/text", "test"]
 
   spec.required_ruby_version = '>= 2.2.8'
-  spec.add_runtime_dependency 'oga', '~> 2.11'
+  spec.add_runtime_dependency 'oga', '~> 2.14'
   spec.add_runtime_dependency 'httpclient', '~> 2.8.3'
   spec.add_runtime_dependency 'htmlentities', '~> 4.3.4'
   spec.add_runtime_dependency 'paint', '~> 2.0.1'
@@ -35,6 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest',  '~> 5.10.3'
   spec.add_development_dependency 'simplecov', '~> 0.15.1'
   spec.add_development_dependency 'yard', '~> 0.9.11'
-  spec.add_development_dependency 'sequel', '~> 5.2.0'
+  spec.add_development_dependency 'sequel', '~> 5.5.0'
   spec.add_development_dependency 'sqlite3', '~> 1.3.13'
 end
